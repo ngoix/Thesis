@@ -1,0 +1,80 @@
+\paragraph{Notation}
+
+Throughout this document, $\mathbb{N}$ denotes the set of natural numbers while $\mathbb{R}$ and $\mathbb{R}_+$ respectively denote the sets of real numbers and nonnegative real numbers. Arbitrary sets are denoted by calligraphic letters such as $\mathcal{G}$, and $|\mathcal{G}|$ stands for the number of elements in $\mathcal{G}$. A set of $m$ elements from $\mathcal{G}$ is denoted by $\mathcal{G}^m$.
+%
+We denote vectors by bold lower case letters. For a vector $\mathbf{x}\in\mathbb{R}^d$ and $i\in \{1,\dots,d\}$, $x_i$ denotes the $i^{th}$ component of $\mathbf{x}$. The inner product between two vectors is denoted by $\innerp{\cdot,\cdot}$. $\|\cdot\|$ denotes an arbitrary (vector or matrix) norm and $\|\cdot\|_p$ the $L_p$ norm.
+%
+%We denote matrices by bold upper case letters. For a $c\times d$ real-valued matrix $\mathbf{M}\in\mathbb{R}^{c\times d}$ and a pair of integers $(i,j)\in[c]\times[d]$, $M_{i,j}$ denotes the entry at row $i$ and column $j$ of the matrix $\mathbf{M}$. The identity matrix is denoted by $\mathbf{I}$ and the cone of symmetric positive semi-definite (PSD) $d\times d$ real-valued matrices by $\mathbb{S}^{d}_+$. 
+%Strings are denoted by sans serif letters such as $\mathsf{x}$. We use $|\mathsf{x}|$ to denote the length of $\mathsf{x}$ and $\mathsf{x_i}$ to refer to its $i^{th}$ symbol.
+%
+%In the context of learning problems, we use $\mathcal{X}$ and $\mathcal{Y}$ to denote the input space (or instance space) and the output space (or label space) respectively. We use $\mathcal{Z}=\mathcal{X}\times\mathcal{Y}$ to denote the joint space, and an arbitrary labeled instance is denoted by $z=(x,y)\in\mathcal{Z}$. The hinge function $[\cdot]_+:\mathbb{R}\to\mathbb{R}_+$ is defined as $[c]_+=\max(0,c)$. 
+%
+Throughout this thesis, $\PP[A]$ denotes the probability of the event $A\in \Omega$, the underlying probability space being $(\Omega, \mathcal{F}, \PP)$. We denote by $\mathbb{E}[X]$ the expectation of the random variable $X$. $X \overset{d}{=} Y$ means that $X$ and $Y$ are equal in distribution and $X_n \overset{d}{\to} Y$ means that $(X_n)$ converges to $Y$ in distribution. We often use the abbreviation $\mb X_{1:n}$ to denote an \iid~sample $(\mb X_1,\ldots,\mb X_n)$.
+%
+%$x\sim P$ indicates that $x$ is drawn according to the probability distribution $P$.
+%
+A summary of the notations is given in \tref{tab:notations}.
+
+\begin{table}[!ht]
+\begin{center}
+\begin{footnotesize}
+\begin{tabular}{lp{1cm}l}
+\toprule
+\textbf{Notation} && \textbf{Description}\\
+\midrule
+$\cdf$ && cumulative distribution function\\
+$\rv$ && random variable\\
+$\mathbb{R}$ && Set of real numbers\\
+$\mathbb{R}_+$ && Set of nonnegative real numbers\\
+$\mathbb{R}^d$ && Set of $d$-dimensional real-valued vectors\\
+$\leb(\cdot)$ && Lebesgue measure on $\mathbb{R}$ or $\mathbb{R}^d$\\
+$(\cdot)_+$ && positive part\\
+$\vee$ && maximum operator\\
+$\wedge$ && minimum operator\\
+%$\mathbb{R}^{c\times d}$ && Set of $c\times d$ real-valued matrices\\
+$\mathbb{N}$ && Set of natural numbers, i.e., $\{0,1,\dots\}$\\
+%$\mathbb{S}^{d}_+$ && Cone of symmetric PSD $d\times d$ real-valued matrices\\
+%$[k]$ && The set $\{1,2,\dots,k\}$\\
+$\mathcal{G}$ && An arbitrary set\\
+$|\mathcal{G}|$ && Number of elements in $\mathcal{S}$\\
+$\mathcal{G}^m$ && A set of $m$ elements from $\mathcal{S}$\\
+%$\mathcal{X}$ && Input space\\
+%$\mathcal{Y}$ && Output space\\
+%$z=(x,y)\in\mathcal{X}\times\mathcal{Y}$ && An arbitrary labeled instance\\
+$\mathbf{x}$ && An arbitrary vector\\
+$\mb x < \mb y$ && component-wise vector comparison\\
+$\mb m$ (for $m \in \rset$) && vector $(m,\ldots,m)$\\
+$\mb x < m$ && means $\mb x < \mb m$\\
+$x_j$ && The $j^{th}$ component of $\mathbf{x}$\\
+$\delta_{\mb a}$ && Dirac mass at point $a \in \mathbb{R}^d$\\
+$\lfloor \cdot \rfloor$ && integer part\\
+$\innerp{\cdot,\cdot}$ && Inner product between vectors\\
+%$[\cdot]_+$ && Hinge function\\
+%$\mathbf{M}$ && An arbitrary matrix\\
+%$\mathbf{I}$ && The identity matrix\\
+%$M_{i,j}$ && Entry at row $i$ and column $j$ of matrix $\mathbf{M}$\\
+$\|\cdot\|$ && An arbitrary norm\\
+$\|\cdot\|_p$ && $L_p$ norm\\
+%$\mathsf{x}$ && An arbitrary string\\
+%$|\mathsf{x}|$ && Length of string $\mathsf{x}$\\
+%$\mathsf{x_i},\mathsf{x_{i,j}}$ && $j^{th}$ symbol of $\mathsf{x}$ and $\mathsf{x_i}$\\
+%$x\sim P$ && $x$ is drawn i.i.d. from probability distribution $P$\\
+$A\Delta B$ && symmetric difference between sets $A$ and $B$ \\
+$(\Omega, \mathcal{F}, \PP)$ && Underlying probability space\\
+$\mathcal{S}$ && functions $s: \mathbb{R}^d \rightarrow \mathbb{R}_+ $ integrable \wrt~ Lebesgue measure (scoring functions)\\
+$\overset{d}{\to}$ && Weak convergence of probability measures or \rv\\
+$\mathbf{X}$ && A \rv~with values in $\mathbb{R}^d$\\
+$\mathds{1}_{\mathcal{E}}$ && indicator function event $\mathcal{E}$\\
+$Y_{(1)} \le \ldots\le Y_{(n)}$ && order statistics of $Y_1,\ldots,Y_n$\\
+$\mb X_{1:n}$ && An \iid~sample $(\mb X_1,\ldots,\mb X_n)$\\
+$\PP[\cdot]$ && Probability of event\\
+$\EE[\cdot]$ && Expectation of random variable\\
+$\Var[\cdot]$ && Variance of random variable\\
+
+\bottomrule
+\end{tabular}
+\end{footnotesize}
+\caption[Summary of notation]{Summary of notation.}
+\label{tab:notations}
+\end{center}
+\end{table}

@@ -1,0 +1,1243 @@
+\chapter{Learning the dependence structure of rare events:
+a non-asymptotic study}
+\label{colt}
+
+\begin{chapabstract}
+This chapter presents the details relative to the introducing section~\ref{resume:stdf}.
+
+Assessing the probability of occurrence of extreme events is a crucial issue in various fields like finance, insurance, telecommunication or environmental sciences. In a multivariate framework, the tail dependence is characterized by the so-called \emph{stable tail dependence function} (\textsc{stdf}). Learning this structure is the keystone of multivariate extremes. Although extensive studies have proved consistency and asymptotic normality for the empirical version of the \textsc{stdf}, non-asymptotic bounds are still missing. The main purpose of this paper is to fill this gap. Taking advantage of adapted VC-type concentration inequalities, upper bounds are derived with expected rate of convergence in $O(k^{-1/2})$. The concentration tools involved in this analysis rely on a more general study of maximal deviations in low probability regions, and thus directly apply to the classification of extreme data.
+
+The material of this chapter is based on previous work published in \cite{COLT15}.
+\end{chapabstract}
+
+
+\section{Introduction}
+\label{colt:sec:intro}
+
+As a first go, we briefly recall the preliminaries of Section~\ref{resume:stdf:preliminaries}.
+
+To introduce the stable tail dependence function,  suppose we want to manage the risk of a
+  portfolio  containing $d$ different assets,  $\mb
+X = (X_1,\ldots,X_d)$.
+We want to evaluate  the
+probability of events of the kind 
+$\{X_1 \ge x_1 \text{ or }  \dotsc \text{ or }
+X_d\ge x_d \}$, for large multivariate thresholds $\mb
+x=(x_1,\ldots,x_d)$.  
+ 
+% Under not too stringent conditions on the regularity of
+%   $\mb X$'s  distribution,
+  \textsc{EVT} shows that under not too strong condition on the regularity of the underlying tail distribution, for large enough
+  thresholds, (see Section~\ref{colt:sec:background} for details) 
+\[
+\P\{X_1 \ge x_1 \text{ or }  \dotsc \text{ or }
+X_d\ge x_d \} \simeq 
+l(p_1,\ldots,p_d), 
+\]  
+where $l$ is the  \emph{stable tail dependence function} and the
+$p_j$'s  are the marginal exceedance probabilities, $p_j = \P(X_j\ge
+x_j)$. Thus, the functional $l$  characterizes 
+ the \emph{dependence} among extremes. The \emph{joint}   distribution
+ (over large thresholds) 
+ can thus be recovered from  the knowledge of the marginal distributions  together with
+ the \textsc{stdf} $l$. In practice, $l$ can be learned % this is done   by learning the shape % of
+ % % each of the  marginal tails and
+ % of  the \textsc{stdf}
+ from
+ `moderately extreme' data, typically the $k$   `largest' ones among a
+ sample of size $n$, with $k\ll n$.
+ % , which is precisely
+% the tail distribution function $1 - F(\mb x)$. 
+% , including unobserved ones. 
+Recovering the $p_j$'s can be easily done using univariate \textsc{EVT} modelling introduced in Section~\ref{back:sec:1EVT}.
+However, in the multivariate case, %constrast, %However %when considering multivariate extreme events, 
+there is no finite-dimensional parametrization of the dependence
+structure. 
+ % asymptotic tail distribution: 
+The latter is characterized by % the univariate extreme value indices on the one hand, and by
+% the tail dependence structure on the other hand, which is encapsulated in
+the \emph{stable tail dependence function} (\textsc{stdf}) $l$.
+ Estimating this functional is thus one of the main issues in multivariate \textsc{EVT}. Asymptotic properties of the empirical \textsc{stdf} have been widely studied, see \cite{Huangphd}, \cite{Drees98}, \cite{Embrechts2000} and \cite{dHF06} for the bivariate case, and \cite{Qi97}, \cite{Einmahl2012} for the general multivariate case under smoothness assumptions.
+
+However, to the best of our knowledge, no bounds exist  %is no  established
+ %  bounds 
+on the finite sample error. It is precisely the purpose
+of this paper to derive such non-asymptotic  bounds. Our results do
+not require any assumption other than  the existence of the \textsc{stdf}.
+The main idea is as follows. The empirical estimator is based on 
+the empirical measure of `extreme' regions, which  are hit
+ only with  low probability. It is thus enough to bound 
+ maximal deviations on such low probability regions. The key consists
+ in choosing an adaptive VC class, which only covers the
+ latter regions, and on the other hand, to  derive  VC-type inequalities that incorporate $p$,
+ the probability of hitting the class at all.%, which finally allow to . 
+ 
+
+The structure of this chapter is as follows. The whys and wherefores of
+ \textsc{EVT} and the \textsc{stdf} are explained in
+ Section~\ref{colt:sec:background}. In Section \ref{colt:sec:concentration},
+ concentration tools which rely on the general study of maximal
+ deviations in low probability regions are introduced, with an
+ immediate application to the framework of classification (Remark
+ \ref{colt:rk:prediction}). The main result of this contribution,  a
+ non-asymptotic bound on the convergence of the empirical
+ \textsc{stdf}, is derived in Section \ref{colt:sec:stdf}. Section~\ref{colt:sec:conclusion} concludes.
+
+\section{Background on the stable tail dependence function}
+\label{colt:sec:background}
+% A  useful setting to understand the use  of \textsc{EVT} and to give
+% intuition about the \textsc{stdf} concept is that  of risk monitoring. 
+% %When monitoring a risk 
+% In the univariate case, it is natural to consider the $(1-p)^{th}$
+% quantile of the distribution  $F$ of a random
+% variable $X$,  for a given exceedance probability $p$, that is
+% $x_p = \inf\{x \in \mathbb{R},~ \mathbb{P}(X > x) \le p\}$. For
+% moderate values of $p$, a natural empirical estimate is  $x_{p,n} = \inf\{x \in
+% \mathbb{R},~ 1/n \sum_{i=1}^n \mathds{1}_{X_i > x}\le p\}$.
+% However,  if
+% $p$ is very small% , say $p\le \frac{1}{n}$
+% , the finite  sample $X_1,
+% \ldots, X_n$  contains insufficient information and $x_{p,n}$ becomes 
+% irrelevant. %  : the finite  sample $X_1, \ldots, X_n$  contains
+% % insufficient information
+% %  For
+% % instance the is
+% % useless for $p < 1/n$.  
+% That is where \textsc{EVT} comes into play  by providing
+% parametric estimates of large
+% quantiles: % is needed in the sense it allows inference related to such extreme quantiles :
+% whereas statistical inference often involves sample means and the
+% central limit
+% theorem, % which characterizes the limiting distribution of the sample mean,
+% \textsc{EVT} handles phenomena whose behavior is % very different from those
+% not ruled by an `averaging effect'. The focus is on the sample maximum
+% rather than the mean.
+% The primal assumption is the existence of two
+% sequences $\{a_n, n \ge 1\}$ and $\{b_n, n \ge 1\}$, the $a_n$'s being
+% positive, and a non-degenerate distribution function $G$ such that
+% \begin{align}
+% \label{colt:intro:assumption1}
+% \lim_{n \to \infty} n ~\mathbb{P}\left( \frac{X - b_n}{a_n} ~\ge~ x \right) = -\log G(x)
+% \end{align}
+% \noindent
+% % \begin{align}
+% % \label{colt:intro:assumption1}
+% % \lim_{n \to \infty} \mathbb{P}\left( \frac{\max_{1 \le i \le n} X_i - b_n}{a_n} ~\le~ x \right) =: G(x)
+% % \end{align}
+% for all continuity points $x \in \mathbb{R}$ of $G$.
+% If this assumption is fulfilled -- it is the case for most  textbook
+% distributions -- then $F$ is said to be in the \textit{domain of
+%   attraction} of $G$, denoted $F \in DA(G)$. The tail behavior of $F$
+% is then essentially characterized by $G$, which is proved to be -- up
+% to  rescaling -- of the type $G(x) = \exp(-(1 + \gamma
+% x)^{-1/\gamma})$ for $1 + \gamma x > 0$, $\gamma \in \mathbb{R}$,
+% setting by convention $(1 + \gamma x)^{-1/\gamma} = e^{-x}$ for
+% $\gamma = 0$. The sign of $\gamma$ controls the shape of the tail and
+% various estimators of the rescaling sequence as well as $\gamma$ have
+% been studied in great detail, see \emph{e.g.}  \cite{DEd1989},
+% \cite{ELL2009}, 
+% %%The Hill estimator or one of its generalizations, see
+% \cite{Hill1975}, \cite{Smith1987}, \cite{BVT1996}. %, provides an
+%estimate of the tail parameter $\gamma$. 
+ % . The tail behavior of $F$ is then characterized by $\gamma$
+% In the case $\gamma >0$ (as for the Cauchy distribution), $G$ is referred to as a Fréchet distribution and $F$ has a heavy tail. If $\gamma=0$ (as for normal distributions), $G$ is a Gumbel distribution and $F$ has a light tail. If $\gamma < 0$ (as for uniform distributions), $G$ is called a Weibull distribution and $F$ has a finite endpoint.
+% Estimates of univariate extreme quantiles then rely on estimates of the parameters $a_n$, $b_n$, and $\gamma$, see \cite{DEd1989}, \cite{ELL2009}. 
+%The Hill estimator or one of its generalizations, see \cite{Hill1975}, \cite{Smith1987}, \cite{BVT1996}, provides an estimate of the tail parameter $\gamma$. 
+
+%Extensions to the multivariate setting are far from straightforward, as the tail dependence structure comes into play.
+% To illustrate this point, suppose we want to assess the risk of a portfolio containing $d$ different assets $\textbf{X}=(X_1,\ldots,X_d)$. The marginal distribution of $F$ are denoted by $F_1,\ldots,F_d$.
+
+%the asymptotics do not produce anymore a parametric model for the tail dependence structure. % as there are many possible choices of multivariate quantiles:
+% If the univariate quantiles can be estimated independently, the remaining issue is then the estimation of the tail dependence structure.
+% This notion of dependence is described by the STDF.
+
+% Turning to the multivariate case, the analogue of
+%  is the existence of two sequences $\{a_n, n
+% \ge 1\}$ and $\{b_n, n \ge 1\}$ in $\mathbb{R}^d$, the $a_n$'s being positive,
+% and a non-degenerate distribution function $G$ such that
+% \begin{align}
+% \label{colt:intro:assumption2}
+% \lim_{n \to \infty} n ~\mathbb{P}\left( \frac{X^1 - b_n^1}{a_n^1} ~\ge~ x_1 \text{~or~} \ldots \text{~or~} \frac{X^d - b_n^d}{a_n^d} ~\ge~ x_d \right) = -\log G(\mathbf{x})
+% \end{align}
+% % \begin{align}
+% % \label{colt:intro:assumption2}
+% % \lim_{n \to \infty} \mathbb{P}\left( \frac{\max_{1 \le i \le n} X_i^1 - b_n^1}{a_n^1} ~\le~ x_1, \ldots, \frac{\max_{1 \le i \le n} X_i^d - b_n^d}{a_n^d} ~\le~ x_d \right) =: G(x)
+% % \end{align}
+% for all continuity points $\mathbf{x} \in \mathbb{R}^d$ of $G$. This implies
+% that the margins $G_1(x_1),\ldots,G_d(x_d)$ are univariate extreme
+% value distributions, namely of the type $G_j(x) = \exp(-(1 + \gamma_j
+% x)^{-1/\gamma_j})$. Also, denoting by $F_1,\ldots,F_d$ the
+% marginal
+% distributions of $F$, assumption (\ref{colt:intro:assumption2}) implies marginal convergence, $F_i \in DA(G_i)$ for $i=1,\ldots,n$.
+%  However, the tail dependence structure also comes into play
+%  when considering  joint probabilities of an excess; the main issue
+%  being that the asymptotics do not produce any parametric model for it.
+
+%  To understand the structure of the limit $G$ and dispose of the
+%  unknown sequences $(\mb a_n, \mb b_n)$ (which are entirely determined be the
+%  marginal distributions $F_j$'s), 
+%  it is convenient to
+%  work with marginally standardized variables,
+%  $V^j:=\frac{1}{1-F_j(X^j)}$ and $\mathbf{V}=(V^1,\ldots,V^d)$.  In
+%  fact (see \cite{Resnick1987}, proposition 5.10), assumption (\ref{colt:intro:assumption2}) is
+%  equivalent to marginal
+%  convergences as in (\ref{colt:intro:assumption1}),  % of the marginal distributions \ie~$F_i \in DA(G_i)$, $i=1,\ldots,n$,
+%  together with multivariate regular variation of $\mathbf{V}$'s
+%  distribution,  which means existence of a limit measure $\mu$  on $\mb E
+%  = [0,\infty]^d\setminus\{0\}$, such that % convergence of
+% \begin{align}
+% \label{colt:intro:regvar}
+%  n~ \mathbb{P}\left( \frac{V^1 }{n} ~\ge~ v_1 \text{~or~} \cdots
+%    \text{~or~} \frac{V^d }{n} ~\ge~ v_d \right) \xrightarrow[n\to\infty]{}\mu[0,\mb v]^c
+% \end{align}
+% \noindent (where $[0,\mathbf{v}]=[0,v_1]\times \ldots \times
+% [0,v_d]$). Thus, the variable $\mb V$ satisfies
+% (\ref{colt:intro:assumption2}) with $\mb a_n = (n,\ldots,n)$, $\mb b_n = (0,\ldots,0)$.
+%  The so-called \emph{exponent measure} $\mu$ is finite on
+% sets bounded away from $0$ and has the
+% homogeneity property : $\mu(t\point) =
+% t^{-1}\mu(\point)$. 
+% The dependence structure of the limit $G$ in (\ref{colt:intro:assumption2})
+% can be expressed in terms of $\mu$,  % then be written using the stable
+% % tail dependence function ({\sc stdf}) $l$ :
+% \begin{align*}
+% - \log G(\mathbf{x})= \mu\left[ 0, \left(\frac{-1}{\log G_1(x_1)}, \dots ,\frac{-1}{\log G_d(x_d)}\right)\right]^c~.
+% \end{align*}
+% % \begin{align*}
+% % G(\mathbf{x})=\exp (~ -l(-\log G_1(x_1), \dots ,-\log G_d(x_d)~ )
+% % \end{align*}
+% The choice of a marginal standardization  to handle $V^j$'s
+% variables is somewhat arbitrary and alternative standardizations lead
+% to alternative limits. %representations of the limiting dependence
+% %structure. 
+% Uniform margins are very helpful when it comes
+% to establishing upper bounds on the deviations between empirical and mean
+% measures. Define thus the standardized variable $\mathbf{U}$ %and $\mathbf{V}$
+%  by $U^j =1-F_j(X^j)$. Then, it is easy to see that (\ref{colt:intro:regvar})
+% % will e very  
+% % The latter
+% is equivalent to the
+% existence of a 
+% measure $\Lambda$ on $[0,\infty]^d\setminus\{+\infty\}$, such that
+% % function $l : \mathbb{R}^d_+ \to \mathbb{R}_+$  such that
+% % \begin{align}
+% % \label{colt:stdf1}
+% % \lim_{t \to 0} t^{-1} \mathbb{P} \left[ 1-F_1(X^1) \le t\, x_1
+% %   ~\text{or}~ \ldots ~\text{or}~ 1-F_d(X^d) \le t\,x_d  \right] =
+% % \lambda[\mb x, \infty]^c :=l(\mb x)~.
+% % \end{align}
+% \begin{align}
+% \label{colt:stdf1}
+% % \lim_{t \to 0} t^{-1} \mathbb{P} \left[ U^1 \le t\, x_1
+% %   ~\text{or}~ \ldots ~\text{or}~ U^d \le t\,x_d  \right] =
+% % \lambda[\mb x, \infty]^c :=l(\mb x)~. \qquad(x_j\in[0,\infty], \mb x\neq\infty)
+% \lim_{t \to 0} t^{-1} \mathbb{P} \left[
+%  U^1 \le t\, x_1
+%    ~\text{or}~ \ldots ~\text{or}~ U^d \le t\,x_d  \right]
+%  % \bigcup_{j=1}^d U^j \le t\, x_j \right] =
+%  = \Lambda[\mb x, \infty]^c :=l(\mb x)~. \qquad(x_j\in[0,\infty], \mb x\neq\infty)
+% \end{align}
+
+
+% The limit measure $\Lambda$ is again called \emph{exponent measure}
+% and the functional $l$ is known as the \emph{stable tail dependence
+%   function}. 
+% In a nutshell,  there
+% is a one-to-one correspondence between the \textsc{stdf}  $l$  % the so-called \emph{exponent
+% % measures}
+%  and the measures $\mu$ and $\Lambda$, % the STDF $l$ and the angular measure
+% % $\Phi$, any one of them can be used to characterize  the 
+% % % The measures $\mu$ and $\Lambda$ are called exponent measures, any one
+% % % of $\mu,\Lambda,l$ can be used to describe the 
+% % asymptotic tail dependence of the distribution $F$ (as
+% % soon as the  margins $F_j$ are known), since 
+% % after each marginal had been standardized in $\mathbf{U}$ or $\mathbf{V}$.
+% \begin{align}
+% \label{colt:intro:1to1}
+%   l(\mathbf{x}) = \mu \big( [0,\mathbf{x}^{-1}]^c \big) = \Lambda
+%   \big( [\mathbf{x},\infty]^c \big)~,  %=  \int_{S^{d-1}} \max_j{w_j x_j} \phi(dw),
+% \end{align}
+% Further, the   \textsc{stdf}  $l$ and $\Lambda$ enjoy homogeneity properties derived from
+% $\mu$, namely 
+% \[l(t\mb x) = \mu[0,t^{-1}\mb x^{-1}]^c = t\mu[0,\mb x^{-1}] = tl(\mb
+% x).\]
+
+% The dependence structure of  $G$ %in (\ref{colt:intro:assumption2})
+% may thus be  expressed in terms of $l$,  % then be written using the stable
+% % tail dependence function ({\sc stdf}) $l$ :
+% \begin{align*}
+% G(\mathbf{x})=\exp (~ -l(-\log G_1(x_1), \dots ,-\log G_d(x_d)~ )
+% \end{align*}
+
+In the multivariate case, it is mathematically very convenient to decompose the joint
+distribution of $\mb X = (X^1,\ldots, X^d)$  % of excesses above high thresholds 
+into the margins on the
+one hand, and the dependence structure on the other hand. In
+particular, handling uniform margins is very helpful when it comes
+to establishing upper bounds on the deviations between empirical and mean
+ measures. Define thus  standardized variables $U^j = 1 - F_j(X^j)$,
+ where $F_j$ is the marginal distribution function of $X^j$, and
+ $\mathbf{U} = (U^1,\dotsc,U^d)$. Knowledge of the $F_j$'s and of the
+ joint distribution of $\mb U$ allows to recover that of $\mb X$, %  by a
+ % classical rank tranformation.% ,
+ since  $\P(X_1\le x_1,\ldots, X_d\le x_d) = \P(U^1 \ge
+ 1 -  F_1(x_1),\ldots,U^d\ge 1-F_d(x_d))$.  % if the $F_j$'s are  continuous,
+ % strictly increasing. % ,
+  With these notations,  under the fairly general assumption, namely, standard multivariate regular variation of standardized variables (\ref{back:intro:regvar}), equivalent to \eqref{back:reg_var_U}, there exists a limit measure
+$\Lambda$ on $[0,\infty]^d \setminus\{\infty\}$ (called the
+\emph{exponent measure}) such that 
+\begin{align}
+\label{colt:stdf1}
+% \lim_{t \to 0} t^{-1} \mathbb{P} \left[ U^1 \le t\, x_1
+%   ~\text{or}~ \ldots ~\text{or}~ U^d \le t\,x_d  \right] =
+% \lambda[\mb x, \infty]^c :=l(\mb x)~. \qquad(x_j\in[0,\infty], \mb x\neq\infty)
+\lim_{t \to 0} t^{-1} \mathbb{P} \left[
+ U^1 \le t\, x_1
+   ~\text{or}~ \ldots ~\text{or}~ U^d \le t\,x_d  \right]
+ % \bigcup_{j=1}^d U^j \le t\, x_j \right] =
+ = \Lambda[\mb x, \infty]^c :=l(\mb x)~. \qquad(x_j\in[0,\infty], \mb x\neq\infty)
+\end{align}
+Notice that no assumption is made about the marginal distributions, so that our framework allows non-standard regular variation, or even no regular variation at all of the original data $\mb X$ (for more details see \eg~\cite{Resnick2007}, th. 6.5 or \cite{Resnick1987}, prop. 5.10.).
+The functional $l$ in the limit in (\ref{colt:stdf1}) is called the \emph{stable tail
+  dependence function}. 
+In the remainder of this chapter, the only assumption is the existence
+of a limit in (\ref{colt:stdf1}), \ie, the existence of the \textsc{stdf} -- or equivalently conditions \eqref{back:intro:regvar} or \eqref{back:reg_var_U} in the background section~\ref{back:sec:MEVT} on multivariate EVT.
+% the following holds: 
+
+
+We emphasize that the knowledge of both $l$ and the margins gives
+access to the probability of hitting `extreme' regions of the kind
+$[\mb 0, \mb x]^c$, for  `large' thresholds 
+%  probabilities f  multivariate high quantiles. % , as illustrated in the example below
+% Indeed, for large thresholds
+$\mb x = (x_1,\ldots,x_d)$ (\ie~such that for some $ j \le d$, $ 1-F_j(x_j) $ is   a
+$O(t)$   for some small
+$t$). Indeed, in such a case, 
+% \begin{align*}
+% &\mathbb{P}(X_1>x_1 \text{ or } \ldots \text{ or } X_d>x_d) \\
+% &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~= \mathbb{P}((1-F_1)(X_1) \le (1-F_1)(x_1) \text{ or } \ldots \text{ or } (1-F_d)(X_d)<(1-F_d)(x_d)) \\ 
+% &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\simeq l((1-F_1)(x_1), \ldots, (1-F_d)(x_d))    
+% \end{align*}
+  % ~\text{or}~ \ldots ~\text{or}~ U^d \le t\,x_d 
+\begin{align*}
+\mathbb{P}(X^1>x_1 \text{ or } \ldots \text{ or } X^d>x_d) 
+&= \mathbb{P}\left(\bigcup_{j=1}^d (1-F_j)(X^j) \le (1-F_j)(x_j)
+\right)  \\
+&= t \, \left\{\frac{1}{t}\mathbb{P}\left(\bigcup_{j=1}^d U^j \le t\,
+    \left[\frac{ (1-F_j)(x_j)}{t}  \right]
+\right)\right\} \\
+&\underset{t\to 0}{\sim} \; ~t ~l\Big( t^{-1}\,(1-F_1)(x_1),\;  \ldots, \;  t^{-1}\, (1-F_d)(x_d) \Big)  \\
+&=  ~~l\Big((1-F_1)(x_1), \;\ldots,\; (1-F_d)(x_d) \Big)     
+\end{align*}
+where the  last equality follows from the homogeneity of $l$.
+  This underlines the utmost importance of estimating the \textsc{stdf} and
+by extension stating non-asymptotic bounds on this convergence.
+
+
+\noindent
+% which is defined by:
+% \begin{align}
+% \label{colt:stdf}
+% l(\mathbf{x}):= \lim_{t \to 0} t^{-1} \tilde F (t\mathbf{x}) =\lim_{t \to 0} t^{-1} \mathbb{P} \left[ 1-F_1(X_1^1) \le t.x_1 ~or~ ... ~or~ 1-F_d(X_1^d) \le t.x_d  \right] 
+% \end{align}
+% \noindent
+% with $\tilde F (\mathbf{x}) = (1-F) \big( (1-F_1)^\leftarrow(x_1),..., (1-F_d)^\leftarrow(x_d)  \big)$ and $G_1,...,G_d$ the margins of $G$, which are necessary univariate extreme value distributions. Here the notation $(1-F_j)^\leftarrow(x_j)$ for $j=1,\ldots,d$ denotes the supremum $\sup\{y, 1-F_j(y) \ge x_j\}$\\
+
+% Actually (\ref{colt:stdf:DA}) is equivalent to both (\ref{colt:stdf}) and $F_i \in DA(G_i)$, $j=1 \ldots n$, \ie~the convergence of the marginal distribution, see \cite{Einmahl2012} for instance.
+% In this analysis we only assume (\ref{colt:stdf}), namely the existence
+% of the {\sc stdf} $l$.
+
+
+
+
+%  Marginally standardized variables $\mb V$ have been introduced in
+%  section~\ref{colt:sec:intro} as $V^j = \frac{1}{1-F_j(X^j)}$ ($1\le
+%  j\le d$). Analogously, define $\mathbf{U}$ %and $\mathbf{V}$
+%  by $U^j =1-F_j(X^j)$.  %and $V^j:=\frac{1}{1-F_j(X^j)}$, and define in an analogous manner $\mathbf{U_1}, \ldots, \mathbf{U_n}$ and $\mathbf{V_1},\ldots ,\mathbf{V_n}$ such that $U_i^j:=1-F_j(X_i^j)$ and $V_i^j:=\frac{1}{1-F_j(X_i^j)}$.
+% The existence of the limit in (\ref{colt:stdf}) is then equivalent to each
+% of the following conditions (with the notations $\mathbf{x}^{-1}=(x_1^{-1},\ldots,x_d^{-1})$ and $[0,\mathbf{x}]=[0,x_1]\times \ldots \times [0,x_d]$) :
+% \begin{itemize}
+% \item $ \mathbf{V}  \in DA(G_0)$ where $G_0(\mb x)=\exp(-l(\mb x^{-1}))$
+% \item $\mathbf{V}$ has multivariate regular variation (see
+%   (\ref{colt:intro:regvar})) on the cone $\mathbb{E} =[0,\infty]^d
+%   \setminus \{0\}$ with  limit measure $\mu$ defined by $\mu \big(
+%   ([0,\mathbf{x}])^c \big) = l(\mathbf{x}^{-1})$, namely $t^{-1}
+%   \mathbb{P} \left[\mathbf{V} \in t^{-1} \point \right] \to \mu(\point)$. The
+%   limit measure $\mu$
+%   is finite on compact sets of $\bb E$, \ie~sets bounded away from
+%   $0$. 
+% \item $\mathbf{U}$ has  `inverse multivariate regular variation' on
+%   $[0,\infty]^d \setminus \{\infty\}$ with limit measure $\Lambda$,
+%    namely $t^{-1} \mathbb{P} \left[\mathbf{U} \in t \point \right] \to
+%   \Lambda(\point)$;  the limit measure is finite on sets bounded away
+%   from $\{+\infty\}$. The relation between $\Lambda$ and $l$ is :  $\Lambda \big( [\mathbf{x},\infty]^c \big) = l(\mathbf{x})$.
+% \end{itemize}
+
+% Also, using the homogeneity property $\mu(t\point) =
+% t^{-1}\mu(\point)$, it can be shown (see \emph{e.g.} \cite{dR1977})
+% that $\mu$  decompose into a  radial component and an angular component
+% $\Phi$, which are independent from each other.
+% In a nutshell,  there
+% is a one-to-one correspondence between the STDF $l$, the so-called \emph{exponent
+% measures} $\mu$ and $\Lambda$, the STDF $l$ and the angular measure
+% $\Phi$, any one of them can be used to characterize  the 
+% % The measures $\mu$ and $\Lambda$ are called exponent measures, any one
+% % of $\mu,\Lambda,l$ can be used to describe the 
+% asymptotic tail dependence of the distribution $F$ (as
+% soon as the  margins $F_j$ are known), since   % after each marginal had been standardized in $\mathbf{U}$ or $\mathbf{V}$.
+% \begin{align}
+%   l(\mathbf{x}) = \mu \big( [0,\mathbf{x}^{-1}]^c \big) = \Lambda \big( [\mathbf{x},\infty]^c \big) =  \int_{S^{d-1}} \max_j{w_j x_j} \phi(dw),
+% \end{align}
+% where $S^{d-1}:= \{w \in [0,1]^d, w_1+\ldots w_d =1\}$. % This motivates the study of the STDF $l$, since it is now theoretically clear how the asymptotic tail dependence structure of $F$ is contained in $l$.
+Any stable tail dependence function $l(.)$ is in fact a norm, (see \cite{Falk94}, p179) and satisfies $$\max\{x_1,\ldots, x_n\} ~\le~ l(\mathbf{x}) ~\le~ x_1 + \ldots + x_d, $$ where the lower bound is attained if $\mathbf{X}$ is perfectly tail dependent (extremes of univariate marginals always occur simultaneously), and the upper bound in case of tail independence or asymptotic independence (extremes of univariate marginals never occur simultaneously).
+We refer to \cite{Falk94} for more details and properties on the
+\textsc{stdf}.
+
+
+
+
+
+% and thus representes the tail distribution of marginally standardized variables $(1-F_j(X^j))_{j=1,\ldots,d}$ . %and is related to $G$ \emph{via}: $-\log G(x)=l(-\log G_1(x_1),\ldots, -\log G_d(x_d))$
+% \begin{example} (\cite{ELL2009})
+% Suppose we want to assess the risk of a portfolio containing $d$ different assets $\textbf{X}=(X_1,\ldots,X_d)$. 
+% Our task is to find threshold point $x_1,\ldots,x_d$ such that for a fixed value $p$, $$\mathbb{P}(X_1>x_1 \text{ or } \ldots \text{ or } X_d>x_d) = p~.$$ The threshold are not uniquely determined, but one possible constraint in practice is that $c_j p_1 = p_j$, where $p_j$ is the marginal probability of exceedance $\mathbb{P}(X_j>x_j)$ for $j=1,\ldots,d$. The positive constants $c_j$ represent the different weights assigned to the marginal tail probabilities, \ie~in our context the relative importance of the different risks. If $c_j$ is chosen to be greater than $1$, then the exceedance of asset $X_j$ is considered more important than $X_1$. %  Definition (\ref{colt:stdf}) of $l$ implies that $G(x)=\exp (- l(-\log G_1(x_1),\ldots, -\log G_d(x_d)~ )$ and thus the expression of $l$ as 
+% % \begin{align*}
+% % l(x) = -\log G\left(\frac{x_1^{-\gamma_1}-1}{\gamma_1}, \dots, \frac{x_d^{-\gamma_d}-1}{\gamma_d} \right)~,
+% % \end{align*}
+% % \noindent
+% % and
+
+% Then, for small $p$ (see \cite{ELL2009}), we have $p \simeq l(p_1,\ldots,p_d)$. On the top of that we obtain an approximation of the $p_i$'s taking into account the tail dependence structure: $$p_i \simeq \frac{c_j p}{l(1,c_2,\ldots,c_d)}$$ and $$p_1 \simeq \frac{p}{l(1,c_2,\ldots,c_d)}~.$$
+% The thresholds $x_j$'s are then the univariate quantiles corresponding to the $p_j$'s.
+% Estimation of quantiles in multivariate \textsc{EVT} therefore involves two steps, which are the estimation of the marginal quantiles as in the univariate case (using Hill estimator for instance), and the estimation of the dependence structure reflected in the STDF $l$. This dichotomous nature between marginal tail distributions and tail dependence structure is actually fundamental in multivariate \textsc{EVT}, and underline the utmost importance of estimating the STDF and by extension stating non-asymptotic bounds on this convergence.
+% \end{example}
+
+
+%%!!!!
+
+
+\section{A VC-type inequality adapted to the study of low probability regions}
+\label{colt:sec:concentration}
+
+% In this section we draw the consequences - in terms of deviations on low probability regions - of
+%is stated a consequence of
+% see \cite{Vapnik74} or \cite{Anthony93}. %, which is a VC-type inequality aiming at bounding relative deviations. 
+%
+% For this purpose we introduce relative Rademacher average that are
+% renormalized Rademacher, which have the same behavior as classical
+% Rademacher average with modified underlying distribution. Doing this
+% enable us to remove -just as in the classical Rademacher approach-
+% the $\log n$ factor in the initial bound. We obtain then a powerful
+% inequality adapted to study relative deviations, namely region of
+% low probability.
+%
+%
+Classical VC inequalities aim at bounding the deviation of empirical
+from theoretical quantities on relatively simple classes of sets,
+called VC classes. These classes typically cover the support of the
+underlying distribution.  However, when dealing with rare
+events, % such as extreme multivariate observations
+it is of great interest to have such bounds on a class of sets
+which only covers a small probability region and thus contains (very)
+few 
+observations. This yields sharper
+bounds,  % due to the low probability over these sets,
+ since only differences  between very small quantities are
+involved. %A stronger bound will then enable a classic renormalization yielding itself a new bound on the same strength as in standard VC inequalities. In a first subsection, such an existing bound is presented. In a second part an improvment of this bound is stated and proved.
+%\subsection{An existing inequality adapted to rare events}
+The starting point of this analysis is the following VC-inequality stated below.
+
+
+
+
+% The subsequent analysis makes use of still a stronger upper bound, namely without the $\log n$ factor, stated below as a theorem and proved in the appendix section.
+
+
+%In multivariate extreme theory, the probability $p$ of belonging to the union class $\mathbb{A} = \mathbb{A}_n$ which may depends of $n$ will typically be such that $p \le C\frac{k}{n}$ where $k=k(n)$ verifies $k \to \infty$ although $k=o(n)$. In this case we obtain:
+%\begin{align*}
+%&\frac{n}{k}\sup_{A \in \mathcal{A}} \left | \mathbb{P}(X_1 \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{X_i \in A} \right|\\
+%&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\le~ 2 \sqrt{C\frac{V_{\mathcal{A}}\log{\frac{2en}{V_{\mathcal{A}}}}+\log{\frac{4}{\delta}}}{k}}~.
+%\end{align*}
+
+%\subsection{A new inequality using Bernstein-type inequality with conditional variance and renormalized Rademacher average}
+
+
+\begin{theorem}
+\label{colt:thm-princ} 
+Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ \iid~realizations of a \rv~$\mathbf{X}$, a VC-class $\mathcal{A}$ with VC-dimension $V_{\mathcal{A}}$ and shattering coefficient (or growth function) $S_{\mathcal{A}}(n)$.
+% Let us consider a sample $X_1,...,X_n$ of $n$ \iid~realizations of a
+% \rv~$X$ in $\mathbb{R}^d$, and $\mathcal{A}$ a VC-class of sets of
+% $\mathbb{R}^d$. 
+Consider the class union $\mathbb{A} = \cup_{A \in \mathcal{A}} A$,
+ and let  
+$p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Then there is an absolute constant $C$ such that for all $0<\delta<1$, with probability at least $1-\delta$,
+\begin{align}
+\label{colt:thm-princ-ineq}
+\sup_{A \in \mathcal{A}} \left| \mathbb{P} \big[\mathbf{X} \in A\big] - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A}  \right| ~~\le~~ C \bigg[ \sqrt{p}\sqrt{\frac{V_{\mathcal{A}}}{n} \log{\frac{1}{\delta}}} + \frac{1}{n} \log{\frac{1}{\delta}} \bigg]~.
+\end{align}
+\end{theorem}
+
+
+\begin{proof} (sketch of)
+Details of the proof are deferred to the appendix section.
+%To prove this result,
+We use a Bernstein-type concentration inequality (\cite{McDiarmid98}) that we  apply to 
+the general  functional \[f(\mathbf{X}_{1:n})= \sup_{A \in \mathcal{A}} \left |
+  \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n
+  \mathds{1}_{\mathbf{X}_i \in A} \right|~,\]
+%More precisely,  %  we take advantage of a 
+%  This is done by using a
+% more general
+where $\mb X_{1:n}$ denotes the sample $(\mb X_1,\ldots,\mb X_n)$.
+The inequality in \cite{McDiarmid98} %, which
+%allows to use bounds on 
+involves
+the variance of the
+\rv~$f(\mathbf{X}_1,\ldots,\mathbf{X}_{k}, x_{k+1},\ldots, x_n) -
+f(\mathbf{X}_1,\ldots,\mathbf{X}_{k-1},x_k,\ldots, x_n)$, which can
+easily be bounded in our setting. %  $k$ being
+% fixed,
+We obtain %gives the general inequality
+\begin{align}
+\label{colt:thm-princ:general}
+\mathbb{P}\left [ f(\mb X_{1:n}) - \mathbb{E} f(\mb X_{1:n}) ~\ge~ t \right] ~\le~ e^{-\frac{n t^2}{2q + \frac{2t}{3}} },
+\end{align}
+
+\noindent
+where the quantity $q~=~ \mathbb{E}\left ( \sup_{A \in \mathcal{A}}
+  \left | \mathds{1}_{\mathbf{X}' \in A} - \mathds{1}_{\mathbf{X} \in
+      A} \right|\right)$ (with  $\mathbf{X}'$ an independent copy of $\mathbf{X}$) is  a measure of the complexity of the class $\mathcal{A}$ with respect to the distribution of $\mathbf{X}$. 
+It leads to high probability bounds on $f(\mb X_{1:n})$ of the form
+$\mathbb{E}f(\mb X_{1:n}) + \frac{1}{n} \log (1/\delta) +
+\sqrt{\frac{2q}{n} \log (1/\delta)} $ instead of the standard
+Hoeffding-type bound  $~\mathbb{E}f(\mb X_{1:n}) + \sqrt{\frac{1}{n} \log (1/\delta)}$ .
+It is then easy to see that $q \le 2\sup_{A \in \mathcal{A}} \mathbb{P}(\mathbf{X} \in A) \le 2p.$
+Finally, an  upper bound on
+$\bb E f(\mb X_{1:n})$ is obtained  by introducing re-normalized Rademacher averages 
+\begin{align*}
+\mathcal{R}_{n,p} = \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{np} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{\mathbf{X}}_i \in A}\right|~. 
+\end{align*}
+which are then proved to be of order $O (\sqrt{\frac{V_\mathcal{A} }{pn}})$, so that
+$\mathbb{E}(f(\mb X_{1:n})) \le C\sqrt{\frac{V_\mathcal{A} }{pn}}.$
+\end{proof}
+
+% \begin{remark} (\textsc{Stronger Result})
+% In  view of (\ref{colt:thm-princ:general}), we can obtain a sharper bound,  using a  refinement of the bound on $\mathbb{E}f(X)$ due to Massart, which is in $O(\sqrt{\sigma^2 /n})$ with $\sigma^2 = \sup_{A \in \mathcal{A}} \mathbb{P}( \mb X \in A)(1-\mathbb{P}( \mb X \in A)) \le q$ (see \cite{BLM2013}), inequality (\ref{colt:thm-princ-ineq}) holds true when replacing $p$ by $q$.
+% \end{remark}
+
+
+
+
+\begin{remark} (\textsc{Comparison with Existing Bounds})
+The following re-normalized VC-inequality due to Vapnik and Chervonenkis (see \cite{Vapnik74}, \cite{Anthony93} or \cite{Bousquet04}, Thm 7),
+\begin{align} \label{colt:normalize-vc}
+\sup_{A \in \mathcal{A}} \left| \frac{ \mathbb{P} (\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A}  }{\sqrt{\mathbb{P}(\mathbf{X} \in A)}} \right| ~~\le~~ 2 \sqrt{\frac{\log{S_{\mathcal{A}}(2n)}+\log{\frac{4}{\delta}}}{n}}~,
+\end{align}
+which holds under the same conditions as Theorem~\ref{colt:thm-princ}, allows to derive a bound similar to (\ref{colt:thm-princ-ineq}), but with an additional $\log n$ factor.
+Indeed, it is known as Sauer's Lemma (see \cite{Bousquet04}-lemma 1 for instance) that for $n \ge V_{\mathcal{A}}$, $S_{\mathcal{A}}(n) \le (\frac{en}{V_{\mathcal{A}}})^{V_{\mathcal{A}}}$. It is then easy to see from (\ref{colt:normalize-vc}) that:
+\begin{align*}
+\sup_{A \in \mathcal{A}} \left | \mathbb{P} (\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A}  \right| ~~\le~~ 2 \sqrt{\sup_{A \in \mathcal{A}}\mathbb{P}(\mathbf{X} \in A)}  \sqrt{\frac{V_{\mathcal{A}}\log{\frac{2en}{V_{\mathcal{A}}}}+\log{\frac{4}{\delta}}}{n}}~.
+\end{align*}
+Introduce the union $\mathbb{A}$ of all sets  in the  considered VC
+class, $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and let $p =
+\mathbb{P}\left ( \mathbf{X} \in \mathbb{A}\right)$. Then, the  previous bound immediately yields 
+\begin{align*}
+\sup_{A \in \mathcal{A}} \left | \mathbb{P} (\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A}  \right| ~~\le~~ 2\sqrt p  \sqrt{\frac{V_{\mathcal{A}}\log{\frac{2en}{V_{\mathcal{A}}}}+\log{\frac{4}{\delta}}}{n}}~.
+\end{align*}
+
+\end{remark}
+
+
+
+% \begin{theorem}({\sc Vapnik-Chervonenkis})
+% \label{colt:theo-normalize-vc}
+% Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ \iid~realizations of a \rv~$\mathbf{X}$, a VC-class $\mathcal{A}$ with VC-dimension $V_{\mathcal{A}}$ and shattering coefficient (or growth function) $S_{\mathcal{A}}(n)$.
+% For $\delta>0$, with probability higher than $1-\delta$,
+% \begin{align*}
+% \sup_{A \in \mathcal{A}} \left| \frac{ \mathbb{P} (\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A}  }{\sqrt{\mathbb{P}(\mathbf{X} \in A)}} \right| ~~\le~~ 2 \sqrt{\frac{\log{S_{\mathcal{A}}(2n)}+\log{\frac{4}{\delta}}}{n}}~.
+% \end{align*}
+% \end{theorem}
+\noindent
+
+
+
+\begin{remark} (\textsc{Simpler Bound})
+If we assume furthermore that $\delta \ge e^{-np}$, then we have:
+\begin{align*}
+\sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ C \sqrt{p} \sqrt{\frac{V_{\mathcal{A}}}{n} \log{\frac{1}{\delta}}}~.
+\end{align*}
+\end{remark}
+
+\begin{remark} (\textsc{Interpretation})
+\label{colt:rk:interpretation}
+Inequality (\ref{colt:thm-princ-ineq}) can be seen as an interpolation
+between the best case (small $p$) where the rate of convergence is
+$O(1/n)$,  % corresponding to very small $p$ 
+and the worst case (large $p$) where the rate is $O(1/\sqrt{n})$.
+An alternative interpretation is as follows: divide both sides of
+(\ref{colt:thm-princ-ineq}) by $p$, so that the left hand side becomes  a
+supremum of 
+conditional probabilities   upon belonging to the union class
+$\mathbb{A}$, $\{\mathbb{P}(\mathbf{X}\in A \big|\mathbf{X}\in \mathbb{A}) \}_{A\in\mathbb{A}}$. Then the upper bound is proportional to $\epsilon(np, \delta)$ where $\epsilon(n, \delta) :=\sqrt{\frac{V_{\mathcal{A}}}{n} \log{\frac{1}{\delta}}} + \frac{1}{n} \log{\frac{1}{\delta}}$ is a classical VC-bound; $np$ is in fact the expected number of observations involved in (\ref{colt:thm-princ-ineq}), and can thus be viewed as the effective sample size. %number of data we really use.
+\end{remark}
+
+%\begin{rk}
+%In practice, $p \le C \frac{k}{n}$ so that we obtain typically an inequality of this form:
+%\begin{align*}
+%\frac{n}{k} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(X_1 \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{X_i \in A} \right| &~\le~ C \sqrt{\frac{1}{k} \log{\frac{1}{\delta}}}~,
+%\end{align*}
+%as soon as $k$ large enough to have $\delta \ge e^{-k}$. We recover the convergence in $\frac{1}{\sqrt k}$ which is typical in this situation. 
+%\end{rk}
+
+\begin{remark} \label{colt:rk:prediction}(\textsc{Classification of Extremes})
+A key issue in the prediction framework is to find upper bounds for the maximal deviation $\sup_{g \in \mathcal{G}}|L_n(g) - L(g)|$, where $L(g) = \mathbb{P}(g(\mathbf{X}) \neq Y)$ is the risk of the classifier $g: \mathcal{X} \to \{-1, 1\}$, associated with the \rv~$(\mathbf{X},Y) \in \mathbb{R}^d \times \{-1,1\}$. $L_n(g) = \frac{1}{n} \sum_{i=1}^n \mathds{I}\{g(\mathbf{X}_i)\neq Y_i\} $ is the empirical risk based on a training dataset $\{(\mathbf{X}_1,Y_1),\; \ldots,\; (\mathbf{X}_n,Y_n)  \}$. Strong upper bounds on $\sup_{g \in \mathcal{G}}|L_n(g) - L(g)|$ ensure the accuracy of the empirical risk minimizer $g_n:= \argmin_{g \in \mathcal{G}}L_n(g)$. 
+
+In a wide variety of applications (\textit{e.g.} Finance, Insurance, Networks), it is of crucial importance to predict the system response $Y$ when the input variable $\mathbf{X}$ takes extreme values, corresponding to shocks on the underlying mechanism. In such a case, the risk of a prediction rule $g(\mathbf{X})$ should be defined by integrating the loss function $L(g)$ with respect to the conditional joint distribution of the pair $(\mathbf{X},Y)$ given $\mathbf{X}$ is extreme. For instance, consider the event $\{\|\mathbf{X}\| \ge t_\alpha\}$ where $t_\alpha$ is the $(1-\alpha)^{th}$ quantile of $\|\mathbf{X}\|$ for a small $\alpha$. To investigate the accuracy of a classifier $g$ given $\{\|\mathbf{X}\| \ge t_\alpha\}$,
+% at the observation $X$ is extreme in the sense that $\| X\|$ exceeds a quantile $t_{\alpha}$ of $\| X\|$'s distribution at a very high level $1-\alpha\in (0,1)$,
+introduce 
+\begin{align*}
+L_{\alpha}(g):~=~ \frac{1}{\alpha}\mathbb{P}\left(Y\neq g(\mathbf{X}),~ \| \mathbf{X}\|>t_\alpha \right)~=~\mathbb{P}\left(Y \neq g(\mathbf{X}) ~\big|~ \|\mathbf{X}\| \ge t_\alpha \right)~,
+\end{align*}
+\noindent
+ and its empirical
+ counterpart \[L_{\alpha,n}(g):~=~\frac{1}{n\alpha}\sum_{i=1}^n\mathds{I}_{\{Y_i\neq
+   g(\mathbf{X}_i),~ \| \mathbf{X}_i\| > \|  \mathbf{X}_{(\lfloor n\alpha \rfloor)} \|  \}}~,\]
+ where $\| \mathbf{X}_{(1)}\| \geq \ldots \geq \| \mathbf{X}_{(n)}\|$ are the order
+ statistics of $\| \mathbf{X}\|$. Then as an application of Theorem \ref{colt:thm-princ} with $\mathcal{A} = \{(\mathbf{x},y), g(\mathbf{x}) \neq y, \|\mathbf{x}\| > t_\alpha\},~g\in\mathcal{G},$ we have : 
+\begin{align}
+\label{colt:prediction:rates}
+\sup_{g\in \mathcal{G}} \bigg| \widehat{L}_{\alpha, n}(g)- L_{\alpha}(g) \bigg|  \le C \bigg[ \sqrt{\frac{V_{\mathcal{G}}}{n\alpha} \log \frac{1}{\delta}} + \frac{1}{n\alpha} \log{\frac{1}{\delta}} \bigg]~.
+\end{align}
+We refer to the appendix for more details. Again the obtained rate by
+empirical risk minimization  meets our expectations (see remark \ref{colt:rk:interpretation}), insofar as $\alpha$ is the fraction % (respectively, $n\alpha$ represents the size)
+of the dataset involved in the empirical risk $L_{\alpha, n}$. We point out that $\alpha$ may typically depend on $n$, $\alpha = \alpha_n \to 0$.
+In this context a direct use of the 
+% It should be noticed that a straightforward application of
+standard version of the \textsc{VC} inequality would lead to a rate  of order $1/(\alpha_n\sqrt{n})$, which may not vanish as $n\rightarrow +\infty$ and even go to infinity if $\alpha_n$ decays to $0$ faster than $1/\sqrt{n}$ . 
+
+Let us point out that rare events may be chosen more general than
+$\{\|\mathbf{X}\| > t_\alpha \}$, say $\{\mathbf{X} \in Q \}$ with unknown probability
+$q=\mathbb{P}(\{\mathbf{X} \in Q \})$. The previous result still applies with
+$\widetilde L_Q(g) := \mathbb{P}\left ( Y \neq g(\mathbf{X}), \mathbf{X} \in Q\right)$
+and $\widetilde L_{Q,n}(g) := \mathbb{P}_n\left ( Y \neq g(\mathbf{X}), \mathbf{X} \in
+  Q\right)$; then the obtained upper bound on $\sup_{g \in
+  \mathcal{G}} \frac{1}{q} \left |  \widetilde L_Q(g) - \widetilde
+  L_{Q,n}(g) \right|$ is of order $O(1/\sqrt{qn}). $ %  {\red
+%   \ie~approximatively of order $O(1/\sqrt{\hat k})$ where $\hat k$ is
+%   the empirical number of observations in $Q$. ?? compliqué, $q$ et $k$
+% pas définis. Plutot  ` where $q$ is the number of observations in $Q$
+% ?' } 
+
+Similar results can be established for the problem of \textit{distribution-free regression}, when the error of any predictive rule $f(\mathbf{x})$ is measured by the conditional mean squared error $\mathbb{E}[(Z-f(\mathbf{X}))^2\mid Z>q_{\alpha_n}]$, denoting by $Z$ the real-valued output variable to be predicted from $\mathbf{X}$ and by $q_{\alpha}$ its quantile at level $1-\alpha$.
+
+
+\end{remark}
+
+
+
+
+\section{A bound on the STDF}
+\label{colt:sec:stdf}
+
+
+Let us place ourselves in the multivariate extreme framework introduced in Section \ref{colt:sec:intro}:
+%$\mathbf{X_1,X_2,...,X_n}$ are \iid~realizations of
+ Consider a random variable $\mathbf{X} = (X^1, \ldots X^d)$ in
+ $\mathbb{R}^d$ with %common 
+distribution function $F$ and marginal distribution functions
+$F_1,\ldots,F_d$.
+Let $\mathbf{X_1,X_2,\ldots,X_n}$ be an \iid~sample distributed as $\mb X$.
+% Recall that we only assume 
+% % assumption (\ref{colt:intro:assumption2}), \ie~$F \in DA(G)$, is
+% % equivalent to marginal convergence $F_j \in DA(G_j),~j=1\cdots d$,
+% % together with
+% the existence of the \textsc{stdf} (\ref{colt:stdf1}). % (\ref{colt:stdf}).
+In the subsequent analysis, the only assumption is the existence of
+the \textsc{stdf} defined in  (\ref{colt:stdf1}) and
+the margins $F_j$ are supposed to be unknown. The
+definition of $l$ may be  recast as
+\begin{align}
+\label{colt:stdf}
+l(\mathbf{x}):= \lim_{t \to 0} t^{-1} \tilde F (t\mathbf{x}) 
+\end{align}
+\noindent
+with $\tilde F (\mathbf{x}) = (1-F) \big( (1-F_1)^\leftarrow(x_1),\ldots,
+(1-F_d)^\leftarrow(x_d)  \big)$. Here the notation
+$(1-F_j)^\leftarrow(x_j)$ denotes the quantity $\sup\{y\,:\; 1-F_j(y)
+\ge x_j\}$. Notice that, in terms of standardized variables $U^j$, 
+$\tilde F(\mb x) = \P\Big(\bigcup_{j=1}^d\{U^j\le x_j\}\Big) = \P(\mb
+U\in [\mb x, \infty[^c)$.
+% We say that $F$ is in the max-domain of attraction of an extreme value distribution $G$, denoted by $F \in DA(G)$, if there is two sequences in $\mathbb{R}^d$ $\{\mathbf{a_n}, n \ge 1\}$ and $\{\mathbf{b_n}, n \ge 1\}$, the $\mathbf{a_n}$'s being positive, such that the limit
+% \begin{align}
+% \label{colt:stdf:DA}
+% \lim_{n \to \infty} \mathbb{P}\left( \frac{\max_{1 \le i \le n} X_i^1 - b_n^1}{a_n^1} ~\le~ x_1, \ldots, \frac{\max_{1 \le i \le n} X_i^d - b_n^d}{a_n^d} ~\le~ x_d \right) =: G(\mathbf{x})
+% \end{align}
+% exists for all continuity points $\mathbf{x} \in \mathbb{R}^d$ of the limiting distribution function $G$.
+
+
+
+
+Let $k=k(n)$ be a sequence of positive integers such that $k \to
+\infty$ and $k=o(n)$ as $n \to \infty$.
+% We will discuss the choice of $k$ later.
+A natural estimator of $l$ is its empirical version defined as
+follows,  see \cite{Huangphd}, \cite{Qi97}, \cite{Drees98}, \cite{Einmahl2006}:
+\begin{align}
+\label{colt:ln}
+l_n(\mathbf{x})=\frac{1}{k}~\sum_{i=1}^{n} \mathds{1}_{\{X_i^1 \ge X^1_{(n-\lfloor kx_1 \rfloor+1)} \text{~~or~~} \ldots \text{~~or~~} X_i^d \ge X^d_{(n-\lfloor kx_d\rfloor+1)} \}}~,
+\end{align}
+\noindent
+ The expression is indeed suggested by the definition of $l$ in
+ (\ref{colt:stdf}), with all distribution functions and  univariate
+ quantiles replaced by their empirical counterparts, and with $t$
+ replaced by $k/n$. Extensive studies have proved consistency and 
+ asymptotic normality of this nonparametric estimator of $l$, see \cite{Huangphd}, \cite{Drees98} and \cite{dHF06} for the asymptotic normality in dimension $2$, \cite{Qi97} for consistency in arbitrary dimension, and \cite{Einmahl2012} for asymptotic normality in arbitrary dimension under differentiability conditions on $l$.
+
+To our best knowledge, there is no established non-asymptotic bound on the maximal deviation $\sup_{0 \le \mathbf{x} \le T} \left| l_n(\mathbf{x}) - l(\mathbf{x}) \right|$. It is the purpose of the remainder of this section to derive such a bound, without any smoothness condition on $l$.
+
+First, Theorem \ref{colt:thm-princ} needs adaptation  to a   particular
+setting: introduce  a random vector 
+$\mathbf{Z}=(Z^1,\ldots,Z^d)$ with uniform margins, \ie, for every
+$j=1,\ldots,d$, the variable $Z^j$ is uniform on $[0,1]$.  Consider
+the class 
+\[
+\mathcal{A} = \left\{ \Big[  \frac{k}{n}\,
+  \mathbf{x},\infty\Big[^{~c} \;:\quad \mb x \in \mathbb{R}^d_+ , \quad 0 \le x_j
+\le T \; (1\le j\le d) \right\}
+\]
+%  $\mathcal{A}$ of  sets of the form $[{\red \frac{k}{n}}\mathbf{x},\infty[^c$
+% in $\mathbb{R}^d_+$, $0 \le \mathbf{x} \le T$.
+This is a VC-class of
+VC-dimension $d$,  as proved in \cite{Devroye96}, Theorem 13.8, for
+its complementary class  $\big\{[\mathbf{x},\infty[ ,~ \mathbf{x}>0
+\big\}$. % {\red vraiment ? pas  $\mathbf{x} < T $?}
+% \big\}$.
+In this context, the union class $\mathbb{A}$ has mass $p \le dT\frac{k}{n}$ since 
+\begin{align*}
+\mathbb{P}(\mathbf{Z} \in \mathbb{A}) = \mathbb{P} \left[ \mathbf{Z} \in \left(\Big[\frac{k}{n}T,\infty\Big[^d\right)^c\right] = \mathbb{P} \left[ \bigcup_{j=1..d} \mathbf{Z}^j < \frac{k}{n}T \right] \le \sum_{j=1}^d \mathbb{P} \left[ \mathbf{Z}^j < \frac{k}{n}T \right]
+\end{align*}
+\noindent
+Consider the measures $C_n(\point)=\frac{1}{n} \sum_{i=1}^{n}
+\mathds{1}_{\{Z_i \in \point \}}$ and $C(\mathbf{x})=\mathbb{P}(Z \in
+\point)$. As a direct consequence of Theorem \ref{colt:thm-princ} the
+following inequality holds true  with probability at least $1-\delta$,
+
+\begin{align*}
+\sup_{0 \le \mathbf{x} \le T} \frac{n}{k} \left | C_n(\frac{k}{n} [\mathbf{x},\infty[^c) - C(\frac{k}{n} [\mathbf{x},\infty[^c)  \right| ~\le~ C d\left(\sqrt{\frac{T}{k} \log{\frac{1}{\delta}}} ~+~ \frac{1}{k} \log \frac{1}{\delta} \right)~.
+\end{align*}
+If we assume furthermore that $\delta \ge e^{-k}$, then we have 
+\begin{align}
+\label{colt:Qialt2}
+\sup_{0 \le \mathbf{x} \le T} \frac{n}{k} \left | C_n(\frac{k}{n} [\mathbf{x},\infty[^c) - C(\frac{k}{n} [\mathbf{x},\infty[^c)  \right| ~\le~ C d\sqrt{\frac{T}{k} \log{\frac{1}{\delta}}}~.
+\end{align}
+\noindent
+Inequality (\ref{colt:Qialt2}) is the cornerstone of the following theorem, which is the main result of this contribution.
+In the sequel, we consider a sequence $k(n)$ of integers such that $k=
+o(n)$ and $k(n) \to \infty$. For notational convenience, we often 
+drop the dependence in $n$ and simply write $k$ instead of $k(n)$. 
+\begin{theorem}
+\label{colt:thm:l}
+%Let $k(n)$ a sequence of  
+Let $T$ be a positive number such that $T \ge \frac{7}{2}(\frac{\log d}{k} + 1)$, and $\delta$ such that $\delta \ge e^{-k}$. Then there is an absolute constant $C$ such that for each $n >0$, with probability at least $1-\delta$:
+\begin{align}
+\label{colt:thm:l:ineq}
+\sup_{0 \le \mathbf{x} \le T} \left| l_n(\mathbf{x}) - l(\mathbf{x})
+\right| ~\le~ Cd\sqrt{\frac{T}{k}\log\frac{d+3}{\delta}} ~+~ \sup_{0
+  \le \mathbf{x} \le 2T}\left|\frac{n}{k} \tilde
+  F(\frac{k}{n}\mathbf{x})- % {\red \frac{n}{k}l ( \frac{k}{n}
+  % \mathbf{x}) =
+l(\mb x)\right|
+\end{align}
+\end{theorem}
+The second term on the right hand side of (\ref{colt:thm:l:ineq}) is
+ %referred as the
+a  bias term which depends on 
+%the regularity of the asymptotic tail distribution of $F$. 
+the  discrepancy between the left hand side and the limit in
+  (\ref{colt:stdf1}) or (\ref{colt:stdf}) at level $t=k/n$. 
+The value $k$ can be interpreted as the effective number of observations  used in the empirical estimate, \ie~the effective sample size for tail estimation. 
+Considering classical inequalities in empirical process theory such as
+VC-bounds, it is thus no surprise to obtain one  in $O(1/\sqrt k)$.
+Too large values of $k$ tend to yield a large bias, whereas too small values of $k$ yield a large variance. For a more detailed discussion on the choice of $k$ we recommend \cite{ELL2009}. 
+
+
+The proof of Theorem~\ref{colt:thm:l} follows the same lines as in \cite{Qi97}.
+For  unidimensional random variables $Y_1,\ldots,Y_n$, let us denote
+by $Y_{(1)} \le \ldots\le Y_{(n)}$ their order statistics. Define 
+then the empirical version $\tilde F_n$ of $\tilde F$ ( introduced in
+(\ref{colt:stdf})) as 
+\begin{align*}
+ \tilde F_n(\mathbf{x})  ~=~ \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\{ U_i^1 \le x_1 ~\text{or}~\ldots~\text{or}~ U_i^d \le x_d \}}~ ,%~=~ \frac{n}{k}\mathbb{P}_n \left( U_1^1 \le \frac{k}{n}x_1 ~or~\ldots~or~ U_1^d \le \frac{k}{n}x_d  \right) \\
+\end{align*}
+so that 
+$% \begin{align*}
+  \frac{n}{k} \tilde F_n(\frac{k}{n}\mathbf{x}) ~=~ \frac{1}{k}
+  \sum_{i=1}^n \mathds{1}_{\{ U_i^1 \le \frac{k}{n}x_1 ~\text{or}~\ldots~\text{or}~
+    U_i^d \le \frac{k}{n}x_d
+    \}}~
+  % ~=~ \frac{n}{k}\mathbb{P}_n \left( U_1^1 \le \frac{k}{n}x_1 ~\text{or}~\ldots~\text{or}~ U_1^d \le \frac{k}{n}x_d \right) \\
+$. %\end{align*}
+\noindent Notice that the $U_i^j$'s are  not observable (since $F_j$ is
+unknown). In fact, $\tilde F_n$ will be used as a substitute for $l_n$
+ allowing to handle uniform variables. The 
+ following lemmas make this point explicit. %We shall use the following lemmas in the subsequent analysis :
+
+\begin{lemma}[Link between $l_n$ and $\tilde F_n$]
+\label{colt:ln-Fn}
+The  empirical version of $\tilde F$ and that of $l$ are related \emph{via}
+%is explicited by the following equality:
+\begin{align*}
+l_n(\mathbf{x})~=~\frac{n}{k} \tilde F_n(U_{(\lfloor kx_1\rfloor)}^1,~\ldots~, U_{(\lfloor kx_d \rfloor)}^d).
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+Consider the definition of $l_n$ in (\ref{colt:ln}), and note that for $j=1,\ldots,d$, 
+\begin{align*}
+ X_i^j \ge X_{(n-\lfloor  kx_i \rfloor +1)}^j &~\Leftrightarrow~ rank(X_i^j) \ge n-\lfloor  kx_j \rfloor+1 \\ &~\Leftrightarrow~  rank( F_j(X_i^j)) \ge n-\lfloor kx_j\rfloor+1 \\ &~\Leftrightarrow~  rank(1-F_j(X_i^j)) \le \lfloor kx_j\rfloor\\ &~\Leftrightarrow~  U_i^j \le U_{(\lfloor kx_j\rfloor)}^j,
+\end{align*}
+ so that 
+$l_n(\mathbf{x})~=~\frac{1}{k}~\sum_{j=1}^n$ $\mathds{1}_{\{ U_j^1 \le U_{(\lfloor kx_1\rfloor)}^1 ~\text{or}~\ldots~\text{or}~ U_j^d \le U_{(\lfloor kx_d\rfloor)}^d  \}}$.
+\end{proof}
+~\\
+
+\begin{lemma}[Uniform bound on $\tilde F_n$'s deviations]
+\label{colt:Fn-tildeF}
+ For any finite  $T>0$, and $\delta\ge e^{-k}$,  with probability at least
+$1-\delta$, the  deviation of $\tilde F_n$
+from  $\tilde F$ is uniformly bounded: 
+\begin{align*}
+\sup_{0 \le \mathbf{x} \le T}  \left| \frac{n}{k} \tilde F_n(\frac{k}{n}\mathbf{x})-\frac{n}{k} \tilde F ( \frac{k}{n} \mathbf{x}) \right| \le Cd\sqrt{\frac{T}{k}\log{\frac{1}{\delta}}}
+\end{align*}
+
+\end{lemma}
+\begin{proof}
+Notice that 
+\[\sup_{0 \le \mathbf{x} \le T} \left| 
+  \frac{n}{k} \tilde F_n(\frac{k}{n}\mathbf{x})- \frac{n}{k} \tilde F
+  ( \frac{k}{n} \mathbf{x}) \right| = 
+\frac{n}{k} \left|
+ \frac{1}{n}  \sum_{i=1}^n \mathds{1}_{\{ \mb U_i \in \frac{k}{n}
+   ]\mathbf{x},\infty]^c \}} -
+   \mathbb{P} \left [\mathbf{U} \in \frac{k}{n} ]\mathbf{x},\infty]^c
+   \right] \right|, \] and apply
+inequality (\ref{colt:Qialt2}).
+\end{proof}
+
+\begin{lemma}[Bound on the order statistics of $\mb U$]
+\label{colt:U-x} 
+Let $\delta\ge e^{-k}$. For any finite positive number $T>0$ such that $T \ge 7/2((\log d)/k + 1)$, we have with probability greater than $1 - \delta$, 
+\begin{align}
+\label{colt:eq-Wellner}
+\forall~ 1\le j \le d,~~~~~\frac{n}{k} U_{(\lfloor kT\rfloor )}^j ~\le~ 2T~,
+\end{align}
+and with probability greater than $1- (d+1)\delta$, 
+\begin{align*}
+\max_{1 \le j \le d}~ \sup_{0 \le x_j \le T} \left| \frac{\lfloor kx_j\rfloor }{k} - \frac{n}{k} U_{(\lfloor kx_j\rfloor )}^j  \right| ~\le~ C\sqrt{\frac{T}{k}\log{\frac{1}{\delta}}}~.
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+  Notice that $\sup_{[0 , T]} \frac{n}{k} U_{(\lfloor k\point\rfloor )}^j =
+  \frac{n}{k} U_{(\lfloor kT\rfloor )}^j $ and let $\Gamma_n(t) = \frac{1}{n}
+  \sum_{i=1}^n \mathds{1}_{\{U_i^j \le t\}}$ . It then straightforward to see
+  that 
+\[ \frac{n}{k} U_{(\lfloor kT\rfloor )}^j \le 2T ~~\Leftrightarrow~~
+  \Gamma_n\Big(\frac{k}{n} 2T\Big) \ge \frac{\lfloor kT\rfloor }{n} \]
+ so that 
+\[\mathbb{P}
+  \left( \frac{n}{k} U_{(\lfloor kT\rfloor )}^j > 2T \right) ~\le~ \mathbb{P} \left
+    ( \sup_{\frac{2kT}{n} \le t \le 1} \frac{t}{\Gamma_n(t)} > 2
+  \right). \]
+ Using \cite{Wellner78}, Lemma 1-(ii) (we use the fact that,   with
+  the notations of this reference, $h(1/2) \ge 1/7$ ), we obtain 
+\[\mathbb{P} \left( \frac{n}{k} U_{(\lfloor kT\rfloor )}^j > 2T \right) \le
+  e^{-\frac{2kT}{7}}, \]
+ and thus
+ $$\mathbb{P} \left( \exists j,~
+    \frac{n}{k} U_{(\lfloor kT\rfloor )}^j > 2T \right) \le de^{-\frac{2kT}{7}} \le
+  e^{-k} \le \delta  % {\red\text{attention: on n'a rien suppose sur
+      % $\delta$}}
+  $$ as required in (\ref{colt:eq-Wellner}).  Yet,
+\begin{align*}
+\sup_{0 \le x_j \le T} \left| \frac{\lfloor kx_j\rfloor }{k} - \frac{n}{k} U_{(\lfloor kx_j\rfloor )}^j  \right| &~=~  \sup_{0 \le x_j \le T} \left| \frac{1}{k} \sum_{i=1}^n \mathds{1}_{\{ U_{i}^j \le U_{(\lfloor kx_j\rfloor )}^j   \}} - \frac{n}{k} U_{(\lfloor kx_j\rfloor )}^j  \right|\\
+&~=~ \frac{n}{k} \sup_{0 \le x_j \le T} \left| \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\{ U_{i}^j \le U_{(\lfloor kx_j\rfloor )}^j   \}} - \mathbb{P} \left [ U_1^j \le  U_{(\lfloor kx_j\rfloor )}^j \right] \right|\\
+&~=~ \sup_{0 \le x_j \le T} \Theta_j (\frac{n}{k}U_{(\lfloor k x_j\rfloor )}^j ), 
+\end{align*}
+%
+where $\Theta_j(y) = \frac{n}{k} %\sup_{0 \le y \le T} 
+\left| \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\{ U_{i}^j \le \frac{k}{n}y   \}} - \mathbb{P} \left [ U_1^j \le \frac{k}{n} y \right] \right|$. 
+%$\sup_{0 \le x_j \le T} \frac{n}{k}|\mathbb{P}_n-\mathbb{P}| \left [ U_1^j \le \frac{k}{n} x \right]$.
+Then, by (\ref{colt:eq-Wellner}), %for each fixed $j$, 
+with probability greater than $1-\delta$,
+\begin{align*}
+  \max_{1 \le j \le d} 
+\sup_{0 \le x_j \le T} \left| \frac{\lfloor kx_j\rfloor }{k}
+    - \frac{n}{k} U_{(\lfloor kx_j\rfloor )}^j \right|
+~\le~
+ \max_{1 \le j \le d} 
+ \sup_{0 \le y \le 2T} \Theta_j(y)
+\end{align*}
+and from (\ref{colt:Qialt2}), each term $\sup_{0 \le y \le 2T} \Theta_j(y)$
+ is bounded by
+$C\sqrt{\frac{T}{k}\log{\frac{1}{\delta}}}$ (with probability
+$1-\delta$). In the end, 
+ with probability greater than $1-(d+1) \delta$ :
+\begin{align*}
+\max_{1 \le j \le d} \sup_{0 \le y \le 2T} \Theta_j(y) ~\le~ C\sqrt{\frac{T}{k}\log{\frac{1}{\delta}}}~,
+\end{align*}
+which is  the desired inequality % {\red $d$ ou $d+1$ ?}.
+\end{proof}
+
+
+ We may now proceed with the proof of Theorem \ref{colt:thm:l}.
+First of all, noticing that $\tilde F(t\mathbf{x})$ is non-decreasing in $x_j$ for every $l$ and that $l(\mathbf{x})$ is non-decreasing and continuous (thus uniformly continuous on $[0,T]^d$), from (\ref{colt:stdf}) it is easy to prove by subdivising $[0,T]^d$ (see \cite{Qi97} p.174 for details) that 
+\begin{align}
+\label{colt:unif_conv}
+\sup_{0 \le \mathbf{x} \le T}\left| \frac{1}{t} \tilde F ( t \mathbf{x})-l(\mathbf{x}) \right|  \to 0 \text{~~~ as~~ t $\to$ 0 . }
+\end{align}
+\noindent
+Using Lemma \ref{colt:ln-Fn}, we can write :
+\begin{align*}
+\sup_{0 \le \mathbf{x} \le T} \left| l_n(\mathbf{x}) - l(\mathbf{x}) \right| &~=~ \sup_{0 \le \mathbf{x} \le T} \left| \frac{n}{k} \tilde F_n \left( U_{(\lfloor kx_1\rfloor )}^1,\ldots, U_{(\lfloor kx_d\rfloor )}^d \right) - l(\mathbf{x}) \right| \\
+& ~\le~~~ \sup_{0 \le \mathbf{x} \le T} \left| \frac{n}{k} \tilde F_n \left(U_{(\lfloor kx_1\rfloor )}^1,\ldots, U_{(\lfloor kx_d\rfloor )}^d \right) - \frac{n}{k} \tilde F \left(U_{(\lfloor kx_1\rfloor )}^1,\ldots, U_{(\lfloor kx_d\rfloor )}^d \right)  \right| 
+\\&~~~~~ + \sup_{0 \le \mathbf{x} \le T} \left| \frac{n}{k} \tilde F \left(U_{(\lfloor kx_1\rfloor )}^1,\ldots, U_{(\lfloor kx_d\rfloor )}^d \right) - l \left(\frac{n}{k} U_{(\lfloor kx_1\rfloor )}^1,\ldots, \frac{n}{k} U_{(\lfloor kx_d\rfloor )}^d \right) \right|
+\\&~~~~~ + \sup_{0 \le \mathbf{x} \le T} \left| l \left(\frac{n}{k} U_{(\lfloor kx_1\rfloor )}^1, \ldots,\frac{n}{k} U_{(\lfloor kx_d\rfloor )}^d \right) - l(\mathbf{x}) \right|
+\\&~=:~~~ \Lambda(n) ~~+~~ \Xi(n) ~~+~~ \Upsilon(n)~.
+\end{align*}
+\noindent
+Now, by (\ref{colt:eq-Wellner}) we have with probability greater than $1-\delta$ :
+\begin{align*} 
+\Lambda(n) ~\le~ \sup_{0 \le \mathbf{x} \le 2T}\left|\frac{n}{k} \tilde F_n(\frac{k}{n}\mathbf{x})-\frac{n}{k} \tilde F ( \frac{k}{n} \mathbf{x})\right|
+\end{align*}
+\noindent
+and by Lemma \ref{colt:Fn-tildeF}, 
+\begin{align*}
+ \Lambda(n) \le Cd \sqrt{\frac{2 T}{k}\log\frac{1}{\delta}}   
+\end{align*}
+\noindent
+with probability at least $1-2\delta$. Similarly,
+\begin{align*} 
+\Xi(n) &~\le~  \sup_{0 \le \mathbf{x} \le  2 T}\left|\frac{n}{k}
+  \tilde F(\frac{k}{n}\mathbf{x})-\frac{n}{k} l ( \frac{k}{n}
+  \mathbf{x})\right| = 
+ \sup_{0 \le \mathbf{x} \le  2 T} \left|\frac{n}{k}
+  \tilde F(\frac{k}{n}\mathbf{x})- l (
+  \mathbf{x})\right| ~\to~0 \quad\text{ (bias term)} 
+\end{align*}
+by virtue of (\ref{colt:unif_conv}). Concerning $\Upsilon(n)$, we have :
+
+\begin{align*}
+ \Upsilon(n) &~\le~  \sup_{0 \le \mathbf{x} \le T} \left| l \left(\frac{n}{k} U_{(\lfloor kx_1\rfloor )}^1,\ldots, \frac{n}{k} U_{(\lfloor kx_d\rfloor )}^d \right) - l(\frac{\lfloor kx_1\rfloor }{k},\ldots,\frac{\lfloor kx_d\rfloor }{k}) \right| 
+\\&~~~ ~+~  \sup_{0 \le \mathbf{x} \le T} \left| l(\frac{\lfloor kx_1\rfloor }{k},\ldots,\frac{\lfloor kx_d\rfloor }{k})-l(\mathbf{x}) \right| 
+\\&~=~ \Upsilon_1(n) ~+~ \Upsilon_2(n)
+\end{align*}
+\noindent
+Recall that $l$ is 1-Lipschitz on $[0,T]^d$ regarding to the $\|.\|_1$-norm, so that
+\begin{align*}
+\Upsilon_1(n) ~\le~ \sup_{0 \le \mathbf{x} \le T}  \sum_{l=1}^{d} \left| \frac{\lfloor kx_j\rfloor }{k} - \frac{n}{k} U_{(\lfloor kx_j\rfloor )}^j \right| 
+\end{align*}
+\noindent
+so that by Lemma \ref{colt:U-x}, with probability greater than $1-(d+1)\delta$:
+\begin{align*}
+\Upsilon_1(n) &~\le~  Cd \sqrt{\frac{2 T}{k}\log{\frac{1}{\delta}}}~.
+\end{align*}
+\noindent
+On the other hand, $\Upsilon_2(n) ~\le~ \sup_{0 \le \mathbf{x} \le T} \sum_{l=1}^{d} \left|\frac{\lfloor k x_j\rfloor }{k} - x_j\right| ~\le~ \frac{d}{k}  $. 
+Finally we get, for every $n >0$, with probability at least $1- (d+3)\delta$:
+\begin{align*}
+& \sup_{0 \le \mathbf{x} \le T} \left| l_n(\mathbf{x}) - l(\mathbf{x}) \right| ~\le~ \Lambda(n) + \Upsilon_1(n) + \Upsilon_2(n) + \Xi(n)
+\\ &~~~~~~~~\le~  Cd\sqrt{\frac{2T}{k}\log\frac{1}{\delta}} ~+~ Cd\sqrt{\frac{2T}{k}\log\frac{1}{\delta}} ~+~ \frac{d}{k} ~+~\sup_{0 \le \mathbf{x} \le 2T}\left| \tilde F(\mathbf{x})-\frac{n}{k} l ( \frac{k}{n} \mathbf{x})\right|
+\\ &~~~~~~~~\le~ C'd\sqrt{\frac{2T}{k}\log\frac{1}{\delta}} ~+~ \sup_{0 \le \mathbf{x} \le 2T}\left|\frac{n}{k} \tilde F(\frac{k}{n}\mathbf{x})- l ( \mathbf{x})\right|
+\end{align*}
+%$Cd\sqrt{\frac{2T}{k}\log\frac{1}{\delta}}$ and $\sup_{0 \le x \le 2T}\left|\frac{n}{k} \tilde F(\frac{k}{n}x)-\frac{n}{k} l ( \frac{k}{n} x)\right|$
+%are respectively the concentration term and the model bias.
+
+
+
+
+
+
+
+
+
+
+\section{Discussion}\label{colt:sec:conclusion}
+
+We provide a  non-asymptotic  bound  of VC type controlling 
+the error %of the %for the uniform convergence
+of the 
+empirical version of the \textsc{stdf}. 
+% Convergence upper bound for the \textsc{stdf} 
+Our bound
+achieves the expected rate in $O(k^{-1/2}) + \text{bias}(k)$, where
+$k$ is the number of (extreme) observations retained in the learning
+process.  %  for any
+% sequence $k=k(n)$ of integers such that $k=o(n)$ and $k(n) \to
+% \infty$.
+In practice the smaller  $k/n$,  the smaller  the bias. Since no assumption is made on the underlying distribution, other than the existence of the
+\textsc{stdf}, it is not possible in our framework to control the
+bias explicitly. One option would be to make an additional hypothesis
+of  `second order regular
+variation'  \citep[see \emph{e.g.}][]{deHaan1996}. We made the
+choice of making as %  Our
+% choice was rather to make as
+few assumptions as possible, however, since the bias term is separated
+from the `variance' term, it is probably feasible to refine our result
+with more assumptions. 
+
+
+For the  purpose of controlling the empirical \textsc{stdf}, % we have formalized 
+% the framework 
+% place ourselves the more general framework
+we have adopted the more general framework of maximal deviations in low
+probability regions. The VC-type bounds adapted to  low probability regions derived in
+Section~\ref{colt:sec:concentration}    
+may  directly be applied to a particular prediction context, namely where
+the objective is to learn a classifier (or a regressor) that has good properties on
+low probability regions.    
+% This %applications to the
+%  applications 
+This may open the road to the study of classification of  extremal
+observations, with immediate applications to the field of anomaly detection.% , a particular pattern
+% recognition setting we formulate in this paper.
+
+
+% Also, the 
+ % at the
+% cost of a less general result. 
+
+
+%which is less than the primal \textsc{EVT} assumption (\ref{colt:intro:assumption2}).
+
+% This non-asymptotic results suggest a possible application in view of relation (\ref{colt:intro:1to1}) is a dependence based dimension reduction, by learning the sparsity pattern of the dependence structure.
+
+
+
+
+% The obtained result may be directly applied to  
+% This opens  the road to  
+% %applications to the
+% classification of extremal observations, a particular pattern
+% recognition setting we formulate in this paper.
+
+
+
+
+
+
+%\appendix
+
+
+\section{Proof of Theorem \ref{colt:thm-princ}}
+
+% The proof below holds for a stronger result than Theorem \ref{colt:thm-princ}:
+Theorem~\ref{colt:thm-princ} is actually  a short version of
+Theorem~\ref{colt:thm-princ-general} below:
+\begin{theorem}[Maximal deviations]
+\label{colt:thm-princ-general}
+Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ \iid~realizations of a \rv~$\mathbf{X}$ valued in $\mathbb{R}^d$, a VC-class $\mathcal{A}$, and denote by $\mathcal{R}_{n,p}$ the associated relative Rademacher average defined by 
+\begin{align}
+\label{colt:def-extr-rad}
+\mathcal{R}_{n,p} = \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{np} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{X}_i \in A}\right|~. 
+\end{align}
+Define the union $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and $ p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Fix $0<\delta<1$, then with probability at least $1-\delta$,
+\begin{align*}
+\frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ 2 \mathcal{R}_{n,p} ~+~ \frac{2}{3np} \log \frac{1}{\delta} ~+~ 2 \sqrt{\frac{1}{np} \log \frac{1}{\delta}}~,
+\end{align*}
+and there is a constant $C$ independent of $n,p,\delta$ such that with probability greater than $1- \delta$,
+\begin{align*}
+\sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ C \left( \sqrt{p} \sqrt{\frac{V_{\mathcal{A}}}{n} \log{\frac{1}{\delta}}} ~+~ \frac{1}{n} \log \frac{1}{\delta} \right)~.
+\end{align*}
+\noindent
+If we assume furthermore that $\delta \ge e^{-np}$, then we both have:
+
+\begin{align*}
+&\frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ 2 \mathcal{R}_{n,p}  ~+~ 3 \sqrt{\frac{1}{np} \log \frac{1}{\delta}}\\
+&\frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ C \sqrt{\frac{V_{\mathcal{A}}}{np} \log{\frac{1}{\delta}}}~.
+\end{align*}
+\end{theorem}
+
+
+In the following, $\mb X_{1:n}$ denotes an \iid~sample $(\mb
+X_1,\ldots,\mb X_n)$ distributed as  $\mb X$,  a $\bb R^d$-valued random vector. The classical steps to prove VC inequalities consist in applying a
+concentration inequality to the function
+\begin{equation}
+  \label{colt:eq:fsupdev}
+  f(\mathbf{X}_{1:n}):= \sup_{A \in \mathcal{A}}
+\left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n
+  \mathds{1}_{\mathbf{X}_i \in A} \right|, 
+\end{equation}
+ and then  establishing  bounds
+on the expectation $\mathbb{E}f(\mathbf{X}_{1:n})$, using for instance
+Rademacher average. Here we follow the same lines, but applying a
+Bernstein type concentration inequality instead of the usual Hoeffding
+one, since the variance term in the bound involves the probability $p$
+to be in the union of the VC-class $\mathcal{A}$ considered. We then
+introduce relative Rademacher averages instead of the conventional
+ones, to take into account  $p$ for bounding  $\mathbb{E}f(\mathbf{X}_{1:n})$. 
+
+We need first to  control the variability of the random variable $f(\mathbf{X}_{1:n})$ when fixing all but one marginal $\mathbf{X}_i$. For that purpose introduce the functional
+\begin{align*}
+h(\mathbf{x}_1,\ldots,\mathbf{x}_k) = \mathbb{E}\left [ f(\mb X_{1:n}) | \mathbf{X}_1=\mathbf{x}_1,\ldots,\mathbf{X}_k=\mathbf{x}_k \right] - \mathbb{E}\left [ f(\mb X_{1:n}) | \mathbf{X}_1=\mathbf{x}_1,\ldots,\mathbf{X}_{k-1}=\mathbf{x}_{k-1} \right]
+\end{align*}
+%and $g_k(X_k)$ the random variable $h(x_1,...,x_{k-1}, X_k)$ . 
+The \emph{positive deviation} of
+$h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1},\mathbf{X}_k)$ is defined by 
+\[dev^+(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1})= \sup_{\mathbf{x} \in
+  \mathbb{R}^d} \left \{
+  h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1},\mathbf{x})\right \}, \]
+ and $\text{maxdev}^+$, the maximum of all positive deviations, by 
+ \[\text{maxdev}^+ = \sup_{\mathbf{x}_1,\ldots,\mathbf{x}_{k-1}} \max_{k}\;
+ dev^+(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1})~.\] % The variance of
+ % $h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1},\mathbf{X}_k)$ is denoted by
+ % $var(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1})$.
+ Finally,  define $\hat v $, the \emph{maximum sum of
+ variances}, by $$\hat v = \sup_{\mathbf{x}_1,\ldots,\mathbf{x}_n}
+ \sum_{k=1}^{n} \Var~ h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1}, \mb X_k)~.$$ We have
+ now the tools to state an extension of the classical Bernstein
+ inequality, which is proved in \cite{McDiarmid98}.
+\begin{proposition}
+\label{colt:thm-berstein}
+Let $\mathbf{X}_{1:n} = (\mathbf{X}_1,\ldots,\mathbf{X}_n)$ % and $f(\mb X_{1:n})$ both defined
+as above, and $f$ any function $(\bb R^d)^n\to \bb R$~.  Let $\text{maxdev}^+$
+and $\hat v$ the maximum sum of variances, both of which we assume to
+be finite, and let $\mu$ be the mean of $f(\mb X_{1:n})$. Then for any $t \ge 0$,
+\begin{align*}
+\mathbb{P} \big[ f(\mb X_{1:n}) - \mu \ge t \big] ~\le~ \exp{\left(- \frac{t^2}{2 \hat v (1 + \frac{\text{maxdev}^+ t}{3 \hat v}) }\right)}~.
+\end{align*}
+\end{proposition}
+\noindent
+Note that the term $\frac{\text{maxdev}^+ t}{3 \hat v}$ is view as an `error
+term' and is often negligible. Let us apply this theorem to the
+specific  function $f$ defined in (\ref{colt:eq:fsupdev}).  
+% $\mathbf{X}_1 , \ldots , \mathbf{X}_n$ are i.i.d realizations of a \rv~$\mathbf{X}$ in $\mathbb{R}^{d}$ and
+% $$f(\mb X_{1:n})= \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right|~.$$
+Then the following lemma (which have been stated and proved in the Chapter~\ref{chap:back_concentration}, see Lemma~\ref{back:lem-1}) holds true:
+
+\begin{lemma}
+\label{colt:lem-1}
+In the situation of Proposition \ref{colt:thm-berstein} with $f$ as in
+(\ref{colt:eq:fsupdev}),  we have
+$$\text{maxdev}^+ \le \frac{1}{n} \text{~~and~~} \hat v \le \frac{q}{n}, $$ where 
+\begin{align}
+\label{colt:lem-1:q}
+q ~=~ \mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left |
+    \mathds{1}_{\mathbf{X}' \in A} - \mathds{1}_{\mathbf{X} \in A}
+  \right|\right) ~\le~ 2 \mathbb{E}\left ( \sup_{A \in \mathcal{A}}
+  \left | \mathds{1}_{\mathbf{X}' \in A}  \mathds{1}_{\mathbf{X}
+      \notin A} \right|\right), 
+\end{align}
+with $\mathbf{X}'$ an independent copy of $\mathbf{X}$.
+
+%with $\mathbf{X}$ an independent copy of $\mathbf{X}$.
+ %$ p = \mathbb{P}(X_1 \in \mathbb{A}) $, $\mathbb{A} = \cup_{A \in \mathbb{A} } A$.
+\end{lemma}
+
+%\noindent
+%\begin{rk}
+%\label{colt:question1}
+%It must be possible to obtain the same result with $\tilde q = \sup_{A \in \mathcal{A}} \mathbb{P}(X_1 \in A)$ instead of $q$. To prove it, it would have suffice to show that $q \le C \tilde q$,
+%i.e $$\mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left | \mathds{1}_{X_1' \in A} - \mathds{1}_{X_1 \in A} \right|\right) \le C \sup_{A \in \mathcal{A}} \mathbb{E}\left ( \mathds{1}_{X_1 \in A} \right) $$
+%\end{rk}
+
+%\begin{rk}
+%Define the union $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and $p = \mathbb{P}(X_1 \in \mathbb{A})$. Noting that for all $A \in \mathcal{A}$, $\mathds{1}_{\{ . \in A\}} \le \mathds{1}_{\{ . \in \mathbb{A}\}}$, it is then straighforward from the second expression of $q$ that $q \le 2p$. As a consequence Lemma \ref{colt:lem-1} holds true when changing $q$ by $2p$.
+%\end{rk}
+\noindent
+As a consequence with Proposition \ref{colt:thm-berstein} the following general inequality holds true:
+\begin{align}
+\label{colt:concentration-general}
+\mathbb{P}\left [ f(\mb X_{1:n}) - \mathbb{E} f(\mb X_{1:n}) ~\ge~ t \right] ~\le~ e^{-\frac{n t^2}{2q + \frac{2t}{3}} }
+\end{align}
+\noindent
+where the quantity $q~=~ \mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left | \mathds{1}_{\mathbf{X}' \in A} - \mathds{1}_{\mathbf{X} \in A} \right|\right)$ %$= 2 \mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left | \mathds{1}_{X' \in A}  \mathds{1}_{X \notin A} \right|\right)$ 
+seems to be a central characteristic of the VC-class $\mathcal{A}$ given the distribution $\mathbf{X}$. It may be interpreted as a measure of the complexity of the class $\mathcal{A}$ with respect to the distribution of $\mathbf{X}$: how often the class $\mathcal{A}$ is able to separate two independent realizations of $\mathbf{X}$. 
+
+Recall that the union class $\mathbb{A}$ and its associated probability $p$ are defined as $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and $p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Noting that for all $A \in \mathcal{A}$, $\mathds{1}_{\{ . \in A\}} \le \mathds{1}_{\{ . \in \mathbb{A}\}}$, it is then straightforward from (\ref{colt:lem-1:q}) that $q \le 2p$. As a consequence (\ref{colt:concentration-general})  holds true when changing $q$ by $2p$.
+Let us now explicit the link between the expectation of $f$ and the Rademacher average $$\mathcal{R}_n = \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{n} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{X}_i \in A}\right|~,$$ where $(\sigma_i)_{i \ge 1}$ is a Rademacher chaos independent of the $\mathbf{X}_i$'s.
+\begin{lemma}
+\label{colt:lem-rademacher}
+ With this notations the following inequality holds true:
+$$ \mathbb{E}f(\mb X_{1:n}) ~\le~ 2 \mathcal{R}_n$$
+\end{lemma}
+This lemma has been proved in Chapter~\ref{chap:back_concentration} in Theorem~\ref{back:thm-rademacher}.
+Combining (\ref{colt:concentration-general}) with Lemma \ref{colt:lem-rademacher} and the fact that $q \le 2p$ gives:
+\begin{align}
+\label{colt:vc1}
+\mathbb{P}\left [ f(\mb X_{1:n}) - 2 \mathcal{R}_n \ge t \right] ~\le~ e^{-\frac{n t^2}{4p + \frac{2t}{3}} }~.
+\end{align}
+%, even if the central quantity is here $q$.
+
+
+%%%%Point out that in practice, $p$ may depend of $n$ and may verify $p \le Ck(n)/n=Ck/n$ where $k \to \infty$ and $k=o(n)$ ($k/n$ will be the proportion of extreme data selected to represent extreme behavior). 
+
+%We would like now to renormalize inequality (\ref{colt:vc1}) to obtain bounds on $\mathbb{P}\left [ f(X)/p - 2 \mathcal{R}_n/p \ge t \right]$ which would implies bound on $\mathbb{P}\left [ f(X)/p' - 2 \mathcal{R}_n/p' \ge t \right]$ for every $p' > p$. %%%, in particular for $p' = C\frac{k}{n}$.
+%If we only use standard VC-inequality \ie $~\mathbb{P}\left ( f(X) - 2\mathcal{R}_n \ge t \right) \le e^{-\frac{nt^2}{32}}$, we only obtain: \begin{align}\label{colt:VC-standard} \mathbb{P}\left [ f(X)/p - 2 \mathcal{R}_n/p \ge t \right] \le e^{-\frac{np^2t^2}{32}}~.\end{align}
+Recall that the relative Rademacher average are defined in (\ref{colt:def-extr-rad}) as $\mathcal{R}_{n,p} = \mathcal{R}_n /p$. 
+%If $p \sim k/n$ we obtain $$ \mathcal{R}_{n,p} \sim \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{k} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{X_i \in A}\right|~.$$
+It is well-known that $\mathcal{R}_n$ is of order $\mathcal{O}( (V_{\mathcal{A}}/n)^{1/2})$, see \cite{Kolt06} for instance. However, we hope a stronger bound than just $\mathcal{R}_{n,p} = \mathcal{O}(p^{-1}(V_{\mathcal{A}}/n)^{1/2})$ since $\frac{1}{np} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{X}_i \in A}\right|$ with $\mathbb{P}(\mathbf{X}_i \in \mathbb{A})=p$ is expected to be like $\frac{1}{np} \left | \sum_{i=1}^{np} \sigma_i \mathds{1}_{\mathbf{Y}_i \in A}\right|$ with $\mathbf{Y}_i$ such that $\mathbb{P}(\mathbf{Y}_i \in \mathbb{A}) = 1$. The result below confirms this heuristic:
+
+\begin{lemma}
+\label{colt:lem-relative-rademacher}
+The relative Rademacher average ${\mathcal{R}}_{n,p}$ is of order $\mathcal{O}(\sqrt\frac{V_{\mathcal{A}}}{pn})$. %In particular, if $p=Ck/n$, $\mathcal{R}_{n,p} = \mathcal{O}_{\mathbb{P}}(\frac{1}{\sqrt{k}})$.
+\end{lemma}
+This lemma has been proved in Chapter~\ref{chap:back_concentration}, see Lemma~\ref{back:lem-relative-rademacher}.
+
+%\begin{rk}
+%It would be even greater to have the same result with $\tilde q$ defined in remark \ref{colt:question1} in place of $p$. If it was the case, then Proposition \ref{colt:prop-princ} and Theorem \ref{colt:thm-princ} following would hold true with $\tilde q$ in place of $p$, which would be an even stronger result.
+%\end{rk}
+
+
+\noindent
+Finally we obtain from (\ref{colt:vc1}) and Lemma \ref{colt:lem-relative-rademacher} the following bound:
+\begin{align}
+\label{colt:prop-princ}
+\mathbb{P} \left [ \frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| - 2 \mathcal{R}_{n,p} ~>~ t \right] ~~\le~~ e^{-\frac{np t^2}{4 + \frac{2t}{3}} }
+\end{align}
+\noindent
+Solving $ \exp \left [ - \frac{np t^2}{4  + \frac{2}{3} t}\right]=\delta$ with $t > 0$ leads to $$t ~=~ \frac{1}{3np} \log \frac{1}{\delta} + \sqrt{\left ( \frac{1}{3np} \log \frac{1}{\delta}\right)^{2} + \frac{4}{np} \log \frac{1}{\delta} } ~:=~h(\delta)$$ so that
+\begin{align*}
+\mathbb{P} \left [ \frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| - 2 \mathcal{R}_{n,p} ~> h(\delta) \right] ~~\le~~ \delta
+\end{align*}
+\noindent
+Using $\sqrt{a+b} \le \sqrt a + \sqrt b~$ if $a,b \ge 0$, we have $h(\delta) < \frac{2}{3np} \log \frac{1}{\delta} + 2 \sqrt{\frac{1}{np} \log \frac{1}{\delta}} $. In the case of $\delta \ge e^{-np}$, $\frac{2}{3np} \log \frac{1}{\delta} \le \frac{2}{3} \sqrt{ \frac{1}{np}\log \frac{1}{\delta}} $ so that 
+$h(\delta) < 3 \sqrt{\frac{1}{np} \log \frac{1}{\delta}} $. This ends the proof.
+
+
+
+
+
+
+
+
+
+\section{Note on Remark \ref{colt:rk:prediction}}
+To obtain the bound in (\ref{colt:prediction:rates}), the following easy to show inequality is needed before  applying Theorem~\ref{colt:thm-princ} :
+\begin{align*}
+&\sup_{g\in \mathcal{G}}| {L}_{\alpha, n}(g)- L_{\alpha}(g)  | ~~ \le ~~ \frac{1}{\alpha} \Bigg[ \sup_{g\in \mathcal{G}} \left| \mathbb{P} \left(Y\neq g(\mathbf{X}),~ \| \mathbf{X}\|\ >t_\alpha \right) - \frac{1}{n}\sum_{i=1}^n\mathds{I}_{\{Y_i\neq
+   g(\mathbf{X}_i),~ \| \mathbf{X}_i\| > t_\alpha \}} \right| \\
+&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+~ \left| \mathbb{P} \left(\| \mathbf{X}\|\ >t_\alpha \right) - \frac{1}{n}\sum_{i=1}^n\mathds{I}_{\{ \| \mathbf{X}_i\| > t_\alpha  \}} \right| ~~+~~ \frac{1}{n}  \Bigg] ~.
+\end{align*}
+
+
+Note that the final objective would be   to bound the quantity 
+$\sup_{g\in \mathcal{G}}| {L}_{\alpha}(g)- L_{\alpha}(g^*_\alpha)  |$,
+where $g^*_\alpha$ is a Bayes classifier for the problem at stake,
+\ie~a  solution of the conditional risk  minimization problem  $\inf_{\{ g \text{
+    measurable}\}} L_\alpha(g)$. Such a bound involves a  bias term $ \inf_{g\in
+    \mathcal{G}}L_\alpha(g)-L_\alpha(g_\alpha^*)$, as in the classical
+  setting. Further, it  can  be shown that the standard Bayes classifier
+  $g^*(\mb x) := 2\mathbb{I}\{\eta(\mathbf{x})>1/2\}-1$ (where $\eta(\mb
+  x) =
+  \P(Y=1\; |\; \mb X=\mb x)$) is also   a solution of the conditional
+  risk minimization problem. 
+ Finally,  the conditional bias
+ $ \inf_{g\in \mathcal{G}}L_\alpha(g)-L_\alpha(g_\alpha^*)$ can
+ be expressed as
+$\frac{1}{\alpha}\inf_{g \in \mathcal{G}} \mathbb{E} \left [ |2
+  \eta(\mathbf{X})-1|\mathds{1}_{g(\mathbf{X}) \neq g^*(\mathbf{X})
+  }\mathds{1}_{ \|\mathbf{X}\| \ge t_\alpha}\right] $, to be compared
+with the standard bias $\inf_{g \in \mathcal{G}} \mathbb{E} \left [ |2
+  \eta(\mathbf{X})-1|\mathds{1}_{g(\mathbf{X}) \neq g^*(\mathbf{X})
+  }\right]$.

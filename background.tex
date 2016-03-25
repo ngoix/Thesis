@@ -180,7 +180,9 @@ This strategy is illustrated in the code example below, returning Figure~\ref{fi
   \label{fig:lof}
 \end{figure}
 
-\begin{pythoncode} 
+%\begin{pythoncode} 
+\begin{mdframed}[hidealllines=true, backgroundcolor=lightgray] 
+\begin{minted}[fontfamily=courier, fontsize=\scriptsize]{python}
 """
 =================================================
 Anomaly detection with Local Outlier Factor (LOF)
@@ -231,7 +233,9 @@ plt.legend([b1, b2, c],
             "new regular observations", "new abnormal observations"],
            loc="upper left")
 plt.show()
-\end{pythoncode}
+\end{minted}
+\end{mdframed}
+%\end{pythoncode}
 
 
 
@@ -881,7 +885,7 @@ f(\mb X_1,\ldots,\mb X_n) \le C \sqrt{\frac{V_{\mathcal{A}}\log(n) + \log{\frac{
 \end{align*}
 This can be explained by the fact that it is easy to prove the sub-optimal inequality $\mathcal{R}_n ~\le~ C \sqrt{\frac{V_{\mathcal{A}}\log(n)}{n}}$: When $\mathcal{A}$ is finite with cardinal $A$, one can show that $\mathcal{R}_n ~\le~ C \sqrt{\frac{A\log(n)}{n}}$.
 
-\section{Applying a Bernstein-type inequality instead of McDiarmid to derive sharper VC-bounds}
+\section{Sharper VC-bounds through a Bernstein-type inequality}
 
 Contribution presented in Chapter \ref{colt} include some VC-type inequality obtained by using a Bernstein-type inequality instead of the McDiarmid one used in \eqref{eq:mcd1}. As mentioned above, the variance of $f(\mb X_1,\ldots,\mb X_n)$ seems inaccessible. For this reason, we have to consider more complex control tools like the maximum sum of conditional variances and apply the strong fundamental Theorem~\ref{3.15}. The following lemma garantees that the latter applies.
 \begin{lemma}
@@ -1126,7 +1130,7 @@ Note that Assumption~\eqref{eq:hyp-GEV} (or \eqref{eq:hyp-GEV2}) is fulfilled fo
 % Throughout this paper, for $a_j, b_j \in [0, \infty],~1 \le j \le d$ we use the notations $[a,b]=[a_1,b_1] \times ... \times[a_d,b_d]$ and for $T>0$, $0 \le x \le T$ means $0 \le x_1,...,x_d \le T$.
 % Let $\mathbf{X_1,X_2,...,X_n}$ be iid random vectors in $\mathbb{R}^d$ with common distribution function $F$ and marginal distribution functions $F_1,...,F_d$.
 
-\section{Multivariate Extreme Value Theory}
+\section{Extension to the Multivariate framework}
 \label{back:sec:MEVT} 
 
 Extensions to the multivariate setting are well understood

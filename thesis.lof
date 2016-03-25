@@ -8,8 +8,8 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Anomalies are isolated more quickly\relax }}{33}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Convergence of the averaged depth\relax }}{33}{figure.2.3}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Isolation Forest example\relax }}{34}{figure.caption.11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces gaussian normal data with one single mode\relax }}{35}{figure.caption.12}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces gaussian normal data with two modes\relax }}{35}{figure.caption.13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces gaussian normal data with one single mode\relax }}{36}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces gaussian normal data with two modes\relax }}{36}{figure.caption.13}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces gaussian normal data with two strongly separate modes\relax }}{36}{figure.caption.14}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -32,6 +32,7 @@
 \contentsline {figure}{\numberline {7.6}{\ignorespaces SF dataset, default parameters\relax }}{135}{figure.caption.30}
 \contentsline {figure}{\numberline {7.7}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{136}{figure.caption.31}
 \contentsline {figure}{\numberline {7.8}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{136}{figure.caption.32}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces SA dataset, default parameters\relax }}{146}{figure.caption.33}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces forestcover dataset, default parameters\relax }}{146}{figure.caption.34}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces http dataset, default parameters\relax }}{147}{figure.caption.35}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces SA dataset, default parameters\relax }}{137}{figure.caption.33}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces forestcover dataset, default parameters\relax }}{137}{figure.caption.34}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces http dataset, default parameters\relax }}{138}{figure.caption.35}
+\addvspace {10\p@ }

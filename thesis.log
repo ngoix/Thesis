@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  17 MAR 2016 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  24 MAR 2016 18:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1470,14 +1470,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/Front/logo_TELECOM.png, id=372, 212.795pt x 212.795pt>
+<images/Front/logo_TELECOM.png, id=368, 212.795pt x 212.795pt>
 File: images/Front/logo_TELECOM.png Graphic file (type png)
 
 <use images/Front/logo_TELECOM.png>
 Package pdftex.def Info: images/Front/logo_TELECOM.png used on input line 31.
 (pdftex.def)             Requested size: 48.3671pt x 48.36958pt.
 
-<images/Front/logo_ENSCACHAN.png, id=373, 401.8212pt x 217.5327pt>
+<images/Front/logo_ENSCACHAN.png, id=369, 401.8212pt x 217.5327pt>
 File: images/Front/logo_ENSCACHAN.png Graphic file (type png)
 
 <use images/Front/logo_ENSCACHAN.png>
@@ -1485,7 +1485,7 @@ Package pdftex.def Info: images/Front/logo_ENSCACHAN.png used on input line 31.
 
 (pdftex.def)             Requested size: 89.34515pt x 48.36958pt.
 
-<images/Front/logo_CNRS.jpg, id=375, 170.7981pt x 170.7981pt>
+<images/Front/logo_CNRS.jpg, id=371, 170.7981pt x 170.7981pt>
 File: images/Front/logo_CNRS.jpg Graphic file (type jpg)
 
 <use images/Front/logo_CNRS.jpg>
@@ -1603,14 +1603,14 @@ Overfull \hbox (2.76408pt too wide) in paragraph at lines 388--388
  []
 
 [9] [10] [11] [12] [13] [14]
-<fig_source/cone.png, id=807, 689.18933pt x 675.05832pt>
+<fig_source/cone.png, id=800, 689.18933pt x 675.05832pt>
 File: fig_source/cone.png Graphic file (type png)
 
 <use fig_source/cone.png>
 Package pdftex.def Info: fig_source/cone.png used on input line 557.
 (pdftex.def)             Requested size: 137.83542pt x 135.00926pt.
 
-<fig_source/representation2D.png, id=808, 299.10284pt x 303.05923pt>
+<fig_source/representation2D.png, id=801, 299.10284pt x 303.05923pt>
 File: fig_source/representation2D.png Graphic file (type png)
 
 <use fig_source/representation2D.png>
@@ -1729,14 +1729,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-<fig_source/OCSVM_hard.png, id=1006, 481.67186pt x 176.44644pt>
+<fig_source/OCSVM_hard.png, id=1000, 481.67186pt x 176.44644pt>
 File: fig_source/OCSVM_hard.png Graphic file (type png)
 
 <use fig_source/OCSVM_hard.png>
 Package pdftex.def Info: fig_source/OCSVM_hard.png used on input line 117.
 (pdftex.def)             Requested size: 399.78754pt x 146.4505pt.
 
-<fig_source/OCSVM_soft.png, id=1007, 482.8251pt x 178.36852pt>
+<fig_source/OCSVM_soft.png, id=1001, 482.8251pt x 178.36852pt>
 File: fig_source/OCSVM_soft.png Graphic file (type png)
 
 <use fig_source/OCSVM_soft.png>
@@ -1751,77 +1751,23 @@ Overfull \vbox (3.50356pt too high) has occurred while \output is active []
 
 
 [30 <./fig_source/OCSVM_soft.png>]
-<fig_source/lof.png, id=1033, 586.8324pt x 442.2924pt>
+<fig_source/lof.png, id=1027, 586.8324pt x 442.2924pt>
 File: fig_source/lof.png Graphic file (type png)
 
 <use fig_source/lof.png>
 Package pdftex.def Info: fig_source/lof.png used on input line 178.
 (pdftex.def)             Requested size: 375.7232pt x 283.18765pt.
-\openout5 = `thesis.pyg'.
-
-runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
-ns= ,fontfamily=courier,fontsize=\footnotesize " -o thesis.out.pyg thesis.pyg).
-..executed.
-
- (./thesis.out.pyg)
-runsystem(rm thesis.out.pyg)...executed.
-
-runsystem(rm thesis.pyg)...executed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
-
- []
-
-[31]
-Overfull \vbox (303.53162pt too high) has occurred while \output is active []
-
-
-[32 <./fig_source/lof.png>]
-<fig_source/ideeIF.png, id=1054, 231.05751pt x 137.72597pt>
-File: fig_source/ideeIF.png Graphic file (type png)
-
-<use fig_source/ideeIF.png>
-Package pdftex.def Info: fig_source/ideeIF.png used on input line 264.
-(pdftex.def)             Requested size: 219.50337pt x 130.83891pt.
-
-Overfull \hbox (2.4156pt too wide) in paragraph at lines 264--265
- [][] 
- []
-
-<fig_source/convergenceIF.png, id=1055, 137.72597pt x 137.72597pt>
-File: fig_source/convergenceIF.png Graphic file (type png)
-
-<use fig_source/convergenceIF.png>
-Package pdftex.def Info: fig_source/convergenceIF.png used on input line 270.
-(pdftex.def)             Requested size: 130.83891pt x 130.83891pt.
-
-Overfull \hbox (16.70247pt too wide) in paragraph at lines 262--274
-[]$[]$ $[]$ 
- []
-
-<fig_source/iforest.png, id=1056, 586.8324pt x 442.2924pt>
-File: fig_source/iforest.png Graphic file (type png)
-
-<use fig_source/iforest.png>
-Package pdftex.def Info: fig_source/iforest.png used on input line 278.
-(pdftex.def)             Requested size: 333.97972pt x 251.7246pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 282--284
-
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 284.
+Package mdframed Info: mdframed works in twoside mode on input line 184.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 284.
+(mdframed)              on input line 184.
 \openout5 = `thesis.pyg'.
 
 runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
 ns= ,fontfamily=courier,fontsize=\scriptsize " -o thesis.out.pyg thesis.pyg)...
 executed.
 
-(./thesis.out.pyg
+ (./thesis.out.pyg
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <8> not available
 (Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <8> not available
@@ -1831,33 +1777,86 @@ runsystem(rm thesis.out.pyg)...executed.
 
 runsystem(rm thesis.pyg)...executed.
 
- [33 <./fig_source/ideeIF.png> <./fig_source/convergenceIF.png>] [34 <./fig_sou
-rce/iforest.png>]
-<fig_source/ADcomparison1.png, id=1071, 731.3724pt x 370.0224pt>
+ [31]
+Package mdframed Info: Not enough space on this page on input line 237.
+ [32 <./fig_source/lof.png>]
+<fig_source/ideeIF.png, id=1047, 231.05751pt x 137.72597pt>
+File: fig_source/ideeIF.png Graphic file (type png)
+
+<use fig_source/ideeIF.png>
+Package pdftex.def Info: fig_source/ideeIF.png used on input line 268.
+(pdftex.def)             Requested size: 219.50337pt x 130.83891pt.
+
+Overfull \hbox (2.4156pt too wide) in paragraph at lines 268--269
+ [][] 
+ []
+
+<fig_source/convergenceIF.png, id=1048, 137.72597pt x 137.72597pt>
+File: fig_source/convergenceIF.png Graphic file (type png)
+
+<use fig_source/convergenceIF.png>
+Package pdftex.def Info: fig_source/convergenceIF.png used on input line 274.
+(pdftex.def)             Requested size: 130.83891pt x 130.83891pt.
+
+Overfull \hbox (16.70247pt too wide) in paragraph at lines 266--278
+[]$[]$ $[]$ 
+ []
+
+<fig_source/iforest.png, id=1049, 586.8324pt x 442.2924pt>
+File: fig_source/iforest.png Graphic file (type png)
+
+<use fig_source/iforest.png>
+Package pdftex.def Info: fig_source/iforest.png used on input line 282.
+(pdftex.def)             Requested size: 333.97972pt x 251.7246pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+[33 <./fig_source/ideeIF.png> <./fig_source/convergenceIF.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 288.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 288.
+\openout5 = `thesis.pyg'.
+
+runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
+ns= ,fontfamily=courier,fontsize=\scriptsize " -o thesis.out.pyg thesis.pyg)...
+executed.
+
+
+(./thesis.out.pyg)
+runsystem(rm thesis.out.pyg)...executed.
+
+runsystem(rm thesis.pyg)...executed.
+
+ [34 <./fig_source/iforest.png>]
+<fig_source/ADcomparison1.png, id=1065, 731.3724pt x 370.0224pt>
 File: fig_source/ADcomparison1.png Graphic file (type png)
 
 <use fig_source/ADcomparison1.png>
-Package pdftex.def Info: fig_source/ADcomparison1.png used on input line 366.
+Package pdftex.def Info: fig_source/ADcomparison1.png used on input line 370.
 (pdftex.def)             Requested size: 375.7232pt x 190.09221pt.
-
-<fig_source/ADcomparison2.png, id=1072, 731.3724pt x 370.0224pt>
+ [35]
+<fig_source/ADcomparison2.png, id=1070, 731.3724pt x 370.0224pt>
 File: fig_source/ADcomparison2.png Graphic file (type png)
 
 <use fig_source/ADcomparison2.png>
-Package pdftex.def Info: fig_source/ADcomparison2.png used on input line 373.
+Package pdftex.def Info: fig_source/ADcomparison2.png used on input line 377.
 (pdftex.def)             Requested size: 375.7232pt x 190.09221pt.
 
-<fig_source/ADcomparison3.png, id=1073, 731.3724pt x 370.0224pt>
+<fig_source/ADcomparison3.png, id=1071, 731.3724pt x 370.0224pt>
 File: fig_source/ADcomparison3.png Graphic file (type png)
 
 <use fig_source/ADcomparison3.png>
-Package pdftex.def Info: fig_source/ADcomparison3.png used on input line 380.
+Package pdftex.def Info: fig_source/ADcomparison3.png used on input line 384.
 (pdftex.def)             Requested size: 375.7232pt x 190.09221pt.
- [35 <./fig_source/ADcomparison1.png> <./fig_source/ADcomparison2.png>]
-Package mdframed Info: mdframed works in twoside mode on input line 386.
+ [36 <./fig_source/ADcomparison1.png> <./fig_source/ADcomparison2.png> <./fig_s
+ource/ADcomparison3.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 390.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 386.
+(mdframed)              on input line 390.
 \openout5 = `thesis.pyg'.
 
 runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
@@ -1869,40 +1868,42 @@ runsystem(rm thesis.out.pyg)...executed.
 
 runsystem(rm thesis.pyg)...executed.
 
- [36 <./fig_source/ADcomparison3.png>] [37] [38
+Package mdframed Info: Not enough space on this page on input line 476.
 
-]
+[37] [38]
 Chapter 3.
 ------------------------------------------------------------------------------
  3.\hskip 1em\relax Concentration Inequalities from the Method of bounded diffe
 rences
 ------------------------------------------------------------------------------
-[39] [40] [41] [42] [43] [44] [45] [46]
-Overfull \hbox (156.11479pt too wide) in paragraph at lines 854--855
+[39
+
+] [40] [41] [42] [43] [44] [45] [46]
+Overfull \hbox (156.11479pt too wide) in paragraph at lines 858--859
 [][]\OT1/ptm/m/it/10.95 Remark \OT1/ptm/m/n/10.95 3.17\OT1/ptm/m/it/10.95 . []\
 OT1/ptm/m/n/10.95 Note that bound (ii) holds even for the con-di-tional Rademac
 her av-er-age $\U/msb/m/n/10.95 E []$\OT1/ptm/m/n/10.95 . 
  []
 
 
-Overfull \hbox (44.48161pt too wide) in paragraph at lines 868--868
+Overfull \hbox (44.48161pt too wide) in paragraph at lines 872--872
 [] 
  []
 
 [47]
-Overfull \hbox (30.0154pt too wide) in paragraph at lines 881--883
+Overfull \hbox (30.0154pt too wide) in paragraph at lines 885--887
 \OT1/ptm/m/n/10.95 This can be ex-plained by the fact that it is easy to prove 
 the sub-optimal in-equal-ity $\OMS/cmsy/m/n/10.95 R[] [] ^^T  []\OML/cmm/m/it/1
 0.95 C[]$\OT1/ptm/m/n/10.95 :
  []
 
 
-Overfull \hbox (80.03542pt too wide) in paragraph at lines 903--903
+Overfull \hbox (80.03542pt too wide) in paragraph at lines 907--907
 [] 
  []
 
 [48]
-Overfull \hbox (13.57524pt too wide) in paragraph at lines 923--923
+Overfull \hbox (13.57524pt too wide) in paragraph at lines 927--927
 [] 
  []
 
@@ -1913,14 +1914,14 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4.\hskip 1em\relax Extreme Value Theory
 ------------------------------------------------------------------------------
-[53] [54] <fig_source/GEV.png, id=1291, 586.8324pt x 442.2924pt>
+[53] [54] <fig_source/GEV.png, id=1285, 586.8324pt x 442.2924pt>
 File: fig_source/GEV.png Graphic file (type png)
 
 <use fig_source/GEV.png>
-Package pdftex.def Info: fig_source/GEV.png used on input line 1082.
+Package pdftex.def Info: fig_source/GEV.png used on input line 1086.
 (pdftex.def)             Requested size: 375.7232pt x 283.18765pt.
  [55 <./fig_source/GEV.png>] [56] [57]
-Overfull \hbox (1.35776pt too wide) in paragraph at lines 1291--1291
+Overfull \hbox (1.35776pt too wide) in paragraph at lines 1295--1295
 [] 
  []
 
@@ -1964,14 +1965,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 794--795
 
  []
 
-[76] <fig_source/EM-EMS.png, id=1590, 578.16pt x 433.62pt>
+[76] <fig_source/EM-EMS.png, id=1584, 578.16pt x 433.62pt>
 File: fig_source/EM-EMS.png Graphic file (type png)
 
 <use fig_source/EM-EMS.png>
 Package pdftex.def Info: fig_source/EM-EMS.png used on input line 829.
 (pdftex.def)             Requested size: 208.73653pt x 156.553pt.
 
-<fig_source/EM-EMSzoom.png, id=1591, 578.16pt x 433.62pt>
+<fig_source/EM-EMSzoom.png, id=1585, 578.16pt x 433.62pt>
 File: fig_source/EM-EMSzoom.png Graphic file (type png)
 
 <use fig_source/EM-EMSzoom.png>
@@ -1987,7 +1988,7 @@ Overfull \hbox (2.08049pt too wide) in paragraph at lines 827--842
 []$[]$  $[]$ 
  []
 
-<fig_source/EMG-EM.png, id=1592, 578.16pt x 433.62pt>
+<fig_source/EMG-EM.png, id=1586, 578.16pt x 433.62pt>
 File: fig_source/EMG-EM.png Graphic file (type png)
 
 <use fig_source/EMG-EM.png>
@@ -1995,7 +1996,7 @@ Package pdftex.def Info: fig_source/EMG-EM.png used on input line 846.
 (pdftex.def)             Requested size: 417.47307pt x 313.106pt.
  [77] [78 <./fig_source/EM-EMS.png> <./fig_source/EM-EMSzoom.png> <./fig_source
 /EMG-EM.png>]
-<fig_source/scoring3D.png, id=1608, 1675.2186pt x 897.5934pt>
+<fig_source/scoring3D.png, id=1602, 1675.2186pt x 897.5934pt>
 File: fig_source/scoring3D.png Graphic file (type png)
 
 <use fig_source/scoring3D.png>
@@ -2068,7 +2069,7 @@ Package pdftex.def Info: fig_source/representation2D.png used on input line 534
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 739.
  [114] [115]
-<fig_source/representation2D_nk_rect.png, id=2115, 335.3328pt x 300.4023pt>
+<fig_source/representation2D_nk_rect.png, id=2109, 335.3328pt x 300.4023pt>
 File: fig_source/representation2D_nk_rect.png Graphic file (type png)
 
 <use fig_source/representation2D_nk_rect.png>
@@ -2091,7 +2092,7 @@ m/n/10.95 ) []In prac-tice, we have to deal with non-asymptotic
  []
 
 [123] [124] [125] [126] [127]
-<fig_source/plot_damex_level_sets.png, id=2286, 1602.2259pt x 721.2546pt>
+<fig_source/plot_damex_level_sets.png, id=2280, 1602.2259pt x 721.2546pt>
 File: fig_source/plot_damex_level_sets.png Graphic file (type png)
 
 <use fig_source/plot_damex_level_sets.png>
@@ -2107,7 +2108,7 @@ $\OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x\OT1/cmr/m/n/1
 0.95 ) = []\OMS/cmsy/m/n/10.95 f^^@ [][] [][]g\OML/cmm/m/it/10.95 ;$
  []
 
-[130] <fig_source/wave_dir2.png, id=2336, 1180.1691pt x 460.3599pt>
+[130] <fig_source/wave_dir2.png, id=2330, 1180.1691pt x 460.3599pt>
 File: fig_source/wave_dir2.png Graphic file (type png)
 
 <use fig_source/wave_dir2.png>
@@ -2115,7 +2116,7 @@ Package pdftex.def Info: fig_source/wave_dir2.png used on input line 1859.
 (pdftex.def)             Requested size: 389.45702pt x 151.91924pt.
  [131] [132 <./fig_source/wave_dir2.png>]
 [133]
-<fig_source/shuttle-semi-supervised-average-rect-01.png, id=2385, 1681.0002pt x
+<fig_source/shuttle-semi-supervised-average-rect-01.png, id=2378, 1681.0002pt x
  922.8879pt>
 File: fig_source/shuttle-semi-supervised-average-rect-01.png Graphic file (type
  png)
@@ -2124,7 +2125,7 @@ Package pdftex.def Info: fig_source/shuttle-semi-supervised-average-rect-01.png
  used on input line 2101.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=2386, 1681.0002pt 
+<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=2379, 1681.0002pt 
 x 922.8879pt>
 File: fig_source/SF-4d-lb-semi-supervised-average-rect-01.png Graphic file (typ
 e png)
@@ -2133,7 +2134,7 @@ Package pdftex.def Info: fig_source/SF-4d-lb-semi-supervised-average-rect-01.pn
 g used on input line 2107.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=2387, 1681.0002pt x
+<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=2380, 1681.0002pt x
  922.8879pt>
 File: fig_source/SF-4d-lb-semi-supervised-average-rect-1.png Graphic file (type
  png)
@@ -2142,10 +2143,41 @@ Package pdftex.def Info: fig_source/SF-4d-lb-semi-supervised-average-rect-1.png
  used on input line 2113.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
+<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=2382, 1681.0002pt x 9
+22.8879pt>
+File: fig_source/SA-lb-semi-supervised-average-rect-01.png Graphic file (type p
+ng)
+ <use fig_source/SA-lb-semi-supervised-average-rect-01.png>
+Package pdftex.def Info: fig_source/SA-lb-semi-supervised-average-rect-01.png u
+sed on input line 2144.
+(pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
+
+<fig_source/forestcover-semi-supervised-average-rect-01.png, id=2383, 1681.0002
+pt x 922.8879pt>
+File: fig_source/forestcover-semi-supervised-average-rect-01.png Graphic file (
+type png)
+
+<use fig_source/forestcover-semi-supervised-average-rect-01.png>
+Package pdftex.def Info: fig_source/forestcover-semi-supervised-average-rect-01
+.png used on input line 2151.
+(pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
+
+<fig_source/http-3d-semi-supervised-average-rect-01.png, id=2384, 1681.0002pt x
+ 922.8879pt>
+File: fig_source/http-3d-semi-supervised-average-rect-01.png Graphic file (type
+ png)
+ <use fig_source/http-3d-semi-supervised-average-rect-01.png>
+Package pdftex.def Info: fig_source/http-3d-semi-supervised-average-rect-01.png
+ used on input line 2158.
+(pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
+
 [134] [135 <./fig_source/shuttle-semi-supervised-average-rect-01.png>] [136 <./
 fig_source/SF-4d-lb-semi-supervised-average-rect-01.png> <./fig_source/SF-4d-lb
--semi-supervised-average-rect-1.png>] [137] [138] [139]
-Overfull \hbox (19.94437pt too wide) in paragraph at lines 2373--2374
+-semi-supervised-average-rect-1.png>] [137 <./fig_source/SA-lb-semi-supervised-
+average-rect-01.png> <./fig_source/forestcover-semi-supervised-average-rect-01.
+png>] [138 <./fig_source/http-3d-semi-supervised-average-rect-01.png>] [139]
+[140]
+Overfull \hbox (19.94437pt too wide) in paragraph at lines 2392--2393
 []\OT1/ptm/m/n/10.95 Considering the def-i-ni-tion in ([][]7.45[][]) and ([][]7
 .31[][]), both sides are equal to $\OML/cmm/m/it/10.95 ^^V[]\OT1/cmr/m/n/10.95 
 (\OML/cmm/m/it/10.95 R\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x[]\OML/cmm/m/it/
@@ -2153,66 +2185,35 @@ Overfull \hbox (19.94437pt too wide) in paragraph at lines 2373--2374
 )$\OT1/ptm/m/n/10.95 .
  []
 
-[140] [141] [142] [143] [144]
-<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=2511, 1681.0002pt x 9
-22.8879pt>
-File: fig_source/SA-lb-semi-supervised-average-rect-01.png Graphic file (type p
-ng)
- <use fig_source/SA-lb-semi-supervised-average-rect-01.png>
-Package pdftex.def Info: fig_source/SA-lb-semi-supervised-average-rect-01.png u
-sed on input line 2607.
-(pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
- [145]
-<fig_source/forestcover-semi-supervised-average-rect-01.png, id=2517, 1681.0002
-pt x 922.8879pt>
-File: fig_source/forestcover-semi-supervised-average-rect-01.png Graphic file (
-type png)
+[141] [142] [143] [144] [145]) [146]
+Chapter 8.
+------------------------------------------------------------------------------
+ 8.\hskip 1em\relax Conclusion \& Perspectives
+------------------------------------------------------------------------------
+(./conclusion.tex [147
 
-<use fig_source/forestcover-semi-supervised-average-rect-01.png>
-Package pdftex.def Info: fig_source/forestcover-semi-supervised-average-rect-01
-.png used on input line 2613.
-(pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
-
-<fig_source/http-3d-semi-supervised-average-rect-01.png, id=2518, 1681.0002pt x
- 922.8879pt>
-File: fig_source/http-3d-semi-supervised-average-rect-01.png Graphic file (type
- png)
- <use fig_source/http-3d-semi-supervised-average-rect-01.png>
-Package pdftex.def Info: fig_source/http-3d-semi-supervised-average-rect-01.png
- used on input line 2621.
-(pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
-)
-[146 <./fig_source/SA-lb-semi-supervised-average-rect-01.png> <./fig_source/for
-estcover-semi-supervised-average-rect-01.png>] [147 <./fig_source/http-3d-semi-
-supervised-average-rect-01.png>] [148
-
-] [149] [150]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 81.
-
-(./conclusion.tex)
+]) [148]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./thesis.bbl [151
+(./thesis.bbl [149
 
 
-] [152] [153] [154] [155] [156]) [157]
+] [150] [151] [152] [153] [154]) [155]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
  (./thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 53DB970B1A690FB38E7C91643CA4D1CE;23155.
+(rerunfilecheck)             Checksum: FFA781D0B9DF7D13B026C85684EAB7A8;22738.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 34490 strings out of 495020
- 612616 string characters out of 6181323
- 683981 words of memory out of 5000000
- 36451 multiletter control sequences out of 15000+600000
+ 34492 strings out of 495020
+ 612665 string characters out of 6181323
+ 684147 words of memory out of 5000000
+ 36455 multiletter control sequences out of 15000+600000
  67564 words of font info for 145 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,24n,65p,10455b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2253,10 +2254,10 @@ r/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (169 pages, 4988887 bytes).
+Output written on thesis.pdf (167 pages, 4892943 bytes).
 PDF statistics:
- 2836 PDF objects out of 2984 (max. 8388607)
- 2543 compressed objects within 26 object streams
- 599 named destinations out of 1000 (max. 500000)
- 881 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2823 PDF objects out of 2984 (max. 8388607)
+ 2532 compressed objects within 26 object streams
+ 597 named destinations out of 1000 (max. 500000)
+ 873 words of extra memory for PDF output out of 10000 (max. 10000000)
 

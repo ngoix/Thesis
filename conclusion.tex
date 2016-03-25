@@ -1,0 +1,27 @@
+In this thesis, we have addressed two important limitations of existing anomaly detection litterature. The problem of evaluating algorithm in the case of unlabeled data, and the problem of being accurate on low probability regions.
+
+Our first contribution was to proposed an unsupervised performance criterion, in order to compare scoring functions and to pick one eventually.
+%
+This excess-mass based criterion resolved some of the drawbacks inherent to the previous mass-volume curve criterion. But the main drawback, estimating a volume in the input space, still remains. This infortunately constitutes a strong setback for its use in a high dimensional framework, if no prior knowledge on the form of these volume to estimate is available. In such a context, classical evaluation approaches must be used, such as ROC or Precision-Recall curves, which assume that at least a small proportion of data is labelled.
+Research on practical unsupervised evaluation criteria still remains a major challenge, specially under the constraint of being scalable. 
+
+Then, we proposed to focus on extreme regions to gain in accuracy when building scoring functions. An intermediary step was our second contribution, which studies non-asymptotic behavior of an extreme value copula, the stable tail dependence function. We brought new bounds to control the error of its natural empirical version as well as a practical framework for deriving VC-type bounds on low-probability regions.
+%
+This framework allowed to approach a particular prediction context, namely where
+the objective is to learn a classifier (or a regressor) that has good properties on
+low-probability regions.
+
+
+The previous framework of maximal deviation in low-probability regions also opened the road to the statistical ground on which our third contribution lies. The latter designs a method that produces a scoring function based on a (possibly sparse) representation of the dependence structure of extremes. Non-asymptotic bounds are derived to assess the accuracy of the estimation procedure, and empirical studies show the relevance of this approach, which is suitable for the treatment of real word large-scale learning problems due to its moderate complexity.
+%
+Besides, as this method exhibits a sparsity pattern in multivariate extremes, it can be used as a preprocessing step to scale up multivariate extreme values modeling to high dimensional settings, which is currently one of the major challenges in multivariate EVT.
+
+
+%
+Staying in the scope of the two previous contributions, the non-asymptotic bounds in the two main results contain separated bias terms corresponding to the (distribution-dependent) convergence speed to the asymptotic behavior, which are not controlled explicitly.
+A possible future direction is to make an additional hypothesis
+of  `second order regular variation'  \citep[see \emph{e.g.}][]{deHaan1996}
+in order to express these bias terms, and possibly to refine the results.
+With such explicit bounds, parameters of the Damex algorithm (third contribution) could be chosen optimally as the ones minimizing the obtained bound.
+ 
+% As a last contribution (of incremental nature), two classical AD algorithms have been implemented and merged on scikit-learn. They are used in this dissertation for empirical comparison to attest the relevance of the forementionned approach.

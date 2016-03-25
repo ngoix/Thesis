@@ -36,12 +36,12 @@
 \contentsline {subsection}{\numberline {3.1.3}Bernstein-type Inequality (with variance term)}{42}{subsection.3.1.3}
 \contentsline {section}{\numberline {3.2}Famous Inequalities}{43}{section.3.2}
 \contentsline {section}{\numberline {3.3}Links with Statistical Learning and VC theory}{46}{section.3.3}
-\contentsline {section}{\numberline {3.4}Applying a Bernstein-type inequality instead of McDiarmid to derive sharper VC-bounds}{48}{section.3.4}
+\contentsline {section}{\numberline {3.4}Sharper VC-bounds through a Bernstein-type inequality}{48}{section.3.4}
 \contentsline {chapter}{\numberline {4}Extreme Value Theory}{53}{chapter.4}
 \contentsline {paragraph}{Notation reminder}{53}{chapter.4}
 \contentsline {section}{\numberline {4.1}Univariate Extreme Value Theory}{54}{section.4.1}
-\contentsline {section}{\numberline {4.2}Multivariate Extreme Value Theory}{56}{section.4.2}
-\contentsline {part}{II\hspace {1em}An Alternative Performance Criterion: the Excess-Mass Curve}{61}{part.2}
+\contentsline {section}{\numberline {4.2}Extension to the Multivariate framework}{56}{section.4.2}
+\contentsline {part}{II\hspace {1em}An Excess-Mass based Performance Criterion}{61}{part.2}
 \contentsline {chapter}{\numberline {5}On Anomaly Ranking and Excess-Mass Curves}{63}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{63}{section.5.1}
 \contentsline {section}{\numberline {5.2}Background and related work}{65}{section.5.2}
@@ -54,7 +54,7 @@
 \contentsline {section}{\numberline {5.7}Conclusion}{77}{section.5.7}
 \contentsline {section}{\numberline {5.8}Illustrations}{79}{section.5.8}
 \contentsline {section}{\numberline {5.9}Detailed Proofs}{79}{section.5.9}
-\contentsline {part}{III\hspace {1em}Focusing on Extreme Regions to Gain in Accuracy}{87}{part.3}
+\contentsline {part}{III\hspace {1em}Accuracy on Extreme Regions}{87}{part.3}
 \contentsline {chapter}{\numberline {6}Learning the dependence structure of rare events: a non-asymptotic study}{89}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introduction}{89}{section.6.1}
 \contentsline {section}{\numberline {6.2}Background on the stable tail dependence function}{90}{section.6.2}
@@ -87,11 +87,10 @@
 \contentsline {section}{\numberline {7.6}Conclusion}{134}{section.7.6}
 \contentsline {section}{\numberline {7.7}Technical proofs}{137}{section.7.7}
 \contentsline {subsection}{\numberline {7.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{137}{subsection.7.7.1}
-\contentsline {subsection}{\numberline {7.7.2}Proof of Lemma \ref {jmva:lem:g-alpha}}{137}{subsection.7.7.2}
-\contentsline {subsection}{\numberline {7.7.3}Proof of Proposition \ref {jmva:prop:g}}{139}{subsection.7.7.3}
-\contentsline {subsection}{\numberline {7.7.4}Proof of Lemma \ref {jmva:lemma_simplex}}{143}{subsection.7.7.4}
-\contentsline {subsection}{\numberline {7.7.5}Proof of Remark\nobreakspace {}\ref {jmva:rk:optim}}{145}{subsection.7.7.5}
+\contentsline {subsection}{\numberline {7.7.2}Proof of Lemma \ref {jmva:lem:g-alpha}}{138}{subsection.7.7.2}
+\contentsline {subsection}{\numberline {7.7.3}Proof of Proposition \ref {jmva:prop:g}}{140}{subsection.7.7.3}
+\contentsline {subsection}{\numberline {7.7.4}Proof of Lemma \ref {jmva:lemma_simplex}}{144}{subsection.7.7.4}
+\contentsline {subsection}{\numberline {7.7.5}Proof of Remark\nobreakspace {}\ref {jmva:rk:optim}}{146}{subsection.7.7.5}
 \contentsline {section}{\numberline {7.8}Experiments curves}{146}{section.7.8}
-\contentsline {part}{Conclusion}{149}{figure.caption.35}
-\contentsline {chapter}{\nameref {chap:concl}}{151}{section*.36}
-\contentsline {chapter}{Bibliography}{151}{dummy.3}
+\contentsline {chapter}{\numberline {8}Conclusion \& Perspectives}{147}{chapter.8}
+\contentsline {chapter}{Bibliography}{149}{dummy.3}

@@ -2040,7 +2040,7 @@ to assign a high abnormality score to these subcones (under-estimation of the as
 % too large $\epsilon$. The use of a smaller $\epsilon$ precisely allows
 % to assign a high abnormality score to these subcones, which yields
 % better performances.
-The averaged ROC curves and PR curves for the other datasets are gathered in \ref{jmva:appendix_exp}.
+The averaged ROC curves and PR curves for the other datasets are represented in Figures
 \begin{table}[!ht]
 \centering
 \footnotesize
@@ -2139,13 +2139,32 @@ appear in the non-extreme region.  % The challenge is then to dovetail
 % \label{jmva:fig:combination}
 % \end{figure}
 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width = \textwidth]{fig_source/SA-lb-semi-supervised-average-rect-01.png}
+  \caption{SA dataset, default parameters}
+  \label{jmva:fig:SA}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width = \textwidth]{fig_source/forestcover-semi-supervised-average-rect-01.png}
+  \caption{forestcover dataset, default parameters}
+\label{jmva:fig:forestcover}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width = \textwidth]{fig_source/http-3d-semi-supervised-average-rect-01.png}
+  \caption{http dataset, default parameters}
+\label{jmva:fig:http}
+\end{figure}
 
 \section{Conclusion}
-The contribution of this work is twofold. First, it brings advances in multivariate EVT by designing a statistical method that possibly exhibits a sparsity pattern in the dependence structure of extremes, while deriving non-asymptotic bounds to assess the accuracy of the estimation procedure. Our method is intended to be used as a preprocessing step to scale up multivariate extreme values modeling to high dimensional settings, which is currently one of the major challenges in multivariate EVT.
+The contribution of this chapter is twofold. First, it brings advances in multivariate EVT by designing a statistical method that possibly exhibits a sparsity pattern in the dependence structure of extremes, while deriving non-asymptotic bounds to assess the accuracy of the estimation procedure. Our method is intended to be used as a preprocessing step to scale up multivariate extreme values modeling to high dimensional settings, which is currently one of the major challenges in multivariate EVT.
 Since the asymptotic bias ($\text{bias}(\alpha,n,k, \epsilon)$ in eq.~\eqref{jmva:eq:bias}) appears as a separate term  in the bound established, no second order
 assumption is required. One possible line of further research would be to make  such an assumption (\ie\,to assume that the bias itself is regularly varying), in order to choose $\epsilon$ adaptively with respect to $k$ and $n$ (see Remark~\ref{jmva:rk_param_choice}). This might also open up the possibility of de-biasing the estimation procedure (\cite{Fougeres2015}, \cite{Beirlant2015}). 
 As a second contribution, this work extends the applicability of multivariate  EVT to the field of Anomaly Detection: a multivariate EVT-based algorithm which scores extreme observations according to their degree of abnormality is proposed. Due to  its  moderate complexity  --of order $d n \log n$--  this algorithm is suitable for the treatment of real word large-scale learning problems, and experimental results reveal a significantly increased performance on extreme regions compared with standard AD approaches.
-
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
@@ -2602,22 +2621,3 @@ which achieves the proof.
 \section{Experiments curves}
 \label{jmva:appendix_exp}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = \textwidth]{fig_source/SA-lb-semi-supervised-average-rect-01.png}
-  \caption{SA dataset, default parameters}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = \textwidth]{fig_source/forestcover-semi-supervised-average-rect-01.png}
-  \caption{forestcover dataset, default parameters}
-\end{figure}
-
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = \textwidth]{fig_source/http-3d-semi-supervised-average-rect-01.png}
-  \caption{http dataset, default parameters}
-\end{figure}

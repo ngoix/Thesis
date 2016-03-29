@@ -4,7 +4,7 @@ from sklearn.neighbors import LocalOutlierFactor
 from sklearn.ensemble import IsolationForest
 from sklearn.metrics import auc
 from sklearn.datasets import fetch_kddcup99
-from em import EM, MV
+from em import EM, MV, EM_approx
 
 np.random.seed(1)
 
@@ -31,7 +31,7 @@ for dat in datasets:
     y_train = y[:n_samples_train]
     y_test = y[n_samples_train:]
 
-    axis_t = np.arange(0, 1, 0.01)
+    axis_t = np.arange(0, 10, 0.01)
     axis_alpha = np.arange(0, 1, 0.01)
 
     # fit:
@@ -45,40 +45,40 @@ for dat in datasets:
 
     # EM:
     plt.subplot(121)
-    em_lof = EM(lof, X_test, axis_t)
-    AUC = auc(axis_t, em_lof)
-    plt.plot(axis_t, em_lof, lw=1, label='EM-curve of %s for %s (area = %0.3f)'
-             % ('lof', dat, AUC))
-
+    # em_lof = EM_approx(lof, X_test, axis_t)
+    # AUC = auc(axis_t, em_lof)
+    # plt.plot(axis_t, em_lof, lw=1, label='EM-curve of %s for %s (area = %0.3f)'
+    #          % ('lof', dat, AUC))
+    print 'em_iforest...'
     em_iforest = EM(iforest, X_test, axis_t)
     AUC = auc(axis_t, em_iforest)
     plt.plot(axis_t, em_iforest, lw=1,
              label='EM-curve of %s for %s (area = %0.3f)'
              % ('iforest', dat, AUC))
-    plt.xlim([-0.05, 1.05])
-    plt.ylim([-0.05, 1.05])
+    # plt.xlim([-0.05, 1.05])
+    # plt.ylim([-0.05, 1.05])
     plt.xlabel('t')
     plt.ylabel('EM(t)')
     plt.title('Excess-Mass curve')
     plt.legend(loc="lower right")
 
-    # MV:
-    plt.subplot(122)
-    mv_lof = MV(lof, X_test, axis_alpha)
-    AUC = auc(axis_alpha, mv_lof)
-    plt.plot(axis_alpha, mv_lof, lw=1,
-             label='MV-curve of %s for %s (area = %0.3f)'
-             % ('lof', dat, AUC))
+    # # MV:
+    # plt.subplot(122)
+    # mv_lof = MV(lof, X_test, axis_alpha)
+    # AUC = auc(axis_alpha, mv_lof)
+    # plt.plot(axis_alpha, mv_lof, lw=1,
+    #          label='MV-curve of %s for %s (area = %0.3f)'
+    #          % ('lof', dat, AUC))
 
-    mv_iforest = MV(iforest, X_test, axis_alpha)
-    AUC = auc(axis_alpha, mv_iforest)
-    plt.plot(axis_alpha, mv_iforest, lw=1,
-             label='MV-curve of %s for %s (area = %0.3f)'
-             % ('iforest', dat, AUC))
-    plt.xlim([-0.05, 1.05])
-    plt.xlabel('alha')
-    plt.ylabel('MV(alpha)')
-    plt.title('Mass-Volume Curve')
-    plt.legend(loc="lower right")
+    # mv_iforest = MV(iforest, X_test, axis_alpha)
+    # AUC = auc(axis_alpha, mv_iforest)
+    # plt.plot(axis_alpha, mv_iforest, lw=1,
+    #          label='MV-curve of %s for %s (area = %0.3f)'
+    #          % ('iforest', dat, AUC))
+    # plt.xlim([-0.05, 1.05])
+    # plt.xlabel('alha')
+    # plt.ylabel('MV(alpha)')
+    # plt.title('Mass-Volume Curve')
+    # plt.legend(loc="lower right")
 
 plt.show()

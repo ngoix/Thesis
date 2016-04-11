@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  24 MAR 2016 18:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  11 APR 2016 13:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1382,7 +1382,8 @@ File: frame.tss 2011/12/15
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty
 Package: hypcap 2011/02/16 v1.11 Adjusting the anchors of captions (HO)
-)) (./thesis.aux)
+)) (./thesis.aux
+(./abstract.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -1402,8 +1403,7 @@ LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 18.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -1470,14 +1470,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/Front/logo_TELECOM.png, id=368, 212.795pt x 212.795pt>
+<images/Front/logo_TELECOM.png, id=372, 212.795pt x 212.795pt>
 File: images/Front/logo_TELECOM.png Graphic file (type png)
 
 <use images/Front/logo_TELECOM.png>
 Package pdftex.def Info: images/Front/logo_TELECOM.png used on input line 31.
 (pdftex.def)             Requested size: 48.3671pt x 48.36958pt.
 
-<images/Front/logo_ENSCACHAN.png, id=369, 401.8212pt x 217.5327pt>
+<images/Front/logo_ENSCACHAN.png, id=373, 401.8212pt x 217.5327pt>
 File: images/Front/logo_ENSCACHAN.png Graphic file (type png)
 
 <use images/Front/logo_ENSCACHAN.png>
@@ -1485,7 +1485,7 @@ Package pdftex.def Info: images/Front/logo_ENSCACHAN.png used on input line 31.
 
 (pdftex.def)             Requested size: 89.34515pt x 48.36958pt.
 
-<images/Front/logo_CNRS.jpg, id=371, 170.7981pt x 170.7981pt>
+<images/Front/logo_CNRS.jpg, id=375, 170.7981pt x 170.7981pt>
 File: images/Front/logo_CNRS.jpg Graphic file (type jpg)
 
 <use images/Front/logo_CNRS.jpg>
@@ -1536,7 +1536,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
  [5
 
 ] [6]
-Overfull \hbox (2.48824pt too wide) in paragraph at lines 82--82
+Overfull \hbox (2.48824pt too wide) in paragraph at lines 83--83
  [][] [][][]\OT1/ptm/m/n/10.95 Algorithm: De-tect-ing Anoma-lies among Mul-ti-v
 ari-ate EX-tremes (DAMEX)[][] [][]  
  []
@@ -1603,22 +1603,22 @@ Overfull \hbox (2.76408pt too wide) in paragraph at lines 388--388
  []
 
 [9] [10] [11] [12] [13] [14]
-<fig_source/cone.png, id=800, 689.18933pt x 675.05832pt>
+<fig_source/cone.png, id=820, 689.18933pt x 675.05832pt>
 File: fig_source/cone.png Graphic file (type png)
 
 <use fig_source/cone.png>
-Package pdftex.def Info: fig_source/cone.png used on input line 557.
+Package pdftex.def Info: fig_source/cone.png used on input line 558.
 (pdftex.def)             Requested size: 137.83542pt x 135.00926pt.
 
-<fig_source/representation2D.png, id=801, 299.10284pt x 303.05923pt>
+<fig_source/representation2D.png, id=821, 299.10284pt x 303.05923pt>
 File: fig_source/representation2D.png Graphic file (type png)
 
 <use fig_source/representation2D.png>
-Package pdftex.def Info: fig_source/representation2D.png used on input line 563
+Package pdftex.def Info: fig_source/representation2D.png used on input line 564
 .
 (pdftex.def)             Requested size: 133.59125pt x 135.35803pt.
  [15 <./fig_source/cone.png> <./fig_source/representation2D.png>]
-Overfull \hbox (8.38698pt too wide) in paragraph at lines 656--674
+Overfull \hbox (8.38698pt too wide) in paragraph at lines 657--675
 \OT1/ptm/m/n/10.95 where $[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 :\OT1/cmr/m
 /n/10.95 ) = (1\OML/cmm/m/it/10.95 =n\OT1/cmr/m/n/10.95 ) [][] \OML/cmm/m/it/10
 .95 ^^N[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 )$ \OT1/pt
@@ -1627,7 +1627,7 @@ sformed
  []
 
 
-Overfull \hbox (16.48709pt too wide) in paragraph at lines 675--678
+Overfull \hbox (16.48709pt too wide) in paragraph at lines 676--679
 []\OT1/ptm/m/n/10.95 This heuris-tic yields the fol-low-ing al-go-rithm. The co
 m-plex-ity is in $\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 
 dn [] n \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 dn\OT1/cmr/m/n/10.95 ) = \OML/
@@ -1635,22 +1635,20 @@ cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 dn [] n\OT1/cmr/m/n/10.
 95 )$\OT1/ptm/m/n/10.95 ,
  []
 
-
-Underfull \hbox (badness 1701) in paragraph at lines 704--704
+[16]
+Underfull \hbox (badness 1701) in paragraph at lines 705--705
 []\OT1/ptm/m/n/10.95 Standardize \OT1/ptm/m/it/10.95 via \OT1/ptm/m/n/10.95 mar
 ginal rank-transformation: $[] \OT1/cmr/m/n/10.95 := [](\OML/cmm/m/it/10.95 X[]
 \OT1/cmr/m/n/10.95 ) = []1\OML/cmm/m/it/10.95 =\OT1/cmr/m/n/10.95 (1 \OMS/cmsy/
 m/n/10.95 ^^@
  []
 
-[16] [17]
-Overfull \hbox (14.34506pt too wide) in paragraph at lines 777--778
-\OT1/ptm/m/n/10.95 As an other con-tri-bu-tion of this the-sis, two clas-si-cal
- AD al-go-rithms, \OT1/phv/m/n/10.95 Iso-la-tion-For-est \OT1/ptm/m/n/10.95 and
- \OT1/phv/m/n/10.95 LocalOut-
- []
+[17]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 777.
 
-
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
 Overfull \hbox (6.70308pt too wide) in paragraph at lines 779--783
 []\OT1/ptm/m/n/10.95 Scikit-learn, see [][]Pe-dregosa et al.[][] ([][]2011[][])
 , is an open-source li-brary which pro-vides well-established
@@ -1664,20 +1662,20 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 796.
- [19] [20])
-[21] [22
-
-]
+ [19]) [20]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 71.
- [23] [24] (./background.tex
+
+[21
+
+] [22] (./background.tex
 Chapter 2.
 ------------------------------------------------------------------------------
  2.\hskip 1em\relax Background on Anomaly Detection through Scikit-Learn
 ------------------------------------------------------------------------------
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-[25
+[23
 
 ]
 Overfull \hbox (6.70308pt too wide) in paragraph at lines 56--58
@@ -1685,7 +1683,7 @@ Overfull \hbox (6.70308pt too wide) in paragraph at lines 56--58
 is an open-source li-brary which pro-vides well-established
  []
 
-[26]
+[24]
 \openout5 = `thesis.pyg'.
 
 runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
@@ -1693,11 +1691,6 @@ ns= ,fontfamily=courier,fontsize=\footnotesize " -o thesis.out.pyg thesis.pyg).
 ..executed.
 
  (./thesis.out.pyg
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <9> not available
 (Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
@@ -1712,14 +1705,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
-[27]
+[25]
+Overfull \hbox (0.78296pt too wide) in paragraph at lines 80--81
+\OT1/pcr/m/n/10.95 IsolationForest(n[]trees=100) \OT1/ptm/m/n/10.95 in the snip
+-pet above by \OT1/pcr/m/n/10.95 LocalOutlierFactor()\OT1/ptm/m/n/10.95 . 
+ []
+
 \openout5 = `thesis.pyg'.
 
 runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
 ns= ,fontfamily=courier,fontsize=\footnotesize " -o thesis.out.pyg thesis.pyg).
 ..executed.
 
- (./thesis.out.pyg)
+(./thesis.out.pyg)
 runsystem(rm thesis.out.pyg)...executed.
 
 runsystem(rm thesis.pyg)...executed.
@@ -1729,29 +1727,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-<fig_source/OCSVM_hard.png, id=1000, 481.67186pt x 176.44644pt>
+<fig_source/OCSVM_hard.png, id=1010, 481.67186pt x 176.44644pt>
 File: fig_source/OCSVM_hard.png Graphic file (type png)
 
 <use fig_source/OCSVM_hard.png>
 Package pdftex.def Info: fig_source/OCSVM_hard.png used on input line 117.
 (pdftex.def)             Requested size: 399.78754pt x 146.4505pt.
 
-<fig_source/OCSVM_soft.png, id=1001, 482.8251pt x 178.36852pt>
+<fig_source/OCSVM_soft.png, id=1011, 482.8251pt x 178.36852pt>
 File: fig_source/OCSVM_soft.png Graphic file (type png)
 
 <use fig_source/OCSVM_soft.png>
 Package pdftex.def Info: fig_source/OCSVM_soft.png used on input line 137.
 (pdftex.def)             Requested size: 400.74472pt x 148.0458pt.
- [28] [29 <./fig_source/OCSVM_hard.png>]
+ [26] [27 <./fig_source/OCSVM_hard.png>]
 
-LaTeX Warning: Text page 30 contains only floats.
+LaTeX Warning: Text page 28 contains only floats.
 
 
 Overfull \vbox (3.50356pt too high) has occurred while \output is active []
 
 
-[30 <./fig_source/OCSVM_soft.png>]
-<fig_source/lof.png, id=1027, 586.8324pt x 442.2924pt>
+[28 <./fig_source/OCSVM_soft.png>]
+<fig_source/lof.png, id=1036, 586.8324pt x 442.2924pt>
 File: fig_source/lof.png Graphic file (type png)
 
 <use fig_source/lof.png>
@@ -1777,10 +1775,10 @@ runsystem(rm thesis.out.pyg)...executed.
 
 runsystem(rm thesis.pyg)...executed.
 
- [31]
+ [29]
 Package mdframed Info: Not enough space on this page on input line 237.
- [32 <./fig_source/lof.png>]
-<fig_source/ideeIF.png, id=1047, 231.05751pt x 137.72597pt>
+ [30 <./fig_source/lof.png>]
+<fig_source/ideeIF.png, id=1055, 231.05751pt x 137.72597pt>
 File: fig_source/ideeIF.png Graphic file (type png)
 
 <use fig_source/ideeIF.png>
@@ -1791,7 +1789,7 @@ Overfull \hbox (2.4156pt too wide) in paragraph at lines 268--269
  [][] 
  []
 
-<fig_source/convergenceIF.png, id=1048, 137.72597pt x 137.72597pt>
+<fig_source/convergenceIF.png, id=1056, 137.72597pt x 137.72597pt>
 File: fig_source/convergenceIF.png Graphic file (type png)
 
 <use fig_source/convergenceIF.png>
@@ -1802,7 +1800,7 @@ Overfull \hbox (16.70247pt too wide) in paragraph at lines 266--278
 []$[]$ $[]$ 
  []
 
-<fig_source/iforest.png, id=1049, 586.8324pt x 442.2924pt>
+<fig_source/iforest.png, id=1057, 586.8324pt x 442.2924pt>
 File: fig_source/iforest.png Graphic file (type png)
 
 <use fig_source/iforest.png>
@@ -1813,7 +1811,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 286--288
 
  []
 
-[33 <./fig_source/ideeIF.png> <./fig_source/convergenceIF.png>]
+[31 <./fig_source/ideeIF.png> <./fig_source/convergenceIF.png>]
 Package mdframed Info: mdframed works in twoside mode on input line 288.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1830,28 +1828,28 @@ runsystem(rm thesis.out.pyg)...executed.
 
 runsystem(rm thesis.pyg)...executed.
 
- [34 <./fig_source/iforest.png>]
-<fig_source/ADcomparison1.png, id=1065, 731.3724pt x 370.0224pt>
+ [32 <./fig_source/iforest.png>]
+<fig_source/ADcomparison1.png, id=1074, 731.3724pt x 370.0224pt>
 File: fig_source/ADcomparison1.png Graphic file (type png)
 
 <use fig_source/ADcomparison1.png>
 Package pdftex.def Info: fig_source/ADcomparison1.png used on input line 370.
 (pdftex.def)             Requested size: 375.7232pt x 190.09221pt.
- [35]
-<fig_source/ADcomparison2.png, id=1070, 731.3724pt x 370.0224pt>
+ [33]
+<fig_source/ADcomparison2.png, id=1079, 731.3724pt x 370.0224pt>
 File: fig_source/ADcomparison2.png Graphic file (type png)
 
 <use fig_source/ADcomparison2.png>
 Package pdftex.def Info: fig_source/ADcomparison2.png used on input line 377.
 (pdftex.def)             Requested size: 375.7232pt x 190.09221pt.
 
-<fig_source/ADcomparison3.png, id=1071, 731.3724pt x 370.0224pt>
+<fig_source/ADcomparison3.png, id=1080, 731.3724pt x 370.0224pt>
 File: fig_source/ADcomparison3.png Graphic file (type png)
 
 <use fig_source/ADcomparison3.png>
 Package pdftex.def Info: fig_source/ADcomparison3.png used on input line 384.
 (pdftex.def)             Requested size: 375.7232pt x 190.09221pt.
- [36 <./fig_source/ADcomparison1.png> <./fig_source/ADcomparison2.png> <./fig_s
+ [34 <./fig_source/ADcomparison1.png> <./fig_source/ADcomparison2.png> <./fig_s
 ource/ADcomparison3.png>]
 Package mdframed Info: mdframed works in twoside mode on input line 390.
 Package mdframed Info: mdframed detected package amsthm 
@@ -1870,83 +1868,148 @@ runsystem(rm thesis.pyg)...executed.
 
 Package mdframed Info: Not enough space on this page on input line 476.
 
-[37] [38]
+[35] [36]
+Overfull \hbox (14.68913pt too wide) in paragraph at lines 500--520
+ [][] 
+ []
+
+[37]
+
+LaTeX Warning: Reference `back:fig:lof_ocsvm_pr' on page 38 undefined on input 
+line 526.
+
+
+LaTeX Warning: Reference `back:fig:ocsvm_roc_pr_unsupervised' on page 38 undefi
+ned on input line 526.
+
+
+Overfull \hbox (34.94138pt too wide) in paragraph at lines 530--552
+ [][] 
+ []
+
+
+Overfull \hbox (34.94138pt too wide) in paragraph at lines 559--581
+ [][] 
+ []
+
+<fig_source/bench_iforest_roc_pr.png, id=1130, 1806.75pt x 939.51pt>
+File: fig_source/bench_iforest_roc_pr.png Graphic file (type png)
+
+<use fig_source/bench_iforest_roc_pr.png>
+Package pdftex.def Info: fig_source/bench_iforest_roc_pr.png used on input line
+ 587.
+(pdftex.def)             Requested size: 459.22292pt x 238.79057pt.
+
+Overfull \hbox (41.74985pt too wide) in paragraph at lines 587--588
+ [][] 
+ []
+
+<fig_source/bench_lof_roc_pr.png, id=1131, 1806.75pt x 939.51pt>
+File: fig_source/bench_lof_roc_pr.png Graphic file (type png)
+
+<use fig_source/bench_lof_roc_pr.png>
+Package pdftex.def Info: fig_source/bench_lof_roc_pr.png used on input line 601
+.
+(pdftex.def)             Requested size: 417.47307pt x 217.08626pt.
+
+<fig_source/bench_iforest_roc_pr_unsupervised.png, id=1132, 1806.75pt x 939.51p
+t>
+File: fig_source/bench_iforest_roc_pr_unsupervised.png Graphic file (type png)
+ <use fig_source/bench_iforest_roc_pr_unsupervised.png>
+Package pdftex.def Info: fig_source/bench_iforest_roc_pr_unsupervised.png used 
+on input line 608.
+(pdftex.def)             Requested size: 459.22292pt x 238.79057pt.
+
+Overfull \hbox (41.74985pt too wide) in paragraph at lines 608--609
+ [][] 
+ []
+
+<fig_source/bench_lof_roc_pr_unsupervised.png, id=1133, 1806.75pt x 939.51pt>
+File: fig_source/bench_lof_roc_pr_unsupervised.png Graphic file (type png)
+
+<use fig_source/bench_lof_roc_pr_unsupervised.png>
+Package pdftex.def Info: fig_source/bench_lof_roc_pr_unsupervised.png used on i
+nput line 622.
+(pdftex.def)             Requested size: 417.47307pt x 217.08626pt.
+ [38 <./fig_source/bench_iforest_roc_pr.png> <./fig_source/bench_lof_roc_pr.png
+>] [39] [40] [41 <./fig_source/bench_iforest_roc_pr_unsupervised.png> <./fig_so
+urce/bench_lof_roc_pr_unsupervised.png>] [42
+
+]
 Chapter 3.
 ------------------------------------------------------------------------------
  3.\hskip 1em\relax Concentration Inequalities from the Method of bounded diffe
 rences
 ------------------------------------------------------------------------------
-[39
-
-] [40] [41] [42] [43] [44] [45] [46]
-Overfull \hbox (156.11479pt too wide) in paragraph at lines 858--859
+[43] [44] [45] [46] [47] [48] [49] [50]
+Overfull \hbox (156.11479pt too wide) in paragraph at lines 1008--1009
 [][]\OT1/ptm/m/it/10.95 Remark \OT1/ptm/m/n/10.95 3.17\OT1/ptm/m/it/10.95 . []\
 OT1/ptm/m/n/10.95 Note that bound (ii) holds even for the con-di-tional Rademac
 her av-er-age $\U/msb/m/n/10.95 E []$\OT1/ptm/m/n/10.95 . 
  []
 
 
-Overfull \hbox (44.48161pt too wide) in paragraph at lines 872--872
+Overfull \hbox (44.48161pt too wide) in paragraph at lines 1022--1022
 [] 
  []
 
-[47]
-Overfull \hbox (30.0154pt too wide) in paragraph at lines 885--887
+[51]
+Overfull \hbox (30.0154pt too wide) in paragraph at lines 1035--1037
 \OT1/ptm/m/n/10.95 This can be ex-plained by the fact that it is easy to prove 
 the sub-optimal in-equal-ity $\OMS/cmsy/m/n/10.95 R[] [] ^^T  []\OML/cmm/m/it/1
 0.95 C[]$\OT1/ptm/m/n/10.95 :
  []
 
 
-Overfull \hbox (80.03542pt too wide) in paragraph at lines 907--907
+Overfull \hbox (80.03542pt too wide) in paragraph at lines 1057--1057
 [] 
  []
 
-[48]
-Overfull \hbox (13.57524pt too wide) in paragraph at lines 927--927
+[52]
+Overfull \hbox (13.57524pt too wide) in paragraph at lines 1077--1077
 [] 
  []
 
-[49] [50] [51] [52
+[53] [54] [55] [56
 
 ]
 Chapter 4.
 ------------------------------------------------------------------------------
  4.\hskip 1em\relax Extreme Value Theory
 ------------------------------------------------------------------------------
-[53] [54] <fig_source/GEV.png, id=1285, 586.8324pt x 442.2924pt>
+[57] [58] <fig_source/GEV.png, id=1356, 586.8324pt x 442.2924pt>
 File: fig_source/GEV.png Graphic file (type png)
 
 <use fig_source/GEV.png>
-Package pdftex.def Info: fig_source/GEV.png used on input line 1086.
+Package pdftex.def Info: fig_source/GEV.png used on input line 1236.
 (pdftex.def)             Requested size: 375.7232pt x 283.18765pt.
- [55 <./fig_source/GEV.png>] [56] [57]
-Overfull \hbox (1.35776pt too wide) in paragraph at lines 1295--1295
+ [59 <./fig_source/GEV.png>] [60] [61]
+Overfull \hbox (1.35776pt too wide) in paragraph at lines 1445--1445
 [] 
  []
 
-[58]) [59] [60
+[62]) [63] [64
 
-] [61] [62] (./aistat.tex
+] [65] [66] (./aistat.tex
 Chapter 5.
 ------------------------------------------------------------------------------
  5.\hskip 1em\relax On Anomaly Ranking and Excess-Mass Curves
 ------------------------------------------------------------------------------
-[63
+[67
 
-] [64] [65]
+] [68] [69]
 Underfull \hbox (badness 10000) in paragraph at lines 117--120
 
  []
 
-[66]
+[70]
 Overfull \hbox (3.82382pt too wide) in paragraph at lines 162--165
 \OT1/ptm/m/n/10.95 As in-tro-duced in Sec-tion [][]1.2.3[][], the per-for-mance
  cri-te-rion we pro-pose in or-der to eval-u-ate anomaly
  []
 
 Missing character: There is no ; in font nullfont!
-[67] [68]
+[71] [72]
 Overfull \hbox (10.6847pt too wide) detected at line 464
 [] \OML/cmm/m/it/10.95 ^^O[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 f\OML/cmm/m
 /it/10.95 s > u\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 ^^A[]\OMS/cmsy/m/n/10.95
@@ -1960,101 +2023,101 @@ OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 f > t\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/
 10.95 )\OML/cmm/m/it/10.95 ;
  []
 
-[69] [70] [71] [72] [73] [74] [75]
-Underfull \hbox (badness 10000) in paragraph at lines 794--795
+[73] [74] [75] [76] [77] [78] [79]
+Underfull \hbox (badness 10000) in paragraph at lines 795--796
 
  []
 
-[76] <fig_source/EM-EMS.png, id=1584, 578.16pt x 433.62pt>
+[80] <fig_source/EM-EMS.png, id=1658, 578.16pt x 433.62pt>
 File: fig_source/EM-EMS.png Graphic file (type png)
 
 <use fig_source/EM-EMS.png>
-Package pdftex.def Info: fig_source/EM-EMS.png used on input line 829.
+Package pdftex.def Info: fig_source/EM-EMS.png used on input line 830.
 (pdftex.def)             Requested size: 208.73653pt x 156.553pt.
 
-<fig_source/EM-EMSzoom.png, id=1585, 578.16pt x 433.62pt>
+<fig_source/EM-EMSzoom.png, id=1659, 578.16pt x 433.62pt>
 File: fig_source/EM-EMSzoom.png Graphic file (type png)
 
 <use fig_source/EM-EMSzoom.png>
-Package pdftex.def Info: fig_source/EM-EMSzoom.png used on input line 837.
+Package pdftex.def Info: fig_source/EM-EMSzoom.png used on input line 838.
 (pdftex.def)             Requested size: 208.73653pt x 156.553pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 838--838
+Underfull \hbox (badness 10000) in paragraph at lines 839--839
 []\OT1/ptm/m/sc/10 Figure 5.5: |\OT1/ptm/m/n/10 Zoom near 0
  []
 
 
-Overfull \hbox (2.08049pt too wide) in paragraph at lines 827--842
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 828--843
 []$[]$  $[]$ 
  []
 
-<fig_source/EMG-EM.png, id=1586, 578.16pt x 433.62pt>
+<fig_source/EMG-EM.png, id=1660, 578.16pt x 433.62pt>
 File: fig_source/EMG-EM.png Graphic file (type png)
 
 <use fig_source/EMG-EM.png>
-Package pdftex.def Info: fig_source/EMG-EM.png used on input line 846.
+Package pdftex.def Info: fig_source/EMG-EM.png used on input line 847.
 (pdftex.def)             Requested size: 417.47307pt x 313.106pt.
- [77] [78 <./fig_source/EM-EMS.png> <./fig_source/EM-EMSzoom.png> <./fig_source
+ [81] [82 <./fig_source/EM-EMS.png> <./fig_source/EM-EMSzoom.png> <./fig_source
 /EMG-EM.png>]
-<fig_source/scoring3D.png, id=1602, 1675.2186pt x 897.5934pt>
+<fig_source/scoring3D.png, id=1676, 1675.2186pt x 897.5934pt>
 File: fig_source/scoring3D.png Graphic file (type png)
 
 <use fig_source/scoring3D.png>
-Package pdftex.def Info: fig_source/scoring3D.png used on input line 864.
+Package pdftex.def Info: fig_source/scoring3D.png used on input line 865.
 (pdftex.def)             Requested size: 417.47307pt x 223.6856pt.
- [79 <./fig_source/scoring3D.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 884--887
+ [83 <./fig_source/scoring3D.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 885--888
 
  []
 
-[80] [81]
-Underfull \hbox (badness 10000) in paragraph at lines 935--936
+[84] [85]
+Underfull \hbox (badness 10000) in paragraph at lines 936--937
 
  []
 
-[82]
-Underfull \hbox (badness 10000) in paragraph at lines 977--979
+[86]
+Underfull \hbox (badness 10000) in paragraph at lines 978--980
 
  []
 
-[83] [84]) [85] [86
+[87] [88]) [89] [90
 
-] [87] [88] (./colt.tex
+] [91] [92] (./colt.tex
 Chapter 6.
 ------------------------------------------------------------------------------
  6.\hskip 1em\relax Learning the dependence structure of rare events: a non-asy
 mptotic study
 ------------------------------------------------------------------------------
-[89
+[93
 
-] [90] [91] [92] [93] [94] [95]
+] [94] [95] [96] [97] [98] [99]
 Underfull \hbox (badness 10000) in paragraph at lines 802--803
 
  []
 
-[96] [97]
+[100] [101]
 Overfull \hbox (14.97438pt too wide) in paragraph at lines 907--907
 [] 
  []
 
-[98] [99] [100]
+[102] [103] [104]
 Overfull \hbox (16.05061pt too wide) in paragraph at lines 1083--1083
 [] 
  []
 
-[101] [102]
+[105] [106]
 Overfull \hbox (6.6724pt too wide) in paragraph at lines 1221--1221
 [] 
  []
 
-) (./jmva.tex [103] [104]
+) (./jmva.tex [107] [108]
 Chapter 7.
 ------------------------------------------------------------------------------
  7.\hskip 1em\relax Sparse Representation of Multivariate Extremes
 ------------------------------------------------------------------------------
-[105
+[109
 
-] [106] [107] [108] [109] [110]
+] [110] [111] [112] [113] [114]
 File: fig_source/cone.png Graphic file (type png)
  <use fig_source/cone.png>
 Package pdftex.def Info: fig_source/cone.png used on input line 528.
@@ -2065,18 +2128,18 @@ File: fig_source/representation2D.png Graphic file (type png)
 Package pdftex.def Info: fig_source/representation2D.png used on input line 534
 .
 (pdftex.def)             Requested size: 133.59125pt x 135.35803pt.
- [111] [112] [113]
+ [115] [116] [117]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 739.
- [114] [115]
-<fig_source/representation2D_nk_rect.png, id=2109, 335.3328pt x 300.4023pt>
+ [118] [119]
+<fig_source/representation2D_nk_rect.png, id=2181, 335.3328pt x 300.4023pt>
 File: fig_source/representation2D_nk_rect.png Graphic file (type png)
 
 <use fig_source/representation2D_nk_rect.png>
 Package pdftex.def Info: fig_source/representation2D_nk_rect.png used on input 
 line 951.
 (pdftex.def)             Requested size: 292.22987pt x 261.80167pt.
- [116] [117 <./fig_source/representation2D_nk_rect.png>] [118]
+ [120] [121 <./fig_source/representation2D_nk_rect.png>] [122]
 Overfull \hbox (3.99144pt too wide) in paragraph at lines 1081--1088
 \OT1/ptm/m/n/10.95 Notice that $[]\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x\OML
 /cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 z\OT1/cmr/m/n/10.95 )$ \OT1/ptm/m/n/10.95
@@ -2084,22 +2147,22 @@ Overfull \hbox (3.99144pt too wide) in paragraph at lines 1081--1088
 ]). By ([][]7.27[][])
  []
 
-[119] [120] [121] [122]
+[123] [124] [125] [126]
 Overfull \hbox (14.88588pt too wide) in paragraph at lines 1364--1369
 [][]\OT1/ptm/m/it/10.95 Remark \OT1/ptm/m/n/10.95 7.13\OT1/ptm/m/it/10.95 . []\
 OT1/ptm/m/n/10.95 (\OT1/ptm/m/sc/10.95 Thresh-old-ing the es-ti-ma-tor\OT1/ptm/
 m/n/10.95 ) []In prac-tice, we have to deal with non-asymptotic
  []
 
-[123] [124] [125] [126] [127]
-<fig_source/plot_damex_level_sets.png, id=2280, 1602.2259pt x 721.2546pt>
+[127] [128] [129] [130] [131]
+<fig_source/plot_damex_level_sets.png, id=2352, 1602.2259pt x 721.2546pt>
 File: fig_source/plot_damex_level_sets.png Graphic file (type png)
 
 <use fig_source/plot_damex_level_sets.png>
 Package pdftex.def Info: fig_source/plot_damex_level_sets.png used on input lin
 e 1621.
 (pdftex.def)             Requested size: 373.46715pt x 168.11917pt.
- [128] [129 <./fig_source/plot_damex_level_sets.png>]
+ [132] [133 <./fig_source/plot_damex_level_sets.png>]
 Overfull \hbox (82.66403pt too wide) in paragraph at lines 1751--1818
 \OMS/cmsy/m/n/10.95 fC[]\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1 \OMS/cmsy/m/
 n/10.95 ^^T \OML/cmm/m/it/10.95 m \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 K
@@ -2108,15 +2171,15 @@ $\OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x\OT1/cmr/m/n/1
 0.95 ) = []\OMS/cmsy/m/n/10.95 f^^@ [][] [][]g\OML/cmm/m/it/10.95 ;$
  []
 
-[130] <fig_source/wave_dir2.png, id=2330, 1180.1691pt x 460.3599pt>
+[134] <fig_source/wave_dir2.png, id=2404, 1180.1691pt x 460.3599pt>
 File: fig_source/wave_dir2.png Graphic file (type png)
 
 <use fig_source/wave_dir2.png>
 Package pdftex.def Info: fig_source/wave_dir2.png used on input line 1859.
 (pdftex.def)             Requested size: 389.45702pt x 151.91924pt.
- [131] [132 <./fig_source/wave_dir2.png>]
-[133]
-<fig_source/shuttle-semi-supervised-average-rect-01.png, id=2378, 1681.0002pt x
+ [135] [136 <./fig_source/wave_dir2.png>]
+[137]
+<fig_source/shuttle-semi-supervised-average-rect-01.png, id=2446, 1681.0002pt x
  922.8879pt>
 File: fig_source/shuttle-semi-supervised-average-rect-01.png Graphic file (type
  png)
@@ -2125,7 +2188,7 @@ Package pdftex.def Info: fig_source/shuttle-semi-supervised-average-rect-01.png
  used on input line 2101.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=2379, 1681.0002pt 
+<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=2447, 1681.0002pt 
 x 922.8879pt>
 File: fig_source/SF-4d-lb-semi-supervised-average-rect-01.png Graphic file (typ
 e png)
@@ -2134,7 +2197,7 @@ Package pdftex.def Info: fig_source/SF-4d-lb-semi-supervised-average-rect-01.pn
 g used on input line 2107.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=2380, 1681.0002pt x
+<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=2448, 1681.0002pt x
  922.8879pt>
 File: fig_source/SF-4d-lb-semi-supervised-average-rect-1.png Graphic file (type
  png)
@@ -2143,7 +2206,7 @@ Package pdftex.def Info: fig_source/SF-4d-lb-semi-supervised-average-rect-1.png
  used on input line 2113.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=2382, 1681.0002pt x 9
+<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=2450, 1681.0002pt x 9
 22.8879pt>
 File: fig_source/SA-lb-semi-supervised-average-rect-01.png Graphic file (type p
 ng)
@@ -2152,7 +2215,7 @@ Package pdftex.def Info: fig_source/SA-lb-semi-supervised-average-rect-01.png u
 sed on input line 2144.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/forestcover-semi-supervised-average-rect-01.png, id=2383, 1681.0002
+<fig_source/forestcover-semi-supervised-average-rect-01.png, id=2451, 1681.0002
 pt x 922.8879pt>
 File: fig_source/forestcover-semi-supervised-average-rect-01.png Graphic file (
 type png)
@@ -2162,7 +2225,7 @@ Package pdftex.def Info: fig_source/forestcover-semi-supervised-average-rect-01
 .png used on input line 2151.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/http-3d-semi-supervised-average-rect-01.png, id=2384, 1681.0002pt x
+<fig_source/http-3d-semi-supervised-average-rect-01.png, id=2452, 1681.0002pt x
  922.8879pt>
 File: fig_source/http-3d-semi-supervised-average-rect-01.png Graphic file (type
  png)
@@ -2171,12 +2234,12 @@ Package pdftex.def Info: fig_source/http-3d-semi-supervised-average-rect-01.png
  used on input line 2158.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-[134] [135 <./fig_source/shuttle-semi-supervised-average-rect-01.png>] [136 <./
+[138] [139 <./fig_source/shuttle-semi-supervised-average-rect-01.png>] [140 <./
 fig_source/SF-4d-lb-semi-supervised-average-rect-01.png> <./fig_source/SF-4d-lb
--semi-supervised-average-rect-1.png>] [137 <./fig_source/SA-lb-semi-supervised-
+-semi-supervised-average-rect-1.png>] [141 <./fig_source/SA-lb-semi-supervised-
 average-rect-01.png> <./fig_source/forestcover-semi-supervised-average-rect-01.
-png>] [138 <./fig_source/http-3d-semi-supervised-average-rect-01.png>] [139]
-[140]
+png>] [142 <./fig_source/http-3d-semi-supervised-average-rect-01.png>] [143]
+[144]
 Overfull \hbox (19.94437pt too wide) in paragraph at lines 2392--2393
 []\OT1/ptm/m/n/10.95 Considering the def-i-ni-tion in ([][]7.45[][]) and ([][]7
 .31[][]), both sides are equal to $\OML/cmm/m/it/10.95 ^^V[]\OT1/cmr/m/n/10.95 
@@ -2185,36 +2248,55 @@ Overfull \hbox (19.94437pt too wide) in paragraph at lines 2392--2393
 )$\OT1/ptm/m/n/10.95 .
  []
 
-[141] [142] [143] [144] [145]) [146]
+[145] [146] [147] [148] [149]) [150]
 Chapter 8.
 ------------------------------------------------------------------------------
  8.\hskip 1em\relax Conclusion \& Perspectives
 ------------------------------------------------------------------------------
-(./conclusion.tex [147
+(./conclusion.tex [151
 
-]) [148]
+]) [152]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./thesis.bbl [149
+(./thesis.bbl [153
 
 
-] [150] [151] [152] [153] [154]) [155]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
- (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: FFA781D0B9DF7D13B026C85684EAB7A8;22738.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
+] [154] [155] [156] [157] [158]) [159]
+\openout2 = `abstract.aux'.
+
+ (./abstract.tex)
+[160
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
+ (./thesis.aux (./abstract.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
+
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 82CCC1B0D71AC7F453F0783151256B76;23016
+(rerunfilecheck)             After:  68338D81605AF50C28A04ED69800FB23;23061.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 34492 strings out of 495020
- 612665 string characters out of 6181323
- 684147 words of memory out of 5000000
- 36455 multiletter control sequences out of 15000+600000
- 67564 words of font info for 145 fonts, out of 8000000 for 9000
+ 34547 strings out of 495020
+ 614123 string characters out of 6181323
+ 690194 words of memory out of 5000000
+ 36487 multiletter control sequences out of 15000+600000
+ 66319 words of font info for 145 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,24n,65p,10455b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -2250,14 +2332,14 @@ ype1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courie
 r/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (167 pages, 4892943 bytes).
+/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
+ri8a.pfb>
+Output written on thesis.pdf (172 pages, 6355440 bytes).
 PDF statistics:
- 2823 PDF objects out of 2984 (max. 8388607)
- 2532 compressed objects within 26 object streams
- 597 named destinations out of 1000 (max. 500000)
- 873 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2895 PDF objects out of 2984 (max. 8388607)
+ 2592 compressed objects within 26 object streams
+ 611 named destinations out of 1000 (max. 500000)
+ 901 words of extra memory for PDF output out of 10000 (max. 10000000)
 

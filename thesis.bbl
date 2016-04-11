@@ -1,4 +1,4 @@
-\begin{thebibliography}{91}
+\begin{thebibliography}{92}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -463,6 +463,12 @@ Bernhard Sch{\"o}lkopf, John~C Platt, John Shawe-Taylor, Alex~J Smola, and
   Robert~C Williamson.
 \newblock Estimating the support of a high-dimensional distribution.
 \newblock {\em Neural computation}, 13\penalty0 (7):\penalty0 1443--1471, 2001.
+
+\bibitem[Schubert et~al.(2012)Schubert, Wojdanowski, Zimek, and
+  Kriegel]{Schubert2012}
+Erich Schubert, Remigius Wojdanowski, Arthur Zimek, and Hans-Peter Kriegel.
+\newblock On evaluation of outlier rankings and outlier scores.
+\newblock In {\em SDM}, pages 1047--1058. SIAM, 2012.
 
 \bibitem[Scott \& Nowak(2006)Scott and Nowak]{Scott2006}
 Clayton~D Scott and Robert~D Nowak.

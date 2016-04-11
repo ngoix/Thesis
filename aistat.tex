@@ -8,7 +8,7 @@ so as to quantify to which extent observations should be considered as abnormal.
 analysis of the variable of interest. Extensions to the multivariate setting are far from straightforward and it is precisely the main purpose of this chapter to introduce a novel and convenient (functional) criterion for measuring the performance of a scoring function regarding the anomaly ranking task, referred to as the \textit{Excess-Mass} curve ($EM$
 curve). In addition, an adaptive algorithm for building a scoring function based on unlabeled data $X_1,\; \ldots,\; X_n$ with a nearly optimal $EM$-curve is proposed and is analyzed from a statistical perspective.
 
-The material of this chapter is based on previous work published in \cite{AISTAT15}.
+Excepting Section~\ref{aistat:sec:benchmark}, the material of this chapter is based on previous work published in \cite{AISTAT15}.
 \end{chapabstract}
 
 
@@ -74,7 +74,7 @@ last section~\ref{aistat:sec:detailed_proofs}.
 % volume set $\Omega^*_{\alpha}$ over $\mathcal{G}$, of mass at least $\alpha\in(0,1)$, is any solution of the constrained minimization problem
 % \begin{align}
 % \label{aistat:MV}
-%  \min_{\Omega\in\mathcal{G}}Leb(\Omega) \mbox{~~subject to~~}
+%  \min_{\Omega\in\mathcal{G}}\leb(\Omega) \mbox{~~subject to~~}
 %  F(\Omega)\geq \alpha\,.
 % \end{align}
 % The value of minimum is denoted $MV_{\mathcal{G}}(\alpha)$. Abnormal observations are those which belong to %the complementary set
@@ -482,6 +482,7 @@ Assertion $(iii)$ reveals that, if a certain increasing transform of a given sco
 As the distribution $F(dx)$ is generally unknown, $EM$ curves must be estimated. Let $s\in \S$ and $X_1,\; \ldots,\; X_n$ be an i.i.d. sample with common distribution $F(dx)$ and set $\widehat{\alpha}_s(t)=(1/n)\sum_{i=1}^n\mathds{1}_{s(X_i)\geq t}$. The empirical $EM$ curve of $s$ is then defined as $$\widehat{EM}_s(t)=\sup_{u>0}\{ \widehat{\alpha}_s(u)-t\lambda_s(u)\}~.$$ In practice, it may be difficult to estimate the volume $\lambda_s(u)$ and Monte-Carlo approximation can naturally be used for this purpose.
 
 
+
 \section{A general approach to learn a scoring function}\label{aistat:sec:estim}
 
 The concept of $EM$-curve provides a simple way to compare scoring functions but optimizing such a functional criterion is far from straightforward. As in \cite{CLEM13}, we propose to discretize the continuum of optimization problems and to construct a nearly optimal scoring function with level sets built by solving a finite collection of empirical versions of problem \eqref{aistat:solomeg}
@@ -581,7 +582,7 @@ close to zero. It is thus essential to establish rate bounds %what is typically 
 for the quantity $\sup_{t \in ]0,C[} |EM^*(t)-EM_{s_K}(t)|$, where $C>0$ depends
 on the proportion of the `least normal' data we want to score/rank. 
 %$C$ being an estimated quantile of this proportion.
-%If we aim at scoring the $25\%$ more abnormal data, $C$ will be such that $\mathbb{P}(f(X) \ge C)-C.Leb(x \in\rset^d, f(x) \ge C)$ is greater than $1/4$ (in this case, $\{x,f(x) > C\}$ contain the first quarter of the `more normal' observations).
+%If we aim at scoring the $25\%$ more abnormal data, $C$ will be such that $\mathbb{P}(f(X) \ge C)-C.\leb(x \in\rset^d, f(x) \ge C)$ is greater than $1/4$ (in this case, $\{x,f(x) > C\}$ contain the first quarter of the `more normal' observations).
 \end{remark}
 
 \begin{proof}[Proof of Theorem~\ref{aistat:compact_support_case} (Sketch of)]
@@ -850,7 +851,7 @@ This empirical analysis demonstrates that introducing a notion of adaptivity for
 
 
 \section{Conclusion}
-Prolongating the contribution of \cite{CLEM13}, this article provides an alternative view (respectively, an other parameterization) of the anomaly scoring problem, leading to another adaptive method to build scoring functions, which offers theoretical and computational advantages both at the same time. This novel formulation yields a procedure producing a nested sequence of empirical density level sets, and exhibits a good performance, even in the non compact support case. 
+Prolongating the contribution of \cite{CLEM13}, this chapter provides an alternative view (respectively, an other parameterization) of the anomaly scoring problem, leading to another adaptive method to build scoring functions, which offers theoretical and computational advantages both at the same time. This novel formulation yields a procedure producing a nested sequence of empirical density level sets, and exhibits a good performance, even in the non compact support case. 
 Thus, the main drawbacks of the mass-volume curve criterion listed in the introduction section are resolved exepting drawback \textbf{1)}. In addition, the model bias has been incorporated in the rate bound analysis.
 %
 However, the use of the Excess-Mass criterion to measure the quality of a scoring function $s_n$ involves the computation of the Lebesgue measure  $\leb(s_n \ge u)$, just as with the Mass-Volume criterion (drawback \textbf{1)}). This is a major drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available.
@@ -995,8 +996,8 @@ $$EM^*(t_k)=\max_{\Omega~ meas.} H_{t_k}(\Omega)=\max_{\Omega \in \mathcal{G}} H
 
 %\begin{align}
 %&\label{aistat:aa} \gamma(t_k)=\max_{\Omega~ meas.} \mathbb{P}(X \in \Omega) - t_k.\leb(\Omega)=\max_{\Omega~ \in \mathcal{G}} \mathbb{P}(X \in \Omega) - t_k.\leb(\Omega) \mbox{~~(by \textbf{A5})~~} \\
-%&\label{aistat:bb} \gamma(t_k) ~\geq~ \beta(t_k):= \mathbb{P}(X\in \hat \Omega_{t_k})-t_k.Leb(\hat \Omega_{t_k})\\
-%&\label{aistat:cc} \hat \gamma (t_k)~=~ \mathbb{P}_n(X \in \hat \Omega_{t_k})-t_k.Leb(\hat \Omega_{t_k}) ~=~ \max_{\Omega \in \mathcal{G}} ~~\mathbb{P}_n(X \in \Omega)-t_k.Leb(\Omega)
+%&\label{aistat:bb} \gamma(t_k) ~\geq~ \beta(t_k):= \mathbb{P}(X\in \hat \Omega_{t_k})-t_k.\leb(\hat \Omega_{t_k})\\
+%&\label{aistat:cc} \hat \gamma (t_k)~=~ \mathbb{P}_n(X \in \hat \Omega_{t_k})-t_k.\leb(\hat \Omega_{t_k}) ~=~ \max_{\Omega \in \mathcal{G}} ~~\mathbb{P}_n(X \in \Omega)-t_k.\leb(\Omega)
 %\end{align}
 On the other hand, using (\ref{aistat:penality}),  with probability at least $1-\delta$, for every $G \in \mathcal{G},~ |\mathbb{P}(G)-\mathbb{P}_n (G)| \leq \Phi_n(\delta)$. 
 Hence, with probability at least $1-\delta$, for all $\Omega \in \mathcal{G}$ :

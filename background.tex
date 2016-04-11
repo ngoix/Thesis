@@ -49,7 +49,7 @@ As mentioned in the introduction, contribution of this thesis includes the imple
 
 The following section provides insights on Anomaly Detection through scikit-learn by describing and comparing AD algorithms from this library. Part of this section are modified versions of the documentation included in the forementioned scikit-learn contribution.
 
-\section{Anomaly Detection in Scikit-learn}
+\section{Three efficient Anomaly Detection Algorithms}
 \label{sec:AD_sklearn}
 
 \subsection{What is Scikit-learn?}
@@ -474,6 +474,167 @@ for i, offset in enumerate(clusters_separation):
 plt.show()
 \end{minted}
 \end{mdframed}
+
+
+\section{Benchmarks using different criteria}
+\label{aistat:sec:benchmark}
+
+In this section we provide an empirical evaluation of the three classical anomaly detection algorithms reviewed in Section~\ref{back:AD_scikit}, on 15 well-known datasets.
+The characteristics of these reference datasets are summarized in Table~\ref{table:data}. They are all available on the UCI repository, \cite{Lichman2013}, and the preprocessing is done in a classical way. %, excepting for the \emph{adult} dataset. For the latter, we considered the 6 continuous features.
+%
+
+The experiments are performed both in a semi-supervised framework (the training set consists of normal data only) and in an unsupervised framework (the training set is polluted by anormal data).
+In the former case, we simply remove anomalies from the training data.
+
+To evaluate accuracy, we use two criteria using the data labels (ROC and PR curves), and two unsupervised criteria (Excess-Mass and Mass-Volume curves).
+More specifically, we use the area under the curves as numerical criterion. For ROC and PR curves, we consider the area under the full curve. For the excess-mass curve $EM(t)$, we consider the area under the curve on the interval $[0, EM^{-1}(0.9)]$ as only large level sets (containing at least $90\%$ of the data) are of interest to evaluate accuracy of anomaly detection algorithms (see Figure XXX).
+For the same reason, we also restrict our attention to the interval $[0.9, 0.99]$ concerning the mass-volume curve $MV(\alpha)$. Note that we do not consider $[0.9, 1]$ since the mass-volume curve potentially diverges when $\alpha \to 1$, so that the area is infinite.
+
+The \emph{http}, \emph{smtp}, \emph{SA} and \emph{SF} datasets belong to the KDD Cup '99 dataset (\cite{KDD99}, \cite{Tavallaee2009}), which consist of a wide variety of hand-injected  attacks (anomalies) in a closed network (normal background). They are classicaly obtained as described in \cite{Yamanishi2000}. This four datasets are available on the \emph{scikit-learn} library, see \cite{sklearn2011}.
+The \emph{shuttle} dataset is the fusion of the training and testing datasets available in the UCI repository. As in \cite{Liu2008}, we use instances from all different classes but class $4$.%, which yields an anomaly ratio (class 1) of $7.17\%$.
+In the \emph{forestcover} data, the normal data are the instances from class~$2$ while instances from class $4$ are anomalies (as in \cite{Liu2008}). %, which yields an anomaly ratio of $0.9\%$. 
+The \emph{ionosphere} dataset differentiates `good' from `bad' radars, considered here as abnormal. A `good' radar shows evidence of some type of structure in the ionosphere. A `bad' radar does not, its signal passing through the ionosphere.
+The \emph{spambase} dataset consists in spam or non-spam emails. The former constitute our anomaly class.
+The \emph{annthyroid} medical dataset on hypothyroidism contains one normal class and two abnormal ones, which form our outliers.
+The \emph{arrhythmia} dataset reflects the presence and absence (class $1$) of cardiac arrhythmia. The number of attributes being large considering the sample size, we removed attributes containing missing data.
+The \emph{pendigits} dataset contains 10 classes corresponding to the digits from 0 to 9, examples being handwriting samples. As in \cite{Schubert2012}, the abnormal data are chosen to be those from class 4.
+The \emph{pima} dataset consists in medical data on diabetes. Patients suffering from diabetes (positive class) were considered outliers.
+The \emph{wild} dataset involves detecting diseased trees in Quickbird imagery. Diseased trees (class `w') is our abnormal class.
+In the \emph{adult} dataset, the goal is to predict whether income exceeds \$ 50K/year based on census data. We only keep the 6 continuous attributes.
+
+
+Point out (see Section~\ref{sec:intro} or the detailed Section~\ref{aistat:chap}) that excess-mass and mass-volume scores refer on the Lebesgue measure, and appeal for volume estimation. For that reason, they only apply to continuous datasets, with reasonable dimension for Monte-Carlo estimation to apply. The datasets verifying these requirements are \emph{http}, \emph{smtp}, \emph{shuttle}, \emph{pendigits}, \emph{pima}, \emph{wilt} and \emph{adult}.
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|cc|ll|}
+  \hline
+  ~           & nb of samples      & nb of features     & ~~~~~~~~~~~~~~~~~~~~~~~~~anomaly class & ~                  \\ \hline
+  http        & 567498             & 3                  &      attack                            &    (0.39\%)        \\
+  smtp        & 95156              & 3                  &      attack                            &    (0.03\%)        \\
+  SA          & 976158             & 41                 &      attack                            &     (0.35\%)       \\
+  SF          & 703067             & 4                  &      attack                            &    (0.48\%)        \\
+  shuttle     & 85849              & 9                  &      classes $\neq$ 1 (class 4 removed)&  (7.17\%)          \\
+  forestcover & 286048             & 54                 &    class 4  (vs. class 2 )             &           (0.96\%) \\
+  ionosphere  & 351                & 34                 &    bad                                 &       (35.9\%)     \\
+  spambase    & 4601               & 57                 &    spam                                &           (39.4\%) \\
+  annthyroid  & 7200               & 21                 &    classes $\neq$ 3                    &        (7.42\%)    \\
+  arrhythmia  & 452                & 274                &    classes $\neq$ 1 (features 10-14 removed)&  (45.8\%)     \\
+  pendigits   & 10992              & 16                 &    class 4                             &        (10.4\%)    \\
+  pima        & 768                & 8                  &    pos (class 1)                       &        (34.9\%)    \\
+  wilt        & 4839               & 5                  &    class 'w' (diseased trees)          &    (5.39\%)        \\
+ internet\_ads& 3279               & 1554               &   ads                                  & (14\%)             \\
+  adult       & 48842              & 6                  &    class '$>50K$'                      &      (23.9\%)      \\
+  \hline
+\end{tabular}
+\caption{Datasets characteristics}
+\label{table:data}
+\end{table}
+
+Excess-Mass, Mass-volume, ROC and Precision-Recall curves AUC are presented in Table~\ref{back:table:results-semisupervised} for the semi-supervised framework, and in Table~\ref{back:table:results-unsupervised} for the unsupervised framework. The corresponding ROC and PR curves are plotted in figures~\ref{back:fig:iforest_roc_pr}, \ref{back:fig:lof_ocsvm_pr} and \ref{back:fig:lof_roc_pr} (resp. \ref{back:fig:iforest_roc_pr_unsupervised}, \ref{back:fig:ocsvm_roc_pr_unsupervised} and \ref{back:fig:lof_roc_pr_unsupervised} for the unsupervised setup).
+
+For illustrative purposes, Figure XXX shows excess-mass and mass-volume curves for one single dataset.
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|l|cccc|cccc|cccc|}
+  \hline
+Dataset      & \multicolumn{4}{c|}{iForest}& \multicolumn{4}{c|}{OneClassSVM}  & \multicolumn{4}{c|}{LOF} \\ %& parameters $(\epsilon, k)$\\
+  \hline
+~            & ROC  & PR   & EM   &  MV    & ROC  & PR   & EM   & MV           & ROC  & PR   & EM   & MV  \\
+http         &0.992 &0.178 &0.441 &        &      &      &      &              &0.879 &0.016 &      &     \\
+smtp         &0.902 &0.004 &0.664 &        &      &      &      &              &0.936 &0.144 &      &     \\
+SA           &0.988 &0.386 &  NA  &  NA    &      &      &      &              &0.878 &0.017 &      &     \\
+SF           &0.936 &0.038 &  NA  &        &      &      &      &              &0.871 &0.019 &      &     \\
+shuttle      &0.996 &0.976 &1.866 &        &      &      &      &              &0.999 &0.986 &      &     \\
+forestcov.   &0.972 &0.253 &  NA  &  NA    &      &      &      &              &0.997 &0.942 &      &     \\
+ionosphere   &0.899 &0.845 &  NA  &  NA    &      &      &      &              &0.940 &0.911 &      &     \\
+spambase     &0.843 &0.775 &  NA  &  NA    &      &      &      &              &0.581 &0.435 &      &     \\
+annthyroid   &0.745 &0.176 &  NA  &        &      &      &      &              &0.643 &0.113 &      &     \\
+arrhythmia   &0.770 &0.771 &  NA  &  NA    &      &      &      &              &0.758 &0.747 &      &     \\
+pendigits    &0.794 &0.208 &0.308 &        &      &      &      &              &0.977 &0.810 &      &     \\
+pima         &0.734 &0.575 &0.005 &        &      &      &      &              &0.670 &0.502 &      &     \\
+wilt         &0.477 &0.047 &      &        &      &      &      &              &0.839 &0.212 &      &     \\
+internet\_ads&0.414 &0.109 &  NA  &  NA    &      &      &      &              &0.840 &0.213 &      &     \\
+adult        &0.664 &0.484 &      &        &      &      &      &              &0.541 &0.138 &      &     \\
+  \hline
+\end{tabular}
+\caption{Results in terms of AUC}
+\label{back:table:results-semisupervised}
+\end{table}
+
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|l|cccc|cccc|cccc|}
+  \hline
+Dataset      & \multicolumn{4}{c|}{iForest}& \multicolumn{4}{c|}{OneClassSVM}  & \multicolumn{4}{c|}{LOF} \\ %& parameters $(\epsilon, k)$\\
+  \hline
+~            & ROC  & PR   & EM   &  MV    & ROC  & PR   & EM   & MV           & ROC  & PR   & EM   & MV  \\
+http         &0.999 &0.709 &0.441 &        &      &      &      &              &0.879 &0.016 &      &     \\
+smtp         &0.902 &0.004 &0.664 &        &      &      &      &              &0.936 &0.144 &      &     \\
+SA           &0.995 &0.526 &  NA  &  NA    &      &      &      &              &0.878 &0.017 &      &     \\
+SF           &0.964 &0.067 &  NA  &        &      &      &      &              &0.871 &0.019 &      &     \\
+shuttle      &0.997 &0.975 &1.866 &        &      &      &      &              &0.999 &0.986 &      &     \\
+forestcov.   &0.974 &0.309 &  NA  &  NA    &      &      &      &              &0.997 &0.942 &      &     \\
+ionosphere   &0.840 &0.792 &  NA  &  NA    &      &      &      &              &0.940 &0.911 &      &     \\
+spambase     &0.637 &0.486 &  NA  &  NA    &      &      &      &              &0.581 &0.435 &      &     \\
+annthyroid   &0.620 &0.115 &  NA  &        &      &      &      &              &0.643 &0.113 &      &     \\
+arrhythmia   &0.749 &0.748 &  NA  &  NA    &      &      &      &              &0.758 &0.747 &      &     \\
+pendigits    &0.419 &0.083 &0.308 &        &      &      &      &              &0.977 &0.810 &      &     \\
+pima         &0.667 &0.482 &0.005 &        &      &      &      &              &0.670 &0.502 &      &     \\
+wilt         &0.458 &0.046 &      &        &      &      &      &              &0.839 &0.212 &      &     \\
+internet\_ads&0.693 &0.359 &  NA  &  NA    &      &      &      &              &0.840 &0.213 &      &     \\
+adult        &0.612 &0.381 &      &        &      &      &      &              &0.541 &0.138 &      &     \\
+  \hline
+\end{tabular}
+\caption{Results in terms of AUC}
+\label{back:table:results-unsupervised}
+\end{table}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.1\linewidth]{fig_source/bench_iforest_roc_pr.png}
+  \caption{ROC and PR curves for Isolation Forest (supervised framework)}
+  \label{back:fig:iforest_roc_pr}
+\end{figure}
+
+% \begin{figure}[!ht]
+%   \centering
+%   \includegraphics[width=\linewidth]{fig_source/bench_ocsvm_roc_pr.png}
+%   \caption{ROC and PR curves for One Class SVM (supervised framework)}
+%   \label{back:fig:ocsvm_roc_pr}
+% \end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{fig_source/bench_lof_roc_pr.png}
+  \caption{ROC and PR curves for Local Outlier Factor (supervised framework)}
+  \label{back:fig:lof_roc_pr}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.1 \linewidth]{fig_source/bench_iforest_roc_pr_unsupervised.png}
+  \caption{ROC and PR curves for Isolation Forest (unsupervised framework)}
+  \label{back:fig:iforest_roc_pr_unsupervised}
+\end{figure}
+
+% \begin{figure}[!ht]
+%   \centering
+%   \includegraphics[width=\linewidth]{fig_source/bench_ocsvm_roc_pr_unsupervised.png}
+%   \caption{ROC and PR curves for One Class SVM (unsupervised framework)}
+%   \label{back:fig:ocsvm_roc_pr_unsupervised}
+% \end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{fig_source/bench_lof_roc_pr_unsupervised.png}
+  \caption{ROC and PR curves for Local Outlier Factor (unsupervised framework)}
+  \label{back:fig:lof_roc_pr_unsupervised}
+\end{figure}
+
 
 \chapter{Concentration Inequalities from the Method of bounded differences}
 \label{chap:back_concentration}

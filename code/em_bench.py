@@ -43,9 +43,11 @@ np.random.seed(1)
 # new: ['ionosphere', 'spambase', 'annthyroid', 'arrhythmia', 'pendigits',
 #       'pima', 'wilt', 'adult']
 
-datasets = ['http', 'smtp', 'shuttle', # 'spambase',
-            'pendigits', 'pima', 'wilt', 'adult']
-# datasets = ['shuttle']
+# datasets = [# 'http',
+#             'smtp', 'shuttle', # 'spambase',
+#             'pendigits', 'pima', 'wilt', 'adult']
+datasets = ['pima', 'adult']
+plt.clf()
 plt.figure(figsize=(25, 13))
 
 for dat in datasets:
@@ -173,82 +175,77 @@ for dat in datasets:
     y_train = y[:n_samples_train]
     y_test = y[n_samples_train:]
 
-    volume_support = (X_test.max(axis=0) - X_test.min(axis=0)).prod()
-
-    axis_t = np.arange(0, 100. / volume_support, 0.01 / volume_support)
-    axis_alpha = np.arange(0.9, 0.99, 0.001)
+    # # training only on normal data:
+    # X_train = X_train[y_train == 0]
+    # y_train = y_train[y_train == 0]
 
     # fit:
     print('IsolationForest processing...')
     iforest = IsolationForest()
     iforest.fit(X_train)
+    s_X_iforest = iforest.decision_function(X_test)
     print('LocalOutlierFactor processing...')
     lof = LocalOutlierFactor(n_neighbors=20)
     lof.fit(X_train)
+    s_X_lof = lof.decision_function(X_test)
     print('OneClassSVM processing...')
     ocsvm = OneClassSVM()
     ocsvm.fit(X_train)
+    s_X_ocsvm = ocsvm.decision_function(X_test)
 
     # EM:
     print 'em_iforest'
-    em_iforest = EM(iforest, X_test, axis_t)
-    amax_iforest = np.argmax(em_iforest <= 0.9)
-    pdb.set_trace()
-    AUC_iforest = auc(axis_t[:amax_iforest], em_iforest[:amax_iforest])
+    amax_iforest, axis_t_iforest, em_iforest, AUC_iforest = EM(iforest,
+                                                               X_test,
+                                                               s_X_iforest)
     print 'em_lof'
-    em_lof = EM(lof, X_test, axis_t)
-    amax_lof = np.argmax(em_lof <= 0.9)
-    AUC_lof = auc(axis_t[:amax_lof], em_lof[:amax_lof])
+    amax_lof, axis_t_lof, em_lof, AUC_lof = EM(lof, X_test, s_X_lof)
     print 'em_ocsvm'
-    em_ocsvm = EM(ocsvm, X_test, axis_t)
-    amax_ocsvm = np.argmax(em_ocsvm <= 0.9)
-    AUC_ocsvm = auc(axis_t[:amax_ocsvm], em_ocsvm[:amax_ocsvm])
-
-    plt.subplot(121)
+    amax_ocsvm, axis_t_ocsvm, em_ocsvm, AUC_ocsvm = EM(ocsvm,
+                                                       X_test, s_X_ocsvm)
     amax = max(amax_iforest, amax_lof, amax_ocsvm)
-    plt.plot(axis_t[:amax], em_iforest[:amax], lw=1,
-             label='%s for %s dataset (em_score = %0.3e)'
-             % ('iforest', dat, AUC_iforest))
-    plt.plot(axis_t[:amax], em_lof[:amax], lw=1,
-             label='%s for %s (area = %0.3e)'
-             % ('lof', dat, AUC_lof))
-    plt.plot(axis_t[:amax], em_ocsvm[:amax], lw=1,
-             label='%s for %s (area = %0.3e)'
-             % ('ocsvm', dat, AUC_ocsvm))
+    plt.subplot(121)
+    plt.plot(axis_t_iforest[:amax], em_iforest[:amax], lw=1,
+             label='%s (em_score = %0.3e)'
+             % ('iforest', AUC_iforest))
+    plt.plot(axis_t_lof[:amax], em_lof[:amax], lw=1,
+             label='%s (em-score = %0.3e)'
+             % ('lof', AUC_lof))
+    plt.plot(axis_t_ocsvm[:amax], em_ocsvm[:amax], lw=1,
+             label='%s (em-score = %0.3e)'
+             % ('ocsvm', AUC_ocsvm))
 
-    # plt.xlim([-0.05, 1.05])
     plt.ylim([-0.05, 1.05])
     plt.xlabel('t')
     plt.ylabel('EM(t)')
-    plt.title('Excess-Mass curve')
+    plt.title('Excess-Mass curve for ' + dat + ' dataset')
     plt.legend(loc="lower right")
 
     # MV:
     plt.subplot(122)
     print 'mv_iforest'
-    mv_iforest = MV(iforest, X_test, axis_alpha)
-    AUC = auc(axis_alpha, mv_iforest)
-    plt.plot(axis_alpha, mv_iforest, lw=1,
-             label='%s (area = %0.3e)'
-             % ('iforest', dat, AUC))
+    axis_alpha_iforest, mv_iforest, AUC_iforest = MV(iforest,
+                                                     X_test, s_X_iforest)
     print 'mv_lof'
-    mv_lof = MV(lof, X_test, axis_alpha)
-    AUC = auc(axis_alpha, mv_lof)
-    plt.plot(axis_alpha, mv_lof, lw=1,
-             label='%s (area = %0.3e)'
-             % ('lof', dat, AUC))
+    axis_alpha_lof, mv_lof, AUC_lof = MV(lof, X_test, s_X_lof)
     print 'mv_ocsvm'
-    mv_ocsvm = MV(ocsvm, X_test, axis_alpha)
-    AUC = auc(axis_alpha, mv_ocsvm)
-    plt.plot(axis_alpha, mv_ocsvm, lw=1,
-             label='%s (area = %0.3e)'
-             % ('ocsvm', dat, AUC))
+    axis_alpha_ocsvm, mv_ocsvm, AUC_ocsvm = MV(ocsvm, X_test, s_X_ocsvm)
+
+    plt.plot(axis_alpha_iforest, mv_iforest, lw=1,
+             label='%s (mv-score = %0.3e)'
+             % ('iforest', AUC_iforest))
+    plt.plot(axis_alpha_lof, mv_lof, lw=1,
+             label='%s (mv-score = %0.3e)'
+             % ('lof', AUC_lof))
+    plt.plot(axis_alpha_ocsvm, mv_ocsvm, lw=1,
+             label='%s (mv-score = %0.3e)'
+             % ('ocsvm', AUC_ocsvm))
 
     plt.xlim([-0.05, 1.05])
     # plt.ylim([-0.05, 100])
     plt.xlabel('alpha')
     plt.ylabel('MV(alpha)')
-    plt.title('Mass-Volume Curve for' + dat)
+    plt.title('Mass-Volume Curve for ' + dat + ' dataset')
     plt.legend(loc="upper left")
 
-    plt.savefig('mv_em' + dat)
+    plt.savefig('mv_em_' + dat)

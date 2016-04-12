@@ -11,10 +11,10 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces gaussian normal data with one single mode\relax }}{34}{figure.caption.12}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces gaussian normal data with two modes\relax }}{34}{figure.caption.13}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces gaussian normal data with two strongly separate modes\relax }}{34}{figure.caption.14}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces ROC and PR curves for Isolation Forest (supervised framework)\relax }}{38}{figure.caption.18}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces ROC and PR curves for Local Outlier Factor (supervised framework)\relax }}{38}{figure.caption.19}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces ROC and PR curves for Isolation Forest (unsupervised framework)\relax }}{41}{figure.caption.20}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces ROC and PR curves for Local Outlier Factor (unsupervised framework)\relax }}{41}{figure.caption.21}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces ROC and PR curves for Isolation Forest (supervised framework)\relax }}{41}{figure.caption.18}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces ROC and PR curves for Local Outlier Factor (supervised framework)\relax }}{41}{figure.caption.19}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces ROC and PR curves for Isolation Forest (unsupervised framework)\relax }}{42}{figure.caption.20}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces ROC and PR curves for Local Outlier Factor (unsupervised framework)\relax }}{42}{figure.caption.21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Extreme Value Distribution with $\alpha = 2$\relax }}{59}{figure.caption.22}

@@ -258,7 +258,7 @@ extreme regions.
 % worth the risk (in terms of ROC or precision-recall curve for instance) trying to be more accurate in such low probability regions, without adapted tools. New
 % observations outside the `observed support' are then most often predicted as abnormal.  However, false positives (\ie~false alarms) are very expensive in many applications (\eg~aircraft predictive maintenance). It is then of primal interest to develop tools increasing the precision on such extremal regions.
 
-EVT has been intensively used in AD in the one-dimensional
+EVT has been intensively used in anomaly detection in the one-dimensional
 situation, see for instance \cite{Roberts99}, \cite{Roberts2000},
 \cite{Clifton2011}, \cite{Clifton2008}, \cite{Lee2008}.
 % Anomaly detection then relies on tail analysis of the variable of interest and naturally involves EVT.
@@ -269,9 +269,9 @@ based on univariate EVT. The major reason is
 the difficulty to scale up existing multivariate EVT models
 % that most of existing multivariate EVT models have difficulties to scale-up well 
 with the dimensionality.
-In the present contribution we bridge the gap between the practice of AD and multivariate EVT by proposing a method which is
+In the present contribution we bridge the gap between the practice of anomaly detection and multivariate EVT by proposing a method which is
 able to learn a sparse `normal profile' of multivariate extremes and,
-as such, may be implemented to improve the accuracy of  any usual AD
+as such, may be implemented to improve the accuracy of  any usual anomaly detection
 algorithm. 
 %
 %\subsection{Why using EVT in AD ?}
@@ -338,7 +338,7 @@ accuracy of which is
 investigated by establishing % where consistency and
 finite sample error bounds relying on  {\sc VC} inequalities
 tailored to low probability regions.
-An application to Anomaly Detection is proposed in Section~\ref{jmva:sec:appliAD}, where some background on AD is provided, followed by a novel AD  
+An application to anomaly detection is proposed in Section~\ref{jmva:sec:appliAD}, where some background on anomaly detection is provided, followed by a novel anomaly detection  
  algorithm which relies on the above mentioned non-parametric
  estimator. 
 % is described
@@ -1433,11 +1433,11 @@ with $\|m\|_{1,\alpha} = \sum_{\alpha} |m(\alpha)|$ the $L^1$ norm on $\mathbb{R
 
 \section{Application to Anomaly Detection }
 \label{jmva:sec:appliAD}
-\subsection{Background on AD}
+\subsection{Background on anomaly detection}
 \label{jmva:sec:appliADBackground}
 \noindent 
 \textbf{What is Anomaly Detection ?}
-From a machine learning perspective, AD can be considered as a specific classification task, where the usual assumption in supervised learning stipulating that the dataset contains structural information regarding all classes breaks down, see \cite{Roberts99}. This typically happens in the case of two highly unbalanced classes: the normal class is expected to regroup a large majority of the dataset, so that the very small number of points representing the abnormal class does not allow to learn information about this class.
+From a machine learning perspective, anomaly detection can be considered as a specific classification task, where the usual assumption in supervised learning stipulating that the dataset contains structural information regarding all classes breaks down, see \cite{Roberts99}. This typically happens in the case of two highly unbalanced classes: the normal class is expected to regroup a large majority of the dataset, so that the very small number of points representing the abnormal class does not allow to learn information about this class.
 % In a clustering based approach, it can be
 % interpreted as the presence of a single cluster, corresponding to the
 % normal data. The abnormal ones are too limited to share a commun
@@ -1446,7 +1446,7 @@ From a machine learning perspective, AD can be considered as a specific classifi
 % structure.  Thus, common classification approaches may not be applied
 % as such, even in a supervised
 % context. % That is the reason why even in a supervised framework, common classification approaches cannot be applied.
-\textit{Supervised} AD consists in training the algorithm on a labeled (normal/abnormal) dataset including both normal and abnormal observations. In the \textit{semi-supervised} context, only normal data are available for training. This is the case in applications where normal operations are known but intrusion/attacks/viruses are unknown and should be detected. In the \textit{unsupervised} setup, no assumption is made on the data which consist in unlabeled normal and abnormal instances. In general, a method from the semi-supervised framework may apply to the unsupervised one, as soon as the number of anomalies is sufficiently weak to prevent the algorithm from fitting them when learning the normal behavior. Such a method should be robust to outlying observations.
+\textit{Supervised} anomaly detection consists in training the algorithm on a labeled (normal/abnormal) dataset including both normal and abnormal observations. In the \textit{semi-supervised} context, only normal data are available for training. This is the case in applications where normal operations are known but intrusion/attacks/viruses are unknown and should be detected. In the \textit{unsupervised} setup, no assumption is made on the data which consist in unlabeled normal and abnormal instances. In general, a method from the semi-supervised framework may apply to the unsupervised one, as soon as the number of anomalies is sufficiently weak to prevent the algorithm from fitting them when learning the normal behavior. Such a method should be robust to outlying observations.
 
 \noindent
 \textbf{Extremes and Anomaly Detection.}
@@ -1454,16 +1454,16 @@ As a matter of fact, `extreme' observations are often more susceptible to be ano
 % In the supervised or semi-supervised framework (that is, when the
 % algorithm is trained on normal data),  %considering only normal observations% where a dataset of only normal observations is available
 %These extremal points represent the outlying regions of the normal instances. % we want to separate from the abnormal ones.
-In other words, extremal observations are often at the \textit{border} between normal and abnormal regions and play a very special role in this context. As the number of observations considered as extreme (\emph{e.g.} in a Peak-over-threshold analysis) typically constitute less than one percent of the data, a classical AD algorithm would tend to systematically classify all of them as abnormal: it is not worth the risk (in terms of ROC or precision-recall curve for instance) trying to be more accurate in low probability regions without adapted tools. Also, new observations outside the `observed support' are most often predicted as abnormal. However, false positives (\ie~false alarms) are very expensive in many applications (\eg~aircraft predictive maintenance). It is thus of primal interest to develop tools increasing precision (\ie~the probability of observing an anomaly among alarms) on such extremal regions.
+In other words, extremal observations are often at the \textit{border} between normal and abnormal regions and play a very special role in this context. As the number of observations considered as extreme (\emph{e.g.} in a Peak-over-threshold analysis) typically constitute less than one percent of the data, a classical anomaly detection algorithm would tend to systematically classify all of them as abnormal: it is not worth the risk (in terms of ROC or precision-recall curve for instance) trying to be more accurate in low probability regions without adapted tools. Also, new observations outside the `observed support' are most often predicted as abnormal. However, false positives (\ie~false alarms) are very expensive in many applications (\eg~aircraft predictive maintenance). It is thus of primal interest to develop tools increasing precision (\ie~the probability of observing an anomaly among alarms) on such extremal regions.
 
 %\subsection{Advantage of this method}
 % As \textbf{Anomaly Ranking} is a useful and necessary step to AD, t
 \noindent
 \textbf{Contributions.}
 The algorithm proposed  in this chapter provides a scoring function which ranks
-extreme observations according to their supposed degree of abnormality. This method is complementary to other  AD
+extreme observations according to their supposed degree of abnormality. This method is complementary to other  anomaly detection
 algorithms, insofar as  two algorithms (that described  here, together with any
-other  appropriate AD algorithm) may be trained on the same dataset.
+other  appropriate anomaly detection algorithm) may be trained on the same dataset.
 Afterwards, the input space may be divided into two regions -- an
 extreme region and a non-extreme one-- so that a new
 observation in the central region (\emph{resp.} in the extremal
@@ -1496,7 +1496,7 @@ As a consequence, this method is robust to outliers and also applies when the tr
 \subsection{Algorithm:  Detecting Anomalies among Multivariate
   EXtremes (DAMEX)}\label{jmva:sec:algo}
 The purpose of this subsection is to explain the heuristic behind the
-use of multivariate EVT for Anomaly Detection, which is in fact a
+use of multivariate EVT for anomaly detection, which is in fact a
 natural way to proceed when trying to describe the dependence
 structure of extreme regions. The algorithm is thus introduced in an
 intuitive setup,  which matches the theoretical framework and results obtained in sections \ref{jmva:sec:framework} and \ref{jmva:sec:estimation}.
@@ -1591,7 +1591,7 @@ the probability that the random variable $\mb X$ belongs to the same cone
 as $\mb x$ in the transformed space. In short,  $w_n(\mb x)$ is an
 empirical version of the probability that  $\mb X$ and $\mb x$ have
 approximately the  same `direction'. 
-For AD, the degree of `abnormality' of the  new observation $\mb x$ % such that $\hat T(x) \in \mathcal{C}_\alpha^\epsilon$ % an observation $X_i$
+For anomaly detection, the degree of `abnormality' of the  new observation $\mb x$ % such that $\hat T(x) \in \mathcal{C}_\alpha^\epsilon$ % an observation $X_i$
 should be related both to $w_n(\mb x)$ %$\hatmass(\alpha)$ 
 and to the uniform norm $\|\widehat T(\mb x)\|_\infty$ (angular and radial
 components). More precisely, for $\mb x$ fixed such that
@@ -1895,7 +1895,7 @@ idem after thresholding ($p = 0.2$) & 1 & 18 \\
 extreme data, so as to distinguish between normal and ab-normal
 extremes. 
 In this section we evaluate its performance %on such region
- and compare it with that of a standard AD algorithm, %  that it may be combined with a
+ and compare it with that of a standard anomaly detection algorithm, %  that it may be combined with a
 % standard AD algorithm  to handle extreme \emph{and} non-extreme data,
 % improving the global performance of the chosen standard algorithm.
 % In this section we show that it may be combined with a
@@ -1920,7 +1920,7 @@ test set being restricted to an  extreme region.
 % A random forest AD algorithm is chosen as an exemplary `standard' one,
 % namely the Isolation Forest (iForest) algorithm (in view of its high performances)
 % . We compare its own use, with when combined with Algorithm~\ref{jmva:DAMEX-algo} as illustrated in Figure~\ref{jmva:fig:combination}.
- Five reference AD datasets  are considered:
+ Five reference anomaly detection datasets  are considered:
  \emph{shuttle}, \emph{forestcover}, \emph{http},
  \emph{SF} and \emph{SA} \footnote{These datasets are available for instance on http://scikit-learn.org/dev/ }. The experiments are performed in a
  semi-supervised framework (the training set consists of normal data). 
@@ -1955,7 +1955,7 @@ The artificial data was generated using a closed network and a wide
 variety of hand-injected attacks (anomalies) to produce a large number
 of different types of attack with normal activity in the background.
 Since the original demonstrative purpose of the dataset concerns
-supervised AD, the anomaly rate is very high ($80\%$), which is
+supervised anomaly detection, the anomaly rate is very high ($80\%$), which is
 unrealistic in practice, and inappropriate for evaluating the
 performance on realistic data.  We thus take standard pre-processing
 steps in order to work with smaller anomaly rates. For datasets
@@ -1980,7 +1980,7 @@ datasets.
 The thresholding parameter $p$ is fixed to $0.1$, the averaged mass of the non-empty sub-cones, while the parameters $(k,\epsilon)$ are standardly chosen as $(n^{1/2}, 0.01)$.
 The extreme region on which the evaluation step is performed is chosen
 as $\{\mb x:~ \|T(\mb x)\| > \sqrt{n} \}$, where $n$ is the  training
-set's sample size. The ROC and PR curves are computed using only observations in the extreme region. This provides a precise evaluation of the two AD methods on extreme data.
+set's sample size. The ROC and PR curves are computed using only observations in the extreme region. This provides a precise evaluation of the two anomaly detection methods on extreme data.
  % As the datasets \emph{http}, \emph{smtp} and \emph{SF} do not have enough features to consider the stability, we choose the (standard) parameters $(k, \epsilon) = (n^{1/2}, 0.01)$. 
 For each of them, 20 experiments on random training and testing datasets are performed, yielding averaged ROC and Precision-Recall curves whose AUC are presented in Table~\ref{jmva:table:results-dbad+iforest-01}.
 %
@@ -2116,7 +2116,7 @@ SA           & 0.932        &0.625       &$\mb{0.964}$&$\mb{0.848}$ \\
 \end{figure}
 
 Considering the significant performance improvements on extreme data,
-DAMEX may be combined with any standard AD algorithm to handle extreme
+DAMEX may be combined with any standard anomaly detection algorithm to handle extreme
 \emph{and} non-extreme data. This would improve the \emph{global}
 performance of the chosen standard algorithm, and in particular
 decrease the false alarm rate (increase the slope of the ROC curve's tangents near
@@ -2164,7 +2164,7 @@ appear in the non-extreme region.  % The challenge is then to dovetail
 The contribution of this chapter is twofold. First, it brings advances in multivariate EVT by designing a statistical method that possibly exhibits a sparsity pattern in the dependence structure of extremes, while deriving non-asymptotic bounds to assess the accuracy of the estimation procedure. Our method is intended to be used as a preprocessing step to scale up multivariate extreme values modeling to high dimensional settings, which is currently one of the major challenges in multivariate EVT.
 Since the asymptotic bias ($\text{bias}(\alpha,n,k, \epsilon)$ in eq.~\eqref{jmva:eq:bias}) appears as a separate term  in the bound established, no second order
 assumption is required. One possible line of further research would be to make  such an assumption (\ie\,to assume that the bias itself is regularly varying), in order to choose $\epsilon$ adaptively with respect to $k$ and $n$ (see Remark~\ref{jmva:rk_param_choice}). This might also open up the possibility of de-biasing the estimation procedure (\cite{Fougeres2015}, \cite{Beirlant2015}). 
-As a second contribution, this work extends the applicability of multivariate  EVT to the field of Anomaly Detection: a multivariate EVT-based algorithm which scores extreme observations according to their degree of abnormality is proposed. Due to  its  moderate complexity  --of order $d n \log n$--  this algorithm is suitable for the treatment of real word large-scale learning problems, and experimental results reveal a significantly increased performance on extreme regions compared with standard AD approaches.
+As a second contribution, this work extends the applicability of multivariate  EVT to the field of anomaly detection: a multivariate EVT-based algorithm which scores extreme observations according to their degree of abnormality is proposed. Due to  its  moderate complexity  --of order $d n \log n$--  this algorithm is suitable for the treatment of real word large-scale learning problems, and experimental results reveal a significantly increased performance on extreme regions compared with standard anomaly detection approaches.
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections

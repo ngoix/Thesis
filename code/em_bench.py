@@ -13,7 +13,6 @@ from matplotlib import pyplot as plt
 from sklearn.neighbors import LocalOutlierFactor
 from sklearn.svm import OneClassSVM
 from sklearn.ensemble import IsolationForest
-from sklearn.metrics import auc
 from sklearn.utils import shuffle as sh
 from sklearn.datasets import fetch_kddcup99, fetch_covtype, fetch_mldata
 from sklearn.datasets import fetch_spambase, fetch_annthyroid, fetch_arrhythmia
@@ -43,14 +42,15 @@ np.random.seed(1)
 # new: ['ionosphere', 'spambase', 'annthyroid', 'arrhythmia', 'pendigits',
 #       'pima', 'wilt', 'adult']
 
-# datasets = [# 'http',
-#             'smtp', 'shuttle', # 'spambase',
-#             'pendigits', 'pima', 'wilt', 'adult']
-datasets = ['pima', 'adult']
-plt.clf()
-plt.figure(figsize=(25, 13))
+datasets = [# 'http',
+            'smtp', 'shuttle', # 'spambase',
+            'pendigits', 'pima', 'wilt', 'adult']
+# datasets = ['pima', 'adult']
 
 for dat in datasets:
+    plt.clf()
+    plt.figure(figsize=(25, 13))
+
     print 'dataset:', dat
     # loading and vectorization
     print('loading data')
@@ -175,9 +175,9 @@ for dat in datasets:
     y_train = y[:n_samples_train]
     y_test = y[n_samples_train:]
 
-    # # training only on normal data:
-    # X_train = X_train[y_train == 0]
-    # y_train = y_train[y_train == 0]
+    # training only on normal data:
+    X_train = X_train[y_train == 0]
+    y_train = y_train[y_train == 0]
 
     # fit:
     print('IsolationForest processing...')
@@ -241,11 +241,11 @@ for dat in datasets:
              label='%s (mv-score = %0.3e)'
              % ('ocsvm', AUC_ocsvm))
 
-    plt.xlim([-0.05, 1.05])
+    # plt.xlim([-0.05, 1.05])
     # plt.ylim([-0.05, 100])
     plt.xlabel('alpha')
     plt.ylabel('MV(alpha)')
     plt.title('Mass-Volume Curve for ' + dat + ' dataset')
     plt.legend(loc="upper left")
 
-    plt.savefig('mv_em_' + dat)
+    plt.savefig('mv_em_' + dat + '_unsupervised')

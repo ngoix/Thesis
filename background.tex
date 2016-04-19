@@ -486,9 +486,9 @@ The characteristics of these reference datasets are summarized in Table~\ref{tab
 The experiments are performed both in a semi-supervised framework (the training set consists of normal data only) and in an unsupervised framework (the training set is polluted by anormal data).
 In the former case, we simply remove anomalies from the training data.
 
-To evaluate accuracy, we use two criteria using the data labels (ROC and PR curves), and two unsupervised criteria (Excess-Mass and Mass-Volume curves).
-More specifically, we use the area under the curves as numerical criterion. For ROC and PR curves, we consider the area under the full curve. For the excess-mass curve $EM(t)$, we consider the area under the curve on the interval $[0, EM^{-1}(0.9)]$ as only large level sets (containing at least $90\%$ of the data) are of interest to evaluate accuracy of anomaly detection algorithms (see Figure XXX).
-For the same reason, we also restrict our attention to the interval $[0.9, 0.99]$ concerning the mass-volume curve $MV(\alpha)$. Note that we do not consider $[0.9, 1]$ since the mass-volume curve potentially diverges when $\alpha \to 1$, so that the area is infinite.
+To evaluate accuracy, we use two classical criteria, the \emph{Receiver Operating Characteristic} (ROC) and \emph{Precision-Recall} (PR) curves. An comparison with unsupervised criteria (excess-mass and mass-volume curves) can be found in Chapter~\ref{workshop:chap}.
+We use the area under the curves as numerical criterion. % For ROC and PR curves, we consider the area under the full curve. For the excess-mass curve $EM(t)$, we consider the area under the curve on the interval $[0, EM^{-1}(0.9)]$ as only large level sets (containing at least $90\%$ of the data) are of interest to evaluate accuracy of anomaly detection algorithms (see Figure XXX).
+% For the same reason, we also restrict our attention to the interval $[0.9, 0.99]$ concerning the mass-volume curve $MV(\alpha)$. Note that we do not consider $[0.9, 1]$ since the mass-volume curve potentially diverges when $\alpha \to 1$, so that the area is infinite.
 
 The \emph{http}, \emph{smtp}, \emph{SA} and \emph{SF} datasets belong to the KDD Cup '99 dataset (\cite{KDD99}, \cite{Tavallaee2009}), which consist of a wide variety of hand-injected  attacks (anomalies) in a closed network (normal background). They are classicaly obtained as described in \cite{Yamanishi2000}. This four datasets are available on the \emph{scikit-learn} library, see \cite{sklearn2011}.
 The \emph{shuttle} dataset is the fusion of the training and testing datasets available in the UCI repository. As in \cite{Liu2008}, we use instances from all different classes but class $4$. %, which yields an anomaly ratio (class 1) of $7.17\%$.
@@ -503,7 +503,7 @@ The \emph{wild} dataset involves detecting diseased trees in Quickbird imagery. 
 In the \emph{adult} dataset, the goal is to predict whether income exceeds \$ 50K/year based on census data. Only the 6 continuous attributes are kept.
 
 
-Point out (see Section~\ref{resume:scoring} or the detailed Section~\ref{aistat:chap}) that excess-mass and mass-volume scores refer on the Lebesgue measure, and appeal for volume estimation. For that reason, they only apply to continuous datasets, with reasonable dimension for Monte-Carlo estimation to apply. The datasets verifying these requirements are \emph{http}, \emph{smtp}, \emph{shuttle}, \emph{pendigits}, \emph{pima}, \emph{wilt} and \emph{adult}.
+% Point out (see Section~\ref{resume:scoring} or the detailed Section~\ref{aistat:chap}) that excess-mass and mass-volume scores refer on the Lebesgue measure, and appeal for volume estimation. For that reason, they only apply to continuous datasets, with reasonable dimension for Monte-Carlo estimation to apply. The datasets verifying these requirements are \emph{http}, \emph{smtp}, \emph{shuttle}, \emph{pendigits}, \emph{pima}, \emph{wilt} and \emph{adult}.
 
 
 \begin{table}[h]
@@ -532,85 +532,83 @@ Point out (see Section~\ref{resume:scoring} or the detailed Section~\ref{aistat:
 \label{table:data}
 \end{table}
 
-Excess-Mass, Mass-volume, ROC and Precision-Recall curves AUC are presented in Table~\ref{back:table:results-semisupervised} for the semi-supervised framework, and in Table~\ref{back:table:results-unsupervised} for the unsupervised framework. The corresponding ROC and PR curves are plotted in figures~\ref{back:fig:iforest_roc_pr}, \ref{back:fig:lof_ocsvm_pr} and \ref{back:fig:lof_roc_pr} (resp. \ref{back:fig:iforest_roc_pr_unsupervised}, \ref{back:fig:ocsvm_roc_pr_unsupervised} and \ref{back:fig:lof_roc_pr_unsupervised} for the unsupervised setup).
-
-For illustrative purposes, Figure XXX shows excess-mass and mass-volume curves for one single dataset.
+The Area Under the Curves (AUC) are presented in Table~\ref{back:table:results-semisupervised} for the semi-supervised framework, and in Table~\ref{back:table:results-unsupervised} for the unsupervised framework. The corresponding ROC and PR curves are plotted in figures~\ref{back:fig:iforest_roc_pr}, \ref{back:fig:lof_ocsvm_pr} and \ref{back:fig:lof_roc_pr} for the semi-supervised framework (resp. \ref{back:fig:iforest_roc_pr_unsupervised}, \ref{back:fig:ocsvm_roc_pr_unsupervised} and \ref{back:fig:lof_roc_pr_unsupervised} for the unsupervised setup).
 
 \begin{table}[!ht]
 \centering
-\begin{tabular}{|l|cccc|cccc|cccc|}
+\begin{tabular}{|l|cc|cc|cc|}
   \hline
-Dataset      & \multicolumn{4}{c|}{iForest}& \multicolumn{4}{c|}{OneClassSVM}  & \multicolumn{4}{c|}{LOF} \\ %& parameters $(\epsilon, k)$\\
+Dataset      & \multicolumn{2}{c|}{iForest}& \multicolumn{2}{c|}{OneClassSVM}  & \multicolumn{2}{c|}{LOF} \\ %& parameters $(\epsilon, k)$\\
   \hline
-~            & ROC  & PR   & EM   &  MV    & ROC  & PR   & EM   & MV           & ROC  & PR   & EM   & MV  \\
-http         &0.992 &0.178 &0.441 &        &      &      &      &              &0.879 &0.016 &      &     \\
-smtp         &0.902 &0.004 &0.664 &        &      &      &      &              &0.936 &0.144 &      &     \\
-SA           &0.988 &0.386 &  NA  &  NA    &      &      &      &              &0.878 &0.017 &      &     \\
-SF           &0.936 &0.038 &  NA  &  NA    &      &      &      &              &0.871 &0.019 &      &     \\
-shuttle      &0.996 &0.976 &1.866 &        &      &      &      &              &0.999 &0.986 &      &     \\
-forestcov.   &0.972 &0.253 &  NA  &  NA    &      &      &      &              &0.997 &0.942 &      &     \\
-ionosphere   &0.899 &0.845 &  NA  &  NA    &      &      &      &              &0.940 &0.911 &      &     \\
-spambase     &0.843 &0.775 &  NA  &  NA    &      &      &      &              &0.581 &0.435 &      &     \\
-annthyroid   &0.745 &0.176 &  NA  &  NA    &      &      &      &              &0.643 &0.113 &      &     \\
-arrhythmia   &0.770 &0.771 &  NA  &  NA    &      &      &      &              &0.758 &0.747 &      &     \\
-pendigits    &0.794 &0.208 &0.308 &        &      &      &      &              &0.977 &0.810 &      &     \\
-pima         &0.734 &0.575 &0.005 &        &      &      &      &              &0.670 &0.502 &      &     \\
-wilt         &0.477 &0.047 &      &        &      &      &      &              &0.839 &0.212 &      &     \\
-internet\_ads&0.414 &0.109 &  NA  &  NA    &      &      &      &              &0.840 &0.213 &      &     \\
-adult        &0.664 &0.484 &      &        &      &      &      &              &0.541 &0.138 &      &     \\
+~            & ROC  & PR   &  ROC  & PR   &  ROC  & PR     \\
+http         &0.992 &0.178 &       &      & 0.879 &0.016   \\
+smtp         &0.902 &0.004 &       &      & 0.936 &0.144   \\
+SA           &0.988 &0.386 &       &      & 0.880 &0.018   \\
+SF           &0.936 &0.038 &       &      & 0.891 &0.022   \\
+shuttle      &0.996 &0.976 &       &      & 0.999 &0.986   \\
+forestcov.   &0.972 &0.253 &       &      & 0.997 &0.942   \\
+ionosphere   &0.899 &0.845 &       &      & 0.941 &0.911   \\
+spambase     &0.843 &0.775 &       &      & 0.581 &0.435   \\
+annthyroid   &0.745 &0.176 &       &      & 0.643 &0.113   \\
+arrhythmia   &0.770 &0.771 &       &      & 0.758 &0.747   \\
+pendigits    &0.794 &0.208 &       &      & 0.977 &0.810   \\
+pima         &0.734 &0.575 &       &      & 0.671 &0.502   \\
+wilt         &0.477 &0.047 &       &      & 0.839 &0.212   \\
+internet\_ads&0.414 &0.109 &       &      & 0.540 &0.139   \\
+adult        &0.664 &0.484 &       &      & 0.538 &0.139   \\
   \hline
 \end{tabular}
-\caption{Results in terms of AUC}
+\caption{Results in terms of AUC (semi-supervised / novelty detection)}
 \label{back:table:results-semisupervised}
 \end{table}
 
 
 \begin{table}[!ht]
 \centering
-\begin{tabular}{|l|cccc|cccc|cccc|}
+\begin{tabular}{|l|cc|cc|cc|}
   \hline
-Dataset      & \multicolumn{4}{c|}{iForest}& \multicolumn{4}{c|}{OneClassSVM}  & \multicolumn{4}{c|}{LOF} \\ %& parameters $(\epsilon, k)$\\
+Dataset      & \multicolumn{2}{c|}{iForest}& \multicolumn{2}{c|}{OneClassSVM}  & \multicolumn{2}{c|}{LOF} \\ %& parameters $(\epsilon, k)$\\
   \hline
-~            & ROC  & PR   & EM    &  MV    & ROC   & PR   & EM    & MV           & ROC  & PR   & EM    & MV    \\
-http         &0.999 &0.709 &0.441  &        &       &      &       &              &0.952 &0.044 &       &       \\
-smtp         &0.902 &0.004 &0.664  &        &       &      &       &              &0.922 &0.028 &       &       \\
-SA           &0.995 &0.526 &  NA   &  NA    &       &      &       &              &0.780 &0.026 &       &       \\
-SF           &0.964 &0.067 &  NA   &        &       &      &       &              &0.465 &0.007 &       &       \\
-shuttle      &0.997 &0.975 &1.866  &        &       &      &       &              &0.532 &0.099 &       &       \\
-forestcov.   &0.974 &0.309 &  NA   &  NA    &       &      &       &              &0.575 &0.017 &       &       \\
-ionosphere   &0.840 &0.792 &  NA   &  NA    &       &      &       &              &0.892 &0.842 &       &       \\
-spambase     &0.637 &0.486 &  NA   &  NA    &       &      &       &              &0.463 &0.353 &       &       \\
-annthyroid   &0.620 &0.115 &  NA   &        &       &      &       &              &0.628 &0.107 &       &       \\
-arrhythmia   &0.749 &0.748 &  NA   &  NA    &       &      &       &              &0.753 &0.734 &       &       \\
-pendigits    &0.419 &0.083 &1.8e-33&2.4e30  &       &      &8.6e-34&8.9e30        &0.484 &0.097 &5.4e-32&1.2e29 \\
-pima         &0.667 &0.482 &6.6e-15&6.8e11  &       &      &9.9e-16&7.7e12        &0.592 &0.422 &1.9e-15&2.9e12 \\
-wilt         &0.458 &0.046 &       &        &       &      &       &              &0.760 &0.109 &       &       \\
-internet\_ads&0.693 &0.359 &  NA   &  NA    &       &      &       &              &0.446 &0.119 &       &       \\
-adult        &0.612 &0.381 &2.9e-19&1.9e16  &       &      &1.2e-21&6.1e18        &0.443 &0.119 &3.1e-21&2.6e18 \\
+~            & ROC  & PR   &  ROC   & PR   & ROC   & PR      \\
+http         &0.999 &0.709 &        &      & 0.952 &0.044    \\
+smtp         &0.902 &0.004 &        &      & 0.922 &0.028    \\ %XXX weird MV != EM
+SA           &0.995 &0.526 &        &      & 0.780 &0.026    \\
+SF           &0.964 &0.067 &        &      & 0.465 &0.007    \\
+shuttle      &0.997 &0.975 &        &      & 0.532 &0.099    \\
+forestcov.   &0.974 &0.309 &        &      & 0.575 &0.017    \\
+ionosphere   &0.840 &0.792 &        &      & 0.892 &0.842    \\
+spambase     &0.637 &0.486 &        &      & 0.463 &0.353    \\
+annthyroid   &0.620 &0.115 &        &      & 0.628 &0.107    \\
+arrhythmia   &0.749 &0.748 &        &      & 0.753 &0.734    \\
+pendigits    &0.419 &0.083 &        &      & 0.484 &0.097    \\
+pima         &0.667 &0.482 &        &      & 0.592 &0.422    \\
+wilt         &0.458 &0.046 &        &      & 0.760 &0.109    \\
+internet\_ads&0.693 &0.359 &        &      & 0.446 &0.119    \\
+adult        &0.612 &0.381 &        &      & 0.443 &0.119    \\
   \hline
 \end{tabular}
-\caption{Results in terms of AUC}
+\caption{Results in terms of AUC (unsupervised / outlier detection)}
 \label{back:table:results-unsupervised}
 \end{table}
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=1.1\linewidth]{fig_source/bench_iforest_roc_pr.png}
-  \caption{ROC and PR curves for Isolation Forest (supervised framework)}
+  \caption{ROC and PR curves for Isolation Forest (semi-supervised framework)}
   \label{back:fig:iforest_roc_pr}
 \end{figure}
 
 % \begin{figure}[!ht]
 %   \centering
 %   \includegraphics[width=\linewidth]{fig_source/bench_ocsvm_roc_pr.png}
-%   \caption{ROC and PR curves for One Class SVM (supervised framework)}
+%   \caption{ROC and PR curves for One Class SVM (semi-supervised framework)}
 %   \label{back:fig:ocsvm_roc_pr}
 % \end{figure}
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\linewidth]{fig_source/bench_lof_roc_pr.png}
-  \caption{ROC and PR curves for Local Outlier Factor (supervised framework)}
+  \caption{ROC and PR curves for Local Outlier Factor (semi-supervised framework)}
   \label{back:fig:lof_roc_pr}
 \end{figure}
 

@@ -3,7 +3,7 @@ import pdb
 from sklearn.metrics import auc
 
 
-def em(t, n_samples, volume_support, s_unif, s_X, n_generated):
+def em(t, t_max, volume_support, s_unif, s_X, n_generated):
     EM_t = np.zeros(t.shape[0])
     # min_s = min(s_unif.min(), s_X.min())
     # max_s = max(s_unif.max(), s_X.max())
@@ -12,22 +12,25 @@ def em(t, n_samples, volume_support, s_unif, s_X, n_generated):
     #         EM_t = np.maximum(EM_t, 1. / n_samples * (s_X >= u).sum() -
     #                           t * (s_unif >= u).sum() / n_generated
     #                           * volume_support)
+    n_samples = s_X.shape[0]
     s_X_unique = np.unique(s_X)
+    EM_t[0] = 1.
     for u in s_X_unique:
-        if (s_unif >= u).sum() > n_generated / 1000:
-            EM_t = np.maximum(EM_t, 1. / n_samples * (s_X >= u).sum() -
-                              t * (s_unif >= u).sum() / n_generated
+        # if (s_unif >= u).sum() > n_generated / 1000:
+            EM_t = np.maximum(EM_t, 1. / n_samples * (s_X > u).sum() -
+                              t * (s_unif > u).sum() / n_generated
                               * volume_support)
-
-    amax = np.argmax(EM_t <= 0.95)
-    if amax == 0:
-        print '\n failed to achieve 0.9 \n'
-        pdb.set_trace()
+    amax = np.argmax(EM_t <= t_max) + 1
+    if amax == 1:
+        print '\n failed to achieve t_max \n'
+        # pdb.set_trace()
+        amax = -1
     AUC = auc(t[:amax], EM_t[:amax])
     return AUC, EM_t, amax
 
 
-def mv(axis_alpha, n_samples, volume_support, s_unif, s_X, n_generated):
+def mv(axis_alpha, volume_support, s_unif, s_X, n_generated):
+    n_samples = s_X.shape[0]
     s_X_argsort = s_X.argsort()
     mass = 0
     cpt = 0

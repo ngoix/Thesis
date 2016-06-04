@@ -1,12 +1,17 @@
-\begin{thebibliography}{92}
+\begin{thebibliography}{102}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 
 \bibitem[Aggarwal \& Yu(2001)Aggarwal and Yu]{Aggarwal2001}
 C.C. Aggarwal and P.S. Yu.
-\newblock Outlier detection for high dimensional data.
-\newblock In {\em ACM Sigmod Record}, volume~30, pages 37--46, 2001.
+\newblock {Outlier detection for high dimensional data}.
+\newblock In {\em ACM Sigmod Record}, 2001.
+
+\bibitem[Amit \& Geman(1997)Amit and Geman]{Amit1997}
+Y.~Amit and D.~Geman.
+\newblock Shape quantization and recognition with randomized trees.
+\newblock {\em Neural comp.}, 1997.
 
 \bibitem[Anthony \& Shawe-Taylor(1993)Anthony and Shawe-Taylor]{Anthony93}
 M.~Anthony and J.~Shawe-Taylor.
@@ -54,10 +59,16 @@ O.~Bousquet, S.~Boucheron, and G.~Lugosi.
   {\em Advanced Lectures on Machine Learning}, volume 3176 of {\em Lecture
   Notes in Computer Science}. Springer Berlin Heidelberg, 2004.
 
+\bibitem[Breiman(2001)]{Breiman2001}
+L.~Breiman.
+\newblock Random forests.
+\newblock {\em Machine Learning}, 2001.
+\newblock ISSN 0885-6125.
+
 \bibitem[Breunig et~al.(2000)Breunig, Kriegel, Ng, and Sander]{Breunig2000LOF}
 M.M. Breunig, H.P. Kriegel, R.T. Ng, and J.~Sander.
-\newblock Lof: identifying density-based local outliers.
-\newblock In {\em ACM sigmod record}, volume~29, pages 93--104, 2000.
+\newblock {LOF: identifying density-based local outliers}.
+\newblock In {\em ACM sigmod record}, 2000.
 
 \bibitem[Buitinck et~al.(2013)Buitinck, Louppe, Blondel, Pedregosa, Mueller,
   Grisel, Niculae, Prettenhofer, Gramfort, Grobler, Layton, VanderPlas, Joly,
@@ -75,19 +86,18 @@ Lars Buitinck, Gilles Louppe, Mathieu Blondel, Fabian Pedregosa, Andreas
   Kumar]{Chandola2009survey}
 V.~Chandola, A.~Banerjee, and V.~Kumar.
 \newblock Anomaly detection: A survey.
-\newblock {\em ACM Computing Surveys (CSUR)}, 41\penalty0 (3):\penalty0 15,
-  2009.
+\newblock {\em ACM Comput. Surv.}, 2009.
 
 \bibitem[Cl\'emen\c{c}on \& Jakubowicz(2013)Cl\'emen\c{c}on and
   Jakubowicz]{CLEM13}
 S.~Cl\'emen\c{c}on and J.~Jakubowicz.
 \newblock {Scoring anomalies: a M-estimation approach}.
-\newblock In {\em Proceedings of AISTATS}, 2013.
+\newblock In {\em AISTATS}, 2013.
 
 \bibitem[Cl\'emen\c{c}on \& Robbiano(2014)Cl\'emen\c{c}on and Robbiano]{CLEM14}
 S.~Cl\'emen\c{c}on and S.~Robbiano.
-\newblock Anomaly ranking as supervised bipartite ranking.
-\newblock In {\em Proceedings of ICML 2014}, 2014.
+\newblock {Anomaly Ranking as Supervised Bipartite Ranking}.
+\newblock In {\em ICML}, 2014.
 
 \bibitem[Clifton et~al.(2008)Clifton, Tarassenko, McGrogan, King, King, and
   Anuzis]{Clifton2008}
@@ -156,6 +166,12 @@ H.~Drees and X.~Huang.
 \newblock {\em J. Multivar. Anal.}, 64\penalty0 (1):\penalty0 25--47, January
   1998.
 
+\bibitem[Désir et~al.(2012)Désir, Bernard, Petitjean, and Heutte]{Desir12}
+C.~Désir, S.~Bernard, C.~Petitjean, and L.~Heutte.
+\newblock A new random forest method for one-class classification.
+\newblock In {\em Structural, Syntactic, and Statistical Pattern Recognition}.
+  Springer, 2012.
+
 \bibitem[Einmahl et~al.(2006)Einmahl, de~Haan, and Li]{Einmahl2006}
 J.~H.~J. Einmahl, L.~de~Haan, and D.~Li.
 \newblock Weighted approximations of tail copula processes with application to
@@ -196,8 +212,7 @@ P.~Embrechts, L.~de~Haan, and X.~Huang.
 E.~Eskin.
 \newblock Anomaly detection over noisy data using learned probability
   distributions.
-\newblock In {\em Proceedings of the Seventeenth International Conference on
-  Machine Learning}, pages 255--262, 2000.
+\newblock In {\em ICML}, 2000.
 
 \bibitem[Eskin et~al.(2002)Eskin, Arnold, Prerau, Portnoy, and
   Stolfo]{Eskin2002}
@@ -236,45 +251,65 @@ Anne-Laure Foug{\`e}res, John~P Nolan, and Holger Rootz{\'e}n.
 \newblock {\em Scandinavian Journal of Statistics}, 36\penalty0 (1):\penalty0
   42--59, 2009.
 
-\bibitem[Goix et~al.(2015{\natexlab{a}})Goix, Sabourin, and
-  Clémençon]{COLT15}
-N.~Goix, A.~Sabourin, and S.~Clémençon.
-\newblock Learning the dependence structure of rare events: a non-asymptotic
-  study.
-\newblock In {\em Proceedings of the 28th Conference on Learning Theory},
-  2015{\natexlab{a}}.
+\bibitem[Gini(1912)]{Gini1912}
+C.~Gini.
+\newblock Variabilita e mutabilita.
+\newblock {\em Memorie di metodologia statistica}, 1912.
 
-\bibitem[Goix et~al.(2015{\natexlab{b}})Goix, Sabourin, and
-  Clémençon]{AISTAT15}
-N.~Goix, A.~Sabourin, and S.~Clémençon.
-\newblock On anomaly ranking and excess-mass curves.
-\newblock In {\em Proceedings of the 18th International Conference on
-  Artificial Intelligence and Statistics}, page 287–295, 2015{\natexlab{b}}.
+\bibitem[Goix(2016)]{ICMLworkshop16}
+N.~Goix.
+\newblock {How to Evaluate the Quality of Unsupervised Anomaly Detection
+  Algorithms?}
+\newblock In {\em ICML Workshop on Anomaly Detection}, 2016.
 
-\bibitem[Goix et~al.(2016{\natexlab{a}})Goix, Sabourin, and
-  Clémençon]{AISTAT16}
-N.~Goix, A.~Sabourin, and S.~Clémençon.
-\newblock Sparse representation of multivariate extremes with applications to
-  anomaly ranking.
-\newblock In {\em Proceedings of the 19th International Conference on
-  Artificial Intelligence and Statistics}, 2016{\natexlab{a}}.
-\newblock (AISTAT).
+\bibitem[Goix et~al.(2016{\natexlab{a}})Goix, Drougard, Brault, and
+  Chiapino]{OCRF16}
+N.~Goix, N.~Drougard, R.~Brault, and M.~Chiapino.
+\newblock {One Class Splitting Criteria for Random Forests with Application to
+  Anomaly Detection}.
+\newblock In {\em Submitted to NIPS}, 2016{\natexlab{a}}.
 
-\bibitem[Goix et~al.(2015{\natexlab{c}})Goix, Sabourin, and Cl{\'e}men{\c
+\bibitem[Goix et~al.(2015{\natexlab{a}})Goix, Sabourin, and Cl{\'e}men{\c
   c}on]{NIPSWORKSHOP15}
-Nicolas Goix, Anne Sabourin, and St{\'e}phan Cl{\'e}men{\c c}on.
+N.~Goix, A.~Sabourin, and S.~Cl{\'e}men{\c c}on.
 \newblock \href{http://www.cs.cmu.edu/~andrewgw/accepted.html}{{Sparse
   Representation of Multivariate Extremes}}.
 \newblock NIPS 2015 Workshop on Nonparametric Methods for Large Scale
-  Representation Learning, 2015{\natexlab{c}}.
+  Representation Learning, 2015{\natexlab{a}}.
 
-\bibitem[Goix et~al.(2016{\natexlab{b}})Goix, Sabourin, and Cl{\'e}men{\c
+\bibitem[Goix et~al.(2015{\natexlab{b}})Goix, Sabourin, and
+  Clémençon]{COLT15}
+N.~Goix, A.~Sabourin, and S.~Clémençon.
+\newblock {Learning the dependence structure of rare events: a non-asymptotic
+  study}.
+\newblock In {\em COLT}, 2015{\natexlab{b}}.
+
+\bibitem[Goix et~al.(2015{\natexlab{c}})Goix, Sabourin, and
+  Clémençon]{AISTAT15}
+N.~Goix, A.~Sabourin, and S.~Clémençon.
+\newblock {On Anomaly Ranking and Excess-Mass Curves}.
+\newblock In {\em AISTATS}, 2015{\natexlab{c}}.
+
+\bibitem[Goix et~al.(2016{\natexlab{b}})Goix, Sabourin, and
+  Clémençon]{AISTAT16}
+N.~Goix, A.~Sabourin, and S.~Clémençon.
+\newblock {Sparse Representation of Multivariate Extremes with Applications to
+  Anomaly Ranking}.
+\newblock In {\em AISTAT}, 2016{\natexlab{b}}.
+
+\bibitem[Goix \& Thomas(2016)Goix and Thomas]{NIPS16evaluation}
+N.~Goix and A.~Thomas.
+\newblock {How to Evaluate the Quality of Unsupervised Anomaly Detection
+  Algorithms?}
+\newblock In {\em Submitted to NIPS}, 2016.
+
+\bibitem[Goix et~al.(2016{\natexlab{c}})Goix, Sabourin, and Cl{\'e}men{\c
   c}on]{ARXIV16}
 Nicolas Goix, Anne Sabourin, and St{\'e}phan Cl{\'e}men{\c c}on.
-\newblock \href{https://hal.archives-ouvertes.fr/hal-01179142}{{Sparsity in
-  Multivariate Extremes with Applications to Anomaly Detection}}.
+\newblock \href{arXiv:1603.09584}{{Sparse Representation of Multivariate
+  Extremes with Applications to Anomaly Detection}}.
 \newblock Submitted to Journal of Multivariate Analysis, July
-  2016{\natexlab{b}}.
+  2016{\natexlab{c}}.
 
 \bibitem[Hartigan(1987)]{Hartigan1987}
 J.A. Hartigan.
@@ -288,11 +323,15 @@ B.~M. Hill.
   distribution.
 \newblock {\em Ann. Statist.}, 3\penalty0 (5):\penalty0 1163--1174, 09 1975.
 
+\bibitem[Ho(1998)]{Ho1998}
+T.K. Ho.
+\newblock The random subspace method for constructing decision forests.
+\newblock {\em TPAMI}, 1998.
+
 \bibitem[Hodge \& Austin(2004)Hodge and Austin]{Hodge2004survey}
 V.J. Hodge and J.~Austin.
 \newblock A survey of outlier detection methodologies.
-\newblock {\em Artificial Intelligence Review}, 22\penalty0 (2):\penalty0
-  85--126, 2004.
+\newblock {\em Artif. Intel. Review}, 2004.
 
 \bibitem[Huang(1992)]{Huangphd}
 X.~Huang.
@@ -301,20 +340,18 @@ X.~Huang.
 \bibitem[Janson(2002)]{Janson2002}
 Svante Janson.
 \newblock On concentration of probability.
-\newblock {\em Contemporary combinatorics}, 10\penalty0 (3):\penalty0 1--9,
-  2002.
+\newblock {\em Contemporary combinatorics}, 2002.
 
 \bibitem[Jones et~al.(2015)Jones, Oliphant, Peterson, et~al.]{Jones2015scipy}
 Eric Jones, Travis Oliphant, Pearu Peterson, et~al.
 \newblock Scipy: Open source scientific tools for python, 2001--.
-\newblock {\em URL http://www. scipy. org}, 73:\penalty0 86, 2015.
+\newblock {\em URL http://www. scipy. org}, 2015.
 
 \bibitem[KDDCup(1999)]{KDD99}
 KDDCup.
 \newblock The third international knowledge discovery and data mining tools
   competition dataset.
-\newblock {\em KDD99-Cup
-  http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html}, 1999.
+\newblock 1999.
 
 \bibitem[Koltchinskii(1997)]{Kolt97}
 V.~Koltchinskii.
@@ -355,14 +392,13 @@ R.~Lippmann, J.~W Haines, D.J. Fried, J.~Korba, and K.~Das.
 
 \bibitem[Liu et~al.(2008)Liu, Ting, and Zhou]{Liu2008}
 F.T. Liu, K.M. Ting, and Z.H. Zhou.
-\newblock Isolation forest.
-\newblock In {\em Data Mining, 2008. ICDM'08. Eighth IEEE International
-  Conference on}, pages 413--422, 2008.
+\newblock {Isolation Forest}.
+\newblock In {\em ICDM}, 2008.
 
 \bibitem[Markou \& Singh(2003)Markou and Singh]{Markou2003survey}
 M.~Markou and S.~Singh.
-\newblock Novelty detection: a review—part 1: statistical approaches.
-\newblock {\em Signal processing}, 83\penalty0 (12):\penalty0 2481--2497, 2003.
+\newblock Novelty detection: a review part 1: statistical approaches.
+\newblock {\em Signal proc.}, 2003.
 
 \bibitem[Massart(2000)]{Massart2000}
 Pascal Massart.
@@ -375,9 +411,8 @@ Pascal Massart.
 Colin McDiarmid.
 \newblock Concentration.
 \newblock In M.~Habib, C.~McDiarmid, J.~Ramirez-Alfonsin, and B.~Reed, editors,
-  {\em Probabilistic Methods for Algorithmic Discrete Mathematics}, volume~16
-  of {\em Algorithms and Combinatorics}, pages 195--248. Springer Berlin
-  Heidelberg, 1998.
+  {\em Probabilistic Methods for Algorithmic Discrete Mathematics}, Algorithms
+  and Combinatorics. Springer, 1998.
 
 \bibitem[M{\"u}ller \& Sawitzki(1991)M{\"u}ller and Sawitzki]{Muller1991}
 D.W. M{\"u}ller and G.~Sawitzki.
@@ -385,33 +420,35 @@ D.W. M{\"u}ller and G.~Sawitzki.
 \newblock {\em Journal of the American Statistical Association}, 86\penalty0
   (415):\penalty0 738--746, 1991.
 
+\bibitem[Panov \& D{\v{z}}eroski(2007)Panov and D{\v{z}}eroski]{Panov2007}
+P.~Panov and S.~D{\v{z}}eroski.
+\newblock {\em Combining bagging and random subspaces to create better
+  ensembles}.
+\newblock Springer, 2007.
+
 \bibitem[Patcha \& Park(2007)Patcha and Park]{Patcha2007survey}
 A.~Patcha and J.M. Park.
 \newblock An overview of anomaly detection techniques: Existing solutions and
   latest technological trends.
-\newblock {\em Computer Networks}, 51\penalty0 (12):\penalty0 3448--3470, 2007.
+\newblock {\em Computer Networks}, 2007.
 
 \bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
   Grisel, Blondel, Prettenhofer, Weiss, Dubourg, et~al.]{sklearn2011}
-Fabian Pedregosa, Ga{\"e}l Varoquaux, Alexandre Gramfort, Vincent Michel,
-  Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron
-  Weiss, Vincent Dubourg, et~al.
-\newblock Scikit-learn: Machine learning in python.
-\newblock {\em The Journal of Machine Learning Research}, 12:\penalty0
-  2825--2830, 2011.
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, et~al.
+\newblock {Scikit-learn: Machine learning in Python}.
+\newblock {\em JMLR}, 2011.
 
 \bibitem[Polonik(1995)]{Polonik95}
 W.~Polonik.
-\newblock Measuring mass concentrations and estimating density contour
-  cluster-an excess mass approach.
-\newblock {\em The annals of Statistics}, 23\penalty0 (3):\penalty0 855--881,
-  1995.
+\newblock {Measuring Mass Concentrations and Estimating Density Contour
+  Cluster-An excess Mass Approach}.
+\newblock {\em The Annals of Statistics}, 1995.
 
 \bibitem[Polonik(1997)]{Polonik97}
 W.~Polonik.
-\newblock Minimum volume sets and generalized quantile processes.
-\newblock {\em Stochastic Processes and their Applications}, 69\penalty0
-  (1):\penalty0 1--24, 1997.
+\newblock {Minimum volume sets and generalized quantile processes}.
+\newblock {\em Stochastic Processes and their Applications}, 1997.
 
 \bibitem[Polonik(1998)]{Polonik1998}
 W.~Polonik.
@@ -459,19 +496,18 @@ Anne Sabourin and Philippe Naveau.
 
 \bibitem[Sch{\"o}lkopf et~al.(2001)Sch{\"o}lkopf, Platt, Shawe-Taylor, Smola,
   and Williamson]{Scholkopf2001}
-Bernhard Sch{\"o}lkopf, John~C Platt, John Shawe-Taylor, Alex~J Smola, and
-  Robert~C Williamson.
+B.~Sch{\"o}lkopf, J.C Platt, J.~Shawe-Taylor, A.J Smola, and R.C Williamson.
 \newblock Estimating the support of a high-dimensional distribution.
 \newblock {\em Neural computation}, 13\penalty0 (7):\penalty0 1443--1471, 2001.
 
 \bibitem[Schubert et~al.(2012)Schubert, Wojdanowski, Zimek, and
   Kriegel]{Schubert2012}
-Erich Schubert, Remigius Wojdanowski, Arthur Zimek, and Hans-Peter Kriegel.
-\newblock On evaluation of outlier rankings and outlier scores.
+E.~Schubert, R.~Wojdanowski, A.~Zimek, and H.-P. Kriegel.
+\newblock {On Evaluation of Outlier Rankings and Outlier Scores.}
 \newblock In {\em SDM}, pages 1047--1058. SIAM, 2012.
 
 \bibitem[Scott \& Nowak(2006)Scott and Nowak]{Scott2006}
-Clayton~D Scott and Robert~D Nowak.
+C.D Scott and R.D Nowak.
 \newblock Learning minimum volume sets.
 \newblock {\em The Journal of Machine Learning Research}, 7:\penalty0 665--704,
   2006.
@@ -489,10 +525,15 @@ J.~Segers.
 \newblock {\em REVSTAT - Statistical Journal}, 10\penalty0 (1):\penalty0
   61--82, 2012{\natexlab{b}}.
 
+\bibitem[Shi \& Horvath(2012)Shi and Horvath]{Shi2012}
+T.~Shi and S.~Horvath.
+\newblock Unsupervised learning with random forest predictors.
+\newblock {\em J. Comp. Graph. Stat.}, 2012.
+
 \bibitem[Shyu et~al.(2003)Shyu, Chen, Sarinnapakorn, and Chang]{Shyu2003}
 M.L. Shyu, S.C. Chen, K.~Sarinnapakorn, and L.~Chang.
-\newblock A novel anomaly detection scheme based on principal component
-  classifier.
+\newblock {A novel anomaly detection scheme based on principal component
+  classifier}.
 \newblock Technical report, DTIC Document, 2003.
 
 \bibitem[Smith(1987)]{Smith1987}
@@ -529,8 +570,7 @@ Alec Stephenson.
   Ghorbani]{Tavallaee2009}
 M.~Tavallaee, E.~Bagheri, W.~Lu, and A.A. Ghorbani.
 \newblock A detailed analysis of the kdd cup 99 data set.
-\newblock In {\em Proceedings of the Second IEEE Symposium on Computational
-  Intelligence for Security and Defence Applications 2009}, 2009.
+\newblock In {\em IEEE CISDA}, 2009.
 
 \bibitem[Tawn(1990)]{Tawn90}
 JA~Tawn.
@@ -538,17 +578,15 @@ JA~Tawn.
 \newblock {\em Biometrika}, 77\penalty0 (2):\penalty0 245--253, 1990.
 
 \bibitem[Thomas et~al.(2015)Thomas, Feuillard, and Gramfort]{Thomas2015}
-Albert Thomas, Vincent Feuillard, and Alexandre Gramfort.
-\newblock Calibration of one-class svm for mv set estimation.
-\newblock In {\em Data Science and Advanced Analytics (DSAA), 2015. 36678 2015.
-  IEEE International Conference on}, pages 1--9. IEEE, 2015.
+A.~Thomas, V.~Feuillard, and A.~Gramfort.
+\newblock {Calibration of One-Class SVM for MV set estimation}.
+\newblock In {\em DSAA}, 2015.
 
 \bibitem[Van Der~Walt et~al.(2011)Van Der~Walt, Colbert, and
   Varoquaux]{Vanderwalt2011numpy}
 Stefan Van Der~Walt, S~Chris Colbert, and Gael Varoquaux.
 \newblock The numpy array: a structure for efficient numerical computation.
-\newblock {\em Computing in Science \& Engineering}, 13\penalty0 (2):\penalty0
-  22--30, 2011.
+\newblock {\em Computing in Science \& Engineering}, 2011.
 
 \bibitem[Vapnik \& Chervonenkis(1974)Vapnik and Chervonenkis]{Vapnik74}
 V.~Vapnik and A.~Chervonenkis.
@@ -583,7 +621,6 @@ JA. Wellner.
 K.~Yamanishi, J.I. Takeuchi, G.~Williams, and P.~Milne.
 \newblock On-line unsupervised outlier detection using finite mixtures with
   discounting learning algorithms.
-\newblock In {\em Proceedings of the sixth ACM SIGKDD international conference
-  on Knowledge discovery and data mining}, pages 320--324, 2000.
+\newblock In {\em KDD}, 2000.
 
 \end{thebibliography}

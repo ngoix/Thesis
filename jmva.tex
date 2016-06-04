@@ -1626,11 +1626,12 @@ sets of this scoring function, both in the transformed and the non-transformed i
  This heuristic argument explains the following algorithm, referred to as {\it Detecting Anomaly with Multivariate EXtremes}  (DAMEX in abbreviated form). Note that this is a slightly modified version of the original DAMEX algorihtm empirically tested in \cite{AISTAT16}, where $\epsilon$-thickened sub-cones instead of $\epsilon$-thickened rectangles are considered. The proof is more straightforward when considering rectangles and performance remains as good.
 The complexity is in $O( dn\log n + dn) = O(dn\log n)$, where the first term on the left-hand-side comes from  computing the $\widehat F_j(X_i^j)$ (Step 1) by sorting  the data (\emph{e.g.} merge sort). The second one arises from Step 2. 
 
-\begin{center}
-\fbox{
-\begin{minipage}{0.95\linewidth}
-\begin{algorithm} (DAMEX)
-\label{jmva:DAMEX-algo}\\
+% \begin{center}
+% \fbox{
+% \begin{minipage}{0.95\linewidth}
+\begin{algorithm}[!tbh]
+\caption{DAMEX}
+\label{jmva:DAMEX-algo}
 {\bf Input:} parameters $\epsilon>0$,~~ $k = k(n)$,~~ $p\geq 0$.
 \begin{enumerate}
 \item Standardize \emph{via} marginal rank-transformation: $\mb{ \widehat V}_i:= \big (1/(1- \widehat F_j (X_i^j))\big)_{j=1,\ldots,d}$~.
@@ -1658,9 +1659,9 @@ s_n(\mb x):= (1/\|\widehat T(\mb x)\|_\infty)
 \hatmass(\alpha) \mathds{1}_{\widehat T(\mb x) \in R_\alpha^\epsilon}.
 \end{align*}
 \end{algorithm}
-\end{minipage}
-}
-\end{center}
+% \end{minipage}
+% }
+% \end{center}
 
 Before investigating how the algorithm above empirically performs when applied to synthetic/real datasets, a few remarks are in order.
 

@@ -1,42 +1,44 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Mass-Volume at level $\alpha $\relax }}{6}{figure.caption.6}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Unsuccessful mass-volume criterion optimization\relax }}{7}{figure.caption.7}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Truncated cones in 3D\relax }}{15}{figure.1.3}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Truncated $\epsilon $-cones in 2D\relax }}{15}{figure.1.4}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Truncated cones in 3D\relax }}{17}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Truncated $\epsilon $-cones in 2D\relax }}{17}{figure.1.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces LOF example\relax }}{32}{figure.caption.10}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Anomalies are isolated more quickly\relax }}{33}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Convergence of the averaged depth\relax }}{33}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Isolation Forest example\relax }}{34}{figure.caption.11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces gaussian normal data with one single mode\relax }}{36}{figure.caption.12}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces gaussian normal data with two modes\relax }}{36}{figure.caption.13}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces gaussian normal data with two strongly separate modes\relax }}{36}{figure.caption.14}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces ROC and PR curves for Isolation Forest (semi-supervised framework)\relax }}{43}{figure.caption.18}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces ROC and PR curves for Local Outlier Factor (semi-supervised framework)\relax }}{44}{figure.caption.19}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces ROC and PR curves for Isolation Forest (unsupervised framework)\relax }}{45}{figure.caption.20}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces ROC and PR curves for Local Outlier Factor (unsupervised framework)\relax }}{46}{figure.caption.21}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Extreme Value Distribution with $\alpha = 2$\relax }}{63}{figure.caption.22}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces EM curves depending on densities\relax }}{76}{figure.caption.23}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison between $MV^*(\alpha )$ and $EM^*(t)$\relax }}{76}{figure.caption.24}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Unsuccessful mass-volume criterion optimization\relax }}{82}{figure.caption.25}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Optimal and realized EM curves\relax }}{86}{figure.caption.26}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Zoom near 0 \nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\relax }}{86}{figure.caption.26}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces $EM_\mathcal {G}$ for different $l$\relax }}{86}{figure.caption.27}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces density and scoring functions\relax }}{87}{figure.caption.28}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces LOF example\relax }}{34}{figure.caption.10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Anomalies are isolated more quickly\relax }}{35}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Convergence of the averaged depth\relax }}{35}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Isolation Forest example\relax }}{36}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces gaussian normal data with one single mode\relax }}{38}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces gaussian normal data with two modes\relax }}{38}{figure.caption.13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces gaussian normal data with two strongly separate modes\relax }}{38}{figure.caption.14}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces ROC and PR curves for Isolation Forest (semi-supervised framework)\relax }}{45}{figure.caption.18}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces ROC and PR curves for Local Outlier Factor (semi-supervised framework)\relax }}{46}{figure.caption.19}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces ROC and PR curves for Isolation Forest (unsupervised framework)\relax }}{47}{figure.caption.20}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces ROC and PR curves for Local Outlier Factor (unsupervised framework)\relax }}{48}{figure.caption.21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Truncated cones in 3D\relax }}{119}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Truncated $\epsilon $-rectangles in 2D\relax }}{119}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Estimation procedure\relax }}{125}{figure.caption.29}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Level sets of $s_n$ on simulated 2D data\relax }}{137}{figure.caption.30}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces sub-cone dimensions of wave data\relax }}{140}{figure.caption.32}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces SF dataset, default parameters\relax }}{143}{figure.caption.37}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{144}{figure.caption.38}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{144}{figure.caption.39}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces SA dataset, default parameters\relax }}{145}{figure.caption.40}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces forestcover dataset, default parameters\relax }}{145}{figure.caption.41}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces http dataset, default parameters\relax }}{146}{figure.caption.42}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Extreme Value Distribution with $\alpha = 2$\relax }}{65}{figure.caption.22}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces EM curves depending on densities\relax }}{78}{figure.caption.23}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison between $MV^*(\alpha )$ and $EM^*(t)$\relax }}{78}{figure.caption.24}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Unsuccessful mass-volume criterion optimization\relax }}{84}{figure.caption.25}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Optimal and realized EM curves\relax }}{88}{figure.caption.26}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Zoom near 0 \nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\relax }}{88}{figure.caption.26}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces $EM_\mathcal {G}$ for different $l$\relax }}{88}{figure.caption.27}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces density and scoring functions\relax }}{89}{figure.caption.28}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Truncated cones in 3D\relax }}{127}{figure.9.1}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Truncated $\epsilon $-rectangles in 2D\relax }}{127}{figure.9.2}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Estimation procedure\relax }}{133}{figure.caption.29}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Level sets of $s_n$ on simulated 2D data\relax }}{145}{figure.caption.30}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces sub-cone dimensions of wave data\relax }}{148}{figure.caption.32}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces SF dataset, default parameters\relax }}{151}{figure.caption.37}
+\contentsline {figure}{\numberline {9.7}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{152}{figure.caption.38}
+\contentsline {figure}{\numberline {9.8}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{152}{figure.caption.39}
+\contentsline {figure}{\numberline {9.9}{\ignorespaces SA dataset, default parameters\relax }}{153}{figure.caption.40}
+\contentsline {figure}{\numberline {9.10}{\ignorespaces forestcover dataset, default parameters\relax }}{153}{figure.caption.41}
+\contentsline {figure}{\numberline {9.11}{\ignorespaces http dataset, default parameters\relax }}{154}{figure.caption.42}
 \addvspace {10\p@ }

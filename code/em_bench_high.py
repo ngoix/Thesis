@@ -19,7 +19,7 @@ from em import em, mv  # , EM_approx, MV_approx, MV_approx_over
 
 
 averaging = 50
-max_features = 3
+max_features = 5
 n_generated = 100000
 alpha_min = 0.9
 alpha_max = 0.999
@@ -52,7 +52,7 @@ np.random.seed(1)
 
 # datasets = ['ionosphere', 'spambase', 'annthyroid', 'arrhythmia',
 #             'forestcover']
-datasets = ['shuttle', 'wilt', 'pima', 'adult', 'pendigits']
+datasets = ['shuttle', 'pendigits', 'forestcover']
 
 for dat in datasets:
     # loading and vectorization
@@ -66,11 +66,11 @@ for dat in datasets:
     y_train = y[:n_samples_train]
     y_test = y[n_samples_train:]
 
-    # training and testing only on normal data:
-    X_train = X_train[y_train == 0]
-    y_train = y_train[y_train == 0]
-    X_test = X_test[y_test == 0]
-    y_test = y_test[y_test == 0]
+    # # training and testing only on normal data:
+    # X_train = X_train[y_train == 0]
+    # y_train = y_train[y_train == 0]
+    # X_test = X_test[y_test == 0]
+    # y_test = y_test[y_test == 0]
 
     # define models:
     iforest = IsolationForest()
@@ -129,7 +129,7 @@ for dat in datasets:
     em_ocsvm /= averaging
     mv_ocsvm /= averaging
 
-    with open('result_em_bench_high_supervised_with' + str(alpha_min) + '_factorized_with' + str(ocsvm_max_train) + 'ocsvm_' + dat + '_'
+    with open('result_em_bench_high_unsupervised_with' + str(alpha_min) + '_factorized_with' + str(ocsvm_max_train) + 'ocsvm_' + dat + '_'
               + str(max_features) + '_' +
               str(averaging) + '_' + '.txt', 'a') as result:
         result.write('em_iforest = ' + str(em_iforest) + '\n')

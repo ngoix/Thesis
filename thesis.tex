@@ -1,7 +1,7 @@
 %% ----------------------------------------------------------------
 %% Thesis.tex
 %% ---------------------------------------------------------------- 
-\documentclass{ecsthesis}      % Use the Thesis Style
+\documentclass[draft]{ecsthesis}      % Use the Thesis Style
 %\graphicspath{{../Figures/}}   % Location of your graphics files
 \usepackage{natbib}            % Use Natbib style for the refs.
 \usepackage{psfrag}
@@ -73,7 +73,11 @@
 
 \part{An Excess-Mass based Performance Criterion}\label{part:struct}
 \input{aistat}
-\input{workshop}
+\input{evaluation}
+
+\part{One Class Random Forests}
+\input{ocrf}
+
 \part{Accuracy on Extreme Regions}\label{part:vect}
 \input{colt}
 \input{jmva}

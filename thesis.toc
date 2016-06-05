@@ -85,7 +85,7 @@
 \contentsline {subsection}{\numberline {9.3.6}Main result}{138}{subsection.9.3.6}
 \contentsline {section}{\numberline {9.4}Application to Anomaly Detection }{142}{section.9.4}
 \contentsline {subsection}{\numberline {9.4.1}Background on anomaly detection}{142}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}Algorithm: Detecting Anomalies among Multivariate EXtremes (DAMEX)}{143}{subsection.9.4.2}
+\contentsline {subsection}{\numberline {9.4.2}DAMEX Algorithm: Detecting Anomalies among Multivariate Extremes}{143}{subsection.9.4.2}
 \contentsline {section}{\numberline {9.5}Experimental results}{146}{section.9.5}
 \contentsline {subsection}{\numberline {9.5.1}Recovering the support of the dependence structure of generated data}{146}{subsection.9.5.1}
 \contentsline {subsection}{\numberline {9.5.2}Sparse structure of extremes (wave data)}{147}{subsection.9.5.2}

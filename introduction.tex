@@ -434,6 +434,7 @@ In addition, $s_N(x)$ converges to $s_\infty(x):=\sum_{k=1}^{\infty} (t_{k+1}-t_
 
 
 \section{Evaluation of AD algorithms}
+\label{resume:evaluation}
 This is a summary of Chapter~\ref{chap:evaluation}, which is based on a workshop paper \citep{ICMLworkshop16} and a submitted work \citep{NIPS16evaluation}.
 
 
@@ -514,11 +515,17 @@ Experiments show that when one algorithm has % \emph{clearly} (according to both
 better performance than another on some fixed dataset, according to both ROC and PR AUCs, one can expect to recover it without using labels with an accuracy of $82\%$ in the novelty detection framework, and $77\%$ in the unsupervised framework.
 
 
-\section{One Class Random Forests}
+\section{One-Class Random Forests}
+\label{resume:ocrf}
 This is a summary of Chapter~\ref{chap:ocrf}, which is based on submitted work \citep{OCRF16}.
 
-Scoring functions built by optimizing EM or MV criteria usually not perform well. Indeed, optimization is done over some class of scoring functions \emph{hopefully rich enough to provide a good approximation while simple enough to control the convergence rate}. This compromise is to optimistic in practice, specially in high dimension. In addition, if minimizing criteria is useful when there is no intuition available on the underlying problem, this is not the case in anomaly detection. We usually don't try to minimize ROC curves to have a good classifier, and the doctor usually does not health people by trying to optimize tensiometer or stethoscope measurement. To develop theoretical guaranties (namely to attest that in terms of ROC or EM/MV criteria, the algorithm works well), it seems indeed easier to optimize these criteria. But in term of efficiency, this is not the case anymore. %mecanic does'nt repair motors by trying to minimize the sensors
-In this section, we propose to build scoring functions using Random Forests (RFs). RFs \citep{Breiman2001} are an intuitive way of performing classification and regression. More formally, we adapt random forests to the one-class classification framework by introducing one-class splitting criteria.
+Scoring functions built by optimizing EM or MV criteria usually not perform well. Indeed, optimization is done over some class of scoring functions \emph{hopefully rich enough to provide a good approximation while simple enough to control the convergence rate}. This compromise is to optimistic in practice, specially in high dimension. In addition, if criterion optimization is useful when no intuition is available on the underlying problem, this is not the case in anomaly detection. We usually do not try to minimize ROC curves to have a good classifier, and a doctor usually does not health people by trying to optimize tensiometer or stethoscope measurements. 
+%
+To derive guaranties of theoretical nature (namely to attest the relevance of the algorithm in terms of \eg~ROC or EM/MV criteria), optimizing these evaluation criteria is often an efficient way. 
+But this does not remains true in terms of empirical performance. % There is example of methods 
+% having few or no theoretical guaranties %, this is not the case anymore. %mecanic does'nt repair motors by trying to minimize the sensors
+%
+In this section, we propose to build scoring functions using Random Forests (RFs). RFs \citep{Breiman2001} are an intuitive way of performing classification and regression. More formally, we adapt RFs to the one-class classification framework by introducing one-class splitting criteria.
 
 Standard RFs are estimators that fit a number of decision tree
 classifiers on different random sub-samples of the dataset.
@@ -535,7 +542,7 @@ splitting criteria to the one-class setting, as well as an adaptation of the two
 In addition, it turns out that the one-class model promoted here corresponds to the asymptotic behavior of an adaptive (with respect to the tree growing process) outliers generating methodology.
 
 
-Let us summarize our One Class Random Forest algorithm, based on generic RFs \citep{Breiman2001}. It has $7$ parameters:
+Let us summarize our One-Class Random Forest algorithm, based on generic RFs \citep{Breiman2001}. It has $7$ parameters:
 $max\_samples$, $max\_features\_tree$, $max\_features\_node$, $\gamma$, $max\_depth$, $n\_trees$, $s_k$.
 
 Each tree is classically grown on a random subset of both the input samples and the input features \citep{Ho1998, Panov2007}.
@@ -584,7 +591,7 @@ Recovering the $p_j$'s can be done following a well paved way: in the univariate
 In contrast, in the multivariate case, there is no finite-dimensional parametrization of the dependence structure. 
 The latter being characterized by the \textsc{stdf}, estimating this functional is one of the main issues in multivariate \textsc{EVT}. Asymptotic properties of the empirical \textsc{stdf} have been widely studied, see \cite{Huangphd}, \cite{Drees98}, \cite{Embrechts2000} and \cite{dHF06} for the bivariate case, and \cite{Qi97}, \cite{Einmahl2012} for the general multivariate case under smoothness assumptions.
 
-However, no bounds exist on the finite sample error. It is precisely the purpose of the second contribution of this thesis summarized in the next section and published in \cite{COLT15}, to derive such non-asymptotic bounds. Our results do not require any assumption other than the existence of the \textsc{stdf}. 
+However, no bounds exist on the finite sample error. The contribution summarized in the next section and published in \cite{COLT15} derives such non-asymptotic bounds. Our results do not require any assumption other than the existence of the \textsc{stdf}. 
 
 
 
@@ -631,7 +638,7 @@ One other convenient (nonparametric) characterization of  extreme dependence in 
 %
 In many applications, it is more convenient to work with the angular measure itself. The latter gives more direct information on the dependence structure and is able to reflect structural simplifying properties (\eg~sparsity as detailed below) which would not appear in extreme value copulas or in the STDF which are integrated version of the angular measure.
 However, non-parametric modeling of the angular measure faces major difficulties, stemming from its potentially complex structure, especially in a high dimensional setting.
-Further, from a theoretical point of view, non-parametric estimation of the angular measure has only been studied in the two dimensional case, in \cite{Einmahl2001} and \cite{Einmahl2009}, in an asymptotic framework. As a third contribution of this thesis, the section below summarizes a novel methodology (presented in \cite{AISTAT15}, \cite{NIPSWORKSHOP15} and a long version under review \cite{ARXIV16}) aiming at exhibiting a sparsity pattern within the dependence structure of extremes.
+Further, from a theoretical point of view, non-parametric estimation of the angular measure has only been studied in the two dimensional case, in \cite{Einmahl2001} and \cite{Einmahl2009}, in an asymptotic framework. As another contribution of this thesis, the section below summarizes a novel methodology (presented in \cite{AISTAT15}, \cite{NIPSWORKSHOP15} and a long version under review \cite{ARXIV16}) aiming at exhibiting a sparsity pattern within the dependence structure of extremes.
 
 
 
@@ -917,29 +924,54 @@ XXX: add contribution with A.Muller
 The contributions of this thesis can be summarized as follows. 
 
 First, it proposes (Section~\ref{resume:em-curve}) an adequate performance criterion, in order to compare possible candidate scoring function and to pick one eventually. 
-However, the use of the Excess-Mass criterion to measure the quality of a scoring function $s_n$ involves the computation of the Lebesgue measure  $\leb(s_n \ge u)$, just as with the mass-volume criterion. This is a major drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available. The corresponding publication is \cite{AISTAT15}:
+The corresponding publication is \cite{AISTAT15}:
 \begin{itemize}
-\item On Anomaly Ranking and Excess-Mass Curves, (AISTAT 2015) Goix, Sabourin, and Clémençon. 
+\item On Anomaly Ranking and Excess-Mass Curves. (AISTAT 2015).\\
+Authors: Goix, Sabourin, and Clémençon. 
+\end{itemize}
+
+However, the use of the Excess-Mass curve (just as Mass-Volume curve) to measure the quality of a scoring function $s_n$ involves the computation of the Lebesgue measure  $\leb(s_n \ge u)$, which is a major drawback for its use in high dimensional framework. Besides, these two criteria
+have originally been introduced to build scoring functions \emph{via}
+Empirical Risk Minimization (ERM), and no study has been made on their use to evaluate scoring functions as ROC or PR criteria do.
+% This is a major drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available. 
+
+As a second contribution, we show (empirically) that EM or MV based criteria are able to discriminate accurately (\wrt~ROC or PR based criteria) between scoring functions in law dimension. Besides, we propose a methodology based on feature sub-sampling and aggregating to scale the use of EM or MV to higher dimensions.
+The corresponding publications are \cite{ICMLworkshop16} and \cite{NIPS16evaluation}:
+\begin{itemize}
+\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (ICML 2016, Workshop on Anomaly Detection). Co-winner of the Best Paper Award, sponsored by Google.\\
+Author: Goix. 
+\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (submitted to NIPS 2016).\\ Authors: Goix and Thomas. 
 \end{itemize}
 
 %However, to measure with this criterion the quality of a scoring function $s_n$, volume of level sets of $s_n$ have to be compute which is a considerable drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available.
 
-Second, it brings advances in multivariate EVT by providing non-asymptotic bounds for the estimation of the STDF, a functional characterizing the extreme dependence structure (Section~\ref{resume:stdf}). The corresponding publication is \cite{COLT15}:
+The third contribution of this thesis is to develop an efficient way of building accurate scoring functions. This is done by generalizing random forests to one-class classification. The corresponding publication is 
 \begin{itemize}
-\item Learning the dependence structure of rare events: a non-asymptotic study (COLT 2015), Goix, Sabourin, and Clémençon.
+\item One-Class Splitting Criteria for Random Forests with Application to Anomaly Detection. (Submitted to NIPS 2016).\\
+Authors: Goix, Brault, Drougard and Chiapino.
 \end{itemize}
-Third, it designs a statistical method that produces a (possibly sparse) representation of the dependence structure of extremes, while deriving non-asymptotic bounds to assess the accuracy of the estimation procedure (Section~\ref{resume:sec:JMVA}).
+
+
+As a fourth contribution, we bring advances in multivariate EVT by providing non-asymptotic bounds for the estimation of the STDF, a functional characterizing the extreme dependence structure (Section~\ref{resume:stdf}). The corresponding publication is \cite{COLT15}:
+\begin{itemize}
+\item Learning the dependence structure of rare events: a non-asymptotic study. (COLT 2015).\\
+Authors: Goix, Sabourin, and Clémençon.
+\end{itemize}
+
+The fifth contribution is to design a statistical method that produces a (possibly sparse) representation of the dependence structure of extremes, while deriving non-asymptotic bounds to assess the accuracy of the estimation procedure (Section~\ref{resume:sec:JMVA}).
 %
-This third contribution also includes a multivariate EVT-based algorithm which returns a scoring functions defined in extremes region. This directly applies to anomaly detection as an abnormality score.
+This contribution also includes a multivariate EVT-based algorithm which returns a scoring functions defined in extremes region. This directly applies to anomaly detection as an abnormality score.
 The corresponding publications are \cite{AISTAT16}, \cite{NIPSWORKSHOP15} and \cite{ARXIV16}:
 %
 \begin{itemize}
-\item Sparse Representation of Multivariate Extremes with Applications to Anomaly Ranking (AISTAT 2016 and NIPS 2015 Workshop on Nonparametric Methods for Large Scale Representation Learning), Goix, Sabourin, and Clémençon.
-\item Sparse Representation of Multivariate Extremes with Applications to Anomaly Detection (Under review for Journal of Multivariate Analysis), Goix, Sabourin, and Clémençon.
+\item Sparse Representation of Multivariate Extremes with Applications to Anomaly Ranking. (AISTAT 2016 and NIPS 2015 Workshop on Nonparametric Methods for Large Scale Representation Learning).\\
+Authors: Goix, Sabourin, and Clémençon.
+\item Sparse Representation of Multivariate Extremes with Applications to Anomaly Detection. (Under review for Journal of Multivariate Analysis).\\
+Authors: Goix, Sabourin, and Clémençon.
 \end{itemize}
 
 
-As a last contribution (of incremental nature), two classical anomaly detection algorithms have been implemented and merged on scikit-learn. They are used in this dissertation for empirical comparison to attest the relevance of the forementionned approach.
+As a last contribution (of incremental nature), two classical anomaly detection algorithms have been implemented and merged on scikit-learn. They are used in this dissertation for empirical comparison to attest the relevance of the forementionned approaches.
 The pull requests of these two contributions are available here:
 \begin{itemize}
 \item https://github.com/scikit-learn/scikit-learn/pull/4163  (Isolation Forest)
@@ -956,7 +988,11 @@ This dissertation is organized as follows.
 \item Part~\ref{part:background} gathers the background work relevant to this thesis.
 Chapter~\ref{back:AD_scikit} reviews classical anomaly detection algorithms through the scikit-learn library and presents implementative contributions of this thesis; Chapter~\ref{chap:back_concentration} presents general results on measure concentration inequalities; and Chapter~\ref{back:EVT} provides a concise background on Extreme Value Theory.
 
-\item In Part~\ref{part:struct}, Chapter~\ref{aistat:chap} presents the details on anomaly ranking and excess-mass curve, as summarized above Section~\ref{resume:scoring}.
+\item Part~\ref{part:struct} deals with unsupervised anomaly detection criteria.
+Chapter~\ref{aistat:chap} presents the details on anomaly ranking and excess-mass curve, as summarized above Section~\ref{resume:scoring}. Chapter~\ref{chap:evaluation} deals with the evaluation of anomaly detection algorithms, as summarized above Section~\ref{resume:scoring}. Chapter~\ref{resume:evaluation}.
 
-\item Part~\ref{part:vect} focuses on EVT-based methods for anomaly detection: Chapter~\ref{colt} deals with the stable tail dependence function as previously summarized Section~\ref{resume:stdf}; and Chapter~\ref{jmva} describes how scoring functions can be build using EVT, as previously summarized Section~\ref{resume:sec:JMVA}.
+\item Part~\ref{part:ocrf} is about one-class random forests: Chapter~\ref{chap:ocrf} presents the details % on one class splitting criteria 
+  summarized above Section~\ref{resume:ocrf}.
+
+\item Part~\ref{part:vect} focuses on EVT-based methods for anomaly detection. Chapter~\ref{colt} deals with the stable tail dependence function as summarized above in Section~\ref{resume:stdf}. Chapter~\ref{jmva} describes how scoring functions can be build using EVT, as previously summarized in Section~\ref{resume:sec:JMVA}.
 \end{itemize}

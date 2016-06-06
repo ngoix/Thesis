@@ -1,4 +1,4 @@
-\begin{thebibliography}{102}
+\begin{thebibliography}{101}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -262,9 +262,9 @@ N.~Goix.
   Algorithms?}
 \newblock In {\em ICML Workshop on Anomaly Detection}, 2016.
 
-\bibitem[Goix et~al.(2016{\natexlab{a}})Goix, Drougard, Brault, and
+\bibitem[Goix et~al.(2016{\natexlab{a}})Goix, Brault, Drougard, and
   Chiapino]{OCRF16}
-N.~Goix, N.~Drougard, R.~Brault, and M.~Chiapino.
+N.~Goix, R.~Brault, N.~Drougard, and M.~Chiapino.
 \newblock {One Class Splitting Criteria for Random Forests with Application to
   Anomaly Detection}.
 \newblock In {\em Submitted to NIPS}, 2016{\natexlab{a}}.
@@ -499,12 +499,6 @@ Anne Sabourin and Philippe Naveau.
 B.~Sch{\"o}lkopf, J.C Platt, J.~Shawe-Taylor, A.J Smola, and R.C Williamson.
 \newblock Estimating the support of a high-dimensional distribution.
 \newblock {\em Neural computation}, 13\penalty0 (7):\penalty0 1443--1471, 2001.
-
-\bibitem[Schubert et~al.(2012)Schubert, Wojdanowski, Zimek, and
-  Kriegel]{Schubert2012}
-E.~Schubert, R.~Wojdanowski, A.~Zimek, and H.-P. Kriegel.
-\newblock {On Evaluation of Outlier Rankings and Outlier Scores.}
-\newblock In {\em SDM}, pages 1047--1058. SIAM, 2012.
 
 \bibitem[Scott \& Nowak(2006)Scott and Nowak]{Scott2006}
 C.D Scott and R.D Nowak.

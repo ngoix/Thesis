@@ -8,7 +8,7 @@ so as to quantify to which extent observations should be considered as abnormal.
 analysis of the variable of interest. Extensions to the multivariate setting are far from straightforward and it is precisely the main purpose of this chapter to introduce a novel and convenient (functional) criterion for measuring the performance of a scoring function regarding the anomaly ranking task, referred to as the \textit{Excess-Mass} curve ($EM$
 curve). In addition, an adaptive algorithm for building a scoring function based on unlabeled data $X_1,\; \ldots,\; X_n$ with a nearly optimal $EM$-curve is proposed and is analyzed from a statistical perspective.
 
-Excepting Section~\ref{aistat:sec:benchmark}, the material of this chapter is based on previous work published in \cite{AISTAT15}.
+The material of this chapter is based on previous work published in \cite{AISTAT15}.
 \end{chapabstract}
 
 
@@ -620,7 +620,10 @@ This section is devoted to extend the results of the previous one. We first rela
 It is the purpose of this section to show that the algorithm detailed below produces a scoring function $s$ such that  $EM_s$ is uniformly close to $EM^*$ (Theorem~\ref{aistat:thmprinc}). 
  See Figure~\ref{aistat:algo-problem} as an illustration and a comparaison with the $MV$ formulation as used as a way to recover empirical minimum volume set $\hat \Gamma_\alpha$ .
 
-\begin{algorithm} \label{aistat:algo1} Suppose that assumptions $\mathbf{A_1}$, $\mathbf{A_2}$, $\mathbf{A_3}$, $\mathbf{A_4}$ hold true.\\ Let $t_1$ such that $\max_{\Omega \in \mathcal{G}}H_{n,t_1}(\Omega)
+\begin{algorithm} 
+\caption{~~Learning a scoring function}
+\label{aistat:algo1} 
+Suppose that assumptions $\mathbf{A_1}$, $\mathbf{A_2}$, $\mathbf{A_3}$, $\mathbf{A_4}$ hold true.\\ Let $t_1$ such that $\max_{\Omega \in \mathcal{G}}H_{n,t_1}(\Omega)
 \ge  0$. 
 %\noindent
 Fix  $N>0$. %  and define $t_1>t_{2}>...>t_{N}$, $\hat

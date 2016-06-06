@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  4 JUN 2016 21:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  6 JUN 2016 11:06
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1484,14 +1484,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/Front/logo_TELECOM.png, id=384, 212.795pt x 212.795pt>
+<images/Front/logo_TELECOM.png, id=388, 212.795pt x 212.795pt>
 File: images/Front/logo_TELECOM.png Graphic file (type png)
 
 <use images/Front/logo_TELECOM.png>
 Package pdftex.def Info: images/Front/logo_TELECOM.png used on input line 34.
 (pdftex.def)             Requested size: 48.3671pt x 48.36958pt.
 
-<images/Front/logo_ENSCACHAN.png, id=385, 401.8212pt x 217.5327pt>
+<images/Front/logo_ENSCACHAN.png, id=389, 401.8212pt x 217.5327pt>
 File: images/Front/logo_ENSCACHAN.png Graphic file (type png)
 
 <use images/Front/logo_ENSCACHAN.png>
@@ -1499,7 +1499,7 @@ Package pdftex.def Info: images/Front/logo_ENSCACHAN.png used on input line 34.
 
 (pdftex.def)             Requested size: 89.34515pt x 48.36958pt.
 
-<images/Front/logo_CNRS.jpg, id=387, 170.7981pt x 170.7981pt>
+<images/Front/logo_CNRS.jpg, id=391, 170.7981pt x 170.7981pt>
 File: images/Front/logo_CNRS.jpg Graphic file (type jpg)
 
 <use images/Front/logo_CNRS.jpg>
@@ -1607,24 +1607,24 @@ L/cmm/m/it/10.95 s[]$ \OT1/ptm/m/n/10.95 if $\OML/cmm/m/it/10.95 MV[]\OT1/cmr/m
 
 [6] [7] [8] [9] [10]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 499.
+put line 500.
  [11] [12] [13] [14] [15] [16]
-<fig_source/cone.png, id=967, 689.18933pt x 675.05832pt>
+<fig_source/cone.png, id=912, 689.18933pt x 675.05832pt>
 File: fig_source/cone.png Graphic file (type png)
 
 <use fig_source/cone.png>
-Package pdftex.def Info: fig_source/cone.png used on input line 681.
+Package pdftex.def Info: fig_source/cone.png used on input line 688.
 (pdftex.def)             Requested size: 137.83542pt x 135.00926pt.
 
-<fig_source/representation2D.png, id=968, 299.10284pt x 303.05923pt>
+<fig_source/representation2D.png, id=913, 299.10284pt x 303.05923pt>
 File: fig_source/representation2D.png Graphic file (type png)
 
 <use fig_source/representation2D.png>
-Package pdftex.def Info: fig_source/representation2D.png used on input line 687
+Package pdftex.def Info: fig_source/representation2D.png used on input line 694
 .
 (pdftex.def)             Requested size: 133.59125pt x 135.35803pt.
  [17 <./fig_source/cone.png> <./fig_source/representation2D.png>] [18]
-Overfull \hbox (8.38698pt too wide) in paragraph at lines 780--798
+Overfull \hbox (8.38698pt too wide) in paragraph at lines 787--805
 \OT1/ptm/m/n/10.95 where $[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 :\OT1/cmr/m
 /n/10.95 ) = (1\OML/cmm/m/it/10.95 =n\OT1/cmr/m/n/10.95 ) [][] \OML/cmm/m/it/10
 .95 ^^N[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 )$ \OT1/pt
@@ -1632,25 +1632,25 @@ m/m/n/10.95 is the em-pir-i-cal prob-a-bil-ity dis-tri-bu-tion of the rank-tran
 sformed
  []
 
-[19] [20]
-Overfull \hbox (17.83781pt too wide) in paragraph at lines 901--902
+[19]
+Overfull \hbox (17.83781pt too wide) in paragraph at lines 908--909
 \OT1/ptm/m/n/10.95 As an other con-tri-bu-tion of this the-sis, two clas-si-cal
  anomaly de-tec-tion al-go-rithms, $\OML/cmm/m/it/10.95 IsolationForest$
  []
 
-
-Overfull \hbox (6.70308pt too wide) in paragraph at lines 903--909
+[20]
+Overfull \hbox (6.70308pt too wide) in paragraph at lines 910--916
 []\OT1/ptm/m/n/10.95 Scikit-learn, see [][]Pe-dregosa et al.[][] ([][]2011[][])
 , is an open-source li-brary which pro-vides well-established
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 922.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 929.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 922.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 929.
  [21] [22]) [23]
 [24
 
@@ -1716,14 +1716,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-<fig_source/OCSVM_hard.png, id=1165, 481.67186pt x 176.44644pt>
+<fig_source/OCSVM_hard.png, id=1120, 481.67186pt x 176.44644pt>
 File: fig_source/OCSVM_hard.png Graphic file (type png)
 
 <use fig_source/OCSVM_hard.png>
 Package pdftex.def Info: fig_source/OCSVM_hard.png used on input line 117.
 (pdftex.def)             Requested size: 399.78754pt x 146.4505pt.
 
-<fig_source/OCSVM_soft.png, id=1166, 482.8251pt x 178.36852pt>
+<fig_source/OCSVM_soft.png, id=1121, 482.8251pt x 178.36852pt>
 File: fig_source/OCSVM_soft.png Graphic file (type png)
 
 <use fig_source/OCSVM_soft.png>
@@ -1738,7 +1738,7 @@ Overfull \vbox (3.50356pt too high) has occurred while \output is active []
 
 
 [32 <./fig_source/OCSVM_soft.png>]
-<fig_source/lof.png, id=1193, 586.8324pt x 442.2924pt>
+<fig_source/lof.png, id=1148, 586.8324pt x 442.2924pt>
 File: fig_source/lof.png Graphic file (type png)
 
 <use fig_source/lof.png>
@@ -1767,7 +1767,7 @@ runsystem(rm thesis.pyg)...executed.
  [33]
 Package mdframed Info: Not enough space on this page on input line 237.
  [34 <./fig_source/lof.png>]
-<fig_source/ideeIF.png, id=1209, 231.05751pt x 137.72597pt>
+<fig_source/ideeIF.png, id=1164, 231.05751pt x 137.72597pt>
 File: fig_source/ideeIF.png Graphic file (type png)
 
 <use fig_source/ideeIF.png>
@@ -1778,7 +1778,7 @@ Overfull \hbox (2.4156pt too wide) in paragraph at lines 268--269
  [][] 
  []
 
-<fig_source/convergenceIF.png, id=1210, 137.72597pt x 137.72597pt>
+<fig_source/convergenceIF.png, id=1165, 137.72597pt x 137.72597pt>
 File: fig_source/convergenceIF.png Graphic file (type png)
 
 <use fig_source/convergenceIF.png>
@@ -1789,7 +1789,7 @@ Overfull \hbox (16.70247pt too wide) in paragraph at lines 266--278
 []$[]$ $[]$ 
  []
 
-<fig_source/iforest.png, id=1211, 586.8324pt x 442.2924pt>
+<fig_source/iforest.png, id=1166, 586.8324pt x 442.2924pt>
 File: fig_source/iforest.png Graphic file (type png)
 
 <use fig_source/iforest.png>
@@ -1818,21 +1818,21 @@ runsystem(rm thesis.out.pyg)...executed.
 runsystem(rm thesis.pyg)...executed.
 
  [36 <./fig_source/iforest.png>]
-<fig_source/ADcomparison1.png, id=1227, 731.3724pt x 370.0224pt>
+<fig_source/ADcomparison1.png, id=1182, 731.3724pt x 370.0224pt>
 File: fig_source/ADcomparison1.png Graphic file (type png)
 
 <use fig_source/ADcomparison1.png>
 Package pdftex.def Info: fig_source/ADcomparison1.png used on input line 370.
 (pdftex.def)             Requested size: 375.7232pt x 190.09221pt.
  [37]
-<fig_source/ADcomparison2.png, id=1233, 731.3724pt x 370.0224pt>
+<fig_source/ADcomparison2.png, id=1188, 731.3724pt x 370.0224pt>
 File: fig_source/ADcomparison2.png Graphic file (type png)
 
 <use fig_source/ADcomparison2.png>
 Package pdftex.def Info: fig_source/ADcomparison2.png used on input line 377.
 (pdftex.def)             Requested size: 375.7232pt x 190.09221pt.
 
-<fig_source/ADcomparison3.png, id=1234, 731.3724pt x 370.0224pt>
+<fig_source/ADcomparison3.png, id=1189, 731.3724pt x 370.0224pt>
 File: fig_source/ADcomparison3.png Graphic file (type png)
 
 <use fig_source/ADcomparison3.png>
@@ -1857,83 +1857,20 @@ runsystem(rm thesis.pyg)...executed.
 
 Package mdframed Info: Not enough space on this page on input line 476.
 
-[39]
-
-LaTeX Warning: Reference `workshop:chap' on page 40 undefined on input line 489
-.
-
-[40]
-Overfull \hbox (14.68913pt too wide) in paragraph at lines 511--531
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `back:fig:lof_ocsvm_pr' on page 41 undefined on input 
-line 535.
-
-
-LaTeX Warning: Reference `back:fig:ocsvm_roc_pr_unsupervised' on page 41 undefi
-ned on input line 535.
-
-<fig_source/bench_iforest_roc_pr.png, id=1279, 1806.75pt x 1445.4pt>
-File: fig_source/bench_iforest_roc_pr.png Graphic file (type png)
-
-<use fig_source/bench_iforest_roc_pr.png>
-Package pdftex.def Info: fig_source/bench_iforest_roc_pr.png used on input line
- 596.
-(pdftex.def)             Requested size: 459.22292pt x 367.37013pt.
-
-Overfull \hbox (41.74985pt too wide) in paragraph at lines 596--597
- [][] 
- []
-
-<fig_source/bench_lof_roc_pr.png, id=1280, 1806.75pt x 1445.4pt>
-File: fig_source/bench_lof_roc_pr.png Graphic file (type png)
-
-<use fig_source/bench_lof_roc_pr.png>
-Package pdftex.def Info: fig_source/bench_lof_roc_pr.png used on input line 610
-.
-(pdftex.def)             Requested size: 417.47307pt x 333.97885pt.
-
-<fig_source/bench_iforest_roc_pr_unsupervised.png, id=1281, 1806.75pt x 1445.4p
-t>
-File: fig_source/bench_iforest_roc_pr_unsupervised.png Graphic file (type png)
- <use fig_source/bench_iforest_roc_pr_unsupervised.png>
-Package pdftex.def Info: fig_source/bench_iforest_roc_pr_unsupervised.png used 
-on input line 617.
-(pdftex.def)             Requested size: 459.22292pt x 367.37013pt.
-
-Overfull \hbox (41.74985pt too wide) in paragraph at lines 617--618
- [][] 
- []
-
-<fig_source/bench_lof_roc_pr_unsupervised.png, id=1282, 1806.75pt x 1445.4pt>
-File: fig_source/bench_lof_roc_pr_unsupervised.png Graphic file (type png)
-
-<use fig_source/bench_lof_roc_pr_unsupervised.png>
-Package pdftex.def Info: fig_source/bench_lof_roc_pr_unsupervised.png used on i
-nput line 631.
-(pdftex.def)             Requested size: 417.47307pt x 333.97885pt.
- [41] [42] [43] [44] [45 <./fig_source/bench_iforest_roc_pr.png>] [46 <./fig_so
-urce/bench_lof_roc_pr.png>]
-[47 <./fig_source/bench_iforest_roc_pr_unsupervised.png>] [48 <./fig_source/ben
-ch_lof_roc_pr_unsupervised.png>]
+[39] [40]
 Chapter 3.
 ------------------------------------------------------------------------------
  3.\hskip 1em\relax Concentration Inequalities from the Method of bounded diffe
 rences
 ------------------------------------------------------------------------------
-[49
+[41
 
-] [50] [51] [52] [53] [54] [55] [56]
+] [42] [43] [44] [45] [46] [47] [48]
 Overfull \hbox (44.48161pt too wide) in paragraph at lines 1031--1031
 [] 
  []
 
-[57]
+[49]
 Overfull \hbox (30.0154pt too wide) in paragraph at lines 1044--1046
 \OT1/ptm/m/n/10.95 This can be ex-plained by the fact that it is easy to prove 
 the sub-optimal in-equal-ity $\OMS/cmsy/m/n/10.95 R[] [] ^^T  []\OML/cmm/m/it/1
@@ -1945,19 +1882,19 @@ Overfull \hbox (80.03542pt too wide) in paragraph at lines 1066--1066
 [] 
  []
 
-[58]
+[50]
 Overfull \hbox (13.57524pt too wide) in paragraph at lines 1086--1086
 [] 
  []
 
-[59] [60] [61] [62
+[51] [52] [53] [54
 
 ]
 Chapter 4.
 ------------------------------------------------------------------------------
  4.\hskip 1em\relax Extreme Value Theory
 ------------------------------------------------------------------------------
-[63] [64] <fig_source/GEV.png, id=1521, 586.8324pt x 442.2924pt>
+[55] [56] <fig_source/GEV.png, id=1403, 586.8324pt x 442.2924pt>
 File: fig_source/GEV.png Graphic file (type png)
 
 <use fig_source/GEV.png>
@@ -1966,33 +1903,33 @@ Package pdftex.def Info: fig_source/GEV.png used on input line 1245.
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1271.
 
- [65 <./fig_source/GEV.png>] [66] [67] [68]
+ [57 <./fig_source/GEV.png>] [58] [59] [60]
 Overfull \hbox (1.35776pt too wide) in paragraph at lines 1462--1462
 [] 
  []
 
-) [69] [70
+) [61] [62
 
-] [71] [72] (./aistat.tex
+] [63] [64] (./aistat.tex
 Chapter 5.
 ------------------------------------------------------------------------------
  5.\hskip 1em\relax On Anomaly Ranking and Excess-Mass Curves
 ------------------------------------------------------------------------------
-[73
+[65
 
-] [74] [75]
+] [66] [67]
 Underfull \hbox (badness 10000) in paragraph at lines 117--120
 
  []
 
-[76]
+[68]
 Overfull \hbox (3.82382pt too wide) in paragraph at lines 162--165
 \OT1/ptm/m/n/10.95 As in-tro-duced in Sec-tion [][]1.3.3[][], the per-for-mance
  cri-te-rion we pro-pose in or-der to eval-u-ate anomaly
  []
 
 Missing character: There is no ; in font nullfont!
-[77] [78]
+[69] [70]
 Overfull \hbox (10.6847pt too wide) detected at line 464
 [] \OML/cmm/m/it/10.95 ^^O[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 f\OML/cmm/m
 /it/10.95 s > u\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 ^^A[]\OMS/cmsy/m/n/10.95
@@ -2006,84 +1943,68 @@ OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 f > t\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/
 10.95 )\OML/cmm/m/it/10.95 ;
  []
 
-[79] [80] [81] [82]
+[71] [72] [73] [74]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[83] [84] [85]
-Underfull \hbox (badness 10000) in paragraph at lines 795--796
+[75] [76] [77]
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 
  []
 
-
-Package caption Warning: \label without proper \caption on input line 623.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `aistat:algo1' on page 86 undefined on input line 814.
-
-
-[86] <fig_source/EM-EMS.png, id=1822, 578.16pt x 433.62pt>
+[78] <fig_source/EM-EMS.png, id=1702, 578.16pt x 433.62pt>
 File: fig_source/EM-EMS.png Graphic file (type png)
 
 <use fig_source/EM-EMS.png>
-Package pdftex.def Info: fig_source/EM-EMS.png used on input line 830.
+Package pdftex.def Info: fig_source/EM-EMS.png used on input line 833.
 (pdftex.def)             Requested size: 208.73653pt x 156.553pt.
 
-<fig_source/EM-EMSzoom.png, id=1823, 578.16pt x 433.62pt>
+<fig_source/EM-EMSzoom.png, id=1703, 578.16pt x 433.62pt>
 File: fig_source/EM-EMSzoom.png Graphic file (type png)
 
 <use fig_source/EM-EMSzoom.png>
-Package pdftex.def Info: fig_source/EM-EMSzoom.png used on input line 838.
+Package pdftex.def Info: fig_source/EM-EMSzoom.png used on input line 841.
 (pdftex.def)             Requested size: 208.73653pt x 156.553pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 839--839
+Underfull \hbox (badness 10000) in paragraph at lines 842--842
 []\OT1/ptm/m/sc/10 Figure 5.5: |\OT1/ptm/m/n/10 Zoom near 0
  []
 
 
-Overfull \hbox (2.08049pt too wide) in paragraph at lines 828--843
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 831--846
 []$[]$  $[]$ 
  []
 
-<fig_source/EMG-EM.png, id=1824, 578.16pt x 433.62pt>
+<fig_source/EMG-EM.png, id=1704, 578.16pt x 433.62pt>
 File: fig_source/EMG-EM.png Graphic file (type png)
 
 <use fig_source/EMG-EM.png>
-Package pdftex.def Info: fig_source/EMG-EM.png used on input line 847.
+Package pdftex.def Info: fig_source/EMG-EM.png used on input line 850.
 (pdftex.def)             Requested size: 417.47307pt x 313.106pt.
- [87] [88 <./fig_source/EM-EMS.png> <./fig_source/EM-EMSzoom.png> <./fig_source
+ [79] [80 <./fig_source/EM-EMS.png> <./fig_source/EM-EMSzoom.png> <./fig_source
 /EMG-EM.png>]
-
-Package caption Warning: \label without proper \caption on input line 623.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `aistat:algo1' on page 89 undefined on input line 862.
-
-
-<fig_source/scoring3D.png, id=1840, 1675.2186pt x 897.5934pt>
+<fig_source/scoring3D.png, id=1721, 1675.2186pt x 897.5934pt>
 File: fig_source/scoring3D.png Graphic file (type png)
 
 <use fig_source/scoring3D.png>
-Package pdftex.def Info: fig_source/scoring3D.png used on input line 865.
+Package pdftex.def Info: fig_source/scoring3D.png used on input line 868.
 (pdftex.def)             Requested size: 417.47307pt x 223.6856pt.
- [89 <./fig_source/scoring3D.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 885--888
+ [81 <./fig_source/scoring3D.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 888--891
 
  []
 
-[90] [91]
-Underfull \hbox (badness 10000) in paragraph at lines 936--937
+[82] [83]
+Underfull \hbox (badness 10000) in paragraph at lines 939--940
 
  []
 
-[92]
-Underfull \hbox (badness 10000) in paragraph at lines 978--980
+[84]
+Underfull \hbox (badness 10000) in paragraph at lines 981--983
 
  []
 
-[93] [94]) (./evaluation.tex [95] [96
+[85] [86]) (./evaluation.tex [87] [88
 
 ]
 Chapter 6.
@@ -2091,54 +2012,54 @@ Chapter 6.
  6.\hskip 1em\relax How to Evaluate the Quality of Unsupervised Anomaly Detecti
 on Algorithms?
 ------------------------------------------------------------------------------
-) [97] [98
+) [89] [90
 
-] [99] [100] (./ocrf.tex
+] [91] [92] (./ocrf.tex
 Chapter 7.
 ------------------------------------------------------------------------------
  7.\hskip 1em\relax One Class Splitting Criteria for Random Forests with Applic
 ation to Anomaly Detection
 ------------------------------------------------------------------------------
-) [101
+) [93
 
-] [102
+] [94
 
-] [103] [104] (./colt.tex
+] [95] [96] (./colt.tex
 Chapter 8.
 ------------------------------------------------------------------------------
  8.\hskip 1em\relax Learning the dependence structure of rare events: a non-asy
 mptotic study
 ------------------------------------------------------------------------------
-[105
+[97
 
-] [106] [107] [108] [109] [110] [111]
+] [98] [99] [100] [101] [102] [103]
 Underfull \hbox (badness 10000) in paragraph at lines 802--803
 
  []
 
-[112] [113]
+[104] [105]
 Overfull \hbox (14.97438pt too wide) in paragraph at lines 907--907
 [] 
  []
 
-[114] [115] [116]
+[106] [107] [108]
 Overfull \hbox (16.05061pt too wide) in paragraph at lines 1083--1083
 [] 
  []
 
-[117] [118]
+[109] [110]
 Overfull \hbox (6.6724pt too wide) in paragraph at lines 1221--1221
 [] 
  []
 
-) (./jmva.tex [119] [120]
+) (./jmva.tex [111] [112]
 Chapter 9.
 ------------------------------------------------------------------------------
  9.\hskip 1em\relax Sparse Representation of Multivariate Extremes
 ------------------------------------------------------------------------------
-[121
+[113
 
-] [122] [123] [124] [125] [126]
+] [114] [115] [116] [117] [118]
 File: fig_source/cone.png Graphic file (type png)
  <use fig_source/cone.png>
 Package pdftex.def Info: fig_source/cone.png used on input line 528.
@@ -2149,15 +2070,15 @@ File: fig_source/representation2D.png Graphic file (type png)
 Package pdftex.def Info: fig_source/representation2D.png used on input line 534
 .
 (pdftex.def)             Requested size: 133.59125pt x 135.35803pt.
- [127] [128] [129] [130] [131]
-<fig_source/representation2D_nk_rect.png, id=2372, 335.3328pt x 300.4023pt>
+ [119] [120] [121] [122] [123]
+<fig_source/representation2D_nk_rect.png, id=2253, 335.3328pt x 300.4023pt>
 File: fig_source/representation2D_nk_rect.png Graphic file (type png)
 
 <use fig_source/representation2D_nk_rect.png>
 Package pdftex.def Info: fig_source/representation2D_nk_rect.png used on input 
 line 951.
 (pdftex.def)             Requested size: 292.22987pt x 261.80167pt.
- [132] [133 <./fig_source/representation2D_nk_rect.png>] [134]
+ [124] [125 <./fig_source/representation2D_nk_rect.png>] [126]
 Overfull \hbox (3.99144pt too wide) in paragraph at lines 1081--1088
 \OT1/ptm/m/n/10.95 Notice that $[]\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x\OML
 /cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 z\OT1/cmr/m/n/10.95 )$ \OT1/ptm/m/n/10.95
@@ -2165,22 +2086,22 @@ Overfull \hbox (3.99144pt too wide) in paragraph at lines 1081--1088
 ]). By ([][]9.27[][])
  []
 
-[135] [136] [137] [138]
+[127] [128] [129] [130]
 Overfull \hbox (14.88588pt too wide) in paragraph at lines 1364--1369
 [][]\OT1/ptm/m/it/10.95 Remark \OT1/ptm/m/n/10.95 9.13\OT1/ptm/m/it/10.95 . []\
 OT1/ptm/m/n/10.95 (\OT1/ptm/m/sc/10.95 Thresh-old-ing the es-ti-ma-tor\OT1/ptm/
 m/n/10.95 ) []In prac-tice, we have to deal with non-asymptotic
  []
 
-[139] [140] [141] [142] [143]
-<fig_source/plot_damex_level_sets.png, id=2542, 1602.2259pt x 721.2546pt>
+[131] [132] [133] [134] [135]
+<fig_source/plot_damex_level_sets.png, id=2424, 1602.2259pt x 721.2546pt>
 File: fig_source/plot_damex_level_sets.png Graphic file (type png)
 
 <use fig_source/plot_damex_level_sets.png>
 Package pdftex.def Info: fig_source/plot_damex_level_sets.png used on input lin
 e 1620.
 (pdftex.def)             Requested size: 373.46715pt x 168.11917pt.
- [144] [145 <./fig_source/plot_damex_level_sets.png>]
+ [136] [137 <./fig_source/plot_damex_level_sets.png>]
 Overfull \hbox (82.66403pt too wide) in paragraph at lines 1751--1818
 \OMS/cmsy/m/n/10.95 fC[]\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1 \OMS/cmsy/m/
 n/10.95 ^^T \OML/cmm/m/it/10.95 m \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 K
@@ -2189,15 +2110,15 @@ $\OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x\OT1/cmr/m/n/1
 0.95 ) = []\OMS/cmsy/m/n/10.95 f^^@ [][] [][]g\OML/cmm/m/it/10.95 ;$
  []
 
-[146] <fig_source/wave_dir2.png, id=2594, 1180.1691pt x 460.3599pt>
+[138] <fig_source/wave_dir2.png, id=2474, 1180.1691pt x 460.3599pt>
 File: fig_source/wave_dir2.png Graphic file (type png)
 
 <use fig_source/wave_dir2.png>
 Package pdftex.def Info: fig_source/wave_dir2.png used on input line 1859.
 (pdftex.def)             Requested size: 389.45702pt x 151.91924pt.
- [147] [148 <./fig_source/wave_dir2.png>]
-[149]
-<fig_source/shuttle-semi-supervised-average-rect-01.png, id=2636, 1681.0002pt x
+ [139] [140 <./fig_source/wave_dir2.png>]
+[141]
+<fig_source/shuttle-semi-supervised-average-rect-01.png, id=2522, 1681.0002pt x
  922.8879pt>
 File: fig_source/shuttle-semi-supervised-average-rect-01.png Graphic file (type
  png)
@@ -2206,7 +2127,7 @@ Package pdftex.def Info: fig_source/shuttle-semi-supervised-average-rect-01.png
  used on input line 2101.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=2637, 1681.0002pt 
+<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=2523, 1681.0002pt 
 x 922.8879pt>
 File: fig_source/SF-4d-lb-semi-supervised-average-rect-01.png Graphic file (typ
 e png)
@@ -2215,7 +2136,7 @@ Package pdftex.def Info: fig_source/SF-4d-lb-semi-supervised-average-rect-01.pn
 g used on input line 2107.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=2638, 1681.0002pt x
+<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=2524, 1681.0002pt x
  922.8879pt>
 File: fig_source/SF-4d-lb-semi-supervised-average-rect-1.png Graphic file (type
  png)
@@ -2224,7 +2145,7 @@ Package pdftex.def Info: fig_source/SF-4d-lb-semi-supervised-average-rect-1.png
  used on input line 2113.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=2640, 1681.0002pt x 9
+<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=2526, 1681.0002pt x 9
 22.8879pt>
 File: fig_source/SA-lb-semi-supervised-average-rect-01.png Graphic file (type p
 ng)
@@ -2233,7 +2154,7 @@ Package pdftex.def Info: fig_source/SA-lb-semi-supervised-average-rect-01.png u
 sed on input line 2144.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/forestcover-semi-supervised-average-rect-01.png, id=2641, 1681.0002
+<fig_source/forestcover-semi-supervised-average-rect-01.png, id=2527, 1681.0002
 pt x 922.8879pt>
 File: fig_source/forestcover-semi-supervised-average-rect-01.png Graphic file (
 type png)
@@ -2243,7 +2164,7 @@ Package pdftex.def Info: fig_source/forestcover-semi-supervised-average-rect-01
 .png used on input line 2151.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-<fig_source/http-3d-semi-supervised-average-rect-01.png, id=2642, 1681.0002pt x
+<fig_source/http-3d-semi-supervised-average-rect-01.png, id=2528, 1681.0002pt x
  922.8879pt>
 File: fig_source/http-3d-semi-supervised-average-rect-01.png Graphic file (type
  png)
@@ -2252,12 +2173,12 @@ Package pdftex.def Info: fig_source/http-3d-semi-supervised-average-rect-01.png
  used on input line 2158.
 (pdftex.def)             Requested size: 417.47307pt x 229.20053pt.
 
-[150] [151 <./fig_source/shuttle-semi-supervised-average-rect-01.png>] [152 <./
+[142] [143 <./fig_source/shuttle-semi-supervised-average-rect-01.png>] [144 <./
 fig_source/SF-4d-lb-semi-supervised-average-rect-01.png> <./fig_source/SF-4d-lb
--semi-supervised-average-rect-1.png>] [153 <./fig_source/SA-lb-semi-supervised-
+-semi-supervised-average-rect-1.png>] [145 <./fig_source/SA-lb-semi-supervised-
 average-rect-01.png> <./fig_source/forestcover-semi-supervised-average-rect-01.
-png>] [154 <./fig_source/http-3d-semi-supervised-average-rect-01.png>] [155]
-[156]
+png>] [146 <./fig_source/http-3d-semi-supervised-average-rect-01.png>] [147]
+[148]
 Overfull \hbox (19.94437pt too wide) in paragraph at lines 2392--2393
 []\OT1/ptm/m/n/10.95 Considering the def-i-ni-tion in ([][]9.45[][]) and ([][]9
 .31[][]), both sides are equal to $\OML/cmm/m/it/10.95 ^^V[]\OT1/cmr/m/n/10.95 
@@ -2266,221 +2187,85 @@ Overfull \hbox (19.94437pt too wide) in paragraph at lines 2392--2393
 )$\OT1/ptm/m/n/10.95 .
  []
 
-[157] [158] [159] [160] [161]) [162]
+[149] [150] [151] [152] [153]) [154]
 Chapter 10.
 ------------------------------------------------------------------------------
  10.\hskip 1em\relax Conclusion \& Perspectives
 ------------------------------------------------------------------------------
-(./conclusion.tex [163
+(./conclusion.tex [155
 
-]) [164]
+]) [156]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./thesis.bbl [165
+(./thesis.bbl [157
 
 
-] [166] [167] [168] [169] [170]) [171]
+] [158] [159] [160] [161] [162]) [163]
 \openout2 = `abstract.aux'.
 
  (./abstract.tex)
-[172
+[164
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
  (./thesis.aux (./abstract.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
-
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: 95173C56FBE3299D73A2066DE8B52EF9;23648
-(rerunfilecheck)             After:  36C49B4CD1A28F84C70741E981A1D9D0;24393.
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 104.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 104.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 633AD3365DEEB50CD3EB6B2F2062375F;24128.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
  ) 
 Here is how much of TeX's memory you used:
- 34851 strings out of 495020
- 618085 string characters out of 6181323
- 691983 words of memory out of 5000000
- 36699 multiletter control sequences out of 15000+600000
+ 34762 strings out of 495020
+ 616121 string characters out of 6181323
+ 688836 words of memory out of 5000000
+ 36672 multiletter control sequences out of 15000+600000
  65804 words of font info for 143 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,24n,65p,10455b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.7.8} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.7.5} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.7.4} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.7.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.7.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.7.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.5.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.5.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.5.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.4.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.4.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.3.6} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.3.5} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.3.4} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.3.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.3.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.3.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.2.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.2.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.7.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.1.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.7.1.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.5.4} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.5.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.5.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.5.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.4.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.4.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.3.5} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.3.4} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-mextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/doublestroke/dsrom10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/doublestroke/dsrom8.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/
-ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on thesis.pdf (184 pages, 6808352 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/doublestroke/dsrom10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/doublestroke/dsrom8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courie
+r/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
+ri8a.pfb>
+Output written on thesis.pdf (176 pages, 4967085 bytes).
 PDF statistics:
- 3103 PDF objects out of 3580 (max. 8388607)
- 2786 compressed objects within 28 object streams
- 691 named destinations out of 1000 (max. 500000)
- 925 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2974 PDF objects out of 2984 (max. 8388607)
+ 2674 compressed objects within 27 object streams
+ 633 named destinations out of 1000 (max. 500000)
+ 913 words of extra memory for PDF output out of 10000 (max. 10000000)
 

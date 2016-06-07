@@ -107,12 +107,14 @@ From a probabilistic point of view, there is different way of modeling normal an
 %
 As anomalies are very rare, their structure cannot be observed in the data, in particular their distribution $G$. 
 %
-It is common and convenient to replace $G$ in the problem above by the Lebesgue measure, so that it boils down to estimating density level set of $F$. % This simplifying choice corresponds to making the assumption either that anomalies are uniformly distributed, or that no anomaly is observed during training. In other words, this modeling choice applies to semi-supervised anomaly detection.
+It is common and convenient to replace $G$ in the problem above by the Lebesgue measure, so that it boils down to estimating density level set of $F$.
+This boils down to making the assumption that anomalies are uniformly distributed on the support of the normal distribution \citep{Blanchard2010}. This assumption is thus made implicitely by a majority of works on novelty detection.
+ % This simplifying choice corresponds to making the assumption either that anomalies are uniformly distributed, or that no anomaly is observed during training. In other words, this modeling choice applies to semi-supervised anomaly detection.
 We observe data in $\rset^d$ from the normal class only, with underlying distribution $F$ and underlying density $f: \rset^d \to \rset$. 
 %Abnormal data are assumed to be in the tail of $F$.
 The goal is to identify characteristics of this normal class, such as its support $\{\mb x, f( \mb x) > 0\}$ or some density level set $\{\mb x, f( \mb x) > t\}$ with $t>0$ close to $0$.
 
-This \emph{one-class classification} problem is different than \emph{distinguishing} between several classes as done in standard classification. Also, unsupervised anomaly detection is often viewed as a one-class classification problem, but where training data are polluted by a few elements of the abnormal class: it appeals for one-class algorithms robust to anomalies. 
+This \emph{one-class classification} problem is different than \emph{distinguishing} between several classes as done in standard classification. Also, unsupervised anomaly detection is often viewed as a one-class classification problem, but where training data are polluted by a few elements of the abnormal class: it appeals for one-class algorithms \emph{robust to anomalies}. 
 
 %This way of modeling appeals for \emph{density level set estimation} analysis.
 

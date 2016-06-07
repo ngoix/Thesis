@@ -1,4 +1,4 @@
-\begin{thebibliography}{101}
+\begin{thebibliography}{102}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -40,6 +40,11 @@ J.~Beirlant, P.~Vynckier, and J.~L. Teugels.
 Jan Beirlant, Mikael Escobar-Bach, Yuri Goegebeur, and Armelle Guillou.
 \newblock Bias-corrected estimation of stable tail dependence function.
 \newblock {\em https://hal.archives-ouvertes.fr/hal-01115538}, Feb 2015.
+
+\bibitem[Blanchard et~al.(2010)Blanchard, Lee, and Scott]{Blanchard2010}
+Gilles Blanchard, Gyemin Lee, and Clayton Scott.
+\newblock Semi-supervised novelty detection.
+\newblock {\em The Journal of Machine Learning Research}, 2010.
 
 \bibitem[Bottou \& Lin(2007)Bottou and Lin]{Bottou2007}
 L{\'e}on Bottou and Chih-Jen Lin.

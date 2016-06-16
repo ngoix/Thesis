@@ -9,7 +9,7 @@ def Frechet(x):
     return 1 / (pow(x,3)) * np.exp(-1 / pow(x,2)) * (x>0)
 
 def Gumbel(x):
-    return exp(-x - np.exp(-x))
+    return np.exp(-x - np.exp(-x))
 
 
 abs = np.arange(-5, 10, 0.01)

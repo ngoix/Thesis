@@ -177,12 +177,14 @@
 \par\vspace*{0.3cm}
     \textbf{Jury~:} \\[0.5\baselineskip]
       \begin{tabular}{lll}
-        St\'ephane \textbf{Boucheron} & Professeur, Universit\'e Paris Diderot & Rapporteur\\
+        G\'erard \textbf{Biau} & Professeur, Universit\'e Pierre et Marie Curie & Examinateur\\
+        Gilles \textbf{Blanchard} & Professeur, Universit\"at Potsdam & Rapporteur\\
+        St\'ephane \textbf{Boucheron} & Professeur, Universit\'e Paris Diderot & Examinateur\\
         St\'ephan \textbf{Cl\'emen\c{c}on} & Professeur, T\'el\'ecom ParisTech & Directeur\\
-        Luc \textbf{Devroye} & Professeur, McGill University  & Examinateur\\
-        Anne \textbf{Sabourin} & Professeur, T\'el\'ecom ParisTech & Co-directeur\\
-        Johan \textbf{Segers} & Professeur, Universit\'e de Lille & Examinateur\\
-        Jean-Philippe \textbf{Vert} & Professeur, Mines ParisTech & Rapporteur\\
+        Alexandre \textbf{Gramfort} & Maitre de Conf\'erence, T\'el\'ecom ParisTech  & Examinateur\\
+        Anne \textbf{Sabourin} & Maitre de Conf\'erence, T\'el\'ecom ParisTech & Co-directeur\\
+        Johan \textbf{Segers} & Professeur, Universit\'e catholique de Louvain & Rapporteur\\
+        Jean-Philippe \textbf{Vert} & Professeur, Mines ParisTech & Examinateur\\
       \end{tabular}
 \par\vspace*{0.5cm}
 \hrule

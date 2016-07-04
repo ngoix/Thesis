@@ -5,45 +5,45 @@ The style file: ecs.bst
 A level-1 auxiliary file: abstract.aux
 Database file #1: Thesis.bib
 Warning--empty journal in KDD99
-You've used 105 entries,
+You've used 111 entries,
             2638 wiz_defined-function locations,
-            1221 strings with 20713 characters,
-and the built_in function-call counts, 47329 in all, are:
-= -- 4402
-> -- 2471
-< -- 76
-+ -- 919
-- -- 791
-* -- 3465
-:= -- 7867
-add.period$ -- 326
-call.type$ -- 105
-change.case$ -- 667
-chr.to.int$ -- 100
-cite$ -- 106
-duplicate$ -- 2233
-empty$ -- 3735
-format.name$ -- 954
-if$ -- 9749
+            1252 strings with 21469 characters,
+and the built_in function-call counts, 50021 in all, are:
+= -- 4648
+> -- 2605
+< -- 81
++ -- 970
+- -- 833
+* -- 3649
+:= -- 8299
+add.period$ -- 344
+call.type$ -- 111
+change.case$ -- 704
+chr.to.int$ -- 106
+cite$ -- 112
+duplicate$ -- 2371
+empty$ -- 3967
+format.name$ -- 1006
+if$ -- 10317
 int.to.chr$ -- 6
 int.to.str$ -- 1
-missing$ -- 113
-newline$ -- 532
-num.names$ -- 426
-pop$ -- 1114
+missing$ -- 119
+newline$ -- 562
+num.names$ -- 450
+pop$ -- 1185
 preamble$ -- 1
-purify$ -- 574
+purify$ -- 605
 quote$ -- 0
-skip$ -- 1659
+skip$ -- 1760
 stack$ -- 0
-substring$ -- 1847
-swap$ -- 242
-text.length$ -- 14
+substring$ -- 1935
+swap$ -- 260
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1090
+type$ -- 1156
 warning$ -- 1
-while$ -- 413
+while$ -- 436
 width$ -- 0
-write$ -- 1330
+write$ -- 1405
 (There was 1 warning)

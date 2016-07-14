@@ -309,12 +309,12 @@
 \newenvironment{listpublis}
 {
   \cleardoublepage
-  \btypeout{List of Publications}
-  \addtotoc{List of Publications}
+  \btypeout{List of Contributions}
+  \addtotoc{List of Contributions}
   \thispagestyle{plain}
-        \chapter*{List of Publications
+        \chapter*{List of Contributions
         \@mkboth{
-           \MakeUppercase{List of Publications}}{\MakeUppercase{List of Publications}}}
+           \MakeUppercase{List of Contributions}}{\MakeUppercase{List of Contributions}}}
 
 }
 {

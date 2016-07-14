@@ -1,18 +1,18 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Summary of notation}}{3}{table.caption.5}
+\contentsline {table}{\numberline {1.1}{\ignorespaces Summary of notation}}{3}{table.caption.6}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces SVM vs. OCSVM (hard-margin separation)\relax }}{31}{table.caption.7}
-\contentsline {table}{\numberline {2.2}{\ignorespaces SVM vs. OCSVM ($\nu $-soft margin separation)\relax }}{32}{table.caption.8}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces SVM vs. OCSVM (hard-margin separation)\relax }}{29}{table.caption.8}
+\contentsline {table}{\numberline {2.2}{\ignorespaces SVM vs. OCSVM ($\nu $-soft margin separation)\relax }}{30}{table.caption.9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {9.1}{\ignorespaces Support recovering on simulated data\relax }}{139}{table.caption.23}
-\contentsline {table}{\numberline {9.2}{\ignorespaces Total number of sub-cones of wave data\relax }}{140}{table.caption.25}
-\contentsline {table}{\numberline {9.3}{\ignorespaces Datasets characteristics\relax }}{142}{table.caption.26}
-\contentsline {table}{\numberline {9.4}{\ignorespaces Results on extreme regions with standard parameters $(k,\epsilon ) = (n^{1/2}, 0.01)$\relax }}{142}{table.caption.27}
-\contentsline {table}{\numberline {9.5}{\ignorespaces Results on extreme regions with lower $\epsilon =0.1$\relax }}{143}{table.caption.28}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {9.1}{\ignorespaces Support recovering on simulated data\relax }}{137}{table.caption.24}
+\contentsline {table}{\numberline {9.2}{\ignorespaces Total number of sub-cones of wave data\relax }}{138}{table.caption.26}
+\contentsline {table}{\numberline {9.3}{\ignorespaces Datasets characteristics\relax }}{140}{table.caption.27}
+\contentsline {table}{\numberline {9.4}{\ignorespaces Results on extreme regions with standard parameters $(k,\epsilon ) = (n^{1/2}, 0.01)$\relax }}{140}{table.caption.28}
+\contentsline {table}{\numberline {9.5}{\ignorespaces Results on extreme regions with lower $\epsilon =0.1$\relax }}{141}{table.caption.29}
 \addvspace {10\p@ }

@@ -1,0 +1,43 @@
+\begin{listpublis}
+
+\section*{Journal}
+\begin{itemize}
+\item Sparse Representation of Multivariate Extremes with Applications to Anomaly Detection. (Under review for Journal of Multivariate Analysis).\\
+Authors: Goix, Sabourin, and Clémençon.
+\end{itemize}
+
+\section*{Conferences}
+\begin{itemize}
+\item On Anomaly Ranking and Excess-Mass Curves. (AISTAT 2015).\\
+Authors: Goix, Sabourin, and Clémençon. 
+
+\item Learning the dependence structure of rare events: a non-asymptotic study. (COLT 2015).\\
+Authors: Goix, Sabourin, and Clémençon.
+
+\item Sparse Representation of Multivariate Extremes with Applications to Anomaly Ranking. (AISTAT 2016).\\
+Authors: Goix, Sabourin, and Clémençon.
+
+\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (submitted to NIPS 2016).\\ Authors: Goix and Thomas. 
+
+\item One-Class Splitting Criteria for Random Forests with Application to Anomaly Detection. (Submitted to NIPS 2016).\\
+Authors: Goix, Brault, Drougard and Chiapino.
+\end{itemize}
+
+
+\section*{Workshops}
+\begin{itemize}
+\item Sparse Representation of Multivariate Extremes with Applications to Anomaly Ranking. (NIPS 2015 Workshop on Nonparametric Methods for Large Scale Representation Learning).\\
+Authors: Goix, Sabourin, and Clémençon.
+
+\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (ICML 2016, Workshop on Anomaly Detection). Co-winner of the Best Paper Award, sponsored by Google.\\
+Author: Goix. 
+\end{itemize}
+
+\section*{Scikit-Learn implementations}
+\begin{itemize}
+\item Isolation Forest: https://github.com/scikit-learn/scikit-learn/pull/4163
+\item Local Outlier Factor: https://github.com/scikit-learn/scikit-learn/pull/5279
+\end{itemize}
+
+  
+\end{listpublis}

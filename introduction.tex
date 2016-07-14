@@ -524,7 +524,7 @@ This is a summary of Chapter~\ref{chap:ocrf}, which is based on submitted work \
 
 %Scoring functions built by optimizing EM or MV criteria usually not perform well. 
 
-Building accurate scoring functions by optimizing EM or MV criteria is very challenging in practice, as when building classifiers by optimizing the ROC curve (\cite{Clemencon2010}) in the supervised framework.
+Building accurate scoring functions by optimizing EM or MV criteria is very challenging in practice, just as building classifiers by optimizing the ROC curve (\cite{Clemencon2010}) in the supervised framework.
 %
 More work is needed for these methods to be efficient in practice, particularly for the choice of the class of sets on which the optimization is done.
 %
@@ -552,19 +552,58 @@ We introduce precisely such a methodology. It builds on a natural adaptation of 
 splitting criteria to the one-class setting, as well as an adaptation of the two-class majority vote.
 In addition, it turns out that the one-class model promoted here corresponds to the asymptotic behavior of an adaptive (with respect to the tree growing process) outliers generating methodology.
 
+\textbf{One-class Model with parameters ($n$, $\boldsymbol{\alpha}$).}
+We consider a random variable $ X:\Omega \to \mathbb{R}^d$ \wrt~a probability space $(\Omega, \mathcal{F}, \mathbb{P})$.
+The law of $X$ depends on another \rv~$y \in \{0,1\}$, verifying $\mathbb{P}(y=1)=1-\mathbb{P}(y=0)=\alpha$. We assume that conditionally on $y=0$, $ X$ follows a law $F$, and conditionally on $y=1$ a law $G$:
+\begin{align*}
+ X ~|~ y=0 ~~\sim~~ F, &~~~~~~~~~~  \mathbb{P}(y=0)=1-\alpha, \\
+ X ~|~ y=1 ~~\sim~~ G, &~~~~~~~~~~  \mathbb{P}(y=1)=\alpha.
+\end{align*}
+%
+We model the one-class framework as follows. Among the $n$ \iid~observations, we only observe those with $y=0$ (the normal behavior), namely $N$ realizations of $( X ~|~ y=0)$, where $N$ is itself a realization of a \rv~$\mb N$ of law $\mb N \sim \text{Bin}\big(n, (1-\alpha)\big)$, the binomial distribution with parameters $(n, p)$. As outliers are not observed, we classically assume that $G$ follows a uniform distribution on the hyper-rectangle $\mathcal{X}$ containing all the observations, so that $G$ has a constant density $g(x) \equiv 1 / \leb(\mathcal{X})$ on $\mathcal{X}$. %laisser une ligne car fin du model one class
 
-Let us summarize our One-Class Random Forest algorithm in its more genereic version. % , based on generic RFs \citep{Breiman2001}.
+One-class empirical analogues of two-class impurity measures are then obtained by replacing the quantities relative to the normal behavior by their empirical versions.
+The quantities relative to the unobserved second class (abnormal behavior) are naturally expressed using the uniform distribution assumption.
+
+In this way, our one-class impurity improvement function corresponds to the two-class one, where empirical second class quantities have been replaced by their expectation assuming a uniform distribution.
+
+But it also induces a major problem: those expectations, which are proportional to the volume of the node at stake, become very small when going deeper in the tree. In the two-class framework, the corresponding problem is when the second class is highly under-represented in the neighborhood of the observations. 
+%
+As we assume the second class to be uniform on a hyper-rectangle containing all the observations, this fact was expected, especially in large dimension (curse of dimensionality). 
+%
+As the quantities relative to the second class are very close to zero, one observes that the impurity criterion becomes constant when the split varies, and then useless.
+
+\textbf{Adaptive approach.}
+%
+A solution is to chose adaptively (\wrt~the volume of each node) the number $\alpha n$, which can be interpreted as the number of (hidden) outliers. Recall that neither $n$ nor $\alpha$ is observed in One-Class-Model($n$, $\alpha$) defined above. 
+
+The idea is to make $\alpha(t) \to 1$, $n(t) \to \infty$ when the volume of node $t$ goes to zero.
+%
+In other word, instead of considering one fixed general model One-Class-Model($n$, $\alpha$), we adapt it to each node $t$, considering One-Class-Model($n(t)$, $\alpha(t)$) \emph{before searching the best split}. We still consider the $N$ normal observations as a realization of this model. When growing the tree, using One-Class-Model($n(t)$, $\alpha(t)$) as the volume of $t$ becomes close to zero allows to maintain a high expected proportion of outliers in the node to be split.
+Of course, constraints have to be made to ensure consistency between all these models.
+%
+For instance, recalling that the number $N$ of normal observations is a realization of $\mb N$ following a Binomial distribution with parameters $(n, 1-\alpha)$, a first natural constraint on $\big(n(t), \alpha(t)\big)$ is
+\begin{align}
+\label{constraint1}
+(1-\alpha)n = \big(1-\alpha(t)\big) \cdot n(t) \text{~~~~~for all~~} t,
+\end{align}
+so that the expectation of $\mb N$ remains unchanged. 
+Then the asymptotic model (when the volume of $t$ goes to $0$) consists in fact in assuming that the number $N$ of normal data we observed is a realization of a Poisson distribution $\mathcal{P}\big((1-\alpha)n\big)$, and that an infinite number of outliers have been hidden. In the two class framework, this corresponds to observing an infinite number of uniformly distributed outliers, breaking the curse of dimensionality (see Chapter~\ref{chap:ocrf} for details).
+
+
+\textbf{One-Class RF algorithm.} Let us summarize the algorithm in its most generic version.
 It has $7$ parameters:
 $max\_samples$, $max\_features\_tree$, $max\_features\_node$, $\gamma$, $max\_depth$, $n\_trees$, $s_k$.
-
+%
 Each tree is classically grown on a random subset of both the input samples and the input features \citep{Ho1998, Panov2007}.
 This random subset is a sub-sample of size $max\_samples$, with $max\_features\_tree$ variables chosen at random without replacement (replacement is only done after the tree is grown). The tree is built by minimizing 
-a one-class version of the Gini criterion \citep{Gini1912}, obtained by replacing empirical quantities related to the (unobserved) second class by theoretical ones. These correspond to a weighted uniform distribution, the weights becoming larger when the volume of the node becomes small, in order to avoid highly unbalanced classes. Indeed, the nodes progressively tend to have small volumes while containing as much (normal) observations as possible.
-%
-Minimization of this criterion is done until the maximal depth $max\_depth$ is achieved.
+a one-class version of the Gini criterion \citep{Gini1912}, obtained by replacing empirical quantities related to the (unobserved) second class by theoretical ones. These correspond to a weighted uniform distribution, the weight increasing when the volume of the node decreases, in order to avoid highly unbalanced classes (volume vs. observations). Indeed when their depth increases, the nodes tend to have smaller volumes while keeping as much (normal) observations as they can.
+
+New nodes are built (by minimizing this criterion) until the maximal depth $max\_depth$ is achieved.
 % define a large number of geometric features and search over a random selection
 % of these for the best split at each node
-In addition, this is done as introduced in \citep{Amit1997}, defining a large number $max\_features\_node$ of geometric features and searching over a random selection of these for the best split at each node.
+% In addition, this is done
+Minimization is done as introduced in \citep{Amit1997}, by defining a large number $max\_features\_node$ of geometric features and searching over a random selection of these for the best split at each node.
 %
 The forest is composed of a number $n\_trees$ of trees. The predicted score of a point $x$ is given by $s_k(x)$, which is either the stepwise density estimate (induced by the forest) around $x$, the local density of a typical cell containing $x$ or the averaged depth of $x$ among the forest. Chapter~\ref{chap:ocrf} formally defines the one-class splitting criteria and provides an extensive benchmark of state-of-the-art anomaly detection algorithms.
 
@@ -575,8 +614,8 @@ The forest is composed of a number $n\_trees$ of trees. The predicted score of a
 \label{resume:stdf}
 This section is a summary of Chapter~\ref{colt}, which is based on previous work published in \cite{COLT15}.
 
-We have seen that scoring functions are built
-by approaching density level sets/minimum volume sets of the underlying `normal' density. As mentioned previously, for an anomaly detection purpose, we are interested in being accurate on level sets corresponding to high quantiles, namely with level $t$ close to $0$ -- equivalently being accurate on minimum volume sets with large mass constraint $\alpha$.  
+Recall that scoring functions are built
+by approaching density level sets/minimum volume sets of the underlying `normal' density. As mentioned previously, for an anomaly detection purpose, we are interested in being accurate on level sets corresponding to high quantiles, namely with level $t$ close to $0$ -- equivalently being accurate on minimum volume sets with mass constraint $\alpha$ close to $1$.  
 %
 In the univariate case, suppose we want to consider the $(1-p)^{th}$ quantile of the distribution $F$ of a random variable $X$, for a given exceedance probability $p$, that is $x_p = \inf\{x \in \mathbb{R},~ \mathbb{P}(X > x) \le p\}$. For moderate values of $p$, a natural empirical estimate is $x_{p,n} = \inf\{x \in \mathbb{R},~ 1/n \sum_{i=1}^n \mathds{1}_{X_i > x}\le p\}$.
 However,  if $p$ is very small, the finite  sample $X_1,\ldots, X_n$  contains insufficient information and $x_{p,n}$ becomes irrelevant.
@@ -609,7 +648,7 @@ However, no bounds exist on the finite sample error. The contribution summarized
 
 
 \paragraph{Learning the dependence structure of rare events.}
-Classical VC inequalities aim at bounding the deviation of empirical from theoretical quantities on relatively simple classes of sets, called VC classes. These classes typically cover the support of the underlying distribution.  However, when dealing with rare events, it is of great interest to have such bounds on a class of sets which only covers a small probability region and thus contains (very) few observations. This yields sharper bounds, since only differences  between very small quantities are involved. The starting point of this analysis is the following VC-inequality stated below.
+Classical VC inequalities aim at bounding the deviation of empirical from theoretical quantities on relatively simple classes of sets, called VC classes. These classes typically cover the support of the underlying distribution.  However, when dealing with rare events, it is of great interest to have such bounds on a class of sets which only covers a small probability region and thus contains (very) few observations. This yields sharper bounds, since only differences  between very small quantities are involved. The starting point of this analysis is the following VC-inequality stated below and proved in Chapter~\ref{colt}.
 \begin{theorem}
 \label{thm-princ} 
 Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ be \iid~realizations of a \rv~$\mathbf{X}$, a VC-class $\mathcal{A}$ with VC-dimension $V_{\mathcal{A}}$. %and shattering coefficient (or growth function) $S_{\mathcal{A}}(n)$.
@@ -618,7 +657,7 @@ Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ be \iid~realizations of a \rv~$\mathbf{X}
 % $\mathbb{R}^d$. 
 Consider the class union $\mathbb{A} = \cup_{A \in \mathcal{A}} A$,
  and let  
-$p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Then there is an absolute constant $C$ such that for all $0<\delta<1$, with probability at least $1-\delta$,
+$p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Then there is an absolute constant $C$ so that for all $0<\delta<1$, with probability at least $1-\delta$,
 \begin{align*}
 \sup_{A \in \mathcal{A}} \left| \mathbb{P} \big[\mathbf{X} \in A\big] - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A}  \right| ~~\le~~ C \bigg[ \sqrt{p}\sqrt{\frac{V_{\mathcal{A}}}{n} \log{\frac{1}{\delta}}} + \frac{1}{n} \log{\frac{1}{\delta}} \bigg]~.
 \end{align*}
@@ -650,13 +689,28 @@ One other convenient (nonparametric) characterization of  extreme dependence in 
 %
 In many applications, it is more convenient to work with the angular measure itself. The latter gives more direct information on the dependence structure and is able to reflect structural simplifying properties (\eg~sparsity as detailed below) which would not appear in extreme value copulas or in the STDF which are integrated version of the angular measure.
 However, non-parametric modeling of the angular measure faces major difficulties, stemming from its potentially complex structure, especially in a high dimensional setting.
-Further, from a theoretical point of view, non-parametric estimation of the angular measure has only been studied in the two dimensional case, in \cite{Einmahl2001} and \cite{Einmahl2009}, in an asymptotic framework. As another contribution of this thesis, the section below summarizes a novel methodology (presented in \cite{AISTAT16}, \cite{NIPSWORKSHOP15} and a long version under review \cite{ARXIV16}) aiming at exhibiting a sparsity pattern within the dependence structure of extremes.
+Further, from a theoretical point of view, non-parametric estimation of the angular measure has only been studied in the two dimensional case, in \cite{Einmahl2001} and \cite{Einmahl2009}, in an asymptotic framework. As another contribution of this thesis, the section below summarizes a novel methodology % (presented in \cite{AISTAT16}, \cite{NIPSWORKSHOP15} and a long version under review \cite{ARXIV16})
+aiming at exhibiting a sparsity pattern within the dependence structure of extremes.
 
 
 
 \section{Sparse Representation of Multivariate Extremes}
 \label{resume:sec:JMVA}
-This section is a summary of Chapter~\ref{jmva}, which is based on previous work published in \cite{AISTAT16} and on work \cite{ARXIV16} under review.
+This section is a summary of Chapter~\ref{jmva}, which is based on previous work published in \cite{AISTAT16} and on its long version \cite{ARXIV16} under review.
+
+EVT has been intensively used in anomaly detection in the one-dimensional
+situation, see for instance \cite{Roberts99}, \cite{Roberts2000},
+\cite{Clifton2011}, \cite{Clifton2008}, \cite{Lee2008}.
+% Anomaly detection then relies on tail analysis of the variable of interest and naturally involves EVT.
+In the multivariate setup, however, there is --to the best of our
+knowledge--  no anomaly detection method
+relying on \textit{multivariate} EVT. Until now, the multidimensional case has only been  tackled by means of extreme value statistics
+based on univariate EVT. The major reason is 
+the difficulty to scale up existing multivariate EVT models
+with the dimensionality. In the present work we bridge the gap between the practice of anomaly detection and multivariate EVT by proposing a method which is
+able to learn a sparse `normal profile' of multivariate extremes and,
+as such, may be implemented to improve the accuracy of any usual anomaly detection algorithm.
+
 \subsection{Context: multivariate extreme values in large dimension}
 \label{context}
 
@@ -725,175 +779,14 @@ potentially low-dimensional (if the dimensions of the sub-spheres $\Omega_\alpha
 % These two goals are achieved using empirical versions of
 % the angular measure, evaluated on the $\epsilon$-thickened sub-spheres $\Omega_\alpha^\epsilon$.
 
+\textbf{Anomaly Detection.}
+Our proposed algorithm, DAMEX for Detecting Anomalies with Extremes, learns $\widehat{\mathcal{M}}$, a (possibly sparse and low-dimensional) representation of the angular measure, from which a scoring function can be defined in the context of anomaly detection.
+The underlying assumption is that an observation is potentially abnormal if its `direction' (after a standardization of each marginal) is special regarding the other extreme observations. In other words, if it does not belong to the (sparse) representation $\widehat{\mathcal{M}}$. See Chapter~\ref{jmva} for details on how the scoring function is defined from this representation.
+According to the benchmarks derived in this chapter, DAMEX significantly improves the performance (both in term of precision and of ROC curves) in extreme regions, inducing \eg~more vertical ROC curves near the origin.
 
-\subsection{Algorithm and Application to Anomaly Detection}
-
-As explained above, the proposed algorithm, DAMEX for Detecting Anomalies with Extremes, learns a (possibly sparse and low-dimensional) representation of the angular measure. This representation is rough enough to control the variance in high dimension and accurate enough to gain information about the `probable directions' of extremes. From a theoretical perspective, it yields a --first-- non-parametric estimate of the angular measure in any dimension, restricted to a class of sub-spheres. %, with a non asymptotic bound on the error. 
-We believe that our method can also be used as a preprocessing stage, for dimensionality reduction purpose, before proceeding with a parametric or semi-parametric
-estimation of the angular measure which could benefit from the structural information issued in the first step.  Such applications are beyond the scope of this work and will be the subject of further research. 
-
-%The representation output by DAMEX may be exploited to detect anomalies among extremes.
-EVT has been intensively used in anomaly detection in the one-dimensional
-situation, see for instance \cite{Roberts99}, \cite{Roberts2000},
-\cite{Clifton2011}, \cite{Clifton2008}, \cite{Lee2008}.
-% Anomaly detection then relies on tail analysis of the variable of interest and naturally involves EVT.
-In the multivariate setup, however, there is --to the best of our
-knowledge--  no anomaly detection method
-relying on \textit{multivariate} EVT. Until now, the multidimensional case has only been  tackled by means of extreme value statistics
-based on univariate EVT. The major reason is 
-the difficulty to scale up existing multivariate EVT models
-with the dimensionality. In the present work we bridge the gap between the practice of anomaly detection and multivariate EVT by proposing a method which is
-able to learn a sparse `normal profile' of multivariate extremes and,
-as such, may be implemented to improve the accuracy of any usual anomaly detection algorithm.
-
-
-
-
-Let $\mb X_1,.\ldots,\mb X_n$ \iid random variables in $\mathbb{R}^d$ with joint
-(\emph{resp.} marginal) distribution $\mb F$ (\emph{resp.} $F_j$, $j =
-1,\ldots,d$). Marginal standardization is a natural first step when
-studying the dependence structure in a multivariate setting. The
-choice of standard Pareto margins $V^j$ (with $\mathbb{P}(V^j > x ) =
-1/x$, $x>0$) is convenient, and justified by multivariate extreme value theory (see Chapter~\ref{back:EVT}). One classical way to standardize is the
-probability integral transform, $T : X_i \mapsto V_i = ( (1- F_j
-(X_i^j))^{-1})_{1\leq j\leq d}$, $i = 1,\ldots,n$. 
+\textbf{Theoretical grounds.}
+From the work on the \stdf~estimation summarized in the previous Section~\ref{resume:stdf}, in particular from Theorem~\ref{thm-princ} and from the ideas used to prove Theorem~\ref{thm:l}, we are able to derive some theoretical guaranties for this approach.
 %
-Since the marginal distributions $F_j$ are unknown, we use their
-empirical counterpart $\hat F_j$, where $\hat F_j (x) =
-(1/n) \sum_{i=1}^n \mathds{1}_{X_i^j\le x}$. 
-Denote by $\hat T$ the rank transformation
-thus obtained and by $\hat V_i = \hat T(X_i)$ the corresponding rank-transformed
-observations. 
-
-Now, for a given subset of features $\alpha \subset \{1,...,d\}$
-the goal is to measure the
-% `correlation' within each
-%  at extreme levels, that is
-likelihood to observe a large $\mathbf{\hat V}$ such that $\hat V^j$ is `large' for all
-$j\in\alpha$, while the other $\hat V^j$'s ($j \notin \alpha$) are `small'.
-That is, estimating $\Phi(\Omega_\alpha)$.
-% Formally, one may %has to 
-% associate to each such $\alpha$ a coefficient
-% %$\mu_n^\alpha$ 
-% reflecting the degree of dependence between the
-% features $\alpha$ at extreme levels. %By definition of asymptotic dependence, 
-
-In relation to Section~\ref{context}, the appropriate way to
-give a meaning to `large' (\emph{resp.} `small') among extremes is in
-`radial' and `directional' terms, that is, $\| \mathbf{\hat V}\|>r$ (for some
-high radial threshold $r$), and $\hat V^j/\|\mathbf{\hat V}\| >\epsilon$
-(\emph{resp.} $ \le \epsilon$) for some small directional tolerance
-parameter 
-$\epsilon>0$.
-Introduce the truncated $\epsilon$-cones (see Fig.~\ref{2Dcones}):
-%\begin{align*}
-$ ~\mathcal{C}_\alpha^\epsilon~=~\big\{\mb v \ge 0,~\|\mb v\|_\infty \ge 1,~ v_i > \epsilon \|\mb v\|_\infty ~\text{ for } i
- \in \alpha, ~~v_i \le \epsilon\|\mb v\|_\infty ~\text{ for } i \notin \alpha~ \big\},$
-%\end{align*}
-which defines a
-partition of $\mathbb{R}_+^{d}\setminus [0,1]^d$ for each fixed $\epsilon\ge 0$.
-This leads to  estimates %$\mu_n^{\alpha, \epsilon}$  of the form
-\begin{align}
-\label{mu_n}
-\Phi_n^{\alpha, \epsilon} = (n/k) \mathbb{\hat P}_n \left (  (n/k) \mathcal{C}_\alpha^\epsilon \right), 
-\end{align}
-\noindent
-where $\mathbb{\hat P}_n(.)=(1/n)\sum_{i=1}^n\delta_{\hat{\mb V}_i}(.)$ is the empirical probability distribution of the rank-transformed data and $k =
-k(n) \to \infty$ s.t. $k = o(n)$ as $n \to
-\infty$. %  Indeed we are to select the extreme observations to
-% study asymptotic dependence, from where the $\frac{n}{k}
-% \mathcal{C}_\alpha^\epsilon$ (
-The ratio $n/k$ plays the role of a large radial
-threshold $r$. 
-This estimator is justified by the result from multivariate EVT, $r \mathbb{P}(\mb V \in r A) \to \Phi(A)$ as $r \to \infty$ (see Chapter~\ref{back:EVT}).
-% From our standardization choice, counting points in
-% $(n/k)\,\mathcal{C}_{\alpha}^{\epsilon}$ boils down to
-% selecting, for each feature $j\le d$,   the `$k$ largest values' $X_i^j$
-% over the $n$ observations, whence the normalizing factor $\frac{n}{k}$.
-%Here and hereafter, $k =
-%k(n) >0$ is such that $k \to \infty$ and $k = o(n)$ as $n 
-%\infty$.
-%
-
-This heuristic yields the following algorithm~\ref{DAMEX-algo}.
-The complexity is in $O( dn\log n + dn) = O(dn\log n)$, where the first term on the left-hand-side comes from  computing the $\hat F_j(X_i^j)$ (Step 1) by sorting  the data
-(\emph{e.g.} merge sort). The second one comes from Step 2. 
-
-% \begin{center}
-% \fbox{
-% \begin{minipage}{0.95\linewidth}
-\begin{algorithm}[!tbh]
-\caption{DAMEX}
-\label{DAMEX-algo}
-{\bf Input:} parameters $\epsilon>0$,~~ $k = k(n)$,~~ $\Phi_{\min}\geq 0$.
-\begin{enumerate}
-\item Standardize \emph{via} marginal rank-transformation: $\hat V_i := \hat T(X_i) =  \big (1/(1- \hat F_j (X_i^j))\big)_{j=1,\ldots,d}$~. %\\where $\hat F_j (X_i^l) = \frac{1}{n}(rank(X_i^l)-1)$.
-% \item Let $k = n^{2/3}$, $\epsilon = \frac{1}{ k}$ 
-\item Assign to each $\hat V_i$ the cone $\mathcal{C}_\alpha^\epsilon$
-  it belongs to.  
-\item Compute  $\Phi_n^{\alpha, \epsilon}$ the estimate of the $\alpha$-mass of $\Phi$ from (\ref{mu_n}).\\
- $\rightarrow$ yields: (small number of) cones with non-zero mass.
-\item (Optional) Set to $0$ the $\Phi_n^{\alpha,\epsilon}$ below some small
-  threshold $\Phi_{\min}\ge 0$ to eliminate cones with negligible mass
-   
-\end{enumerate}
-{\bf Output:} (sparse) representation of the dependence
-  structure %$(\mu_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \mu_n^{\alpha,\epsilon}>\mu_{\min}}$.
- \begin{align*}
-\widehat{\mathcal{M}}(\alpha) := (\Phi_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \Phi_n^{\alpha,\epsilon}>\Phi_{\min}}
- \end{align*}
-
-\end{algorithm}
-% \end{minipage}
-% }
-% \end{center}
-
-This algorithm can directly be applied to anomaly detection.
-The underlying assumption is that an
-observation is potentially abnormal if its `direction' (after a standardization of each marginal) is special
-regarding the other extreme observations. In other words, if it
-does not belong to the (sparse) support of
-extremes.
-The degree of `abnormality' of a new observation $\mb x$ such that
-$\hat T(\mb x) \in \mathcal{C}_\alpha^\epsilon$ % an observation $X_i$
-should be related both to $\Phi_n^{\alpha, \epsilon}$ and the uniform
-norm $\|\hat T(\mb x)\|_\infty$ (angular and radial
-components). As a matter of fact, in the transformed space - namely the
-space of the $\hat V_i$'s - the asymptotic mass decreases as the
-inverse of the norm.
-Consider the  `\textit{directional tail region}' induced by $\mb x \in \mathcal{C}_\alpha^\epsilon$, 
-$A_{\mb x} =  \{\mb y  :
-T(\mb y) \in \mathcal{C}_\alpha^\epsilon\,,\;\|T(\mb y)\|_\infty \ge \|
-T(\mb x)\|_\infty\}.$
- Then, if  $\|T(\mb x)\|_\infty$ is large enough, it can be shown that 
-$  \mathbb{P}( \mb X \in A_{\mb x} ) \simeq  \|\hat T(\mb x) \|_\infty^{-1} \Phi_n^{\alpha,\epsilon} $.
-We then set the scoring function $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsilon} \mathds{1}_{\hat T(\mb x) \in \mathcal{C}_\alpha^\epsilon},$$
-which is thus an empirical version of
-$\mathbb{P}(\mb X\in A_{\mb x})$: the smaller $s_n(\mb x)$, the more abnormal the point $\mb x$ should be considered.
-
-
-\subsection{Theoretical grounds}
-
-From the work on the \stdf~estimation summarized in the previous Section~\ref{resume:stdf}, in particular from Theorem~\ref{thm-princ} and from the ideas used to prove Theorem~\ref{thm:l}, we are able to derive some theoretical guaranties for the approach described above. %  where non-asymptotic
-% bounds related to the statistical performance of a non-parametric
-% estimator of the \emph{stable tail dependence function} (STDF), another 
-% functional measure of the dependence structure of extremes,  are
-% established.  
-% However, even in the case of a sparse angular measure, the support of
-% the STDF would not be so, since the latter functional is  an
-% integrated version of the former. Also, 
-% in many applications, it is more convenient to work with % an alternative (distributional)
-%  the {angular measure}. Indeed, it provides direct information about the probable `directions' of extremes. % , that is, the relative contribution
-% % of each components of the `largest' observations  (where `large' may be 
-% % understood \emph{e.g.} in the sense of the infinity norm on the input
-% % space). We emphasize again that estimating these `probable relative contributions' is a major concern in many fields
-% % involving  the management of risks from multiple sources, \emph{e.g.}\,portfolio monitoring, insurance,
-% % environmental risk management and anomaly detection. 
-% To the best of our knowledge, non-parametric estimation of the angular
-% measure has only been treated in the two dimensional case, in
-% \cite{Einmahl2001} and \cite{Einmahl2009}, in an asymptotic
-% framework.
-
 Under non-restrictive assumptions standard in EVT (existence of the angular measure and continuous marginal c.d.f.), we obtain a non-asymptotic bound of the form
 \begin{align*}
 \sup_{\emptyset \neq \alpha \subset \{1,\; \ldots,\; d \}}~ |\widehat{\mathcal{M}}(\alpha)- \mathcal{M}(\alpha)|
@@ -903,33 +796,209 @@ with probability greater than $1-\delta$, where $k = k(n) \to \infty$ with $k(n)
 The bias term goes to zero as $n \to \infty$, for any fixed $\epsilon$.
 
 
+% \subsection{Algorithm and Application to Anomaly Detection}
+
+% As explained above, the proposed algorithm, DAMEX for Detecting Anomalies with Extremes, learns a (possibly sparse and low-dimensional) representation of the angular measure. This representation is rough enough to control the variance in high dimension and accurate enough to gain information about the `probable directions' of extremes. From a theoretical perspective, it yields a --first-- non-parametric estimate of the angular measure in any dimension, restricted to a class of sub-spheres. %, with a non asymptotic bound on the error. 
+% We believe that our method can also be used as a preprocessing stage, for dimensionality reduction purpose, before proceeding with a parametric or semi-parametric
+% estimation of the angular measure which could benefit from the structural information issued in the first step.  Such applications are beyond the scope of this work and will be the subject of further research. 
+
+% %The representation output by DAMEX may be exploited to detect anomalies among extremes.
+% EVT has been intensively used in anomaly detection in the one-dimensional
+% situation, see for instance \cite{Roberts99}, \cite{Roberts2000},
+% \cite{Clifton2011}, \cite{Clifton2008}, \cite{Lee2008}.
+% % Anomaly detection then relies on tail analysis of the variable of interest and naturally involves EVT.
+% In the multivariate setup, however, there is --to the best of our
+% knowledge--  no anomaly detection method
+% relying on \textit{multivariate} EVT. Until now, the multidimensional case has only been  tackled by means of extreme value statistics
+% based on univariate EVT. The major reason is 
+% the difficulty to scale up existing multivariate EVT models
+% with the dimensionality. In the present work we bridge the gap between the practice of anomaly detection and multivariate EVT by proposing a method which is
+% able to learn a sparse `normal profile' of multivariate extremes and,
+% as such, may be implemented to improve the accuracy of any usual anomaly detection algorithm.
 
 
-\subsection{Empirical grounds}
- The main purpose of Algorithm~\ref{DAMEX-algo} is to deal with extreme data. We evaluate its performance on such region and compare it with a standard anomaly detection algorithm, the Isolation Forest (iForest) algorithm, see Section~\ref{sec:impl} below, which we chose in view of its established high performances (\cite{Liu2008}) and its ability to handle large dimensional data. 
-The two algorithms are trained and tested on the same datasets, the test set being restricted to some extreme region.
-Five reference real-word datasets in anomaly detection are considered. The experiments are performed in a semi-supervised framework (the training set consists of normal data). In a  non-supervised framework (training set including abnormal data), the improvements brought by the use of DAMEX are less significant, but the precision score is still increased when the recall is high (high rate of true positives), inducing more vertical ROC curves near the origin.
-DAMEX significantly improves the performance (both in term of precision and of ROC curves) in extreme regions for each dataset.
 
-XXX: comparaison avec LOF, OCSVM and EllipticEnvelop when possible?\\
-XXX: study combination DAMEX with other classical AD?
+
+% Let $\mb X_1,.\ldots,\mb X_n$ \iid random variables in $\mathbb{R}^d$ with joint
+% (\emph{resp.} marginal) distribution $\mb F$ (\emph{resp.} $F_j$, $j =
+% 1,\ldots,d$). Marginal standardization is a natural first step when
+% studying the dependence structure in a multivariate setting. The
+% choice of standard Pareto margins $V^j$ (with $\mathbb{P}(V^j > x ) =
+% 1/x$, $x>0$) is convenient, and justified by multivariate extreme value theory (see Chapter~\ref{back:EVT}). One classical way to standardize is the
+% probability integral transform, $T : X_i \mapsto V_i = ( (1- F_j
+% (X_i^j))^{-1})_{1\leq j\leq d}$, $i = 1,\ldots,n$. 
+% %
+% Since the marginal distributions $F_j$ are unknown, we use their
+% empirical counterpart $\hat F_j$, where $\hat F_j (x) =
+% (1/n) \sum_{i=1}^n \mathds{1}_{X_i^j\le x}$. 
+% Denote by $\hat T$ the rank transformation
+% thus obtained and by $\hat V_i = \hat T(X_i)$ the corresponding rank-transformed
+% observations. 
+
+% Now, for a given subset of features $\alpha \subset \{1,...,d\}$
+% the goal is to measure the
+% % `correlation' within each
+% %  at extreme levels, that is
+% likelihood to observe a large $\mathbf{\hat V}$ such that $\hat V^j$ is `large' for all
+% $j\in\alpha$, while the other $\hat V^j$'s ($j \notin \alpha$) are `small'.
+% That is, estimating $\Phi(\Omega_\alpha)$.
+% % Formally, one may %has to 
+% % associate to each such $\alpha$ a coefficient
+% % %$\mu_n^\alpha$ 
+% % reflecting the degree of dependence between the
+% % features $\alpha$ at extreme levels. %By definition of asymptotic dependence, 
+
+% In relation to Section~\ref{context}, the appropriate way to
+% give a meaning to `large' (\emph{resp.} `small') among extremes is in
+% `radial' and `directional' terms, that is, $\| \mathbf{\hat V}\|>r$ (for some
+% high radial threshold $r$), and $\hat V^j/\|\mathbf{\hat V}\| >\epsilon$
+% (\emph{resp.} $ \le \epsilon$) for some small directional tolerance
+% parameter 
+% $\epsilon>0$.
+% Introduce the truncated $\epsilon$-cones (see Fig.~\ref{2Dcones}):
+% %\begin{align*}
+% $ ~\mathcal{C}_\alpha^\epsilon~=~\big\{\mb v \ge 0,~\|\mb v\|_\infty \ge 1,~ v_i > \epsilon \|\mb v\|_\infty ~\text{ for } i
+%  \in \alpha, ~~v_i \le \epsilon\|\mb v\|_\infty ~\text{ for } i \notin \alpha~ \big\},$
+% %\end{align*}
+% which defines a
+% partition of $\mathbb{R}_+^{d}\setminus [0,1]^d$ for each fixed $\epsilon\ge 0$.
+% This leads to  estimates %$\mu_n^{\alpha, \epsilon}$  of the form
+% \begin{align}
+% \label{mu_n}
+% \Phi_n^{\alpha, \epsilon} = (n/k) \mathbb{\hat P}_n \left (  (n/k) \mathcal{C}_\alpha^\epsilon \right), 
+% \end{align}
+% \noindent
+% where $\mathbb{\hat P}_n(.)=(1/n)\sum_{i=1}^n\delta_{\hat{\mb V}_i}(.)$ is the empirical probability distribution of the rank-transformed data and $k =
+% k(n) \to \infty$ s.t. $k = o(n)$ as $n \to
+% \infty$. %  Indeed we are to select the extreme observations to
+% % study asymptotic dependence, from where the $\frac{n}{k}
+% % \mathcal{C}_\alpha^\epsilon$ (
+% The ratio $n/k$ plays the role of a large radial
+% threshold $r$. 
+% This estimator is justified by the result from multivariate EVT, $r \mathbb{P}(\mb V \in r A) \to \Phi(A)$ as $r \to \infty$ (see Chapter~\ref{back:EVT}).
+% % From our standardization choice, counting points in
+% % $(n/k)\,\mathcal{C}_{\alpha}^{\epsilon}$ boils down to
+% % selecting, for each feature $j\le d$,   the `$k$ largest values' $X_i^j$
+% % over the $n$ observations, whence the normalizing factor $\frac{n}{k}$.
+% %Here and hereafter, $k =
+% %k(n) >0$ is such that $k \to \infty$ and $k = o(n)$ as $n 
+% %\infty$.
+% %
+
+% This heuristic yields the following algorithm~\ref{DAMEX-algo}.
+% The complexity is in $O( dn\log n + dn) = O(dn\log n)$, where the first term on the left-hand-side comes from  computing the $\hat F_j(X_i^j)$ (Step 1) by sorting  the data
+% (\emph{e.g.} merge sort). The second one comes from Step 2. 
+
+% % \begin{center}
+% % \fbox{
+% % \begin{minipage}{0.95\linewidth}
+% \begin{algorithm}[!tbh]
+% \caption{DAMEX}
+% \label{DAMEX-algo}
+% {\bf Input:} parameters $\epsilon>0$,~~ $k = k(n)$,~~ $\Phi_{\min}\geq 0$.
+% \begin{enumerate}
+% \item Standardize \emph{via} marginal rank-transformation: $\hat V_i := \hat T(X_i) =  \big (1/(1- \hat F_j (X_i^j))\big)_{j=1,\ldots,d}$~. %\\where $\hat F_j (X_i^l) = \frac{1}{n}(rank(X_i^l)-1)$.
+% % \item Let $k = n^{2/3}$, $\epsilon = \frac{1}{ k}$ 
+% \item Assign to each $\hat V_i$ the cone $\mathcal{C}_\alpha^\epsilon$
+%   it belongs to.  
+% \item Compute  $\Phi_n^{\alpha, \epsilon}$ the estimate of the $\alpha$-mass of $\Phi$ from (\ref{mu_n}).\\
+%  $\rightarrow$ yields: (small number of) cones with non-zero mass.
+% \item (Optional) Set to $0$ the $\Phi_n^{\alpha,\epsilon}$ below some small
+%   threshold $\Phi_{\min}\ge 0$ to eliminate cones with negligible mass
+   
+% \end{enumerate}
+% {\bf Output:} (sparse) representation of the dependence
+%   structure %$(\mu_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \mu_n^{\alpha,\epsilon}>\mu_{\min}}$.
+%  \begin{align*}
+% \widehat{\mathcal{M}}(\alpha) := (\Phi_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \Phi_n^{\alpha,\epsilon}>\Phi_{\min}}
+%  \end{align*}
+
+% \end{algorithm}
+% % \end{minipage}
+% % }
+% % \end{center}
+
+% This algorithm can directly be applied to anomaly detection.
+% The underlying assumption is that an
+% observation is potentially abnormal if its `direction' (after a standardization of each marginal) is special
+% regarding the other extreme observations. In other words, if it
+% does not belong to the (sparse) support of
+% extremes.
+% The degree of `abnormality' of a new observation $\mb x$ such that
+% $\hat T(\mb x) \in \mathcal{C}_\alpha^\epsilon$ % an observation $X_i$
+% should be related both to $\Phi_n^{\alpha, \epsilon}$ and the uniform
+% norm $\|\hat T(\mb x)\|_\infty$ (angular and radial
+% components). As a matter of fact, in the transformed space - namely the
+% space of the $\hat V_i$'s - the asymptotic mass decreases as the
+% inverse of the norm.
+% Consider the  `\textit{directional tail region}' induced by $\mb x \in \mathcal{C}_\alpha^\epsilon$, 
+% $A_{\mb x} =  \{\mb y  :
+% T(\mb y) \in \mathcal{C}_\alpha^\epsilon\,,\;\|T(\mb y)\|_\infty \ge \|
+% T(\mb x)\|_\infty\}.$
+%  Then, if  $\|T(\mb x)\|_\infty$ is large enough, it can be shown that 
+% $  \mathbb{P}( \mb X \in A_{\mb x} ) \simeq  \|\hat T(\mb x) \|_\infty^{-1} \Phi_n^{\alpha,\epsilon} $.
+% We then set the scoring function $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsilon} \mathds{1}_{\hat T(\mb x) \in \mathcal{C}_\alpha^\epsilon},$$
+% which is thus an empirical version of
+% $\mathbb{P}(\mb X\in A_{\mb x})$: the smaller $s_n(\mb x)$, the more abnormal the point $\mb x$ should be considered.
+
+
+% \subsection{Theoretical grounds}
+
+% From the work on the \stdf~estimation summarized in the previous Section~\ref{resume:stdf}, in particular from Theorem~\ref{thm-princ} and from the ideas used to prove Theorem~\ref{thm:l}, we are able to derive some theoretical guaranties for the approach described above. %  where non-asymptotic
+% % bounds related to the statistical performance of a non-parametric
+% % estimator of the \emph{stable tail dependence function} (STDF), another 
+% % functional measure of the dependence structure of extremes,  are
+% % established.  
+% % However, even in the case of a sparse angular measure, the support of
+% % the STDF would not be so, since the latter functional is  an
+% % integrated version of the former. Also, 
+% % in many applications, it is more convenient to work with % an alternative (distributional)
+% %  the {angular measure}. Indeed, it provides direct information about the probable `directions' of extremes. % , that is, the relative contribution
+% % % of each components of the `largest' observations  (where `large' may be 
+% % % understood \emph{e.g.} in the sense of the infinity norm on the input
+% % % space). We emphasize again that estimating these `probable relative contributions' is a major concern in many fields
+% % % involving  the management of risks from multiple sources, \emph{e.g.}\,portfolio monitoring, insurance,
+% % % environmental risk management and anomaly detection. 
+% % To the best of our knowledge, non-parametric estimation of the angular
+% % measure has only been treated in the two dimensional case, in
+% % \cite{Einmahl2001} and \cite{Einmahl2009}, in an asymptotic
+% % framework.
+
+% Under non-restrictive assumptions standard in EVT (existence of the angular measure and continuous marginal c.d.f.), we obtain a non-asymptotic bound of the form
+% \begin{align*}
+% \sup_{\emptyset \neq \alpha \subset \{1,\; \ldots,\; d \}}~ |\widehat{\mathcal{M}}(\alpha)- \mathcal{M}(\alpha)|
+% ~\le~  C d \left( \sqrt{ \frac{1}{\epsilon k}\log\frac{d}{\delta}} + M d\epsilon \right) + \text{bias}(\epsilon, k, n),
+% \end{align*}
+% with probability greater than $1-\delta$, where $k = k(n) \to \infty$ with $k(n) = o(n)$ can be interpreted as the number of data considered as extreme. 
+% The bias term goes to zero as $n \to \infty$, for any fixed $\epsilon$.
+
+
+
+
+% \subsection{Empirical guaranties}
+%  The main purpose of Algorithm~\ref{DAMEX-algo} is to deal with extreme data. We evaluate its performance on such region and compare it with a standard anomaly detection algorithm, the Isolation Forest (iForest) algorithm, see Section~\ref{sec:impl} below, which we chose in view of its established high performances (\cite{Liu2008}) and its ability to handle large dimensional data. 
+% The two algorithms are trained and tested on the same datasets, the test set being restricted to some extreme region.
+% Five reference real-word datasets in anomaly detection are considered. The experiments are performed in a semi-supervised framework (the training set consists of normal data). In a  non-supervised framework (training set including abnormal data), the improvements brought by the use of DAMEX are less significant, but the precision score is still increased when the recall is high (high rate of true positives), inducing more vertical ROC curves near the origin.
+% DAMEX significantly improves the performance (both in term of precision and of ROC curves) in extreme regions for each dataset.
+
+% % XXX: comparaison avec LOF, OCSVM and EllipticEnvelop when possible?\\
+% % XXX: study combination DAMEX with other classical AD?
 
 \section{Scikit-learn contributions}
 \label{sec:impl}
 
-As an other contribution of this thesis, two classical anomaly detection algorithms, $IsolationForest$ and $LocalOutlierFactor$ have been implemented and merged on scikit-learn. These algorithms are presented in the Background Part, Section~\ref{sec:AD_sklearn}. % on Anomaly Detection in Scikit-Learn. 
+As an other contribution of this thesis, two classical anomaly detection algorithms, Isolation Forest and Local Outlier Factor have been implemented and merged on scikit-learn. These algorithms are presented in the Background Part, Section~\ref{sec:AD_sklearn}. % on Anomaly Detection in Scikit-Learn. 
 
-Scikit-learn, see \cite{sklearn2011}, is an open-source library which provides well-established machine learning methods.
-It is a Python module, the latter language being very popular for scientific computing, thanks to its high-level interactive nature. Python is enjoying this recent years a strong expansion both in academic and industrial settings. Scikit-learn takes advantage of this favourable backdrop and extends this general-purpose programming language with machine learning operation: % it not only provides implementations of many established algorithms, both supervised and unsupervised % (while keeping an easy-to-use interface tightly integrated with the Python language)
-% , but
-it provides a composition mechanism (through a \emph{Pipeline} object) to combine estimators, preprocessing tools and model selection methods in such a way the user can easily construct complex ad-hoc algorithms.
+Scikit-learn, see \cite{sklearn2011}, is an open-source library providing well-established machine learning methods.
+It is a Python module, the latter language being very popular for scientific computing, thanks to its high-level interactive nature. % Python is enjoying this recent years a strong expansion both in academic and industrial settings. Scikit-learn takes advantage of this favourable backdrop and extends this general-purpose programming language with machine learning operation: 
+Scikit-learn provides a composition mechanism (through a \emph{Pipeline} object) to combine estimators, preprocessing tools and model selection methods in such a way the user can easily construct complex ad-hoc algorithms.
 %
-The development is done on \emph{Github}\footnote{https://github.com/scikit-learn}, a Git repository hosting service which facilitates collaboration, as coding is done in strong interaction with other developpers. Because of the large number of developers, emphasis is put on keeping the project maintainable, \eg~by avoiding dupplicating code at the price of a reasonable loss of computational perforance.%up to pay (reasonably) in computational performance. 
+The development is done on \emph{Github}\footnote{https://github.com/scikit-learn}, a Git repository hosting service which facilitates collaboration, as coding is done in strong interaction with other developpers. Because of the large number of developers, emphasis is put on keeping the project maintainable, \eg~by avoiding duplicating code at the price of a reasonable loss of computational performance.%up to pay (reasonably) in computational performance. 
 
 
 This contribution was supervised by Alexandre Gramfort and was funded by the Paris Saclay Center for Data Science. It also includes work for the scikit-learn maintenance like resolving issues and reviewing other contributors' pull requests.
 
-XXX: add contribution with A.Muller
+% XXX: add contribution with A.Muller
 
 
 \section{Conclusion and Scientific Output}
@@ -950,7 +1019,8 @@ Empirical Risk Minimization (ERM), and no study has been made on their use to ev
 As a second contribution, we show (empirically) that EM or MV based criteria are able to discriminate accurately (\wrt~ROC or PR based criteria) between scoring functions in law dimension. Besides, we propose a methodology based on feature sub-sampling and aggregating to scale the use of EM or MV to higher dimensions.
 The corresponding publications are \cite{ICMLworkshop16} and \cite{NIPS16evaluation}:
 \begin{itemize}
-\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (ICML 2016, Workshop on Anomaly Detection). Co-winner of the Best Paper Award, sponsored by Google.\\
+\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (ICML 2016, Workshop on Anomaly Detection). % Co-winner of the Best Paper Award, sponsored by Google.
+  \\
 Author: Goix. 
 \item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (submitted to NIPS 2016).\\ Authors: Goix and Thomas. 
 \end{itemize}
@@ -991,10 +1061,10 @@ The pull requests of these two contributions are available here:
 \end{itemize}
 
 
-\paragraph{Context of this work}
+\paragraph{Context of this work.}
 This thesis was carried out in the STA (Statistiques et Applications) team of the Signal and Image Processing (TSI) department at Telecom ParisTech. The contributions presented in this thesis were supported by Ecole Normale Supérieure de Cachan via a `contrat doctoral pour normalien' and by the industrial chair `Machine Learning for Big Data' from Telecom ParisTech. The scikit-learn contributions have been supported by the Paris Saclay Center for Data Science regarding the collaboration with Alexandre Gramfort, and by the forementioned machine learning chair as regards the collaboration at New York University with Andreas Müller.
 
-\paragraph{Outline of the thesis}
+\paragraph{Outline of the thesis.}
 This dissertation is organized as follows. 
 \begin{itemize}
 \item Part~\ref{part:background} gathers the background work relevant to this thesis.

@@ -101,9 +101,9 @@ $\Var[\cdot]$ && Variance of random variable\\
 \end{table}
 
 
-\section{Anomaly Detection and Scoring Functions}
+\section{Anomaly Detection, Anomaly Ranking and Scoring Functions}
 \label{resume:scoring_function}
-From a probabilistic point of view, there are different way of modeling normal and abnormal behaviors, which leads to different methodologies. One natural probabilistic model is to assume two different generating processes for normal and abnormal data. Normal data (resp. abnormal data) are generated according to some distribution $F$ (resp. $G$). The general underlying distribution is then a mixture of $F$ and $G$. The goal is to find out whether a new observation $\mb x$ has been generated from $F$, or from $G$. The optimal way to resolve theoretically this problem is the likelihood ratio test, also called Neyman-Pearson test. If $(\ud  F / \ud  G) ( \mb x) > t$ with some $t>0$ threshold, then $\mb x$ has been drawn from $F$. Otherwise, $\mb x$ has been drawn from $G$. This boils down to estimating the \emph{density level set} $\{\mb x, (\ud F / \ud  G) (\mb x) > t\}$.
+From a probabilistic point of view, there are different ways of modeling normal and abnormal behaviors, which leads to different methodologies. One natural probabilistic model is to assume two different generating processes for normal and abnormal data. Normal data (resp. abnormal data) are generated according to some distribution $F$ (resp. $G$). The general underlying distribution is then a mixture of $F$ and $G$. The goal is to find out whether a new observation $\mb x$ has been generated from $F$, or from $G$. The optimal way to resolve theoretically this problem is the likelihood ratio test, also called Neyman-Pearson test. If $(\ud  F / \ud  G) ( \mb x) > t$ with some $t>0$ threshold, then $\mb x$ has been drawn from $F$. Otherwise, $\mb x$ has been drawn from $G$. This boils down to estimating the \emph{density level set} $\{\mb x, (\ud F / \ud  G) (\mb x) > t\}$.
 %
 As anomalies are very rare, their structure cannot be observed in the data, in particular their distribution $G$. 
 %
@@ -118,12 +118,9 @@ This \emph{one-class classification} problem is different than \emph{distinguish
 
 %This way of modeling appeals for \emph{density level set estimation} analysis.
 
-
-
-
-A natural idea for estimating density level sets is to compute an estimate of the density and to consider the associated plug-in density level set.
+A natural idea for estimating density level sets is to compute an estimate of the density and to consider the associated plug-in density level sets.
 The density is generally estimated using non-parametric kernel estimator or maximum likelihood estimator from some parametric family of functions. But these methods does not scale well with the dimension. Such methods try somehow to capture more information than needed for our level set estimation task, such as local properties of the density which are useless here. Indeed, it turns out that for any increasing transform $T$, the level sets of $T\circ f$ are exactly those of $f$. Thus, it suffices to estimate any representant of the class of all increasing transforms of $f$, to obtain density level sets estimates. Intuitively, it is enough to estimate the preorder (the \emph{scoring}) induced by $f$ on $\rset^d$. Let us define a \emph{scoring function} as any measurable function $s:~\rset^d \to \rset_+$ integrable \wrt~the Lebesgue measure $\leb(.)$, and $\S$ the space of all scoring functions.
-Any scoring function defines a preorder on $\rset^d$ and thus a ranking on a set of new observations. This ranking can be interpreted as a degree of abnormality, the lower $s(x)$, the more abnormal $x$. Note incidentally that most anomaly detection algorithms return more than a binary label, normal/abnormal. They compute first a scoring function, which is converted to a binary prediction, typically by imposing some threshold based on its statistical distribution.
+Any scoring function defines a preorder on $\rset^d$ and thus a ranking on a set of new observations. This ranking can be interpreted as a degree of abnormality, the lower $s(x)$, the more abnormal $x$. Note incidentally that most anomaly detection algorithms return more than a binary label, normal/abnormal. They return a scoring function, which can be converted to a binary prediction, typically by imposing some threshold based on its statistical distribution.
 
 Suppose we are interested in learning a scoring function $s$ whose induced preorder is `close' to that of $f$, or equivalently whose induced level sets are close to those of $f$. The problem is to turn this notion of proximity into a criterion $\crit$, optimal scoring functions $s^*$ being then defined as those optimizing $\crit$. In the density estimation framework, the uniform difference $\|f - \hat f\|_\infty$ is a common criterion to assess the quality of the estimation. We would like a similar criterion but which is invariant by increasing transformation of the output $\hat f$. In other words, the criterion should be defined such that the collection of level sets of an optimal scoring function $s^*(x)$ coincides with that related to $f$, and any increasing transform of the density should be optimal regarding $\crit$.
 More formally, we are going to consider $\crit^{\Phi}(s) = \| \Phi(s) - \Phi(f) \|$ (instead of $\|s - f\|$) % for the Mass-Volume criterion (resp. $ \|EM_s - EM_f\|$ for the Excess-Mass criterion),
@@ -137,6 +134,33 @@ This criterion which measures the quality of a scoring function is then a tool f
 According to the Empirical Risk Minimization (ERM) paradigm, a scoring function is built by optimizing  an empirical version $\crit_n(s)$ of the criterion over an adequate set of scoring functions $\S_0$ of controlled complexity (\textit{e.g.} a class of finite {\sc VC} dimension). %Hence, another desirable property to guarantee the universal consistency of ERM learning strategies is the uniform convergence of $\crit_n(s)$ to $\crit(s)$ over such collections $\S_0$ under minimal assumptions on the distribution $F$.
 
 The next section describes two criteria, which are functional due to the global nature of the problem just like the \emph{Receiver Operating Characteristic} (\roc) and \emph{Precision-Recall} (PR) curves, and which are admissible with respect to the requirements listed above. These functional criteria extend somehow the concept of $\roc$ curve to the unsupervised setup.
+
+\begin{remark}{\bf Terminology: anomaly detection, anomaly ranking.\\}
+Strictly speaking, we are looking for \emph{anomaly ranking} criteria, in the same way the ROC curve is basically a criterion for bipartite \emph{ranking}.
+%
+However as mentionned above, all the algorithms dealing with anomalies produce first a ranking/scoring function, even the (few) ones which originally deal with a single one-class classification problem, \ie~seek to be optimal on a single level set or \wrt~a fixed false positive rate.
+%
+In the literature, the `anomaly detection' terminology is widely used, instead of the more precise `anomaly ranking' one. For instance, \cite{Liu2008} write `The task of anomaly detection is to provide a ranking that reflects the degree of anomaly'.
+%
+% Strictly speaking, anomaly detection should includes both anomaly ranking and anomaly classification.
+In this work, we similarly make the convention that anomaly detection refers to anomaly ranking. 
+
+% Strictly speaking, we should speak about \emph{anomaly ranking} instead of anomaly detection. Indeed, all classical anomaly detection algorithms return first a \emph{ranking (or scoring) function} which ranks the observations according to their supposed degree of abnormality, and which can be thresholded to produce a binary label, normal vs. abnormal. Besides, all of them also evaluate themselves in terms of area under the ROC curve (when some labeled data are available to compute the latter) over some specific interval (not over a single point).
+
+% Strictly speaking, anomaly detection focuses on some fixed $t$-level set (or on some fixed false positive rate), while anomaly ranking consider an infinite number of such one-class classification problem to rank the observations according to their supposed degree of abnormality. 
+% In pratice, the overwhelming majority of classical algorithms dealing with anomalies are able to rank anomalies: All of them compute first a \emph{ranking (or scoring) function} which can be thresholded to produce a binary label, normal vs. abnormal.
+
+% In other words, in terms of output there is in practice no difference between anomaly detection or anomaly ranking.
+% There could be a difference in terms of performance evaluation. When labels are available, anomaly detection algorithms should aim at maximizing a fixed point in the ROC curve, while anomaly ranking ones should aim at maximizing the curve over an interval.
+
+% But again, in practice, all algorithms evaluate themselves in terms of area under the ROC curve (when some labeled data are available to compute the latter) over some specific interval, \ie~in term of ranking algorithms.
+
+% Then, the only difference should be in terms of methodology or problem formulation.
+% But lots of algorithms calling themselves anomaly detectors do not try to optimize any criterion
+%%%%%%%%%%%%%%%%%%
+
+\end{remark}
+
 
 \section{M-estimation and Scoring function Criterion}
 \label{resume:scoring}

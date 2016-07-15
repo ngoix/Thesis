@@ -4,8 +4,8 @@
 \contentsline {chapter}{\numberline {1}Summary}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
 \contentsline {paragraph}{Notations}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Anomaly Detection and Scoring Functions}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}M-estimation and Scoring function Criterion}{4}{section.1.3}
+\contentsline {section}{\numberline {1.2}Anomaly Detection, Anomaly Ranking and Scoring Functions}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}M-estimation and Scoring function Criterion}{5}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Minimum Volume sets}{5}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}Mass-Volume curve}{6}{subsection.1.3.2}
 \contentsline {subsection}{\numberline {1.3.3}The Excess-Mass criterion}{7}{subsection.1.3.3}
@@ -15,11 +15,11 @@
 \contentsline {paragraph}{Preliminaries.}{14}{section.1.6}
 \contentsline {paragraph}{Learning the dependence structure of rare events.}{15}{section.1.6}
 \contentsline {section}{\numberline {1.7}Sparse Representation of Multivariate Extremes}{16}{section.1.7}
-\contentsline {subsection}{\numberline {1.7.1}Context: multivariate extreme values in large dimension}{16}{subsection.1.7.1}
+\contentsline {subsection}{\numberline {1.7.1}Context: multivariate extreme values in large dimension}{17}{subsection.1.7.1}
 \contentsline {section}{\numberline {1.8}Scikit-learn contributions}{19}{section.1.8}
-\contentsline {section}{\numberline {1.9}Conclusion and Scientific Output}{19}{section.1.9}
+\contentsline {section}{\numberline {1.9}Conclusion and Scientific Output}{20}{section.1.9}
 \contentsline {paragraph}{Context of this work.}{21}{section.1.9}
-\contentsline {paragraph}{Outline of the thesis.}{21}{section.1.9}
+\contentsline {paragraph}{Outline of the thesis.}{22}{section.1.9}
 \contentsline {part}{I\hspace {1em}Preliminaries}{23}{part.1}
 \contentsline {chapter}{\numberline {2}Background on Anomaly Detection through Scikit-Learn}{25}{chapter.2}
 \contentsline {section}{\numberline {2.1}What is Anomaly Detection?}{25}{section.2.1}

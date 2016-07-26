@@ -78,8 +78,7 @@ The structure of this chapter is as follows. The whys and wherefores of
  Section~\ref{colt:sec:background}. In Section \ref{colt:sec:concentration},
  concentration tools which rely on the general study of maximal
  deviations in low probability regions are introduced, with an
- immediate application to the framework of classification (Remark
- \ref{colt:rk:prediction}). The main result of this contribution,  a
+ immediate application to the framework of classification. The main result of this contribution,  a
  non-asymptotic bound on the convergence of the empirical
  \textsc{stdf}, is derived in Section \ref{colt:sec:stdf}. Section~\ref{colt:sec:conclusion} concludes.
 
@@ -477,54 +476,56 @@ $p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Then there is an absolute constant 
 \end{align}
 \end{theorem}
 
-
-\begin{proof} (sketch of)
-Details of the proof are deferred to the appendix section.
-%To prove this result,
-We use a Bernstein-type concentration inequality (\cite{McDiarmid98}) that we  apply to 
-the general  functional \[f(\mathbf{X}_{1:n})= \sup_{A \in \mathcal{A}} \left |
-  \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n
-  \mathds{1}_{\mathbf{X}_i \in A} \right|~,\]
-%More precisely,  %  we take advantage of a 
-%  This is done by using a
-% more general
-where $\mb X_{1:n}$ denotes the sample $(\mb X_1,\ldots,\mb X_n)$.
-The inequality in \cite{McDiarmid98} %, which
-%allows to use bounds on 
-involves
-the variance of the
-\rv~$f(\mathbf{X}_1,\ldots,\mathbf{X}_{k}, x_{k+1},\ldots, x_n) -
-f(\mathbf{X}_1,\ldots,\mathbf{X}_{k-1},x_k,\ldots, x_n)$, which can
-easily be bounded in our setting. %  $k$ being
-% fixed,
-We obtain %gives the general inequality
-\begin{align}
-\label{colt:thm-princ:general}
-\mathbb{P}\left [ f(\mb X_{1:n}) - \mathbb{E} f(\mb X_{1:n}) ~\ge~ t \right] ~\le~ e^{-\frac{n t^2}{2q + \frac{2t}{3}} },
-\end{align}
-
-\noindent
-where the quantity $q~=~ \mathbb{E}\left ( \sup_{A \in \mathcal{A}}
-  \left | \mathds{1}_{\mathbf{X}' \in A} - \mathds{1}_{\mathbf{X} \in
-      A} \right|\right)$ (with  $\mathbf{X}'$ an independent copy of $\mathbf{X}$) is  a measure of the complexity of the class $\mathcal{A}$ with respect to the distribution of $\mathbf{X}$. 
-It leads to high probability bounds on $f(\mb X_{1:n})$ of the form
-$\mathbb{E}f(\mb X_{1:n}) + \frac{1}{n} \log (1/\delta) +
-\sqrt{\frac{2q}{n} \log (1/\delta)} $ instead of the standard
-Hoeffding-type bound  $~\mathbb{E}f(\mb X_{1:n}) + \sqrt{\frac{1}{n} \log (1/\delta)}$ .
-It is then easy to see that $q \le 2\sup_{A \in \mathcal{A}} \mathbb{P}(\mathbf{X} \in A) \le 2p.$
-Finally, an  upper bound on
-$\bb E f(\mb X_{1:n})$ is obtained  by introducing re-normalized Rademacher averages 
-\begin{align*}
-\mathcal{R}_{n,p} = \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{np} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{\mathbf{X}}_i \in A}\right|~. 
-\end{align*}
-which are then proved to be of order $O (\sqrt{\frac{V_\mathcal{A} }{pn}})$, so that
-$\mathbb{E}(f(\mb X_{1:n})) \le C\sqrt{\frac{V_\mathcal{A} }{pn}}.$
+\begin{proof}
+See Chapter~\ref{chap:back_concentration}, Corollary~\ref{back:cor_tvcsharp}.
 \end{proof}
+% \begin{proof} 
+% (sketch of)
+% Details of the proof are deferred to the appendix section.
+% %To prove this result,
+% We use a Bernstein-type concentration inequality (\cite{McDiarmid98}) that we  apply to 
+% the general  functional \[f(\mathbf{X}_{1:n})= \sup_{A \in \mathcal{A}} \left |
+%   \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n
+%   \mathds{1}_{\mathbf{X}_i \in A} \right|~,\]
+% %More precisely,  %  we take advantage of a 
+% %  This is done by using a
+% % more general
+% where $\mb X_{1:n}$ denotes the sample $(\mb X_1,\ldots,\mb X_n)$.
+% The inequality in \cite{McDiarmid98} %, which
+% %allows to use bounds on 
+% involves
+% the variance of the
+% \rv~$f(\mathbf{X}_1,\ldots,\mathbf{X}_{k}, x_{k+1},\ldots, x_n) -
+% f(\mathbf{X}_1,\ldots,\mathbf{X}_{k-1},x_k,\ldots, x_n)$, which can
+% easily be bounded in our setting. %  $k$ being
+% % fixed,
+% We obtain %gives the general inequality
+% \begin{align}
+% \label{colt:thm-princ:general}
+% \mathbb{P}\left [ f(\mb X_{1:n}) - \mathbb{E} f(\mb X_{1:n}) ~\ge~ t \right] ~\le~ e^{-\frac{n t^2}{2q + \frac{2t}{3}} },
+% \end{align}
+
+% \noindent
+% where the quantity $q~=~ \mathbb{E}\left ( \sup_{A \in \mathcal{A}}
+%   \left | \mathds{1}_{\mathbf{X}' \in A} - \mathds{1}_{\mathbf{X} \in
+%       A} \right|\right)$ (with  $\mathbf{X}'$ an independent copy of $\mathbf{X}$) is  a measure of the complexity of the class $\mathcal{A}$ with respect to the distribution of $\mathbf{X}$. 
+% It leads to high probability bounds on $f(\mb X_{1:n})$ of the form
+% $\mathbb{E}f(\mb X_{1:n}) + \frac{1}{n} \log (1/\delta) +
+% \sqrt{\frac{2q}{n} \log (1/\delta)} $ instead of the standard
+% Hoeffding-type bound  $~\mathbb{E}f(\mb X_{1:n}) + \sqrt{\frac{1}{n} \log (1/\delta)}$ .
+% It is then easy to see that $q \le 2\sup_{A \in \mathcal{A}} \mathbb{P}(\mathbf{X} \in A) \le 2p.$
+% Finally, an  upper bound on
+% $\bb E f(\mb X_{1:n})$ is obtained  by introducing re-normalized Rademacher averages 
+% \begin{align*}
+% \mathcal{R}_{n,p} = \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{np} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{\mathbf{X}}_i \in A}\right|~. 
+% \end{align*}
+% which are then proved to be of order $O (\sqrt{\frac{V_\mathcal{A} }{pn}})$, so that
+% $\mathbb{E}(f(\mb X_{1:n})) \le C\sqrt{\frac{V_\mathcal{A} }{pn}}.$
+% \end{proof}
 
 % \begin{remark} (\textsc{Stronger Result})
 % In  view of (\ref{colt:thm-princ:general}), we can obtain a sharper bound,  using a  refinement of the bound on $\mathbb{E}f(X)$ due to Massart, which is in $O(\sqrt{\sigma^2 /n})$ with $\sigma^2 = \sup_{A \in \mathcal{A}} \mathbb{P}( \mb X \in A)(1-\mathbb{P}( \mb X \in A)) \le q$ (see \cite{BLM2013}), inequality (\ref{colt:thm-princ-ineq}) holds true when replacing $p$ by $q$.
 % \end{remark}
-
 
 
 
@@ -589,7 +590,7 @@ $\mathbb{A}$, $\{\mathbb{P}(\mathbf{X}\in A \big|\mathbf{X}\in \mathbb{A}) \}_{A
 %as soon as $k$ large enough to have $\delta \ge e^{-k}$. We recover the convergence in $\frac{1}{\sqrt k}$ which is typical in this situation. 
 %\end{rk}
 
-\begin{remark} \label{colt:rk:prediction}(\textsc{Classification of Extremes})
+\paragraph{Classification of Extremes})
 A key issue in the prediction framework is to find upper bounds for the maximal deviation $\sup_{g \in \mathcal{G}}|L_n(g) - L(g)|$, where $L(g) = \mathbb{P}(g(\mathbf{X}) \neq Y)$ is the risk of the classifier $g: \mathcal{X} \to \{-1, 1\}$, associated with the \rv~$(\mathbf{X},Y) \in \mathbb{R}^d \times \{-1,1\}$. $L_n(g) = \frac{1}{n} \sum_{i=1}^n \mathds{I}\{g(\mathbf{X}_i)\neq Y_i\} $ is the empirical risk based on a training dataset $\{(\mathbf{X}_1,Y_1),\; \ldots,\; (\mathbf{X}_n,Y_n)  \}$. Strong upper bounds on $\sup_{g \in \mathcal{G}}|L_n(g) - L(g)|$ ensure the accuracy of the empirical risk minimizer $g_n:= \argmin_{g \in \mathcal{G}}L_n(g)$. 
 
 In a wide variety of applications (\textit{e.g.} Finance, Insurance, Networks), it is of crucial importance to predict the system response $Y$ when the input variable $\mathbf{X}$ takes extreme values, corresponding to shocks on the underlying mechanism. In such a case, the risk of a prediction rule $g(\mathbf{X})$ should be defined by integrating the loss function $L(g)$ with respect to the conditional joint distribution of the pair $(\mathbf{X},Y)$ given $\mathbf{X}$ is extreme. For instance, consider the event $\{\|\mathbf{X}\| \ge t_\alpha\}$ where $t_\alpha$ is the $(1-\alpha)^{th}$ quantile of $\|\mathbf{X}\|$ for a small $\alpha$. To investigate the accuracy of a classifier $g$ given $\{\|\mathbf{X}\| \ge t_\alpha\}$,
@@ -606,9 +607,9 @@ L_{\alpha}(g):~=~ \frac{1}{\alpha}\mathbb{P}\left(Y\neq g(\mathbf{X}),~ \| \math
  statistics of $\| \mathbf{X}\|$. Then as an application of Theorem \ref{colt:thm-princ} with $\mathcal{A} = \{(\mathbf{x},y), g(\mathbf{x}) \neq y, \|\mathbf{x}\| > t_\alpha\},~g\in\mathcal{G},$ we have : 
 \begin{align}
 \label{colt:prediction:rates}
-\sup_{g\in \mathcal{G}} \bigg| \widehat{L}_{\alpha, n}(g)- L_{\alpha}(g) \bigg|  \le C \bigg[ \sqrt{\frac{V_{\mathcal{G}}}{n\alpha} \log \frac{1}{\delta}} + \frac{1}{n\alpha} \log{\frac{1}{\delta}} \bigg]~.
+\sup_{g\in \mathcal{G}} \bigg| L_{\alpha, n}(g)- L_{\alpha}(g) \bigg|  \le C \bigg[ \sqrt{\frac{V_{\mathcal{G}}}{n\alpha} \log \frac{1}{\delta}} + \frac{1}{n\alpha} \log{\frac{1}{\delta}} \bigg]~.
 \end{align}
-We refer to the appendix for more details. Again the obtained rate by
+We refer to the remark~\ref{rk:classif-details} below for details. Again the obtained rate by
 empirical risk minimization  meets our expectations (see remark \ref{colt:rk:interpretation}), insofar as $\alpha$ is the fraction % (respectively, $n\alpha$ represents the size)
 of the dataset involved in the empirical risk $L_{\alpha, n}$. We point out that $\alpha$ may typically depend on $n$, $\alpha = \alpha_n \to 0$.
 In this context a direct use of the 
@@ -630,9 +631,39 @@ and $\widetilde L_{Q,n}(g) := \mathbb{P}_n\left ( Y \neq g(\mathbf{X}), \mathbf{
 
 Similar results can be established for the problem of \textit{distribution-free regression}, when the error of any predictive rule $f(\mathbf{x})$ is measured by the conditional mean squared error $\mathbb{E}[(Z-f(\mathbf{X}))^2\mid Z>q_{\alpha_n}]$, denoting by $Z$ the real-valued output variable to be predicted from $\mathbf{X}$ and by $q_{\alpha}$ its quantile at level $1-\alpha$.
 
+\begin{remark}
+\label{rk:classif-details}
+To obtain the bound in (\ref{colt:prediction:rates}), the following easy to show inequality is needed before  applying Theorem~\ref{colt:thm-princ} :
+\begin{align*}
+&\sup_{g\in \mathcal{G}}| {L}_{\alpha, n}(g)- L_{\alpha}(g)  | ~ \le ~ \frac{1}{\alpha} \Bigg[ \sup_{g\in \mathcal{G}} \left| \mathbb{P} \left(Y\neq g(\mathbf{X}),~ \| \mathbf{X}\|\ >t_\alpha \right) - \frac{1}{n}\sum_{i=1}^n\mathds{I}_{\{Y_i\neq
+   g(\mathbf{X}_i),~ \| \mathbf{X}_i\| > t_\alpha \}} \right| \\
+&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+~ \left| \mathbb{P} \left(\| \mathbf{X}\|\ >t_\alpha \right) - \frac{1}{n}\sum_{i=1}^n\mathds{I}_{\{ \| \mathbf{X}_i\| > t_\alpha  \}} \right| ~~+~~ \frac{1}{n}  \Bigg] ~.
+\end{align*}
+
+
+Note that the final objective would be to bound the quantity 
+$| {L}_{\alpha}(g_n)- L_{\alpha}(g^*_\alpha)  |$,
+where $g^*_\alpha$ is a Bayes classifier for the problem at stake,
+\ie~a  solution of the conditional risk  minimization problem  $\inf_{\{ g \text{
+    meas.}\}} L_\alpha(g)$, and $g_n$ a solution of $\inf_{g \in \mathcal{G}}L_{n,\alpha}(g)$. 
+Such a bound involves the maximal deviation in \eqref{colt:prediction:rates} as well as a  bias term $ \inf_{g\in
+    \mathcal{G}}L_\alpha(g)-L_\alpha(g_\alpha^*)$, as in the classical
+  setting. Further, it  can  be shown that the standard Bayes classifier
+  $g^*(\mb x) := 2\mathbb{I}\{\eta(\mathbf{x})>1/2\}-1$ (where $\eta(\mb
+  x) =
+  \P(Y=1\; |\; \mb X=\mb x)$) is also   a solution of the conditional
+  risk minimization problem. 
+ Finally,  the conditional bias
+ $ \inf_{g\in \mathcal{G}}L_\alpha(g)-L_\alpha(g_\alpha^*)$ can
+ be expressed as
+$$\frac{1}{\alpha}\inf_{g \in \mathcal{G}} \mathbb{E} \left [ |2
+  \eta(\mathbf{X})-1|\mathds{1}_{g(\mathbf{X}) \neq g^*(\mathbf{X})
+  }\mathds{1}_{ \|\mathbf{X}\| \ge t_\alpha}\right], $$ to be compared
+with the standard bias $$\inf_{g \in \mathcal{G}} \mathbb{E} \left [ |2
+  \eta(\mathbf{X})-1|\mathds{1}_{g(\mathbf{X}) \neq g^*(\mathbf{X})
+  }\right].$$
 
 \end{remark}
-
 
 
 
@@ -1029,182 +1060,180 @@ observations, with immediate applications to the field of anomaly detection.% , 
 %\appendix
 
 
-\section{Proof of Theorem \ref{colt:thm-princ}}
+% \section{Proof of Theorem \ref{colt:thm-princ}}
 
-% The proof below holds for a stronger result than Theorem \ref{colt:thm-princ}:
-Theorem~\ref{colt:thm-princ} is actually  a short version of
-Theorem~\ref{colt:thm-princ-general} below:
-\begin{theorem}[Maximal deviations]
-\label{colt:thm-princ-general}
-Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ \iid~realizations of a \rv~$\mathbf{X}$ valued in $\mathbb{R}^d$, a VC-class $\mathcal{A}$, and denote by $\mathcal{R}_{n,p}$ the associated relative Rademacher average defined by 
-\begin{align}
-\label{colt:def-extr-rad}
-\mathcal{R}_{n,p} = \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{np} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{X}_i \in A}\right|~. 
-\end{align}
-Define the union $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and $ p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Fix $0<\delta<1$, then with probability at least $1-\delta$,
-\begin{align*}
-\frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ 2 \mathcal{R}_{n,p} ~+~ \frac{2}{3np} \log \frac{1}{\delta} ~+~ 2 \sqrt{\frac{1}{np} \log \frac{1}{\delta}}~,
-\end{align*}
-and there is a constant $C$ independent of $n,p,\delta$ such that with probability greater than $1- \delta$,
-\begin{align*}
-\sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ C \left( \sqrt{p} \sqrt{\frac{V_{\mathcal{A}}}{n} \log{\frac{1}{\delta}}} ~+~ \frac{1}{n} \log \frac{1}{\delta} \right)~.
-\end{align*}
-\noindent
-If we assume furthermore that $\delta \ge e^{-np}$, then we both have:
+% % The proof below holds for a stronger result than Theorem \ref{colt:thm-princ}:
+% Theorem~\ref{colt:thm-princ} is actually  a short version of
+% Theorem~\ref{colt:thm-princ-general} below:
+% \begin{theorem}[Maximal deviations]
+% \label{colt:thm-princ-general}
+% Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ \iid~realizations of a \rv~$\mathbf{X}$ valued in $\mathbb{R}^d$, a VC-class $\mathcal{A}$, and denote by $\mathcal{R}_{n,p}$ the associated relative Rademacher average defined by 
+% \begin{align}
+% \label{colt:def-extr-rad}
+% \mathcal{R}_{n,p} = \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{np} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{X}_i \in A}\right|~. 
+% \end{align}
+% Define the union $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and $ p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Fix $0<\delta<1$, then with probability at least $1-\delta$,
+% \begin{align*}
+% \frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ 2 \mathcal{R}_{n,p} ~+~ \frac{2}{3np} \log \frac{1}{\delta} ~+~ 2 \sqrt{\frac{1}{np} \log \frac{1}{\delta}}~,
+% \end{align*}
+% and there is a constant $C$ independent of $n,p,\delta$ such that with probability greater than $1- \delta$,
+% \begin{align*}
+% \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ C \left( \sqrt{p} \sqrt{\frac{V_{\mathcal{A}}}{n} \log{\frac{1}{\delta}}} ~+~ \frac{1}{n} \log \frac{1}{\delta} \right)~.
+% \end{align*}
+% \noindent
+% If we assume furthermore that $\delta \ge e^{-np}$, then we both have:
 
-\begin{align*}
-&\frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ 2 \mathcal{R}_{n,p}  ~+~ 3 \sqrt{\frac{1}{np} \log \frac{1}{\delta}}\\
-&\frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ C \sqrt{\frac{V_{\mathcal{A}}}{np} \log{\frac{1}{\delta}}}~.
-\end{align*}
-\end{theorem}
-
-
-In the following, $\mb X_{1:n}$ denotes an \iid~sample $(\mb
-X_1,\ldots,\mb X_n)$ distributed as  $\mb X$,  a $\bb R^d$-valued random vector. The classical steps to prove VC inequalities consist in applying a
-concentration inequality to the function
-\begin{equation}
-  \label{colt:eq:fsupdev}
-  f(\mathbf{X}_{1:n}):= \sup_{A \in \mathcal{A}}
-\left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n
-  \mathds{1}_{\mathbf{X}_i \in A} \right|, 
-\end{equation}
- and then  establishing  bounds
-on the expectation $\mathbb{E}f(\mathbf{X}_{1:n})$, using for instance
-Rademacher average. Here we follow the same lines, but applying a
-Bernstein type concentration inequality instead of the usual Hoeffding
-one, since the variance term in the bound involves the probability $p$
-to be in the union of the VC-class $\mathcal{A}$ considered. We then
-introduce relative Rademacher averages instead of the conventional
-ones, to take into account  $p$ for bounding  $\mathbb{E}f(\mathbf{X}_{1:n})$. 
-
-We need first to  control the variability of the random variable $f(\mathbf{X}_{1:n})$ when fixing all but one marginal $\mathbf{X}_i$. For that purpose introduce the functional
-\begin{align*}
-h(\mathbf{x}_1,\ldots,\mathbf{x}_k) = \mathbb{E}\left [ f(\mb X_{1:n}) | \mathbf{X}_1=\mathbf{x}_1,\ldots,\mathbf{X}_k=\mathbf{x}_k \right] - \mathbb{E}\left [ f(\mb X_{1:n}) | \mathbf{X}_1=\mathbf{x}_1,\ldots,\mathbf{X}_{k-1}=\mathbf{x}_{k-1} \right]
-\end{align*}
-%and $g_k(X_k)$ the random variable $h(x_1,...,x_{k-1}, X_k)$ . 
-The \emph{positive deviation} of
-$h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1},\mathbf{X}_k)$ is defined by 
-\[dev^+(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1})= \sup_{\mathbf{x} \in
-  \mathbb{R}^d} \left \{
-  h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1},\mathbf{x})\right \}, \]
- and $\text{maxdev}^+$, the maximum of all positive deviations, by 
- \[\text{maxdev}^+ = \sup_{\mathbf{x}_1,\ldots,\mathbf{x}_{k-1}} \max_{k}\;
- dev^+(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1})~.\] % The variance of
- % $h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1},\mathbf{X}_k)$ is denoted by
- % $var(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1})$.
- Finally,  define $\hat v $, the \emph{maximum sum of
- variances}, by $$\hat v = \sup_{\mathbf{x}_1,\ldots,\mathbf{x}_n}
- \sum_{k=1}^{n} \Var~ h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1}, \mb X_k)~.$$ We have
- now the tools to state an extension of the classical Bernstein
- inequality, which is proved in \cite{McDiarmid98}.
-\begin{proposition}
-\label{colt:thm-berstein}
-Let $\mathbf{X}_{1:n} = (\mathbf{X}_1,\ldots,\mathbf{X}_n)$ % and $f(\mb X_{1:n})$ both defined
-as above, and $f$ any function $(\bb R^d)^n\to \bb R$~.  Let $\text{maxdev}^+$
-and $\hat v$ the maximum sum of variances, both of which we assume to
-be finite, and let $\mu$ be the mean of $f(\mb X_{1:n})$. Then for any $t \ge 0$,
-\begin{align*}
-\mathbb{P} \big[ f(\mb X_{1:n}) - \mu \ge t \big] ~\le~ \exp{\left(- \frac{t^2}{2 \hat v (1 + \frac{\text{maxdev}^+ t}{3 \hat v}) }\right)}~.
-\end{align*}
-\end{proposition}
-\noindent
-Note that the term $\frac{\text{maxdev}^+ t}{3 \hat v}$ is view as an `error
-term' and is often negligible. Let us apply this theorem to the
-specific  function $f$ defined in (\ref{colt:eq:fsupdev}).  
-% $\mathbf{X}_1 , \ldots , \mathbf{X}_n$ are i.i.d realizations of a \rv~$\mathbf{X}$ in $\mathbb{R}^{d}$ and
-% $$f(\mb X_{1:n})= \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right|~.$$
-Then the following lemma (which have been stated and proved in the Chapter~\ref{chap:back_concentration}, see Lemma~\ref{back:lem-1}) holds true:
-
-\begin{lemma}
-\label{colt:lem-1}
-In the situation of Proposition \ref{colt:thm-berstein} with $f$ as in
-(\ref{colt:eq:fsupdev}),  we have
-$$\text{maxdev}^+ \le \frac{1}{n} \text{~~and~~} \hat v \le \frac{q}{n}, $$ where 
-\begin{align}
-\label{colt:lem-1:q}
-q ~=~ \mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left |
-    \mathds{1}_{\mathbf{X}' \in A} - \mathds{1}_{\mathbf{X} \in A}
-  \right|\right) ~\le~ 2 \mathbb{E}\left ( \sup_{A \in \mathcal{A}}
-  \left | \mathds{1}_{\mathbf{X}' \in A}  \mathds{1}_{\mathbf{X}
-      \notin A} \right|\right), 
-\end{align}
-with $\mathbf{X}'$ an independent copy of $\mathbf{X}$.
-
-%with $\mathbf{X}$ an independent copy of $\mathbf{X}$.
- %$ p = \mathbb{P}(X_1 \in \mathbb{A}) $, $\mathbb{A} = \cup_{A \in \mathbb{A} } A$.
-\end{lemma}
-
-%\noindent
-%\begin{rk}
-%\label{colt:question1}
-%It must be possible to obtain the same result with $\tilde q = \sup_{A \in \mathcal{A}} \mathbb{P}(X_1 \in A)$ instead of $q$. To prove it, it would have suffice to show that $q \le C \tilde q$,
-%i.e $$\mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left | \mathds{1}_{X_1' \in A} - \mathds{1}_{X_1 \in A} \right|\right) \le C \sup_{A \in \mathcal{A}} \mathbb{E}\left ( \mathds{1}_{X_1 \in A} \right) $$
-%\end{rk}
-
-%\begin{rk}
-%Define the union $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and $p = \mathbb{P}(X_1 \in \mathbb{A})$. Noting that for all $A \in \mathcal{A}$, $\mathds{1}_{\{ . \in A\}} \le \mathds{1}_{\{ . \in \mathbb{A}\}}$, it is then straighforward from the second expression of $q$ that $q \le 2p$. As a consequence Lemma \ref{colt:lem-1} holds true when changing $q$ by $2p$.
-%\end{rk}
-\noindent
-As a consequence with Proposition \ref{colt:thm-berstein} the following general inequality holds true:
-\begin{align}
-\label{colt:concentration-general}
-\mathbb{P}\left [ f(\mb X_{1:n}) - \mathbb{E} f(\mb X_{1:n}) ~\ge~ t \right] ~\le~ e^{-\frac{n t^2}{2q + \frac{2t}{3}} }
-\end{align}
-\noindent
-where the quantity $q~=~ \mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left | \mathds{1}_{\mathbf{X}' \in A} - \mathds{1}_{\mathbf{X} \in A} \right|\right)$ %$= 2 \mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left | \mathds{1}_{X' \in A}  \mathds{1}_{X \notin A} \right|\right)$ 
-seems to be a central characteristic of the VC-class $\mathcal{A}$ given the distribution $\mathbf{X}$. It may be interpreted as a measure of the complexity of the class $\mathcal{A}$ with respect to the distribution of $\mathbf{X}$: how often the class $\mathcal{A}$ is able to separate two independent realizations of $\mathbf{X}$. 
-
-Recall that the union class $\mathbb{A}$ and its associated probability $p$ are defined as $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and $p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Noting that for all $A \in \mathcal{A}$, $\mathds{1}_{\{ . \in A\}} \le \mathds{1}_{\{ . \in \mathbb{A}\}}$, it is then straightforward from (\ref{colt:lem-1:q}) that $q \le 2p$. As a consequence (\ref{colt:concentration-general})  holds true when changing $q$ by $2p$.
-Let us now explicit the link between the expectation of $f$ and the Rademacher average $$\mathcal{R}_n = \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{n} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{X}_i \in A}\right|~,$$ where $(\sigma_i)_{i \ge 1}$ is a Rademacher chaos independent of the $\mathbf{X}_i$'s.
-\begin{lemma}
-\label{colt:lem-rademacher}
- With this notations the following inequality holds true:
-$$ \mathbb{E}f(\mb X_{1:n}) ~\le~ 2 \mathcal{R}_n$$
-\end{lemma}
-This lemma has been proved in Chapter~\ref{chap:back_concentration} in Theorem~\ref{back:thm-rademacher}.
-Combining (\ref{colt:concentration-general}) with Lemma \ref{colt:lem-rademacher} and the fact that $q \le 2p$ gives:
-\begin{align}
-\label{colt:vc1}
-\mathbb{P}\left [ f(\mb X_{1:n}) - 2 \mathcal{R}_n \ge t \right] ~\le~ e^{-\frac{n t^2}{4p + \frac{2t}{3}} }~.
-\end{align}
-%, even if the central quantity is here $q$.
+% \begin{align*}
+% &\frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ 2 \mathcal{R}_{n,p}  ~+~ 3 \sqrt{\frac{1}{np} \log \frac{1}{\delta}}\\
+% &\frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| ~~\le~~ C \sqrt{\frac{V_{\mathcal{A}}}{np} \log{\frac{1}{\delta}}}~.
+% \end{align*}
+% \end{theorem}
 
 
-%%%%Point out that in practice, $p$ may depend of $n$ and may verify $p \le Ck(n)/n=Ck/n$ where $k \to \infty$ and $k=o(n)$ ($k/n$ will be the proportion of extreme data selected to represent extreme behavior). 
+% In the following, $\mb X_{1:n}$ denotes an \iid~sample $(\mb
+% X_1,\ldots,\mb X_n)$ distributed as  $\mb X$,  a $\bb R^d$-valued random vector. The classical steps to prove VC inequalities consist in applying a
+% concentration inequality to the function
+% \begin{equation}
+%   \label{colt:eq:fsupdev}
+%   f(\mathbf{X}_{1:n}):= \sup_{A \in \mathcal{A}}
+% \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n
+%   \mathds{1}_{\mathbf{X}_i \in A} \right|, 
+% \end{equation}
+%  and then  establishing  bounds
+% on the expectation $\mathbb{E}f(\mathbf{X}_{1:n})$, using for instance
+% Rademacher average. Here we follow the same lines, but applying a
+% Bernstein type concentration inequality instead of the usual Hoeffding
+% one, since the variance term in the bound involves the probability $p$
+% to be in the union of the VC-class $\mathcal{A}$ considered. We then
+% introduce relative Rademacher averages instead of the conventional
+% ones, to take into account  $p$ for bounding  $\mathbb{E}f(\mathbf{X}_{1:n})$. 
 
-%We would like now to renormalize inequality (\ref{colt:vc1}) to obtain bounds on $\mathbb{P}\left [ f(X)/p - 2 \mathcal{R}_n/p \ge t \right]$ which would implies bound on $\mathbb{P}\left [ f(X)/p' - 2 \mathcal{R}_n/p' \ge t \right]$ for every $p' > p$. %%%, in particular for $p' = C\frac{k}{n}$.
-%If we only use standard VC-inequality \ie $~\mathbb{P}\left ( f(X) - 2\mathcal{R}_n \ge t \right) \le e^{-\frac{nt^2}{32}}$, we only obtain: \begin{align}\label{colt:VC-standard} \mathbb{P}\left [ f(X)/p - 2 \mathcal{R}_n/p \ge t \right] \le e^{-\frac{np^2t^2}{32}}~.\end{align}
-Recall that the relative Rademacher average are defined in (\ref{colt:def-extr-rad}) as $\mathcal{R}_{n,p} = \mathcal{R}_n /p$. 
-%If $p \sim k/n$ we obtain $$ \mathcal{R}_{n,p} \sim \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{k} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{X_i \in A}\right|~.$$
-It is well-known that $\mathcal{R}_n$ is of order $\mathcal{O}( (V_{\mathcal{A}}/n)^{1/2})$, see \cite{Kolt06} for instance. However, we hope a stronger bound than just $\mathcal{R}_{n,p} = \mathcal{O}(p^{-1}(V_{\mathcal{A}}/n)^{1/2})$ since $\frac{1}{np} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{X}_i \in A}\right|$ with $\mathbb{P}(\mathbf{X}_i \in \mathbb{A})=p$ is expected to be like $\frac{1}{np} \left | \sum_{i=1}^{np} \sigma_i \mathds{1}_{\mathbf{Y}_i \in A}\right|$ with $\mathbf{Y}_i$ such that $\mathbb{P}(\mathbf{Y}_i \in \mathbb{A}) = 1$. The result below confirms this heuristic:
+% We need first to  control the variability of the random variable $f(\mathbf{X}_{1:n})$ when fixing all but one marginal $\mathbf{X}_i$. For that purpose introduce the functional
+% \begin{align*}
+% h(\mathbf{x}_1,\ldots,\mathbf{x}_k) = \mathbb{E}\left [ f(\mb X_{1:n}) | \mathbf{X}_1=\mathbf{x}_1,\ldots,\mathbf{X}_k=\mathbf{x}_k \right] - \mathbb{E}\left [ f(\mb X_{1:n}) | \mathbf{X}_1=\mathbf{x}_1,\ldots,\mathbf{X}_{k-1}=\mathbf{x}_{k-1} \right]
+% \end{align*}
+% %and $g_k(X_k)$ the random variable $h(x_1,...,x_{k-1}, X_k)$ . 
+% The \emph{positive deviation} of
+% $h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1},\mathbf{X}_k)$ is defined by 
+% \[dev^+(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1})= \sup_{\mathbf{x} \in
+%   \mathbb{R}^d} \left \{
+%   h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1},\mathbf{x})\right \}, \]
+%  and $\text{maxdev}^+$, the maximum of all positive deviations, by 
+%  \[\text{maxdev}^+ = \sup_{\mathbf{x}_1,\ldots,\mathbf{x}_{k-1}} \max_{k}\;
+%  dev^+(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1})~.\] % The variance of
+%  % $h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1},\mathbf{X}_k)$ is denoted by
+%  % $var(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1})$.
+%  Finally,  define $\hat v $, the \emph{maximum sum of
+%  variances}, by $$\hat v = \sup_{\mathbf{x}_1,\ldots,\mathbf{x}_n}
+%  \sum_{k=1}^{n} \Var~ h(\mathbf{x}_1,\ldots,\mathbf{x}_{k-1}, \mb X_k)~.$$ We have
+%  now the tools to state an extension of the classical Bernstein
+%  inequality, which is proved in \cite{McDiarmid98}.
+% \begin{proposition}
+% \label{colt:thm-berstein}
+% Let $\mathbf{X}_{1:n} = (\mathbf{X}_1,\ldots,\mathbf{X}_n)$ % and $f(\mb X_{1:n})$ both defined
+% as above, and $f$ any function $(\bb R^d)^n\to \bb R$~.  Let $\text{maxdev}^+$
+% and $\hat v$ the maximum sum of variances, both of which we assume to
+% be finite, and let $\mu$ be the mean of $f(\mb X_{1:n})$. Then for any $t \ge 0$,
+% \begin{align*}
+% \mathbb{P} \big[ f(\mb X_{1:n}) - \mu \ge t \big] ~\le~ \exp{\left(- \frac{t^2}{2 \hat v (1 + \frac{\text{maxdev}^+ t}{3 \hat v}) }\right)}~.
+% \end{align*}
+% \end{proposition}
+% \noindent
+% Note that the term $\frac{\text{maxdev}^+ t}{3 \hat v}$ is view as an `error
+% term' and is often negligible. Let us apply this theorem to the
+% specific  function $f$ defined in (\ref{colt:eq:fsupdev}).  
+% % $\mathbf{X}_1 , \ldots , \mathbf{X}_n$ are i.i.d realizations of a \rv~$\mathbf{X}$ in $\mathbb{R}^{d}$ and
+% % $$f(\mb X_{1:n})= \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right|~.$$
+% Then the following lemma (which have been stated and proved in the Chapter~\ref{chap:back_concentration}, see Lemma~\ref{back:lem-1}) holds true:
 
-\begin{lemma}
-\label{colt:lem-relative-rademacher}
-The relative Rademacher average ${\mathcal{R}}_{n,p}$ is of order $\mathcal{O}(\sqrt\frac{V_{\mathcal{A}}}{pn})$. %In particular, if $p=Ck/n$, $\mathcal{R}_{n,p} = \mathcal{O}_{\mathbb{P}}(\frac{1}{\sqrt{k}})$.
-\end{lemma}
-This lemma has been proved in Chapter~\ref{chap:back_concentration}, see Lemma~\ref{back:lem-relative-rademacher}.
+% \begin{lemma}
+% \label{colt:lem-1}
+% In the situation of Proposition \ref{colt:thm-berstein} with $f$ as in
+% (\ref{colt:eq:fsupdev}),  we have
+% $$\text{maxdev}^+ \le \frac{1}{n} \text{~~and~~} \hat v \le \frac{q}{n}, $$ where 
+% \begin{align}
+% \label{colt:lem-1:q}
+% q ~=~ \mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left |
+%     \mathds{1}_{\mathbf{X}' \in A} - \mathds{1}_{\mathbf{X} \in A}
+%   \right|\right) ~\le~ 2 \mathbb{E}\left ( \sup_{A \in \mathcal{A}}
+%   \left | \mathds{1}_{\mathbf{X}' \in A}  \mathds{1}_{\mathbf{X}
+%       \notin A} \right|\right), 
+% \end{align}
+% with $\mathbf{X}'$ an independent copy of $\mathbf{X}$.
 
-%\begin{rk}
-%It would be even greater to have the same result with $\tilde q$ defined in remark \ref{colt:question1} in place of $p$. If it was the case, then Proposition \ref{colt:prop-princ} and Theorem \ref{colt:thm-princ} following would hold true with $\tilde q$ in place of $p$, which would be an even stronger result.
-%\end{rk}
+% %with $\mathbf{X}$ an independent copy of $\mathbf{X}$.
+%  %$ p = \mathbb{P}(X_1 \in \mathbb{A}) $, $\mathbb{A} = \cup_{A \in \mathbb{A} } A$.
+% \end{lemma}
+
+% %\noindent
+% %\begin{rk}
+% %\label{colt:question1}
+% %It must be possible to obtain the same result with $\tilde q = \sup_{A \in \mathcal{A}} \mathbb{P}(X_1 \in A)$ instead of $q$. To prove it, it would have suffice to show that $q \le C \tilde q$,
+% %i.e $$\mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left | \mathds{1}_{X_1' \in A} - \mathds{1}_{X_1 \in A} \right|\right) \le C \sup_{A \in \mathcal{A}} \mathbb{E}\left ( \mathds{1}_{X_1 \in A} \right) $$
+% %\end{rk}
+
+% %\begin{rk}
+% %Define the union $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and $p = \mathbb{P}(X_1 \in \mathbb{A})$. Noting that for all $A \in \mathcal{A}$, $\mathds{1}_{\{ . \in A\}} \le \mathds{1}_{\{ . \in \mathbb{A}\}}$, it is then straighforward from the second expression of $q$ that $q \le 2p$. As a consequence Lemma \ref{colt:lem-1} holds true when changing $q$ by $2p$.
+% %\end{rk}
+% \noindent
+% As a consequence with Proposition \ref{colt:thm-berstein} the following general inequality holds true:
+% \begin{align}
+% \label{colt:concentration-general}
+% \mathbb{P}\left [ f(\mb X_{1:n}) - \mathbb{E} f(\mb X_{1:n}) ~\ge~ t \right] ~\le~ e^{-\frac{n t^2}{2q + \frac{2t}{3}} }
+% \end{align}
+% \noindent
+% where the quantity $q~=~ \mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left | \mathds{1}_{\mathbf{X}' \in A} - \mathds{1}_{\mathbf{X} \in A} \right|\right)$ %$= 2 \mathbb{E}\left ( \sup_{A \in \mathcal{A}} \left | \mathds{1}_{X' \in A}  \mathds{1}_{X \notin A} \right|\right)$ 
+% seems to be a central characteristic of the VC-class $\mathcal{A}$ given the distribution $\mathbf{X}$. It may be interpreted as a measure of the complexity of the class $\mathcal{A}$ with respect to the distribution of $\mathbf{X}$: how often the class $\mathcal{A}$ is able to separate two independent realizations of $\mathbf{X}$. 
+
+% Recall that the union class $\mathbb{A}$ and its associated probability $p$ are defined as $\mathbb{A} = \cup_{A \in \mathcal{A}} A$, and $p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Noting that for all $A \in \mathcal{A}$, $\mathds{1}_{\{ . \in A\}} \le \mathds{1}_{\{ . \in \mathbb{A}\}}$, it is then straightforward from (\ref{colt:lem-1:q}) that $q \le 2p$. As a consequence (\ref{colt:concentration-general})  holds true when changing $q$ by $2p$.
+% Let us now explicit the link between the expectation of $f$ and the Rademacher average $$\mathcal{R}_n = \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{n} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{X}_i \in A}\right|~,$$ where $(\sigma_i)_{i \ge 1}$ is a Rademacher chaos independent of the $\mathbf{X}_i$'s.
+% \begin{lemma}
+% \label{colt:lem-rademacher}
+%  With this notations the following inequality holds true:
+% $$ \mathbb{E}f(\mb X_{1:n}) ~\le~ 2 \mathcal{R}_n$$
+% \end{lemma}
+% This lemma has been proved in Chapter~\ref{chap:back_concentration} in Theorem~\ref{back:thm-rademacher}.
+% Combining (\ref{colt:concentration-general}) with Lemma \ref{colt:lem-rademacher} and the fact that $q \le 2p$ gives:
+% \begin{align}
+% \label{colt:vc1}
+% \mathbb{P}\left [ f(\mb X_{1:n}) - 2 \mathcal{R}_n \ge t \right] ~\le~ e^{-\frac{n t^2}{4p + \frac{2t}{3}} }~.
+% \end{align}
+% %, even if the central quantity is here $q$.
 
 
-\noindent
-Finally we obtain from (\ref{colt:vc1}) and Lemma \ref{colt:lem-relative-rademacher} the following bound:
-\begin{align}
-\label{colt:prop-princ}
-\mathbb{P} \left [ \frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| - 2 \mathcal{R}_{n,p} ~>~ t \right] ~~\le~~ e^{-\frac{np t^2}{4 + \frac{2t}{3}} }
-\end{align}
-\noindent
-Solving $ \exp \left [ - \frac{np t^2}{4  + \frac{2}{3} t}\right]=\delta$ with $t > 0$ leads to $$t ~=~ \frac{1}{3np} \log \frac{1}{\delta} + \sqrt{\left ( \frac{1}{3np} \log \frac{1}{\delta}\right)^{2} + \frac{4}{np} \log \frac{1}{\delta} } ~:=~h(\delta)$$ so that
-\begin{align*}
-\mathbb{P} \left [ \frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| - 2 \mathcal{R}_{n,p} ~> h(\delta) \right] ~~\le~~ \delta
-\end{align*}
-\noindent
-Using $\sqrt{a+b} \le \sqrt a + \sqrt b~$ if $a,b \ge 0$, we have $h(\delta) < \frac{2}{3np} \log \frac{1}{\delta} + 2 \sqrt{\frac{1}{np} \log \frac{1}{\delta}} $. In the case of $\delta \ge e^{-np}$, $\frac{2}{3np} \log \frac{1}{\delta} \le \frac{2}{3} \sqrt{ \frac{1}{np}\log \frac{1}{\delta}} $ so that 
-$h(\delta) < 3 \sqrt{\frac{1}{np} \log \frac{1}{\delta}} $. This ends the proof.
+% %%%%Point out that in practice, $p$ may depend of $n$ and may verify $p \le Ck(n)/n=Ck/n$ where $k \to \infty$ and $k=o(n)$ ($k/n$ will be the proportion of extreme data selected to represent extreme behavior). 
+
+% %We would like now to renormalize inequality (\ref{colt:vc1}) to obtain bounds on $\mathbb{P}\left [ f(X)/p - 2 \mathcal{R}_n/p \ge t \right]$ which would implies bound on $\mathbb{P}\left [ f(X)/p' - 2 \mathcal{R}_n/p' \ge t \right]$ for every $p' > p$. %%%, in particular for $p' = C\frac{k}{n}$.
+% %If we only use standard VC-inequality \ie $~\mathbb{P}\left ( f(X) - 2\mathcal{R}_n \ge t \right) \le e^{-\frac{nt^2}{32}}$, we only obtain: \begin{align}\label{colt:VC-standard} \mathbb{P}\left [ f(X)/p - 2 \mathcal{R}_n/p \ge t \right] \le e^{-\frac{np^2t^2}{32}}~.\end{align}
+% Recall that the relative Rademacher average are defined in (\ref{colt:def-extr-rad}) as $\mathcal{R}_{n,p} = \mathcal{R}_n /p$. 
+% %If $p \sim k/n$ we obtain $$ \mathcal{R}_{n,p} \sim \mathbb{E} \sup_{A \in \mathcal{A}} \frac{1}{k} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{X_i \in A}\right|~.$$
+% It is well-known that $\mathcal{R}_n$ is of order $\mathcal{O}( (V_{\mathcal{A}}/n)^{1/2})$, see \cite{Kolt06} for instance. However, we hope a stronger bound than just $\mathcal{R}_{n,p} = \mathcal{O}(p^{-1}(V_{\mathcal{A}}/n)^{1/2})$ since $\frac{1}{np} \left | \sum_{i=1}^{n} \sigma_i \mathds{1}_{\mathbf{X}_i \in A}\right|$ with $\mathbb{P}(\mathbf{X}_i \in \mathbb{A})=p$ is expected to be like $\frac{1}{np} \left | \sum_{i=1}^{np} \sigma_i \mathds{1}_{\mathbf{Y}_i \in A}\right|$ with $\mathbf{Y}_i$ such that $\mathbb{P}(\mathbf{Y}_i \in \mathbb{A}) = 1$. The result below confirms this heuristic:
+
+% \begin{lemma}
+% \label{colt:lem-relative-rademacher}
+% The relative Rademacher average ${\mathcal{R}}_{n,p}$ is of order $\mathcal{O}(\sqrt\frac{V_{\mathcal{A}}}{pn})$. %In particular, if $p=Ck/n$, $\mathcal{R}_{n,p} = \mathcal{O}_{\mathbb{P}}(\frac{1}{\sqrt{k}})$.
+% \end{lemma}
+% This lemma has been proved in Chapter~\ref{chap:back_concentration}, see Lemma~\ref{back:lem-relative-rademacher}.
+
+% %\begin{rk}
+% %It would be even greater to have the same result with $\tilde q$ defined in remark \ref{colt:question1} in place of $p$. If it was the case, then Proposition \ref{colt:prop-princ} and Theorem \ref{colt:thm-princ} following would hold true with $\tilde q$ in place of $p$, which would be an even stronger result.
+% %\end{rk}
 
 
+% \noindent
+% Finally we obtain from (\ref{colt:vc1}) and Lemma \ref{colt:lem-relative-rademacher} the following bound:
+% \begin{align}
+% \label{colt:prop-princ}
+% \mathbb{P} \left [ \frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| - 2 \mathcal{R}_{n,p} ~>~ t \right] ~~\le~~ e^{-\frac{np t^2}{4 + \frac{2t}{3}} }
+% \end{align}
+% \noindent
+% Solving $ \exp \left [ - \frac{np t^2}{4  + \frac{2}{3} t}\right]=\delta$ with $t > 0$ leads to $$t ~=~ \frac{1}{3np} \log \frac{1}{\delta} + \sqrt{\left ( \frac{1}{3np} \log \frac{1}{\delta}\right)^{2} + \frac{4}{np} \log \frac{1}{\delta} } ~:=~h(\delta)$$ so that
+% \begin{align*}
+% \mathbb{P} \left [ \frac{1}{p} \sup_{A \in \mathcal{A}} \left | \mathbb{P}(\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A} \right| - 2 \mathcal{R}_{n,p} ~> h(\delta) \right] ~~\le~~ \delta
+% \end{align*}
+% \noindent
+% Using $\sqrt{a+b} \le \sqrt a + \sqrt b~$ if $a,b \ge 0$, we have $h(\delta) < \frac{2}{3np} \log \frac{1}{\delta} + 2 \sqrt{\frac{1}{np} \log \frac{1}{\delta}} $. In the case of $\delta \ge e^{-np}$, $\frac{2}{3np} \log \frac{1}{\delta} \le \frac{2}{3} \sqrt{ \frac{1}{np}\log \frac{1}{\delta}} $ so that 
+% $h(\delta) < 3 \sqrt{\frac{1}{np} \log \frac{1}{\delta}} $. This ends the proof.
 
 
 
@@ -1212,32 +1241,5 @@ $h(\delta) < 3 \sqrt{\frac{1}{np} \log \frac{1}{\delta}} $. This ends the proof.
 
 
 
-\section{Note on Remark \ref{colt:rk:prediction}}
-To obtain the bound in (\ref{colt:prediction:rates}), the following easy to show inequality is needed before  applying Theorem~\ref{colt:thm-princ} :
-\begin{align*}
-&\sup_{g\in \mathcal{G}}| {L}_{\alpha, n}(g)- L_{\alpha}(g)  | ~~ \le ~~ \frac{1}{\alpha} \Bigg[ \sup_{g\in \mathcal{G}} \left| \mathbb{P} \left(Y\neq g(\mathbf{X}),~ \| \mathbf{X}\|\ >t_\alpha \right) - \frac{1}{n}\sum_{i=1}^n\mathds{I}_{\{Y_i\neq
-   g(\mathbf{X}_i),~ \| \mathbf{X}_i\| > t_\alpha \}} \right| \\
-&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+~ \left| \mathbb{P} \left(\| \mathbf{X}\|\ >t_\alpha \right) - \frac{1}{n}\sum_{i=1}^n\mathds{I}_{\{ \| \mathbf{X}_i\| > t_\alpha  \}} \right| ~~+~~ \frac{1}{n}  \Bigg] ~.
-\end{align*}
 
 
-Note that the final objective would be   to bound the quantity 
-$\sup_{g\in \mathcal{G}}| {L}_{\alpha}(g)- L_{\alpha}(g^*_\alpha)  |$,
-where $g^*_\alpha$ is a Bayes classifier for the problem at stake,
-\ie~a  solution of the conditional risk  minimization problem  $\inf_{\{ g \text{
-    measurable}\}} L_\alpha(g)$. Such a bound involves a  bias term $ \inf_{g\in
-    \mathcal{G}}L_\alpha(g)-L_\alpha(g_\alpha^*)$, as in the classical
-  setting. Further, it  can  be shown that the standard Bayes classifier
-  $g^*(\mb x) := 2\mathbb{I}\{\eta(\mathbf{x})>1/2\}-1$ (where $\eta(\mb
-  x) =
-  \P(Y=1\; |\; \mb X=\mb x)$) is also   a solution of the conditional
-  risk minimization problem. 
- Finally,  the conditional bias
- $ \inf_{g\in \mathcal{G}}L_\alpha(g)-L_\alpha(g_\alpha^*)$ can
- be expressed as
-$\frac{1}{\alpha}\inf_{g \in \mathcal{G}} \mathbb{E} \left [ |2
-  \eta(\mathbf{X})-1|\mathds{1}_{g(\mathbf{X}) \neq g^*(\mathbf{X})
-  }\mathds{1}_{ \|\mathbf{X}\| \ge t_\alpha}\right] $, to be compared
-with the standard bias $\inf_{g \in \mathcal{G}} \mathbb{E} \left [ |2
-  \eta(\mathbf{X})-1|\mathds{1}_{g(\mathbf{X}) \neq g^*(\mathbf{X})
-  }\right]$.

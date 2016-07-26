@@ -1,0 +1,108 @@
+
+
+%% ----------------------------------------------------------------
+%% Thesis.tex
+%% ---------------------------------------------------------------- 
+
+%\documentclass[draft]{ecsthesis}      % Use the Thesis Style
+\documentclass{ecsthesis}      % Use the Thesis Style
+
+%\graphicspath{{../Figures/}}   % Location of your graphics files
+\usepackage{natbib}            % Use Natbib style for the refs.
+\usepackage{psfrag}
+\usepackage{multirow}
+\hypersetup{colorlinks=true}   % Set to false for black/white printing
+\input{definitions}            % Include your abbreviations
+%% ----------------------------------------------------------------
+
+
+\setcounter{secnumdepth}{3} % seting level of numbering (default for "report" is 3). With ''-1'' you have non number also for chapters
+\setcounter{tocdepth}{2}
+
+
+\begin{document}
+\begingroup
+  \makeatletter
+  \let\BR@bibitem\BRatbibitem
+  \nobibliography*
+\endgroup
+\frontmatter
+\title      {Machine Learning and Extremes for Anomaly Detection}
+\titre      {Apprentissage Automatique et Extrêmes pour la Détection d'Anomalies}
+\authors    {Nicolas Goix}
+\date       {Septembre 2015}
+\subject    {PhD Thesis}
+\keywords   {Anomaly Detection, Dimensionality Reduction, Multivariate Extremes, Concentration}
+\maketitle
+\input{publilisting}
+\input{ack}
+\tableofcontents
+\listoffigures
+\listoftables
+%\lstlistoflistings
+%\listofsymbols{ll}{}
+%\dedicatory{To \dots}
+% %% ----------------------------------------------------------------
+% \thispagestyle{plain}
+%
+% \null\vfill
+% ``There is nothing more practical than a good theory.''
+%
+% \begin{flushright}
+% --- James C. Maxwell
+% \end{flushright}
+%
+% \vspace*{1cm}
+%
+% ``There is a theory which states that if ever anyone discovers exactly what the Universe is for and why it is here, it will instantly disappear and be replaced by something even more bizarre and inexplicable.
+%
+% There is another theory which states that this has already happened.''
+%
+% \begin{flushright}
+% --- Douglas Adams
+% \end{flushright}
+%
+% \vfill\vfill\vfill\vfill\vfill\vfill\null
+% \clearpage
+% %% ----------------------------------------------------------------
+
+\mainmatter
+%% ----------------------------------------------------------------
+\chapter{Summary}\label{chap:intro}
+%%\addcontentsline{toc}{part}{\nameref{chap:intro}}
+%%\counterwithout{section}{chapter}
+\input{introduction.tex}
+%%\numberwithin{section}{chapter}
+
+\part{Preliminaries}\label{part:background}
+\input{background.tex}
+
+\part{An Excess-Mass based Performance Criterion}\label{part:struct}
+\input{aistat}
+\input{evaluation}
+
+\part{One Class Random Forests}
+\label{part:ocrf}
+\input{ocrf}
+
+\part{Accuracy on Extreme Regions}\label{part:vect}
+\input{colt}
+\input{jmva}
+
+\chapter{Conclusion \& Perspectives}\label{chap:concl}
+% \addcontentsline{toc}{chapter}{\nameref{chap:concl}}
+% \counterwithout{section}{chapter}
+\input{conclusion}
+% \numberwithin{section}{chapter}
+
+%%\input{ListPublis}
+\appendix
+%\input{AppendixPR}
+%\input{AppendixProofs}
+\backmatter
+\bibliographystyle{ecs}
+\bibliography{Thesis}
+
+\include{abstract}
+\end{document}
+%% ----------------------------------------------------------------

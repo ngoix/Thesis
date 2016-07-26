@@ -25,15 +25,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Truncated cones in 3D\relax }}{117}{figure.9.1}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Truncated $\epsilon $-rectangles in 2D\relax }}{117}{figure.9.2}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Estimation procedure\relax }}{123}{figure.caption.22}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Level sets of $s_n$ on simulated 2D data\relax }}{135}{figure.caption.23}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces sub-cone dimensions of wave data\relax }}{138}{figure.caption.25}
-\contentsline {figure}{\numberline {9.6}{\ignorespaces SF dataset, default parameters\relax }}{141}{figure.caption.30}
-\contentsline {figure}{\numberline {9.7}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{142}{figure.caption.31}
-\contentsline {figure}{\numberline {9.8}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{142}{figure.caption.32}
-\contentsline {figure}{\numberline {9.9}{\ignorespaces SA dataset, default parameters\relax }}{143}{figure.caption.33}
-\contentsline {figure}{\numberline {9.10}{\ignorespaces forestcover dataset, default parameters\relax }}{143}{figure.caption.34}
-\contentsline {figure}{\numberline {9.11}{\ignorespaces http dataset, default parameters\relax }}{144}{figure.caption.35}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Truncated cones in 3D\relax }}{113}{figure.9.1}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Truncated $\epsilon $-rectangles in 2D\relax }}{113}{figure.9.2}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Estimation procedure\relax }}{119}{figure.caption.22}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Level sets of $s_n$ on simulated 2D data\relax }}{131}{figure.caption.23}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces sub-cone dimensions of wave data\relax }}{134}{figure.caption.25}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces SF dataset, default parameters\relax }}{137}{figure.caption.30}
+\contentsline {figure}{\numberline {9.7}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{138}{figure.caption.31}
+\contentsline {figure}{\numberline {9.8}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{138}{figure.caption.32}
+\contentsline {figure}{\numberline {9.9}{\ignorespaces SA dataset, default parameters\relax }}{139}{figure.caption.33}
+\contentsline {figure}{\numberline {9.10}{\ignorespaces forestcover dataset, default parameters\relax }}{139}{figure.caption.34}
+\contentsline {figure}{\numberline {9.11}{\ignorespaces http dataset, default parameters\relax }}{140}{figure.caption.35}
 \addvspace {10\p@ }

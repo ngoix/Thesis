@@ -9,16 +9,15 @@
 \contentsline {subsection}{\numberline {1.3.1}Minimum Volume sets}{5}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}Mass-Volume curve}{6}{subsection.1.3.2}
 \contentsline {subsection}{\numberline {1.3.3}The Excess-Mass criterion}{7}{subsection.1.3.3}
-\contentsline {section}{\numberline {1.4}Evaluation of AD algorithms}{9}{section.1.4}
-\contentsline {section}{\numberline {1.5}One-Class Random Forests}{11}{section.1.5}
+\contentsline {section}{\numberline {1.4}Evaluation of AD algorithms}{10}{section.1.4}
+\contentsline {section}{\numberline {1.5}One-Class Random Forests}{12}{section.1.5}
 \contentsline {section}{\numberline {1.6}Extreme Values Analysis through STDF estimation}{14}{section.1.6}
 \contentsline {paragraph}{Preliminaries.}{14}{section.1.6}
 \contentsline {paragraph}{Learning the dependence structure of rare events.}{15}{section.1.6}
 \contentsline {section}{\numberline {1.7}Sparse Representation of Multivariate Extremes}{16}{section.1.7}
-\contentsline {subsection}{\numberline {1.7.1}Context: multivariate extreme values in large dimension}{17}{subsection.1.7.1}
 \contentsline {section}{\numberline {1.8}Scikit-learn contributions}{19}{section.1.8}
 \contentsline {section}{\numberline {1.9}Conclusion and Scientific Output}{20}{section.1.9}
-\contentsline {paragraph}{Context of this work.}{21}{section.1.9}
+\contentsline {paragraph}{Context of this work.}{22}{section.1.9}
 \contentsline {paragraph}{Outline of the thesis.}{22}{section.1.9}
 \contentsline {part}{I\hspace {1em}Preliminaries}{23}{part.1}
 \contentsline {chapter}{\numberline {2}Background on Anomaly Detection through Scikit-Learn}{25}{chapter.2}
@@ -33,9 +32,9 @@
 \contentsline {subsection}{\numberline {3.1.1}Preliminary definitions}{39}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Inequality for Bounded Random Variables}{40}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Bernstein-type Inequality (with variance term)}{42}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Famous Inequalities}{43}{section.3.2}
+\contentsline {section}{\numberline {3.2}Popular Inequalities}{43}{section.3.2}
 \contentsline {section}{\numberline {3.3}Links with Statistical Learning and VC theory}{46}{section.3.3}
-\contentsline {section}{\numberline {3.4}Sharper VC-bounds through a Bernstein-type inequality}{48}{section.3.4}
+\contentsline {section}{\numberline {3.4}Sharper VC-bounds through a Bernstein-type inequality}{49}{section.3.4}
 \contentsline {chapter}{\numberline {4}Extreme Value Theory}{53}{chapter.4}
 \contentsline {paragraph}{Notation reminder}{53}{chapter.4}
 \contentsline {section}{\numberline {4.1}Univariate Extreme Value Theory}{54}{section.4.1}
@@ -62,40 +61,39 @@
 \contentsline {section}{\numberline {8.1}Introduction}{95}{section.8.1}
 \contentsline {section}{\numberline {8.2}Background on the stable tail dependence function}{96}{section.8.2}
 \contentsline {section}{\numberline {8.3}A VC-type inequality adapted to the study of low probability regions}{97}{section.8.3}
+\contentsline {paragraph}{Classification of Extremes}{99}{theorem.8.3.4}
 \contentsline {section}{\numberline {8.4}A bound on the STDF}{100}{section.8.4}
 \contentsline {section}{\numberline {8.5}Discussion}{106}{section.8.5}
-\contentsline {section}{\numberline {8.6}Proof of Theorem \ref {colt:thm-princ}}{106}{section.8.6}
-\contentsline {section}{\numberline {8.7}Note on Remark \ref {colt:rk:prediction}}{109}{section.8.7}
-\contentsline {chapter}{\numberline {9}Sparse Representation of Multivariate Extremes}{111}{chapter.9}
-\contentsline {section}{\numberline {9.1}Introduction}{111}{section.9.1}
-\contentsline {subsection}{\numberline {9.1.1}Context: multivariate extreme values in large dimension}{111}{subsection.9.1.1}
-\contentsline {subsection}{\numberline {9.1.2}Application to Anomaly Detection}{114}{subsection.9.1.2}
-\contentsline {section}{\numberline {9.2}Multivariate EVT Framework and Problem Statement}{115}{section.9.2}
-\contentsline {subsection}{\numberline {9.2.1}Statement of the Statistical Problem}{116}{subsection.9.2.1}
-\contentsline {subsection}{\numberline {9.2.2}Regularity Assumptions}{119}{subsection.9.2.2}
-\contentsline {section}{\numberline {9.3}A non-parametric estimator of the subcones' mass : definition and preliminary results}{121}{section.9.3}
-\contentsline {subsection}{\numberline {9.3.1}A natural empirical version of the exponent measure mu}{121}{subsection.9.3.1}
-\contentsline {subsection}{\numberline {9.3.2}Accounting for the non asymptotic nature of data: epsilon-thickening.}{122}{subsection.9.3.2}
-\contentsline {subsection}{\numberline {9.3.3}Preliminaries: uniform approximation over a VC-class of rectangles}{123}{subsection.9.3.3}
-\contentsline {subsection}{\numberline {9.3.4}Bounding empirical deviations over thickened rectangles}{127}{subsection.9.3.4}
-\contentsline {subsection}{\numberline {9.3.5}Bounding the bias induced by thickened rectangles}{128}{subsection.9.3.5}
-\contentsline {subsection}{\numberline {9.3.6}Main result}{128}{subsection.9.3.6}
-\contentsline {section}{\numberline {9.4}Application to Anomaly Detection }{132}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}Background on anomaly detection}{132}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}DAMEX Algorithm: Detecting Anomalies among Multivariate Extremes}{133}{subsection.9.4.2}
-\contentsline {section}{\numberline {9.5}Experimental results}{136}{section.9.5}
-\contentsline {subsection}{\numberline {9.5.1}Recovering the support of the dependence structure of generated data}{136}{subsection.9.5.1}
-\contentsline {subsection}{\numberline {9.5.2}Sparse structure of extremes (wave data)}{137}{subsection.9.5.2}
-\contentsline {subsection}{\numberline {9.5.3}Application to Anomaly Detection on real-world data sets}{138}{subsection.9.5.3}
-\contentsline {section}{\numberline {9.6}Conclusion}{140}{section.9.6}
-\contentsline {section}{\numberline {9.7}Technical proofs}{143}{section.9.7}
-\contentsline {subsection}{\numberline {9.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{143}{subsection.9.7.1}
-\contentsline {subsection}{\numberline {9.7.2}Proof of Lemma \ref {jmva:lem:g-alpha}}{144}{subsection.9.7.2}
-\contentsline {subsection}{\numberline {9.7.3}Proof of Proposition \ref {jmva:prop:g}}{146}{subsection.9.7.3}
-\contentsline {subsection}{\numberline {9.7.4}Proof of Lemma \ref {jmva:lemma_simplex}}{150}{subsection.9.7.4}
-\contentsline {subsection}{\numberline {9.7.5}Proof of Remark\nobreakspace {}\ref {jmva:rk:optim}}{152}{subsection.9.7.5}
-\contentsline {section}{\numberline {9.8}Experiments curves}{152}{section.9.8}
-\contentsline {chapter}{\numberline {10}Conclusion \& Perspectives}{153}{chapter.10}
-\contentsline {chapter}{Bibliography}{155}{dummy.4}
-\contentsline {paragraph}{Abstract}{163}{appendix*.36}
-\contentsline {paragraph}{R\IeC {\'e}sum\IeC {\'e}}{163}{appendix*.36}
+\contentsline {chapter}{\numberline {9}Sparse Representation of Multivariate Extremes}{107}{chapter.9}
+\contentsline {section}{\numberline {9.1}Introduction}{107}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}Context: multivariate extreme values in large dimension}{107}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {9.1.2}Application to Anomaly Detection}{110}{subsection.9.1.2}
+\contentsline {section}{\numberline {9.2}Multivariate EVT Framework and Problem Statement}{111}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}Statement of the Statistical Problem}{112}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2.2}Regularity Assumptions}{115}{subsection.9.2.2}
+\contentsline {section}{\numberline {9.3}A non-parametric estimator of the subcones' mass : definition and preliminary results}{117}{section.9.3}
+\contentsline {subsection}{\numberline {9.3.1}A natural empirical version of the exponent measure mu}{117}{subsection.9.3.1}
+\contentsline {subsection}{\numberline {9.3.2}Accounting for the non asymptotic nature of data: epsilon-thickening.}{118}{subsection.9.3.2}
+\contentsline {subsection}{\numberline {9.3.3}Preliminaries: uniform approximation over a VC-class of rectangles}{119}{subsection.9.3.3}
+\contentsline {subsection}{\numberline {9.3.4}Bounding empirical deviations over thickened rectangles}{123}{subsection.9.3.4}
+\contentsline {subsection}{\numberline {9.3.5}Bounding the bias induced by thickened rectangles}{124}{subsection.9.3.5}
+\contentsline {subsection}{\numberline {9.3.6}Main result}{124}{subsection.9.3.6}
+\contentsline {section}{\numberline {9.4}Application to Anomaly Detection }{128}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}Background on anomaly detection}{128}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}DAMEX Algorithm: Detecting Anomalies among Multivariate Extremes}{129}{subsection.9.4.2}
+\contentsline {section}{\numberline {9.5}Experimental results}{132}{section.9.5}
+\contentsline {subsection}{\numberline {9.5.1}Recovering the support of the dependence structure of generated data}{132}{subsection.9.5.1}
+\contentsline {subsection}{\numberline {9.5.2}Sparse structure of extremes (wave data)}{133}{subsection.9.5.2}
+\contentsline {subsection}{\numberline {9.5.3}Application to Anomaly Detection on real-world data sets}{134}{subsection.9.5.3}
+\contentsline {section}{\numberline {9.6}Conclusion}{136}{section.9.6}
+\contentsline {section}{\numberline {9.7}Technical proofs}{139}{section.9.7}
+\contentsline {subsection}{\numberline {9.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{139}{subsection.9.7.1}
+\contentsline {subsection}{\numberline {9.7.2}Proof of Lemma \ref {jmva:lem:g-alpha}}{140}{subsection.9.7.2}
+\contentsline {subsection}{\numberline {9.7.3}Proof of Proposition \ref {jmva:prop:g}}{142}{subsection.9.7.3}
+\contentsline {subsection}{\numberline {9.7.4}Proof of Lemma \ref {jmva:lemma_simplex}}{146}{subsection.9.7.4}
+\contentsline {subsection}{\numberline {9.7.5}Proof of Remark\nobreakspace {}\ref {jmva:rk:optim}}{148}{subsection.9.7.5}
+\contentsline {section}{\numberline {9.8}Experiments curves}{148}{section.9.8}
+\contentsline {chapter}{\numberline {10}Conclusion \& Perspectives}{149}{chapter.10}
+\contentsline {chapter}{Bibliography}{151}{dummy.4}
+\contentsline {paragraph}{Abstract}{159}{appendix*.36}
+\contentsline {paragraph}{R\IeC {\'e}sum\IeC {\'e}}{159}{appendix*.36}

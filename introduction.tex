@@ -136,14 +136,18 @@ According to the Empirical Risk Minimization (ERM) paradigm, a scoring function 
 The next section describes two criteria, which are functional due to the global nature of the problem just like the \emph{Receiver Operating Characteristic} (\roc) and \emph{Precision-Recall} (PR) curves, and which are admissible with respect to the requirements listed above. These functional criteria extend somehow the concept of $\roc$ curve to the unsupervised setup.
 
 \begin{remark}{\bf Terminology: anomaly detection, anomaly ranking.\\}
-Strictly speaking, we are looking for \emph{anomaly ranking} criteria, in the same way the ROC curve is basically a criterion for bipartite \emph{ranking}.
+Strictly speaking, criteria we are looking for are anomaly \emph{ranking} criteria, in the same way the ROC curve is basically a criterion for bipartite \emph{ranking}.
 %
-However as mentionned above, all the algorithms dealing with anomalies produce first a ranking/scoring function, even the (few) ones which originally deal with a single one-class classification problem, \ie~seek to be optimal on a single level set or \wrt~a fixed false positive rate.
-%
-In the literature, the `anomaly detection' terminology is widely used, instead of the more precise `anomaly ranking' one. For instance, \cite{Liu2008} write `The task of anomaly detection is to provide a ranking that reflects the degree of anomaly'.
+In practice as mentionned above, all the algorithms dealing with anomalies are candidates for the anomaly ranking task. They all produce a ranking/scoring function, even the (few) ones which originally deal with the `anomaly classification' framework, % a single one-class classification problem,
+\ie~seek to be optimal on a single level set or \wrt~a fixed false positive rate.
+% ON NE PEUT PAS DEFINIR UNE SOUS CATEGORIE d'algo PAR UN BUT INITIAL: IL FAUT LA DEFINIR SUIVANT CE QU'Elle PRODUIt
+% OU: LE BUT INITIAL ETANT RANKING, ON PEUT PRETENDRE QUE LE RANKING PRODUIT PAR CLASSIF A UN CERTAIN NIVEAU EST UN BON CANDIDAT.
+In the literature, the `anomaly detection' terminology is widely used, instead of the more precise `anomaly ranking' one. For instance, \cite{Liu2008} write `\emph{The task of anomaly detection is to provide a ranking that reflects the degree of anomaly}'.
 %
 % Strictly speaking, anomaly detection should includes both anomaly ranking and anomaly classification.
-In this work, we similarly make the convention that anomaly detection refers to anomaly ranking. 
+In this work, we similarly make the convention that anomaly detection refers to anomaly ranking: if labels are available for the evaluation step, the goal is to maximise the area under the ROC curve. If no labeled data is available, the goal is to maximise the alternative criteria defined in the next section.
+
+%We also abusively use the term \emph{one-class classification} to denote what should be properly called \emph{one-class ranking}, namely the anomaly ranking framework when the training data are not polluted by outliers, also called \emph{novelty detection} or \emph{semi-supervised anomaly detection}.
 
 % Strictly speaking, we should speak about \emph{anomaly ranking} instead of anomaly detection. Indeed, all classical anomaly detection algorithms return first a \emph{ranking (or scoring) function} which ranks the observations according to their supposed degree of abnormality, and which can be thresholded to produce a binary label, normal vs. abnormal. Besides, all of them also evaluate themselves in terms of area under the ROC curve (when some labeled data are available to compute the latter) over some specific interval (not over a single point).
 
@@ -559,7 +563,7 @@ this class is \emph{hopefully rich enough to provide a good approximation while 
 %
 % To derive guaranties of theoretical nature (namely to attest the relevance of the algorithm in terms of \eg~ROC or EM/MV criteria), optimizing these evaluation criteria is often an efficient way. 
 % But this does not remains true in terms of empirical performance. 
-In this section, we propose a heuristic approach to build scoring functions using Random Forests (RFs) \citep{Breiman2001, Genuer2008, Biau2016}. % , which are an intuitive way of performing classification and regression.
+In this section, we propose a heuristic approach to build scoring functions using Random Forests (RFs) \citep{Breiman2001, Genuer2008, Biau2008, Biau2016}. % , which are an intuitive way of performing classification and regression.
 More formally, we adapt RFs to the one-class classification framework by introducing one-class splitting criteria.
 
 Standard RFs are estimators that fit a number of decision tree
@@ -735,9 +739,8 @@ with the dimensionality. In the present work we bridge the gap between the pract
 able to learn a sparse `normal profile' of multivariate extremes and,
 as such, may be implemented to improve the accuracy of any usual anomaly detection algorithm.
 
-\subsection{Context: multivariate extreme values in large dimension}
-\label{context}
-
+\textbf{Context: multivariate extreme values in large dimension.}
+%\label{context}
 Parametric or semi-parametric estimation of the structure of multivariate extremes is relatively well documented in the statistical literature, see  \emph{e.g.} \cite{coles1991modeling,fougeres2009models,cooley2010pairwise,sabourinNaveau2012} and the references therein. However, restrictive structural assumptions have to be made, stipulating \emph{e.g.} that only some pre-definite subgroups of components may be concomittantly extremes, or, on the contrary, that all of them must be. In addition, their practical use is restricted to moderate dimensional problems (say, $d\le 10$), otherwise simplifying modeling choices are needed, as \emph{e.g.} in \cite{stephenson2009high}). Finally, uncertainty assessment concerning the output of these models is made under the hypothesis that the training set is `asymptotic', in the sense that one assumes that, above a fixed high threshold, the data are exactly distributed according to the limit distribution of extremes. In other words, the modeling error is ignored. 
 
 Non-parametric estimation of the angular measure has only been treated in the two dimensional case, in \cite{Einmahl2001} and \cite{Einmahl2009}, in an asymptotic framework. Here we extend the nonasymptotic study on {\sc stdf} estimation (previous section) to the angular measure of extremes, restricted to a well-chosen class of sets, corresponding to lower-dimensional regions of the space. The objective is to learn a representation of the angular measure, rough enough to control the variance in high dimension and accurate enough to gain information about the `probable directions' of extremes, both at the same time. This yields a --first-- non-parametric estimate of the angular measure in any dimension, restricted to a class of subcones, %XXX Fig.
@@ -1028,7 +1031,7 @@ This contribution was supervised by Alexandre Gramfort and was funded by the Par
 \section{Conclusion and Scientific Output}
 The contributions of this thesis can be summarized as follows. 
 
-First, it proposes (Section~\ref{resume:em-curve}) an adequate performance criterion, in order to compare possible candidate scoring function and to pick one eventually. 
+First, an adequate performance criterion is proposed (Section~\ref{resume:em-curve}), in order to compare possible candidate scoring function and to pick one eventually. 
 The corresponding publication is \cite{AISTAT15}:
 \begin{itemize}
 \item On Anomaly Ranking and Excess-Mass Curves. (AISTAT 2015).\\
@@ -1040,7 +1043,7 @@ have originally been introduced to build scoring functions \emph{via}
 Empirical Risk Minimization (ERM), and no study has been made on their use to evaluate scoring functions as ROC or PR criteria do.
 % This is a major drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available. 
 
-As a second contribution, we show (empirically) that EM or MV based criteria are able to discriminate accurately (\wrt~ROC or PR based criteria) between scoring functions in law dimension. Besides, we propose a methodology based on feature sub-sampling and aggregating to scale the use of EM or MV to higher dimensions.
+As a second contribution, we show (empirically) that EM or MV based criteria are able to discriminate accurately (\wrt~ROC or PR based criteria) between scoring functions in low dimension. Besides, we propose a methodology based on feature sub-sampling and aggregating to scale the use of EM or MV to higher dimensions.
 The corresponding publications are \cite{ICMLworkshop16} and \cite{NIPS16evaluation}:
 \begin{itemize}
 \item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (ICML 2016, Workshop on Anomaly Detection). % Co-winner of the Best Paper Award, sponsored by Google.
@@ -1051,7 +1054,7 @@ Author: Goix.
 
 %However, to measure with this criterion the quality of a scoring function $s_n$, volume of level sets of $s_n$ have to be compute which is a considerable drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available.
 
-The third contribution of this thesis is to develop an efficient way of building accurate scoring functions. This is done by generalizing random forests to one-class classification. The corresponding publication is 
+The third contribution of this thesis is to develop an efficient way of building accurate scoring functions. This is done by generalizing random forests to one-class classification. The corresponding submitted work is \cite{OCRF16}: 
 \begin{itemize}
 \item One-Class Splitting Criteria for Random Forests with Application to Anomaly Detection. (Submitted to NIPS 2016).\\
 Authors: Goix, Brault, Drougard and Chiapino.
@@ -1077,7 +1080,7 @@ Authors: Goix, Sabourin, and Clémençon.
 \end{itemize}
 
 
-As a last contribution (of incremental nature), two classical anomaly detection algorithms have been implemented and merged on scikit-learn. They are used in this dissertation for empirical comparison to attest the relevance of the forementionned approaches.
+As a last contribution, two classical anomaly detection algorithms have been implemented and merged on scikit-learn. They are used in this dissertation for empirical comparison to attest the relevance of the forementionned approaches.
 The pull requests of these two contributions are available here:
 \begin{itemize}
 \item https://github.com/scikit-learn/scikit-learn/pull/4163  (Isolation Forest)
@@ -1092,13 +1095,29 @@ This thesis was carried out in the STA (Statistiques et Applications) team of th
 This dissertation is organized as follows. 
 \begin{itemize}
 \item Part~\ref{part:background} gathers the background work relevant to this thesis.
-Chapter~\ref{back:AD_scikit} reviews classical anomaly detection algorithms through the scikit-learn library and presents implementative contributions of this thesis; Chapter~\ref{chap:back_concentration} presents general results on measure concentration inequalities; and Chapter~\ref{back:EVT} provides a concise background on Extreme Value Theory.
+
+Chapter~\ref{back:AD_scikit} reviews classical anomaly detection algorithms through the scikit-learn library and presents implementative contributions of this thesis; 
+
+Chapter~\ref{chap:back_concentration} presents general results on measure concentration inequalities; 
+
+Chapter~\ref{back:EVT} provides a concise background on Extreme Value Theory.
 
 \item Part~\ref{part:struct} deals with unsupervised anomaly detection criteria.
-Chapter~\ref{aistat:chap} presents the details on anomaly ranking and excess-mass curve, as summarized above Section~\ref{resume:scoring}. Chapter~\ref{chap:evaluation} deals with the evaluation of anomaly detection algorithms, as summarized above Section~\ref{resume:scoring}. Chapter~\ref{resume:evaluation}.
+
+Chapter~\ref{aistat:chap} presents the details on anomaly ranking and excess-mass curve, as summarized above Section~\ref{resume:scoring}. The corresponding published work is \cite{AISTAT15}.
+
+Chapter~\ref{chap:evaluation} deals with the evaluation of anomaly detection algorithms, as summarized above Section~\ref{resume:scoring}. %Chapter~\ref{resume:evaluation}.
+The corresponding publications are \cite{ICMLworkshop16} and \cite{NIPS16evaluation}:
+
 
 \item Part~\ref{part:ocrf} is about one-class random forests: Chapter~\ref{chap:ocrf} presents the details % on one class splitting criteria 
   summarized above Section~\ref{resume:ocrf}.
+The corresponding submitted work is \citep{OCRF16}.
 
-\item Part~\ref{part:vect} focuses on EVT-based methods for anomaly detection. Chapter~\ref{colt} deals with the stable tail dependence function as summarized above in Section~\ref{resume:stdf}. Chapter~\ref{jmva} describes how scoring functions can be build using EVT, as previously summarized in Section~\ref{resume:sec:JMVA}.
+\item Part~\ref{part:vect} focuses on EVT-based methods for anomaly detection. 
+
+Chapter~\ref{colt} deals with the stable tail dependence function as summarized above in Section~\ref{resume:stdf}. The corresponding publication is \cite{COLT15}.
+
+Chapter~\ref{jmva} describes how scoring functions can be build using EVT, as previously summarized in Section~\ref{resume:sec:JMVA}.
+The corresponding publications are \cite{NIPSWORKSHOP15}, \cite{AISTAT16} and submitted work \cite{ARXIV16}.
 \end{itemize}

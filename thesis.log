@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  15 JUL 2016 11:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  27 JUL 2016 20:02
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1355,7 +1355,8 @@ runsystem(rm thesis.aex)...executed.
 Package: ulem 2012/05/18
 \ULdepth=\dimen291
 )
-\c@assumption=\count296
+\c@notation=\count296
+\c@assumption=\count297
 
 (/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
 Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
@@ -1366,16 +1367,16 @@ Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
 )
 (/usr/share/texlive/texmf-dist/tex/latex/gastex/gastex.sty
 Package: gastex 2006/11/28 v2.8
-\c@cnt@a=\count297
-\c@cnt@b=\count298
-\c@cnt@c=\count299
+\c@cnt@a=\count298
+\c@cnt@b=\count299
+\c@cnt@c=\count300
 \dim@x=\dimen292
 \dim@y=\dimen293
 \temp@box=\box75
 \d@my@unit=\dimen294
-\c@cnt@@a=\count300
-\c@cnt@@b=\count301
-\c@cnt@@c=\count302
+\c@cnt@@a=\count301
+\c@cnt@@b=\count302
+\c@cnt@@c=\count303
 )
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/bibentry.sty
 Package: bibentry 2007/10/30 1.5 (PWD)
@@ -1437,19 +1438,19 @@ Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count303
+\scratchcounter=\count304
 \scratchdimen=\dimen300
 \scratchbox=\box77
-\nofMPsegments=\count304
-\nofMParguments=\count305
+\nofMPsegments=\count305
+\nofMParguments=\count306
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count306
+\MPscratchCnt=\count307
 \MPscratchDim=\dimen301
-\MPnumerator=\count307
-\makeMPintoPDFobject=\count308
+\MPnumerator=\count308
+\makeMPintoPDFobject=\count309
 \everyMPtoPDFconversion=\toks52
 )
-\c@lstlisting=\count309
+\c@lstlisting=\count310
 \AtBeginShipoutBox=\box78
 
 
@@ -1462,7 +1463,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count310
+\c@section@level=\count311
 )
 LaTeX Info: Redefining \ref on input line 21.
 LaTeX Info: Redefining \pageref on input line 21.
@@ -1603,7 +1604,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6] [7] [8] [9] [10]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 527.
+put line 531.
  [11] [12] [13] [14] [15] [16] [17]
 <fig_source/cone.png, id=138, 689.18933pt x 675.05832pt>
 <fig_source/representation2D.png, id=139, 299.10284pt x 303.05923pt> [18]
@@ -1622,7 +1623,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 [25
 
 ]
-Overfull \hbox (6.70308pt too wide) in paragraph at lines 56--58
+Overfull \hbox (6.70308pt too wide) in paragraph at lines 57--59
 \OT1/ptm/m/n/10.95 Scikit-learn, see Pe-dregosa et al. (2011), is an open-sourc
 e li-brary which pro-vides well-established|
  []
@@ -1645,7 +1646,7 @@ runsystem(rm thesis.out.pyg)...executed.
 runsystem(rm thesis.pyg)...executed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
@@ -1662,7 +1663,7 @@ runsystem(rm thesis.out.pyg)...executed.
 runsystem(rm thesis.pyg)...executed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
@@ -1676,10 +1677,10 @@ Overfull \vbox (3.50356pt too high) has occurred while \output is active []
 
 
 [30] <fig_source/lof.png, id=185, 586.8324pt x 442.2924pt>
-Package mdframed Info: mdframed works in twoside mode on input line 184.
+Package mdframed Info: mdframed works in twoside mode on input line 185.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 184.
+(mdframed)              on input line 185.
 \openout5 = `thesis.pyg'.
 
 runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
@@ -1698,27 +1699,27 @@ runsystem(rm thesis.pyg)...executed.
 
 
 [31]
-Package mdframed Info: Not enough space on this page on input line 237.
+Package mdframed Info: Not enough space on this page on input line 238.
  [32] <fig_source/ideeIF.png, id=192, 231.05751pt x 137.72597pt>
-Overfull \hbox (2.4156pt too wide) in paragraph at lines 268--269
+Overfull \hbox (2.4156pt too wide) in paragraph at lines 269--270
  [][] |
  []
 
 <fig_source/convergenceIF.png, id=193, 137.72597pt x 137.72597pt>
-Overfull \hbox (16.70247pt too wide) in paragraph at lines 266--278
+Overfull \hbox (16.70247pt too wide) in paragraph at lines 267--279
 []$[]$ $[]$ |
  []
 
 <fig_source/iforest.png, id=194, 586.8324pt x 442.2924pt>
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
+Underfull \hbox (badness 10000) in paragraph at lines 287--289
 
  []
 
 [33]
-Package mdframed Info: mdframed works in twoside mode on input line 288.
+Package mdframed Info: mdframed works in twoside mode on input line 289.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 288.
+(mdframed)              on input line 289.
 \openout5 = `thesis.pyg'.
 
 runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
@@ -1734,10 +1735,10 @@ runsystem(rm thesis.pyg)...executed.
 <fig_source/ADcomparison1.png, id=201, 731.3724pt x 370.0224pt> [35]
 <fig_source/ADcomparison2.png, id=206, 731.3724pt x 370.0224pt>
 <fig_source/ADcomparison3.png, id=207, 731.3724pt x 370.0224pt> [36]
-Package mdframed Info: mdframed works in twoside mode on input line 390.
+Package mdframed Info: mdframed works in twoside mode on input line 391.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 390.
+(mdframed)              on input line 391.
 \openout5 = `thesis.pyg'.
 
 runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
@@ -1750,51 +1751,45 @@ runsystem(rm thesis.out.pyg)...executed.
 
 runsystem(rm thesis.pyg)...executed.
 
-Package mdframed Info: Not enough space on this page on input line 476.
+Package mdframed Info: Not enough space on this page on input line 477.
  [37] [38]
 Chapter 3.
 ------------------------------------------------------------------------------
  3.\hskip 1em\relax Concentration Inequalities from the Method of bounded diffe
 rences
 ------------------------------------------------------------------------------
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 663.
 [39
 
-] [40] [41] [42] [43] [44] [45] [46]
-Overfull \hbox (44.48161pt too wide) in paragraph at lines 1031--1031
-[] |
+] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49]
+Overfull \hbox (3.67406pt too wide) in paragraph at lines 1136--1138
+[][]\OT1/ptm/b/n/10.95 Proposition 3.18. []\OT1/ptm/m/it/10.95 Let $\OT1/cmr/bx
+/n/10.95 X[]\OML/cmm/m/it/10.95 ; :::; \OT1/cmr/bx/n/10.95 X[]$ $[]$  \OT1/ptm/
+m/it/10.95 ran-dom vari-ables, and a VC-class $\OMS/cmsy/m/n/10.95 A$ \OT1/ptm/
+m/it/10.95 with VC-dimension|
  []
 
-[47]
-Overfull \hbox (30.0154pt too wide) in paragraph at lines 1044--1046
-\OT1/ptm/m/n/10.95 This can be ex-plained by the fact that it is easy to prove 
-the sub-optimal in-equal-ity $\OMS/cmsy/m/n/10.95 R[] [] ^^T  []\OML/cmm/m/it/1
-0.95 C[]$\OT1/ptm/m/n/10.95 :|
+[50] [51]
+Overfull \hbox (0.98788pt too wide) in paragraph at lines 1182--1183
+[]\OT1/ptm/m/n/10.95 The in-equal-ity fol-lows from Propo-si-tion 3.18 com-bine
+d with the fol-low-ing Lemma which|
  []
 
-
-Overfull \hbox (80.03542pt too wide) in paragraph at lines 1066--1066
-[] |
- []
-
-[48]
-Overfull \hbox (13.57524pt too wide) in paragraph at lines 1086--1086
-[] |
- []
-
-[49] [50] [51] [52
-
-]
+[52]
 Chapter 4.
 ------------------------------------------------------------------------------
  4.\hskip 1em\relax Extreme Value Theory
 ------------------------------------------------------------------------------
-[53] [54] <fig_source/GEV.png, id=270, 586.8324pt x 442.2924pt>
+[53
+
+] [54] <fig_source/GEV.png, id=271, 586.8324pt x 442.2924pt>
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1271.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1314.
 
  [55] [56]
 [57] [58]
-Overfull \hbox (1.35776pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (1.35776pt too wide) in paragraph at lines 1505--1505
 [] |
  []
 
@@ -1842,8 +1837,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 798--799
 
  []
 
-[76] <fig_source/EM-EMS.png, id=345, 578.16pt x 433.62pt>
-<fig_source/EM-EMSzoom.png, id=346, 578.16pt x 433.62pt>
+[76] <fig_source/EM-EMS.png, id=346, 578.16pt x 433.62pt>
+<fig_source/EM-EMSzoom.png, id=347, 578.16pt x 433.62pt>
 Underfull \hbox (badness 10000) in paragraph at lines 842--842
 []\OT1/ptm/m/sc/10 Figure 5.5: |\OT1/ptm/m/n/10 Zoom near 0
  []
@@ -1853,8 +1848,8 @@ Overfull \hbox (2.08049pt too wide) in paragraph at lines 831--846
 []$[]$  $[]$ |
  []
 
-<fig_source/EMG-EM.png, id=347, 578.16pt x 433.62pt> [77] [78]
-<fig_source/scoring3D.png, id=355, 1675.2186pt x 897.5934pt> [79]
+<fig_source/EMG-EM.png, id=348, 578.16pt x 433.62pt> [77] [78]
+<fig_source/scoring3D.png, id=356, 1675.2186pt x 897.5934pt> [79]
 Underfull \hbox (badness 10000) in paragraph at lines 888--891
 
  []
@@ -1897,36 +1892,38 @@ mptotic study
 ------------------------------------------------------------------------------
 [95
 
-] [96] [97] [98] [99] [100] [101]
-Underfull \hbox (badness 10000) in paragraph at lines 802--803
+] [96] [97]
+Overfull \hbox (14.69116pt too wide) in paragraph at lines 593--595
+[] [][] \U/dsrom/m/n/10.95 I\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 g\OT1/cmr/
+m/n/10.95 (\OT1/cmr/bx/n/10.95 X[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 6\OT
+1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 Y[]\OMS/cmsy/m/n/10.95 g$ \OT1/ptm/m/n/10
+.95 is the em-pir-i-cal risk based on a train-ing dataset $\OMS/cmsy/m/n/10.95 
+f\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 X[]\OML/cmm/m/it/10.95 ; Y[]\OT1/cmr/m
+/n/10.95 )\OML/cmm/m/it/10.95 ;  [] ;  \OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 
+X[]\OML/cmm/m/it/10.95 ; Y[]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 g$\OT1/ptm/
+m/n/10.95 .|
+ []
+
+[98] [99] [100] [101]
+Underfull \hbox (badness 10000) in paragraph at lines 833--834
 
  []
 
 [102] [103]
-Overfull \hbox (14.97438pt too wide) in paragraph at lines 907--907
+Overfull \hbox (14.97438pt too wide) in paragraph at lines 938--938
 [] |
  []
 
-[104] [105] [106]
-Overfull \hbox (16.05061pt too wide) in paragraph at lines 1083--1083
-[] |
- []
-
-[107] [108]
-Overfull \hbox (6.6724pt too wide) in paragraph at lines 1221--1221
-[] |
- []
-
-) (./jmva.tex [109] [110]
+[104] [105]) (./jmva.tex [106]
 Chapter 9.
 ------------------------------------------------------------------------------
  9.\hskip 1em\relax Sparse Representation of Multivariate Extremes
 ------------------------------------------------------------------------------
-[111
+[107
 
-] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121]
-<fig_source/representation2D_nk_rect.png, id=494, 335.3328pt x 300.4023pt>
-[122] [123] [124]
+] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117]
+<fig_source/representation2D_nk_rect.png, id=482, 335.3328pt x 300.4023pt>
+[118] [119] [120]
 Overfull \hbox (3.99144pt too wide) in paragraph at lines 1081--1088
 \OT1/ptm/m/n/10.95 Notice that $[]\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x\OML
 /cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 z\OT1/cmr/m/n/10.95 )$ \OT1/ptm/m/n/10.95
@@ -1934,16 +1931,16 @@ Overfull \hbox (3.99144pt too wide) in paragraph at lines 1081--1088
 9.27)|
  []
 
-[125] [126] [127] [128]
+[121] [122] [123] [124]
 Overfull \hbox (14.88588pt too wide) in paragraph at lines 1364--1369
 [][]\OT1/ptm/m/it/10.95 Remark \OT1/ptm/m/n/10.95 9.13\OT1/ptm/m/it/10.95 . []\
 OT1/ptm/m/n/10.95 (\OT1/ptm/m/sc/10.95 Thresh-old-ing the es-ti-ma-tor\OT1/ptm/
 m/n/10.95 ) []In prac-tice, we have to deal with non-asymptotic|
  []
 
-[129] [130] [131] [132] [133]
-<fig_source/plot_damex_level_sets.png, id=533, 1602.2259pt x 721.2546pt>
-[134] [135]
+[125] [126] [127] [128] [129]
+<fig_source/plot_damex_level_sets.png, id=521, 1602.2259pt x 721.2546pt>
+[130] [131]
 Overfull \hbox (82.66403pt too wide) in paragraph at lines 1751--1818
 \OMS/cmsy/m/n/10.95 fC[]\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1 \OMS/cmsy/m/
 n/10.95 ^^T \OML/cmm/m/it/10.95 m \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 K
@@ -1952,20 +1949,20 @@ $\OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x\OT1/cmr/m/n/1
 0.95 ) = []\OMS/cmsy/m/n/10.95 f^^@ [][] [][]g\OML/cmm/m/it/10.95 ;$|
  []
 
-[136] <fig_source/wave_dir2.png, id=543, 1180.1691pt x 460.3599pt> [137]
-[138] [139]
-<fig_source/shuttle-semi-supervised-average-rect-01.png, id=555, 1681.0002pt x 
+[132] <fig_source/wave_dir2.png, id=532, 1180.1691pt x 460.3599pt> [133]
+[134] [135]
+<fig_source/shuttle-semi-supervised-average-rect-01.png, id=542, 1681.0002pt x 
 922.8879pt>
-<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=556, 1681.0002pt x
+<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=543, 1681.0002pt x
  922.8879pt>
-<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=557, 1681.0002pt x 
+<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=544, 1681.0002pt x 
 922.8879pt>
-<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=558, 1681.0002pt x 92
+<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=545, 1681.0002pt x 92
 2.8879pt>
-<fig_source/forestcover-semi-supervised-average-rect-01.png, id=559, 1681.0002p
+<fig_source/forestcover-semi-supervised-average-rect-01.png, id=546, 1681.0002p
 t x 922.8879pt>
-<fig_source/http-3d-semi-supervised-average-rect-01.png, id=560, 1681.0002pt x 
-922.8879pt> [140] [141] [142] [143] [144] [145] [146]
+<fig_source/http-3d-semi-supervised-average-rect-01.png, id=547, 1681.0002pt x 
+922.8879pt> [136] [137] [138] [139] [140] [141] [142]
 Overfull \hbox (19.94437pt too wide) in paragraph at lines 2392--2393
 []\OT1/ptm/m/n/10.95 Considering the def-i-ni-tion in (9.45) and (9.31), both s
 ides are equal to $\OML/cmm/m/it/10.95 ^^V[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/1
@@ -1974,24 +1971,24 @@ ides are equal to $\OML/cmm/m/it/10.95 ^^V[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/1
 0.95 .|
  []
 
-[147] [148] [149] [150] [151]) [152]
+[143] [144] [145] [146] [147]) [148]
 Chapter 10.
 ------------------------------------------------------------------------------
  10.\hskip 1em\relax Conclusion \& Perspectives
 ------------------------------------------------------------------------------
-(./conclusion.tex [153
+(./conclusion.tex [149
 
-]) [154]
+]) [150]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./thesis.bbl [155
+(./thesis.bbl [151
 
 
-] [156] [157] [158] [159] [160] [161]) [162]
+] [152] [153] [154] [155] [156] [157]) [158]
 \openout2 = `abstract.aux'.
 
- (./abstract.tex) [163
+ (./abstract.tex) [159
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
@@ -2002,11 +1999,11 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 105.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
- 34047 strings out of 495020
- 606954 string characters out of 6181323
- 685437 words of memory out of 5000000
- 36590 multiletter control sequences out of 15000+600000
- 66319 words of font info for 145 fonts, out of 8000000 for 9000
+ 34060 strings out of 495020
+ 607071 string characters out of 6181323
+ 685541 words of memory out of 5000000
+ 36602 multiletter control sequences out of 15000+600000
+ 66812 words of font info for 146 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,24n,65p,10455b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -2043,13 +2040,13 @@ e1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courie
 r/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
-ri8a.pfb>
-Output written on thesis.pdf (177 pages, 943298 bytes).
+dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
+mr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (173 pages, 937190 bytes).
 PDF statistics:
- 765 PDF objects out of 1000 (max. 8388607)
- 512 compressed objects within 6 object streams
+ 756 PDF objects out of 1000 (max. 8388607)
+ 506 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

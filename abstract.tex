@@ -1,5 +1,119 @@
 \paragraph{Abstract}
 
+% Anomaly, outlier or novelty detection is not only a useful preprocessing step for training machine learning algorithms. It is also a crucial component of lots of real-world applications, from various fields like finance, insurance, telecommunication, computational biology, health or environmental sciences. Anomaly detection is also more and more relevant in the modern world: an increasing number of autonomous systems need to be monitored and diagnosed, specially with the rise of Internet-of-Things.
+
+% Important challenges are
+
+
+
+% Learning how to rank multivariate unlabeled observations depending on their degree of abnormality/novelty is a crucial problem in a wide range of applications. In practice, it
+% generally consists in building a real valued ”scoring” function on the feature space so as to quantify to which extent observations should be considered as abnormal. 
+
+% In the 1-
+% d situation, measurements are generally con-
+% sidered as ”abnormal” when they are remote
+% from central measures such as the mean or
+% the median. Anomaly detection then relies
+% on tail analysis of the variable of interest.
+% Extensions to the multivariate setting are far
+% from straightforward and it is precisely the
+% main purpose of this paper to introduce a
+% novel and convenient (functional) criterion
+% for measuring the performance of a scoring
+% function regarding the anomaly ranking task,
+% referred to as the Excess-Mass curve (EM
+% curve). In addition, an adaptive algorithm
+% for building a scoring function based on un-
+% labeled data X 1 , . . . , X n with a nearly opti-
+% mal EM is proposed and is analyzed from a
+% statistical perspective.
+
+
+% Assessing the probability of occurrence of extreme events is a crucial issue in various fields like
+% finance, insurance, telecommunication or environmental sciences. In a multivariate framework, the
+% tail dependence is characterized by the so-called stable tail dependence function ( STDF ). Learning
+% this structure is the keystone of multivariate extremes. Although extensive studies have proved con-
+% sistency and asymptotic normality for the empirical version of the STDF , non-asymptotic bounds
+% are still missing. The main purpose of this paper is to fill this gap. Taking advantage of adapted
+% VC-type concentration inequalities, upper bounds are derived with expected rate of convergence in
+% O(k −1/2 ). The concentration tools involved in this analysis rely on a more general study of max-
+% imal deviations in low probability regions, and thus directly apply to the classification of extreme
+% data.
+
+
+% Extremes play a special role in Anomaly Detec-
+% tion. Beyond inference and simulation purposes,
+% probabilistic tools borrowed from Extreme Value
+% Theory (EVT), such as the angular measure, can
+% also be used to design novel statistical learning
+% methods for Anomaly Detection/ranking. This
+% paper proposes a new algorithm based on mul-
+% tivariate EVT to learn how to rank observations
+% in a high dimensional space with respect to their
+% degree of ‘abnormality’. The procedure relies on
+% an original dimension-reduction technique in the
+% extreme domain that possibly produces a sparse
+% representation of multivariate extremes and al-
+% lows to gain insight into the dependence struc-
+% ture thereof, escaping the curse of dimensional-
+% ity. The representation output by the unsuper-
+% vised methodology we propose here can be com-
+% bined with any Anomaly Detection technique tai-
+% lored to non-extreme data. As it performs lin-
+% early with the dimension and almost linearly in
+% the data (in O(dn log n)), it fits to large scale
+% problems. The approach in this paper is novel in
+% that EVT has never been used in its multivariate
+% version in the field of Anomaly Detection
+
+
+
+% Capturing the dependence structure of multivariate extreme events is a major
+% concern in many fields involving the management of risks stemming from mul-
+% tiple sources, e.g. portfolio monitoring, insurance, environmental risk man-
+% agement and anomaly detection. One convenient (nonparametric) charac-
+% terization of extreme dependence in the framework of multivariate Extreme
+% Value Theory (EVT) is the angular measure, which provides direct informa-
+% tion about the probable ’directions’ of extremes, that is, the relative con-
+% tribution of each feature/coordinate of the ‘largest’ observations. Modeling
+% the angular measure in high dimensional problems is a major challenge for
+% the multivariate analysis of rare events. The present paper proposes a novel
+% methodology aiming at exhibiting a sparsity pattern within the dependence
+% structure of extremes. This is achieved by estimating the amount of mass
+% spread by the angular measure on representative sets of directions, corre-
+% sponding to specific sub-cones of R d + . This dimension reduction technique
+% paves the way towards scaling up existing multivariate EVT methods. Be-
+% yond a non-asymptotic study providing a theoretical validity framework for
+% our method, we propose as a direct application a –first– Anomaly Detec-
+% tion algorithm based on multivariate EVT. This algorithm builds a sparse
+% ‘normal profile’ of extreme behaviours, to be confronted with new (possibly
+% abnormal) extreme observations. Illustrative experimental results provide
+% strong empirical evidence of the relevance of our approach.
+
+
+% When sufficient labeled data are available, classical criteria based on Receiver
+% Operating Characteristic (ROC) or Precision-Recall (PR) curves can be used to
+% compare the performance of unsupervised anomaly detection algorithms. However,
+% in many situations, few or no data are labeled. This calls for alternative criteria one
+% can compute on non-labeled data. In this paper, two criteria that do not require
+% labels are empirically shown to discriminate accurately (w.r.t. ROC or PR based
+% criteria) between algorithms. These criteria are based on existing Excess-Mass
+% (EM) and Mass-Volume (MV) curves, which generally cannot be well estimated in
+% large dimension. A methodology based on feature sub-sampling and aggregating is
+% also described and tested, extending the use of these criteria to high-dimensional
+% datasets and solving major drawbacks inherent to standard EM and MV curves.
+
+
+% andom Forests (RFs) are strong machine learning tools for classification and
+% regression. However, they remain supervised algorithms, and no extension of RFs
+% to the one-class setting has been proposed, except for techniques based on second-
+% class generation. This paper fills this gap by proposing a natural methodology to
+% extend standard splitting criteria to the one-class setting, structurally generalizing
+% to one-class classification. Our model is consistent with the two-class framework
+% from which our approach can be recovered, considering the asymptotic behavior of
+% an adaptive outliers generating process. We also present an extensive benchmark
+% of seven state-of-the-art anomaly detection algorithms. This demonstrates the
+% empirical relevance of our approach.
 
 
 \paragraph{Résumé}

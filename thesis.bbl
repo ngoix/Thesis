@@ -1,4 +1,4 @@
-\begin{thebibliography}{114}
+\begin{thebibliography}{127}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -18,6 +18,18 @@ M.~Anthony and J.~Shawe-Taylor.
 \newblock A result of vapnik with applications.
 \newblock {\em Discrete Applied Mathematics}, 47\penalty0 (3):\penalty0 207 --
   217, 1993.
+
+\bibitem[Baillo(2003)]{Baillo2003}
+A.~Baillo.
+\newblock Total error in a plug-in estimator of level sets.
+\newblock {\em Statistics \& probability letters}, 65\penalty0 (4):\penalty0
+  411--417, 2003.
+
+\bibitem[Baillo et~al.(2001)Baillo, Cuesta-Albertos, and Cuevas]{Baillo2001}
+A.~Baillo, J.~A Cuesta-Albertos, and A.~Cuevas.
+\newblock Convergence rates in nonparametric estimation of level sets.
+\newblock {\em Statistics \& probability letters}, 53\penalty0 (1):\penalty0
+  27--35, 2001.
 
 \bibitem[Barnett \& Lewis(1994)Barnett and Lewis]{Barnett94}
 V.~Barnett and T.~Lewis.
@@ -47,10 +59,11 @@ Jan Beirlant, Mikael Escobar-Bach, Yuri Goegebeur, and Armelle Guillou.
 \newblock Bias-corrected estimation of stable tail dependence function.
 \newblock {\em https://hal.archives-ouvertes.fr/hal-01115538}, Feb 2015.
 
-\bibitem[Biau et~al.()Biau, Devroye, and Lugosi]{Biau2008}
-G.~Biau, L.~Devroye, and journal={Journal of Machine Learning Research}
-  volume={9} number={Sep} pages={2015--2033}~year={2008} Lugosi, G.
+\bibitem[Biau et~al.(2008)Biau, Devroye, and Lugosi]{Biau2008}
+G.~Biau, L.~Devroye, and G.~Lugosi.
 \newblock Consistency of random forests and other averaging classifiers.
+\newblock {\em Journal of Machine Learning Research}, 9\penalty0
+  (Sep):\penalty0 2015--2033, 2008.
 
 \bibitem[Biau \& Scornet(2016)Biau and Scornet]{Biau2016}
 G.~Biau and E.~Scornet.
@@ -60,7 +73,8 @@ G.~Biau and E.~Scornet.
 \bibitem[Blanchard et~al.(2010)Blanchard, Lee, and Scott]{Blanchard2010}
 Gilles Blanchard, Gyemin Lee, and Clayton Scott.
 \newblock Semi-supervised novelty detection.
-\newblock {\em The Journal of Machine Learning Research}, 2010.
+\newblock {\em Journal of Machine Learning Research}, 11\penalty0
+  (Nov):\penalty0 2973--3009, 2010.
 
 \bibitem[Bottou \& Lin(2007)Bottou and Lin]{Bottou2007}
 L{\'e}on Bottou and Chih-Jen Lin.
@@ -102,6 +116,12 @@ Lars Buitinck, Gilles Louppe, Mathieu Blondel, Fabian Pedregosa, Andreas
   scikit-learn project.
 \newblock In {\em ECML PKDD Workshop: Languages for Data Mining and Machine
   Learning}, pages 108--122, 2013.
+
+\bibitem[Cadre(2006)]{Cadre2006}
+B.~Cadre.
+\newblock Kernel estimation of density level sets.
+\newblock {\em Journal of multivariate analysis}, 97\penalty0 (4):\penalty0
+  999--1023, 2006.
 
 \bibitem[Chandola et~al.(2009)Chandola, Banerjee, and
   Kumar]{Chandola2009survey}
@@ -163,6 +183,11 @@ D.~Cooley, R.A. Davis, and P.~Naveau.
 \newblock {\em Journal of Multivariate Analysis}, 101\penalty0 (9):\penalty0
   2103--2117, 2010.
 
+\bibitem[Cuevas \& Fraiman(1997)Cuevas and Fraiman]{Cuevas1997}
+A.~Cuevas and R.~Fraiman.
+\newblock A plug-in approach to support estimation.
+\newblock {\em The Annals of Statistics}, pages 2300--2312, 1997.
+
 \bibitem[Davis \& Goadrich(2006)Davis and Goadrich]{Davis2006}
 J.~Davis and M.~Goadrich.
 \newblock The relationship between precision-recall and roc curves.
@@ -192,6 +217,12 @@ A.~L.~M. Dekkers, J.~H.~J. Einmahl, and L.~de~Haan.
 \newblock A moment estimator for the index of an extreme-value distribution.
 \newblock {\em Ann. Statist.}, 17\penalty0 (4):\penalty0 1833--1855, 12 1989.
 
+\bibitem[Denis et~al.(2005)Denis, Gilleron, and Letouzey]{Denis2005}
+Fran{\c{c}}ois Denis, R{\'e}mi Gilleron, and Fabien Letouzey.
+\newblock Learning from positive and unlabeled examples.
+\newblock {\em Theoretical Computer Science}, 348\penalty0 (1):\penalty0
+  70--83, 2005.
+
 \bibitem[Devroye et~al.(1996)Devroye, Gy{\"o}rfi, and Lugosi]{Devroye96}
 L.~Devroye, L.~Gy{\"o}rfi, and G.~Lugosi.
 \newblock {\em A Probabilistic Theory of Pattern Recognition}.
@@ -204,6 +235,12 @@ H.~Drees and X.~Huang.
   tail dependence function.
 \newblock {\em J. Multivar. Anal.}, 64\penalty0 (1):\penalty0 25--47, January
   1998.
+
+\bibitem[du~Plessis et~al.(2015)du~Plessis, Niu, and Sugiyama]{duPlessis2015}
+Marthinus~Christoffel du~Plessis, Gang Niu, and Masashi Sugiyama.
+\newblock Class-prior estimation for learning from positive and unlabeled data.
+\newblock In {\em Proceedings of the Fourth Asian Conference on Machine
+  Learning}, volume~45, 2015.
 
 \bibitem[Désir et~al.(2012)Désir, Bernard, Petitjean, and Heutte]{Desir12}
 C.~Désir, S.~Bernard, C.~Petitjean, and L.~Heutte.
@@ -445,6 +482,11 @@ R.~Lippmann, J.~W Haines, D.J. Fried, J.~Korba, and K.~Das.
 \newblock In {\em Recent Advances in Intrusion Detection}, pages 162--182.
   Springer, 2000.
 
+\bibitem[Liu et~al.(2002)Liu, Lee, Yu, and Li]{Liu2002}
+Bing Liu, Wee~Sun Lee, Philip~S Yu, and Xiaoli Li.
+\newblock Partially supervised classification of text documents.
+\newblock In {\em ICML}, volume~2, pages 387--394. Citeseer, 2002.
+
 \bibitem[Liu et~al.(2008)Liu, Ting, and Zhou]{Liu2008}
 F.T. Liu, K.M. Ting, and Z.H. Zhou.
 \newblock {Isolation Forest}.
@@ -454,6 +496,12 @@ F.T. Liu, K.M. Ting, and Z.H. Zhou.
 M.~Markou and S.~Singh.
 \newblock Novelty detection: a review part 1: statistical approaches.
 \newblock {\em Signal proc.}, 2003.
+
+\bibitem[Mason \& Polonik(2009)Mason and Polonik]{Mason2009}
+D.~M. Mason and W.~Polonik.
+\newblock Asymptotic normality of plug-in level set estimates.
+\newblock {\em The Annals of Applied Probability}, 19\penalty0 (3):\penalty0
+  1108--1142, 2009.
 
 \bibitem[Massart(2000)]{Massart2000}
 Pascal Massart.
@@ -473,6 +521,11 @@ Colin McDiarmid.
 \newblock In M.~Habib, C.~McDiarmid, J.~Ramirez-Alfonsin, and B.~Reed, editors,
   {\em Probabilistic Methods for Algorithmic Discrete Mathematics}, Algorithms
   and Combinatorics. Springer, 1998.
+
+\bibitem[Mordelet \& Vert(2014)Mordelet and Vert]{Mordelet2014}
+Fantine Mordelet and J-P Vert.
+\newblock A bagging svm to learn from positive and unlabeled examples.
+\newblock {\em Pattern Recognition Letters}, 37:\penalty0 201--209, 2014.
 
 \bibitem[M{\"u}ller \& Sawitzki(1991)M{\"u}ller and Sawitzki]{Muller1991}
 D.W. M{\"u}ller and G.~Sawitzki.
@@ -546,6 +599,11 @@ Sidney Resnick.
 \newblock {\em Heavy-tail phenomena: probabilistic and statistical modeling}.
 \newblock Springer Science \& Business Media, 2007.
 
+\bibitem[Rigollet \& Vert(2009)Rigollet and Vert]{Rigollet2009}
+P.~Rigollet and R.~Vert.
+\newblock Optimal rates for plug-in estimators of density level sets.
+\newblock {\em Bernoulli}, pages 1154--1178, 2009.
+
 \bibitem[Roberts(1999)]{Roberts99}
 S.J. Roberts.
 \newblock Novelty detection using extreme value statistics.
@@ -615,11 +673,24 @@ RL~Smith.
   insurance, finance, hydrology, and other fields. Birkh{\"a}user, Basel},
   2003.
 
-\bibitem[Steinwart et~al.(2005)Steinwart, Hush, and Scovel]{SHS05}
+\bibitem[Smola et~al.(2009)Smola, Song, and Teo]{Smola2009}
+A.~J. Smola, L.~Song, and C.~H. Teo.
+\newblock Relative novelty detection.
+\newblock In {\em AISTATS}, volume~12, pages 536--543, 2009.
+
+\bibitem[Steinwart et~al.(2005{\natexlab{a}})Steinwart, Hush, and
+  Scovel]{SHS05}
 I.~Steinwart, D.~Hush, and C.~Scovel.
 \newblock A classification framework for anomaly detection.
 \newblock {\em Journal of Machine Learning Research}, 6:\penalty0 211--232,
-  2005.
+  2005{\natexlab{a}}.
+
+\bibitem[Steinwart et~al.(2005{\natexlab{b}})Steinwart, Hush, and
+  Scovel]{Steinwart2005}
+Ingo Steinwart, Don Hush, and Clint Scovel.
+\newblock A classification framework for anomaly detection.
+\newblock {\em Journal of Machine Learning Research}, 6\penalty0
+  (Feb):\penalty0 211--232, 2005{\natexlab{b}}.
 
 \bibitem[Stephenson(2009)]{stephenson2009high}
 A.G. Stephenson.
@@ -647,6 +718,12 @@ JA~Tawn.
 A.~Thomas, V.~Feuillard, and A.~Gramfort.
 \newblock {Calibration of One-Class SVM for MV set estimation}.
 \newblock In {\em DSAA}, 2015.
+
+\bibitem[Tsybakov(1997)]{Tsybakov1997}
+A.~B. Tsybakov.
+\newblock On nonparametric estimation of density level sets.
+\newblock {\em The Annals of Statistics}, 25\penalty0 (3):\penalty0 948--969,
+  1997.
 
 \bibitem[Van Der~Walt et~al.(2011)Van Der~Walt, Colbert, and
   Varoquaux]{Vanderwalt2011numpy}

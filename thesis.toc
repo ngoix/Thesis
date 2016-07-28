@@ -20,25 +20,29 @@
 \contentsline {paragraph}{Context of this work.}{22}{section.1.9}
 \contentsline {paragraph}{Outline of the thesis.}{22}{section.1.9}
 \contentsline {part}{I\hspace {1em}Preliminaries}{23}{part.1}
-\contentsline {chapter}{\numberline {2}Background on Anomaly Detection through Scikit-Learn}{25}{chapter.2}
-\contentsline {section}{\numberline {2.1}What is Anomaly Detection?}{25}{section.2.1}
-\contentsline {section}{\numberline {2.2}Three efficient Anomaly Detection Algorithms}{27}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}What is Scikit-learn?}{27}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}One-class SVM}{28}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Local Outlier Factor algorithm}{31}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Isolation Forest}{33}{subsection.2.2.4}
-\contentsline {chapter}{\numberline {3}Concentration Inequalities from the Method of bounded differences}{39}{chapter.3}
-\contentsline {section}{\numberline {3.1}Two fundamental results}{39}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Preliminary definitions}{39}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Inequality for Bounded Random Variables}{40}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Bernstein-type Inequality (with variance term)}{42}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Popular Inequalities}{43}{section.3.2}
-\contentsline {section}{\numberline {3.3}Links with Statistical Learning and VC theory}{46}{section.3.3}
-\contentsline {section}{\numberline {3.4}Sharper VC-bounds through a Bernstein-type inequality}{49}{section.3.4}
-\contentsline {chapter}{\numberline {4}Extreme Value Theory}{53}{chapter.4}
-\contentsline {paragraph}{Notation reminder}{53}{chapter.4}
-\contentsline {section}{\numberline {4.1}Univariate Extreme Value Theory}{54}{section.4.1}
-\contentsline {section}{\numberline {4.2}Extension to the Multivariate framework}{56}{section.4.2}
+\contentsline {chapter}{\numberline {2}Concentration Inequalities from the Method of bounded differences}{25}{chapter.2}
+\contentsline {section}{\numberline {2.1}Two fundamental results}{25}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Preliminary definitions}{25}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Inequality for Bounded Random Variables}{26}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Bernstein-type Inequality (with variance term)}{28}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Popular Inequalities}{29}{section.2.2}
+\contentsline {section}{\numberline {2.3}Links with Statistical Learning and VC theory}{32}{section.2.3}
+\contentsline {section}{\numberline {2.4}Sharper VC-bounds through a Bernstein-type inequality}{35}{section.2.4}
+\contentsline {chapter}{\numberline {3}Extreme Value Theory}{39}{chapter.3}
+\contentsline {paragraph}{Notation reminder}{39}{chapter.3}
+\contentsline {section}{\numberline {3.1}Univariate Extreme Value Theory}{40}{section.3.1}
+\contentsline {section}{\numberline {3.2}Extension to the Multivariate framework}{42}{section.3.2}
+\contentsline {chapter}{\numberline {4}Background on classical Anomaly Detection algorithms}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}What is Anomaly Detection?}{47}{section.4.1}
+\contentsline {section}{\numberline {4.2}Three efficient Anomaly Detection Algorithms}{49}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}One-class SVM}{49}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Local Outlier Factor algorithm}{52}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Isolation Forest}{52}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Examples through scikit-learn}{52}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}What is scikit-learn?}{53}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}LOF examples}{54}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Isolation Forest examples}{56}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Comparison examples}{57}{subsection.4.3.4}
 \contentsline {part}{II\hspace {1em}An Excess-Mass based Performance Criterion}{61}{part.2}
 \contentsline {chapter}{\numberline {5}On Anomaly Ranking and Excess-Mass Curves}{63}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{63}{section.5.1}
@@ -79,21 +83,21 @@
 \contentsline {subsection}{\numberline {9.3.5}Bounding the bias induced by thickened rectangles}{124}{subsection.9.3.5}
 \contentsline {subsection}{\numberline {9.3.6}Main result}{124}{subsection.9.3.6}
 \contentsline {section}{\numberline {9.4}Application to Anomaly Detection }{128}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}Background on anomaly detection}{128}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}DAMEX Algorithm: Detecting Anomalies among Multivariate Extremes}{129}{subsection.9.4.2}
+\contentsline {subsection}{\numberline {9.4.1}Extremes and Anomaly Detection.}{128}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}DAMEX Algorithm: Detecting Anomalies among Multivariate Extremes}{128}{subsection.9.4.2}
 \contentsline {section}{\numberline {9.5}Experimental results}{132}{section.9.5}
 \contentsline {subsection}{\numberline {9.5.1}Recovering the support of the dependence structure of generated data}{132}{subsection.9.5.1}
-\contentsline {subsection}{\numberline {9.5.2}Sparse structure of extremes (wave data)}{133}{subsection.9.5.2}
+\contentsline {subsection}{\numberline {9.5.2}Sparse structure of extremes (wave data)}{132}{subsection.9.5.2}
 \contentsline {subsection}{\numberline {9.5.3}Application to Anomaly Detection on real-world data sets}{134}{subsection.9.5.3}
-\contentsline {section}{\numberline {9.6}Conclusion}{136}{section.9.6}
+\contentsline {section}{\numberline {9.6}Conclusion}{137}{section.9.6}
 \contentsline {section}{\numberline {9.7}Technical proofs}{139}{section.9.7}
 \contentsline {subsection}{\numberline {9.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{139}{subsection.9.7.1}
 \contentsline {subsection}{\numberline {9.7.2}Proof of Lemma \ref {jmva:lem:g-alpha}}{140}{subsection.9.7.2}
-\contentsline {subsection}{\numberline {9.7.3}Proof of Proposition \ref {jmva:prop:g}}{142}{subsection.9.7.3}
+\contentsline {subsection}{\numberline {9.7.3}Proof of Proposition \ref {jmva:prop:g}}{141}{subsection.9.7.3}
 \contentsline {subsection}{\numberline {9.7.4}Proof of Lemma \ref {jmva:lemma_simplex}}{146}{subsection.9.7.4}
-\contentsline {subsection}{\numberline {9.7.5}Proof of Remark\nobreakspace {}\ref {jmva:rk:optim}}{148}{subsection.9.7.5}
+\contentsline {subsection}{\numberline {9.7.5}Proof of Remark\nobreakspace {}\ref {jmva:rk:optim}}{147}{subsection.9.7.5}
 \contentsline {section}{\numberline {9.8}Experiments curves}{148}{section.9.8}
 \contentsline {chapter}{\numberline {10}Conclusion \& Perspectives}{149}{chapter.10}
 \contentsline {chapter}{Bibliography}{151}{dummy.4}
-\contentsline {paragraph}{Abstract}{159}{appendix*.36}
-\contentsline {paragraph}{R\IeC {\'e}sum\IeC {\'e}}{159}{appendix*.36}
+\contentsline {paragraph}{Abstract}{160}{appendix*.36}
+\contentsline {paragraph}{R\IeC {\'e}sum\IeC {\'e}}{160}{appendix*.36}

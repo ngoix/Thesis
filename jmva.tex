@@ -338,9 +338,7 @@ accuracy of which is
 investigated by establishing % where consistency and
 finite sample error bounds relying on  {\sc VC} inequalities
 tailored to low probability regions.
-An application to anomaly detection is proposed in Section~\ref{jmva:sec:appliAD}, where some background on anomaly detection is provided, followed by a novel anomaly detection  
- algorithm which relies on the above mentioned non-parametric
- estimator. 
+An application to anomaly detection is proposed in Section~\ref{jmva:sec:appliAD}, followed by a novel anomaly detection algorithm which relies on the above mentioned non-parametric estimator. 
 % is described
 % in Section~\ref{jmva:sec:algo} as a natural pathway to learn the extreme
 % dependence structure. The rationale behind can be understood without knowledge of EVT,
@@ -1433,23 +1431,24 @@ with $\|m\|_{1,\alpha} = \sum_{\alpha} |m(\alpha)|$ the $L^1$ norm on $\mathbb{R
 
 \section{Application to Anomaly Detection }
 \label{jmva:sec:appliAD}
-\subsection{Background on anomaly detection}
+\subsection{Extremes and Anomaly Detection.}
 \label{jmva:sec:appliADBackground}
 \noindent 
-\textbf{What is Anomaly Detection ?}
-From a machine learning perspective, anomaly detection can be considered as a specific classification task, where the usual assumption in supervised learning stipulating that the dataset contains structural information regarding all classes breaks down, see \cite{Roberts99}. This typically happens in the case of two highly unbalanced classes: the normal class is expected to regroup a large majority of the dataset, so that the very small number of points representing the abnormal class does not allow to learn information about this class.
-% In a clustering based approach, it can be
-% interpreted as the presence of a single cluster, corresponding to the
-% normal data. The abnormal ones are too limited to share a commun
-% structure, \ie~to form a second cluster. Their only characteristic is
-% precisely to lie outside the normal cluster, namely to lack any
-% structure.  Thus, common classification approaches may not be applied
-% as such, even in a supervised
-% context. % That is the reason why even in a supervised framework, common classification approaches cannot be applied.
-\textit{Supervised} anomaly detection consists in training the algorithm on a labeled (normal/abnormal) dataset including both normal and abnormal observations. In the \textit{semi-supervised} context, only normal data are available for training. This is the case in applications where normal operations are known but intrusion/attacks/viruses are unknown and should be detected. In the \textit{unsupervised} setup, no assumption is made on the data which consist in unlabeled normal and abnormal instances. In general, a method from the semi-supervised framework may apply to the unsupervised one, as soon as the number of anomalies is sufficiently weak to prevent the algorithm from fitting them when learning the normal behavior. Such a method should be robust to outlying observations.
 
-\noindent
-\textbf{Extremes and Anomaly Detection.}
+% \textbf{What is Anomaly Detection ?}
+% From a machine learning perspective, anomaly detection can be considered as a specific classification task, where the usual assumption in supervised learning stipulating that the dataset contains structural information regarding all classes breaks down, see \cite{Roberts99}. This typically happens in the case of two highly unbalanced classes: the normal class is expected to regroup a large majority of the dataset, so that the very small number of points representing the abnormal class does not allow to learn information about this class.
+% % In a clustering based approach, it can be
+% % interpreted as the presence of a single cluster, corresponding to the
+% % normal data. The abnormal ones are too limited to share a commun
+% % structure, \ie~to form a second cluster. Their only characteristic is
+% % precisely to lie outside the normal cluster, namely to lack any
+% % structure.  Thus, common classification approaches may not be applied
+% % as such, even in a supervised
+% % context. % That is the reason why even in a supervised framework, common classification approaches cannot be applied.
+% \textit{Supervised} anomaly detection consists in training the algorithm on a labeled (normal/abnormal) dataset including both normal and abnormal observations. In the \textit{semi-supervised} context, only normal data are available for training. This is the case in applications where normal operations are known but intrusion/attacks/viruses are unknown and should be detected. In the \textit{unsupervised} setup, no assumption is made on the data which consist in unlabeled normal and abnormal instances. In general, a method from the semi-supervised framework may apply to the unsupervised one, as soon as the number of anomalies is sufficiently weak to prevent the algorithm from fitting them when learning the normal behavior. Such a method should be robust to outlying observations.
+
+% \noindent
+% \textbf{Extremes and Anomaly Detection.}
 As a matter of fact, `extreme' observations are often more susceptible to be anomalies than  others.
 % In the supervised or semi-supervised framework (that is, when the
 % algorithm is trained on normal data),  %considering only normal observations% where a dataset of only normal observations is available
@@ -1471,8 +1470,8 @@ region) would be classified as abnormal or
 not according  to the scoring function issued by the generic algorithm
 (\emph{resp.} the one  presented
 here). 
-The scope of our algorithm concerns  both semi-supervised and
-unsupervised problems. Undoubtedly, as it consists in learning a
+The scope of our algorithm concerns both novelty detection (training data only contain normal data) and
+unsupervised (training data contain unlabeled normal and abnormal data) problems. Undoubtedly, as it consists in learning a
 `normal' (\ie\ not abnormal) behavior in extremal regions, it is optimally efficient when
 trained on `normal' observations only. %a dataset of only normal
 %observations. 
@@ -1692,7 +1691,7 @@ A standard choice of parameters $(\epsilon,~ k ,~ p)$ is
 respectively 
 $(0.01, n^{1/2}, 0.1)$. % where $\mu_{average}$ is the averaged mass of the non-empty sub-cones, \ie~$\mu_{average}=\mu_{total}/(\#$charged sub-cones)
 However, there is no simple manner to choose optimally these parameters, as there is no simple way to determine how fast is the convergence to the (asymptotic) extreme behavior --namely how far in the tail appears the asymptotic dependence structure. Indeed, even though the  first term of the  error bound in Theorem~\ref{jmva:thm-princ} is  proportional, up to re-scaling, to $\sqrt{\frac{1}{\epsilon k} }+ \sqrt{\epsilon}$, which suggests choosing $\epsilon$ of order $ k^{-1/4}$, the unknown bias term perturbs the analysis and in practice, one obtains better results with the values above mentioned. 
-In a supervised or semi-supervised framework (or if a small labeled dataset is available) these three parameters should be chosen by cross-validation.
+In a supervised or novelty-detection framework (or if a small labeled dataset is available) these three parameters should be chosen by cross-validation.
 In the unsupervised situation, a classical heuristic
 (\cite{Coles2001}) is to choose $(k, \epsilon)$ in a stability region
 of the algorithm's output: the largest $k$ (\emph{resp.} the larger
@@ -1923,7 +1922,7 @@ test set being restricted to an  extreme region.
  Five reference anomaly detection datasets  are considered:
  \emph{shuttle}, \emph{forestcover}, \emph{http},
  \emph{SF} and \emph{SA} \footnote{These datasets are available for instance on http://scikit-learn.org/dev/ }. The experiments are performed in a
- semi-supervised framework (the training set consists of normal data). 
+ novelty detection framework (the training set consists of normal data). 
 % In a  non-supervised framework (training set including abnormal data), the
 %  improvements brought by the use of DAMEX are less significant, but the
 %  precision score is still increased % on five datasets out of six, 

@@ -1,10 +1,10 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {1.1}{\ignorespaces Summary of notation}}{3}{table.caption.6}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces SVM vs. OCSVM (hard-margin separation)\relax }}{29}{table.caption.8}
-\contentsline {table}{\numberline {2.2}{\ignorespaces SVM vs. OCSVM ($\nu $-soft margin separation)\relax }}{30}{table.caption.9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces SVM vs. OCSVM (hard-margin separation)\relax }}{50}{table.caption.9}
+\contentsline {table}{\numberline {4.2}{\ignorespaces SVM vs. OCSVM ($\nu $-soft margin separation)\relax }}{51}{table.caption.10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -12,7 +12,7 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {9.1}{\ignorespaces Support recovering on simulated data\relax }}{133}{table.caption.24}
 \contentsline {table}{\numberline {9.2}{\ignorespaces Total number of sub-cones of wave data\relax }}{134}{table.caption.26}
-\contentsline {table}{\numberline {9.3}{\ignorespaces Datasets characteristics\relax }}{136}{table.caption.27}
+\contentsline {table}{\numberline {9.3}{\ignorespaces Datasets characteristics\relax }}{135}{table.caption.27}
 \contentsline {table}{\numberline {9.4}{\ignorespaces Results on extreme regions with standard parameters $(k,\epsilon ) = (n^{1/2}, 0.01)$\relax }}{136}{table.caption.28}
-\contentsline {table}{\numberline {9.5}{\ignorespaces Results on extreme regions with lower $\epsilon =0.1$\relax }}{137}{table.caption.29}
+\contentsline {table}{\numberline {9.5}{\ignorespaces Results on extreme regions with lower $\epsilon =0.1$\relax }}{136}{table.caption.29}
 \addvspace {10\p@ }

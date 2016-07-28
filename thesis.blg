@@ -4,78 +4,46 @@ The top-level auxiliary file: thesis.aux
 The style file: ecs.bst
 A level-1 auxiliary file: abstract.aux
 Database file #1: Thesis.bib
-I was expecting a `,' or a `}'---line 493 of file Thesis.bib
- : 
- : @book{Devroye96,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2519 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2519 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2519 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2519 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2671 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2671 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2671 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2671 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2671 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2671 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2671 of file ecs.bst
-Too many commas in name 3 of "Biau, G. and Devroye, L. and Lugosi, G., journal={Journal of Machine Learning Research}, volume={9}, number={Sep}, pages={2015--2033}, year={2008}" for entry Biau2008
-while executing---line 2671 of file ecs.bst
-Warning--empty journal in Biau2008
-Warning--empty year in Biau2008
-Warning--empty year in Biau2008
 Warning--empty journal in KDD99
-You've used 114 entries,
+You've used 127 entries,
             2638 wiz_defined-function locations,
-            1266 strings with 21919 characters,
-and the built_in function-call counts, 51265 in all, are:
-= -- 4759
-> -- 2671
-< -- 83
-+ -- 994
-- -- 854
-* -- 3747
-:= -- 8510
-add.period$ -- 352
-call.type$ -- 114
-change.case$ -- 722
-chr.to.int$ -- 109
-cite$ -- 118
-duplicate$ -- 2430
-empty$ -- 4063
-format.name$ -- 1030
-if$ -- 10564
-int.to.chr$ -- 6
+            1341 strings with 23465 characters,
+and the built_in function-call counts, 58170 in all, are:
+= -- 5460
+> -- 2957
+< -- 97
++ -- 1101
+- -- 944
+* -- 4281
+:= -- 9573
+add.period$ -- 393
+call.type$ -- 127
+change.case$ -- 804
+chr.to.int$ -- 121
+cite$ -- 128
+duplicate$ -- 2741
+empty$ -- 4624
+format.name$ -- 1141
+if$ -- 12030
+int.to.chr$ -- 7
 int.to.str$ -- 1
-missing$ -- 123
-newline$ -- 576
-num.names$ -- 462
-pop$ -- 1222
+missing$ -- 136
+newline$ -- 642
+num.names$ -- 514
+pop$ -- 1333
 preamble$ -- 1
-purify$ -- 621
+purify$ -- 690
 quote$ -- 0
-skip$ -- 1800
+skip$ -- 2050
 stack$ -- 0
-substring$ -- 1978
-swap$ -- 263
-text.length$ -- 17
+substring$ -- 2462
+swap$ -- 325
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1184
-warning$ -- 4
-while$ -- 447
+type$ -- 1327
+warning$ -- 1
+while$ -- 518
 width$ -- 0
-write$ -- 1440
-(There were 13 error messages)
+write$ -- 1617
+(There was 1 warning)

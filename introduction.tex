@@ -15,7 +15,10 @@ As to \textbf{unsupervised anomaly detection} (also simply called outlier detect
 His task is in some way simplified if he knows all of its previous patients to be healthy: it is easier for him to learn the `normal' model, \ie~the typical record of a healthy patient, to be confronted with new records. This is the so-called \textbf{novelty detection} framework (also called one-class classification or semi-supervised anomaly detection), where the training database only contains normal instances. 
 
 This chapter is organized as follows.
-First in Section~\ref{resume:scoring_function}, the anomaly detection task is formally introduced as well as the concept of scoring function. Two criteria for `being a good scoring function' are presented in Section \ref{resume:scoring}, allowing an M-estimation approach. In Section~\ref{resume:stdf}, we introduce the extreme value theory (EVT) and the \emph{stable tail dependence function} (STDF), to estimate the dependence structure of rare events. Section~\ref{resume:sec:JMVA} shows that multivariate EVT can be useful to produce scoring functions accurate on low probability regions.
+First in Section~\ref{resume:scoring_function}, the anomaly detection task is formally introduced as well as the concept of scoring function. 
+Two criteria for `being a good scoring function' are presented in Section \ref{resume:scoring}, allowing an M-estimation approach. 
+Section~\ref{resume:extreme} focuses on extreme value theory (EVT) to gain in accuracy on extreme regions. It introduces the \emph{stable tail dependence function} (STDF), to estimate the dependence structure of rare events (Section~\ref{resume:stdf}) and shows that multivariate EVT can be useful to produce scoring functions accurate on low probability regions (Section~\ref{resume:sec:JMVA}).
+Section~\ref{XXX}
 
 
 %Each patient record $i$ being a set of measurements may be summarized into a $d$-dimensional vector $\mb X_i$, and its label into a binary value $y_i \in \{0, 1\}$ (healthy, sick). The set of all training labeled record $(\mb X_1, y_1),\ldots, (\mb X_d, y_d)$ from patients $1, \ldots, d$ form the so-called \textbf{training database}. 
@@ -169,7 +172,7 @@ In this work, we similarly make the convention that anomaly detection refers to 
 \end{remark}
 
 
-\section{M-estimation and Scoring function Criterion}
+\section{M-estimation and criteria for scoring functions}
 \label{resume:scoring}
 % ou: DLSE-based Criterion to build and evaluate scoring functions
 
@@ -467,181 +470,11 @@ In the mass-volume criterion M-estimation framework, assumptions are made stipul
 
 
 
-\section{Evaluation of AD algorithms}
-\label{resume:evaluation}
-This is a summary of Chapter~\ref{chap:evaluation}, which is based on a workshop paper \citep{ICMLworkshop16} and a submitted work \citep{NIPS16evaluation}.
 
 
-When sufficient labeled data are available, classical criteria based on ROC \citep{Provost1997, Provost1998, Fawcett2006} or PR \citep{Davis2006, Clemencon2009} curves can be used to compare the performance of unsupervised anomaly detection algorithms. However, in many situations, few or no data are labeled. This calls for alternative criteria one can compute on non-labeled data.
-
-While excess-mass and mass-volume curves quantities have originally been introduced to build scoring functions \emph{via}
-Empirical Risk Minimization (ERM), the MV-curve has been used recently for the calibration of the One-Class SVM \citep{Thomas2015}.
-When used to attest the quality of some scoring function, the volumes induced become unknown and must be estimated, which is challenging in large dimension if no prior knowledge on the form of these level sets is available.
-%
-Besides, the accuracy of EM or MV curves as evaluation criteria has not been studied yet.
-%
-Summarized in this section and as a contribution of this thesis, numerical performance scores based on EM and MV criteria (that do not require labels) are empirically shown to discriminate accurately (\wrt~ROC or PR based criteria) between algorithms.
-%These criteria are based on existing Excess-Mass (EM) and Mass-Volume (MV) curves, which generally cannot be well estimated in large dimension.
-A methodology based on feature sub-sampling and aggregating is also described and tested. This extends the use of these criteria to high-dimensional datasets and solves major drawbacks inherent to standard EM and MV curves.
-
-Recall that the MV and EM curves of a scoring function $s$ can be written as
-\noindent
-\begin{align}
-\label{intro:MV-def}
- MV_s(\alpha) &= \inf_{u \ge 0}~~ \leb(s \ge u) ~~\st~~\mathbb{P}(s(\mb X) \ge u) \ge \alpha\\
-\label{intro:EM-def}
- EM_s(t) &= \sup_{u \ge 0}~~ \mathbb{P}(s(\mb X) \ge u) ~-~ t \leb(s \ge u)
-\end{align}
-for any $\alpha\in (0,1)$ and $t >0$.
-%
-The optimal curves are $MV^* = MV_f = MV_{T \circ f}$ and $EM^* = EM_f = EM_{T \circ f}$ for any increasing transform $T: \text{Im(f)} \to \mathbb{R}$
-%
-As curves cannot be trivially compared, consider the $L^1$-norm $\|.\|_{L^1(I)}$ with $I\subset \rset$ an interval. As $MV^*=MV_f$ is below $MV_s$ pointwise, $\argmin_s \| MV_s - MV^* \|_{L^1(I)} = \argmin \| MV_s \|_{L^1(I)} $. We thus define
-$\crit^{MV}(s) = \| MV_s \|_{L^1(I^{MV})},$ which is equivalent to consider $\| MV_s - MV^* \|_{L^1(I^{MV})}$ as mentioned in the introduction. As we are interested in evaluating accuracy on large density level-sets, one natural interval $I^{MV}$ would be for instance $[0.9, 1]$. However, MV diverges in $1$ when the support is infinite, so that we arbitrarily take $I^{MV} = [0.9, 0.999].$
-The smaller is $\crit^{MV}(s)$, the better is the scoring function $s$.
-%
-Similarly, we consider $\crit^{EM}(s) = \| EM_s \|_{L^1(I^{EM})}, $ this time with $I^{EM} = [0,EM^{-1}(0.9)],$ where $EM_s^{-1}(0.9) := \inf\{t\ge 0,~ EM_s(t) \le 0.9\}$, as $EM_s(0)$ is finite (equal to $1$). % We point out that such small values of $t$ correspond to large level-sets. Also in practice, we have observed that
-% $EM_s^{-1}(0.9)$ (as well as $EM_f^{-1}(0.9)$) varies significantly depending on the dataset. Generally, for datasets in large dimension, it can be % $\widehat{EM}_s^{-1}(0.9)$ is
-% very small (in the experiments, smallest values are of order $10^{-7}$) as it is of the same order of magnitude as the inverse of the total support volume.
-
-As the distribution $F$ of the normal data is generally unknown, MV and EM curves must be estimated. Let $s\in \mathcal{S}$ and $\mb X_1,\; \ldots,\; \mb X_n$ be an i.i.d. sample with common distribution $F$ and set $\mathbb{P}_n(s \ge t)=\frac{1}{n}\sum_{i=1}^n\mathds{1}_{s(\mb X_i)\geq t}.$ The empirical MV and EM curves of $s$ are then simply defined as empirical version of \eqref{intro:MV-def} and \eqref{intro:EM-def}, 
-\begin{align}
-\label{MV-def-emp}
-\widehat{MV}_s(\alpha) = \inf_{u \ge 0} \left\{ \leb(s \ge u) ~~\st~ \mathbb{P}_n(s \ge u) \ge \alpha \right\}
-\end{align}
-\begin{align}
-\label{EM-def-emp}
-\widehat{EM}_s(t) = \sup_{u \ge 0} \mathbb{P}_n(s \ge u) ~-~ t \leb(s \ge u)
-%\lambda_s \circ \alpha_s^{-1}(\alpha),
-\end{align}
-%
-%
-Finally, we obtain the empirical EM and MV based performance criteria:
-\begin{align}
-\label{eq:standard_emp_EM}\widehat{\crit}^{EM}(s) &= \| \widehat{EM}_s \|_{L^1(I^{EM})}  &&I^{EM} = [0,\widehat{EM}^{-1}(0.9)],\\
-\label{eq:standard_emp_MV}\widehat{\crit}^{MV}(s) &= \| \widehat{MV}_s \|_{L^1(I^{MV})}  &&I^{MV} = [0.9, 0.999].
-\end{align}
-%
-% As the distribution $F$ is generally unknown, excess-mass curves must be estimated. Let $s\in \S$ and $\mb X_1,\; \ldots,\; \mb X_n$ be an i.i.d. sample with common distribution $F$ and set $$\widehat{\alpha}_s(t)=(1/n)\sum_{i=1}^n\mathds{1}_{s(X_i)\geq t}.$$ The empirical $EM$ curve of $s$ is then defined as $$\widehat{EM}_s(t)=\sup_{u>0}\{ \widehat{\alpha}_s(u)-t\lambda_s(u)\}.$$ In practice, just as with the mass-volume criterion (drawback \textbf{1}), it may be difficult to estimate the volume $\lambda_s(u)$ and Monte-Carlo approximation can naturally be used for this purpose.
-
-% Note that in practice, the volume $\leb(s \ge u)$ is estimated using Monte-Carlo approximation, which only applies to small dimensions.
-% %
-% This is a major drawback for the use of excess-mass or mass-volume criteria in high dimensional framework, if no prior knowledge on the form of these level sets is available. Besides, there has been no work yet dealing with EM or MV curves as evaluation criteria, as they have originally been introduced to build scoring scoring function via ERM.
-%
-The methodology to scale the use of the EM and MV criteria to large dimensional data consists in sub-sampling training \emph{and} testing data along features, thanks to a parameter $d'$ controlling the number of features randomly chosen for computing the (EM or MV) score. Replacement is done after each draw of features $F_1,\ldots,F_{m}$. A partial score $\widehat \crit_k^{MV}$ (resp. $\widehat \crit_k^{EM}$) is computed for each draw $F_k$ using \eqref{eq:standard_emp_EM} (resp. \eqref{eq:standard_emp_MV}). The final performance criteria are obtained by averaging these partial criteria along the different draws of features. This methodology is described in Algorithm~\ref{algo:EMMV}.
-%
-\begin{algorithm}[!tbh]
-\caption{~~High-dimensional EM/MV: evaluate AD algorithms on high-dimensional data}
-\label{algo:EMMV}
-\begin{algorithmic}
-  \STATE \textbf{Inputs}: AD algorithm $\mathcal{A}$, data set $X = (x^j_i)_{1 \le i \le n, 1 \le j \le d }$, feature sub-sampling size $d'$, number of draws $m$.
-  \FOR{$k=1,\ldots,m$}
-    \STATE{randomly select a sub-group $F_k$ of $d'$ features}
-    \STATE{compute the associated scoring function $\widehat s_{k} = \mathcal{A}\big((x^j_i)_{1 \le i \le n,~j \in F_k}\big)$}
-    \STATE compute $\widehat{\crit}_k^{EM} = \| \widehat{EM}_{\widehat s_k} \|_{L^1(I^{EM})}$ using \eqref{eq:standard_emp_EM} or $\widehat{\crit}_k^{MV} = \| \widehat{MV}_{\widehat s_k} \|_{L^1(I^{MV})}$ using \eqref{eq:standard_emp_MV}
-  \ENDFOR 
-  \STATE \textbf{Return} performance criteria: $$\widehat{\crit}^{EM}_{high\_dim} (\mathcal{A})= \frac{1}{m} \sum_{k=1}^m\widehat \crit_k^{EM} \text{~~~~(idem for MV)}$$
-\end{algorithmic}
-\end{algorithm}
-
-Low-dimensional and high-dimensional EM/MV are tested \wrt~three classical AD algorithms. A wide range on real labeled datasets are used in the benchmark.
-Experiments show that when one algorithm has % \emph{clearly} (according to both EM and PR scores)
-better performance than another on some fixed dataset, according to both ROC and PR AUCs, one can expect to recover it without using labels with an accuracy of $82\%$ in the novelty detection framework, and $77\%$ in the unsupervised framework.
-
-
-\section{One-Class Random Forests}
-\label{resume:ocrf}
-This is a summary of Chapter~\ref{chap:ocrf}, which is based on submitted work \citep{OCRF16}.
-
-%Scoring functions built by optimizing EM or MV criteria usually not perform well. 
-
-Building accurate scoring functions by optimizing EM or MV criteria is very challenging in practice, just as building classifiers by optimizing the ROC curve (\cite{Clemencon2010}) in the supervised framework.
-%
-More work is needed for these methods to be efficient in practice, particularly for the choice of the class of sets on which the optimization is done.
-%
-Indeed, % optimization is done over some class of scoring functions
-this class is \emph{hopefully rich enough to provide a good approximation while simple enough to control the convergence rate}. This compromise is hard to achieve, especially in high dimension when no prior knowledge on the shape of the level sets is available. 
-%
-% In addition, if criterion optimization is useful when no intuition is available on the underlying problem, this is not the case in anomaly detection. We usually do not try to minimize ROC curves to have a good classifier, and a doctor usually does not health people by trying to optimize tensiometer or stethoscope measurements. 
-%
-% To derive guaranties of theoretical nature (namely to attest the relevance of the algorithm in terms of \eg~ROC or EM/MV criteria), optimizing these evaluation criteria is often an efficient way. 
-% But this does not remains true in terms of empirical performance. 
-In this section, we propose a heuristic approach to build scoring functions using Random Forests (RFs) \citep{Breiman2001, Genuer2008, Biau2008, Biau2016}. % , which are an intuitive way of performing classification and regression.
-More formally, we adapt RFs to the one-class classification framework by introducing one-class splitting criteria.
-
-Standard RFs are estimators that fit a number of decision tree
-classifiers on different random sub-samples of the dataset.
-Each tree is built recursively, according to a splitting criterion based on
-some impurity measure of a node. The prediction is done by an average over each tree prediction. In classification the averaging is based on a majority vote.
-Few attempts to transfer the idea of RFs to one-class
-classification have already been made \citep{Desir12, Liu2008, Shi2012}
-%, Clemencon2014}. On ne cite pas clemencon2014 car leur algorythm treeRank n'est pas des RFs (base estimator = non-symetric ranking trees) (en fait unsupervisedTreeRank c'est juste une modif triviale de TreeRank en considerant des volumes)
-%
-No algorithm structurally extends (without second class sampling and without alternative base estimators) RFs to one-class classification.
-
-We introduce precisely such a methodology. It builds on a natural adaptation of two-class % Gini improvement proxy, yielding a one-class Gini-based criterion specially designed for
-splitting criteria to the one-class setting, as well as an adaptation of the two-class majority vote.
-In addition, it turns out that the one-class model promoted here corresponds to the asymptotic behavior of an adaptive (with respect to the tree growing process) outliers generating methodology.
-
-\textbf{One-class Model with parameters ($n$, $\boldsymbol{\alpha}$).}
-We consider a random variable $ X:\Omega \to \mathbb{R}^d$ \wrt~a probability space $(\Omega, \mathcal{F}, \mathbb{P})$.
-The law of $X$ depends on another \rv~$y \in \{0,1\}$, verifying $\mathbb{P}(y=1)=1-\mathbb{P}(y=0)=\alpha$. We assume that conditionally on $y=0$, $ X$ follows a law $F$, and conditionally on $y=1$ a law $G$:
-\begin{align*}
- X ~|~ y=0 ~~\sim~~ F, &~~~~~~~~~~  \mathbb{P}(y=0)=1-\alpha, \\
- X ~|~ y=1 ~~\sim~~ G, &~~~~~~~~~~  \mathbb{P}(y=1)=\alpha.
-\end{align*}
-%
-We model the one-class framework as follows. Among the $n$ \iid~observations, we only observe those with $y=0$ (the normal behavior), namely $N$ realizations of $( X ~|~ y=0)$, where $N$ is itself a realization of a \rv~$\mb N$ of law $\mb N \sim \text{Bin}\big(n, (1-\alpha)\big)$, the binomial distribution with parameters $(n, p)$. As outliers are not observed, we classically assume that $G$ follows a uniform distribution on the hyper-rectangle $\mathcal{X}$ containing all the observations, so that $G$ has a constant density $g(x) \equiv 1 / \leb(\mathcal{X})$ on $\mathcal{X}$. %laisser une ligne car fin du model one class
-
-One-class empirical analogues of two-class impurity measures are then obtained by replacing the quantities relative to the normal behavior by their empirical versions.
-The quantities relative to the unobserved second class (abnormal behavior) are naturally expressed using the uniform distribution assumption.
-
-In this way, our one-class impurity improvement function corresponds to the two-class one, where empirical second class quantities have been replaced by their expectation assuming a uniform distribution.
-
-But it also induces a major problem: those expectations, which are proportional to the volume of the node at stake, become very small when going deeper in the tree. In the two-class framework, the corresponding problem is when the second class is highly under-represented in the neighborhood of the observations. 
-%
-As we assume the second class to be uniform on a hyper-rectangle containing all the observations, this fact was expected, especially in large dimension (curse of dimensionality). 
-%
-As the quantities relative to the second class are very close to zero, one observes that the impurity criterion becomes constant when the split varies, and then useless.
-
-\textbf{Adaptive approach.}
-%
-A solution is to chose adaptively (\wrt~the volume of each node) the number $\alpha n$, which can be interpreted as the number of (hidden) outliers. Recall that neither $n$ nor $\alpha$ is observed in One-Class-Model($n$, $\alpha$) defined above. 
-
-The idea is to make $\alpha(t) \to 1$, $n(t) \to \infty$ when the volume of node $t$ goes to zero.
-%
-In other word, instead of considering one fixed general model One-Class-Model($n$, $\alpha$), we adapt it to each node $t$, considering One-Class-Model($n(t)$, $\alpha(t)$) \emph{before searching the best split}. We still consider the $N$ normal observations as a realization of this model. When growing the tree, using One-Class-Model($n(t)$, $\alpha(t)$) as the volume of $t$ becomes close to zero allows to maintain a high expected proportion of outliers in the node to be split.
-Of course, constraints have to be made to ensure consistency between all these models.
-%
-For instance, recalling that the number $N$ of normal observations is a realization of $\mb N$ following a Binomial distribution with parameters $(n, 1-\alpha)$, a first natural constraint on $\big(n(t), \alpha(t)\big)$ is
-\begin{align}
-\label{constraint1}
-(1-\alpha)n = \big(1-\alpha(t)\big) \cdot n(t) \text{~~~~~for all~~} t,
-\end{align}
-so that the expectation of $\mb N$ remains unchanged. 
-Then the asymptotic model (when the volume of $t$ goes to $0$) consists in fact in assuming that the number $N$ of normal data we observed is a realization of a Poisson distribution $\mathcal{P}\big((1-\alpha)n\big)$, and that an infinite number of outliers have been hidden. In the two class framework, this corresponds to observing an infinite number of uniformly distributed outliers, breaking the curse of dimensionality (see Chapter~\ref{chap:ocrf} for details).
-
-
-\textbf{One-Class RF algorithm.} Let us summarize the algorithm in its most generic version.
-It has $7$ parameters:
-$max\_samples$, $max\_features\_tree$, $max\_features\_node$, $\gamma$, $max\_depth$, $n\_trees$, $s_k$.
-%
-Each tree is classically grown on a random subset of both the input samples and the input features \citep{Ho1998, Panov2007}.
-This random subset is a sub-sample of size $max\_samples$, with $max\_features\_tree$ variables chosen at random without replacement (replacement is only done after the tree is grown). The tree is built by minimizing 
-a one-class version of the Gini criterion \citep{Gini1912}, obtained by replacing empirical quantities related to the (unobserved) second class by theoretical ones. These correspond to a weighted uniform distribution, the weight increasing when the volume of the node decreases, in order to avoid highly unbalanced classes (volume vs. observations). Indeed when their depth increases, the nodes tend to have smaller volumes while keeping as much (normal) observations as they can.
-
-New nodes are built (by minimizing this criterion) until the maximal depth $max\_depth$ is achieved.
-% define a large number of geometric features and search over a random selection
-% of these for the best split at each node
-% In addition, this is done
-Minimization is done as introduced in \citep{Amit1997}, by defining a large number $max\_features\_node$ of geometric features and searching over a random selection of these for the best split at each node.
-%
-The forest is composed of a number $n\_trees$ of trees. The predicted score of a point $x$ is given by $s_k(x)$, which is either the stepwise density estimate (induced by the forest) around $x$, the local density of a typical cell containing $x$ or the averaged depth of $x$ among the forest. Chapter~\ref{chap:ocrf} formally defines the one-class splitting criteria and provides an extensive benchmark of state-of-the-art anomaly detection algorithms.
-
-
-
-
-\section{Extreme Values Analysis through STDF estimation}
+\section{Accuracy on extreme regions}
+\label{resume:extreme}
+\subsection{Extreme Values Analysis through STDF estimation}
 \label{resume:stdf}
 This section is a summary of Chapter~\ref{colt}, which is based on previous work published in \cite{COLT15}.
 
@@ -679,7 +512,7 @@ However, no bounds exist on the finite sample error. The contribution summarized
 
 
 \paragraph{Learning the dependence structure of rare events.}
-Classical VC inequalities aim at bounding the deviation of empirical from theoretical quantities on relatively simple classes of sets, called VC classes. These classes typically cover the support of the underlying distribution.  However, when dealing with rare events, it is of great interest to have such bounds on a class of sets which only covers a small probability region and thus contains (very) few observations. This yields sharper bounds, since only differences  between very small quantities are involved. The starting point of this analysis is the following VC-inequality stated below and proved in Chapter~\ref{colt}.
+Classical VC inequalities aim at bounding the deviation of empirical from population quantities on relatively simple classes of sets, called VC classes. These classes typically cover the support of the underlying distribution.  However, when dealing with rare events, it is of great interest to have such bounds on a class of sets which only covers a small probability region and thus contains (very) few observations. This yields sharper bounds, since only differences  between very small quantities are involved. The starting point of this analysis is the following VC-inequality stated below and proved in Chapter~\ref{colt}.
 \begin{theorem}
 \label{thm-princ} 
 Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ be \iid~realizations of a \rv~$\mathbf{X}$, a VC-class $\mathcal{A}$ with VC-dimension $V_{\mathcal{A}}$. %and shattering coefficient (or growth function) $S_{\mathcal{A}}(n)$.
@@ -725,7 +558,7 @@ aiming at exhibiting a sparsity pattern within the dependence structure of extre
 
 
 
-\section{Sparse Representation of Multivariate Extremes}
+\subsection{Sparse Representation of Multivariate Extremes}
 \label{resume:sec:JMVA}
 This section is a summary of Chapter~\ref{jmva}, which is based on previous work published in \cite{AISTAT16} and on its long version \cite{ARXIV16} under review.
 
@@ -814,7 +647,7 @@ The underlying assumption is that an observation is potentially abnormal if its 
 According to the benchmarks derived in this chapter, DAMEX significantly improves the performance (both in term of precision and of ROC curves) in extreme regions, inducing \eg~more vertical ROC curves near the origin.
 
 \textbf{Theoretical grounds.}
-From the work on the \stdf~estimation summarized in the previous Section~\ref{resume:stdf}, in particular from Theorem~\ref{thm-princ} and from the ideas used to prove Theorem~\ref{thm:l}, we are able to derive some theoretical guaranties for this approach.
+From the work on the \stdf~estimation summarized in the previous sub-section~\ref{resume:stdf}, in particular from Theorem~\ref{thm-princ} and from the ideas used to prove Theorem~\ref{thm:l}, we are able to derive some theoretical guaranties for this approach.
 %
 Under non-restrictive assumptions standard in EVT (existence of the angular measure and continuous marginal c.d.f.), we obtain a non-asymptotic bound of the form
 \begin{align*}
@@ -1013,6 +846,213 @@ The bias term goes to zero as $n \to \infty$, for any fixed $\epsilon$.
 % % XXX: comparaison avec LOF, OCSVM and EllipticEnvelop when possible?\\
 % % XXX: study combination DAMEX with other classical AD?
 
+
+
+\section{Heuristic-based approaches}
+\label{resume:sec:heuristic}
+In this section, we present two submitted contributions addressing two major challenges in anomaly detection:
+\begin{itemize}
+\item How to evaluate unsupervised anomaly detection in practice?
+\item How to grow random forests with only one class available?
+\end{itemize}
+
+The first point has been partially adressed in Section~\ref{resume:scoring} with MV and EM curves.
+However, these two criteria have originally been introduced to build scoring functions \emph{via} Empirical Risk Minimization (ERM), and no study has been made on their use to evaluate scoring functions as ROC or PR criteria do.
+Besides, their use to measure the quality of a scoring function $s_n$ involves the computation of the Lebesgue measure  $\leb(s_n \ge u)$, which is very challenging in high dimensional frameworks. 
+
+The two proposed approaches are heuristic-based, and no theoretical guarantees such as consistency or convergence rates are derived. However, extensive benchmarks show the relevance of these approaches.
+
+\subsection{Evaluation of AD algorithms}
+\label{resume:evaluation}
+This is a summary of Chapter~\ref{chap:evaluation}, which is based on a workshop paper \citep{ICMLworkshop16} and a submitted work \citep{NIPS16evaluation}.
+
+
+When sufficient labeled data are available, classical criteria based on ROC \citep{Provost1997, Provost1998, Fawcett2006} or PR \citep{Davis2006, Clemencon2009} curves can be used to compare the performance of unsupervised anomaly detection algorithms. However, in many situations, few or no data are labeled. This calls for alternative criteria one can compute on non-labeled data.
+
+While excess-mass and mass-volume curves quantities have originally been introduced to build scoring functions \emph{via}
+Empirical Risk Minimization (ERM), the MV-curve has been used recently for the calibration of the One-Class SVM \citep{Thomas2015}.
+When used to attest the quality of some scoring function, the volumes induced become unknown and must be estimated, which is challenging in large dimension if no prior knowledge on the form of these level sets is available.
+%
+Besides, the accuracy of EM or MV curves as evaluation criteria has not been studied yet.
+%
+Summarized in this section and as a contribution of this thesis, numerical performance scores based on EM and MV criteria (that do not require labels) are empirically shown to discriminate accurately (\wrt~ROC or PR based criteria) between algorithms.
+%These criteria are based on existing Excess-Mass (EM) and Mass-Volume (MV) curves, which generally cannot be well estimated in large dimension.
+A methodology based on feature sub-sampling and aggregating is also described and tested. This extends the use of these criteria to high-dimensional datasets and solves major drawbacks inherent to standard EM and MV curves.
+
+Recall that the MV and EM curves of a scoring function $s$ can be written as
+\noindent
+\begin{align}
+\label{intro:MV-def}
+ MV_s(\alpha) &= \inf_{u \ge 0}~~ \leb(s \ge u) ~~\st~~\mathbb{P}(s(\mb X) \ge u) \ge \alpha\\
+\label{intro:EM-def}
+ EM_s(t) &= \sup_{u \ge 0}~~ \mathbb{P}(s(\mb X) \ge u) ~-~ t \leb(s \ge u)
+\end{align}
+for any $\alpha\in (0,1)$ and $t >0$.
+%
+The optimal curves are $MV^* = MV_f = MV_{T \circ f}$ and $EM^* = EM_f = EM_{T \circ f}$ for any increasing transform $T: \text{Im(f)} \to \mathbb{R}$
+%
+As curves cannot be trivially compared, consider the $L^1$-norm $\|.\|_{L^1(I)}$ with $I\subset \rset$ an interval. As $MV^*=MV_f$ is below $MV_s$ pointwise, $\argmin_s \| MV_s - MV^* \|_{L^1(I)} = \argmin \| MV_s \|_{L^1(I)} $. We thus define
+$\crit^{MV}(s) = \| MV_s \|_{L^1(I^{MV})},$ which is equivalent to consider $\| MV_s - MV^* \|_{L^1(I^{MV})}$ as mentioned in the introduction. As we are interested in evaluating accuracy on large density level-sets, one natural interval $I^{MV}$ would be for instance $[0.9, 1]$. However, MV diverges in $1$ when the support is infinite, so that we arbitrarily take $I^{MV} = [0.9, 0.999].$
+The smaller is $\crit^{MV}(s)$, the better is the scoring function $s$.
+%
+Similarly, we consider $\crit^{EM}(s) = \| EM_s \|_{L^1(I^{EM})}, $ this time with $I^{EM} = [0,EM^{-1}(0.9)],$ where $EM_s^{-1}(0.9) := \inf\{t\ge 0,~ EM_s(t) \le 0.9\}$, as $EM_s(0)$ is finite (equal to $1$). % We point out that such small values of $t$ correspond to large level-sets. Also in practice, we have observed that
+% $EM_s^{-1}(0.9)$ (as well as $EM_f^{-1}(0.9)$) varies significantly depending on the dataset. Generally, for datasets in large dimension, it can be % $\widehat{EM}_s^{-1}(0.9)$ is
+% very small (in the experiments, smallest values are of order $10^{-7}$) as it is of the same order of magnitude as the inverse of the total support volume.
+
+As the distribution $F$ of the normal data is generally unknown, MV and EM curves must be estimated. Let $s\in \mathcal{S}$ and $\mb X_1,\; \ldots,\; \mb X_n$ be an i.i.d. sample with common distribution $F$ and set $\mathbb{P}_n(s \ge t)=\frac{1}{n}\sum_{i=1}^n\mathds{1}_{s(\mb X_i)\geq t}.$ The empirical MV and EM curves of $s$ are then simply defined as empirical version of \eqref{intro:MV-def} and \eqref{intro:EM-def}, 
+\begin{align}
+\label{MV-def-emp}
+\widehat{MV}_s(\alpha) = \inf_{u \ge 0} \left\{ \leb(s \ge u) ~~\st~ \mathbb{P}_n(s \ge u) \ge \alpha \right\}
+\end{align}
+\begin{align}
+\label{EM-def-emp}
+\widehat{EM}_s(t) = \sup_{u \ge 0} \mathbb{P}_n(s \ge u) ~-~ t \leb(s \ge u)
+%\lambda_s \circ \alpha_s^{-1}(\alpha),
+\end{align}
+%
+%
+Finally, we obtain the empirical EM and MV based performance criteria:
+\begin{align}
+\label{eq:standard_emp_EM}\widehat{\crit}^{EM}(s) &= \| \widehat{EM}_s \|_{L^1(I^{EM})}  &&I^{EM} = [0,\widehat{EM}^{-1}(0.9)],\\
+\label{eq:standard_emp_MV}\widehat{\crit}^{MV}(s) &= \| \widehat{MV}_s \|_{L^1(I^{MV})}  &&I^{MV} = [0.9, 0.999].
+\end{align}
+%
+% As the distribution $F$ is generally unknown, excess-mass curves must be estimated. Let $s\in \S$ and $\mb X_1,\; \ldots,\; \mb X_n$ be an i.i.d. sample with common distribution $F$ and set $$\widehat{\alpha}_s(t)=(1/n)\sum_{i=1}^n\mathds{1}_{s(X_i)\geq t}.$$ The empirical $EM$ curve of $s$ is then defined as $$\widehat{EM}_s(t)=\sup_{u>0}\{ \widehat{\alpha}_s(u)-t\lambda_s(u)\}.$$ In practice, just as with the mass-volume criterion (drawback \textbf{1}), it may be difficult to estimate the volume $\lambda_s(u)$ and Monte-Carlo approximation can naturally be used for this purpose.
+
+% Note that in practice, the volume $\leb(s \ge u)$ is estimated using Monte-Carlo approximation, which only applies to small dimensions.
+% %
+% This is a major drawback for the use of excess-mass or mass-volume criteria in high dimensional framework, if no prior knowledge on the form of these level sets is available. Besides, there has been no work yet dealing with EM or MV curves as evaluation criteria, as they have originally been introduced to build scoring scoring function via ERM.
+%
+The methodology to scale the use of the EM and MV criteria to large dimensional data consists in sub-sampling training \emph{and} testing data along features, thanks to a parameter $d'$ controlling the number of features randomly chosen for computing the (EM or MV) score. Replacement is done after each draw of features $F_1,\ldots,F_{m}$. A partial score $\widehat \crit_k^{MV}$ (resp. $\widehat \crit_k^{EM}$) is computed for each draw $F_k$ using \eqref{eq:standard_emp_EM} (resp. \eqref{eq:standard_emp_MV}). The final performance criteria are obtained by averaging these partial criteria along the different draws of features. This methodology is described in Algorithm~\ref{algo:EMMV}.
+%
+\begin{algorithm}[!tbh]
+\caption{~~High-dimensional EM/MV: evaluate AD algorithms on high-dimensional data}
+\label{algo:EMMV}
+\begin{algorithmic}
+  \STATE \textbf{Inputs}: AD algorithm $\mathcal{A}$, data set $X = (x^j_i)_{1 \le i \le n, 1 \le j \le d }$, feature sub-sampling size $d'$, number of draws $m$.
+  \FOR{$k=1,\ldots,m$}
+    \STATE{randomly select a sub-group $F_k$ of $d'$ features}
+    \STATE{compute the associated scoring function $\widehat s_{k} = \mathcal{A}\big((x^j_i)_{1 \le i \le n,~j \in F_k}\big)$}
+    \STATE compute $\widehat{\crit}_k^{EM} = \| \widehat{EM}_{\widehat s_k} \|_{L^1(I^{EM})}$ using \eqref{eq:standard_emp_EM} or $\widehat{\crit}_k^{MV} = \| \widehat{MV}_{\widehat s_k} \|_{L^1(I^{MV})}$ using \eqref{eq:standard_emp_MV}
+  \ENDFOR 
+  \STATE \textbf{Return} performance criteria: $$\widehat{\crit}^{EM}_{high\_dim} (\mathcal{A})= \frac{1}{m} \sum_{k=1}^m\widehat \crit_k^{EM} \text{~~~~(idem for MV)}$$
+\end{algorithmic}
+\end{algorithm}
+
+Low-dimensional and high-dimensional EM/MV are tested \wrt~three classical AD algorithms. A wide range on real labeled datasets are used in the benchmark.
+Experiments show that when one algorithm has % \emph{clearly} (according to both EM and PR scores)
+better performance than another on some fixed dataset, according to both ROC and PR AUCs, one can expect to recover it without using labels with an accuracy of $82\%$ in the novelty detection framework, and $77\%$ in the unsupervised framework.
+
+
+\subsection{One-Class Random Forests}
+\label{resume:ocrf}
+This is a summary of Chapter~\ref{chap:ocrf}, which is based on submitted work \citep{OCRF16}.
+
+%Scoring functions built by optimizing EM or MV criteria usually not perform well. 
+
+Building accurate scoring functions by optimizing EM or MV criteria is very challenging in practice, just as building classifiers by optimizing the ROC curve (\cite{Clemencon2010}) in the supervised framework.
+%
+More work is needed for these methods to be efficient in practice, particularly for the choice of the class of sets on which the optimization is done.
+%
+Indeed, % optimization is done over some class of scoring functions
+this class is \emph{hopefully rich enough to provide a good approximation while simple enough to control the convergence rate}. This compromise is hard to achieve, especially in high dimension when no prior knowledge on the shape of the level sets is available. 
+%
+% In addition, if criterion optimization is useful when no intuition is available on the underlying problem, this is not the case in anomaly detection. We usually do not try to minimize ROC curves to have a good classifier, and a doctor usually does not health people by trying to optimize tensiometer or stethoscope measurements. 
+%
+% To derive guaranties of theoretical nature (namely to attest the relevance of the algorithm in terms of \eg~ROC or EM/MV criteria), optimizing these evaluation criteria is often an efficient way. 
+% But this does not remains true in terms of empirical performance. 
+In this section, we propose a heuristic approach to build scoring functions using Random Forests (RFs) \citep{Breiman2001, Genuer2008, Biau2008, Biau2016}. % , which are an intuitive way of performing classification and regression.
+More formally, we adapt RFs to the one-class classification framework by introducing one-class splitting criteria.
+
+Standard RFs are estimators that fit a number of decision tree
+classifiers on different random sub-samples of the dataset.
+Each tree is built recursively, according to a splitting criterion based on
+some impurity measure of a node. The prediction is done by an average over each tree prediction. In classification the averaging is based on a majority vote.
+Few attempts to transfer the idea of RFs to one-class
+classification have already been made \citep{Desir12, Liu2008, Shi2012}
+%, Clemencon2014}. On ne cite pas clemencon2014 car leur algorythm treeRank n'est pas des RFs (base estimator = non-symetric ranking trees) (en fait unsupervisedTreeRank c'est juste une modif triviale de TreeRank en considerant des volumes)
+%
+No algorithm structurally extends (without second class sampling and without alternative base estimators) RFs to one-class classification.
+
+We introduce precisely such a methodology. It builds on a natural adaptation of two-class % Gini improvement proxy, yielding a one-class Gini-based criterion specially designed for
+splitting criteria to the one-class setting, as well as an adaptation of the two-class majority vote.
+In addition, it turns out that the one-class model promoted here corresponds to the asymptotic behavior of an adaptive (with respect to the tree growing process) outliers generating methodology.
+
+\textbf{One-class Model with parameters ($n$, $\boldsymbol{\alpha}$).}
+We consider a random variable $ X:\Omega \to \mathbb{R}^d$ \wrt~a probability space $(\Omega, \mathcal{F}, \mathbb{P})$.
+The law of $X$ depends on another \rv~$y \in \{0,1\}$, verifying $\mathbb{P}(y=1)=1-\mathbb{P}(y=0)=\alpha$. We assume that conditionally on $y=0$, $ X$ follows a law $F$, and conditionally on $y=1$ a law $G$:
+\begin{align*}
+ X ~|~ y=0 ~~\sim~~ F, &~~~~~~~~~~  \mathbb{P}(y=0)=1-\alpha, \\
+ X ~|~ y=1 ~~\sim~~ G, &~~~~~~~~~~  \mathbb{P}(y=1)=\alpha.
+\end{align*}
+%
+We model the one-class framework as follows. Among the $n$ \iid~observations, we only observe those with $y=0$ (the normal behavior), namely $N$ realizations of $( X ~|~ y=0)$, where $N$ is itself a realization of a \rv~$\mb N$ of law $\mb N \sim \text{Bin}\big(n, (1-\alpha)\big)$, the binomial distribution with parameters $(n, p)$. As outliers are not observed, we classically assume that $G$ follows a uniform distribution on the hyper-rectangle $\mathcal{X}$ containing all the observations, so that $G$ has a constant density $g(x) \equiv 1 / \leb(\mathcal{X})$ on $\mathcal{X}$. This assumption \emph{will be removed} in the adaptive approach, where no prior distribution is assumed for the outliers.
+%laisser une ligne car fin du model one class
+
+One-class empirical analogues of two-class impurity measures are then obtained by replacing the quantities relative to the normal behavior by their empirical versions.
+The quantities relative to the unobserved second class (abnormal behavior) are naturally expressed using the uniform distribution assumption.
+
+In this way, our one-class impurity improvement function corresponds to the two-class one, where empirical second class quantities have been replaced by their expectation assuming a uniform distribution.
+
+But it also induces a major problem: those expectations, which are proportional to the volume of the node at stake, become very small when going deeper in the tree. In the two-class framework, the corresponding problem is when the second class is highly under-represented in the neighborhood of the observations. 
+%
+As we assume the second class to be uniform on a hyper-rectangle containing all the observations, this fact was expected, especially in large dimension (curse of dimensionality). 
+%
+As the quantities relative to the second class are very close to zero, one observes that the impurity criterion becomes constant when the split varies, and then useless.
+
+\textbf{Adaptive approach.}
+%
+A solution is to chose adaptively (\wrt~the volume of each node) the number $\alpha n$, which can be interpreted as the number of (hidden) outliers. Recall that neither $n$ nor $\alpha$ is observed in One-Class-Model($n$, $\alpha$) defined above. 
+
+The idea is to make $\alpha(t) \to 1$, $n(t) \to \infty$ when the volume of node $t$ goes to zero.
+%
+In other word, instead of considering one fixed general model One-Class-Model($n$, $\alpha$), we adapt it to each node $t$, considering One-Class-Model($n(t)$, $\alpha(t)$) \emph{before searching the best split}. We still consider the $N$ normal observations as a realization of this model. When growing the tree, using One-Class-Model($n(t)$, $\alpha(t)$) allows to maintain a non-negligeable expected proportion of outliers in the node to be split, even when its volume becomes close to zero.
+Of course, constraints have to be made to ensure consistency between all these models.
+%
+For instance, recalling that the number $N$ of normal observations is a realization of $\mb N$ following a Binomial distribution with parameters $(n, 1-\alpha)$, a first natural constraint on $\big(n(t), \alpha(t)\big)$ is
+\begin{align}
+\label{constraint1}
+(1-\alpha)n = \big(1-\alpha(t)\big) \cdot n(t) \text{~~~~~for all~~} t,
+\end{align}
+so that the expectation of $\mb N$ remains unchanged. 
+Then the asymptotic model (when the volume of $t$ goes to $0$) consists in fact in assuming that the number $N$ of normal data we observed is a realization of a Poisson distribution $\mathcal{P}\big((1-\alpha)n\big)$, and that an infinite number of outliers have been hidden. In the two class framework, this corresponds to observing an infinite number of outliers distributed closely around, outside and inside the support of the normal distribution, breaking the curse of dimensionality when using uniformly distributed outliers (see Chapter~\ref{chap:ocrf} for details).
+
+\begin{remark}[\textbf{Basic idea behind the adaptive approach}]
+This work corresponds in fact to the following simple idea that allows us to split a node without examples of the second class.
+Each time we are looking for the best split for a node $t$, we simply replace (in the 2-class impurity decrease to be maximized) the second class proportion in the left node $t_L$ by the proportion expectation $volume(t_L)/volume(t)$ (idem for the right node).
+It ensures that one child node tries to capture the maximum number of observations with a minimal volume, while the other child looks for the opposite. %Such volume constraint/mass objective are similarly used to define minimum-volume sets.
+\end{remark}
+
+
+\begin{remark}[\textbf{No sampling}]
+The corresponding sampling method is the following: for each note $t$ to be splitted containing $n_t$ observations (inliers), generate $n_t$ uniform outliers over the corresponding cell to optimize a two-class splitting criterion. We precisely \emph{avoid sampling} the outliers by using the proportion expectation $volume(t_L)/volume(t)$.
+\end{remark}
+
+
+
+\textbf{One-Class RF algorithm.} Let us summarize the algorithm in its most generic version.
+It has $7$ parameters:
+$max\_samples$, $max\_features\_tree$, $max\_features\_node$, $\gamma$, $max\_depth$, $n\_trees$, $s_k$.
+%
+Each tree is classically grown on a random subset of both the input samples and the input features \citep{Ho1998, Panov2007}.
+This random subset is a sub-sample of size $max\_samples$, with $max\_features\_tree$ variables chosen at random without replacement (replacement is only done after the tree is grown). The tree is built by minimizing 
+a one-class version of the Gini criterion \citep{Gini1912}, obtained by replacing empirical quantities related to the (unobserved) second class by population ones. These correspond to a weighted uniform distribution, the weight increasing when the volume of the node decreases, in order to avoid highly unbalanced classes (volume vs. observations). Indeed when their depth increases, the nodes tend to have smaller volumes while keeping as much (normal) observations as they can.
+
+New nodes are built (by minimizing this criterion) until the maximal depth $max\_depth$ is achieved.
+% define a large number of geometric features and search over a random selection
+% of these for the best split at each node
+% In addition, this is done
+Minimization is done as introduced in \citep{Amit1997}, by defining a large number $max\_features\_node$ of geometric features and searching over a random selection of these for the best split at each node.
+%
+The forest is composed of a number $n\_trees$ of trees. The predicted score of a point $x$ is given by $s_k(x)$, which is either the stepwise density estimate (induced by the forest) around $x$, the local density of a typical cell containing $x$ or the averaged depth of $x$ among the forest. Chapter~\ref{chap:ocrf} formally defines the one-class splitting criteria and provides an extensive benchmark of state-of-the-art anomaly detection algorithms.
+
+
+
+
+
+
+
+
 \section{Scikit-learn contributions}
 \label{sec:impl}
 
@@ -1031,47 +1071,30 @@ This contribution was supervised by Alexandre Gramfort and was funded by the Par
 
 
 \section{Conclusion and Scientific Output}
+
 The contributions of this thesis can be summarized as follows. 
 
-First, an adequate performance criterion is proposed (Section~\ref{resume:em-curve}), in order to compare possible candidate scoring function and to pick one eventually. 
+First, an adequate performance criterion called Excess-Mass curve is proposed (Section~\ref{resume:em-curve}), in order to compare possible candidate scoring function and to pick one eventually. 
 The corresponding publication is \cite{AISTAT15}:
 \begin{itemize}
 \item On Anomaly Ranking and Excess-Mass Curves. (AISTAT 2015).\\
 Authors: Goix, Sabourin, and Clémençon. 
 \end{itemize}
 
-However, the use of the Excess-Mass curve (just as Mass-Volume curve) to measure the quality of a scoring function $s_n$ involves the computation of the Lebesgue measure  $\leb(s_n \ge u)$, which is a major drawback for its use in high dimensional framework. Besides, these two criteria
-have originally been introduced to build scoring functions \emph{via}
-Empirical Risk Minimization (ERM), and no study has been made on their use to evaluate scoring functions as ROC or PR criteria do.
 % This is a major drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available. 
 
-As a second contribution, we show (empirically) that EM or MV based criteria are able to discriminate accurately (\wrt~ROC or PR based criteria) between scoring functions in low dimension. Besides, we propose a methodology based on feature sub-sampling and aggregating to scale the use of EM or MV to higher dimensions.
-The corresponding publications are \cite{ICMLworkshop16} and \cite{NIPS16evaluation}:
-\begin{itemize}
-\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (ICML 2016, Workshop on Anomaly Detection). % Co-winner of the Best Paper Award, sponsored by Google.
-  \\
-Author: Goix. 
-\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (submitted to NIPS 2016).\\ Authors: Goix and Thomas. 
-\end{itemize}
 
 %However, to measure with this criterion the quality of a scoring function $s_n$, volume of level sets of $s_n$ have to be compute which is a considerable drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available.
 
-The third contribution of this thesis is to develop an efficient way of building accurate scoring functions. This is done by generalizing random forests to one-class classification. The corresponding submitted work is \cite{OCRF16}: 
-\begin{itemize}
-\item One-Class Splitting Criteria for Random Forests with Application to Anomaly Detection. (Submitted to NIPS 2016).\\
-Authors: Goix, Brault, Drougard and Chiapino.
-\end{itemize}
-
-
-As a fourth contribution, we bring advances in multivariate EVT by providing non-asymptotic bounds for the estimation of the STDF, a functional characterizing the extreme dependence structure (Section~\ref{resume:stdf}). The corresponding publication is \cite{COLT15}:
+As a second contribution, we bring advances in multivariate EVT by providing non-asymptotic bounds for the estimation of the STDF, a functional characterizing the extreme dependence structure (Section~\ref{resume:stdf}). The corresponding publication is \cite{COLT15}:
 \begin{itemize}
 \item Learning the dependence structure of rare events: a non-asymptotic study. (COLT 2015).\\
 Authors: Goix, Sabourin, and Clémençon.
 \end{itemize}
 
-The fifth contribution is to design a statistical method that produces a (possibly sparse) representation of the dependence structure of extremes, while deriving non-asymptotic bounds to assess the accuracy of the estimation procedure (Section~\ref{resume:sec:JMVA}).
+The third contribution is to design a statistical method that produces a (possibly sparse) representation of the dependence structure of extremes, while deriving non-asymptotic bounds to assess the accuracy of the estimation procedure (Section~\ref{resume:sec:JMVA}).
 %
-This contribution also includes a multivariate EVT-based algorithm which returns a scoring functions defined in extremes region. This directly applies to anomaly detection as an abnormality score.
+This contribution also includes a multivariate EVT-based algorithm which returns a scoring functions defined in extreme regions. This directly applies to anomaly detection as an abnormality score.
 The corresponding publications are \cite{AISTAT16}, \cite{NIPSWORKSHOP15} and \cite{ARXIV16}:
 %
 \begin{itemize}
@@ -1082,7 +1105,28 @@ Authors: Goix, Sabourin, and Clémençon.
 \end{itemize}
 
 
-As a last contribution, two classical anomaly detection algorithms have been implemented and merged on scikit-learn. They are used in this dissertation for empirical comparison to attest the relevance of the forementionned approaches.
+
+
+
+As a fourth contribution, we show (empirically) that EM or MV based criteria are able to discriminate accurately (\wrt~ROC or PR based criteria) between scoring functions in low dimension. Besides, we propose a methodology based on feature sub-sampling and aggregating to scale the use of EM or MV to higher dimensions.
+The corresponding publications are \cite{ICMLworkshop16} and \cite{NIPS16evaluation}:
+\begin{itemize}
+\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (ICML 2016, Workshop on Anomaly Detection). % Co-winner of the Best Paper Award, sponsored by Google.
+  \\
+Author: Goix. 
+\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (submitted to NIPS 2016).\\ Authors: Goix and Thomas. 
+\end{itemize}
+
+
+The fifth contribution of this thesis is to develop an efficient heuristic for building accurate scoring functions. This is done by generalizing random forests to one-class classification. The corresponding submitted work is \cite{OCRF16}: 
+\begin{itemize}
+\item One-Class Splitting Criteria for Random Forests with Application to Anomaly Detection. (Submitted to NIPS 2016).\\
+Authors: Goix, Brault, Drougard and Chiapino.
+\end{itemize}
+
+
+
+As a last contribution, two classical anomaly detection algorithms have been implemented and merged on scikit-learn. They are used in this dissertation for empirical comparison purpose to attest the relevance of the forementionned approaches.
 The pull requests of these two contributions are available here:
 \begin{itemize}
 \item https://github.com/scikit-learn/scikit-learn/pull/4163  (Isolation Forest)
@@ -1096,30 +1140,34 @@ This thesis was carried out in the STA (Statistiques et Applications) team of th
 \paragraph{Outline of the thesis.}
 This dissertation is organized as follows. 
 \begin{itemize}
-\item Part~\ref{part:background} gathers the background work relevant to this thesis.
-
-Chapter~\ref{back:AD_scikit} reviews classical anomaly detection algorithms through the scikit-learn library and presents implementative contributions of this thesis; 
+\item Part~\ref{part:background} gathers the background work relevant to this thesis:
 
 Chapter~\ref{chap:back_concentration} presents general results on measure concentration inequalities; 
 
-Chapter~\ref{back:EVT} provides a concise background on Extreme Value Theory.
+Chapter~\ref{back:EVT} provides a concise background on extreme value theory;
 
-\item Part~\ref{part:struct} deals with unsupervised anomaly detection criteria.
+Chapter~\ref{back:AD_scikit} reviews classical anomaly detection algorithms used in the benchmarks and provides illustrative examples with the scikit-learn library. It also presents relating implementative contributions.
 
-Chapter~\ref{aistat:chap} presents the details on anomaly ranking and excess-mass curve, as summarized above Section~\ref{resume:scoring}. The corresponding published work is \cite{AISTAT15}.
+\item Part~\ref{part:struct} deals with theoretical performance criteria for the anomaly ranking task:
 
-Chapter~\ref{chap:evaluation} deals with the evaluation of anomaly detection algorithms, as summarized above Section~\ref{resume:scoring}. %Chapter~\ref{resume:evaluation}.
-The corresponding publications are \cite{ICMLworkshop16} and \cite{NIPS16evaluation}:
+Chapter~\ref{aistat:chap} presents the details on anomaly ranking and excess-mass curve, as summarized above Section~\ref{resume:scoring}; %The corresponding published work is \cite{AISTAT15}.
 
+\item Part~\ref{part:vect} focuses on EVT-based methods for anomaly detection:
 
-\item Part~\ref{part:ocrf} is about one-class random forests: Chapter~\ref{chap:ocrf} presents the details % on one class splitting criteria 
-  summarized above Section~\ref{resume:ocrf}.
-The corresponding submitted work is \citep{OCRF16}.
-
-\item Part~\ref{part:vect} focuses on EVT-based methods for anomaly detection. 
-
-Chapter~\ref{colt} deals with the stable tail dependence function as summarized above in Section~\ref{resume:stdf}. The corresponding publication is \cite{COLT15}.
+Chapter~\ref{colt} deals with the stable tail dependence function as summarized above in Section~\ref{resume:stdf}; %The corresponding publication is \cite{COLT15};
 
 Chapter~\ref{jmva} describes how scoring functions can be build using EVT, as previously summarized in Section~\ref{resume:sec:JMVA}.
-The corresponding publications are \cite{NIPSWORKSHOP15}, \cite{AISTAT16} and submitted work \cite{ARXIV16}.
+%The corresponding publications are \cite{NIPSWORKSHOP15}, \cite{AISTAT16} and submitted work \cite{ARXIV16}.
+
+
+\item Part~\ref{part:heuristic} gathers two efficient heuristic-based methodologies:
+
+Chapter~\ref{chap:evaluation} deals with the evaluation of anomaly detection algorithms, as summarized above Section~\ref{resume:evaluation}; %Chapter~\ref{resume:evaluation}.
+%The corresponding publications are \cite{ICMLworkshop16} and \cite{NIPS16evaluation}.
+
+Chapter~\ref{chap:ocrf} presents the details % on one class splitting criteria 
+  (summarized above Section~\ref{resume:ocrf}) on one-class random forests.
+%The corresponding submitted work is \citep{OCRF16};
+
+
 \end{itemize}

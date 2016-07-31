@@ -7,7 +7,7 @@ This chapter presents general results on measure concentration inequalities, obt
 
 Note: The only contribution here lies in the last section~\ref{sec:concentration-contrib} of this chapter, where a VC-type inequality is proved using a Bernstein-type concentration inequality. A corollary of this VC-type inequality focusing on maximal deviation on low-probability regions is needed in Chapter~\ref{colt}.
 
-We recommend \cite{McDiarmid98} and \cite{Janson2002} for good references on this subject, and \cite{Massart2007, BLM2013} for a complete review on concentration inequalities.
+We recommend \cite{McDiarmid98} and \cite{Janson2002} for good references on this subject, and \cite{Massart2007, BLM2013} for a extensive review on concentration inequalities.
 %  Ce document présente des résultats généraux sur les inégalités de concentration de mesure et quelques applications, notamment aux graphes aléatoires.
 % Il est basé sur les articles de Colin McDiarmid "Concentration", de Terence Tao "Talagrand's concentration inequality", et de Svante Janson "On concentration of probability".
 % Dans ce travail, j'ai choisi de mettre en relation les trois articles de la facon suivante : J'utilise l'article de McDiarmid pour illustrer et démontrer dans un cadre plus général les résultats fondamentaux exposés dans l'article de Janson, dont le but est de donner un survol des différentes méthodes pour obtenir des inégalités de concentration. J'ai choisi quelques applications présentées par McDiarmid, ainsi que dans l'article de Tao.
@@ -344,7 +344,7 @@ Therefore $\hat \nu = \supess(\sum var_k)=\supess(V)=V$. Theorem~\ref{3.15} appl
 % \end{itemize}
 % \end{theorem} 
 
-\section{Links with Statistical Learning and VC theory}
+\section{Connections with Statistical Learning and VC theory}
 In statistical learning theory, we are often interested in deriving concentration inequalies for the random variable 
 
 \begin{align}
@@ -1003,50 +1003,53 @@ In \cite{VertVert}, it is shown that the OCSVM is a consistent estimator of dens
 %
 % As a good sketch is better than a long speech, we refer to 
 Figures~\ref{table:OCSVM-hard} and \ref{table:OCSVM-soft}  summarizes the theoretical insights of OCSVM compared to the standard SVM, respectively for the hard-margin (no error is tolerated during training) and soft-margin separation (some margin errors are tolerated in training).
-\renewcommand{\arraystretch}{2.5}
+\renewcommand{\arraystretch}{1.5}
 \begin{table}[!ht]
-  \centering
-  \begin{tabular}{|c|c|}\hline
-    SVM                                                             &    OCSVM  \\ \hline 
-    $\displaystyle \min_{w,b} \frac{1}{2} \|w\|^2$                   & $\displaystyle \min_{w} \frac{1}{2} \|w\|^2$   \\
-    s.t~~~~ $\forall i,~~y_i(\langle w, x_i\rangle + b) \ge 1$      & s.t~~~~ $\forall i,~~\langle w, x_i\rangle ~\ge 1$ \\ \cdashline{1-2}
-    \multicolumn{2}{|l|}{~}\\
-    \multicolumn{2}{|l|}{\includegraphics[scale=0.83]{fig_source/OCSVM_hard}} \\\cdashline{1-2}
-    decision function:                                             & decision function:  \\
-    ~~~~~~~~$f(x) = \text{sgn}(\langle w, x\rangle + b)$ ({\red red line}) ~~~~~~~ & $f(x) = \text{sgn}(\langle w, x\rangle - 1)$ ({\green green line}) \\ \cdashline{1-2} 
-    \multicolumn{2}{|l|}{-Lagrange multipliers: $\alpha_i$ ~~~~($\alpha_i>0$ when the constraint is an equality for $x_i$)} \\
-    \multicolumn{2}{|l|}{-Support vectors: $\text{SV} = \{ x_i,~~ \alpha_i > 0\}$ }\\
-    \multicolumn{2}{|l|}{-Margin errors: $\text{ME} = \emptyset $ ~~~~~~~~~~~~~~~ }\\ \cdashline{1-2}
-    $\displaystyle w = \sum_i \alpha_i y_i x_i$                    & $\displaystyle w = \sum_i \alpha_i x_i$  \\ \hline 
-  \end{tabular}
   \caption{SVM vs. OCSVM (hard-margin separation)}
   \label{table:OCSVM-hard}
+  \centering
+\resizebox{\linewidth}{!} {
+  \begin{tabular}{cc}\toprule
+    SVM                                                             &    OCSVM  \\ \midrule 
+    $\displaystyle \min_{w,b} \frac{1}{2} \|w\|^2$                   & $\displaystyle \min_{w} \frac{1}{2} \|w\|^2$   \\
+    s.t~~~~ $\forall i,~~y_i(\langle w, x_i\rangle + b) \ge 1$      & s.t~~~~ $\forall i,~~\langle w, x_i\rangle ~\ge 1$ \\ \midrule %\cdashline{1-2}
+    \multicolumn{2}{l}{~}\\
+    \multicolumn{2}{l}{\includegraphics[scale=0.83]{fig_source/OCSVM_hard}} \\\midrule %\cdashline{1-2}
+    decision function:                                             & decision function:  \\
+    ~~~~~~~~$f(x) = \text{sgn}(\langle w, x\rangle + b)$ ({\red red line}) ~~~~~~~ & $f(x) = \text{sgn}(\langle w, x\rangle - 1)$ ({\green green line}) \\ \midrule %\cdashline{1-2} 
+    \multicolumn{2}{l}{-Lagrange multipliers: $\alpha_i$ ~~~~($\alpha_i>0$ when the constraint is an equality for $x_i$)} \\
+    \multicolumn{2}{l}{-Support vectors: $\text{SV} = \{ x_i,~~ \alpha_i > 0\}$ }\\
+    \multicolumn{2}{l}{-Margin errors: $\text{ME} = \emptyset $ ~~~~~~~~~~~~~~~ }\\\midrule % \cdashline{1-2}
+    $\displaystyle w = \sum_i \alpha_i y_i x_i$                    & $\displaystyle w = \sum_i \alpha_i x_i$  \\ \bottomrule
+  \end{tabular}
+}
 \end{table}
 
 \begin{table}[!ht]
-  \centering
-  \begin{tabular}{|c|c|}\hline
-    SVM                                                             &    OCSVM  \\ \hline 
-    $\displaystyle \min_{w,\xi,\rho,b} \frac{1}{2} \|w\|^2 + \frac{1}{n} \sum_{i=1}^n \xi_i - \nu \rho$ & $\displaystyle \min_{w,\xi,\rho} \frac{1}{2} \|w\|^2 + \frac{1}{n} \sum_{i=1}^n \xi_i - \nu \rho$  \\
-    s.t~~~~ $\forall i, ~~y_i(\langle w, x_i\rangle ~+~ b) \ge \rho - \xi_i$                        & s.t~~~~ $\forall i,~~\langle w, x_i\rangle ~\ge \rho - \xi_i $ ~~~~~~\\ 
-    $\xi_i \ge 0$ ~~~~~~~~~~~~~~~~~~~~~                                                            & $\xi_i \ge 0$~~~~~~~~~~~~  \\ \cdashline{1-2}
-    \multicolumn{2}{|l|}{~}\\
-    \multicolumn{2}{|l|}{\includegraphics[scale=0.83]{fig_source/OCSVM_soft}} \\\cdashline{1-2}
-    decision function:                                                                             & decision function:  \\
-    ~~~~~~~~$f(x) = \text{sgn}(\langle w, x\rangle + b)$ ({\red red line}) ~~~~~~~            & $f(x) = \text{sgn}(\langle w, x\rangle - \rho)$ ({\green green line})\\ \cdashline{1-2}
-    \multicolumn{2}{|l|}{-Lagrange multipliers: $\alpha_i, \beta_i$ ~~~~(one for each constraint, $\beta_i > 0$ when $\xi_i = 0$)}\\
-    \multicolumn{2}{|l|}{-Support vectors: $\text{SV} = \{ x_i,~~ \alpha_i > 0\}$ }\\
-    \multicolumn{2}{|l|}{-Margin errors: $\text{ME} = \{x_i,~~ \xi_i > 0 \} =  \{x_i,~~ \beta_i > 0 \} $ ~~~(for OCSVM, ME=anomalies) }\\
-    \multicolumn{2}{|l|}{-$\text{SV} \setminus \text{ME} = \{ x_i,~~ \alpha_i, \beta_i > 0\}$ }\\ \cdashline{1-2}
-    $w = \sum_i \alpha_i y_i x_i$                                                                   & $w = \sum_i \alpha_i x_i$  \\ \cdashline{1-2}
-    \multicolumn{2}{|c|}{ $\displaystyle \frac{|\text{ME}|}{n} ~\le~ \nu ~\le~ \frac{|\text{SV}|}{n}$ }   \\
-    \multicolumn{2}{|c|}{$\displaystyle \rho = \langle w, x_i\rangle ~~~~\forall x_i \in \text{SV} \setminus \text{ME}$} \\ \hline
-
-              
-  \end{tabular}
   \caption{SVM vs. OCSVM ($\nu$-soft margin separation)}
   \label{table:OCSVM-soft}
+  \centering
+\resizebox{\linewidth}{!} {
+  \begin{tabular}{cc}\toprule
+    SVM                                                             &    OCSVM  \\ \midrule 
+    $\displaystyle \min_{w,\xi,\rho,b} \frac{1}{2} \|w\|^2 + \frac{1}{n} \sum_{i=1}^n \xi_i - \nu \rho$ & $\displaystyle \min_{w,\xi,\rho} \frac{1}{2} \|w\|^2 + \frac{1}{n} \sum_{i=1}^n \xi_i - \nu \rho$  \\
+    s.t~~~~ $\forall i, ~~y_i(\langle w, x_i\rangle ~+~ b) \ge \rho - \xi_i$                        & s.t~~~~ $\forall i,~~\langle w, x_i\rangle ~\ge \rho - \xi_i $ ~~~~~~\\ 
+    $\xi_i \ge 0$ ~~~~~~~~~~~~~~~~~~~~~                                                            & $\xi_i \ge 0$~~~~~~~~~~~~  \\ \midrule % \cdashline{1-2}
+    \multicolumn{2}{l}{~}\\
+    \multicolumn{2}{l}{\includegraphics[scale=0.83]{fig_source/OCSVM_soft}} \\\midrule %\cdashline{1-2}
+    decision function:                                                                             & decision function:  \\
+    ~~~~~~~~$f(x) = \text{sgn}(\langle w, x\rangle + b)$ ({\red red line}) ~~~~~~~            & $f(x) = \text{sgn}(\langle w, x\rangle - \rho)$ ({\green green line})\\ \midrule % \cdashline{1-2}
+    \multicolumn{2}{l}{-Lagrange multipliers: $\alpha_i, \beta_i$ ~~~~(one for each constraint, $\beta_i > 0$ when $\xi_i = 0$)}\\
+    \multicolumn{2}{l}{-Support vectors: $\text{SV} = \{ x_i,~~ \alpha_i > 0\}$ }\\
+    \multicolumn{2}{l}{-Margin errors: $\text{ME} = \{x_i,~~ \xi_i > 0 \} =  \{x_i,~~ \beta_i > 0 \} $ ~~~(for OCSVM, ME=anomalies) }\\
+    \multicolumn{2}{l}{-$\text{SV} \setminus \text{ME} = \{ x_i,~~ \alpha_i, \beta_i > 0\}$ }\\ \midrule % \cdashline{1-2}
+    $w = \sum_i \alpha_i y_i x_i$                                                                   & $w = \sum_i \alpha_i x_i$  \\ \midrule % \cdashline{1-2}
+    \multicolumn{2}{c}{ $\displaystyle \frac{|\text{ME}|}{n} ~\le~ \nu ~\le~ \frac{|\text{SV}|}{n}$ }   \\
+    \multicolumn{2}{c}{$\displaystyle \rho = \langle w, x_i\rangle ~~~~\forall x_i \in \text{SV} \setminus \text{ME}$} \\ \bottomrule %\hline
+  \end{tabular}
+}
 \end{table}
+\renewcommand{\arraystretch}{1.1}
 
 In the $\nu$-soft margin separation framework, letting $\Phi$ be the mapping function determined by a kernel function $k$ (\ie~$k(x,y) = \langle \Phi(x), \Phi(y)\rangle$), the separating hyperplane defined \wrt~a vector $w$ and an offset $\rho$ is given by the solution of 
 \begin{align*}

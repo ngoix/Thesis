@@ -1,32 +1,35 @@
 \paragraph{Abstract}
 
-% Anomaly, outlier or novelty detection is not only a useful preprocessing step for training machine learning algorithms. It is also a crucial component of lots of real-world applications, from various fields like finance, insurance, telecommunication, computational biology, health or environmental sciences. Anomaly detection is also more and more relevant in the modern world: an increasing number of autonomous systems need to be monitored and diagnosed, specially with the rise of Internet-of-Things.
+Anomaly, outlier or novelty detection is not only a useful preprocessing step for training machine learning algorithms. It is also a crucial component of lots of real-world applications, from various fields like finance, insurance, telecommunication, computational biology, health or environmental sciences. Anomaly detection is also more and more relevant in the modern world, as an increasing number of autonomous systems need to be monitored and diagnosed -- \eg~with the rise of Internet-of-Things.
 
-% Important challenges are
+Important research areas in anomaly detection include the design of efficient algorithms (derived from a mathematical theory as well as heuristic-based ones), 
+%the theoretical study of existing algorithms lacking from such guaranties, 
+and the evaluation of such anomaly detection when -- as in much of industrial setups -- no labeled data is available. 
+In other words, model design and selection.
+In practice, anomaly detection algorithm output a real valued \emph{scoring function} on the feature space so as to quantify to which extent observations should be considered as abnormal.
+
+In this thesis, we focuse on both of these aspects. We first propose a criterion for measuring the performance of scoring functions, more convenient than the existing \emph{Mass-Volume curve}. %-- function outputed by anomaly detection algorithms and measuring the supposed degree of abnormality of the observations.
+This criterion, refered as \emph{Excess-Mass curve}, aims at building scoring functions \emph{via} empirical risk minimization (ERM).
+Two limitations of Excess-Mass and Mass-Volume curves are the following.
+While theoretical guaranties are also derived, more work is needed for it to be efficient in practice, particularly concerning the choice of the functional class on which the criterion is optimized (which is typically the class of stepwise functions on very simple sets). When used as evaluation criteria, these criteria cannot be used in large dimension.
 
 
+The second part of this work focuses on \emph{extreme} regions, which are of particular interest in anomaly detection. In particular, probabilistic tools borrowed from (multivariate) Extreme Value Theory (EVT), such as the stable tail dependence function (STDF) and the angular measure, can be combined with classical anomaly detection approaches to gain in accuracy on such extreme regions.
+%
+Advances in multivariate EVT are brought by providing non-asymptotic bounds for the estimation of the STDF, which characterizes the extreme dependence structure.
+%
+Then a statistical method that produces a (possibly sparse) representation of the dependence structure of extremes is derived from an estimate of the angular measure. This representation can be used directly to produce a scoring function accurate on extremes regions.
+Non-asymptotic bounds to assess the accuracy of the estimation procedure are established.
+A drawback of this approach is that performance depends on hyper-parameters. They cannot be settled using the theoretical bounds as the latter include a non-explicit bias term. Most of the time, they cannot be settled from the data either, as often no labeled data is available for \eg~cross-validation.
 
-% Learning how to rank multivariate unlabeled observations depending on their degree of abnormality/novelty is a crucial problem in a wide range of applications. In practice, it
-% generally consists in building a real valued ”scoring” function on the feature space so as to quantify to which extent observations should be considered as abnormal. 
 
-% In the 1-
-% d situation, measurements are generally con-
-% sidered as ”abnormal” when they are remote
-% from central measures such as the mean or
-% the median. Anomaly detection then relies
-% on tail analysis of the variable of interest.
-% Extensions to the multivariate setting are far
-% from straightforward and it is precisely the
-% main purpose of this paper to introduce a
-% novel and convenient (functional) criterion
-% for measuring the performance of a scoring
-% function regarding the anomaly ranking task,
-% referred to as the Excess-Mass curve (EM
-% curve). In addition, an adaptive algorithm
-% for building a scoring function based on un-
-% labeled data X 1 , . . . , X n with a nearly opti-
-% mal EM is proposed and is analyzed from a
-% statistical perspective.
+The last part of this work is heuristic-based. %and proposes solutions to the two major drawbacks raised by the Excess-Mass and Mass-Volume curves: poor performance in practice
+First, it proposes an empirical study for the use of Excess-Mass and Mass-Volume curves as evaluation criteria in the absence of labeled data.
+As they generally cannot be well estimated in large dimension, a methodology based on feature sub-sampling and aggregating is also described and tested, extending the use of these criteria to high-dimensional datasets and solving major drawbacks inherent to standard EM and MV curves. 
+
+Second, a natural simple methodology is proposed to extend random forests splitting criteria to the one-class setting.
+This structural generalizion of random forests to one-class classification produces efficient scoring functions, according to an extensive benchmmark which includes many state-of-the-art anomaly detection algorithm commonly used in industrial setups.
+
 
 
 % Assessing the probability of occurrence of extreme events is a crucial issue in various fields like

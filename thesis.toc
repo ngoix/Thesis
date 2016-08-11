@@ -1,6 +1,6 @@
 \contentsline {chapter}{List of Contributions}{iii}{dummy.1}
 \contentsline {chapter}{List of Figures}{xi}{dummy.2}
-\contentsline {chapter}{List of Tables}{xiii}{dummy.3}
+\contentsline {chapter}{List of Tables}{xv}{dummy.3}
 \contentsline {chapter}{\numberline {1}Summary}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
 \contentsline {paragraph}{Notations}{2}{section.1.1}
@@ -15,7 +15,7 @@
 \contentsline {paragraph}{Learning the dependence structure of rare events.}{11}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Sparse Representation of Multivariate Extremes}{12}{subsection.1.4.2}
 \contentsline {section}{\numberline {1.5}Heuristic-based approaches}{15}{section.1.5}
-\contentsline {subsection}{\numberline {1.5.1}Evaluation of AD algorithms}{15}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.1}Evaluation of anomaly detection algorithms}{15}{subsection.1.5.1}
 \contentsline {subsection}{\numberline {1.5.2}One-Class Random Forests}{17}{subsection.1.5.2}
 \contentsline {section}{\numberline {1.6}Scikit-learn contributions}{20}{section.1.6}
 \contentsline {section}{\numberline {1.7}Conclusion and Scientific Output}{21}{section.1.7}
@@ -96,10 +96,35 @@
 \contentsline {subsection}{\numberline {7.7.5}Proof of Remark\nobreakspace {}\ref {jmva:rk:optim}}{143}{subsection.7.7.5}
 \contentsline {section}{\numberline {7.8}Experiments curves}{143}{section.7.8}
 \contentsline {part}{IV\hspace {1em}Efficient heuristic-based approaches}{145}{part.4}
-\contentsline {chapter}{\numberline {8}How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms?}{147}{chapter.8}
-\contentsline {chapter}{\numberline {9}One Class Splitting Criteria for Random Forests with Application to Anomaly Detection}{149}{chapter.9}
-\contentsline {section}{\numberline {9.1}Introduction}{149}{section.9.1}
-\contentsline {chapter}{\numberline {10}Conclusion \& Perspectives}{151}{chapter.10}
-\contentsline {chapter}{Bibliography}{153}{dummy.4}
-\contentsline {paragraph}{Abstract}{162}{appendix*.36}
-\contentsline {paragraph}{R\IeC {\'e}sum\IeC {\'e}}{162}{appendix*.36}
+\contentsline {chapter}{\numberline {8}How to Evaluate the Quality of Anomaly Detection Algorithms?}{147}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{147}{section.8.1}
+\contentsline {paragraph}{What is a scoring function?}{148}{section.8.1}
+\contentsline {paragraph}{How to know if a scoring function is good?}{149}{section.8.1}
+\contentsline {section}{\numberline {8.2}Mass-Volume and Excess-Mass based criteria}{149}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Preliminaries}{150}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Numerical unsupervised criteria}{150}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Scaling with dimension}{152}{section.8.3}
+\contentsline {section}{\numberline {8.4}Benchmarks}{153}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Datasets description}{153}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}Results}{154}{subsection.8.4.2}
+\contentsline {section}{\numberline {8.5}Conclusion}{158}{section.8.5}
+\contentsline {section}{\numberline {8.6}Further material on the experiments}{159}{section.8.6}
+\contentsline {chapter}{\numberline {9}One Class Splitting Criteria for Random Forests}{169}{chapter.9}
+\contentsline {section}{\numberline {9.1}Introduction}{169}{section.9.1}
+\contentsline {section}{\numberline {9.2}Background on decision trees}{171}{section.9.2}
+\contentsline {section}{\numberline {9.3}Adaptation to the one-class setting}{172}{section.9.3}
+\contentsline {subsection}{\numberline {9.3.1}Underlying model}{173}{subsection.9.3.1}
+\contentsline {subsection}{\numberline {9.3.2}Adaptive approach}{175}{subsection.9.3.2}
+\contentsline {subsection}{\numberline {9.3.3}Prediction: a majority vote with one single candidate?}{177}{subsection.9.3.3}
+\contentsline {subsection}{\numberline {9.3.4}OneClassRF: a Generic One-Class Random Forest algorithm}{178}{subsection.9.3.4}
+\contentsline {section}{\numberline {9.4}Benchmarks}{180}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}Default parameters of OneClassRF.}{181}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}Hyperparameters of tested algorithms}{181}{subsection.9.4.2}
+\contentsline {subsection}{\numberline {9.4.3}Description of the datasets}{182}{subsection.9.4.3}
+\contentsline {subsection}{\numberline {9.4.4}Results}{183}{subsection.9.4.4}
+\contentsline {section}{\numberline {9.5}Conclusion}{184}{section.9.5}
+\contentsline {section}{\numberline {9.6}Further details on benchmarks and unsupervised results}{184}{section.9.6}
+\contentsline {chapter}{\numberline {10}Conclusion \& Perspectives}{195}{chapter.10}
+\contentsline {chapter}{Bibliography}{197}{dummy.4}
+\contentsline {paragraph}{Abstract}{207}{appendix*.81}
+\contentsline {paragraph}{R\IeC {\'e}sum\IeC {\'e}}{208}{appendix*.81}

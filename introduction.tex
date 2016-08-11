@@ -18,7 +18,8 @@ This chapter is organized as follows.
 First in Section~\ref{resume:scoring_function}, the anomaly detection task is formally introduced as well as the concept of scoring function. 
 Two criteria for `being a good scoring function' are presented in Section \ref{resume:scoring}, allowing an M-estimation approach. 
 Section~\ref{resume:extreme} focuses on extreme value theory (EVT) to gain in accuracy on extreme regions. It introduces the \emph{stable tail dependence function} (STDF), to estimate the dependence structure of rare events (Section~\ref{resume:stdf}) and shows that multivariate EVT can be useful to produce scoring functions accurate on low probability regions (Section~\ref{resume:sec:JMVA}).
-Section~\ref{XXX}
+Section~\ref{resume:sec:heuristic} gathers two submitted contributions addressing the evaluation of unsupervised anomaly detection from a practical point of view (Section~\ref{resume:evaluation}), and the extention of random forests to the one-class setting (Section~\ref{resume:ocrf}). Section~\ref{sec:impl} presents contributions relative to a widely used open-source machine learning library. Section~\ref{intro:concl} details the scientific output and concludes.
+
 
 
 %Each patient record $i$ being a set of measurements may be summarized into a $d$-dimensional vector $\mb X_i$, and its label into a binary value $y_i \in \{0, 1\}$ (healthy, sick). The set of all training labeled record $(\mb X_1, y_1),\ldots, (\mb X_d, y_d)$ from patients $1, \ldots, d$ form the so-called \textbf{training database}. 
@@ -862,7 +863,7 @@ Besides, their use to measure the quality of a scoring function $s_n$ involves t
 
 The two proposed approaches are heuristic-based, and no theoretical guarantees such as consistency or convergence rates are derived. However, extensive benchmarks show the relevance of these approaches.
 
-\subsection{Evaluation of AD algorithms}
+\subsection{Evaluation of anomaly detection algorithms}
 \label{resume:evaluation}
 This is a summary of Chapter~\ref{chap:evaluation}, which is based on a workshop paper \citep{ICMLworkshop16} and a submitted work \citep{NIPS16evaluation}.
 
@@ -1071,7 +1072,7 @@ This contribution was supervised by Alexandre Gramfort and was funded by the Par
 
 
 \section{Conclusion and Scientific Output}
-
+\label{intro:concl}
 The contributions of this thesis can be summarized as follows. 
 
 First, an adequate performance criterion called Excess-Mass curve is proposed (Section~\ref{resume:em-curve}), in order to compare possible candidate scoring function and to pick one eventually. 
@@ -1146,7 +1147,7 @@ Chapter~\ref{chap:back_concentration} presents general results on measure concen
 
 Chapter~\ref{back:EVT} provides a concise background on extreme value theory;
 
-Chapter~\ref{back:AD_scikit} reviews classical anomaly detection algorithms used in the benchmarks and provides illustrative examples with the scikit-learn library. It also presents relating implementative contributions.
+Chapter~\ref{back:AD_scikit} reviews classical anomaly detection algorithms used in the benchmarks and provides illustrative examples with the scikit-learn library. It also presents relating code contributions.
 
 \item Part~\ref{part:struct} deals with theoretical performance criteria for the anomaly ranking task:
 

@@ -74,7 +74,7 @@ An extensive exposition of this multivariate extreme setting may be found \eg~in
 %%%%%%%%%%%%%%%%%%%%%%%
 
 Parametric or semi-parametric modeling and estimation of the structure of
-multivariate extremes is relatively well documented in the statistical literature, see \emph{e.g.} \cite{coles1991modeling,fougeres2009models,cooley2010pairwise,sabourinNaveau2012}and the references therein. In a non-parametric setting, there is also an abundant literature concerning consistency and asymptotic normality of estimators of functionals characterizing the extreme dependence structure, \eg~extreme value copulas or the \emph{stable tail dependence function} (\stdf), see \cite{Segers12Bernoulli}, \cite{Drees98}, \cite{Embrechts2000}, \cite{Einmahl2012}, \cite{dHF06}. 
+multivariate extremes is relatively well documented in the statistical literature, see \emph{e.g.} \cite{coles1991modeling,fougeres2009models,cooley2010pairwise,sabourinNaveau2012} and the references therein. In a non-parametric setting, there is also an abundant literature concerning consistency and asymptotic normality of estimators of functionals characterizing the extreme dependence structure, \eg~extreme value copulas or the \emph{stable tail dependence function} (\stdf), see \cite{Segers12Bernoulli}, \cite{Drees98}, \cite{Embrechts2000}, \cite{Einmahl2012}, \cite{dHF06}. 
 In many applications, it is nevertheless more convenient to work with the angular measure itself, as the latter gives more direct information on the dependence structure and is able to reflect structural simplifying properties (\eg~sparsity as detailed below) which would not appear in copulas or in the \stdf.
 However, non-parametric modeling of the angular measure faces major difficulties, stemming from the potentially complexe structure of the latter, especially in a high dimensional setting.
 Further, from a theoretical point of view, non-parametric estimation of the angular measure has only been studied in the two dimensional case, in \cite{Einmahl2001} and \cite{Einmahl2009}, in an asymptotic framework.
@@ -151,7 +151,7 @@ of % are clearly stated in this
 % work, in the continuity of
 \cite{COLT15} exposed in Chapter~\ref{colt}, where non-asymptotic bounds related to the statistical performance of a non-parametric estimator of the \stdf, another functional measure of the dependence structure of extremes,  are established.  
 However, even in the case of a sparse angular measure, the support of
-the \stdf would not be so, since the latter functional is  an
+the \stdf~would not be so, since the latter functional is  an
 integrated version of the former (see~\eqref{jmva:eq:integratePhiLambda},
  Section~\ref{jmva:sec:framework}). Also, 
 %tools from statistical learning theory,
@@ -977,7 +977,7 @@ Here and beyond, for notational convenience, we simply denotes `$\alpha$'  for `
 \subsection{Preliminaries: uniform approximation over a VC-class of rectangles}
 \label{jmva:sec:rectangles}
 This subsection builds on the theory developed in Chapter~\ref{colt}, where a non-asymptotic bound is stated on the estimation of the stable tail dependence function (defined in~\eqref{back:stdf1}). % We prove here (Proposition~\ref{jmva:prop:g}) a generalized version of the result obtained by these authors. 
-The \stdf $l$ is related to the class of sets of the form $[\mb 0, \mb v]^c$ (or $[\mb u, \boldsymbol{\infty}]^c$ depending on which standardization is used), and an equivalent definition is 
+The \stdf~$l$ is related to the class of sets of the form $[\mb 0, \mb v]^c$ (or $[\mb u, \boldsymbol{\infty}]^c$ depending on which standardization is used), and an equivalent definition is 
 \begin{align}
 \label{jmva:stdf}
 l(\mathbf{x}):= \lim_{t \to \infty} t \tilde F (t^{-1}\mathbf{x}) = \mu([\mb 0, \mb x ^{-1}]^c) 
@@ -1126,7 +1126,7 @@ Lemma~\ref{jmva:lem:g-alpha} shows that the functional $g_{\alpha, \beta}$, whic
 % $h$ is 1-Lipschitz and homogeneous as $l$
 
 We now define the empirical counterpart of $g_{\alpha, \beta}$
-(mimicking that of the empirical \stdf $l_n$ in (\ref{jmva:empir-Stdf}) ) by
+(mimicking that of the empirical \stdf~$l_n$ in (\ref{jmva:empir-Stdf}) ) by
 %we define for $a,b \in [0,\infty]^d \setminus \infty$, again with the conventions $1/ \infty = 0$ and $1/0 = \infty$, the functionnal
 \begin{align}
 \label{jmva:def:gn}
@@ -1135,7 +1135,7 @@ g_{n, \alpha, \beta}(\mb x, \mb z) = \frac{1}{k}~\sum_{i=1}^{n}
   j \in \alpha \text{~~~and~~~} X_i^j < X^j_{(n-\lfloor
     kx_j\rfloor+1)} ~~\text{for}~ j \in\beta \}}~.
 \end{align}
-As it is the case for the empirical \stdf (see~(\ref{jmva:empir-Stdf2})), $g_{n,\alpha,\beta}$ has an alternative expression
+As it is the case for the empirical \stdf~(see~(\ref{jmva:empir-Stdf2})), $g_{n,\alpha,\beta}$ has an alternative expression
 \begin{align}\label{jmva:eq:gn2}
   \nonumber g_{n, \alpha, \beta}(\mb x, \mb z)&=\frac{1}{k} ~\sum_{i=1}^{n}
   \mathds{1}_{\{ U_i^j ~\le~ U^j_{([kx_j])} ~~\text{for}~ j \in \alpha

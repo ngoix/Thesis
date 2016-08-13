@@ -3,22 +3,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces SVM vs. OCSVM (hard-margin separation)\relax }}{52}{table.caption.9}
-\contentsline {table}{\numberline {4.2}{\ignorespaces SVM vs. OCSVM ($\nu $-soft margin separation)\relax }}{53}{table.caption.10}
+\contentsline {table}{\numberline {4.1}{\ignorespaces SVM vs. OCSVM (hard-margin separation)\relax }}{58}{table.caption.9}
+\contentsline {table}{\numberline {4.2}{\ignorespaces SVM vs. OCSVM ($\nu $-soft margin separation)\relax }}{59}{table.caption.10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Support recovering on simulated data\relax }}{129}{table.caption.24}
-\contentsline {table}{\numberline {7.2}{\ignorespaces Total number of sub-cones of wave data\relax }}{129}{table.caption.26}
-\contentsline {table}{\numberline {7.3}{\ignorespaces Datasets characteristics\relax }}{131}{table.caption.27}
-\contentsline {table}{\numberline {7.4}{\ignorespaces Results on extreme regions with standard parameters $(k,\epsilon ) = (n^{1/2}, 0.01)$\relax }}{131}{table.caption.28}
-\contentsline {table}{\numberline {7.5}{\ignorespaces Results on extreme regions with lower $\epsilon =0.1$\relax }}{132}{table.caption.29}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Support recovering on simulated data\relax }}{147}{table.caption.24}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Total number of sub-cones of wave data\relax }}{148}{table.caption.26}
+\contentsline {table}{\numberline {7.3}{\ignorespaces Datasets characteristics\relax }}{150}{table.caption.27}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Results on extreme regions with standard parameters $(k,\epsilon ) = (n^{1/2}, 0.01)$\relax }}{150}{table.caption.28}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Results on extreme regions with lower $\epsilon =0.1$\relax }}{151}{table.caption.29}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Original Datasets characteristics\relax }}{154}{table.caption.37}
-\contentsline {table}{\numberline {8.2}{\ignorespaces Results for the novelty detection setting. One can see that ROC, PR, EM, MV often do agree on which algorithm is the best (in bold), which algorithm is the worse (underlined) on some fixed datasets. When they do not agree, it is often because ROC and PR themselves do not, meaning that the ranking is not clear.\relax }}{155}{table.caption.38}
-\contentsline {table}{\numberline {8.3}{\ignorespaces Results for the unsupervised setting still remains good: one can see that ROC, PR, EM, MV often do agree on which algorithm is the best (in bold), which algorithm is the worse (underlined) on some fixed datasets. When they do not agree, it is often because ROC and PR themselves do not, meaning that the ranking is not clear.\relax }}{156}{table.caption.39}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Original Datasets characteristics\relax }}{175}{table.caption.37}
+\contentsline {table}{\numberline {8.2}{\ignorespaces Results for the novelty detection setting. One can see that ROC, PR, EM, MV often do agree on which algorithm is the best (in bold), which algorithm is the worse (underlined) on some fixed datasets. When they do not agree, it is often because ROC and PR themselves do not, meaning that the ranking is not clear.\relax }}{176}{table.caption.38}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Results for the unsupervised setting still remains good: one can see that ROC, PR, EM, MV often do agree on which algorithm is the best (in bold), which algorithm is the worse (underlined) on some fixed datasets. When they do not agree, it is often because ROC and PR themselves do not, meaning that the ranking is not clear.\relax }}{177}{table.caption.39}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {9.1}{\ignorespaces Original Datasets characteristics\relax }}{180}{table.caption.60}
-\contentsline {table}{\numberline {9.2}{\ignorespaces Results for the novelty detection setting (semi-supervised framework). The table reports AUC ROC and AUC PR scores (higher is better) for each algorithms. The training time of each algorithm has been limited (for each experiment among the 10 performed for each dataset) to 30 minutes, where `NA' indicates that the algorithm could not finish training within the allowed time limit. In average on all the datasets, our proposed algorithm `OneClassRF' achieves both best AUC ROC and AUC PR scores (with LSAD for AUC ROC). It also achieves the lowest cumulative training time.\relax }}{180}{table.caption.61}
-\contentsline {table}{\numberline {9.3}{\ignorespaces Results for the unsupervised setting\relax }}{184}{table.caption.63}
+\contentsline {table}{\numberline {9.1}{\ignorespaces Original Datasets characteristics\relax }}{204}{table.caption.60}
+\contentsline {table}{\numberline {9.2}{\ignorespaces Results for the novelty detection setting (semi-supervised framework). The table reports AUC ROC and AUC PR scores (higher is better) for each algorithms. The training time of each algorithm has been limited (for each experiment among the 10 performed for each dataset) to 30 minutes, where `NA' indicates that the algorithm could not finish training within the allowed time limit. In average on all the datasets, our proposed algorithm `OneClassRF' achieves both best AUC ROC and AUC PR scores (with LSAD for AUC ROC). It also achieves the lowest cumulative training time.\relax }}{204}{table.caption.61}
+\contentsline {table}{\numberline {9.3}{\ignorespaces Results for the unsupervised setting\relax }}{209}{table.caption.63}
 \addvspace {10\p@ }

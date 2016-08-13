@@ -29,3 +29,51 @@ With such explicit bounds, parameters of the Damex algorithm (third contribution
 
 From the scope of one-class random forests, a possible research direction would be to develop theoretical grounds for the level sets estimation procedure. Classical studies from the two-class framework should be adapted to one-class classification.
 % As a last contribution (of incremental nature), two classical AD algorithms have been implemented and merged on scikit-learn. They are used in this dissertation for empirical comparison to attest the relevance of the forementionned approach.
+
+
+
+
+
+
+
+
+
+
+
+% Anomaly, outlier or novelty detection is not only a useful preprocessing step for training machine learning algorithms. It is also a crucial component of lots of real-world applications, from various fields like finance, insurance, telecommunication, computational biology, health or environmental sciences. Anomaly detection is also more and more relevant in the modern world, as an increasing number of autonomous systems need to be monitored and diagnosed -- \eg~with the rise of Internet-of-Things.
+% %
+% Important research areas in anomaly detection include the design of efficient algorithms and their theoretical study %(derived from a mathematical theory as well as heuristic-based ones), 
+% %the theoretical study of existing algorithms lacking from such guaranties, 
+% but also the evaluation of such algorithms, in particular when no labeled data is available -- as in lots of industrial setups. 
+% In other words, model design and study, and model selection.
+
+% In this thesis, we focuse on both of these aspects. 
+% In practice, anomaly detection algorithms output a real valued \emph{scoring function} on the feature space so as to quantify to which extent observations should be considered as abnormal.
+% %
+% We first propose a criterion for measuring the performance of scoring functions, alternative to the existing \emph{Mass-Volume curve}. %-- function outputed by anomaly detection algorithms and measuring the supposed degree of abnormality of the observations.
+% This criterion, refered as \emph{Excess-Mass curve}, aims at building scoring functions \emph{via} empirical risk minimization (ERM).
+
+
+% The second part of this work focuses on \emph{extreme} regions, which are of particular interest in anomaly detection. In particular, probabilistic tools borrowed from (multivariate) Extreme Value Theory (EVT), such as the stable tail dependence function (STDF) and the angular measure, can be combined with classical anomaly detection approaches to gain in accuracy on such extreme regions.
+% %
+% Advances in multivariate EVT are brought by providing non-asymptotic bounds for the estimation of the STDF, which characterizes the extreme dependence structure.
+% %
+% Then a statistical method that produces a (possibly sparse) representation of the dependence structure of extremes is derived from an estimate of the angular measure. This representation can be used directly to produce a scoring function accurate on extremes regions.
+% Non-asymptotic bounds to assess the accuracy of the estimation procedure are established.
+
+
+% The last part of this work compiles some limitations of previous parts, and proposes two heuristics, one from the model selection / algorithms evaluation point of view, the other from the algorithms design. %and proposes solutions to the two major drawbacks raised by the Excess-Mass and Mass-Volume curves: poor performance in practice
+
+% From the model selection point of view, no empirical study has been made on Excess-Mass and Mass-Volume curves for evaluating anomaly detection algorithms without using any labels. Besides, these curves can only been estimated in small dimensions as they involve some volume computation. % and no study has been done on their capacity to discriminate between scoring functions with respect to ROC and PR curves when labels are used.
+% %If default parameters usually work well for the EVT-based scoring function we promote next, accurate
+% We derive then such empirical study for the use of Excess-Mass and Mass-Volume curves as evaluation criteria in the absence of labeled data. 
+% % As they generally cannot be well estimated in large dimension,
+% A methodology based on feature sub-sampling and aggregating is also described and tested, extending the use of these criteria to high-dimensional datasets and solving major drawbacks inherent to standard EM and MV curves. 
+
+% From the model design point of view,
+% while theoretical guaranties are derived for scoring functions produced by optimizing EM and MV curves, more work is needed for them to achieve efficiency in practice. In particular concerning the choice of the functional class on which the criterion is optimized (which is typically the class of stepwise functions on very simple sets). % When used as evaluation criteria, these criteria cannot be used in large dimension.
+% An efficient way based on random forests to produce accurate scoring functions is proposed. It consists in extending naturally standard splitting criteria to the one-class setting. This structural generalizion of random forests to one-class classification produces competitive scoring functions, according to an extensive benchmmark which includes many state-of-the-art anomaly detection algorithm commonly used in industrial setups.
+
+
+
+% A drawback of this approach is that performance depends on hyper-parameters. They cannot be settled using the theoretical bounds as the latter include a non-explicit bias term. Most of the time, they cannot be settled from the data either, as often no labeled data is available for \eg~cross-validation.

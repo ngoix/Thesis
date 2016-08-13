@@ -19,6 +19,9 @@
 \usepackage{pgfplots}  % ocrf nico gridplot
 
 
+% change margins locally:
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
 
 
 
@@ -337,3 +340,16 @@
 \renewcommand{\arraystretch}{1.1}
 
 %\DeclareMathOperator{\sign}{sign}
+
+
+% change margins pour l'abstract:
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}

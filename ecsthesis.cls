@@ -172,9 +172,9 @@
     le 1er Octobre 2016
     \singlespacing
         LTCI, CNRS, T\'el\'ecom ParisTech, Universit\'e Paris-Saclay, 75013, Paris, France\\
-        \par\vspace*{2.5\baselineskip}
+        \par\vspace*{2\baselineskip}
 \hrule
-\par\vspace*{0.3cm}
+%\par\vspace*{0.3cm}
     \textbf{Jury~:} \\[0.5\baselineskip]
       \begin{tabular}{lll}
         G\'erard \textbf{Biau} & Professeur, Universit\'e Pierre et Marie Curie & Examinateur\\

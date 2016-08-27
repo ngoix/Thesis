@@ -1,11 +1,15 @@
+
 \chapter{Concentration Inequalities from the Method of bounded differences}
 \label{chap:back_concentration}
 % XXXX TODO: add memoire + CONCENTRATION
 \begin{chapabstract}
-This chapter presents general results on measure concentration inequalities, obtained via martingal methods or with Vapnik-Chervonenkis theory. In the last section~\ref{sec:concentration-contrib} of this chapter, a link is also made with contributions presented in Chapter~\ref{colt} which builds on some concentration inequality stated and proved here.
+This chapter presents general results on measure concentration inequalities, obtained via martingale methods or with Vapnik-Chervonenkis theory. In the last section~\ref{sec:concentration-contrib} of this chapter, a link is also made with contributions presented in Chapter~\ref{colt} which builds on some concentration inequality stated and proved here.
 \end{chapabstract}
 
-Note: The only contribution here lies in the last section~\ref{sec:concentration-contrib} of this chapter, where a VC-type inequality is proved using a Bernstein-type concentration inequality. A corollary of this VC-type inequality focusing on maximal deviation on low-probability regions is needed in Chapter~\ref{colt}.
+Note: 
+In addition to a review of popular results and sketches of proofs from the existing literature, the last section~\ref{sec:concentration-contrib} of this chapter presents an original contribution;
+% The only contribution here lies in the last section~\ref{sec:concentration-contrib} of this chapter, where a
+a VC-type inequality is proved using a Bernstein-type concentration inequality. A corollary of this VC-type inequality focusing on maximal deviation on low-probability regions is needed in Chapter~\ref{colt}.
 
 We recommend \cite{McDiarmid98} and \cite{Janson2002} for good references on this subject, and \cite{Massart2007, BLM2013} for a extensive review on concentration inequalities.
 %  Ce document présente des résultats généraux sur les inégalités de concentration de mesure et quelques applications, notamment aux graphes aléatoires.
@@ -36,7 +40,7 @@ For more properties enjoyed by conditional essential suprema, see \cite{Barron20
 
 \begin{notation}
 \label{defpreli1}
-We still assume that $X$ is a bounded \rv. Let $(\mathcal{F}_k)_{0\leq k \leq n}$ be a filtration of $\mathcal{F}$ such that $X$ is $\mathcal{F}_n$-mesurable. We denote $X_1,...,X_n$ the martingale $X_k=\mathbb{E}(X|\mathcal{F}_k)$ and $Y_k=X_k - X_{k-1}$ the associated martingale difference. The \rv~$\mathbf{ran}(X \vert \mathcal{G}) := \sup(X | \mathcal{G}) + \sup(-X \vert \mathcal{G}) $ is called the conditional range of $X$ \wrt~ $\mathcal{G}$. Then we denote:
+We still assume that $X$ is a bounded \rv. Let $(\mathcal{F}_k)_{0\leq k \leq n}$ be a filtration of $\mathcal{F}$ such that $X$ is $\mathcal{F}_n$-measurable. We denote $X_1,...,X_n$ the martingale $X_k=\mathbb{E}(X|\mathcal{F}_k)$ and $Y_k=X_k - X_{k-1}$ the associated martingale difference. The \rv~$\mathbf{ran}(X \vert \mathcal{G}) := \sup(X | \mathcal{G}) + \sup(-X \vert \mathcal{G}) $ is called the conditional range of $X$ \wrt~ $\mathcal{G}$. Then we denote:
 \begin{itemize}
 \item [$\star$] $ \mathbf{ran_k} = ran (Y_k|\mathcal{F}_{k-1}) = ran(X_k|\mathcal{F}_{k-1})$ the conditional range,
 \item [$\star$] $\mathbf{R^2} = \sum_{1}^{n} ran_k^2$  the sum of squared conditional ranges, and $\mathbf{\hat{r}^2} = \supess(R^2)$ the maximum sum of squared conditional ranges.
@@ -60,7 +64,7 @@ The \rv~$V$ is also called the `predictable quadratic variation' of the martinga
 
 \begin{theorem} \citep{McDiarmid98}
 \label{3.14}
-Let $X$ a bounded \rv~with $\mathbb{E}(X)=\mu$, and $(\mathcal{F}_k)_{0\leq k \leq n}$ a filtration of $\mathcal{F}$ such that $ \mathcal{F}_0 =  \{\emptyset , \Omega\} $ and such that $X$ is $\mathcal{F}_n$-measurable. 
+Let $X$ be a bounded \rv~with $\mathbb{E}(X)=\mu$, and $(\mathcal{F}_k)_{0\leq k \leq n}$ a filtration of $\mathcal{F}$ such that $ \mathcal{F}_0 =  \{\emptyset , \Omega\} $ and such that $X$ is $\mathcal{F}_n$-measurable. 
 Then for any $t \geq 0$, $$\mathbb{P}(X-\mu \geq t) \leq e^{-2t^2/\hat r^2},$$ and more generally $$\forall r^2 \geq 0,~~~ \mathbb{P}((X-\mu \geq t)\cap(R^2 \leq r^2)) \leq e^{-2t^2/ r^2}.$$
 \end{theorem}
 
@@ -212,7 +216,7 @@ $$ \mathbb{P}\left[f(X)-\mu \geq t\right] \leq e^{-2t^2/\sum c_k^2}~.$$ Moreover
 
 \begin{proof} Lipschitz condition \eqref{CL} implies that $f$ is bounded, thus from Theorem~\ref{3.14} we have
 $$\mathbb{P}\left[f(X)-\mu \geq t\right] \leq e^{-2t^2/\hat r^2},$$ where $\hat r^2$ is defined by setting $\mathcal{F}_k=\sigma(X_1,...,X_k)$ and $X=f(X_1,...,X_n)$.
-Note that this inequality holds true only under the assumption that $f$ is bounded, without independence assumption or Lipschitz condition. The latter two allows to derive an upper bound on $\hat r^2$:
+Note that this inequality holds true only under the assumption that $f$ is bounded, without independence assumption or Lipschitz condition. The latter two allow to derive an upper bound on $\hat r^2$:
 $ran_k=ran(~\mathbb{E}(f(X)|\mathcal{F}_k)-\mathbb{E}\left[f(X)|\mathcal{F}_{k-1}\right]~~|\mathcal{F}_{k-1}) \leq c_k$.
 \end{proof}
 
@@ -227,7 +231,7 @@ Then, $$\mathbb{P}(S_n-\mu \geq t) \leq e^{-2t^2/\sum(b_k-a_k)^2} ~.$$ Moreover,
 \end{proof}
 
 \begin{remark} 
-This result can be directly proved with the classical lines as in Theorem~\ref{3.14}: Exponential Markov inequality, sum of independent variable assumption (or of martingale differences), and use of Lemma~\ref{lemme_u} before optimization in $h$:
+This result can be directly proved with the classical lines as in Theorem~\ref{3.14}: Exponential Markov inequality, sum of independent variables assumption (or of martingale differences), and use of Lemma~\ref{lemme_u} before optimization in $h$:
 \begin{align*} 
 \mathbb{P}(S_n-\mu \geq t) &\leq \mathbb{E}(e^{h(S_n-\mu)})e^{-ht}\\
 \mathbb{E}(\prod e^{h(X_k-\mathbb{E}X_k)})&=\prod \mathbb{E}(e^{h(X_k-\mathbb{E}X_k)})\mbox{~~~~(from independence)}\\
@@ -240,7 +244,7 @@ then setting $h=\frac{4t}{\sum(b_k-a_k)^2}$.
 Comparing the two previous McDiarmid and Hoeffding inequalities with Theorem~\ref{3.14}, we can appreciate that martingale differences decomposition allows to generalize the case of a sum of independent \rv~.
 % On se rend compte en comparant ces deux dernières inégalités au théorème (\ref{3.14}) que la décomposition en somme de différences de martingales permet une généralisation du cas d'une somme de variables indépendantes. 
 Subject to introducing more precise control tools like  $\hat r^2$, independence or Lipschitz condition are not needed anymore.
-The two latter additional assumptions simply allows to bound $\hat r^2$.
+The two latter additional assumptions simply allow to bound $\hat r^2$.
 %Sous réserve d'introduire des outils de contrôle plus précis comme $\hat r^2$, on n'a plus besoin d'indépendance ni de condition de Lipschitz.\\
 %Ces deux hypothèses supplémentaires peuvent être vues comme une manière de majorer $\hat r^2$ pour obtenir une forme plus simple.
 \end{remark}
@@ -345,7 +349,7 @@ Therefore $\hat \nu = \supess(\sum var_k)=\supess(V)=V$. Theorem~\ref{3.15} appl
 % \end{theorem} 
 
 \section{Connections with Statistical Learning and VC theory}
-In statistical learning theory, we are often interested in deriving concentration inequalies for the random variable 
+In statistical learning theory, we are often interested in deriving concentration inequalities for the random variable 
 
 \begin{align}
 \label{def_F}
@@ -390,7 +394,7 @@ Note that bound (ii) holds even for the conditional Rademacher average $$\mathbb
 \end{remark}
 \begin{proof}
 The second inequality is quite difficult to obtain and will not be detailed here. % The proof is based on the so-called \emph{chaining} technique and Dudley's entropy.
-The proof of the second point is classical and relies on a \emph{symetrization} step with a ghost sample $\mb X_i'$ and a \emph{randomization} step with a Rademacher chaos:
+The proof of the second point is classical and relies on a \emph{symmetrization} step with a ghost sample $\mb X_i'$ and a \emph{randomization} step with a Rademacher chaos:
 Let $(\mb X_i^{'})_{1 \le i \le n}$ a ghost sample, namely \iid~independent copy of the $\mb X_i$'s, we may write:
 \begin{align*}
 &\mathbb{E} f(\mb X_1,\ldots,\mb X_n) \\
@@ -413,7 +417,7 @@ Recall that $f(\mb X_1,\ldots,\mb X_n)$ -- see \eqref{def_F} -- refers to the ma
 f(\mb X_1,\ldots,\mb X_n) \le C \sqrt{\frac{V_{\mathcal{A}} + \log{\frac{1}{\delta}}}{n}} %+ \sqrt{\frac{1}{2n} }
 \end{align*}
 \end{theorem}
-In the litterature, one often find a version of Vapnik-Chervonenkis inequality with an additional $\log n$ factor,
+In the literature, one often find a version of Vapnik-Chervonenkis inequality with an additional $\log n$ factor,
 \begin{align*}
 f(\mb X_1,\ldots,\mb X_n) \le C \sqrt{\frac{V_{\mathcal{A}}\log(n) + \log{\frac{1}{\delta}}}{n}}~. %+ \sqrt{\frac{1}{2n} }
 \end{align*}
@@ -425,7 +429,7 @@ from the sub-optimal inequality $\mathcal{R}_n ~\le~ C \sqrt{\frac{V_{\mathcal{A
 
 In this section, we prove a refinement of Theorem~\ref{TVC} above, stated in Proposition~\ref{TVCsharp}. This result is useful for the study of maximal deviations on low-probability regions, see Chapter~\ref{colt}.
 
-Contributions presented in Chapter \ref{colt} include some VC-type inequality obtained by using a Bernstein-type inequality instead of the McDiarmid one used in \eqref{eq:mcd1}. As mentioned above, the variance of $f(\mb X_1,\ldots,\mb X_n)$ seems inaccessible. For this reason, we have to consider more complex control tools like the maximum sum of conditional variances and apply the strong fundamental Theorem~\ref{3.15}. The following lemma garantees that the latter applies.
+Contributions presented in Chapter \ref{colt} include some VC-type inequality obtained by using a Bernstein-type inequality instead of the McDiarmid one used in \eqref{eq:mcd1}. As mentioned above, the variance of $f(\mb X_1,\ldots,\mb X_n)$ seems inaccessible. For this reason, we have to consider more complex control tools like the maximum sum of conditional variances and apply the strong fundamental Theorem~\ref{3.15}. The following lemma guarantees that the latter applies.
 \begin{lemma}
 \label{back:lem-1}
 Consider the \rv~$f(\mb X_1,\ldots,\mb X_n)$ defined above, and $maxdev^+$ and $\hat v$ respectively its associated maximum conditional deviation and associated maximum sum of conditional variances, both of which we assume to be finite. In this context,
@@ -588,7 +592,7 @@ In this chapter, we provide a concise background on Extreme Value Theory (EVT). 
 There are many books introducing extreme value theory, like \cite{Leadbetter1983}, \cite{Resnick1987},  \cite{Coles2001}, \cite{BGTS04}, \cite{dHF06}, and \cite{Resnick2007}. Our favorites are \cite{Resnick2007} for its comprehensiveness while remaining accessible, and \cite{Coles2001} for the emphasis it puts on intuition. For a focus on Multivariate Extremes, we recommend Chap.6 of \cite{Resnick2007} (and in particular, comprehensive Thm.6.1, 6.2 and 6.3) completed with Chap.8 of \cite{Coles2001} for additional intuition.
 %
 For the hurried reader, the combination of
-\cite{Segers12}, the two introductive parts of \cite{Einmahl2012} and the first four pages of  \cite{coles1991modeling} provides a quick but in-depth introduction to multivariate extreme value theory, and have been of precious help to the author.
+\cite{Segers12}, the two introductory parts of \cite{Einmahl2012} and the first four pages of  \cite{coles1991modeling} provides a quick but in-depth introduction to multivariate extreme value theory, and have been of precious help to the author.
 
 Extreme Value Theory (\textsc{EVT}) develops models for learning the
 unusual rather than the usual, in order to provide a reasonable
@@ -640,7 +644,7 @@ $\{a_n, n \ge 1\}$ and $\{b_n, n \ge 1\}$, the $a_n$'s being positive, such that
 \mathbb{P}\left[ \frac{M_n-b_n}{a_n} \le x \right] = F^n(a_n x + b_n) \to G(x)
 \end{align}
 for all continuity point of $G$, where $G$ is a non-degenerate distribution function (\ie~without dirac mass).
-Then $G$ belongs to one of the three following extreme value distribution (up to a rescaling $x' = \frac{x-b}{a}$ which can be removed by changing $a_n$ and $b_n$):
+Then $G$ belongs to one of the three following extreme value distribution (up to a re-scaling $x' = \frac{x-b}{a}$ which can be removed by changing $a_n$ and $b_n$):
 \begin{align*}
 &\text{Gumbel:}~~~  G(x) = \exp \left( -e^{-x} \right)~~~\text{for}~~ x \in (-\infty, +\infty),\\
 &\text{Fréchet:}~~~ G(x) = \exp \left(-x^{-\alpha}\right) ~~~\text{~~~if~~} x > 0 \text{~and~~} G(x)=0 \text{~~otherwise},\\
@@ -678,7 +682,7 @@ The Hill estimator or one of its generalizations, see \cite{Hill1975}, \cite{Smi
 \begin{itemize}
 \item Assume the $X_i$'s to be standard exponential variables (their cdf is $F(x) = 1 - e^{-x}$). In that case, letting $a_n=1$ and $b_n = \log(n)$, we have
 $\mathbb{P}[(M_n-b_n)/a_n \le z] = \mathbb{P}[X_1 \le z + \log n ]^n = [1 - e^{-z}/n]^n \to \exp(-e^{-z}) $, for $z \in \rset$. The limit distribution is of Gumbel type ($\xi = 0$).
-\item If the $X_i$'s are standard Fréchet ($F(x) = \exp{-1/z}$), letting $an = n$ and $b_n = 0$, one has immediatly $\mathbb{P}[(M_n-b_n)/a_n \le z] = F^n(nz) = \exp(-1/z)$, for $z >0$. The limit distribution remains the Fréchet one ($\xi = 1$).
+\item If the $X_i$'s are standard Fréchet ($F(x) = \exp{-1/z}$), letting $an = n$ and $b_n = 0$, one has immediately $\mathbb{P}[(M_n-b_n)/a_n \le z] = F^n(nz) = \exp(-1/z)$, for $z >0$. The limit distribution remains the Fréchet one ($\xi = 1$).
 \item If the $X_i$'s are uniform on $[0,1]$, letting $a_n = 1/n$ and $b_n = 1$, one has $\mathbb{P}[(M_n-b_n)/a_n \le z] = F^n(n^{-1}z + 1) \to \exp(z)$, for $z <0$. The limit distribution is the Weibull one ($\xi = -1$).
 
 \end{itemize}
@@ -860,7 +864,8 @@ l(\mb x) = \lim_{t \to 0} t^{-1} \mathbb{P} \left( U^1 \le t\, x_1 ~\text{or}~ \
 exists. 
 \end{itemize}
 
-As a conclusion, in multivariate extremes, the focus is on the dependence structure which is characterized by different quantities, such as the exponent measure $\mu$ (itself characterized by its angular part $\Phi$) or the \stdf, which is closely linked to other integrated version of $\mu$ such as extreme-value copula or tail copula. For details on such functionals, see~\cite{Segers12}.
+As a conclusion, in multivariate extremes, the focus is on the dependence structure which is characterized by different quantities, such as the exponent measure $\mu$ (itself characterized by its angular part $\Phi$) or the \stdf, which is closely linked to other integrated version of $\mu$ such as extreme-value copula or tail copula. For details on such 
+functionals, see~\cite{Segers12}.
 The fact that these quantities characterize the dependence structure can be illustrated by the link they exhibit between the multivariate GEV $G(x)$ and the marginal ones $G_j(x_j),~1 \le j \le d$,
 
 \begin{align*}
@@ -938,7 +943,7 @@ As in many applications, it can be more convenient to work with the angular meas
 \chapter{Background on classical Anomaly Detection algorithms}
 \label{back:AD_scikit}
 \begin{chapabstract}
-  In this chapter, we review some very classical anomaly detection algorithms used in the benchmarks of chapters~\ref{chap:ocrf} and \ref{chap:evaluation}. We also introduce the reader to the scikit-learn library used for illustrative examples. We also present relative implementative contributions of this thesis.%This is also the opportunity to present implementative contributions of this thesis, as two of the algorithms presented here, the Isolation Forest algorithm (Section \ref{sec:iforest}) and the Local Outlier Factor algorithm (Section \ref{sec:lof}), have been implemented on scikit-learn in the context of this Ph.D., as mentioned in the introduction.
+  In this chapter, we review some very classical anomaly detection algorithms used in the benchmarks of chapters~\ref{chap:ocrf} and \ref{chap:evaluation}. We also introduce the reader to the scikit-learn library used for illustrative examples, and present relative (implementative) contributions of this thesis. %This is also the opportunity to present implementative contributions of this thesis, as two of the algorithms presented here, the Isolation Forest algorithm (Section \ref{sec:iforest}) and the Local Outlier Factor algorithm (Section \ref{sec:lof}), have been implemented on scikit-learn in the context of this Ph.D., as mentioned in the introduction.
 \end{chapabstract}
 
 Note: The work on scikit-learn was supervised by Alexandre Gramfort and is the result of a collaboration with the Paris Saclay Center for Data Science. It includes the implementation of Isolation Forest (Section \ref{sec:iforest}) and Local Outlier Factor (Section \ref{sec:lof}) algorithms, as well as a participation to the scikit-learn maintenance and pull requests review.
@@ -967,14 +972,14 @@ One may refer to \cite{Hodge2004survey, Chandola2009survey, Patcha2007survey, Ma
 
  Most usual anomaly detection algorithms actually
 provide more than a predicted label for any new observation, abnormal/normal. Instead,
-they return a real valued function,  termed a \textit{scoring function}, defining a preorder/ranking on the input space. Such a function permits to rank any observations according to their supposed `degree of abnormality' and thresholding it yields a decision rule that splits the input space into `normal' and `abnormal' regions.
+they return a real valued function,  termed a \textit{scoring function}, defining a pre-order/ranking on the input space. Such a function permits to rank any observations according to their supposed `degree of abnormality' and thresholding it yields a decision rule that splits the input space into `normal' and `abnormal' regions.
 In various fields (\textit{e.g.} fleet management, monitoring of energy/transportation networks), when confronted with massive data, being able to rank observations according to their degree of abnormality may significantly improve operational processes and allow for a prioritization of actions to be taken, especially in situations where human expertise is required to check each observation is time-consuming.
 
 
 From a machine learning perspective, anomaly detection can be considered as a specific classification/ranking task, where the usual assumption in supervised learning stipulating that the dataset contains structural information regarding all classes breaks down, see \cite{Roberts99}. This typically happens in the case of two highly unbalanced classes: the normal class is expected to regroup a large majority of the dataset, so that the very small number of points representing the abnormal class does not allow to learn information about this class.
 In a clustering based approach, it can be
 interpreted as the presence of a single cluster, corresponding to the
-normal data. The abnormal ones are too limited to share a commun
+normal data. The abnormal ones are too limited to share a common
 structure, \ie~to form a second cluster. Their only characteristic is
 precisely to lie outside the normal cluster, namely to lack any
 structure.  Thus, common classification approaches may not be applied
@@ -997,7 +1002,7 @@ The SVM algorithm is essentially a two-class algorithm (\ie~one needs negative a
 \cite{Scholkopf2001} extended the SVM methodology to handle training using only positive information:
 the One-Class Support Vector Machine (OCSVM) treats the origin as the only member of the second class (after mapping the data to some feature space). Thus the OCSVM finds a separating hyperplane between the origin and the mapped one class. %, using some `relaxation parameters'.
 
-The OCSVM consists in estimating Minimum Volume sets, which amounts (if the density has no flat parts) to estimating density level sets, as mentionned in the introduction.
+The OCSVM consists in estimating Minimum Volume sets, which amounts (if the density has no flat parts) to estimating density level sets, as mentioned in the introduction.
 In \cite{VertVert}, it is shown that the OCSVM is a consistent estimator of density level sets, and that the solution function returned by the OCSVM gives an estimate of the tail of the underlying density.
 
 %
@@ -1109,16 +1114,16 @@ This work was supervised by Alexandre Gramfort and is the result of a collaborat
 
 \subsection{What is scikit-learn?}
 Scikit-learn, see \cite{sklearn2011}, is an open-source library which provides well-established machine learning methods.
-It is a Python module, the latter language being very popular for scientific computing, thanks to its high-level interactive nature. Python is enjoying this recent years a strong expansion both in academic and industrial settings. Scikit-learn takes advantage of this favourable backdrop and extends this general-purpose programming language with machine learning operation: It not only provides implementations of many established algorithms, both supervised and unsupervised, while keeping an easy-to-use interface tightly integrated with the Python language. But it also provides a composition mechanism (through a \emph{Pipeline} object) to combine estimators, preprocessing tools and model selection methods in such a way that the user can easily construct complex ad-hoc algorithms.
+It is a Python module, the latter language being very popular for scientific computing, thanks to its high-level interactive nature. Python is enjoying this recent years a strong expansion both in academic and industrial settings. Scikit-learn takes advantage of this favorable backdrop and extends this general-purpose programming language with machine learning operation: It not only provides implementations of many established algorithms, both supervised and unsupervised, while keeping an easy-to-use interface tightly integrated with the Python language. But it also provides a composition mechanism (through a \emph{Pipeline} object) to combine estimators, preprocessing tools and model selection methods in such a way that the user can easily construct complex ad-hoc algorithms.
 
 Scikit-learn depends only on \emph{numpy} (the base data structure used for data and model parameters, see \cite{Vanderwalt2011numpy}) and \emph{scipy} (to handle common numerical operations, see \cite{Jones2015scipy}).
 Most of the Scikit-learn package is written in python and \emph{cython}, a compiled programming language for combining C in Python to achieve the performance of C with high-level programming in Python-like syntax.
 
 
-The development is done on \emph{github}\footnote{https://github.com/scikit-learn}, a Git repository hosting service which facilitates collaboration, as coding is done in strong interaction with other developpers. Because of the large number them, emphasis is put on keeping the project maintainable, \eg~by avoiding dupplicating code.% up to pay (reasonably) in computational performance. As an example, the initial Isolation Forest implementation contained a complementary cython code to efficiently browse the trees of the forest. This functionality was included in an other (more complete) tree browser, but which is heavier in terms of computation. A balance had to be made between the computational gain and the maintainability cost, which led to choose the last one.
+The development is done on \emph{github}\footnote{https://github.com/scikit-learn}, a Git repository hosting service which facilitates collaboration, as coding is done in strong interaction with other developers. Because of the large number them, emphasis is put on keeping the project maintainable, \eg~by avoiding duplicating code.% up to pay (reasonably) in computational performance. As an example, the initial Isolation Forest implementation contained a complementary cython code to efficiently browse the trees of the forest. This functionality was included in an other (more complete) tree browser, but which is heavier in terms of computation. A balance had to be made between the computational gain and the maintainability cost, which led to choose the last one.
 
 
-Scikit-learn benefits from a simple and consistent API (Application Programming Interface), see \cite{sklearn_api2013}, through the \emph{estimator} interface. This interface is followed by all (supervised and unsupervised) learning algorithms as well as other tasks such as preprocessing, feature extraction and selection. The central object \emph{estimator} implements a \emph{fit} method to learn from training data, taking as argument an input data array (and optionnally an array of labels for supervised problems). The initialization of the estimator is done separately, before training, in such a way the constructor doesn't see any data and can be seen as a function taking as input the model hyper-parameters and returning the learning algorithm initialized with these parameters. Relevant default parameters are provided for each algorithm. To illustrate initialization and fit steps, the snippet below considers an anomaly detection learning task with the \emph{Isolation Forest} algorithm.
+Scikit-learn benefits from a simple and consistent API (Application Programming Interface), see \cite{sklearn_api2013}, through the \emph{estimator} interface. This interface is followed by all (supervised and unsupervised) learning algorithms as well as other tasks such as preprocessing, feature extraction and selection. The central object \emph{estimator} implements a \emph{fit} method to learn from training data, taking as argument an input data array (and optionally an array of labels for supervised problems). The initialization of the estimator is done separately, before training, in such a way the constructor doesn't see any data and can be seen as a function taking as input the model hyper-parameters and returning the learning algorithm initialized with these parameters. Relevant default parameters are provided for each algorithm. To illustrate initialization and fit steps, the snippet below considers an anomaly detection learning task with the \emph{Isolation Forest} algorithm.
 
 \begin{pythoncode} 
 # Import the IsolationForest algorithm from the ensemble module

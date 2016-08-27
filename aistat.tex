@@ -22,7 +22,7 @@ degree of abnormality may significantly improve operational processes and allow 
 When univariate, observations are usually considered as `abnormal'
 when they are either too high or else too small compared to central
 measures such as the mean or the median. In this context, anomaly/novelty analysis generally relies
-on the analysis of the tail distribution of the variable of interest.  No natural (pre)~order exists on a $d$-dimensional feature space,  $\mathcal{X} \subset\mathbb{R}^d$ say, as soon as $d>1$. Extension to the multivariate setup is thus far from obvious and, in practice, the optimal ordering/ranking must be \textit{learned} from training data $X_1,\; \ldots,\; X_n$, in absence of any parametric assumptions on the underlying probability distribution describing the `normal' regime. The most straightforward manner to define a preorder on the feature space $\mathcal{X}$ is to transport the natural
+on the analysis of the tail distribution of the variable of interest.  No natural (pre)~order exists on a $d$-dimensional feature space,  $\mathcal{X} \subset\mathbb{R}^d$ say, as soon as $d>1$. Extension to the multivariate setup is thus far from obvious and, in practice, the optimal ordering/ranking must be \textit{learned} from training data $X_1,\; \ldots,\; X_n$, in absence of any parametric assumptions on the underlying probability distribution describing the `normal' regime. The most straightforward manner to define a pre-order on the feature space $\mathcal{X}$ is to transport the natural
 order on the real half-line through a measurable \textit{scoring
   function} $s:\mathcal{X} \rightarrow \mathbb{R}_+$: the
 `smaller' the score $s(X)$, the more `abnormal' the observation $X$ is
@@ -30,20 +30,20 @@ viewed. In the following, to simplify notation we assume that $\mathcal{X} = \rs
 %
 The whys and wherefores of scoring functions have been explained in the introduction chapter, Section~\ref{resume:scoring_function}. Estimating good scoring functions is a way to estimate level sets of the underlying density, as optimal scoring function are those whose induced level sets are exactly the ones of the density. The basic idea is that we don't need to estimate the density to obtain such level sets, but only any increasing transform of the density.
 %
-Any scoring function defines a preorder on $\rset^d$ and thus a ranking on a set of new observations. An important issue stated in Section~\ref{resume:scoring_function} concerns the definition of an adequate performance criterion, $\crit(s)$ say, in order to compare possible candidate scoring function and to pick one eventually: optimal scoring functions $s^*$ being then defined as those optimizing $\crit$. 
+Any scoring function defines a pre-order on $\rset^d$ and thus a ranking on a set of new observations. An important issue stated in Section~\ref{resume:scoring_function} concerns the definition of an adequate performance criterion, $\crit(s)$ say, in order to compare possible candidate scoring function and to pick one eventually: optimal scoring functions $s^*$ being then defined as those optimizing $\crit$. 
 Estimating scoring function instead of the density itself precisely allows to use an other criterion than the distance to the density, which is too stringent for a level sets estimation purpose: a function having exactly the same level sets as the density can be very far from the latter using such distance.
 
 Throughout the present article, it is assumed that the distribution $F$ of the observable \rv~$X$ is absolutely continuous \wrt~Lebesgue measure $\leb$ on
-$\rset^d$, with density $f(x)$.  The criterion should be thus defined in a way that the collection of level sets of an optimal scoring function $s^*(x)$ coincides with that related to $f$.  In other words, any nondecreasing transform of the density should be optimal regarding the ranking performance criterion $\crit$. According to the Empirical Risk Minimization (ERM) paradigm, a scoring function will be built in practice by optimizing an empirical version $\crit_n(s)$ of the
+$\rset^d$, with density $f(x)$.  The criterion should be thus defined in a way that the collection of level sets of an optimal scoring function $s^*(x)$ coincides with that related to $f$.  In other words, any non-decreasing transform of the density should be optimal regarding the ranking performance criterion $\crit$. According to the Empirical Risk Minimization (ERM) paradigm, a scoring function will be built in practice by optimizing an empirical version $\crit_n(s)$ of the
 criterion over an adequate set of scoring functions $\S_0$ of controlled complexity (\textit{e.g.} a major class of finite {\sc VC} dimension). Hence, another desirable property to guarantee the universal consistency of ERM learning strategies is the uniform convergence of
 $\crit_n(s)$ to $\crit(s)$  over such collections $\S_0$ under minimal assumptions on the distribution $F(dx)$.
 
 As described in Section~\ref{resume:mv-curve}, a functional criterion referred to as the mass-volume curve ($MV$-curve), admissible with respect to the requirements listed above has been introduced in \cite{CLEM13}, extending somehow the concept of $\roc$ curve in the unsupervised setup. Relying on the theory of \textit{minimum volume} sets (see Section~\ref{resume:mv-set}), it has been proved that the scoring functions minimizing empirical and discretized versions of the $MV$-curve criterion are accurate when the underlying distribution has compact support and a first algorithm for building nearly optimal scoring functions, based on the estimate of a finite collection of properly chosen minimum volume sets, has been introduced and analyzed. 
 However, as explained in Section~\ref{resume:mv-curve}, some important drawbacks are inherent to this mass-volume curve criterion:
 \begin{itemize}
-\item[\textbf{1)}] When used as an performance criterion, the lebesgue measure of possibly very complex sets has to be computed.
+\item[\textbf{1)}] When used as an performance criterion, the Lebesgue measure of possibly very complex sets has to be computed.
 \item[\textbf{2)}] When used as an performance criterion, the pseudo-inverse $\alpha_s^{-1}(\alpha)$ may be hard to compute.
-\item[\textbf{3)}] When used as a learning criterion (in the ERM paradigm), it produces level sets which are not necessarly nested, on which may be built inaccurate scoring function. 
+\item[\textbf{3)}] When used as a learning criterion (in the ERM paradigm), it produces level sets which are not necessarily nested, on which may be built inaccurate scoring function. 
 \item[\textbf{4)}] When used as a learning criterion, the learning rates are rather slow (of the order $n^{-1/4}$ namely), and cannot be established in the unbounded support situation.
 \end{itemize}
  % See Figure~\ref{aistat:algo-problem} and related comments for an insight into the gain resulting from the concept introduced in the present paper in contrast to the $MV$ curve minimization approach relatively to the . 
@@ -474,7 +474,7 @@ where $C_1=C(\epsilon_1,f)$ is a constant independent from $s(x)$.
 \end{enumerate}
 \end{proposition}
 
-Assertion $(ii)$ provides a control of the pointwise difference between the
+Assertion $(ii)$ provides a control of the point-wise difference between the
 optimal $EM$ curve and $EM_s$ in terms of the error made when recovering a specific minimum volume set $\Omega_t^*$ by a level set of $s(x)$. Thus the quantity $EM^*(t)-EM_s(t)$ measures how well level sets of $s$ can approximate those of the underlying density.
 Assertion $(iii)$ reveals that, if a certain increasing transform of a given scoring function $s(x)$ approximates well the density $f(x)$, then $s(x)$ is an accurate scoring function \wrt~the $EM$ criterion. %However, the reciprocal is not
 %true: there are good scoring functions that are not good
@@ -618,7 +618,7 @@ This section is devoted to extend the results of the previous one. We first rela
 \subsection{Distributions with non compact support}\label{aistat:sec:infiniteSupport}
 \label{aistat:extension_non_compact}
 It is the purpose of this section to show that the algorithm detailed below produces a scoring function $s$ such that  $EM_s$ is uniformly close to $EM^*$ (Theorem~\ref{aistat:thmprinc}). 
- See Figure~\ref{aistat:algo-problem} as an illustration and a comparaison with the $MV$ formulation as used as a way to recover empirical minimum volume set $\hat \Gamma_\alpha$ .
+ See Figure~\ref{aistat:algo-problem} as an illustration and a comparison with the $MV$ formulation as used as a way to recover empirical minimum volume set $\hat \Gamma_\alpha$ .
 
 \begin{algorithm} 
 \caption{~~Learning a scoring function}
@@ -643,7 +643,7 @@ H_{n,t_k}(\Omega)$ , % \nonumber \\
 In order to reduce the complexity, we may replace steps $1$ and $2$
 with $$\hat {\Omega}_{t_k} \in \arg\max_{\Omega \supset \hat \Omega_{t_{k-1}}} H_{n,t_k}(\Omega).$$
 \noindent
-The resulting piecewise constant scoring function is
+The resulting piece-wise constant scoring function is
 \begin{align}
 \label{aistat:definition_sN}
 s_N(x)= \sum_{k=1}^{N}(t_{k}-t_{k+1}) \mathds{1}_{x \in \hat{\Omega}_{t_k}}~.
@@ -708,7 +708,7 @@ s_N(x)= \sum_{k=1}^{N}(t_{k}-t_{k+1}) \mathds{1}_{x \in \hat{\Omega}_{t_k}}~.
 \end{center}
 
 
-The main argument to extend the above results to the case where $supp f$ is not bounded is given in Lemma~\ref{aistat:theofini} in Section~\ref{aistat:sec:detailed_proofs}. The meshgrid $(t_k)$ must be chosen adaptively, in a data-driven fashion.  Let $h:~\mathbb{R}_+^* \rightarrow \mathbb{R}_+$ be a decreasing function such that $ \lim_{t \rightarrow 0}h(t)=+\infty$. Just like the previous approach, the grid is described by a decreasing sequence $(t_k)$. Let $t_1 \ge 0$, $N>0$ and define recursively $t_1>t_{2}>\ldots>t_{N}>t_{N+1}=0$, as well as $\hat \Omega_{t_1},\; \ldots,\;\hat \Omega_{t_N}$, through
+The main argument to extend the above results to the case where $supp f$ is not bounded is given in Lemma~\ref{aistat:theofini} in Section~\ref{aistat:sec:detailed_proofs}. The meshgrid $(t_k)$ must be chosen in an adaptive way, in a data-driven fashion.  Let $h:~\mathbb{R}_+^* \rightarrow \mathbb{R}_+$ be a decreasing function such that $ \lim_{t \rightarrow 0}h(t)=+\infty$. Just like the previous approach, the grid is described by a decreasing sequence $(t_k)$. Let $t_1 \ge 0$, $N>0$ and define recursively $t_1>t_{2}>\ldots>t_{N}>t_{N+1}=0$, as well as $\hat \Omega_{t_1},\; \ldots,\;\hat \Omega_{t_N}$, through
 \noindent
 \begin{align}
 \label{aistat:tk-omegak}t_{k+1}&~=~t_k -(\sqrt n)^{-1}\frac{1}{h(t_{k+1})}  \\ 
@@ -772,9 +772,9 @@ Consider the hypothesis below.
 %  This means that the previous bounds apply on $|EM_{\mathcal{G}}^*-EM_s|$ instead of $|EM^*-EM_s|$, where  $EM_{\mathcal{G}}^*(t):=\max_{\Omega \in \mathcal{G}}H_t(\Omega)$ is majored by $EM^*(t)=\max_{\Omega\; mes.}H_t(\Omega)$. Assume that : 
 
 \noindent
-$\mathbf{\tilde A_3}$  {\it There exists a countable subcollection of $\mathcal{G}$, $F=\{F_i\}_{i \ge 1}$ say, forming a partition of $\rset^d$ and such that $\sigma (F) \subset \mathcal{G}$.} 
+$\mathbf{\tilde A_3}$  {\it There exists a countable sub-collection of $\mathcal{G}$, $F=\{F_i\}_{i \ge 1}$ say, forming a partition of $\rset^d$ and such that $\sigma (F) \subset \mathcal{G}$.} 
 
- Denote by $f_{F}$ the best approximation (for the $L_2$-norm) of $f$ by piecewise functions on $F$, $$f_{F}(x) := \sum_{i \ge 1} \mathds{1}_{x \in F_i} \frac{1}{\leb(F_i)} \int_{F_i}f(y)dy~.$$
+ Denote by $f_{F}$ the best approximation (for the $L_2$-norm) of $f$ by piece-wise functions on $F$, $$f_{F}(x) := \sum_{i \ge 1} \mathds{1}_{x \in F_i} \frac{1}{\leb(F_i)} \int_{F_i}f(y)dy~.$$
 %For instance we can take $\mathcal{F}=\mathcal{G}=\sigma((F_i)_{i\ge 1})$ with $(F_i)_{i \ge 1}=([\frac{i_1}{l},\frac{i_1+1}{l}]\times[\frac{i_2}{l},\frac{i_2+1}{l}]\times...\times[\frac{i_d}{l},\frac{i_d+1}{l}])_{i_1,i_2,...,i_d \in \mathbb{Z}}$ the class of all sets formed by taking unions of cubes of sidelength $1/l$. Here the VC-dimension of $\mathcal{G}$ is $2$, $\mathbf{A_4}$ holds thus true.
 Then, variants of Theorems~\ref{aistat:compact_support_case} and \ref{aistat:thmprinc} can be established without assumption $\mathbf{A_3}$, as soon as $\mathbf{\tilde A_3}$ holds true, at the price of the additional term $\|f-f_{F}\|_{L^1}$ in the bound, related to the inherent bias. For illustration purpose, the following result generalizes one of the inequalities stated in Theorem~\ref{aistat:thmprinc}:
 
@@ -788,9 +788,9 @@ $\mathbf{\tilde A_3}$, $\mathbf{A_4}$ hold true, let $t_1>0$ and for $k \ge 2$ c
 where $o_N(1)=1-EM^*(t_N)$. 
 \end{theorem}
 
-\begin{remark}{\sc (Hypercubes)}
+\begin{remark}{\sc (Hyper-cubes)}
 In practice, one defines a sequence of models $F_l\subset\mathcal{G}_l$ indexed by a tuning parameter $l$ controlling (the inverse of) model complexity, such that $\|f-f_{F_l}\|_{L^1} \rightarrow 0$ as $l \rightarrow 0$. %The parameter $p=p_n$ is generally picked so as to 
-For instance, the class $F_l$ could be formed by disjoint hypercubes of side length $l$.
+For instance, the class $F_l$ could be formed by disjoint hyper-cubes of side length $l$.
 \end{remark}
 %The previous results can thus be generalized without assumption $\mathbf{A_3}$, as soon as $\mathbf{\tilde A_3}$ holds true, and if the majoration $\|f-f_{\mathcal{F}}\|_{L^1}$ of the bias of the model is added to the previous bounds.  Note that the term $\|f-f_{\mathcal{F}}\|_{L^1}$ can be as small as desired, just choose a sufficiently fine model : for instance in the case of $(F_i)_{i \ge  1}=([\frac{i_1}{l},\frac{i_1+1}{l}]\times[\frac{i_2}{l},\frac{i_2+1}{l}]\times...\times[\frac{i_d}{l},\frac{i_d+1}{l}])_{i_1,i_2,...,i_d  \in \mathbb{Z}}$, we have $\|f-f_{\mathcal{F}}\|_{L^1} \rightarrow 0$ as $l \rightarrow \infty$.
 
@@ -818,14 +818,14 @@ Algorithm~\ref{aistat:algo1} is here implemented from simulated $2$-$d$ \textit{
 $f(x,y)=1/2 \times 1/(1+|x|)^3\times 1/(1+|y|)^2$. The training set is of size $n=10^5$, whereas the test set counts $10^6$ points.
 For $l>0$, we set $\mathcal{G}_l=\sigma(F)$ where $F_l=\{F_i^l\}_{i\in \mathbb{Z}^2}$ and $F_i^l = [l i_1,l i_1+1]\times[l i_2,l i_2+1]$ for all $i=(i_1,i_2) \in \mathbb{Z}^2$. The bias of the model is thus bounded by $\|f-f_{F}\|_{\infty}$, vanishing as $l \rightarrow 0$ (observe that the bias is at most of order $l$ as soon as $f$ is Lipschitz for instance). The scoring function $s$ is built using the points located in $[-L,L]^2$ and setting $s=0$ outside of $[-L,L]^2$. Practically, one takes $L$ as the maximum norm value of the points in the training set, or such that an empirical estimate of $\mathbb{P}(X \in [-L,L]^2)$ is very close to $1$ (here one obtains $0.998$ for $L=500$). 
 %$K^2$ is the number of hypercube in the partition of $[-L,L]^2$, such that $\frac{1}{l^2}=(\frac{K}{2.L})^2$ represents the number of hypercube partitioning a unit hypercube. 
-The implementation of our algorithm involves the use of a sparse matrix to store the data in the partition of hypercubes, such that the complexity of the procedure for building the scoring function $s$ and that of the computation of its empirical $EM$-curve is very small compared to that needed to compute $f_{F_l}$ and $EM_{f_{F_l}}$, which are given here for the sole purpose of quantifying the model bias.
+The implementation of our algorithm involves the use of a sparse matrix to store the data in the partition of hyper-cubes, such that the complexity of the procedure for building the scoring function $s$ and that of the computation of its empirical $EM$-curve is very small compared to that needed to compute $f_{F_l}$ and $EM_{f_{F_l}}$, which are given here for the sole purpose of quantifying the model bias.
 
-Figure~\ref{aistat:EMMS} illustrates as expected the deterioration of $EM_s$ for large $l$, except for $t$ close to zero: this corresponds to the model bias. However, Figure~\ref{aistat:EMMSzoom} reveals an `overfitting' phenomenon for values of $t$ close to zero, when $l$ is fairly small. 
-%Figure~\ref{aistat:EMMS} and~\ref{aistat:EMMSzoom} reveal an `overfitting' phenomenon for values of $t$ close to zero, when $l$ is fairly small.
-This is mainly due to the fact that subsets involved in the scoring function are then tiny in regions where there are very few observations (in the tail of the distribution). On the other hand, for the largest values of $t$, the smallest values of $l$ give the best results: the smaller the parameter $l$, the weaker the model bias and no overfitting is experienced because of the high local density of the observations.
-Recalling the notation $EM_{\mathcal{G}}^*(t)=\max_{\Omega \in \mathcal{G}}H_t(\Omega) \le EM^*(t)=\max_{\Omega\; meas.}H_t(\Omega)$ so that the bias of our model is $EM^*-EM^*_{\mathcal{G}}$, Figure~\ref{aistat:EMGEM} illustrates the variations of the bias with the wealth of our model characterized by $l$ the width of the partition by hypercubes. Notice that partitions with small $l$ are not so good approximation for large $t$, but are performing as well as the other in the extreme values, namely when $t$ is close to $0$. On the top of that, those partitions have the merit not to overfit the extreme datas, which typically are isolated.
+Figure~\ref{aistat:EMMS} illustrates as expected the deterioration of $EM_s$ for large $l$, except for $t$ close to zero: this corresponds to the model bias. However, Figure~\ref{aistat:EMMSzoom} reveals an `over-fitting' phenomenon for values of $t$ close to zero, when $l$ is fairly small. 
+%Figure~\ref{aistat:EMMS} and~\ref{aistat:EMMSzoom} reveal an `over-fitting' phenomenon for values of $t$ close to zero, when $l$ is fairly small.
+This is mainly due to the fact that subsets involved in the scoring function are then tiny in regions where there are very few observations (in the tail of the distribution). On the other hand, for the largest values of $t$, the smallest values of $l$ give the best results: the smaller the parameter $l$, the weaker the model bias and no over-fitting is experienced because of the high local density of the observations.
+Recalling the notation $EM_{\mathcal{G}}^*(t)=\max_{\Omega \in \mathcal{G}}H_t(\Omega) \le EM^*(t)=\max_{\Omega\; meas.}H_t(\Omega)$ so that the bias of our model is $EM^*-EM^*_{\mathcal{G}}$, Figure~\ref{aistat:EMGEM} illustrates the variations of the bias with the wealth of our model characterized by $l$ the width of the partition by hyper-cubes. Notice that partitions with small $l$ are not so good approximation for large $t$, but are performing as well as the other in the extreme values, namely when $t$ is close to $0$. On the top of that, those partitions have the merit not to over-fit the extreme data, which typically are isolated.
  
-This empirical analysis demonstrates that introducing a notion of adaptivity for the partition $F$, with progressively growing bin-width as $t$ decays to zero and as the hypercubes are being selected in the construction of $s$ (which crucially depends on local properties of the empirical distribution), drastically improves the accuracy of the resulting scoring function in the $EM$ curve sense. 
+This empirical analysis demonstrates that introducing a notion of adaptivity for the partition $F$, with progressively growing bin-width as $t$ decays to zero and as the hyper-cubes are being selected in the construction of $s$ (which crucially depends on local properties of the empirical distribution), drastically improves the accuracy of the resulting scoring function in the $EM$ curve sense. 
 \noindent
 \begin{figure}[!ht]
 \begin{minipage}[c]{.5\linewidth}
@@ -854,15 +854,15 @@ This empirical analysis demonstrates that introducing a notion of adaptivity for
 
 
 \section{Conclusion}
-Prolongating the contribution of \cite{CLEM13}, this chapter provides an alternative view (respectively, an other parameterization) of the anomaly scoring problem, leading to another adaptive method to build scoring functions, which offers theoretical and computational advantages both at the same time. This novel formulation yields a procedure producing a nested sequence of empirical density level sets, and exhibits a good performance, even in the non compact support case. 
-Thus, the main drawbacks of the mass-volume curve criterion listed in the introduction section are resolved exepting drawback \textbf{1)}. In addition, the model bias has been incorporated in the rate bound analysis.
+Prolongating the contribution of \cite{CLEM13}, this chapter provides an alternative view (respectively, an other parametrization) of the anomaly scoring problem, leading to another adaptive method to build scoring functions, which offers theoretical and computational advantages both at the same time. This novel formulation yields a procedure producing a nested sequence of empirical density level sets, and exhibits a good performance, even in the non compact support case. 
+Thus, the main drawbacks of the mass-volume curve criterion listed in the introduction section are resolved excepting drawback \textbf{1)}. In addition, the model bias has been incorporated in the rate bound analysis.
 %
 However, the use of the Excess-Mass criterion to measure the quality of a scoring function $s_n$ involves the computation of the Lebesgue measure  $\leb(s_n \ge u)$, just as with the Mass-Volume criterion (drawback \textbf{1)}). This is a major drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available.
 
 
 \section{Illustrations}
 
-Note that the scoring function we built in Algorithm~\ref{aistat:algo1} is incidentally an estimator of the density $f$ (usually called the silhouette), since $f(x)=\int_{0}^\infty \mathds{1}_{f \ge t}dt=\int_{0}^\infty \mathds{1}_{\Omega^*_t}dt$ and $s(x):= \sum_{k=1}^K (t_k-t_{k-1}) \mathds{1}_{x \in \hat{\Omega}_{t_k} }$ which is a discretization of $\int_{0}^\infty \mathds{1}_{\hat \Omega_t}dt$. This fact is illustrated in Figure~\ref{aistat:scoring3D}. Note that the silhouette does not focuse on local properties of the density, but only on its induced pre-order (level sets).
+Note that the scoring function we built in Algorithm~\ref{aistat:algo1} is incidentally an estimator of the density $f$ (usually called the silhouette), since $f(x)=\int_{0}^\infty \mathds{1}_{f \ge t}dt=\int_{0}^\infty \mathds{1}_{\Omega^*_t}dt$ and $s(x):= \sum_{k=1}^K (t_k-t_{k-1}) \mathds{1}_{x \in \hat{\Omega}_{t_k} }$ which is a discretization of $\int_{0}^\infty \mathds{1}_{\hat \Omega_t}dt$. This fact is illustrated in Figure~\ref{aistat:scoring3D}. Note that the silhouette does not focus on local properties of the density, but only on its induced pre-order (level sets).
 \begin{figure}[!h!]
 \centering
 \includegraphics[width=\linewidth]{fig_source/scoring3D.png}
@@ -1068,7 +1068,7 @@ where we use the fact that $0 \le EM^*(t_N)-EM_{s_N}(t_N) \le 2 \Phi_n(\delta)$ 
 s_N(x)~=~\frac{t_1}{\sqrt n} \sum_{k=1}^{\infty}\frac{1}{(1+\frac{1}{\sqrt n})^k} \mathds{1}_{x \in \hat \Omega_{t_k}} \mathds{1}_{\{k \le N\}}~~\le~~ \frac{t_1}{\sqrt n} \sum_{k=1}^{\infty} \frac{1}{(1+\frac{1}{\sqrt n})^k} ~<~ \infty,
 \end{align*}
 
-and analogically to Remark~\ref{aistat:orderscore} observe that $EM_{s_N} \le EM_{s_\infty}$ so that $\sup_{t \in ]0,t_1]} |EM^*(t)-EM_{s_\infty}(t)| \leq \sup_{t \in ]0,t_1]} |EM^*(t)-EM_{s_N}(t)|$ which prooves the last part of the theorem.
+and analogically to Remark~\ref{aistat:orderscore} observe that $EM_{s_N} \le EM_{s_\infty}$ so that $\sup_{t \in ]0,t_1]} |EM^*(t)-EM_{s_\infty}(t)| \leq \sup_{t \in ]0,t_1]} |EM^*(t)-EM_{s_N}(t)|$ which proves the last part of the theorem.
 
 \subsection*{Proof of Lemma~\ref{aistat:propbiais}}
 

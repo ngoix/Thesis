@@ -1,4 +1,4 @@
-\begin{thebibliography}{144}
+\begin{thebibliography}{146}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -82,6 +82,13 @@ Gilles Blanchard, Gyemin Lee, and Clayton Scott.
 \newblock {\em Journal of Machine Learning Research}, 11\penalty0
   (Nov):\penalty0 2973--3009, 2010.
 
+\bibitem[Blanchard et~al.(2004)Blanchard, Sch{\"a}fer, and
+  Rozenholc]{Blanchard2004}
+Gilles Blanchard, Christin Sch{\"a}fer, and Yves Rozenholc.
+\newblock Oracle bounds and exact algorithm for dyadic classification trees.
+\newblock In {\em International Conference on Computational Learning Theory},
+  pages 378--392. Springer, 2004.
+
 \bibitem[Bottou \& Lin(2007)Bottou and Lin]{Bottou2007}
 L{\'e}on Bottou and Chih-Jen Lin.
 \newblock Support vector machine solvers.
@@ -146,11 +153,18 @@ S.~Cl\'emen\c{c}on and S.~Robbiano.
 \newblock {Anomaly Ranking as Supervised Bipartite Ranking}.
 \newblock In {\em ICML}, 2014.
 
-\bibitem[Cl{\'e}men{\c{c}}on \& Vayatis(2009)Cl{\'e}men{\c{c}}on and
-  Vayatis]{Clemencon2009}
+\bibitem[Cl{\'e}men{\c{c}}on \& Vayatis(2009{\natexlab{a}})Cl{\'e}men{\c{c}}on
+  and Vayatis]{Clemencon2009}
 S.~Cl{\'e}men{\c{c}}on and N.~Vayatis.
 \newblock Nonparametric estimation of the precision-recall curve.
-\newblock In {\em ICML}, 2009.
+\newblock In {\em ICML}, 2009{\natexlab{a}}.
+
+\bibitem[Cl{\'e}men{\c{c}}on \& Vayatis(2009{\natexlab{b}})Cl{\'e}men{\c{c}}on
+  and Vayatis]{Clemencon2009Tree}
+St{\'e}phan Cl{\'e}men{\c{c}}on and Nicolas Vayatis.
+\newblock Tree-based ranking methods.
+\newblock {\em IEEE Transactions on Information Theory}, 55\penalty0
+  (9):\penalty0 4316--4336, 2009{\natexlab{b}}.
 
 \bibitem[Cl{\'e}men{\c{c}}on \& Vayatis(2010)Cl{\'e}men{\c{c}}on and
   Vayatis]{Clemencon2010}

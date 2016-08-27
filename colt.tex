@@ -49,7 +49,7 @@ x_j)$. Thus, the functional $l$  characterizes
  % , which is precisely
 % the tail distribution function $1 - F(\mb x)$. 
 % , including unobserved ones. 
-Recovering the $p_j$'s can be easily done using univariate \textsc{EVT} modelling introduced in Section~\ref{back:sec:1EVT}.
+Recovering the $p_j$'s can be easily done using univariate \textsc{EVT} modeling introduced in Section~\ref{back:sec:1EVT}.
 However, in the multivariate case, %constrast, %However %when considering multivariate extreme events, 
 there is no finite-dimensional parametrization of the dependence
 structure. 
@@ -590,7 +590,7 @@ $\mathbb{A}$, $\{\mathbb{P}(\mathbf{X}\in A \big|\mathbf{X}\in \mathbb{A}) \}_{A
 %as soon as $k$ large enough to have $\delta \ge e^{-k}$. We recover the convergence in $\frac{1}{\sqrt k}$ which is typical in this situation. 
 %\end{rk}
 
-\paragraph{Classification of Extremes})
+\paragraph{Classification of Extremes}
 A key issue in the prediction framework is to find upper bounds for the maximal deviation $\sup_{g \in \mathcal{G}}|L_n(g) - L(g)|$, where $L(g) = \mathbb{P}(g(\mathbf{X}) \neq Y)$ is the risk of the classifier $g: \mathcal{X} \to \{-1, 1\}$, associated with the \rv~$(\mathbf{X},Y) \in \mathbb{R}^d \times \{-1,1\}$. $L_n(g) = \frac{1}{n} \sum_{i=1}^n \mathds{I}\{g(\mathbf{X}_i)\neq Y_i\} $ is the empirical risk based on a training dataset $\{(\mathbf{X}_1,Y_1),\; \ldots,\; (\mathbf{X}_n,Y_n)  \}$. Strong upper bounds on $\sup_{g \in \mathcal{G}}|L_n(g) - L(g)|$ ensure the accuracy of the empirical risk minimizer $g_n:= \argmin_{g \in \mathcal{G}}L_n(g)$. 
 
 In a wide variety of applications (\textit{e.g.} Finance, Insurance, Networks), it is of crucial importance to predict the system response $Y$ when the input variable $\mathbf{X}$ takes extreme values, corresponding to shocks on the underlying mechanism. In such a case, the risk of a prediction rule $g(\mathbf{X})$ should be defined by integrating the loss function $L(g)$ with respect to the conditional joint distribution of the pair $(\mathbf{X},Y)$ given $\mathbf{X}$ is extreme. For instance, consider the event $\{\|\mathbf{X}\| \ge t_\alpha\}$ where $t_\alpha$ is the $(1-\alpha)^{th}$ quantile of $\|\mathbf{X}\|$ for a small $\alpha$. To investigate the accuracy of a classifier $g$ given $\{\|\mathbf{X}\| \ge t_\alpha\}$,
@@ -722,7 +722,7 @@ l_n(\mathbf{x})=\frac{1}{k}~\sum_{i=1}^{n} \mathds{1}_{\{X_i^1 \ge X^1_{(n-\lflo
  (\ref{colt:stdf}), with all distribution functions and  univariate
  quantiles replaced by their empirical counterparts, and with $t$
  replaced by $k/n$. Extensive studies have proved consistency and 
- asymptotic normality of this nonparametric estimator of $l$, see \cite{Huangphd}, \cite{Drees98} and \cite{dHF06} for the asymptotic normality in dimension $2$, \cite{Qi97} for consistency in arbitrary dimension, and \cite{Einmahl2012} for asymptotic normality in arbitrary dimension under differentiability conditions on $l$.
+ asymptotic normality of this non-parametric estimator of $l$, see \cite{Huangphd}, \cite{Drees98} and \cite{dHF06} for the asymptotic normality in dimension $2$, \cite{Qi97} for consistency in arbitrary dimension, and \cite{Einmahl2012} for asymptotic normality in arbitrary dimension under differentiability conditions on $l$.
 
 To our best knowledge, there is no established non-asymptotic bound on the maximal deviation $\sup_{0 \le \mathbf{x} \le T} \left| l_n(\mathbf{x}) - l(\mathbf{x}) \right|$. It is the purpose of the remainder of this section to derive such a bound, without any smoothness condition on $l$.
 
@@ -793,7 +793,7 @@ Too large values of $k$ tend to yield a large bias, whereas too small values of 
 
 
 The proof of Theorem~\ref{colt:thm:l} follows the same lines as in \cite{Qi97}.
-For  unidimensional random variables $Y_1,\ldots,Y_n$, let us denote
+For one-dimensional random variables $Y_1,\ldots,Y_n$, let us denote
 by $Y_{(1)} \le \ldots\le Y_{(n)}$ their order statistics. Define 
 then the empirical version $\tilde F_n$ of $\tilde F$ ( introduced in
 (\ref{colt:stdf})) as 
@@ -922,7 +922,7 @@ which is  the desired inequality % {\red $d$ ou $d+1$ ?}.
 
 
  We may now proceed with the proof of Theorem \ref{colt:thm:l}.
-First of all, noticing that $\tilde F(t\mathbf{x})$ is non-decreasing in $x_j$ for every $l$ and that $l(\mathbf{x})$ is non-decreasing and continuous (thus uniformly continuous on $[0,T]^d$), from (\ref{colt:stdf}) it is easy to prove by subdivising $[0,T]^d$ (see \cite{Qi97} p.174 for details) that 
+First of all, noticing that $\tilde F(t\mathbf{x})$ is non-decreasing in $x_j$ for every $l$ and that $l(\mathbf{x})$ is non-decreasing and continuous (thus uniformly continuous on $[0,T]^d$), from (\ref{colt:stdf}) it is easy to prove by sub-divising $[0,T]^d$ (see \cite{Qi97} p.174 for details) that 
 \begin{align}
 \label{colt:unif_conv}
 \sup_{0 \le \mathbf{x} \le T}\left| \frac{1}{t} \tilde F ( t \mathbf{x})-l(\mathbf{x}) \right|  \to 0 \text{~~~ as~~ t $\to$ 0 . }

@@ -9,7 +9,7 @@ This chapter presents the details relative to the introducing Section~\ref{resum
 Capturing the dependence structure of multivariate extreme events is
 a major concern in many fields involving the management of risks
 stemming from multiple sources, \emph{e.g.}~portfolio monitoring, insurance, environmental risk management and anomaly detection.
-One convenient (nonparametric) characterization of  extreme dependence in the
+One convenient (non-parametric) characterization of  extreme dependence in the
 framework of multivariate Extreme Value Theory (EVT) is the \textit{angular
   measure}, which provides direct information about the probable
 'directions' of extremes, that is, the relative contribution of each
@@ -23,7 +23,7 @@ representative sets of directions, corresponding to  specific sub-cones of $\mat
 This dimension reduction technique  paves the way towards scaling up existing multivariate EVT methods.
 Beyond a non-asymptotic study providing a theoretical validity
 framework for our method, we propose  as a direct application a --first--
-Anomaly Detection algorithm based on \textit{multivariate} EVT.  This algorithm builds a sparse `normal profile' of extreme behaviours, to be confronted with new (possibly abnormal) extreme observations. Illustrative experimental results provide strong empirical evidence of the relevance of our approach.
+Anomaly Detection algorithm based on \textit{multivariate} EVT.  This algorithm builds a sparse `normal profile' of extreme behaviors, to be confronted with new (possibly abnormal) extreme observations. Illustrative experimental results provide strong empirical evidence of the relevance of our approach.
 \end{chapabstract}
 
 Note: The material of this chapter is based on previous work under review available in \cite{ARXIV16}. Part of this work have been published in \cite{AISTAT15} and \cite{NIPSWORKSHOP15}.
@@ -76,7 +76,7 @@ An extensive exposition of this multivariate extreme setting may be found \eg~in
 Parametric or semi-parametric modeling and estimation of the structure of
 multivariate extremes is relatively well documented in the statistical literature, see \emph{e.g.} \cite{coles1991modeling,fougeres2009models,cooley2010pairwise,sabourinNaveau2012} and the references therein. In a non-parametric setting, there is also an abundant literature concerning consistency and asymptotic normality of estimators of functionals characterizing the extreme dependence structure, \eg~extreme value copulas or the \emph{stable tail dependence function} (\stdf), see \cite{Segers12Bernoulli}, \cite{Drees98}, \cite{Embrechts2000}, \cite{Einmahl2012}, \cite{dHF06}. 
 In many applications, it is nevertheless more convenient to work with the angular measure itself, as the latter gives more direct information on the dependence structure and is able to reflect structural simplifying properties (\eg~sparsity as detailed below) which would not appear in copulas or in the \stdf.
-However, non-parametric modeling of the angular measure faces major difficulties, stemming from the potentially complexe structure of the latter, especially in a high dimensional setting.
+However, non-parametric modeling of the angular measure faces major difficulties, stemming from the potentially complex structure of the latter, especially in a high dimensional setting.
 Further, from a theoretical point of view, non-parametric estimation of the angular measure has only been studied in the two dimensional case, in \cite{Einmahl2001} and \cite{Einmahl2009}, in an asymptotic framework.
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -362,7 +362,7 @@ Experiments on both simulated and real data are performed in Section~\ref{jmva:s
 Extreme Value Theory (\textsc{EVT}) develops models to provide a reasonable
 assessment of the probability of occurrence of rare events. Such models are widely used in fields
 involving risk management such as Finance, Insurance, Operation Research, Telecommunication
-or Environmental Sciences for instance. For clarity, we start off with recalling some key notions developped in Chapter~\ref{back:EVT} pertaining to (multivariate) \textsc{EVT}, that shall be involved in the formulation of the problem next stated and in its subsequent analysis. 
+or Environmental Sciences for instance. For clarity, we start off with recalling some key notions developed in Chapter~\ref{back:EVT} pertaining to (multivariate) \textsc{EVT}, that shall be involved in the formulation of the problem next stated and in its subsequent analysis. 
 
 
 %\subsection{Background on (multivariate) Extreme Value Theory}
@@ -971,7 +971,7 @@ Before all, notice that the error may be obviously decomposed as the sum of a st
 \mu_n(R_\alpha^\epsilon)-\mu(\mathcal{C}_\alpha)|\nonumber
 \\&~\le~ ~\max_\alpha |\mu-\mu_n|(R_\alpha^\epsilon) ~+~ \max_\alpha|\mu(R_\alpha^\epsilon)-\mu(\mathcal{C}_\alpha)|~.\label{jmva:error_decomp} 
 \end{align}
-Here and beyond, for notational convenience, we simply denotes `$\alpha$'  for `$\alpha$ non empty subset of $\{1,\; \ldots,\;d\}$'. The main steps of the argument leading to Theorem~\ref{jmva:thm-princ} are  as follows. First, obtain a uniform upper bound on the error $|\mu_n - \mu|$ restricted to a well chosen VC class of rectangles (Subsection~\ref{jmva:sec:rectangles}), and deduce an uniform bound on  $|\mu_n - \mu|(R_\alpha^\epsilon)$ (Subsection~\ref{jmva:sec:boundErrorEpsilonCones}). Finally, using the regularity assumptions (Assumption~\ref{jmva:hypo:continuousMu} and Assumption~\ref{jmva:hypo:abs_continuousPhi}), bound the difference $|\mu(R_\alpha^\epsilon) - \mu(\cone_\alpha)|$ (Subsection~\ref{jmva:sec:boundMuEpsilonCones}). 
+Here and beyond, to keep the notation uncluttered, we simply denotes `$\alpha$'  for `$\alpha$ non empty subset of $\{1,\; \ldots,\;d\}$'. The main steps of the argument leading to Theorem~\ref{jmva:thm-princ} are  as follows. First, obtain a uniform upper bound on the error $|\mu_n - \mu|$ restricted to a well chosen VC class of rectangles (Subsection~\ref{jmva:sec:rectangles}), and deduce an uniform bound on  $|\mu_n - \mu|(R_\alpha^\epsilon)$ (Subsection~\ref{jmva:sec:boundErrorEpsilonCones}). Finally, using the regularity assumptions (Assumption~\ref{jmva:hypo:continuousMu} and Assumption~\ref{jmva:hypo:abs_continuousPhi}), bound the difference $|\mu(R_\alpha^\epsilon) - \mu(\cone_\alpha)|$ (Subsection~\ref{jmva:sec:boundMuEpsilonCones}). 
 
 
 \subsection{Preliminaries: uniform approximation over a VC-class of rectangles}
@@ -1359,7 +1359,7 @@ Cd\sqrt{\frac{1}{\epsilon k}\log\frac{d+3}{\delta}}~+~ ~\text{bias}(\alpha,n,k,\
 The upper bound stated in
 Theorem~\ref{jmva:thm-princ} follows.%, with another universal constant $C$. 
 
-\begin{remark}{{(\sc Thresholding the estimator})}
+\begin{remark}{{(\sc Threshold on the estimator})}
 \label{jmva:rk:threshold}
 In practice, we have to deal with non-asymptotic noisy data, so that many $\widehat{\mathcal{M}}(\alpha)$'s have very small values though the corresponding $\mathcal{M}(\alpha)$'s are null.
 One solution is thus to define a threshold value, for instance a proportion $p$ of the averaged mass over all the faces $\alpha$ with positive mass, \ie~$\text{threshold} = p |A|^{-1} \sum_{\alpha} \widehat{\mathcal{M}}(\alpha)$ with $A = \{\alpha,~\widehat{\mathcal{M}}(\alpha) > 0\}$ .
@@ -1399,7 +1399,7 @@ If we define $\tilde k = \tilde k(n) \in [k, dk]$ such that $\mathcal{P}_n(\frac
 &= \frac{\tilde k}{k} ~~ \argmin_{m_\alpha > 0} \sum_{i=1}^n (Z_{n,i}(\alpha) - m_\alpha)^2 \mathds{1}_{\frac{k}{n} \| \hat{\mb V}_i \| \ge 1},
 \end{align*}
 %where $\widehat{R_n^\alpha}(m) = \sum_{i=1}^n (Z_{n,i}(\alpha) - m)^2 \mathds{1}_{\frac{k}{n} \hat{\mb V}_i \in R_\alpha^\epsilon}$ is the empirical conditional risk.
-Considering now the $(2^d -1)$-vector $\widehat{\mathcal{M}}$ and $\|.\|_{2, \alpha}$ the $L^2$-norm on $\mathbb{R}^{2^d-1}$, we immediatly have (since $k(n)$ does not depend on $\alpha$)
+Considering now the $(2^d -1)$-vector $\widehat{\mathcal{M}}$ and $\|.\|_{2, \alpha}$ the $L^2$-norm on $\mathbb{R}^{2^d-1}$, we immediately have (since $k(n)$ does not depend on $\alpha$)
 \begin{align}
 \label{jmva:eq:optim_pb}
 \widehat{\mathcal{M}} = \frac{\tilde k}{k} \argmin_{m \in \mathbb{R}^{2^d-1}} \widehat{R_n}(m),
@@ -1714,8 +1714,8 @@ representation of the dependence structure
 \end{remark}
 
 \begin{remark} ({\sc Scaling Invariance})
-DAMEX produces the same result if the input data are transformed in such a way that the marginal order is preserved. In particular, any marginally increasing transform or any scaling as a preprocessing step does not affect the algorithm. It also implies invariance with respect to any change in the measuring units. This invariance property constitutes part of the strengh of the algorithm, since 
-data preprocessing steps usually have a great impact on the overall performance and are of major concern in pratice.
+DAMEX produces the same result if the input data are transformed in such a way that the marginal order is preserved. In particular, any marginally increasing transform or any scaling as a preprocessing step does not affect the algorithm. It also implies invariance with respect to any change in the measuring units. This invariance property constitutes part of the strength of the algorithm, since 
+data preprocessing steps usually have a great impact on the overall performance and are of major concern in practice.
 %looking for the best way to preprocess the data has a great influence on the performance and is a major concern in practice.
 \end{remark}
 % The next section provides a theoretical ground for Algorithm~\ref{jmva:DAMEX-algo}. 
@@ -2022,7 +2022,7 @@ With such a small $\epsilon$, most observations belong to the central cone
 The only case were using very small $\epsilon$ should be useful, is when the asymptotic behaviour is
 clearly reached at level $k$ (usually for very large threshold $n/k$, \eg~$k=n^{1/3}$), or in the
 specific case where anomalies clearly concentrate in low dimensional sub-cones: The use of a small $\epsilon$ precisely allows
-to assign a high abnormality score to these subcones (under-estimation of the asymptotic mass), which yields better performances.
+to assign a high abnormality score to these sub-cones (under-estimation of the asymptotic mass), which yields better performances.
 
 % While Fig.~\ref{jmva:fig:SF} displays the ROC and
 % PR curves for the standard parameter $\epsilon = 0.1$,
@@ -2164,7 +2164,7 @@ appear in the non-extreme region.  % The challenge is then to dovetail
 \section{Conclusion}
 The contribution of this chapter is twofold. First, it brings advances in multivariate EVT by designing a statistical method that possibly exhibits a sparsity pattern in the dependence structure of extremes, while deriving non-asymptotic bounds to assess the accuracy of the estimation procedure. Our method is intended to be used as a preprocessing step to scale up multivariate extreme values modeling to high dimensional settings, which is currently one of the major challenges in multivariate EVT.
 Since the asymptotic bias ($\text{bias}(\alpha,n,k, \epsilon)$ in eq.~\eqref{jmva:eq:bias}) appears as a separate term  in the bound established, no second order
-assumption is required. One possible line of further research would be to make  such an assumption (\ie\,to assume that the bias itself is regularly varying), in order to choose $\epsilon$ adaptively with respect to $k$ and $n$ (see Remark~\ref{jmva:rk_param_choice}). This might also open up the possibility of de-biasing the estimation procedure (\cite{Fougeres2015}, \cite{Beirlant2015}). 
+assumption is required. One possible line of further research would be to make  such an assumption (\ie\,to assume that the bias itself is regularly varying), in order to choose $\epsilon$ in an adaptive way with respect to $k$ and $n$ (see Remark~\ref{jmva:rk_param_choice}). This might also open up the possibility of de-biasing the estimation procedure (\cite{Fougeres2015}, \cite{Beirlant2015}). 
 As a second contribution, this work extends the applicability of multivariate  EVT to the field of anomaly detection: a multivariate EVT-based algorithm which scores extreme observations according to their degree of abnormality is proposed. Due to  its  moderate complexity  --of order $d n \log n$--  this algorithm is suitable for the treatment of real word large-scale learning problems, and experimental results reveal a significantly increased performance on extreme regions compared with standard anomaly detection approaches.
 
 %% The Appendices part is started with the command \appendix;
@@ -2596,7 +2596,7 @@ The result is thus proved.
 \subsection{Proof of Remark~\ref{jmva:rk:optim}}
 Let us prove that $Z_n$, conditionally to the event $\{\|\frac{k}{n} V_1\|_\infty \ge 1\}$, converges in law.
 Recall that $Z_n$ is a $(2^d-1)$-vector defined by $Z_n(\alpha)=\mathds{1}_{\frac{k}{n} \mb V_1 \in R_\alpha^\epsilon}$ for all $\alpha \subset \{1,\ldots,d\}, \alpha \neq \emptyset$.
-Let us denote $1_\alpha = (\mathds{1}_{j=\alpha})_{j=1,\ldots, 2^d-1}$ where we implicitely define the bijection between $\mathcal{P}(\{1,\ldots,d\}) \setminus \emptyset$ and $\{1,\ldots,2^d-1\}$.
+Let us denote $1_\alpha = (\mathds{1}_{j=\alpha})_{j=1,\ldots, 2^d-1}$ where we implicitly define the bijection between $\mathcal{P}(\{1,\ldots,d\}) \setminus \emptyset$ and $\{1,\ldots,2^d-1\}$.
 % , namely each $\alpha$ is considered as an integer in $\{1,\ldots,2^d-1\}$.
 Since the $R_\alpha^\epsilon$'s, $\alpha$ varying, form a partition of $[\mb 0, \mb 1]^c$,
 $\mathbb{P}(\exists \alpha, Z_n = 1_\alpha ~|~\|\frac{k}{n} \mb V_1 \|_\infty \ge 1)=1$ and 
@@ -2619,6 +2619,6 @@ Using $\frac{n}{k} \mathbb{P}\left[Z_n(\alpha)=1\right] = \frac{n}{k}\mathbb{P}\
 $$\mathbb{E}\left[\Phi(Z_n) ~|~ \|\frac{k}{n} \mb V_1 \|_\infty \ge 1\right] \to \sum_\alpha \Phi(1_\alpha) \frac{\mu(R_\alpha^\epsilon)}{\mu([\mb 0, \mb 1]^c)},$$
 which achieves the proof.
 
-\section{Experiments curves}
-\label{jmva:appendix_exp}
+% \section{Experiments curves}
+% \label{jmva:appendix_exp}
 

@@ -49,12 +49,12 @@ This setup is typically the one of the One-Class Support Vector Machine (OCSVM) 
 The underlying assumption is that we observe data in $\rset^d$ from the normal class only, with underlying distribution $F$ and underlying density $f: \rset^d \to \rset$. The goal is to estimate density level sets $(\{\mb x, f( \mb x) > t\})_{t>0}$ with $t$ close to $0$.
 %
 In practice, such estimates are represented by a \emph{scoring function}: any measurable function $s: \rset^d \to \rset_+$ integrable \wrt~the Lebesgue measure $\leb(.)$, \emph{whose level sets are estimates of the true density level sets}. 
-Any scoring function defines a preorder on $\rset^d$ and thus a ranking on a set of new observations. This ranking can be interpreted as a degree of abnormality, the lower $s(x)$, the more abnormal $x$. 
+Any scoring function defines a pre-order on $\rset^d$ and thus a ranking on a set of new observations. This ranking can be interpreted as a degree of abnormality, the lower $s(x)$, the more abnormal $x$. 
 % A natural idea for estimating density level sets is to compute an estimate of the density and to consider the associated plug-in density level set.
-% The density is generally estimated using non-parametric kernel estimator or maximum likelihood estimator from some parametric function family. But these methods does not scale well with the dimension. Such methods try somehow to capture more information than needed for the level set estimation task, such as local properties of the density which are useless here. Indeed, it turns out that for any increasing transform $T$, the level sets of $T\circ f$ are exactly those of $f$. Thus, it suffices to estimate any representant of the class of all increasing transforms of $f$, to obtain density level sets estimates. Intuitively, it is enough to estimate the preorder (the \emph{scoring}) induced by $f$ on $\rset^d$. Let us define a \emph{scoring function} as any measurable function $s:~\rset^d \to \rset_+$ integrable \wrt~the Lebesgue measure $\leb(.)$, and $\mathcal{S}$ the space of all scoring functions.
+% The density is generally estimated using non-parametric kernel estimator or maximum likelihood estimator from some parametric function family. But these methods does not scale well with the dimension. Such methods try somehow to capture more information than needed for the level set estimation task, such as local properties of the density which are useless here. Indeed, it turns out that for any increasing transform $T$, the level sets of $T\circ f$ are exactly those of $f$. Thus, it suffices to estimate any representant of the class of all increasing transforms of $f$, to obtain density level sets estimates. Intuitively, it is enough to estimate the pre-order (the \emph{scoring}) induced by $f$ on $\rset^d$. Let us define a \emph{scoring function} as any measurable function $s:~\rset^d \to \rset_+$ integrable \wrt~the Lebesgue measure $\leb(.)$, and $\mathcal{S}$ the space of all scoring functions.
 
 \paragraph{How to know if a scoring function is good?}
-How can we know if the preorder induced by a scoring function $s$ is `close' to that of $f$, or equivalently if these induced level sets are close to those of $f$? 
+How can we know if the pre-order induced by a scoring function $s$ is `close' to that of $f$, or equivalently if these induced level sets are close to those of $f$? 
 %
 The problem is to define this notion of proximity into a criterion $\crit$, optimal scoring functions $s^*$ being then defined as those optimizing $\crit$. 
 It turns out that for any strictly increasing transform $T: \text{Im(f)} \to \mathbb{R} $, the level sets of $T\circ f$ are exactly those of $f$. Here and hereafter, $\text{Im(f)} $ denotes the image of the mapping $f$. For instance, $2f$ or $f^2$ are perfect scoring functions, just as $f$. Thus, we cannot simply consider a criterion based on the distance of $s$ to the true density, \eg~$\crit(s)=\|s - f\|$.
@@ -62,7 +62,7 @@ It turns out that for any strictly increasing transform $T: \text{Im(f)} \to \ma
 We seek for a similar criterion which is invariant by increasing transformation of the output $s$. In other words, the criterion should be defined in such a way that the collection of level sets of an optimal scoring function $s^*(x)$ coincides with that related to $f$. Moreover, any increasing transform of the density should be optimal regarding $\crit$.
 
 % In pratice, just as the ROC or PR curves, we only have access to an empirical version $\crit_n(s)$ of the criterion. Hence, another desirable property is the uniform convergence of $\crit_n(s)$ to $\crit(s)$ over some collection $\mathcal{S}_0$ of scoring functions, and under minimal assumptions on the distribution $F$.  (XXX is it true?)
-In the litterature, two functional criteria admissible with respect to these requirements have been introduced: the Mass-Volume (MV) \cite{CLEM13,CLEM14} and the Excess-Mass (EM) \cite{AISTAT15} curves.
+In the literature, two functional criteria admissible with respect to these requirements have been introduced: the Mass-Volume (MV) \cite{CLEM13,CLEM14} and the Excess-Mass (EM) \cite{AISTAT15} curves.
 Formally, it allows to consider $\crit^{\Phi}(s) = \| \Phi(s) - \Phi(f) \|$ (instead of $\|s - f\|$) % for the Mass-Volume criterion (resp. $ \|EM_s - EM_f\|$ for the Excess-Mass criterion),
 with $\Phi: \mathbb{R} \to \mathbb{R}_+$ verifying $\Phi(T \circ s) = \Phi(s)$ 
 % (resp. $EM_{T \circ s} = EM_s$)
@@ -84,7 +84,7 @@ We place ourselves in a probability space $(\Omega, \mathcal{F}, \mathbb{P})$. W
 %\subsection{The Mass-Volume Curve}
 We work under the assumptions that the density $f$ % (corresponding to the distribution $F$ of the normal data, the only one we observe)
 has no flat parts and is bounded. Excess-Mass and Mass-Volume curves are here introduced in a different way they originally were in \cite{CLEM13, AISTAT15}. We use equivalent definitions for them since % (proved to hold true in these papers),
-the original definitions were more adapted to the ERM paradigm than to the issues adressed here.
+the original definitions were more adapted to the ERM paradigm than to the issues addressed here.
 
 \subsection{Preliminaries}
 Let $s\in \mathcal{S}$ be a scoring function. In this context \cite{CLEM13,AISTAT15}, the mass-volume (MV) and the excess-mass (EM) curves of $s$ can be written as
@@ -186,7 +186,7 @@ Figure~\ref{evaluation:aistat:MVcurve} compares the mass-volume and excess-mass 
 \subsection{Numerical unsupervised criteria}
 
 The main advantage of EM compared to MV is that the area under its curve is finite, even if the support of the distribution $F$ is not.
-As curves cannot be trivially compared, consider the $L^1$-norm $\|.\|_{L^1(I)}$ with $I\subset \rset$ an interval. As $MV^*=MV_f$ is below $MV_s$ pointwise, $\argmin_s \| MV_s - MV^* \|_{L^1(I)} = \argmin \| MV_s \|_{L^1(I)} $. We thus define
+As curves cannot be trivially compared, consider the $L^1$-norm $\|.\|_{L^1(I)}$ with $I\subset \rset$ an interval. As $MV^*=MV_f$ is below $MV_s$ point-wise, $\argmin_s \| MV_s - MV^* \|_{L^1(I)} = \argmin \| MV_s \|_{L^1(I)} $. We thus define
 $\crit^{MV}(s) = \| MV_s \|_{L^1(I^{MV})},$ which is equivalent to consider $\| MV_s - MV^* \|_{L^1(I^{MV})}$ as mentioned in the introduction. As we are interested in evaluating accuracy on large density level-sets, one natural interval $I^{MV}$ would be for instance $[0.9, 1]$. However, MV diverges in $1$ when the support is infinite, so that we arbitrarily take $I^{MV} = [0.9, 0.999].$
 The smaller is $\crit^{MV}(s)$, the better is the scoring function $s$.
 %
@@ -324,13 +324,13 @@ For ROC and PR curves, we consider the area under the (full) curve (AUC). For th
 % Point out that standards excess-mass and mass-volume scores refer on the Lebesgue measure, and thus require volume estimation. Hence, they only apply to continuous datasets.
 
 The characteristics of these reference datasets are summarized in Table~\ref{evaluation:table:data}. They are all available on the UCI repository \cite{Lichman2013} and the preprocessing is done in a classical way. %, excepting for the \emph{adult} dataset. For the latter, we considered the 6 continuous features.
-We removed all non-continuous attributes as well as attributes taking less than $10$ differents values.
+We removed all non-continuous attributes as well as attributes taking less than $10$ different values.
 %
-The \emph{http} and \emph{smtp} datasets belong to the KDD Cup '99 dataset \cite{KDD99,Tavallaee2009}, which consists of a wide variety of hand-injected  attacks (anomalies) in a closed network (normal background). They are classicaly obtained as described in \cite{Yamanishi2000}. These datasets are available on the \emph{scikit-learn} library \cite{sklearn2011}.
+The \emph{http} and \emph{smtp} datasets belong to the KDD Cup '99 dataset \cite{KDD99,Tavallaee2009}, which consists of a wide variety of hand-injected  attacks (anomalies) in a closed network (normal background). They are classically obtained as described in \cite{Yamanishi2000}. These datasets are available on the \emph{scikit-learn} library \cite{sklearn2011}.
 The \emph{shuttle} dataset is the fusion of the training and testing datasets available in the UCI repository. As in \cite{Liu2008}, we use instances from all different classes but class $4$. %, which yields an anomaly ratio (class 1) of $7.17\%$.
 In the \emph{forestcover} data, the normal data are the instances from class~$2$ while instances from class $4$ are anomalies (as in \cite{Liu2008}). %, which yields an anomaly ratio of $0.9\%$. 
 The \emph{ionosphere} dataset differentiates `good' from `bad' radars, considered here as abnormal. A `good' radar shows evidence of some type of structure in the ionosphere. A `bad' radar does not, its signal passing through the ionosphere.
-The \emph{spambase} dataset consists of spam or non-spam emails. The former constitute the abnomal class.
+The \emph{spambase} dataset consists of spam or non-spam emails. The former constitute the abnormal class.
 The \emph{annthyroid} medical dataset on hypothyroidism contains one normal class and two abnormal ones, which form the outlier set.
 The \emph{arrhythmia} dataset reflects the presence and absence (class $1$) of cardiac arrhythmia. The number of attributes being large considering the sample size, we removed attributes containing missing data.
 The \emph{pendigits} dataset contains 10 classes corresponding to the digits from 0 to 9, examples being handwriting samples. As in \cite{Schubert2012}, the abnormal data are chosen to be those from class 4.
@@ -340,7 +340,7 @@ In the \emph{adult} dataset, the goal is to predict whether income exceeds \$ 50
 
 \subsection{Results}
 
-The experiments are performed both in a novelty detection framework (also named semi-supervised framework, the training set consisting of normal data only) and in an unsupervised framework (the training set is polluted by anormal data).
+The experiments are performed both in a novelty detection framework (also named semi-supervised framework, the training set consisting of normal data only) and in an unsupervised framework (the training set is polluted by abnormal data).
 In the former case, we simply removed anomalies from the training data, and EM and PR criteria are estimated using only normal data.
 In the latter case, the anomaly rate is arbitrarily bounded to $10\%$ max, and EM and PR criteria are estimated with the same test data used for ROC and PR curves, without using their labels.
 
@@ -378,7 +378,7 @@ spambase     &\bf 0.824 &\bf 0.371 &\bf 9.5e-04&\bf 4.5e01&  &\underline{0.729} 
 }
 \end{table}
 
-Recall that standards excess-mass and mass-volume performance criteria refering on the Lebesgue measure, they require volume estimation. They only apply to continuous datasets, with small dimension ($d \le 8$). The datasets verifying these requirements are \emph{http}, \emph{smtp}, % \emph{shuttle}, \emph{pendigits},
+Recall that standards excess-mass and mass-volume performance criteria referring on the Lebesgue measure, they require volume estimation. They only apply to continuous datasets, with small dimension ($d \le 8$). The datasets verifying these requirements are \emph{http}, \emph{smtp}, % \emph{shuttle}, \emph{pendigits},
 \emph{pima}, \emph{wilt} and \emph{adult}.
 For the other datasets, we use the performance criteria $\widehat{\crit}^{MV}_{high\_dim}$ and $\widehat{\crit}^{EM}_{high\_dim}$ computed with Algorithm~\ref{evaluation:algo:EMMV}. We arbitrarily chose $m = 50$ and $d'=5$, which means that $50$ draws of $5$ features, with replacement after each draw, are done.
 Other parameters have also been tested but are not presented here. The default parameters proposed here are a compromise between computational time and performance, in particular on the largest dimensional datasets. The latter require a relatively large product $m \times d'$, which is the maximal number of different features that can be drawn.
@@ -443,7 +443,7 @@ Results from Table~\ref{evaluation:table:results-semisupervised} can be summariz
 For each dataset $\mathcal{D}$, there are three possible pairs (iForest on $\mathcal{D}$, LOF on $\mathcal{D}$), (OCSVM on $\mathcal{D}$, LOF on $\mathcal{D}$) and (OCSVM on $\mathcal{D}$, iForest on $\mathcal{D}$).
 %
 Then the EM-score discriminates $28$ of them ($78\%$) as ROC score does, and $29$ ($81\%$) of them as PR score does. 
-Intuitively this can be interprated as follows. Choose randomly a dataset $\mathcal{D}$ among the twelve available, and two algorithms $A_1$, $A_2$ among the three available. This amounts to choose at random a pairwise comparison ($A_1$ on $\mathcal{D}$, $A_2$ on $\mathcal{D}$) among the $36$ available. Suppose that according to ROC criterion, $A_1$ is better than $A_2$ on dataset $\mathcal{D}$, \ie~($A_1$ on $\mathcal{D}$) $\succ$ ($A_2$ on $\mathcal{D}$). Then the EM-score discriminates $A_1$ and $A_2$ on dataset $\mathcal{D}$ in the same way, \ie~also finds $A_1$ to be better than $A_2$ on dataset $\mathcal{D}$ with $78$ percent chance.
+Intuitively this can be interpreted as follows. Choose randomly a dataset $\mathcal{D}$ among the twelve available, and two algorithms $A_1$, $A_2$ among the three available. This amounts to choose at random a pairwise comparison ($A_1$ on $\mathcal{D}$, $A_2$ on $\mathcal{D}$) among the $36$ available. Suppose that according to ROC criterion, $A_1$ is better than $A_2$ on dataset $\mathcal{D}$, \ie~($A_1$ on $\mathcal{D}$) $\succ$ ($A_2$ on $\mathcal{D}$). Then the EM-score discriminates $A_1$ and $A_2$ on dataset $\mathcal{D}$ in the same way, \ie~also finds $A_1$ to be better than $A_2$ on dataset $\mathcal{D}$ with $78$ percent chance.
 
  Besides, let us consider pairs ($A_1$ on $\mathcal{D}$, $A_2$ on $\mathcal{D}$) which are
 similarly ordered by ROC and PR criteria, namely \st~ $A_1$ is better than $A_2$ (or the reverse) on dataset $\mathcal{D}$ according to both EM and PR. According to Table~\ref{evaluation:table:results-semisupervised}, this represents every pairs but one in \emph{spambase} and two in \emph{smtp}. Then, one achieves $27/33 = 82\%$ of similarly discriminated pairs (\wrt~to ROC and PR criteria). Moreover, EM is able to recover the exact (\wrt~ROC and PR criteria) ranking of ($A_1$ on $\mathcal{D}$, $A_2$ on $\mathcal{D}$, $A_3$ on $\mathcal{D}$) on every datasets $\mathcal{D}$ excepting \emph{wilt} and \emph{shuttle}. For \emph{shuttle}, note that ROC scores are very close to each other ($0.996$, $0.992$, $0.999$) and thus not clearly discriminates algorithms. The only significant error committed by EM is for the \emph{wilt} dataset (on which no feature sub-sampling is done due to the low dimension). This may come from anomalies not being far enough in the tail of the normal distribution, \eg~forming a cluster near the support of the latter distribution. %Experiments with feature sub-sampling (as for larger dimensional datasets) have not shown any improvement. 

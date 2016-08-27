@@ -19,7 +19,7 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Unsuccessful mass-volume criterion optimization\relax }}{86}{figure.caption.18}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Optimal and realized EM curves\relax }}{90}{figure.caption.19}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Zoom near 0 \nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\relax }}{90}{figure.caption.19}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces $EM_\mathcal {G}$ for different $l$\relax }}{90}{figure.caption.20}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces $EM_\mathcal {G}$ for different $l$\relax }}{91}{figure.caption.20}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces density and scoring functions\relax }}{92}{figure.caption.21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -54,25 +54,25 @@
 \contentsline {figure}{\numberline {8.17}{\ignorespaces MV and EM curves for adult dataset (novelty detection framework).\relax }}{188}{figure.caption.55}
 \contentsline {figure}{\numberline {8.18}{\ignorespaces MV and EM curves for adult dataset (unsupervised framework)\relax }}{189}{figure.caption.56}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces The left part of this figure represents the dataset under study and the underlying density. After some splits on this initial node $\mathcal {X}$, let us consider the node $\mathcal {X}_t$ illustrated in the right part of this figure: without the proposed adaptive approach, $\gamma _t$ becomes too small and leads to poor splits (all the data are in the `normal side' of the split, which thus does not discriminate at all). Contrariwise, setting $\gamma $ to one, \textit {i.e.} using our adaptative approach, is far preferable. Note that a given $\gamma $ corresponds to a level set $t_{\gamma }$.\relax }}{200}{figure.caption.57}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces OneClassRF with one tree: level-sets of the scoring function\relax }}{202}{figure.caption.58}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies.\relax }}{203}{figure.caption.59}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Performances of the algorithms on each dataset in the novelty detection framework: ROC AUCs are displayed on the top, Precision-Recall AUCs in the middle and training times\footnotemark on the bottom, for each dataset and algorithm. The $x$-axis represents the datasets.\relax }}{207}{figure.caption.62}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Performances of the algorithms on each dataset in the unsupervised framework: ROC AUCs are on the top, Precision-Recall AUCs in the middle and processing times are displayed below (for each dataset and algorithm). The $x$-axis represents the datasets.\relax }}{209}{figure.caption.64}
-\contentsline {figure}{\numberline {9.6}{\ignorespaces ROC and PR curves for OneClassRF (novelty detection framework)\relax }}{210}{figure.caption.65}
-\contentsline {figure}{\numberline {9.7}{\ignorespaces ROC and PR curves for OneClassRF (unsupervised framework)\relax }}{210}{figure.caption.66}
-\contentsline {figure}{\numberline {9.8}{\ignorespaces ROC and PR curves for IsolationForest (novelty detection framework)\relax }}{211}{figure.caption.67}
-\contentsline {figure}{\numberline {9.9}{\ignorespaces ROC and PR curves for IsolationForest (unsupervised framework)\relax }}{211}{figure.caption.68}
-\contentsline {figure}{\numberline {9.10}{\ignorespaces ROC and PR curves for OCRFsampling (novelty detection framework)\relax }}{212}{figure.caption.69}
-\contentsline {figure}{\numberline {9.11}{\ignorespaces ROC and PR curves for OCRFsampling (unsupervised framework)\relax }}{212}{figure.caption.70}
-\contentsline {figure}{\numberline {9.12}{\ignorespaces ROC and PR curves for OCSVM (novelty detection framework)\relax }}{213}{figure.caption.71}
-\contentsline {figure}{\numberline {9.13}{\ignorespaces ROC and PR curves for OCSVM (unsupervised framework)\relax }}{213}{figure.caption.72}
-\contentsline {figure}{\numberline {9.14}{\ignorespaces ROC and PR curves for LOF (novelty detection framework)\relax }}{214}{figure.caption.73}
-\contentsline {figure}{\numberline {9.15}{\ignorespaces ROC and PR curves for LOF (unsupervised framework)\relax }}{214}{figure.caption.74}
-\contentsline {figure}{\numberline {9.16}{\ignorespaces ROC and PR curves for Orca (novelty detection framework)\relax }}{215}{figure.caption.75}
-\contentsline {figure}{\numberline {9.17}{\ignorespaces ROC and PR curves for Orca (unsupervised framework)\relax }}{215}{figure.caption.76}
-\contentsline {figure}{\numberline {9.18}{\ignorespaces ROC and PR curves for LSAD (novelty detection framework)\relax }}{216}{figure.caption.77}
-\contentsline {figure}{\numberline {9.19}{\ignorespaces ROC and PR curves for LSAD (unsupervised framework)\relax }}{216}{figure.caption.78}
-\contentsline {figure}{\numberline {9.20}{\ignorespaces ROC and PR curves for RFC (novelty detection framework)\relax }}{217}{figure.caption.79}
-\contentsline {figure}{\numberline {9.21}{\ignorespaces ROC and PR curves for RFC (unsupervised framework)\relax }}{217}{figure.caption.80}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces The left part of this figure represents the dataset under study and the underlying density. After some splits on this initial node $\mathcal {X}$, let us consider the node $\mathcal {X}_t$ illustrated in the right part of this figure: without the proposed adaptive approach, $\gamma _t$ becomes too small and leads to poor splits (all the data are in the `normal side' of the split, which thus does not discriminate at all). Contrariwise, setting $\gamma $ to one, \textit {i.e.} using our adaptative approach, is far preferable. Note that a given $\gamma $ corresponds to a level set $t_{\gamma }$.\relax }}{201}{figure.caption.57}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces OneClassRF with one tree: level-sets of the scoring function\relax }}{203}{figure.caption.58}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies.\relax }}{204}{figure.caption.59}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Performances of the algorithms on each dataset in the novelty detection framework: ROC AUCs are displayed on the top, Precision-Recall AUCs in the middle and training times\footnotemark on the bottom, for each dataset and algorithm. The $x$-axis represents the datasets.\relax }}{208}{figure.caption.62}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Performances of the algorithms on each dataset in the unsupervised framework: ROC AUCs are on the top, Precision-Recall AUCs in the middle and processing times are displayed below (for each dataset and algorithm). The $x$-axis represents the datasets.\relax }}{210}{figure.caption.64}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces ROC and PR curves for OneClassRF (novelty detection framework)\relax }}{211}{figure.caption.65}
+\contentsline {figure}{\numberline {9.7}{\ignorespaces ROC and PR curves for OneClassRF (unsupervised framework)\relax }}{211}{figure.caption.66}
+\contentsline {figure}{\numberline {9.8}{\ignorespaces ROC and PR curves for IsolationForest (novelty detection framework)\relax }}{212}{figure.caption.67}
+\contentsline {figure}{\numberline {9.9}{\ignorespaces ROC and PR curves for IsolationForest (unsupervised framework)\relax }}{212}{figure.caption.68}
+\contentsline {figure}{\numberline {9.10}{\ignorespaces ROC and PR curves for OCRFsampling (novelty detection framework)\relax }}{213}{figure.caption.69}
+\contentsline {figure}{\numberline {9.11}{\ignorespaces ROC and PR curves for OCRFsampling (unsupervised framework)\relax }}{213}{figure.caption.70}
+\contentsline {figure}{\numberline {9.12}{\ignorespaces ROC and PR curves for OCSVM (novelty detection framework)\relax }}{214}{figure.caption.71}
+\contentsline {figure}{\numberline {9.13}{\ignorespaces ROC and PR curves for OCSVM (unsupervised framework)\relax }}{214}{figure.caption.72}
+\contentsline {figure}{\numberline {9.14}{\ignorespaces ROC and PR curves for LOF (novelty detection framework)\relax }}{215}{figure.caption.73}
+\contentsline {figure}{\numberline {9.15}{\ignorespaces ROC and PR curves for LOF (unsupervised framework)\relax }}{215}{figure.caption.74}
+\contentsline {figure}{\numberline {9.16}{\ignorespaces ROC and PR curves for Orca (novelty detection framework)\relax }}{216}{figure.caption.75}
+\contentsline {figure}{\numberline {9.17}{\ignorespaces ROC and PR curves for Orca (unsupervised framework)\relax }}{216}{figure.caption.76}
+\contentsline {figure}{\numberline {9.18}{\ignorespaces ROC and PR curves for LSAD (novelty detection framework)\relax }}{217}{figure.caption.77}
+\contentsline {figure}{\numberline {9.19}{\ignorespaces ROC and PR curves for LSAD (unsupervised framework)\relax }}{217}{figure.caption.78}
+\contentsline {figure}{\numberline {9.20}{\ignorespaces ROC and PR curves for RFC (novelty detection framework)\relax }}{218}{figure.caption.79}
+\contentsline {figure}{\numberline {9.21}{\ignorespaces ROC and PR curves for RFC (unsupervised framework)\relax }}{218}{figure.caption.80}
 \addvspace {10\p@ }

@@ -1,34 +1,50 @@
-In this thesis, we have addressed three important limitations of existing anomaly detection litterature. The problem of evaluating algorithm in the case of unlabeled data, the problem of extending the use of random forests to one-class classification, and the problem of being accurate on low probability regions.
 
-Our first contribution was to proposed an unsupervised performance criterion, in order to compare scoring functions and to pick one eventually.
-%
-This excess-mass based criterion resolved some of the drawbacks inherent to the previous mass-volume curve criterion. But the main drawback, estimating a volume in the input space, still remains. This infortunately constitutes a strong setback for its use in a high dimensional framework, if no prior knowledge on the form of these volume to estimate is available. In such a context, classical evaluation approaches must be used, such as ROC or Precision-Recall curves, which assume that at least a small proportion of data is labelled.
-Practical unsupervised evaluation criteria still remaining a major challenge (specially under the constraint of scaling with dimension), we studied empirically the use of EM or MV as evaluation criteria and proposed a way to scale their use to high dimensions.
-
-As trying to minimize EM or MV criteria does not produce performant algorithms in practice, we introduced a One Class Random Forest algorithm which structurally extend RFs to one-class classification.
- 
-Finally, we proposed to focus on extreme regions to gain in accuracy when building scoring functions. An intermediary step was % our fourth contribution, which
-to
-studies non-asymptotic behavior of an extreme value copula, the stable tail dependence function. We brought new bounds to control the error of its natural empirical version as well as a practical framework for deriving VC-type bounds on low-probability regions.
-%
-This framework also allows to approach a particular prediction context, namely where the objective is to learn a classifier (or a regressor) that has good properties on low-probability regions.
-%
-% 
-% The previous framework of maximal deviation in low-probability regions also
-% opened the road to the statistical ground on which our fifth contribution lies. The latter designs a method that produces a scoring function based on a (possibly sparse) representation of the dependence structure of extremes. Non-asymptotic bounds are derived to assess the accuracy of the estimation procedure, and empirical studies show the relevance of this approach, which is suitable for the treatment of real word large-scale learning problems due to its moderate complexity.
-%
-Besides, as we exhibit a sparsity pattern in multivariate extremes, it can be used as a preprocessing step to scale up multivariate extreme values modeling to high dimensional settings, which is currently one of the major challenges in multivariate EVT.
+In this thesis, three different problems have been addressed.
+Building scoring functions, % the problem of extending the use of random forests to one-class classification,
+ gaining in accuracy on low probability regions, and evaluating algorithms in the case of unlabeled data.
 
 
+For the first problem, two solutions have been proposed.
+The excess-mass based performance criterion has been defined and used in a empirical risk minimization framework. %, in order to compare scoring functions and to pick one eventually.
+While theoretical guaranties have been derived (resp. exists) for scoring functions produced by optimizing the excess-mass (resp. mass-volume) curves, more work is needed for them to achieve efficiency in practice. In particular, the choice of the functional class on which the criterion is optimized (which is typically the class of stepwise functions on very simple sets) is challenging. This class has to be rich enough to provide a good approximation while simple enough to control the convergence rate and the algorithmic complexity, which is a hard trade-off to achieve when no information on the underlying distribution is used.
 %
-Staying in the scope of multivariate extremes, the non-asymptotic bounds in the two main results contain separated bias terms corresponding to the (distribution-dependent) convergence speed to the asymptotic behavior, which are not controlled explicitly.
-A possible future direction is to make an additional hypothesis
-of  `second order regular variation'  \citep[see \emph{e.g.}][]{deHaan1996}
-in order to express these bias terms, and possibly to refine the results.
-With such explicit bounds, parameters of the Damex algorithm (third contribution) could be chosen optimally as the ones minimizing the obtained bound.
+The second solution is based on random forests. It consists in extending naturally standard splitting criteria to the one-class setting. This structural generalization of random forests to one-class classification produces competitive scoring functions with respect to many state-of-the-art anomaly detection algorithms commonly used in industrial setups. Its principal limitations, which also are perspectives, lie in the fact that this is essentially a heuristic method, and it lacks of theoretical guaranties.
 
-From the scope of one-class random forests, a possible research direction would be to develop theoretical grounds for the level sets estimation procedure. Classical studies from the two-class framework should be adapted to one-class classification.
-% As a last contribution (of incremental nature), two classical AD algorithms have been implemented and merged on scikit-learn. They are used in this dissertation for empirical comparison to attest the relevance of the forementionned approach.
+
+For the accuracy gain on low probability regions, tools borrowed from multivariate extreme value theory have been used to defined a possibly sparse representation of the dependence structure of extremes, and the associated scoring functions. Besides, non-asymptotic bounds have been derived on the estimation procedure.
+An intermediate step was to study the non-asymptotic behavior of the stable tail dependence function, a functional characterizing the extreme dependence structure. 
+Novel bounds have been derived to control the error of its natural empirical version, as well as a methodology for deriving VC-type bounds on low-probability regions.
+Besides, the sparsity pattern in multivariate extremes we exhibit can be used as a preprocessing step to scale up multivariate extreme values modeling to high dimensional settings, which is currently one of the major challenges in multivariate EVT.
+%
+Because no assumption is made on the underlying distribution other than the existence of the STDF, the non-asymptotic bounds on the estimation procedure contain separated bias terms corresponding to the (distribution-dependent) convergence speed to the asymptotic behavior, which are not controlled explicitly.
+% The bound derived here includes a separated bias, which cannot been expressed or control explicitly
+This prevent us to choose in an adaptive way the parameters of our representation of extreme dependence. Since these parameters cannot be chosen by cross-validation as no labeled data is available in our setting, default parameters have to be chosen. While results seems accurate in our benchmarks, this is a limitation of this approach.
+A possible future direction is to make an additional hypothesis of  `second order regular variation'  \citep[see \emph{e.g.}][]{deHaan1996} in order to express these bias terms, and possibly to refine the results.
+%One perspective could be for instance to assume a second order regular variation, in order to obtain an explicit form for this problematic bias.
+%One limitation is that 
+
+For the evaluation of anomaly detection algorithms in the case of unlabeled data, the theory is built on the excess-mass and mass-volume curves.
+%
+As these criterion have originally been introduced to build scoring functions using empirical risk minimization, no empirical study has been made in the literature on their ability to discriminate between existing scoring functions. %, in the same way ROC or PR scores do using the labels. 
+%Such an empirical study for the use of excess-Mass and mass-Volume curves as evaluation criteria in the absence of labeled data. 
+To this end, we present a benchmark showing that EM and MV criteria are able to recover the ranking induced by ROC/PR over scoring functions, when labels are hidden.
+Besides, as these curves can only be estimated in small dimensions (they involve volume computations), a methodology based on feature sub-sampling and aggregating is described and tested. It allows an extension of the use of these criteria to high-dimensional datasets. It also solves major drawbacks inherent to standard EM and MV curves, allowing \eg~features selection in the unsupervised setting.
+%
+While this heuristic-based methodology (feature sub-sampling and aggregating) works well in practice, it suffers from a lack of theoretical guaranties. Also, it does not evaluate a fixed scoring function, but an aggregate of scoring functions (output by the algorithm to be evaluated) defined on different sub-spaces. That is why theoretical results seem hard to derive.  (XXX idea?)
+
+
+Eventually, with the benefit of hindsight with respect to this work, we would like to notice that there still seems to be a significant gap to fill between theory and practice in anomaly detection. When trying to derive an algorithm supported by a theoretical analysis, this often affects the algorithm elaboration in such a way that it limits its efficiency in practice.
+On the opposite side, when trying to develop an algorithm which performs well in practice before thinking about any theoretical guaranties, it is often very hard to derive a statistical analysis. In this thesis, contributions have been made on both of these sides. Besides, the contribution on the sparse representation of multivariate extreme belongs to both theoretical and practical sides: it can be viewed as an efficient heuristic with a mathematical analysis from the extreme value theory, as well as an algorithm designed by this theory which can compete with state-of-the-art anomaly detection algorithms.
+
+
+
+% Staying in the scope of multivariate extremes, the non-asymptotic bounds in the two main results contain separated bias terms corresponding to the (distribution-dependent) convergence speed to the asymptotic behavior, which are not controlled explicitly.
+% A possible future direction is to make an additional hypothesis
+% of  `second order regular variation'  \citep[see \emph{e.g.}][]{deHaan1996}
+% in order to express these bias terms, and possibly to refine the results.
+% With such explicit bounds, parameters of the Damex algorithm (third contribution) could be chosen optimally as the ones minimizing the obtained bound.
+
+% From the scope of one-class random forests, a possible research direction would be to develop theoretical grounds for the level sets estimation procedure. Classical studies from the two-class framework should be adapted to one-class classification.
 
 
 

@@ -14,11 +14,11 @@ The second solution is based on random forests. It consists in extending natural
 For the accuracy gain on low probability regions, tools borrowed from multivariate extreme value theory have been used to defined a possibly sparse representation of the dependence structure of extremes, and the associated scoring functions. Besides, non-asymptotic bounds have been derived on the estimation procedure.
 An intermediate step was to study the non-asymptotic behavior of the stable tail dependence function, a functional characterizing the extreme dependence structure. 
 Novel bounds have been derived to control the error of its natural empirical version, as well as a methodology for deriving VC-type bounds on low-probability regions.
-Besides, the sparsity pattern in multivariate extremes we exhibit can be used as a preprocessing step to scale up multivariate extreme values modeling to high dimensional settings, which is currently one of the major challenges in multivariate EVT.
+Moreover, the sparsity pattern in multivariate extremes we exhibit can be used as a preprocessing step to scale up multivariate extreme values modeling to high dimensional settings, which is currently one of the major challenges in multivariate EVT.
 %
 Because no assumption is made on the underlying distribution other than the existence of the STDF, the non-asymptotic bounds on the estimation procedure contain separated bias terms corresponding to the (distribution-dependent) convergence speed to the asymptotic behavior, which are not controlled explicitly.
 % The bound derived here includes a separated bias, which cannot been expressed or control explicitly
-This prevent us to choose in an adaptive way the parameters of our representation of extreme dependence. Since these parameters cannot be chosen by cross-validation as no labeled data is available in our setting, default parameters have to be chosen. While results seems accurate in our benchmarks, this is a limitation of this approach.
+This prevents us to choose in an adaptive way the parameters of our representation of extreme dependence. Since these parameters cannot be chosen by cross-validation as no labeled data is available in our setting, default parameters have to be chosen. While results seem accurate in our benchmarks, this is a limitation of this approach.
 A possible future direction is to make an additional hypothesis of  `second order regular variation'  \citep[see \emph{e.g.}][]{deHaan1996} in order to express these bias terms, and possibly to refine the results.
 %One perspective could be for instance to assume a second order regular variation, in order to obtain an explicit form for this problematic bias.
 %One limitation is that 
@@ -30,11 +30,12 @@ As these criterion have originally been introduced to build scoring functions us
 To this end, we present a benchmark showing that EM and MV criteria are able to recover the ranking induced by ROC/PR over scoring functions, when labels are hidden.
 Besides, as these curves can only be estimated in small dimensions (they involve volume computations), a methodology based on feature sub-sampling and aggregating is described and tested. It allows an extension of the use of these criteria to high-dimensional datasets. It also solves major drawbacks inherent to standard EM and MV curves, allowing \eg~features selection in the unsupervised setting.
 %
-While this heuristic-based methodology (feature sub-sampling and aggregating) works well in practice, it suffers from a lack of theoretical guaranties. Also, it does not evaluate a fixed scoring function, but an aggregate of scoring functions (output by the algorithm to be evaluated) defined on different sub-spaces. That is why theoretical results seem hard to derive.  (XXX idea?)
+This heuristic (random projections and aggregating) works well in practice, but suffers from a lack of theoretical guaranties. Note that it does not evaluate a fixed scoring function, but multiple scoring functions (output by the algorithm to be evaluated) defined on different sub-spaces with the same dimension. 
+Thus, it could be of great interest to study if the quantity estimated here really converges when the number of random projections go to infinity, and to find out if the limit somehow corresponds to a scoring function defined on the entire input space. In particular, this may allow to choose in an optimal way the sub-sampling parameters.
 
+% the underlying quantity estimated here (if any). If we can define a scoring function on the input space whose restrictions to the random sub-spaces correspond to the scoring functions output by the algorithm, is there a 
+%  and to study how fast is the convergence depending on the sub-sampling parameters. This would allow in particular to choose adaptively these parameters.
 
-Eventually, with the benefit of hindsight with respect to this work, we would like to notice that there still seems to be a significant gap to fill between theory and practice in anomaly detection. When trying to derive an algorithm supported by a theoretical analysis, this often affects the algorithm elaboration in such a way that it limits its efficiency in practice.
-On the opposite side, when trying to develop an algorithm which performs well in practice before thinking about any theoretical guaranties, it is often very hard to derive a statistical analysis. In this thesis, contributions have been made on both of these sides. Besides, the contribution on the sparse representation of multivariate extreme belongs to both theoretical and practical sides: it can be viewed as an efficient heuristic with a mathematical analysis from the extreme value theory, as well as an algorithm designed by this theory which can compete with state-of-the-art anomaly detection algorithms.
 
 
 

@@ -3,8 +3,8 @@
 \emph{Anomaly}, from grec $\alpha\nu\omega\mu\alpha\lambda\iota\alpha$, asperity, irregular, not the same (an-homalos), refers to a gap, a deviation with respect to some norm or basis, reflecting the expected behavior.
 We call \emph{anomaly} the object inducing a gap, the observation which deviates from normality. 
 %
-In various fields, the following situation occurs: an expert aims at predicting a phenomenon based on previous observations. The most basic case is when one wants to predict some binary characteristic of some new observations/records, given previous ones. For instance one can think of a doctor aiming to predict if an incoming patient has some fixed pathology or not, using previous patients record (age, history, gender, blood pressure) associated with their true \textbf{label} (having the pathology or not). This case is an example of \emph{binary classification}: the doctor aims to find a rule to \textbf{predict} the label of a new patient (the latter being characterized by its record). This rule is called a \emph{classifier} and it has to be built, or \emph{trained}, on previous records. % (namely records associated with their labels). 
-Intuitively, the classifier will predict the same diagnosis for similar records, in a sense that should be learned precisely.
+In various fields, the following situation occurs: an expert aims at predicting a phenomenon based on previous observations. The most basic case is when one wants to predict some binary characteristic of some new observations/records, given previous ones. For instance one can think of a doctor aiming to predict if an incoming patient has a fixed pathology or not, using previous patients record (such as age, history, gender, blood pressure) associated with their true \textbf{label} (having the pathology or not). This case is an example of \emph{binary classification}, where the doctor aims to find a rule to \textbf{predict} the label of a new patient (the latter being characterized by its record). This rule is called a \emph{classifier} and it has to be built, or \emph{trained}, on previous records. % (namely records associated with their labels). 
+Intuitively, the classifier will predict the same diagnosis for similar records, in a sense that should be learned accurately.
 
 Two cases can be distinguished. If labels of previous patients are known/available, \ie~previous patients are known to be sick or healthy: the classification task is said to be \textbf{supervised}. If training labels are unknown, the classification is said \textbf{unsupervised}. Following our example, the doctor has to find two patterns (or clusters), healthy/sick, each containing similar patient records.
 
@@ -1133,6 +1133,10 @@ The pull requests of these two contributions are available here:
 \item https://github.com/scikit-learn/scikit-learn/pull/4163  (Isolation Forest)
 \item https://github.com/scikit-learn/scikit-learn/pull/5279 (LOF)
 \end{itemize}
+
+
+Eventually, with the benefit of hindsight with respect to this work, we would like to notice that there still seems to be a significant gap to fill between theory and practice in anomaly detection. When trying to derive an algorithm supported by a theoretical analysis, this often affects the algorithm elaboration in such a way that it limits its efficiency in practice.
+On the opposite side, when trying to develop an algorithm which performs well in practice before thinking about any theoretical guaranties, it is often very hard to derive a statistical analysis. In this thesis, contributions have been made on both of these sides. Besides, the contribution on the sparse representation of multivariate extreme belongs to both theoretical and practical sides: it can be viewed as an efficient heuristic with a mathematical analysis from the extreme value theory, as well as an algorithm designed by this theory which can compete with state-of-the-art anomaly detection algorithms.
 
 
 \paragraph{Context of this work.}

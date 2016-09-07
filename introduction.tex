@@ -851,7 +851,11 @@ The bias term goes to zero as $n \to \infty$, for any fixed $\epsilon$.
 
 \section{Heuristic-based approaches}
 \label{resume:sec:heuristic}
-In this section, we present two submitted contributions addressing two major challenges in anomaly detection:
+
+The two contributions in this section are of heuristic nature and not yet supported by statistically sound theoretical results. Although this ongoing work has not been published yet and will certainly be completed in the near future, we believe that it has its place in our manuscript, given the numerous convincing numerical experiments we carried out and the rationale behind the approaches promoted we gave.
+%
+These two contributions addresse two major challenges in anomaly detection:
+
 \begin{itemize}
 \item How to evaluate unsupervised anomaly detection in practice?
 \item How to grow random forests with only one class available?
@@ -1115,13 +1119,13 @@ The corresponding publications are \cite{ICMLworkshop16} and \cite{NIPS16evaluat
 \item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (ICML 2016, Workshop on Anomaly Detection). % Co-winner of the Best Paper Award, sponsored by Google.
   \\
 Author: Goix. 
-\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (submitted to NIPS 2016).\\ Authors: Goix and Thomas. 
+\item How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms? (submitted to AISTATS 2016).\\ Authors: Goix and Thomas. 
 \end{itemize}
 
 
 The fifth contribution of this thesis is to develop an efficient heuristic for building accurate scoring functions. This is done by generalizing random forests to one-class classification. The corresponding submitted work is \cite{OCRF16}: 
 \begin{itemize}
-\item One-Class Splitting Criteria for Random Forests with Application to Anomaly Detection. (Submitted to NIPS 2016).\\
+\item One-Class Splitting Criteria for Random Forests with Application to Anomaly Detection. (Submitted to AISTATS 2016).\\
 Authors: Goix, Brault, Drougard and Chiapino.
 \end{itemize}
 
@@ -1135,7 +1139,7 @@ The pull requests of these two contributions are available here:
 \end{itemize}
 
 
-Eventually, with the benefit of hindsight with respect to this work, we would like to notice that there still seems to be a significant gap to fill between theory and practice in anomaly detection. When trying to derive an algorithm supported by a theoretical analysis, this often affects the algorithm elaboration in such a way that it limits its efficiency in practice.
+Eventually, we would like to notice that there still seems to be a significant gap to fill between theory and practice in anomaly detection. When trying to derive an algorithm supported by a theoretical analysis, this often affects the algorithm elaboration in such a way that it limits its efficiency in practice.
 On the opposite side, when trying to develop an algorithm which performs well in practice before thinking about any theoretical guaranties, it is often very hard to derive a statistical analysis. In this thesis, contributions have been made on both of these sides. Besides, the contribution on the sparse representation of multivariate extreme belongs to both theoretical and practical sides: it can be viewed as an efficient heuristic with a mathematical analysis from the extreme value theory, as well as an algorithm designed by this theory which can compete with state-of-the-art anomaly detection algorithms.
 
 

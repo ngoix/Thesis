@@ -1,5 +1,8 @@
 \chapter{One Class Splitting Criteria for Random Forests}
 \label{chap:ocrf}
+
+We recall that this is a contribution of heuristic nature and not yet supported by statistical results. This ongoing work has not been published yet and will certainly be completed in the near future, but we believe that it has its place in our manuscript, given the convincing empirical experiments we carried out and the rationale behind the approach promoted we gave.
+
 \begin{chapabstract}
 This chapter presents the details relative to the introducing section~\ref{resume:ocrf}.
 
@@ -186,7 +189,8 @@ Note that if we consider the Gini index as the impurity criteria, the correspond
 I_G(t_L, t_R)= \frac{n_{t_L} n'_{t_L}}{n_{t_L} +  n'_{t_L}} + \frac{n_{t_R} n'_{t_R}}{n_{t_R} +  n'_{t_R}}.
 \end{align}
 %
-In the one-class setting, no label is available, hence the impurity measure \eqref{ocrf:eq:impurity_measure_decrease} does not apply to this setup. The standard splitting criterion which consists in minimizing the latter cannot be used anymore.
+In the one-class setting, no label is available, hence the impurity measure $i(t)$ % \eqref{ocrf:eq:impurity_measure_decrease}
+does not apply to this setup. The standard splitting criterion which consists in minimizing the latter cannot be used anymore.
 
 
 % A naïve idea to solve this problem is to generate $n'$ samples uniformly on the hyper-rectangle that contains the data (the root node cell of a tree on the entire dataset) to form artificially a second class, and to consider the number $n'_t$ of these uniform observations that fall in node $\mathcal{X}_t$.
@@ -242,10 +246,10 @@ Note that if we decide to choose $n'$ to be $2^{3d}$ times larger than the numbe
 
 
 \paragraph{Adaptive approach.}
-Our solution is to remove the uniform assumption on the outliers, and to choose their distribution adaptively in such a way it is tightly concentrated around the inlier distribution. Formally, the idea is to maintain constant the class ratio $\gamma_t := n_t' / n_t$ on each node $t$: before looking for the best split, we update the number of outliers to be equal (up to a scaling constant $\gamma$) to the number of inliers, $n_t' = \gamma n_t$, \ie~$\gamma_t \equiv \gamma$. These (hidden) outliers are uniformly distributed on node $t$. The parameter $\gamma$ is typically set to $\gamma = 1$, see Remark~\ref{ocrf:rk:gamma} below. 
+Our solution is to remove the uniform assumption on the outliers, and to choose their distribution adaptively in such a way it is tightly concentrated around the inlier distribution. Formally, the idea is to maintain constant the class ratio $\gamma_t := n_t' / n_t$ on each node $t$: before looking for the best split, we update the number of outliers to be equal (up to a scaling constant $\gamma$) to the number of inliers, $n_t' = \gamma n_t$, \ie~$\gamma_t \equiv \gamma$. These (hidden) outliers are uniformly distributed on node $t$. The parameter $\gamma$ is typically set to $\gamma = 1$, see Remark~\ref{ocrf:rk:gamma}. 
 
 \textbf{Resulting density.} Figure~\ref{ocrf:fig:outlier_density} shows the corresponding outlier density $G$. 
-Note that $G$ is a piece-wise approximation of $F$. Considering the Neyman-Pearson test $X \sim F$ vs. $X \sim G$ instead of $X \sim F$ vs. $X \sim \leb$ may seem unusual at first sight. However, note that there is $\epsilon>0$ such that $G>\epsilon$ on the entire input space, since the density $G$ is constant on each node and equal to the average of $F$ on this node \emph{before splitting it}. If the average of $F$ was estimated to be zero (no inlier in the node), the node would not have been splitted, from where the existence of $\epsilon$.
+Note that $G$ is a piece-wise approximation of the inlier distribution $F$. Considering the Neyman-Pearson test $X \sim F$ vs. $X \sim G$ instead of $X \sim F$ vs. $X \sim \leb$ may seem unusual at first sight. However, note that there is $\epsilon>0$ such that $G>\epsilon$ on the entire input space, since the density $G$ is constant on each node and equal to the average of $F$ on this node \emph{before splitting it}. If the average of $F$ was estimated to be zero (no inlier in the node), the node would not have been splitted, from where the existence of $\epsilon$.
 %
 Thus, one might think of $G$ as  
 % Note that $G$ on some leaf $t_m$ with parents $t_0, \ldots, t_{m-1}$ takes the form $G_{|t_m} = \sum_{j=0}^{m} \int_{\mathcal{X}_{t_i}} F = 1/\leb{\mathcal{X}} + \sum_{j=1}^{m} \int_{\mathcal{X}_{t_i}} F $
@@ -816,7 +820,7 @@ the number of features sampled at each split \verb+mtry1=3+.
 The \emph{LSAD} algorithm uses default parameters:
 the maximum number of samples per kernel \verb+n_kernels_max=500+,
 the center of each kernel (the center of the random sample subset by default) \verb+kernel_pos='None'+,
-the kernel scale parameter (using the pairwise median trick by default)\verb+\gamma='None'+,
+the kernel scale parameter (using the pairwise median trick by default)\verb+gamma='None'+,
 the regularization parameter \verb+rho=0.1+.
 
 \subsection{Description of the datasets}
@@ -827,7 +831,7 @@ in Table~\ref{ocrf:table:data}. They are all available on the UCI repository
 We removed all non-continuous attributes as well as attributes taking less than $10$ different values.
 %
 The \emph{http} and \emph{smtp} datasets belong to the KDD Cup '99 dataset \citep{KDD99, Tavallaee2009}, which consist of a wide variety of hand-injected  attacks (anomalies) in a closed network (normal background). They are classically obtained as described in \cite{Yamanishi2000}. This two datasets are available on the \emph{scikit-learn} library \citep{sklearn2011}.
-The \emph{shuttle} dataset is the fusion of the training and testing datasets available in the UCI repository. As in \cite{Liu2008}, we use instances from all different classes but class $4$.%, which yields an anomaly ratio (class 1) of $7.17\%$.
+The \emph{shuttle} dataset is the fusion of the training and testing datasets available in the UCI repository. As in \cite{Liu2008}, we use instances from all different classes but class $4$. %, which yields an anomaly ratio (class 1) of $7.17\%$.
 In the \emph{forestcover} data, the normal data are the instances from class~$2$ while instances from class $4$ are anomalies (as in \cite{Liu2008}). %, which yields an anomaly ratio of $0.9\%$.
 The \emph{ionosphere} dataset differentiates `good' from `bad' radars, considered here as abnormal. A `good' radar shows evidence of some type of structure in the ionosphere. A `bad' radar does not, its signal passing through the ionosphere.
 The \emph{spambase} dataset consists of spam or non-spam emails. The former constitute our anomaly class.
@@ -998,7 +1002,7 @@ The anomaly rate is arbitrarily bounded to $10\%$ max (before splitting data int
 \label{ocrf:sec:model}
 In order to generalize the two-class framework to the one-class one, we need to consider the population versions associated to empirical quantities \eqref{ocrf:eq:impurity_measure_decrease}, \eqref{ocrf:eq:gini} and \eqref{ocrf:eq:two_class_proxy}, as well as the underlying model assumption. The latter can be described as follows.
 
-\textbf{Two-Class Model (n, $\boldsymbol{\alpha}$).}
+\textbf{Existing Two-Class Model (n, $\boldsymbol{\alpha}$).}
 We consider a random variable (\rv) $ X:\Omega \to \mathbb{R}^d$ \wrt~a probability space $(\Omega, \mathcal{F}, \mathbb{P})$.
 The law of $X$ depends on another \rv~$y \in \{0,1\}$, verifying $\mathbb{P}(y=1)=1-\mathbb{P}(y=0)=\alpha$. We assume that conditionally on $y=0$, $ X$ follows a law $F$, and conditionally on $y=1$ a law $G$. To summarize:
 \begin{align*}
@@ -1022,7 +1026,7 @@ Indeed,
 when observing $n$ \iid~realizations $( X_1, y_1),\ldots, ( X_n, y_n)$ of $( X,y)$, replacing probabilities by their empirical version amounts to replacing $\mathbb{P}(X \in \mathcal{X}_t,~ y = 0)$ by $n_t / n$, $\mathbb{P}(X \in \mathcal{X}_t,~ y = 1)$ by $n_t'/n$ and $\mathbb{P}(X \in \mathcal{X}_t)$ by $(n_t + n_t')/n$ with $n_t = \text{card}\{i,~X_i\in \mathcal{X}_t, y_i=0 \}$ and $n_t' = \text{card}\{i,~X_i\in \mathcal{X}_t, y_i=1 \}$, thus recovering \eqref{ocrf:eq:gini}.
 
 \textbf{One-Class-Model ($n$, $\boldsymbol{\alpha}$).}
-The one-class framework can be modeled as follows. Among the $n$ \iid~observations, we only observe those with $y=0$ (the normal behavior), namely $N$ realizations of $( X ~|~ y=0)$, where $N$ is itself a realization of a \rv~$\mb N$ of law $\mb N \sim \text{Bin}\big(n, (1-\alpha)\big)$. Here and hereafter, $\text{Bin}(n, p)$ denotes the binomial distribution with parameters $(n, p)$. As outliers are not observed, it is natural to assume that $G$ follows a uniform distribution on the hyper-rectangle $\mathcal{X}$ containing all the observations, so that $G$ has a constant density $g(x) \equiv 1 / \leb(\mathcal{X})$ on $\mathcal{X}$. %laisser une ligne car fin du model one class
+We model the one-class framework as follows. Among the $n$ \iid~observations, we only observe those with $y=0$ (the normal behavior), namely $N$ realizations of $( X ~|~ y=0)$, where $N$ is itself a realization of a \rv~$\mb N$ of law $\mb N \sim \text{Bin}\big(n, (1-\alpha)\big)$. Here and hereafter, $\text{Bin}(n, p)$ denotes the binomial distribution with parameters $(n, p)$. As outliers are not observed, it is natural to assume that $G$ follows a uniform distribution on the hyper-rectangle $\mathcal{X}$ containing all the observations, so that $G$ has a constant density $g(x) \equiv 1 / \leb(\mathcal{X})$ on $\mathcal{X}$. %laisser une ligne car fin du model one class
 Note that this assumption \emph{will be removed} in the adaptive approach described below (which aims at maintaining a non-negligible proportion of (hidden) outliers in every nodes).
 
 Let us define $L_t=\leb(\mathcal{X}_t)/\leb(\mathcal{X})$. Then, $\mathbb{P}(X \in \mathcal{X}_t,~ y = 1)= \mathbb{P}(y = 1) \mathbb{P}(X \in \mathcal{X}_t|~ y = 1) = \alpha L_t $. Replacing in \eqref{ocrf:eq:gini_theo} the probability $\mathbb{P}(X \in \mathcal{X}_t, y=0)$ by its empirical version $n_t / n$, we then obtain the one-class empirical Gini index
@@ -1057,7 +1061,7 @@ Note that the two-class proxy of the Gini impurity decrease \eqref{ocrf:tc_proxy
 
 As detailed Section~\ref{sec:one-class-crit}, this approach suffers from the curse of dimensionality. 
 We can summarize the problem as follows.
-Consider $\gamma_t$ the ratio between the expected number of (hidden) outliers and the number of normal observations in node $t$, %, and have assumed that this ratio is negligible in nodes $t_L$ and $t_R$.
+Note that $\gamma_t$, the ratio between the expected number of (hidden) outliers and the number of normal observations in node $t$, is here equal to %, and have assumed that this ratio is negligible in nodes $t_L$ and $t_R$.
 % \textbf{Problem 1.} Now, the curse of dimensionality appears in the following sense. In large dimension, $\alpha n L_{t}$ becomes very close to zero when going deeper in the tree (recall that $L_t = \leb(\mathcal{X}_t)/\leb(\mathcal{X})$, and the volume of $\mathcal{X}_t$ decreases). In addition, we typically grow trees on sub-samples of the input data, meaning that even the root node of the trees may be very small compared to the hyper-rectangle containing all the input data.
 % %
 % In other words, $\alpha n L_t$ is much smaller than $n_t$ for lots of nodes $t$ (in particular the leaves).
@@ -1070,7 +1074,7 @@ Consider $\gamma_t$ the ratio between the expected number of (hidden) outliers a
 % $\alpha n L_{t}$ being constant when the split varies. We have used the notation %$\gamma_t$ is
 \begin{align}
 \label{ocrf:def:gamma_t}
-\gamma_t := \frac{\alpha n L_t}{n_t}.
+\gamma_t = \frac{\alpha n L_t}{n_t}.
 \end{align}
 This class ratio is close to $0$ for lots of nodes $t$, which makes unable the Gini criterion to discriminate accurately between the (hidden) outliers and the inliers.
 %
@@ -1090,8 +1094,7 @@ Minimizing this criterion produces splits corresponding to $\gamma_t\simeq 0$ in
 
 \subsection{Adaptive approach}
 
-A solution is to remove the uniform assumption for the abnormal class.
-The idea is to choose in an adaptive way (\wrt~the volume of $\mathcal{X}_t$) the number $\alpha n$, which can be interpreted as the number of (hidden) outliers. Recall that neither $n$ nor $\alpha$ is observed in the One-Class-Model($n$, $\alpha$). Doing so, we aim at avoiding $\alpha n L_t \ll n_t$ when $L_t$ is too small. Namely, with $\gamma_t$ defined in \eqref{ocrf:def:gamma_t}, we aim at avoiding $\gamma_t \simeq 0$ when $L_t \simeq 0$. The idea is to consider $\alpha(L_t)$ and $n(L_t)$ such that $\alpha(L_t) \to 1$, $n(L_t) \to \infty$ when $L_t \to 0$.
+The solution presented Section~\ref{ocrf:sec:one-class} is to remove the uniform assumption for the abnormal class. From the theoretical point of view, the idea is to choose in an adaptive way (\wrt~the volume of $\mathcal{X}_t$) the number $\alpha n$, which can be interpreted as the number of (hidden) outliers. Recall that neither $n$ nor $\alpha$ is observed in the One-Class-Model($n$, $\alpha$). Doing so, we aim at avoiding $\alpha n L_t \ll n_t$ when $L_t$ is too small. Namely, with $\gamma_t$ defined in \eqref{ocrf:def:gamma_t}, we aim at avoiding $\gamma_t \simeq 0$ when $L_t \simeq 0$. The idea is to consider $\alpha(L_t)$ and $n(L_t)$ such that $\alpha(L_t) \to 1$, $n(L_t) \to \infty$ when $L_t \to 0$.
 We then define the one-class adaptive proxy of the impurity decrease by
 \begin{align}
 \label{ocrf:oc_proxy_ad1}
@@ -1212,7 +1215,7 @@ we recover equation~\eqref{ocrf:oc_proxy_ad2}.
 \section{Conclusion}
 Through a natural adaptation of both (two-class) splitting criteria and majority vote, this chapter introduces a methodology to structurally extend RFs to the one-class setting.
 %
-Incidentally, our one-class splitting criteria correspond to the asymptotic behavior of an adaptive outliers generating methodology, so that consistency with two-class RFs seems respected.
+Our one-class splitting criteria correspond to the asymptotic behavior of an adaptive outliers generating methodology, so that consistency with two-class RFs seems respected.
 %
 Strong empirical performance attests the relevance of this methodology.
 

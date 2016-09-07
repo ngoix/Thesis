@@ -771,6 +771,7 @@
 \citation{Shi2012}
 \citation{Tax2002}
 \citation{Scott2006}
+\citation{Polonik97,Einmahl1992}
 \citation{Blanchard2004}
 \citation{CLEM14}
 \citation{Clemencon2009Tree}
@@ -792,24 +793,27 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.3.1}One-class splitting criterion}{169}{subsection.9.3.1}}
 \newlabel{sec:one-class-crit}{{9.3.1}{169}{One-class splitting criterion}{subsection.9.3.1}{}}
 \@writefile{toc}{\contentsline {paragraph}{Naive approach.}{169}{subsection.9.3.1}}
-\citation{Liu2008}
-\citation{Geurts2006}
+\citation{Scott2009}
 \@writefile{toc}{\contentsline {paragraph}{Adaptive approach.}{170}{theorem.9.3.1}}
 \newlabel{ocrf:oc_proxy_ad2}{{9.5}{170}{Adaptive approach}{equation.9.3.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.2}Prediction: a majority vote with one single candidate?}{170}{subsection.9.3.2}}
-\newlabel{ocrf:sec:prediction}{{9.3.2}{170}{Prediction: a majority vote with one single candidate?}{subsection.9.3.2}{}}
 \citation{Liu2008}
+\citation{Geurts2006}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Outliers assumed distribution $G$ in the naive and adaptive approach. In the naive approach, $G$ does not depends on the tree and is constant on the input space. In the adaptive approach the distribution depends on the inlier distribution $F$ through the tree. The outliers density is constant and equal to the average of $F$ on each node before splitting it. \relax }}{171}{figure.caption.57}}
+\newlabel{ocrf:fig:outlier_density}{{9.1}{171}{Outliers assumed distribution $G$ in the naive and adaptive approach. In the naive approach, $G$ does not depends on the tree and is constant on the input space. In the adaptive approach the distribution depends on the inlier distribution $F$ through the tree. The outliers density is constant and equal to the average of $F$ on each node before splitting it. \relax }{figure.caption.57}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.2}Prediction: a majority vote with one single candidate?}{171}{subsection.9.3.2}}
+\newlabel{ocrf:sec:prediction}{{9.3.2}{171}{Prediction: a majority vote with one single candidate?}{subsection.9.3.2}{}}
+\citation{Liu2008}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces  The left part of this figure represents the dataset under study and the underlying density. After some splits on this initial node $\mathcal  {X}$, let us consider the node $\mathcal  {X}_t$ illustrated in the right part of this figure: without the proposed adaptive approach, the class ratio $\gamma _t$ becomes too small and leads to poor splits (all the data are in the `normal side' of the split, which thus does not discriminate at all). Contrariwise, setting $\gamma $ to one, \textit  {i.e.} using our adaptative approach, is far preferable. Note that a given $\gamma $ corresponds to a level set $t_{\gamma }$.\relax }}{172}{figure.caption.58}}
+\newlabel{ocrf:fig:split_alpha}{{9.2}{172}{The left part of this figure represents the dataset under study and the underlying density. After some splits on this initial node $\mathcal {X}$, let us consider the node $\mathcal {X}_t$ illustrated in the right part of this figure: without the proposed adaptive approach, the class ratio $\gamma _t$ becomes too small and leads to poor splits (all the data are in the `normal side' of the split, which thus does not discriminate at all). Contrariwise, setting $\gamma $ to one, \textit {i.e.} using our adaptative approach, is far preferable. Note that a given $\gamma $ corresponds to a level set $t_{\gamma }$.\relax }{figure.caption.58}{}}
+\newlabel{ocrf:eq:scoring3}{{9.6}{172}{Prediction: a majority vote with one single candidate?}{equation.9.3.6}{}}
 \citation{Breiman2001}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces  The left part of this figure represents the dataset under study and the underlying density. After some splits on this initial node $\mathcal  {X}$, let us consider the node $\mathcal  {X}_t$ illustrated in the right part of this figure: without the proposed adaptive approach, $\gamma _t$ becomes too small and leads to poor splits (all the data are in the `normal side' of the split, which thus does not discriminate at all). Contrariwise, setting $\gamma $ to one, \textit  {i.e.} using our adaptative approach, is far preferable. Note that a given $\gamma $ corresponds to a level set $t_{\gamma }$.\relax }}{171}{figure.caption.57}}
-\newlabel{ocrf:fig:split_alpha}{{9.1}{171}{The left part of this figure represents the dataset under study and the underlying density. After some splits on this initial node $\mathcal {X}$, let us consider the node $\mathcal {X}_t$ illustrated in the right part of this figure: without the proposed adaptive approach, $\gamma _t$ becomes too small and leads to poor splits (all the data are in the `normal side' of the split, which thus does not discriminate at all). Contrariwise, setting $\gamma $ to one, \textit {i.e.} using our adaptative approach, is far preferable. Note that a given $\gamma $ corresponds to a level set $t_{\gamma }$.\relax }{figure.caption.57}{}}
-\newlabel{ocrf:eq:scoring3}{{9.6}{171}{Prediction: a majority vote with one single candidate?}{equation.9.3.6}{}}
 \citation{Ho1998,Panov2007}
 \citation{Amit1997}
 \citation{Liu2008}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.3}OneClassRF: a Generic One-Class Random Forest algorithm}{172}{subsection.9.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces OneClassRF with one tree: level-sets of the scoring function\relax }}{172}{figure.caption.58}}
-\newlabel{ocrf:fig:oneclassrf}{{9.2}{172}{OneClassRF with one tree: level-sets of the scoring function\relax }{figure.caption.58}{}}
-\newlabel{ocrf:rk:gamma}{{9.5}{172}{}{theorem.9.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.3}OneClassRF: a Generic One-Class Random Forest algorithm}{173}{subsection.9.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces OneClassRF with one tree: level-sets of the scoring function\relax }}{173}{figure.caption.59}}
+\newlabel{ocrf:fig:oneclassrf}{{9.3}{173}{OneClassRF with one tree: level-sets of the scoring function\relax }{figure.caption.59}{}}
+\newlabel{ocrf:rk:gamma}{{9.5}{173}{}{theorem.9.3.5}{}}
 \citation{Breiman2001}
 \citation{Liu2008}
 \citation{Desir12}
@@ -818,16 +822,16 @@
 \citation{Bay2003}
 \citation{Quinn2014}
 \citation{Shi2012}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.4}{\ignorespaces Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies.\relax }}{174}{figure.caption.60}}
+\newlabel{ocrf:fig:split_alpha_2}{{9.4}{174}{Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies.\relax }{figure.caption.60}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.4}Benchmarks}{174}{section.9.4}}
+\newlabel{ocrf:sec:benchmark}{{9.4}{174}{Benchmarks}{section.9.4}{}}
 \citation{Liu2008}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies.\relax }}{173}{figure.caption.59}}
-\newlabel{ocrf:fig:split_alpha_2}{{9.3}{173}{Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies.\relax }{figure.caption.59}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.4}Benchmarks}{173}{section.9.4}}
-\newlabel{ocrf:sec:benchmark}{{9.4}{173}{Benchmarks}{section.9.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9.1}{\ignorespaces Original Datasets characteristics\relax }}{174}{table.caption.60}}
-\newlabel{ocrf:table:data}{{9.1}{174}{Original Datasets characteristics\relax }{table.caption.60}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9.2}{\ignorespaces Results for the novelty detection setting (semi-supervised framework). The table reports AUC ROC and AUC PR scores (higher is better) for each algorithms. The training time of each algorithm has been limited (for each experiment among the 10 performed for each dataset) to 30 minutes, where `NA' indicates that the algorithm could not finish training within the allowed time limit. In average on all the datasets, our proposed algorithm `OneClassRF' achieves both best AUC ROC and AUC PR scores (with LSAD for AUC ROC). It also achieves the lowest cumulative training time.\relax }}{174}{table.caption.61}}
-\newlabel{ocrf:table:results-semisupervised}{{9.2}{174}{Results for the novelty detection setting (semi-supervised framework). The table reports AUC ROC and AUC PR scores (higher is better) for each algorithms. The training time of each algorithm has been limited (for each experiment among the 10 performed for each dataset) to 30 minutes, where `NA' indicates that the algorithm could not finish training within the allowed time limit. In average on all the datasets, our proposed algorithm `OneClassRF' achieves both best AUC ROC and AUC PR scores (with LSAD for AUC ROC). It also achieves the lowest cumulative training time.\relax }{table.caption.61}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4.1}Default parameters of OneClassRF.}{174}{subsection.9.4.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {9.1}{\ignorespaces Original Datasets characteristics\relax }}{175}{table.caption.61}}
+\newlabel{ocrf:table:data}{{9.1}{175}{Original Datasets characteristics\relax }{table.caption.61}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9.2}{\ignorespaces Results for the novelty detection setting (semi-supervised framework). The table reports AUC ROC and AUC PR scores (higher is better) for each algorithms. The training time of each algorithm has been limited (for each experiment among the 10 performed for each dataset) to 30 minutes, where `NA' indicates that the algorithm could not finish training within the allowed time limit. In average on all the datasets, our proposed algorithm `OneClassRF' achieves both best AUC ROC and AUC PR scores (with LSAD for AUC ROC). It also achieves the lowest cumulative training time.\relax }}{175}{table.caption.62}}
+\newlabel{ocrf:table:results-semisupervised}{{9.2}{175}{Results for the novelty detection setting (semi-supervised framework). The table reports AUC ROC and AUC PR scores (higher is better) for each algorithms. The training time of each algorithm has been limited (for each experiment among the 10 performed for each dataset) to 30 minutes, where `NA' indicates that the algorithm could not finish training within the allowed time limit. In average on all the datasets, our proposed algorithm `OneClassRF' achieves both best AUC ROC and AUC PR scores (with LSAD for AUC ROC). It also achieves the lowest cumulative training time.\relax }{table.caption.62}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4.1}Default parameters of OneClassRF.}{175}{subsection.9.4.1}}
 \citation{Liu2012}
 \citation{Lichman2013}
 \citation{KDD99,Tavallaee2009}
@@ -836,69 +840,69 @@
 \citation{Liu2008}
 \citation{Liu2008}
 \citation{Schubert2012}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4.2}Hyper-Parameters of tested algorithms}{175}{subsection.9.4.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4.3}Description of the datasets}{175}{subsection.9.4.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4.4}Results}{176}{subsection.9.4.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.4}{\ignorespaces Performances of the algorithms on each dataset in the novelty detection framework: ROC AUCs are displayed on the top, Precision-Recall AUCs in the middle and training times\footnotemark on the bottom, for each dataset and algorithm. The $x$-axis represents the datasets.\relax }}{177}{figure.caption.62}}
-\newlabel{ocrf:figresultssemisupervised}{{9.4}{177}{Performances of the algorithms on each dataset in the novelty detection framework: ROC AUCs are displayed on the top, Precision-Recall AUCs in the middle and training times\protect \footnotemark on the bottom, for each dataset and algorithm. The $x$-axis represents the datasets.\relax }{figure.caption.62}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.5}Theoretical jusification for the one-class splitting criterion}{177}{section.9.5}}
-\newlabel{sec:theory}{{9.5}{177}{Theoretical jusification for the one-class splitting criterion}{section.9.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.5.1}Underlying model}{177}{subsection.9.5.1}}
-\newlabel{ocrf:sec:model}{{9.5.1}{177}{Underlying model}{subsection.9.5.1}{}}
-\newlabel{ocrf:eq:impurity_measure_decrease_theo}{{9.7}{178}{Underlying model}{equation.9.5.7}{}}
-\newlabel{ocrf:eq:gini_theo}{{9.8}{178}{Underlying model}{equation.9.5.8}{}}
-\newlabel{ocrf:eq:gini_oc}{{9.9}{178}{Underlying model}{equation.9.5.9}{}}
-\newlabel{ocrf:theo_proxy}{{9.10}{178}{Underlying model}{equation.9.5.10}{}}
-\newlabel{ocrf:oc_proxy1}{{9.11}{178}{Underlying model}{equation.9.5.11}{}}
-\newlabel{ocrf:oc_proxy2}{{9.12}{179}{Underlying model}{equation.9.5.12}{}}
-\newlabel{ocrf:def:gamma_t}{{9.13}{179}{Underlying model}{equation.9.5.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.5.2}Adaptive approach}{179}{subsection.9.5.2}}
-\newlabel{ocrf:oc_proxy_ad1}{{9.14}{179}{Adaptive approach}{equation.9.5.14}{}}
-\newlabel{ocrf:constraint1}{{9.15}{179}{Adaptive approach}{equation.9.5.15}{}}
-\newlabel{ocrf:constraint2}{{9.16}{180}{Adaptive approach}{equation.9.5.16}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.6}Conclusion}{180}{section.9.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.7}Further details on benchmarks and unsupervised results}{180}{section.9.7}}
-\@writefile{lot}{\contentsline {table}{\numberline {9.3}{\ignorespaces Results for the unsupervised setting\relax }}{181}{table.caption.63}}
-\newlabel{table:results-unsupervised}{{9.3}{181}{Results for the unsupervised setting\relax }{table.caption.63}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.5}{\ignorespaces Performances of the algorithms on each dataset in the unsupervised framework: ROC AUCs are on the top, Precision-Recall AUCs in the middle and processing times are displayed below (for each dataset and algorithm). The $x$-axis represents the datasets.\relax }}{181}{figure.caption.64}}
-\newlabel{ocrf:figresultsunsupervised}{{9.5}{181}{Performances of the algorithms on each dataset in the unsupervised framework: ROC AUCs are on the top, Precision-Recall AUCs in the middle and processing times are displayed below (for each dataset and algorithm). The $x$-axis represents the datasets.\relax }{figure.caption.64}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.6}{\ignorespaces ROC and PR curves for OneClassRF (novelty detection framework)\relax }}{182}{figure.caption.65}}
-\newlabel{ocrf:fig:oneclassrf_roc_pr}{{9.6}{182}{ROC and PR curves for OneClassRF (novelty detection framework)\relax }{figure.caption.65}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.7}{\ignorespaces ROC and PR curves for OneClassRF (unsupervised framework)\relax }}{183}{figure.caption.66}}
-\newlabel{ocrf:fig:oneclassrf_roc_pr_unsupervised}{{9.7}{183}{ROC and PR curves for OneClassRF (unsupervised framework)\relax }{figure.caption.66}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.8}{\ignorespaces ROC and PR curves for IsolationForest (novelty detection framework)\relax }}{184}{figure.caption.67}}
-\newlabel{ocrf:fig:iforest_roc_pr}{{9.8}{184}{ROC and PR curves for IsolationForest (novelty detection framework)\relax }{figure.caption.67}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.9}{\ignorespaces ROC and PR curves for IsolationForest (unsupervised framework)\relax }}{185}{figure.caption.68}}
-\newlabel{ocrf:fig:iforest_roc_pr_unsupervised}{{9.9}{185}{ROC and PR curves for IsolationForest (unsupervised framework)\relax }{figure.caption.68}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.10}{\ignorespaces ROC and PR curves for OCRFsampling (novelty detection framework)\relax }}{186}{figure.caption.69}}
-\newlabel{ocrf:fig:ocrfm_roc_pr}{{9.10}{186}{ROC and PR curves for OCRFsampling (novelty detection framework)\relax }{figure.caption.69}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.11}{\ignorespaces ROC and PR curves for OCRFsampling (unsupervised framework)\relax }}{187}{figure.caption.70}}
-\newlabel{ocrf:fig:ocrfm_roc_pr_unsupervised}{{9.11}{187}{ROC and PR curves for OCRFsampling (unsupervised framework)\relax }{figure.caption.70}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.12}{\ignorespaces ROC and PR curves for OCSVM (novelty detection framework)\relax }}{188}{figure.caption.71}}
-\newlabel{ocrf:fig:ocsvm_roc_pr}{{9.12}{188}{ROC and PR curves for OCSVM (novelty detection framework)\relax }{figure.caption.71}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.13}{\ignorespaces ROC and PR curves for OCSVM (unsupervised framework)\relax }}{189}{figure.caption.72}}
-\newlabel{ocrf:fig:ocsvm_roc_pr_unsupervised}{{9.13}{189}{ROC and PR curves for OCSVM (unsupervised framework)\relax }{figure.caption.72}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.14}{\ignorespaces ROC and PR curves for LOF (novelty detection framework)\relax }}{190}{figure.caption.73}}
-\newlabel{ocrf:fig:lof_roc_pr}{{9.14}{190}{ROC and PR curves for LOF (novelty detection framework)\relax }{figure.caption.73}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.15}{\ignorespaces ROC and PR curves for LOF (unsupervised framework)\relax }}{191}{figure.caption.74}}
-\newlabel{ocrf:fig:lof_roc_pr_unsupervised}{{9.15}{191}{ROC and PR curves for LOF (unsupervised framework)\relax }{figure.caption.74}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.16}{\ignorespaces ROC and PR curves for Orca (novelty detection framework)\relax }}{192}{figure.caption.75}}
-\newlabel{ocrf:fig:orca_roc_pr}{{9.16}{192}{ROC and PR curves for Orca (novelty detection framework)\relax }{figure.caption.75}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.17}{\ignorespaces ROC and PR curves for Orca (unsupervised framework)\relax }}{193}{figure.caption.76}}
-\newlabel{ocrf:fig:orca_roc_pr_unsupervised}{{9.17}{193}{ROC and PR curves for Orca (unsupervised framework)\relax }{figure.caption.76}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.18}{\ignorespaces ROC and PR curves for LSAD (novelty detection framework)\relax }}{194}{figure.caption.77}}
-\newlabel{ocrf:fig:LSAnomaly_roc_pr}{{9.18}{194}{ROC and PR curves for LSAD (novelty detection framework)\relax }{figure.caption.77}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.19}{\ignorespaces ROC and PR curves for LSAD (unsupervised framework)\relax }}{195}{figure.caption.78}}
-\newlabel{ocrf:fig:LSAnomaly_roc_pr_unsupervised}{{9.19}{195}{ROC and PR curves for LSAD (unsupervised framework)\relax }{figure.caption.78}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.20}{\ignorespaces ROC and PR curves for RFC (novelty detection framework)\relax }}{196}{figure.caption.79}}
-\newlabel{ocrf:fig:rf_roc_pr}{{9.20}{196}{ROC and PR curves for RFC (novelty detection framework)\relax }{figure.caption.79}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.21}{\ignorespaces ROC and PR curves for RFC (unsupervised framework)\relax }}{197}{figure.caption.80}}
-\newlabel{ocrf:fig:rf_roc_pr_unsupervised}{{9.21}{197}{ROC and PR curves for RFC (unsupervised framework)\relax }{figure.caption.80}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4.2}Hyper-Parameters of tested algorithms}{176}{subsection.9.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4.3}Description of the datasets}{177}{subsection.9.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4.4}Results}{177}{subsection.9.4.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.5}{\ignorespaces Performances of the algorithms on each dataset in the novelty detection framework: ROC AUCs are displayed on the top, Precision-Recall AUCs in the middle and training times\footnotemark on the bottom, for each dataset and algorithm. The $x$-axis represents the datasets.\relax }}{178}{figure.caption.63}}
+\newlabel{ocrf:figresultssemisupervised}{{9.5}{178}{Performances of the algorithms on each dataset in the novelty detection framework: ROC AUCs are displayed on the top, Precision-Recall AUCs in the middle and training times\protect \footnotemark on the bottom, for each dataset and algorithm. The $x$-axis represents the datasets.\relax }{figure.caption.63}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.5}Theoretical jusification for the one-class splitting criterion}{178}{section.9.5}}
+\newlabel{sec:ocrf:theory}{{9.5}{178}{Theoretical jusification for the one-class splitting criterion}{section.9.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.5.1}Underlying model}{178}{subsection.9.5.1}}
+\newlabel{ocrf:sec:model}{{9.5.1}{178}{Underlying model}{subsection.9.5.1}{}}
+\newlabel{ocrf:eq:impurity_measure_decrease_theo}{{9.7}{179}{Underlying model}{equation.9.5.7}{}}
+\newlabel{ocrf:eq:gini_theo}{{9.8}{179}{Underlying model}{equation.9.5.8}{}}
+\newlabel{ocrf:eq:gini_oc}{{9.9}{179}{Underlying model}{equation.9.5.9}{}}
+\newlabel{ocrf:theo_proxy}{{9.10}{179}{Underlying model}{equation.9.5.10}{}}
+\newlabel{ocrf:oc_proxy1}{{9.11}{180}{Underlying model}{equation.9.5.11}{}}
+\newlabel{ocrf:oc_proxy2}{{9.12}{180}{Underlying model}{equation.9.5.12}{}}
+\newlabel{ocrf:def:gamma_t}{{9.13}{180}{Underlying model}{equation.9.5.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.5.2}Adaptive approach}{180}{subsection.9.5.2}}
+\newlabel{ocrf:oc_proxy_ad1}{{9.14}{180}{Adaptive approach}{equation.9.5.14}{}}
+\newlabel{ocrf:constraint1}{{9.15}{181}{Adaptive approach}{equation.9.5.15}{}}
+\newlabel{ocrf:constraint2}{{9.16}{181}{Adaptive approach}{equation.9.5.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.6}Conclusion}{181}{section.9.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.7}Further details on benchmarks and unsupervised results}{181}{section.9.7}}
+\@writefile{lot}{\contentsline {table}{\numberline {9.3}{\ignorespaces Results for the unsupervised setting\relax }}{182}{table.caption.64}}
+\newlabel{table:results-unsupervised}{{9.3}{182}{Results for the unsupervised setting\relax }{table.caption.64}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.6}{\ignorespaces Performances of the algorithms on each dataset in the unsupervised framework: ROC AUCs are on the top, Precision-Recall AUCs in the middle and processing times are displayed below (for each dataset and algorithm). The $x$-axis represents the datasets.\relax }}{183}{figure.caption.65}}
+\newlabel{ocrf:figresultsunsupervised}{{9.6}{183}{Performances of the algorithms on each dataset in the unsupervised framework: ROC AUCs are on the top, Precision-Recall AUCs in the middle and processing times are displayed below (for each dataset and algorithm). The $x$-axis represents the datasets.\relax }{figure.caption.65}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.7}{\ignorespaces ROC and PR curves for OneClassRF (novelty detection framework)\relax }}{184}{figure.caption.66}}
+\newlabel{ocrf:fig:oneclassrf_roc_pr}{{9.7}{184}{ROC and PR curves for OneClassRF (novelty detection framework)\relax }{figure.caption.66}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.8}{\ignorespaces ROC and PR curves for OneClassRF (unsupervised framework)\relax }}{185}{figure.caption.67}}
+\newlabel{ocrf:fig:oneclassrf_roc_pr_unsupervised}{{9.8}{185}{ROC and PR curves for OneClassRF (unsupervised framework)\relax }{figure.caption.67}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.9}{\ignorespaces ROC and PR curves for IsolationForest (novelty detection framework)\relax }}{186}{figure.caption.68}}
+\newlabel{ocrf:fig:iforest_roc_pr}{{9.9}{186}{ROC and PR curves for IsolationForest (novelty detection framework)\relax }{figure.caption.68}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.10}{\ignorespaces ROC and PR curves for IsolationForest (unsupervised framework)\relax }}{187}{figure.caption.69}}
+\newlabel{ocrf:fig:iforest_roc_pr_unsupervised}{{9.10}{187}{ROC and PR curves for IsolationForest (unsupervised framework)\relax }{figure.caption.69}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.11}{\ignorespaces ROC and PR curves for OCRFsampling (novelty detection framework)\relax }}{188}{figure.caption.70}}
+\newlabel{ocrf:fig:ocrfm_roc_pr}{{9.11}{188}{ROC and PR curves for OCRFsampling (novelty detection framework)\relax }{figure.caption.70}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.12}{\ignorespaces ROC and PR curves for OCRFsampling (unsupervised framework)\relax }}{189}{figure.caption.71}}
+\newlabel{ocrf:fig:ocrfm_roc_pr_unsupervised}{{9.12}{189}{ROC and PR curves for OCRFsampling (unsupervised framework)\relax }{figure.caption.71}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.13}{\ignorespaces ROC and PR curves for OCSVM (novelty detection framework)\relax }}{190}{figure.caption.72}}
+\newlabel{ocrf:fig:ocsvm_roc_pr}{{9.13}{190}{ROC and PR curves for OCSVM (novelty detection framework)\relax }{figure.caption.72}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.14}{\ignorespaces ROC and PR curves for OCSVM (unsupervised framework)\relax }}{191}{figure.caption.73}}
+\newlabel{ocrf:fig:ocsvm_roc_pr_unsupervised}{{9.14}{191}{ROC and PR curves for OCSVM (unsupervised framework)\relax }{figure.caption.73}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.15}{\ignorespaces ROC and PR curves for LOF (novelty detection framework)\relax }}{192}{figure.caption.74}}
+\newlabel{ocrf:fig:lof_roc_pr}{{9.15}{192}{ROC and PR curves for LOF (novelty detection framework)\relax }{figure.caption.74}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.16}{\ignorespaces ROC and PR curves for LOF (unsupervised framework)\relax }}{193}{figure.caption.75}}
+\newlabel{ocrf:fig:lof_roc_pr_unsupervised}{{9.16}{193}{ROC and PR curves for LOF (unsupervised framework)\relax }{figure.caption.75}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.17}{\ignorespaces ROC and PR curves for Orca (novelty detection framework)\relax }}{194}{figure.caption.76}}
+\newlabel{ocrf:fig:orca_roc_pr}{{9.17}{194}{ROC and PR curves for Orca (novelty detection framework)\relax }{figure.caption.76}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.18}{\ignorespaces ROC and PR curves for Orca (unsupervised framework)\relax }}{195}{figure.caption.77}}
+\newlabel{ocrf:fig:orca_roc_pr_unsupervised}{{9.18}{195}{ROC and PR curves for Orca (unsupervised framework)\relax }{figure.caption.77}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.19}{\ignorespaces ROC and PR curves for LSAD (novelty detection framework)\relax }}{196}{figure.caption.78}}
+\newlabel{ocrf:fig:LSAnomaly_roc_pr}{{9.19}{196}{ROC and PR curves for LSAD (novelty detection framework)\relax }{figure.caption.78}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.20}{\ignorespaces ROC and PR curves for LSAD (unsupervised framework)\relax }}{197}{figure.caption.79}}
+\newlabel{ocrf:fig:LSAnomaly_roc_pr_unsupervised}{{9.20}{197}{ROC and PR curves for LSAD (unsupervised framework)\relax }{figure.caption.79}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.21}{\ignorespaces ROC and PR curves for RFC (novelty detection framework)\relax }}{198}{figure.caption.80}}
+\newlabel{ocrf:fig:rf_roc_pr}{{9.21}{198}{ROC and PR curves for RFC (novelty detection framework)\relax }{figure.caption.80}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.22}{\ignorespaces ROC and PR curves for RFC (unsupervised framework)\relax }}{199}{figure.caption.81}}
+\newlabel{ocrf:fig:rf_roc_pr_unsupervised}{{9.22}{199}{ROC and PR curves for RFC (unsupervised framework)\relax }{figure.caption.81}{}}
 \citation{deHaan1996}
-\@writefile{toc}{\contentsline {chapter}{\numberline {10}Conclusion, limitations \& perspectives}{199}{chapter.10}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {10}Conclusion, limitations \& perspectives}{201}{chapter.10}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:concl}{{10}{199}{Conclusion, limitations \& perspectives}{chapter.10}{}}
+\newlabel{chap:concl}{{10}{201}{Conclusion, limitations \& perspectives}{chapter.10}{}}
 \bibstyle{ecs}
 \bibdata{Thesis}
 \bibcite{Aggarwal2001}{{1}{2001}{{Aggarwal \& Yu}}{{Aggarwal and Yu}}}
@@ -917,7 +921,7 @@
 \bibcite{Blanchard2010}{{14}{2010}{{Blanchard et~al.}}{{Blanchard, Lee, and Scott}}}
 \bibcite{Blanchard2004}{{15}{2004}{{Blanchard et~al.}}{{Blanchard, Sch{\"a}fer, and Rozenholc}}}
 \bibcite{Bottou2007}{{16}{2007}{{Bottou \& Lin}}{{Bottou and Lin}}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{201}{dummy.4}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{203}{dummy.4}}
 \bibcite{BLM2013}{{17}{2013}{{Boucheron et~al.}}{{Boucheron, Lugosi, and Massart}}}
 \bibcite{Bousquet04}{{18}{2004}{{Bousquet et~al.}}{{Bousquet, Boucheron, and Lugosi}}}
 \bibcite{Breiman2001}{{19}{2001}{{Breiman}}{{}}}
@@ -1021,31 +1025,32 @@
 \bibcite{Scholkopf2001}{{117}{2001}{{Sch{\"o}lkopf et~al.}}{{Sch{\"o}lkopf, Platt, Shawe-Taylor, Smola, and Williamson}}}
 \bibcite{Schubert2012}{{118}{2012}{{Schubert et~al.}}{{Schubert, Wojdanowski, Zimek, and Kriegel}}}
 \bibcite{Scott2006}{{119}{2006}{{Scott \& Nowak}}{{Scott and Nowak}}}
-\bibcite{Segers12Bernoulli}{{120}{2012{a}}{{Segers}}{{}}}
-\bibcite{Segers12}{{121}{2012{b}}{{Segers}}{{}}}
-\bibcite{Shannon2001}{{122}{2001}{{Shannon}}{{}}}
-\bibcite{Shawe2004}{{123}{2004}{{Shawe-Taylor \& Cristianini}}{{Shawe-Taylor and Cristianini}}}
-\bibcite{Shi2012}{{124}{2012}{{Shi \& Horvath}}{{Shi and Horvath}}}
-\bibcite{Shyu2003}{{125}{2003}{{Shyu et~al.}}{{Shyu, Chen, Sarinnapakorn, and Chang}}}
-\bibcite{Smith1987}{{126}{1987}{{Smith}}{{}}}
-\bibcite{smith2003statistics}{{127}{2003}{{Smith}}{{}}}
-\bibcite{Smola2009}{{128}{2009}{{Smola et~al.}}{{Smola, Song, and Teo}}}
-\bibcite{SHS05}{{129}{2005{a}}{{Steinwart et~al.}}{{Steinwart, Hush, and Scovel}}}
-\bibcite{Steinwart2005}{{130}{2005{b}}{{Steinwart et~al.}}{{Steinwart, Hush, and Scovel}}}
-\bibcite{stephenson2009high}{{131}{2009}{{Stephenson}}{{}}}
-\bibcite{Stephenson2003}{{132}{2003}{{Stephenson}}{{}}}
-\bibcite{Sugiyama2010}{{133}{2010}{{Sugiyama}}{{}}}
-\bibcite{Svetnik2003}{{134}{2003}{{Svetnik et~al.}}{{Svetnik, Liaw, Tong, Culberson, Sheridan, and Feuston}}}
-\bibcite{Tavallaee2009}{{135}{2009}{{Tavallaee et~al.}}{{Tavallaee, Bagheri, Lu, and Ghorbani}}}
-\bibcite{Tawn90}{{136}{1990}{{Tawn}}{{}}}
-\bibcite{Tax2002}{{137}{2002}{{Tax \& Duin}}{{Tax and Duin}}}
-\bibcite{Thomas2015}{{138}{2015}{{Thomas et~al.}}{{Thomas, Feuillard, and Gramfort}}}
-\bibcite{Tsybakov1997}{{139}{1997}{{Tsybakov}}{{}}}
-\bibcite{Vanderwalt2011numpy}{{140}{2011}{{Van Der~Walt et~al.}}{{Van Der~Walt, Colbert, and Varoquaux}}}
-\bibcite{Vapnik74}{{141}{1974}{{Vapnik \& Chervonenkis}}{{Vapnik and Chervonenkis}}}
-\bibcite{VertVert}{{142}{2006}{{Vert \& Vert}}{{Vert and Vert}}}
-\bibcite{Vert06thesis}{{143}{2006}{{Vert}}{{}}}
-\bibcite{VCTWMS}{{144}{2012}{{Viswanathan et~al.}}{{Viswanathan, Choudur, Talwar, Wang, Macdonald, and Satterfield}}}
-\bibcite{Wellner78}{{145}{1978}{{Wellner}}{{}}}
-\bibcite{Yamanishi2000}{{146}{2000}{{Yamanishi et~al.}}{{Yamanishi, Takeuchi, Williams, and Milne}}}
+\bibcite{Scott2009}{{120}{2009}{{Scott \& Blanchard}}{{Scott and Blanchard}}}
+\bibcite{Segers12Bernoulli}{{121}{2012{a}}{{Segers}}{{}}}
+\bibcite{Segers12}{{122}{2012{b}}{{Segers}}{{}}}
+\bibcite{Shannon2001}{{123}{2001}{{Shannon}}{{}}}
+\bibcite{Shawe2004}{{124}{2004}{{Shawe-Taylor \& Cristianini}}{{Shawe-Taylor and Cristianini}}}
+\bibcite{Shi2012}{{125}{2012}{{Shi \& Horvath}}{{Shi and Horvath}}}
+\bibcite{Shyu2003}{{126}{2003}{{Shyu et~al.}}{{Shyu, Chen, Sarinnapakorn, and Chang}}}
+\bibcite{Smith1987}{{127}{1987}{{Smith}}{{}}}
+\bibcite{smith2003statistics}{{128}{2003}{{Smith}}{{}}}
+\bibcite{Smola2009}{{129}{2009}{{Smola et~al.}}{{Smola, Song, and Teo}}}
+\bibcite{SHS05}{{130}{2005{a}}{{Steinwart et~al.}}{{Steinwart, Hush, and Scovel}}}
+\bibcite{Steinwart2005}{{131}{2005{b}}{{Steinwart et~al.}}{{Steinwart, Hush, and Scovel}}}
+\bibcite{stephenson2009high}{{132}{2009}{{Stephenson}}{{}}}
+\bibcite{Stephenson2003}{{133}{2003}{{Stephenson}}{{}}}
+\bibcite{Sugiyama2010}{{134}{2010}{{Sugiyama}}{{}}}
+\bibcite{Svetnik2003}{{135}{2003}{{Svetnik et~al.}}{{Svetnik, Liaw, Tong, Culberson, Sheridan, and Feuston}}}
+\bibcite{Tavallaee2009}{{136}{2009}{{Tavallaee et~al.}}{{Tavallaee, Bagheri, Lu, and Ghorbani}}}
+\bibcite{Tawn90}{{137}{1990}{{Tawn}}{{}}}
+\bibcite{Tax2002}{{138}{2002}{{Tax \& Duin}}{{Tax and Duin}}}
+\bibcite{Thomas2015}{{139}{2015}{{Thomas et~al.}}{{Thomas, Feuillard, and Gramfort}}}
+\bibcite{Tsybakov1997}{{140}{1997}{{Tsybakov}}{{}}}
+\bibcite{Vanderwalt2011numpy}{{141}{2011}{{Van Der~Walt et~al.}}{{Van Der~Walt, Colbert, and Varoquaux}}}
+\bibcite{Vapnik74}{{142}{1974}{{Vapnik \& Chervonenkis}}{{Vapnik and Chervonenkis}}}
+\bibcite{VertVert}{{143}{2006}{{Vert \& Vert}}{{Vert and Vert}}}
+\bibcite{Vert06thesis}{{144}{2006}{{Vert}}{{}}}
+\bibcite{VCTWMS}{{145}{2012}{{Viswanathan et~al.}}{{Viswanathan, Choudur, Talwar, Wang, Macdonald, and Satterfield}}}
+\bibcite{Wellner78}{{146}{1978}{{Wellner}}{{}}}
+\bibcite{Yamanishi2000}{{147}{2000}{{Yamanishi et~al.}}{{Yamanishi, Takeuchi, Williams, and Milne}}}
 \@input{abstract.aux}

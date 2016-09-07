@@ -1,4 +1,4 @@
-\begin{thebibliography}{146}
+\begin{thebibliography}{147}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -412,7 +412,7 @@ N.~Goix.
 N.~Goix, R.~Brault, N.~Drougard, and M.~Chiapino.
 \newblock {One Class Splitting Criteria for Random Forests with Application to
   Anomaly Detection}.
-\newblock In {\em Submitted to NIPS}, 2016{\natexlab{a}}.
+\newblock In {\em Submitted}, 2016{\natexlab{a}}.
 
 \bibitem[Goix et~al.(2015{\natexlab{a}})Goix, Sabourin, and Cl{\'e}men{\c
   c}on]{NIPSWORKSHOP15}
@@ -446,7 +446,7 @@ N.~Goix, A.~Sabourin, and S.~Clémençon.
 N.~Goix and A.~Thomas.
 \newblock {How to Evaluate the Quality of Unsupervised Anomaly Detection
   Algorithms?}
-\newblock In {\em Submitted to NIPS}, 2016.
+\newblock In {\em Submitted}, 2016.
 
 \bibitem[Goix et~al.(2016{\natexlab{c}})Goix, Sabourin, and Cl{\'e}men{\c
   c}on]{ARXIV16}
@@ -710,6 +710,11 @@ C.D Scott and R.D Nowak.
 \newblock Learning minimum volume sets.
 \newblock {\em The Journal of Machine Learning Research}, 7:\penalty0 665--704,
   2006.
+
+\bibitem[Scott \& Blanchard(2009)Scott and Blanchard]{Scott2009}
+Clayton Scott and Gilles Blanchard.
+\newblock Novelty detection: Unlabeled data definitely help.
+\newblock In {\em AISTATS}, pages 464--471, 2009.
 
 \bibitem[Segers(2012{\natexlab{a}})]{Segers12Bernoulli}
 J.~Segers.

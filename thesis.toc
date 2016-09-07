@@ -115,19 +115,19 @@
 \contentsline {subsection}{\numberline {9.3.1}One-class splitting criterion}{169}{subsection.9.3.1}
 \contentsline {paragraph}{Naive approach.}{169}{subsection.9.3.1}
 \contentsline {paragraph}{Adaptive approach.}{170}{theorem.9.3.1}
-\contentsline {subsection}{\numberline {9.3.2}Prediction: a majority vote with one single candidate?}{170}{subsection.9.3.2}
-\contentsline {subsection}{\numberline {9.3.3}OneClassRF: a Generic One-Class Random Forest algorithm}{172}{subsection.9.3.3}
-\contentsline {section}{\numberline {9.4}Benchmarks}{173}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}Default parameters of OneClassRF.}{174}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}Hyper-Parameters of tested algorithms}{175}{subsection.9.4.2}
-\contentsline {subsection}{\numberline {9.4.3}Description of the datasets}{175}{subsection.9.4.3}
-\contentsline {subsection}{\numberline {9.4.4}Results}{176}{subsection.9.4.4}
-\contentsline {section}{\numberline {9.5}Theoretical jusification for the one-class splitting criterion}{177}{section.9.5}
-\contentsline {subsection}{\numberline {9.5.1}Underlying model}{177}{subsection.9.5.1}
-\contentsline {subsection}{\numberline {9.5.2}Adaptive approach}{179}{subsection.9.5.2}
-\contentsline {section}{\numberline {9.6}Conclusion}{180}{section.9.6}
-\contentsline {section}{\numberline {9.7}Further details on benchmarks and unsupervised results}{180}{section.9.7}
-\contentsline {chapter}{\numberline {10}Conclusion, limitations \& perspectives}{199}{chapter.10}
-\contentsline {chapter}{Bibliography}{201}{dummy.4}
-\contentsline {paragraph}{RESUME}{213}{appendix*.82}
-\contentsline {paragraph}{ABSTRACT}{213}{appendix*.82}
+\contentsline {subsection}{\numberline {9.3.2}Prediction: a majority vote with one single candidate?}{171}{subsection.9.3.2}
+\contentsline {subsection}{\numberline {9.3.3}OneClassRF: a Generic One-Class Random Forest algorithm}{173}{subsection.9.3.3}
+\contentsline {section}{\numberline {9.4}Benchmarks}{174}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}Default parameters of OneClassRF.}{175}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}Hyper-Parameters of tested algorithms}{176}{subsection.9.4.2}
+\contentsline {subsection}{\numberline {9.4.3}Description of the datasets}{177}{subsection.9.4.3}
+\contentsline {subsection}{\numberline {9.4.4}Results}{177}{subsection.9.4.4}
+\contentsline {section}{\numberline {9.5}Theoretical jusification for the one-class splitting criterion}{178}{section.9.5}
+\contentsline {subsection}{\numberline {9.5.1}Underlying model}{178}{subsection.9.5.1}
+\contentsline {subsection}{\numberline {9.5.2}Adaptive approach}{180}{subsection.9.5.2}
+\contentsline {section}{\numberline {9.6}Conclusion}{181}{section.9.6}
+\contentsline {section}{\numberline {9.7}Further details on benchmarks and unsupervised results}{181}{section.9.7}
+\contentsline {chapter}{\numberline {10}Conclusion, limitations \& perspectives}{201}{chapter.10}
+\contentsline {chapter}{Bibliography}{203}{dummy.4}
+\contentsline {paragraph}{RESUME}{215}{appendix*.83}
+\contentsline {paragraph}{ABSTRACT}{215}{appendix*.83}

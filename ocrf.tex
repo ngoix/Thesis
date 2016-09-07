@@ -115,7 +115,7 @@ the chance for an outlier to be in the target set becomes very small, so that a 
 %
 %In other words, an unreasonable amount of artificial outliers has to be generated, for being dense enough to cover all possible `outlier behavior', \ie~dense enough to transform the two-class classification task into a (one-class) support estimation task.
 
-Looking beyond the RF literature, \cite{Scott2006} propose a methodology to build dyadic decision trees to estimate minimum-volume sets. This is done by reformulating their structural risk minimization problem to be able to use \cite{Blanchard2004}'s algorithm. 
+Looking beyond the RF literature, \cite{Scott2006} propose a methodology to build dyadic decision trees to estimate minimum-volume sets \citep{Polonik97, Einmahl1992}. This is done by reformulating their structural risk minimization problem to be able to use \cite{Blanchard2004}'s algorithm. 
 While this methodology can also be used for non-dyadic trees pruning (assuming such a tree has been previously constructed, \eg~using some greedy heuristic), it does not allow to effectively grow such trees. A dyadic structure has to be assumed, to be able to 1) link the tree growing process with the general optimization problem and 2) to control the complexity of the resulting partitions, with respect to the regularity of the underlying distribution. In other words, this strong tree structure is needed to derive theoretical guaranties.
 % This methodology can also be used for non-dyadic trees, by assuming such a tree has been
 % previously constructed (\eg~using some greedy heuristic). Optimization then reduces to a classical pruning problem. 
@@ -136,15 +136,15 @@ introduce such a methodology. It builds on a natural adaptation of two-class % G
 splitting criteria to the one-class setting, as well as an adaptation of the two-class majority vote.
 
 \textbf{Basic idea.} To split a node without second class (outliers) examples, the idea is as follows.
-Each time we are looking for the best split for a node $t$, we simply replace (in the two-class \emph{impurity decrease} to be maximized \eqref{ocrf:tc_proxy}) the second class proportion going to the left child node $t_L$ by the proportion expectation volume($t_L$)/volume($t$) (idem for the right node). 
+Each time we are looking for the best split for a node $t$, we simply replace (in the two-class \emph{impurity decrease} to be maximized \eqref{ocrf:tc_proxy}) the second class proportion going to the left child node $t_L$ by the proportion expectation $\leb(t_L)/\leb(t)$ (idem for the right node), where $\leb(t)$ denotes the volume of the rectangular cell corresponding to node $t$. 
 It ensures that one child node tries to capture the maximum number of observations with a minimal volume, while the other child looks for the opposite. %Such volume constraint/mass objective are similarly used to define minimum-volume sets \citep{Polonik97, Einmahl1992}.
 
 This simple idea corresponds in fact to an adaptive modeling of the outlier distribution.
 The proportion expectation mentioned above being weighted proportionally to the number of normal instances in node $t$, the resulting outlier distribution is tightly concentrated around the inliers. %as a result, the latter concentrates outside, closely around but also inside the support of the normal distribution.
 %
-Besides, and this attests the consistency of our approach with the two-class framework, it turns out that the one-class model promoted here corresponds to the asymptotic behavior of an adaptive (\wrt the tree growing process) outliers generating methodology.
+Besides, and this attests the consistency of our approach with the two-class framework, it turns out that the one-class model promoted here corresponds to the asymptotic behavior of an adaptive (\wrt~the tree growing process) outliers generating methodology.
 
-This chapter is structured as follows. Section~\ref{ocrf:sec:background} provides the reader with necessary background, to address Section~\ref{ocrf:sec:one-class} which proposes a generic adaptation of RFs to the one-class setting and describes a generic one-class random forest algorithm. The latter is compared empirically with state-of-the-art anomaly detection methods in Section~\ref{ocrf:sec:benchmark}.
+This chapter is structured as follows. Section~\ref{ocrf:sec:background} provides the reader with necessary background, to address Section~\ref{ocrf:sec:one-class} which proposes a generic adaptation of RFs to the one-class setting and describes a generic one-class random forest algorithm. The latter is compared empirically with state-of-the-art anomaly detection methods in Section~\ref{ocrf:sec:benchmark}. Finally a theoretical justification of the one-class criterion is given in Section~\ref{sec:ocrf:theory}.
 %
 \section{Background on decision trees}\label{ocrf:sec:background}
 %% TODO DROUGUI: why RANDOM forests??
@@ -156,7 +156,7 @@ Each internal node $t$ with value $\mathcal{X}_t$ is labeled with a split featur
 The external nodes (or the \emph{leaves}) form a partition of the input space $\mathcal{X}$.
 
 In a supervised classification setting, these binary trees are called \emph{classification trees} and
-prediction is made by assigning to each sample $x \in \mathcal{X}$ the majority class in the leaf containing $x$. This is called the \emph{majority vote}.
+prediction is made by assigning to each sample $x \in \mathcal{X}$ the majority class of the leaves containing $x$. This is called the \emph{majority vote}.
 Classification trees are usually built using an impurity measure $i(t)$ whose decrease is maximized at each split of a node $t$, yielding an optimal split $(m_t^*, c_t^*)$. The decrease of impurity (also called \emph{goodness of split}) $\Delta i(t, t_L, t_R)$ \wrt~the split $(m_t, c_t)$ corresponding to the partition $\mathcal{X}_t=\mathcal{X}_{t_L}\sqcup \mathcal{X}_{t_R}$ of the node $t$ is defined as
 \begin{align}
 \label{ocrf:eq:impurity_measure_decrease}
@@ -218,39 +218,48 @@ The two reasons why RFs do not apply to one-class classification are that the st
 
 \subsection{One-class splitting criterion}
 \label{sec:one-class-crit}
+As one does not observe the second-class (outliers), $n_t'$ needs to be defined. In the naive approach below, it is defined as $n_t':= n' \leb(\mathcal{X}_t) / \leb(\mathcal{X})$, where $n'$ is the supposed total number of (hidden) outliers. In the adaptive approach hereafter, it will be defined as $n_t' := \gamma n_t$, with typically $\gamma=1$. Thus, the class ratio $\gamma_t := n_t'/n_t$ is defined in both approaches and goes to $0$ when $\leb(\mathcal{X}_t) \to 0$ in the naive approach, while it is maintained constant $\gamma_t \equiv \gamma$ in the adaptive one.
 \paragraph{Naive approach.}
-A naive approach to extend the Gini splitting criterion to the one-class setting is to assume a  uniform distribution for the second class (outliers), and to replace their number $n_t'$ in node $t$ by the expectation $n' \leb(\mathcal{X}_t) / \leb(\mathcal{X})$, where $n'$ denotes the total number of outliers (\eg~a proportion of the number of inliers).
+A naive approach to extend the Gini splitting criterion to the one-class setting is to assume a  uniform distribution for the second class (outliers), and to replace their number $n_t'$ in node $t$ by the expectation $n' \leb(\mathcal{X}_t) / \leb(\mathcal{X})$, where $n'$ denotes the total number of outliers (for instance, it can be chosen as a proportion of the number of inliers).
 Here and hereafter, $\leb$ denotes the Lebesgue measure on $\mathbb{R}^d$.
 %
-The problem with this approach appears when the dimension is not small. As mentioned in the introduction (curse of dimensionality),
-when actually generating $n'$ uniform outliers on $\mathcal{X}$, the probability that a node (sufficiently small to yield a good precision) contains at least one of them is very small. That is why data-dependent distributions for the outlier class are often considered \cite{Desir12, Shi2012}.
+The problem with this approach appears when the dimension is \emph{not small}. As mentioned in the introduction (curse of dimensionality),
+when actually generating $n'$ uniform outliers on $\mathcal{X}$, the probability that a node (sufficiently small to yield a good precision) contains at least one of them is very close to zero. That is why data-dependent distributions for the outlier class are often considered \citep{Desir12, Shi2012}.
 %
 Taking the expectation $n' \leb(\mathcal{X}_t) / \leb(\mathcal{X})$ instead of the number of points in node $t$ does not solve the curse of dimensionality mentionned in the introduction:
 the volume proportion $L_t:=\leb(\mathcal{X}_t) / \leb(\mathcal{X})$ is very close to $0$ for nodes $t$ deep in the tree, specially in large dimension.
 %
 In addition, we typically grow trees on sub-samples of the input data, meaning that even the root node of the trees may be very small compared to the hyper-rectangle containing all the input data.
 %
-An other problem is that the Gini splitting criterion is skew-sensitive \citep{Flach2003}, and has here to be apply on nodes $t$ with $0 \simeq n_t' \ll n_t$. When trying empirically this approach, we observe that splitting such nodes produces a child containing (almost) all the data (see Section~\ref{sec:theory}).
+An other problem is that the Gini splitting criterion is skew-sensitive \citep{Flach2003}, and has here to be apply on nodes $t$ with $0 \simeq n_t' \ll n_t$. When trying empirically this approach, we observe that splitting such nodes produces a child containing (almost) all the data (see Section~\ref{sec:ocrf:theory}).
 
 %
 \begin{remark}
 To illustrate the fact that the volume proportion $L_t:=\leb(\mathcal{X}_t) / \leb(\mathcal{X})$ becomes very close to zero in large dimension for lots of nodes $t$ (in particular the leaves), suppose for the sake of simplicity that the input space is $\mathcal{X} = [0,1]^d$. Suppose that we are looking for a rough precision of $1/2^3=0.125$ in each dimension, \ie~a unit cube precision of $2^{-3d}$.
-To achieve such a precision, we will typically need to use the splitting criterion on nodes/cells $t$ of volume of order $2^{-3d}$, namely with $L_t = 1/2^{3d}$.
-Note that if we decide to choose $n'$ to be of order $n * 2^{3d}$ such that $n' L_{t}$ is not negligible \wrt~$n$, the same (reversed) problem of unbalanced classes appears on nodes with small depth. 
+To achieve such a precision, the splitting criterion has to be used on nodes/cells $t$ of volume of order $2^{-3d}$, namely with $L_t = 1/2^{3d}$.
+Note that if we decide to choose $n'$ to be $2^{3d}$ times larger than the number of inliers in order that $n' L_{t}$ is not negligible \wrt~the number of inliers, the same (reversed) problem of unbalanced classes appears on nodes with small depth. 
 \end{remark}
 
 
 \paragraph{Adaptive approach.}
-The solution is to remove the uniform assumption on the outliers, and to choose their distribution adaptively in such a way it is tightly concentrated around the inlier distribution. Formally, the idea is to maintain constant the class ratio $\gamma_t := n_t' / n_t$ on each node $t$: before looking for the best split, we update the number of outliers to be equal (up to a scaling constant $\gamma$) to the number of inliers, $n_t' = \gamma n_t$. These (hidden) outliers are uniformly distributed on node $t$. The parameter $\gamma$ is typically set to $\gamma = 1$, see Remark~\ref{ocrf:rk:gamma} below.
-With this methodology, one cannot derive a one-class version of the Gini index \eqref{ocrf:eq:gini}, but we can define a one-class version of the proxy of the impurity decrease \eqref{ocrf:tc_proxy}, by simply replacing $n_{t_L}'$ (resp. $n_{t_R}'$) by $\gamma n_t \frac{\leb(\mathcal{X}_{t_L})}{\leb(\mathcal{X}_{t})}$ (resp. $\gamma n_t \frac{\leb(\mathcal{X}_{t_L})}{\leb(\mathcal{X}_{t})}$):
+Our solution is to remove the uniform assumption on the outliers, and to choose their distribution adaptively in such a way it is tightly concentrated around the inlier distribution. Formally, the idea is to maintain constant the class ratio $\gamma_t := n_t' / n_t$ on each node $t$: before looking for the best split, we update the number of outliers to be equal (up to a scaling constant $\gamma$) to the number of inliers, $n_t' = \gamma n_t$, \ie~$\gamma_t \equiv \gamma$. These (hidden) outliers are uniformly distributed on node $t$. The parameter $\gamma$ is typically set to $\gamma = 1$, see Remark~\ref{ocrf:rk:gamma} below. 
+
+\textbf{Resulting density.} Figure~\ref{ocrf:fig:outlier_density} shows the corresponding outlier density $G$. 
+Note that $G$ is a piece-wise approximation of $F$. Considering the Neyman-Pearson test $X \sim F$ vs. $X \sim G$ instead of $X \sim F$ vs. $X \sim \leb$ may seem unusual at first sight. However, note that there is $\epsilon>0$ such that $G>\epsilon$ on the entire input space, since the density $G$ is constant on each node and equal to the average of $F$ on this node \emph{before splitting it}. If the average of $F$ was estimated to be zero (no inlier in the node), the node would not have been splitted, from where the existence of $\epsilon$.
+%
+Thus, one might think of $G$ as  
+% Note that $G$ on some leaf $t_m$ with parents $t_0, \ldots, t_{m-1}$ takes the form $G_{|t_m} = \sum_{j=0}^{m} \int_{\mathcal{X}_{t_i}} F = 1/\leb{\mathcal{X}} + \sum_{j=1}^{m} \int_{\mathcal{X}_{t_i}} F $
+ a piece-wise approximation of $F_\epsilon := (1 - \epsilon) F + \epsilon \leb$. Yet, one can easily show that optimal tests for the Neymann-Pearson problem $H_0: X \sim F$ vs. $H_1: X \sim F_\epsilon$ are identical to the optimal tests for $H_0: X \sim F$ vs. $H_1: X \sim \leb$, since the corresponding likelihood ratios are related by a monotone transformation, see \cite{Scott2009} for instance (in fact, this reference shows that these two problems are even equivalent in terms of consistency and rates of convergence of the learning rules).
+
+With this methodology, one cannot derive a one-class version of the Gini index \eqref{ocrf:eq:gini}, but we can define a one-class version of the proxy of the impurity decrease \eqref{ocrf:tc_proxy}, by simply replacing $n_{t_L}'$ (resp. $n_{t_R}'$) by $n_t' \lambda_L$ (resp. $n_t' \lambda_R$), where $\lambda_L := \leb(\mathcal{X}_{t_L}) / \leb(\mathcal{X}_{t})$ and $\lambda_R := \leb(\mathcal{X}_{t_R}) / \leb(\mathcal{X}_{t})$ are the volume proportion of the two child nodes:
+
 \begin{align}
 \label{ocrf:oc_proxy_ad2}
-I_G^{OC-ad}(t_L, t_R)= \frac{n_{t_L} \gamma n_t \lambda_L}{n_{t_L} + \gamma n_t \lambda_L} + \frac{n_{t_R} \gamma n_t \lambda_R}{n_{t_R} + \lambda_R},
+I_G^{OC-ad}(t_L, t_R)= \frac{n_{t_L} \gamma n_t \lambda_L}{n_{t_L} + \gamma n_t \lambda_L} + \frac{n_{t_R} \gamma n_t \lambda_R}{n_{t_R} + \gamma n_t \lambda_R}.
 \end{align}
-with $\lambda_L = \frac{\leb(\mathcal{X}_{t_L})}{\leb(\mathcal{X}_{t})}$ and $\lambda_R = \frac{\leb(\mathcal{X}_{t_R})}{\leb(\mathcal{X}_{t})}$.
 
 Minimization of the one-class Gini improvement proxy \eqref{ocrf:oc_proxy_ad2} is illustrated in Figure \ref{ocrf:fig:split_alpha}. %and \ref{ocrf:fig:split_two_modes}.
-Note that $n_t'\lambda_L$ (resp. $n_t'\lambda_R$) is the expectation of the number of uniform observations among $n_t'$ falling into the left (resp. right) node.
+Note that $n_t'\lambda_L$ (resp. $n_t'\lambda_R$) is the expectation of the number of uniform  observations (on $\mathcal{X}_t$) among $n_t'$ falling into the left (resp. right) node.
 
 Choosing the split minimizing $I_G^{OC-ad}(t_L, t_R)$ at each step of the tree building process, corresponds to generating $n_t' = \gamma n_t$ outliers each time the best split has to be chosen for node $t$, and then using the classical two-class Gini proxy \eqref{ocrf:tc_proxy}. The only difference is that $n_{t_L}'$ and $n_{t_R}'$ are replaced by their expectations $n_t'\lambda_{t_L}$ and $n_t'\lambda_{t_R}$ in our method.
 
@@ -272,7 +281,14 @@ $I_S^{OC-ad}(t_L, t_R) = n_{t_L} \log_2 \frac{n_{t_L} + \gamma n_t \lambda_L}{n_
 %\end{align*}
 \end{remark}
 
-XXX todo: figure density uniform vs escalier
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\linewidth]{fig_source/ocrf_fig/outlier_density.png}
+  \caption{Outliers assumed distribution $G$ in the naive and adaptive approach.  In the naive approach, $G$ does not depends on the tree and is constant on the input space. In the adaptive approach the distribution depends on the inlier distribution $F$ through the tree. The outliers density is constant and equal to the average of $F$ on each node before splitting it.
+%In the case of more than one tree, the resulting outlier distribution is then the average of such tree-specific densities.
+}
+  \label{ocrf:fig:outlier_density}
+\end{figure}
 
 \newcommand{\pointSampled}[1]{
     \coordinate (A) at (#1);
@@ -397,7 +413,7 @@ XXX todo: figure density uniform vs escalier
 the dataset under study and the underlying density.
 After some splits on this initial node $\mathcal{X}$,
 let us consider the node $\mathcal{X}_t$ illustrated in the right part of this figure:
-without the proposed adaptive approach,
+without the proposed adaptive approach, the class ratio
 $\gamma_t$ becomes too small
 and leads to poor splits %(normal data are condensed on a very small volume)
 (all the data are in the `normal side' of the split, which thus does not discriminate at all).
@@ -977,7 +993,7 @@ The anomaly rate is arbitrarily bounded to $10\%$ max (before splitting data int
 
 
 \section{Theoretical jusification for the one-class splitting criterion}
-\label{sec:theory}
+\label{sec:ocrf:theory}
 \subsection{Underlying model}
 \label{ocrf:sec:model}
 In order to generalize the two-class framework to the one-class one, we need to consider the population versions associated to empirical quantities \eqref{ocrf:eq:impurity_measure_decrease}, \eqref{ocrf:eq:gini} and \eqref{ocrf:eq:two_class_proxy}, as well as the underlying model assumption. The latter can be described as follows.

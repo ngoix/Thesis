@@ -116,8 +116,8 @@
 \contentsline {paragraph}{Naive approach.}{169}{subsection.9.3.1}
 \contentsline {paragraph}{Adaptive approach.}{170}{theorem.9.3.1}
 \contentsline {subsection}{\numberline {9.3.2}Prediction: a majority vote with one single candidate?}{171}{subsection.9.3.2}
-\contentsline {subsection}{\numberline {9.3.3}OneClassRF: a Generic One-Class Random Forest algorithm}{173}{subsection.9.3.3}
-\contentsline {section}{\numberline {9.4}Benchmarks}{174}{section.9.4}
+\contentsline {subsection}{\numberline {9.3.3}OneClassRF: a Generic One-Class Random Forest algorithm}{172}{subsection.9.3.3}
+\contentsline {section}{\numberline {9.4}Benchmarks}{175}{section.9.4}
 \contentsline {subsection}{\numberline {9.4.1}Default parameters of OneClassRF.}{176}{subsection.9.4.1}
 \contentsline {subsection}{\numberline {9.4.2}Hyper-Parameters of tested algorithms}{176}{subsection.9.4.2}
 \contentsline {subsection}{\numberline {9.4.3}Description of the datasets}{177}{subsection.9.4.3}

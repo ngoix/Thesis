@@ -2,48 +2,47 @@ This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: ecs.bst
-A level-1 auxiliary file: abstract.aux
 Database file #1: Thesis.bib
 Warning--empty journal in KDD99
-You've used 147 entries,
+You've used 154 entries,
             2638 wiz_defined-function locations,
-            1443 strings with 26119 characters,
-and the built_in function-call counts, 66748 in all, are:
-= -- 6268
-> -- 3395
-< -- 113
-+ -- 1263
-- -- 1082
-* -- 4851
-:= -- 10996
-add.period$ -- 455
-call.type$ -- 147
-change.case$ -- 927
-chr.to.int$ -- 140
-cite$ -- 148
-duplicate$ -- 3174
-empty$ -- 5300
-format.name$ -- 1315
-if$ -- 13817
+            1483 strings with 27228 characters,
+and the built_in function-call counts, 70265 in all, are:
+= -- 6614
+> -- 3575
+< -- 117
++ -- 1328
+- -- 1139
+* -- 5151
+:= -- 11569
+add.period$ -- 476
+call.type$ -- 154
+change.case$ -- 973
+chr.to.int$ -- 147
+cite$ -- 155
+duplicate$ -- 3314
+empty$ -- 5569
+format.name$ -- 1387
+if$ -- 14531
 int.to.chr$ -- 8
 int.to.str$ -- 1
-missing$ -- 156
-newline$ -- 742
-num.names$ -- 594
-pop$ -- 1550
+missing$ -- 163
+newline$ -- 777
+num.names$ -- 622
+pop$ -- 1606
 preamble$ -- 1
-purify$ -- 795
+purify$ -- 834
 quote$ -- 0
-skip$ -- 2385
+skip$ -- 2492
 stack$ -- 0
-substring$ -- 2720
-swap$ -- 382
+substring$ -- 2947
+swap$ -- 389
 text.length$ -- 27
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1542
+type$ -- 1619
 warning$ -- 1
-while$ -- 589
+while$ -- 624
 width$ -- 0
-write$ -- 1864
+write$ -- 1955
 (There was 1 warning)

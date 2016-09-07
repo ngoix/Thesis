@@ -1,4 +1,4 @@
-\begin{thebibliography}{147}
+\begin{thebibliography}{154}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -64,6 +64,13 @@ J.~Beirlant, P.~Vynckier, and J.~L. Teugels.
 Jan Beirlant, Mikael Escobar-Bach, Yuri Goegebeur, and Armelle Guillou.
 \newblock Bias-corrected estimation of stable tail dependence function.
 \newblock {\em https://hal.archives-ouvertes.fr/hal-01115538}, Feb 2015.
+
+\bibitem[Beirlant \& Goegebeur(2004)Beirlant and Goegebeur]{Beirlant2004}
+Jan Beirlant and Yuri Goegebeur.
+\newblock Local polynomial maximum likelihood estimation for pareto-type
+  distributions.
+\newblock {\em Journal of Multivariate Analysis}, 89\penalty0 (1):\penalty0
+  97--118, 2004.
 
 \bibitem[Biau et~al.(2008)Biau, Devroye, and Lugosi]{Biau2008}
 G.~Biau, L.~Devroye, and G.~Lugosi.
@@ -212,6 +219,16 @@ C.~Cortes and V.~Vapnik.
 A.~Cuevas and R.~Fraiman.
 \newblock A plug-in approach to support estimation.
 \newblock {\em The Annals of Statistics}, pages 2300--2312, 1997.
+
+\bibitem[Daouia et~al.(2013)Daouia, Gardes, Girard, et~al.]{Daouia2013}
+Abdelaati Daouia, Laurent Gardes, St{\'e}phane Girard, et~al.
+\newblock On kernel smoothing for extremal quantile regression.
+\newblock {\em Bernoulli}, 19\penalty0 (5B):\penalty0 2557--2589, 2013.
+
+\bibitem[Daouia et~al.(2011)Daouia, Gardes, Girard, and Lekina]{Daouia2011}
+Abdelaati Daouia, Laurent Gardes, St{\'e}phane Girard, and Alexandre Lekina.
+\newblock Kernel estimators of extreme level curves.
+\newblock {\em Test}, 20\penalty0 (2):\penalty0 311--333, 2011.
 
 \bibitem[Davis \& Goadrich(2006)Davis and Goadrich]{Davis2006}
 J.~Davis and M.~Goadrich.
@@ -381,6 +398,19 @@ Y.~Freund, R.E Schapire, et~al.
 \newblock Experiments with a new boosting algorithm.
 \newblock In {\em ICML}, 1996.
 
+\bibitem[Gardes \& Girard(2008)Gardes and Girard]{Gardes2008}
+Laurent Gardes and St{\'e}phane Girard.
+\newblock A moving window approach for nonparametric estimation of the
+  conditional tail index.
+\newblock {\em Journal of Multivariate Analysis}, 99\penalty0 (10):\penalty0
+  2368--2388, 2008.
+
+\bibitem[Gardes et~al.(2010)Gardes, Girard, and Lekina]{Gardes2010}
+Laurent Gardes, St{\'e}phane Girard, and Alexandre Lekina.
+\newblock Functional nonparametric estimation of conditional extreme quantiles.
+\newblock {\em Journal of Multivariate Analysis}, 101\penalty0 (2):\penalty0
+  419--433, 2010.
+
 \bibitem[Genuer et~al.(2008)Genuer, Poggi, and Tuleau]{Genuer2008}
 R.~Genuer, J.-M. Poggi, and C.~Tuleau.
 \newblock Random forests: some methodological insights.
@@ -400,6 +430,20 @@ P.~Geurts, D.~Ernst, and L.~Wehenkel.
 C.~Gini.
 \newblock Variabilita e mutabilita.
 \newblock {\em Memorie di metodologia statistica}, 1912.
+
+\bibitem[Girard \& Jacob(2008)Girard and Jacob]{Girard2008}
+St{\'e}phane Girard and Pierre Jacob.
+\newblock Frontier estimation via kernel regression on high power-transformed
+  data.
+\newblock {\em Journal of Multivariate Analysis}, 99\penalty0 (3):\penalty0
+  403--420, 2008.
+
+\bibitem[Girard \& Menneteau(2005)Girard and Menneteau]{Girard2005}
+St{\'e}phane Girard and Ludovic Menneteau.
+\newblock Central limit theorems for smoothed extreme value estimates of
+  poisson point processes boundaries.
+\newblock {\em Journal of Statistical Planning and Inference}, 135\penalty0
+  (2):\penalty0 433--460, 2005.
 
 \bibitem[Goix(2016)]{ICMLworkshop16}
 N.~Goix.

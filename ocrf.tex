@@ -288,7 +288,7 @@ $I_S^{OC-ad}(t_L, t_R) = n_{t_L} \log_2 \frac{n_{t_L} + \gamma n_t \lambda_L}{n_
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.8\linewidth]{fig_source/ocrf_fig/outlier_density.png}
-  \caption{Outliers assumed distribution $G$ in the naive and adaptive approach.  In the naive approach, $G$ does not depends on the tree and is constant on the input space. In the adaptive approach the distribution depends on the inlier distribution $F$ through the tree. The outliers density is constant and equal to the average of $F$ on each node before splitting it.
+  \caption{Outliers assumed distribution $G$ in the naive and adaptive approach.  In the naive approach, $G$ does not depends on the tree and is constant on the input space. In the adaptive approach the distribution depends on the inlier distribution $F$ through the tree. The outliers density is constant and equal to the average of $F$ on each node before splitting it. Note that $G$ is tightly concentrated around the inliers, as required in high dimension.
 %In the case of more than one tree, the resulting outlier distribution is then the average of such tree-specific densities.
 }
   \label{ocrf:fig:outlier_density}

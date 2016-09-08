@@ -1,4 +1,4 @@
-\begin{changemargin}{-2.5cm}{-1.2cm} %XXX book!!!
+\begin{changemargin}{-2.5cm}{-1.2cm} %XXX book!!!  cf definition.tex a la fin pour options
 
 
 \begin{abstract}
@@ -15,25 +15,25 @@
 \paragraph{RESUME}
 
 {\small
-La détection d'anomalies, d'outliers ou de nouveauté n'est pas seulement une étape utile de pré-traitement des données avant d'entrainer un algorithm d'apprentissage statistique. C'est aussi une composante importante d'une grande variété d'applications concrètes, allant de la finance, de l'assurance à la biologie computationnelle en passant par la santé, les télécommunications ou les sciences environnementales. La détection d'anomalie est aussi de plus en plus utile au monde moderne, où il est necessaire de surveiller et de diagnostiquer un nombre croissant de systèmes autonomes. La recherche en détection d'anomalies inclues la création d'algorithmes efficaces accompagnée d'une étude théorique, mais pose aussi la question de savoir comment évaluer de tels algorithmes, et plus particulièrement lorsqu'on ne dispose pas de données labélisées -- comme dans une multitude de contextes industriels.
+La détection d'anomalies, d'outliers ou de nouveauté n'est pas seulement une étape utile de pré-traitement des données pour entrainer un algorithme d'apprentissage statistique. C'est aussi une composante importante d'une grande variété d'applications concrètes, allant de la finance, de l'assurance à la biologie computationnelle en passant par la santé, les télécommunications ou les sciences environnementales. La détection d'anomalie est aussi de plus en plus utile au monde moderne, où il est necessaire de surveiller et de diagnostiquer un nombre croissant de systèmes autonomes. La recherche en détection d'anomalies inclut la création d'algorithmes efficaces accompagnée d'une étude théorique, mais pose aussi la question de l'évaluation de tels algorithmes, particulièrement lorsqu'on ne dispose pas de données labellisées -- comme dans une multitude de contextes industriels.
 %
 En d'autres termes, l'élaboration du modèle et son étude théorique, mais aussi la sélection du modèle.
 
-Dans cette thèse, nous abordons ces deux aspects. En pratique, un algorithme de détection d'anomalie retourne une \emph{fonction de score} à valeurs réelles définie sur l'espace des données de manière à quantifier dans quelle mesure chaque observation doit être considérée comme anormale.
+Dans cette thèse, nous abordons ces deux aspects. En pratique, un algorithme de détection d'anomalie retourne une \emph{fonction de score} à valeurs réelles définie sur l'espace des données de manière à quantifier l'anormalitédes observations.
 %
-Tout d'abord, est introduit un critère alternatif au critère masse-volume existant, pour mesurer les performances d'une fonction de score.
+Tout d'abord, nous introduisons un critère alternatif au critère masse-volume existant, pour mesurer les performances d'une fonction de score.
 %
-Ce critère, appelé \emph{critère d'excès de masse}, à pour but la construction de fonctions de score \emph{via} la minimisation d'un risque empirique.
+Ce critère, appelé \emph{critère d'excès de masse}, à pour but la construction de fonctions de score \emph{via} la minimisation du risque empirique.
 
 La seconde partie de ce travail porte sur les régions \emph{extrêmes}, qui sont d'un interêt particulier en détection d'anomalie. En particulier, des outils probabilistes issues de la théorie des valeurs extrêmes (multivariées), comme la STDF (stable tail dependence function) et la mesure angulaire, peuvent être combinés avec une approche plus classique de détection d'anomalie afin de gagner en précision sur ces régions extrêmes.
 Des bornes non-asymptotiques sont établies pour l'estimation de la STDF, cette dernière caractérisant la structure de dépendence dans les extrêmes.
 %
-Une méthode statistique produisant une représentation (possiblement sparse) de la structure de dépendence est ensuite dérivée de l'estimation non-paramétrique de la mesure angulaire restreinte à un ensemble représentatif de directions. Cette représentation peut être utilisée pour produire une fonction de score précise sur lesz régions extrêmes. Des bornes non-asymptotiques attestant de la qualité de l'estimation sont établies.
+Une méthode statistique produisant une représentation (possiblement parcimonieuse) de la structure de dépendence est ensuite dérivée de l'estimation non-paramétrique de la mesure angulaire restreinte à un ensemble représentatif de directions. Cette représentation peut être utilisée pour produire une fonction de score précise sur les régions extrêmes. Des bornes non-asymptotiques attestant de la qualité de l'estimation sont établies.
 %
 
-La dernière partie de ce travail est essentiellement de nature heuristique. D'un point de vue sélection de modèle, est conduite une étude empirique pour l'usage des courbes masse-volume et d'excès de masse (en l'absence de données labelisées). Comme ces courbes ne peuvent généralement pas être estimées avec qualité en grande dimension, une méthode basée sur le sous-échantillonage de features est aussi developpée et testée, étendant ainsi l'usage de ces deux critères à des jeux de données de grande dimension.
+La dernière partie de ce travail est essentiellement de nature heuristique. D'un point de vue sélection de modèle, nous étudions empiriquement l'usage des courbes masse-volume et d'excès de masse (en l'absence de données labellisées). Comme ces courbes ne peuvent généralement pas être estimées avec qualité en grande dimension, une méthode basée sur le sous-échantillonage de features est aussi developpée et testée, étendant ainsi l'usage de ces deux critères à des jeux de données de grande dimension.
 
-Du point de vue élaboration de modèle, un algorithme efficace basé sur les forêts aléatoires et produisant des fonctions de score précises est proposé. Cet algorithme se base sur une extention naturelle des critères de split standards au cas one-class, et donne des performances remarquables selon une benchmark incluant une multitude d'algorithm de détection d'anomalie utilisés dans l'industrie.
+Du point de vue élaboration de modèle, un algorithme efficace basé sur les forêts aléatoires et produisant des fonctions de score précises est proposé. Cet algorithme se base sur une extention naturelle des critères de split standards au cas one-class, et donne des performances remarquables selon une benchmark incluant une multitude d'algorithme de détection d'anomalie utilisés dans l'industrie.
 %
 }
 

@@ -12,10 +12,17 @@ In addition to a review of popular results and sketches of proofs from the exist
 a VC-type inequality is proved using a Bernstein-type concentration inequality. A corollary of this VC-type inequality focusing on maximal deviation on low-probability regions is needed in Chapter~\ref{colt}.
 
 We recommend \cite{McDiarmid98} and \cite{Janson2002} for good references on this subject, and \cite{Massart2007, BLM2013} for a extensive review on concentration inequalities.
+%
+About the impact of the concentration of measure phenomenon in EVT, see \cite{Boucheron2012, Boucheron2015} and the PhD thesis \cite{ThomasMaud2015}.
+%
+References on classification and statistical learning theory (not gathered by this background part), include \cite{Vapnik74, Devroye96, Bousquet04, BBL05, Bishop2006, Friedman2001, Vapnik2013} 
+
+
 %  Ce document présente des résultats généraux sur les inégalités de concentration de mesure et quelques applications, notamment aux graphes aléatoires.
 % Il est basé sur les articles de Colin McDiarmid "Concentration", de Terence Tao "Talagrand's concentration inequality", et de Svante Janson "On concentration of probability".
 % Dans ce travail, j'ai choisi de mettre en relation les trois articles de la facon suivante : J'utilise l'article de McDiarmid pour illustrer et démontrer dans un cadre plus général les résultats fondamentaux exposés dans l'article de Janson, dont le but est de donner un survol des différentes méthodes pour obtenir des inégalités de concentration. J'ai choisi quelques applications présentées par McDiarmid, ainsi que dans l'article de Tao.
 %Nous verrons deux méthodes pour obtenir des inégalités de concentration : la méthode des différences bornées, qui est une méthode de martingales, puis la méthode assez récente due à Talagrand, qui donne souvent des résultats plus forts que la précédente.
+
 
 
 
@@ -498,7 +505,7 @@ However, note that the latter is bounded \emph{independently of the distribution
 Also note that $q \le \sup_{A \in \mathcal{A}} \mathbb{P}(\mb X \in A) \le \mathbb{P}(\mb X \in \cup_{A \in \mathcal{A}}A :=p) $, the probability of hitting the class $\mathcal{A}$ at all.
 \end{remark}
 
-Thanks to Lemma~\ref{back:lem-rademacher}, Theorem~\ref{3.15} applies and the following inequality holds true instead of \eqref{eq:mcd1}.
+Thanks to Lemma~\ref{back:lem-1}, Theorem~\ref{3.15} applies and the following inequality holds true instead of \eqref{eq:mcd1}.
 
 \begin{proposition}
 \label{TVCsharp}
@@ -511,6 +518,7 @@ f(\mb X_1,\ldots,\mb X_n) \le \mathbb{E}f(\mb X_1,\ldots,\mb X_n) + \frac{2}{3n}
 \end{proposition}
 
 \begin{proof}
+From Lemma~\ref{back:lem-1} and Theorem~\ref{3.15}, we have
 $$\mathbb{P}\left [ f(\mb X_1,\ldots,\mb X_n) - \mathbb{E} f(\mb X_1,\ldots,\mb X_n) ~\ge~ t \right] ~\le~ e^{-\frac{n t^2}{2q + \frac{2t}{3}} },$$
 or equivalently
 $$\mathbb{P}\left [ \frac{1}{q} \left(f(\mb X_1,\ldots,\mb X_n) - \mathbb{E} f(\mb X_1,\ldots,\mb X_n)\right) ~\ge~ t \right] ~\le~ e^{-\frac{n qt^2}{2 + \frac{2t}{3}} }.$$
@@ -677,7 +685,7 @@ $\gamma = 0$ (continuous extension). % The sign of $\gamma$ controls the shape o
 The sign of $\gamma$ controls the shape of the tail of $F$.
  In the case $\gamma >0$ (as for the Cauchy distribution), $G$ is referred to as a Fréchet distribution and $F$ has a heavy tail. If $\gamma=0$ (as for normal distributions), $G$ is a Gumbel distribution and $F$ has a light tail. If $\gamma < 0$ (as for uniform distributions), $G$ is called a Weibull distribution and $F$ has a finite endpoint.
 Estimates of univariate extreme quantiles then rely on estimates of the parameters $a_n$, $b_n$, and $\gamma$, see \cite{DEd1989}, \cite{ELL2009}. 
-The Hill estimator or one of its generalizations, see \cite{Hill1975}, \cite{Smith1987}, \cite{BVT1996}, provides an estimate of the tail parameter $\gamma$. 
+The Hill estimator or one of its generalizations, see \cite{Hill1975, Smith1987, BVT1996, Girard2004, Boucheron2015}, provides an estimate of the tail parameter $\gamma$. 
 \begin{example}
 \begin{itemize}
 \item Assume the $X_i$'s to be standard exponential variables (their cdf is $F(x) = 1 - e^{-x}$). In that case, letting $a_n=1$ and $b_n = \log(n)$, we have

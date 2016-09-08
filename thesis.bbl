@@ -1,4 +1,4 @@
-\begin{thebibliography}{154}
+\begin{thebibliography}{162}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -83,6 +83,11 @@ G.~Biau and E.~Scornet.
 \newblock A random forest guided tour.
 \newblock {\em Test}, 25\penalty0 (2):\penalty0 197--227, 2016.
 
+\bibitem[Bishop(2006)]{Bishop2006}
+Christopher~M Bishop.
+\newblock Pattern recognition.
+\newblock {\em Machine Learning}, 128, 2006.
+
 \bibitem[Blanchard et~al.(2010)Blanchard, Lee, and Scott]{Blanchard2010}
 Gilles Blanchard, Gyemin Lee, and Clayton Scott.
 \newblock Semi-supervised novelty detection.
@@ -101,11 +106,29 @@ L{\'e}on Bottou and Chih-Jen Lin.
 \newblock Support vector machine solvers.
 \newblock {\em Large scale kernel machines}, pages 301--320, 2007.
 
+\bibitem[Boucheron et~al.(2005)Boucheron, Bousquet, and Lugosi]{BBL05}
+S.~Boucheron, O.~Bousquet, and G.~Lugosi.
+\newblock {{T}heory of {C}lassification: {A} {S}urvey of {S}ome {R}ecent
+  {A}dvances}.
+\newblock {\em ESAIM: Probability and Statistics}, 9:\penalty0 323--375, 2005.
+
 \bibitem[Boucheron et~al.(2013)Boucheron, Lugosi, and Massart]{BLM2013}
 S.~Boucheron, G.~Lugosi, and P.~Massart.
 \newblock {\em Concentration Inequalities: A Nonasymptotic Theory of
   Independence}.
 \newblock Oxford University Press, 2013.
+
+\bibitem[Boucheron et~al.(2012)Boucheron, Thomas, et~al.]{Boucheron2012}
+St{\'e}phane Boucheron, Maud Thomas, et~al.
+\newblock Concentration inequalities for order statistics.
+\newblock {\em Electronic Communications in Probability}, 17\penalty0
+  (51):\penalty0 1--12, 2012.
+
+\bibitem[Boucheron et~al.(2015)Boucheron, Thomas, et~al.]{Boucheron2015}
+St{\'e}phane Boucheron, Maud Thomas, et~al.
+\newblock Tail index estimation, concentration and adaptivity.
+\newblock {\em Electronic Journal of Statistics}, 9\penalty0 (2):\penalty0
+  2751--2792, 2015.
 
 \bibitem[Bousquet et~al.(2004)Bousquet, Boucheron, and Lugosi]{Bousquet04}
 O.~Bousquet, S.~Boucheron, and G.~Lugosi.
@@ -398,6 +421,11 @@ Y.~Freund, R.E Schapire, et~al.
 \newblock Experiments with a new boosting algorithm.
 \newblock In {\em ICML}, 1996.
 
+\bibitem[Friedman et~al.(2001)Friedman, Hastie, and Tibshirani]{Friedman2001}
+Jerome Friedman, Trevor Hastie, and Robert Tibshirani.
+\newblock {\em The elements of statistical learning}, volume~1.
+\newblock Springer series in statistics Springer, Berlin, 2001.
+
 \bibitem[Gardes \& Girard(2008)Gardes and Girard]{Gardes2008}
 Laurent Gardes and St{\'e}phane Girard.
 \newblock A moving window approach for nonparametric estimation of the
@@ -431,6 +459,12 @@ C.~Gini.
 \newblock Variabilita e mutabilita.
 \newblock {\em Memorie di metodologia statistica}, 1912.
 
+\bibitem[Girard(2004)]{Girard2004}
+St{\'e}phane Girard.
+\newblock A hill type estimator of the weibull tail-coefficient.
+\newblock {\em Communications in Statistics-Theory and Methods}, 33\penalty0
+  (2):\penalty0 205--234, 2004.
+
 \bibitem[Girard \& Jacob(2008)Girard and Jacob]{Girard2008}
 St{\'e}phane Girard and Pierre Jacob.
 \newblock Frontier estimation via kernel regression on high power-transformed
@@ -456,7 +490,7 @@ N.~Goix.
 N.~Goix, R.~Brault, N.~Drougard, and M.~Chiapino.
 \newblock {One Class Splitting Criteria for Random Forests with Application to
   Anomaly Detection}.
-\newblock In {\em Submitted}, 2016{\natexlab{a}}.
+\newblock In {\em To be submitted}, 2016{\natexlab{a}}.
 
 \bibitem[Goix et~al.(2015{\natexlab{a}})Goix, Sabourin, and Cl{\'e}men{\c
   c}on]{NIPSWORKSHOP15}
@@ -490,7 +524,7 @@ N.~Goix, A.~Sabourin, and S.~Clémençon.
 N.~Goix and A.~Thomas.
 \newblock {How to Evaluate the Quality of Unsupervised Anomaly Detection
   Algorithms?}
-\newblock In {\em Submitted}, 2016.
+\newblock In {\em To be submitted}, 2016.
 
 \bibitem[Goix et~al.(2016{\natexlab{c}})Goix, Sabourin, and Cl{\'e}men{\c
   c}on]{ARXIV16}
@@ -619,8 +653,10 @@ Pascal Massart.
 
 \bibitem[Massart(2007)]{Massart2007}
 Pascal Massart.
-\newblock {\em Concentration inequalities and model selection}, volume~6.
-\newblock Springer, 2007.
+\newblock {\em Concentration Inequalities and Model Selection: Ecole d'Et{\'e}
+  de Probabilit{\'e}s de Saint-Flour XXXIV, volume 1896 of Lecture Notes in
+  Mathematics.}
+\newblock Springer-Verlag, 2007.
 
 \bibitem[McDiarmid(1998)]{McDiarmid98}
 Colin McDiarmid.
@@ -872,6 +908,11 @@ A.~Thomas, V.~Feuillard, and A.~Gramfort.
 \newblock {Calibration of One-Class SVM for MV set estimation}.
 \newblock In {\em DSAA}, 2015.
 
+\bibitem[Thomas(2015)]{ThomasMaud2015}
+Maud Thomas.
+\newblock {\em Concentration results on extreme value theory}.
+\newblock PhD thesis, Univerist{\'e} Paris Diderot Paris 7, 2015.
+
 \bibitem[Tsybakov(1997)]{Tsybakov1997}
 A.~B. Tsybakov.
 \newblock On nonparametric estimation of density level sets.
@@ -890,6 +931,11 @@ V.~Vapnik and A.~Chervonenkis.
 \newblock Nauka, 1974.
 \newblock (German Translation: W.~Wapnik \& A.~Tscherwonenkis, {\em Theorie der
   Zeichenerkennung}, Akademie--Verlag, Berlin, 1979).
+
+\bibitem[Vapnik(2013)]{Vapnik2013}
+Vladimir Vapnik.
+\newblock {\em The nature of statistical learning theory}.
+\newblock Springer Science \& Business Media, 2013.
 
 \bibitem[Vert \& Vert(2006)Vert and Vert]{VertVert}
 J.P. Vert and R.~Vert.

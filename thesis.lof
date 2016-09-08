@@ -1,79 +1,79 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Mass-Volume at level $\alpha $\relax }}{6}{figure.caption.7}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Truncated cones in 3D\relax }}{13}{figure.1.2}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Truncated $\epsilon $-cones in 2D\relax }}{13}{figure.1.3}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Mass-Volume at level $\alpha $\relax }}{5}{figure.caption.7}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Truncated cones in 3D\relax }}{11}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Truncated $\epsilon $-cones in 2D\relax }}{11}{figure.1.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Extreme Value Distribution with $\alpha = 2$\relax }}{41}{figure.caption.8}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Extreme Value Distribution with $\alpha = 2$\relax }}{35}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces LOF example\relax }}{54}{figure.caption.11}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Anomalies are isolated more quickly\relax }}{55}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Convergence of the averaged depth\relax }}{55}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Isolation Forest example\relax }}{56}{figure.caption.12}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces gaussian normal data with one single mode\relax }}{58}{figure.caption.13}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces gaussian normal data with two modes\relax }}{58}{figure.caption.14}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces gaussian normal data with two strongly separate modes\relax }}{59}{figure.caption.15}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces LOF example\relax }}{45}{figure.caption.11}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Anomalies are isolated more quickly\relax }}{46}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Convergence of the averaged depth\relax }}{46}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Isolation Forest example\relax }}{47}{figure.caption.12}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces gaussian normal data with one single mode\relax }}{48}{figure.caption.13}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces gaussian normal data with two modes\relax }}{48}{figure.caption.14}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces gaussian normal data with two strongly separate modes\relax }}{49}{figure.caption.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces EM curves depending on densities\relax }}{68}{figure.caption.16}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison between $MV^*(\alpha )$ and $EM^*(t)$\relax }}{68}{figure.caption.17}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Unsuccessful mass-volume criterion optimization\relax }}{73}{figure.caption.18}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Optimal and realized EM curves\relax }}{77}{figure.caption.19}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Zoom near 0 \nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\relax }}{77}{figure.caption.19}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces $EM_\mathcal {G}$ for different $l$\relax }}{78}{figure.caption.20}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces density and scoring functions\relax }}{79}{figure.caption.21}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces EM curves depending on densities\relax }}{57}{figure.caption.16}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison between $MV^*(\alpha )$ and $EM^*(t)$\relax }}{57}{figure.caption.17}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Unsuccessful mass-volume criterion optimization\relax }}{61}{figure.caption.18}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Optimal and realized EM curves\relax }}{64}{figure.caption.19}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Zoom near 0 \nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}\relax }}{64}{figure.caption.19}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces $EM_\mathcal {G}$ for different $l$\relax }}{65}{figure.caption.20}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces density and scoring functions\relax }}{66}{figure.caption.21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Truncated cones in 3D\relax }}{105}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Truncated $\epsilon $-rectangles in 2D\relax }}{105}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Estimation procedure\relax }}{110}{figure.caption.22}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Level sets of $s_n$ on simulated 2D data\relax }}{121}{figure.caption.23}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces sub-cone dimensions of wave data\relax }}{124}{figure.caption.25}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces SF dataset, default parameters\relax }}{127}{figure.caption.30}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{127}{figure.caption.31}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{128}{figure.caption.32}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces SA dataset, default parameters\relax }}{128}{figure.caption.33}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces forestcover dataset, default parameters\relax }}{129}{figure.caption.34}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces http dataset, default parameters\relax }}{129}{figure.caption.35}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Truncated cones in 3D\relax }}{90}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Truncated $\epsilon $-rectangles in 2D\relax }}{90}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Estimation procedure\relax }}{94}{figure.caption.22}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Level sets of $s_n$ on simulated 2D data\relax }}{103}{figure.caption.23}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces sub-cone dimensions of wave data\relax }}{106}{figure.caption.25}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces SF dataset, default parameters\relax }}{108}{figure.caption.30}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{108}{figure.caption.31}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces SF dataset, larger $\epsilon $\relax }}{109}{figure.caption.32}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces SA dataset, default parameters\relax }}{109}{figure.caption.33}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces forestcover dataset, default parameters\relax }}{110}{figure.caption.34}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces http dataset, default parameters\relax }}{110}{figure.caption.35}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Comparison between $MV^*(\alpha )$ and $EM^*(t)$\relax }}{144}{figure.caption.36}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces MV and EM curves for adult dataset (novelty detection framework). Both in terms of EM and MV curves, iForest is found to perform better than OCSVM, which is itself found to perform better than LOF. Comparing to Table\nobreakspace {}\ref {evaluation:table:results-semisupervised}, ROC and PR AUCs give the same ranking (iForest on adult $\succ $ OCSVM on adult $\succ $ LOF on adult). The 3 pairwise comparisons (iForest on adult, LOF on adult), (OCSVM on adult, LOF on adult) and (OCSVM on adult, iForest on adult) are then similarly ordered by EM, PR, MV and EM criteria.\relax }}{150}{figure.caption.40}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces ROC and PR curves for Isolation Forest (novelty detection framework)\relax }}{153}{figure.caption.41}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces ROC and PR curves for Isolation Forest (unsupervised framework)\relax }}{154}{figure.caption.42}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces ROC and PR curves for One Class SVM (novelty detection framework)\relax }}{155}{figure.caption.43}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces ROC and PR curves for One Class SVM (unsupervised framework)\relax }}{156}{figure.caption.44}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces ROC and PR curves for Local Outlier Factor (novelty detection framework)\relax }}{157}{figure.caption.45}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces ROC and PR curves for Local Outlier Factor (unsupervised framework)\relax }}{158}{figure.caption.46}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces MV and EM curves for http dataset (novelty detection framework)\relax }}{158}{figure.caption.47}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces MV and EM curves for http dataset (unsupervised framework)\relax }}{159}{figure.caption.48}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces MV and EM curves for pima dataset (novelty detection framework)\relax }}{159}{figure.caption.49}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces MV and EM curves for pima dataset (unsupervised framework)\relax }}{160}{figure.caption.50}
-\contentsline {figure}{\numberline {8.13}{\ignorespaces MV and EM curves for smtp dataset (novelty detection framework)\relax }}{160}{figure.caption.51}
-\contentsline {figure}{\numberline {8.14}{\ignorespaces MV and EM curves for smtp dataset (unsupervised framework)\relax }}{161}{figure.caption.52}
-\contentsline {figure}{\numberline {8.15}{\ignorespaces MV and EM curves for wilt dataset (novelty detection framework)\relax }}{161}{figure.caption.53}
-\contentsline {figure}{\numberline {8.16}{\ignorespaces MV and EM curves for wilt dataset (unsupervised framework)\relax }}{162}{figure.caption.54}
-\contentsline {figure}{\numberline {8.17}{\ignorespaces MV and EM curves for adult dataset (novelty detection framework).\relax }}{162}{figure.caption.55}
-\contentsline {figure}{\numberline {8.18}{\ignorespaces MV and EM curves for adult dataset (unsupervised framework)\relax }}{163}{figure.caption.56}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Comparison between $MV^*(\alpha )$ and $EM^*(t)$\relax }}{124}{figure.caption.36}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces MV and EM curves for adult dataset (novelty detection framework). Both in terms of EM and MV curves, iForest is found to perform better than OCSVM, which is itself found to perform better than LOF. Comparing to Table\nobreakspace {}\ref {evaluation:table:results-semisupervised}, ROC and PR AUCs give the same ranking (iForest on adult $\succ $ OCSVM on adult $\succ $ LOF on adult). The 3 pairwise comparisons (iForest on adult, LOF on adult), (OCSVM on adult, LOF on adult) and (OCSVM on adult, iForest on adult) are then similarly ordered by EM, PR, MV and EM criteria.\relax }}{129}{figure.caption.40}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces ROC and PR curves for Isolation Forest (novelty detection framework)\relax }}{131}{figure.caption.41}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces ROC and PR curves for Isolation Forest (unsupervised framework)\relax }}{132}{figure.caption.42}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces ROC and PR curves for One Class SVM (novelty detection framework)\relax }}{133}{figure.caption.43}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces ROC and PR curves for One Class SVM (unsupervised framework)\relax }}{134}{figure.caption.44}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces ROC and PR curves for Local Outlier Factor (novelty detection framework)\relax }}{135}{figure.caption.45}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces ROC and PR curves for Local Outlier Factor (unsupervised framework)\relax }}{136}{figure.caption.46}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces MV and EM curves for http dataset (novelty detection framework)\relax }}{136}{figure.caption.47}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces MV and EM curves for http dataset (unsupervised framework)\relax }}{137}{figure.caption.48}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces MV and EM curves for pima dataset (novelty detection framework)\relax }}{137}{figure.caption.49}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces MV and EM curves for pima dataset (unsupervised framework)\relax }}{138}{figure.caption.50}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces MV and EM curves for smtp dataset (novelty detection framework)\relax }}{138}{figure.caption.51}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces MV and EM curves for smtp dataset (unsupervised framework)\relax }}{139}{figure.caption.52}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces MV and EM curves for wilt dataset (novelty detection framework)\relax }}{139}{figure.caption.53}
+\contentsline {figure}{\numberline {8.16}{\ignorespaces MV and EM curves for wilt dataset (unsupervised framework)\relax }}{140}{figure.caption.54}
+\contentsline {figure}{\numberline {8.17}{\ignorespaces MV and EM curves for adult dataset (novelty detection framework).\relax }}{140}{figure.caption.55}
+\contentsline {figure}{\numberline {8.18}{\ignorespaces MV and EM curves for adult dataset (unsupervised framework)\relax }}{141}{figure.caption.56}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Outliers assumed distribution $G$ in the naive and adaptive approach. In the naive approach, $G$ does not depends on the tree and is constant on the input space. In the adaptive approach the distribution depends on the inlier distribution $F$ through the tree. The outliers density is constant and equal to the average of $F$ on each node before splitting it. Note that $G$ is tightly concentrated around the inliers, as required in high dimension. \relax }}{172}{figure.caption.57}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces The left part of this figure represents the dataset under study and the underlying density. After some splits on this initial node $\mathcal {X}$, let us consider the node $\mathcal {X}_t$ illustrated in the right part of this figure: without the proposed adaptive approach, the class ratio $\gamma _t$ becomes too small and leads to poor splits (all the data are in the `normal side' of the split, which thus does not discriminate at all). Contrariwise, setting $\gamma $ to one, \textit {i.e.} using our adaptative approach, is far preferable. Note that a given $\gamma $ corresponds to a level set $t_{\gamma }$.\relax }}{173}{figure.caption.58}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces OneClassRF with one tree: level-sets of the scoring function\relax }}{174}{figure.caption.59}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies.\relax }}{174}{figure.caption.60}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Performances of the algorithms on each dataset in the novelty detection framework: ROC AUCs are displayed on the top, Precision-Recall AUCs in the middle and training times\footnotemark on the bottom, for each dataset and algorithm. The $x$-axis represents the datasets.\relax }}{178}{figure.caption.63}
-\contentsline {figure}{\numberline {9.6}{\ignorespaces Performances of the algorithms on each dataset in the unsupervised framework: ROC AUCs are on the top, Precision-Recall AUCs in the middle and processing times are displayed below (for each dataset and algorithm). The $x$-axis represents the datasets.\relax }}{183}{figure.caption.65}
-\contentsline {figure}{\numberline {9.7}{\ignorespaces ROC and PR curves for OneClassRF (novelty detection framework)\relax }}{184}{figure.caption.66}
-\contentsline {figure}{\numberline {9.8}{\ignorespaces ROC and PR curves for OneClassRF (unsupervised framework)\relax }}{185}{figure.caption.67}
-\contentsline {figure}{\numberline {9.9}{\ignorespaces ROC and PR curves for IsolationForest (novelty detection framework)\relax }}{186}{figure.caption.68}
-\contentsline {figure}{\numberline {9.10}{\ignorespaces ROC and PR curves for IsolationForest (unsupervised framework)\relax }}{187}{figure.caption.69}
-\contentsline {figure}{\numberline {9.11}{\ignorespaces ROC and PR curves for OCRFsampling (novelty detection framework)\relax }}{188}{figure.caption.70}
-\contentsline {figure}{\numberline {9.12}{\ignorespaces ROC and PR curves for OCRFsampling (unsupervised framework)\relax }}{189}{figure.caption.71}
-\contentsline {figure}{\numberline {9.13}{\ignorespaces ROC and PR curves for OCSVM (novelty detection framework)\relax }}{190}{figure.caption.72}
-\contentsline {figure}{\numberline {9.14}{\ignorespaces ROC and PR curves for OCSVM (unsupervised framework)\relax }}{191}{figure.caption.73}
-\contentsline {figure}{\numberline {9.15}{\ignorespaces ROC and PR curves for LOF (novelty detection framework)\relax }}{192}{figure.caption.74}
-\contentsline {figure}{\numberline {9.16}{\ignorespaces ROC and PR curves for LOF (unsupervised framework)\relax }}{193}{figure.caption.75}
-\contentsline {figure}{\numberline {9.17}{\ignorespaces ROC and PR curves for Orca (novelty detection framework)\relax }}{194}{figure.caption.76}
-\contentsline {figure}{\numberline {9.18}{\ignorespaces ROC and PR curves for Orca (unsupervised framework)\relax }}{195}{figure.caption.77}
-\contentsline {figure}{\numberline {9.19}{\ignorespaces ROC and PR curves for LSAD (novelty detection framework)\relax }}{196}{figure.caption.78}
-\contentsline {figure}{\numberline {9.20}{\ignorespaces ROC and PR curves for LSAD (unsupervised framework)\relax }}{197}{figure.caption.79}
-\contentsline {figure}{\numberline {9.21}{\ignorespaces ROC and PR curves for RFC (novelty detection framework)\relax }}{198}{figure.caption.80}
-\contentsline {figure}{\numberline {9.22}{\ignorespaces ROC and PR curves for RFC (unsupervised framework)\relax }}{199}{figure.caption.81}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Outliers assumed distribution $G$ in the naive and adaptive approach. In the naive approach, $G$ does not depends on the tree and is constant on the input space. In the adaptive approach the distribution depends on the inlier distribution $F$ through the tree. The outliers density is constant and equal to the average of $F$ on each node before splitting it. Note that $G$ is tightly concentrated around the inliers, as required in high dimension. \relax }}{148}{figure.caption.57}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces The left part of this figure represents the dataset under study and the underlying density. After some splits on this initial node $\mathcal {X}$, let us consider the node $\mathcal {X}_t$ illustrated in the right part of this figure: without the proposed adaptive approach, the class ratio $\gamma _t$ becomes too small and leads to poor splits (all the data are in the `normal side' of the split, which thus does not discriminate at all). Contrariwise, setting $\gamma $ to one, \textit {i.e.} using our adaptative approach, is far preferable. Note that a given $\gamma $ corresponds to a level set $t_{\gamma }$.\relax }}{149}{figure.caption.58}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces OneClassRF with one tree: level-sets of the scoring function\relax }}{150}{figure.caption.59}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Illustration of the standard splitting criterion on two modes when the proportion $\gamma $ varies.\relax }}{150}{figure.caption.60}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Performances of the algorithms on each dataset in the novelty detection framework: ROC AUCs are displayed on the top, Precision-Recall AUCs in the middle and training times\footnotemark on the bottom, for each dataset and algorithm. The $x$-axis represents the datasets.\relax }}{153}{figure.caption.63}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Performances of the algorithms on each dataset in the unsupervised framework: ROC AUCs are on the top, Precision-Recall AUCs in the middle and processing times are displayed below (for each dataset and algorithm). The $x$-axis represents the datasets.\relax }}{157}{figure.caption.65}
+\contentsline {figure}{\numberline {9.7}{\ignorespaces ROC and PR curves for OneClassRF (novelty detection framework)\relax }}{158}{figure.caption.66}
+\contentsline {figure}{\numberline {9.8}{\ignorespaces ROC and PR curves for OneClassRF (unsupervised framework)\relax }}{159}{figure.caption.67}
+\contentsline {figure}{\numberline {9.9}{\ignorespaces ROC and PR curves for IsolationForest (novelty detection framework)\relax }}{160}{figure.caption.68}
+\contentsline {figure}{\numberline {9.10}{\ignorespaces ROC and PR curves for IsolationForest (unsupervised framework)\relax }}{161}{figure.caption.69}
+\contentsline {figure}{\numberline {9.11}{\ignorespaces ROC and PR curves for OCRFsampling (novelty detection framework)\relax }}{162}{figure.caption.70}
+\contentsline {figure}{\numberline {9.12}{\ignorespaces ROC and PR curves for OCRFsampling (unsupervised framework)\relax }}{163}{figure.caption.71}
+\contentsline {figure}{\numberline {9.13}{\ignorespaces ROC and PR curves for OCSVM (novelty detection framework)\relax }}{164}{figure.caption.72}
+\contentsline {figure}{\numberline {9.14}{\ignorespaces ROC and PR curves for OCSVM (unsupervised framework)\relax }}{165}{figure.caption.73}
+\contentsline {figure}{\numberline {9.15}{\ignorespaces ROC and PR curves for LOF (novelty detection framework)\relax }}{166}{figure.caption.74}
+\contentsline {figure}{\numberline {9.16}{\ignorespaces ROC and PR curves for LOF (unsupervised framework)\relax }}{167}{figure.caption.75}
+\contentsline {figure}{\numberline {9.17}{\ignorespaces ROC and PR curves for Orca (novelty detection framework)\relax }}{168}{figure.caption.76}
+\contentsline {figure}{\numberline {9.18}{\ignorespaces ROC and PR curves for Orca (unsupervised framework)\relax }}{169}{figure.caption.77}
+\contentsline {figure}{\numberline {9.19}{\ignorespaces ROC and PR curves for LSAD (novelty detection framework)\relax }}{170}{figure.caption.78}
+\contentsline {figure}{\numberline {9.20}{\ignorespaces ROC and PR curves for LSAD (unsupervised framework)\relax }}{171}{figure.caption.79}
+\contentsline {figure}{\numberline {9.21}{\ignorespaces ROC and PR curves for RFC (novelty detection framework)\relax }}{172}{figure.caption.80}
+\contentsline {figure}{\numberline {9.22}{\ignorespaces ROC and PR curves for RFC (unsupervised framework)\relax }}{173}{figure.caption.81}
 \addvspace {10\p@ }

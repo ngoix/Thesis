@@ -639,7 +639,7 @@ Central Limit Theorem, % which characterizes the limiting distribution of the sa
 not ruled by an `averaging effect'. The focus is on the sample maximum $$M_n = \max\{X_1,\ldots,X_n\}$$
 rather than the mean. A first natural approach is to estimate $F$ from observed data to deduce an estimate of $F^n$, given that the distribution of $M_n$ is
 $$\mathbb{P}(M_n \le x) = \mathbb{P}(X_1 \le x) \ldots \mathbb{P}(X_n \le x) = F(x)^n.$$
-Unfortunately, the exponant in the number of data induces huge discrepancies for such plug-in techniques. The next natural approach is to look directly for appropriate families of models for $F^n$.
+Unfortunately, the exponent in the number of data induces huge discrepancies for such plug-in techniques. The next natural approach is to look directly for appropriate families of models for $F^n$.
 A first difficulty is that any point less than the upper point of $F$ is finally exceeded by the maximum of a sufficiently large number of data: $F^n(x) \to 0$ for any $x$ such that $F(x) < 1$. In other words, the distribution of $M_n$ converge to a dirac mass on $\inf\{x,~F(x)=1\}$. Therefore, we have to consider a renormalized version of $M_n$, $$\frac{M_n-b_n}{a_n} $$ with $a_n>0$.
 Then, the cornerstone result of univariate EVT is the following.
 
@@ -686,6 +686,9 @@ The sign of $\gamma$ controls the shape of the tail of $F$.
  In the case $\gamma >0$ (as for the Cauchy distribution), $G$ is referred to as a Fréchet distribution and $F$ has a heavy tail. If $\gamma=0$ (as for normal distributions), $G$ is a Gumbel distribution and $F$ has a light tail. If $\gamma < 0$ (as for uniform distributions), $G$ is called a Weibull distribution and $F$ has a finite endpoint.
 Estimates of univariate extreme quantiles then rely on estimates of the parameters $a_n$, $b_n$, and $\gamma$, see \cite{DEd1989}, \cite{ELL2009}. 
 The Hill estimator or one of its generalizations, see \cite{Hill1975, Smith1987, BVT1996, Girard2004, Boucheron2015}, provides an estimate of the tail parameter $\gamma$. 
+%
+A special case of extreme quantile estimation is when some covariate information is recorded simultaneously with the quantity of interest. The extreme quantile thus depends on the covariate and is called conditional extreme quantile \citep{Beirlant2004, Chernozhukov2005, Gardes2008, Gardes2010, Girard2008, Daouia2011, Daouia2013}.
+%
 \begin{example}
 \begin{itemize}
 \item Assume the $X_i$'s to be standard exponential variables (their cdf is $F(x) = 1 - e^{-x}$). In that case, letting $a_n=1$ and $b_n = \log(n)$, we have
@@ -712,6 +715,8 @@ is then essentially characterized by $G$, which is proved to be -- up
 to  re-scaling -- of the type~\eqref{eq:GEV}. 
 \medskip
 Note that Assumption~\eqref{eq:hyp-GEV} (or \eqref{eq:hyp-GEV2}) is fulfilled for most textbook distributions. In that case $F$ is said to lie in the \textit{domain of  attraction} of $G$, written $F \in DA(G)$.
+
+
 
 %XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 % Throughout this paper, for $a_j, b_j \in [0, \infty],~1 \le j \le d$ we use the notations $[a,b]=[a_1,b_1] \times ... \times[a_d,b_d]$ and for $T>0$, $0 \le x \le T$ means $0 \le x_1,...,x_d \le T$.

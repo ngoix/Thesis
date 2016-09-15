@@ -230,7 +230,7 @@ Here and hereafter, $\leb$ denotes the Lebesgue measure on $\mathbb{R}^d$.
 The problem with this approach appears when the dimension is \emph{not small}. As mentioned in the introduction (curse of dimensionality),
 when actually generating $n'$ uniform outliers on $\mathcal{X}$, the probability that a node (sufficiently small to yield a good precision) contains at least one of them is very close to zero. That is why data-dependent distributions for the outlier class are often considered \citep{Desir12, Shi2012}.
 %
-Taking the expectation $n' \leb(\mathcal{X}_t) / \leb(\mathcal{X})$ instead of the number of points in node $t$ does not solve the curse of dimensionality mentionned in the introduction:
+Taking the expectation $n' \leb(\mathcal{X}_t) / \leb(\mathcal{X})$ instead of the number of points in node $t$ does not solve the curse of dimensionality mentioned in the introduction:
 the volume proportion $L_t:=\leb(\mathcal{X}_t) / \leb(\mathcal{X})$ is very close to $0$ for nodes $t$ deep in the tree, specially in large dimension.
 %
 In addition, we typically grow trees on sub-samples of the input data, meaning that even the root node of the trees may be very small compared to the hyper-rectangle containing all the input data.
@@ -253,7 +253,7 @@ Note that $G$ is a piece-wise approximation of the inlier distribution $F$. Cons
 %
 Thus, one might think of $G$ as  
 % Note that $G$ on some leaf $t_m$ with parents $t_0, \ldots, t_{m-1}$ takes the form $G_{|t_m} = \sum_{j=0}^{m} \int_{\mathcal{X}_{t_i}} F = 1/\leb{\mathcal{X}} + \sum_{j=1}^{m} \int_{\mathcal{X}_{t_i}} F $
- a piece-wise approximation of $F_\epsilon := (1 - \epsilon) F + \epsilon \leb$. Yet, one can easily show that optimal tests for the Neymann-Pearson problem $H_0: X \sim F$ vs. $H_1: X \sim F_\epsilon$ are identical to the optimal tests for $H_0: X \sim F$ vs. $H_1: X \sim \leb$, since the corresponding likelihood ratios are related by a monotone transformation, see \cite{Scott2009} for instance (in fact, this reference shows that these two problems are even equivalent in terms of consistency and rates of convergence of the learning rules).
+ a piece-wise approximation of $F_\epsilon := (1 - \epsilon) F + \epsilon \leb$. Yet, one can easily show that optimal tests for the Neyman-Pearson problem $H_0: X \sim F$ vs. $H_1: X \sim F_\epsilon$ are identical to the optimal tests for $H_0: X \sim F$ vs. $H_1: X \sim \leb$, since the corresponding likelihood ratios are related by a monotone transformation, see \cite{Scott2009} for instance (in fact, this reference shows that these two problems are even equivalent in terms of consistency and rates of convergence of the learning rules).
 
 With this methodology, one cannot derive a one-class version of the Gini index \eqref{ocrf:eq:gini}, but we can define a one-class version of the proxy of the impurity decrease \eqref{ocrf:tc_proxy}, by simply replacing $n_{t_L}'$ (resp. $n_{t_R}'$) by $n_t' \lambda_L$ (resp. $n_t' \lambda_R$), where $\lambda_L := \leb(\mathcal{X}_{t_L}) / \leb(\mathcal{X}_{t})$ and $\lambda_R := \leb(\mathcal{X}_{t_R}) / \leb(\mathcal{X}_{t})$ are the volume proportion of the two child nodes:
 
@@ -421,7 +421,7 @@ without the proposed adaptive approach, the class ratio
 $\gamma_t$ becomes too small
 and leads to poor splits %(normal data are condensed on a very small volume)
 (all the data are in the `normal side' of the split, which thus does not discriminate at all).
-Contrariwise, setting $\gamma$ to one, \textit{i.e.} using our adaptative approach,
+Contrariwise, setting $\gamma$ to one, \textit{i.e.} using our adaptive approach,
 is far preferable.
 Note that a given $\gamma$ corresponds to a level set $t_{\gamma}$.}
 \label{ocrf:fig:split_alpha}
@@ -661,7 +661,7 @@ criterion on two modes when the proportion $\gamma$ varies.}
 Other stopping criteria than a maximal depth may be considered. We could stop splitting a node $t$ when it contains less than $n\_min$ observations, or when the quantity $n_t/\leb(\mathcal{X}_t)$ is large enough (all the points in the cell $\mathcal{X}_t$ are likely to be normal) or close enough to $0$ (all the points in the cell $\mathcal{X}_t$ are likely to be abnormal). These options are not discussed in this work.
 \end{remark}
 
-\begin{remark}({\sc Variable importances})
+\begin{remark}({\sc Variable importance})
 In the multi-class setting, \cite{Breiman2001} proposed to evaluate the importance of a feature $j \in \{1,\ldots d\}$ for prediction by %computing the following quantity. XXX
  adding up the weighted impurity decreases % $p(t) \Delta I(s_t, t)$
 for all nodes $t$ where $X_j$ is used, averaged over all the trees. The analogue quantity can be computed with respect to the one-class impurity decrease proxy. % $I_{oc}(s_t, t)$.
@@ -996,7 +996,7 @@ abnormal data) have also been made. %In this case, the anomaly rate is arbitrari
 The anomaly rate is arbitrarily bounded to $10\%$ max (before splitting data into training and testing sets).
 
 
-\section{Theoretical jusification for the one-class splitting criterion}
+\section{Theoretical justification for the one-class splitting criterion}
 \label{sec:ocrf:theory}
 \subsection{Underlying model}
 \label{ocrf:sec:model}

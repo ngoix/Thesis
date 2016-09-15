@@ -74,7 +74,7 @@ An extensive exposition of this multivariate extreme setting may be found \eg~in
 %%%%%%%%%%%%%%%%%%%%%%%
 
 Parametric or semi-parametric modeling and estimation of the structure of
-multivariate extremes is relatively well documented in the statistical literature, see \emph{e.g.} \cite{coles1991modeling,fougeres2009models,cooley2010pairwise,sabourinNaveau2012} and the references therein. In a non-parametric setting, there is also an abundant literature concerning consistency and asymptotic normality of estimators of functionals characterizing the extreme dependence structure, \eg~extreme value copulas or the \emph{stable tail dependence function} (\stdf), see \cite{Segers12Bernoulli, Drees98, Embrechts2000, Einmahl2012, dHF06}. Non-parametric estimators of extreme multivariate quantiles have also been widely studied \citep{Beirlant2004, Gardes2008, Gardes2010, Girard2005, Girard2008, Daouia2011, Daouia2013}, and suit well for data of moderate dimensions.
+multivariate extremes is relatively well documented in the statistical literature, see \emph{e.g.} \cite{coles1991modeling,fougeres2009models,cooley2010pairwise,sabourinNaveau2012} and the references therein. In a non-parametric setting, there is also an abundant literature concerning consistency and asymptotic normality of estimators of functionals characterizing the extreme dependence structure, \eg~extreme value copulas or the \emph{stable tail dependence function} (\stdf), see \cite{Segers12Bernoulli, Drees98, Embrechts2000, Einmahl2012, dHF06}.
 
 In many applications, it is nevertheless more convenient to work with the angular measure itself, as the latter gives more direct information on the dependence structure and is able to reflect structural simplifying properties (\eg~sparsity as detailed below) which would not appear in copulas or in the \stdf.
 However, non-parametric modeling of the angular measure faces major difficulties, stemming from the potentially complex structure of the latter, especially in a high dimensional setting.
@@ -1384,7 +1384,7 @@ First recall that $\widehat{\mathcal{M}}(\alpha)$ is defined for $\alpha \subset
 \begin{align*}
 \widehat{\mathcal{M}}(\alpha) = \Big( \frac{n}{k} \mathcal{P}_n(\frac{k}{n} \| \hat{\mb V}_1 \| \ge 1) \Big) ~~ \Big( \frac{1}{n} \sum_{i=1}^n \frac{\mathds{1}_{\frac{k}{n} \hat{\mb V}_i \in R_\alpha^\epsilon} \mathds{1}_{\frac{k}{n} \| \hat{\mb V}_i \| \ge 1}}{ \mathcal{P}_n(\frac{k}{n} \| \hat{\mb V}_1 \| \ge 1)}\Big),
 \end{align*}
-where the last term is the empirical expectation of $Z_{n, i}(\alpha) = \mathds{1}_{\frac{k}{n} \hat{\mb V}_i \in R_\alpha^\epsilon}$ conditionnaly to the event $\{\|\frac{k}{n} \hat{\mb V}_1 \| \ge 1 \}$, and $\mathcal{P}_n(\frac{k}{n} \| \hat{\mb V}_1 \| \ge 1) = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\frac{k}{n} \|\hat{\mb V}_i\| \ge 1}$.
+where the last term is the empirical expectation of $Z_{n, i}(\alpha) = \mathds{1}_{\frac{k}{n} \hat{\mb V}_i \in R_\alpha^\epsilon}$ conditionally to the event $\{\|\frac{k}{n} \hat{\mb V}_1 \| \ge 1 \}$, and $\mathcal{P}_n(\frac{k}{n} \| \hat{\mb V}_1 \| \ge 1) = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\frac{k}{n} \|\hat{\mb V}_i\| \ge 1}$.
 %The interest of considering conditionnal expectations %lies in the fact that our assumption on the tail of the distribution are convergence of conditionnal probability (conditionned by 'being extremes')
 %will become clear later when appear the theorical risk and the asymptotic one, defined using convergence in law conditioned on `being extreme'.
 According to  Lemma~\ref{jmva:lem:equivalence}, for each fixed margin $j$, $\hat{V}_i^j  \ge \frac{n}{k}$ if, and only if $X_i^j \ge X_{(n-k+1)}^j$, which happens for $k$ observations exactly. Thus, $$\mathcal{P}_n(\frac{k}{n} \| \hat{\mb V}_1 \| \ge 1) = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\exists j,  \hat{\mb V}_i^j  \ge \frac{n}{k}} \in \left[\frac{k}{n}, \frac{dk}{n}\right].$$
@@ -1622,7 +1622,7 @@ sets of this scoring function, both in the transformed and the non-transformed i
 \label{jmva:DAMEX-2D}
 \end{figure}
 
- This heuristic argument explains the following algorithm, referred to as {\it Detecting Anomaly with Multivariate EXtremes}  (DAMEX in abbreviated form). Note that this is a slightly modified version of the original DAMEX algorihtm empirically tested in \cite{AISTAT16}, where $\epsilon$-thickened sub-cones instead of $\epsilon$-thickened rectangles are considered. The proof is more straightforward when considering rectangles and performance remains as good.
+ This heuristic argument explains the following algorithm, referred to as {\it Detecting Anomaly with Multivariate EXtremes}  (DAMEX in abbreviated form). Note that this is a slightly modified version of the original DAMEX algorithm empirically tested in \cite{AISTAT16}, where $\epsilon$-thickened sub-cones instead of $\epsilon$-thickened rectangles are considered. The proof is more straightforward when considering rectangles and performance remains as good.
 The complexity is in $O( dn\log n + dn) = O(dn\log n)$, where the first term on the left-hand-side comes from  computing the $\widehat F_j(X_i^j)$ (Step 1) by sorting  the data (\emph{e.g.} merge sort). The second one arises from Step 2. 
 
 % \begin{center}

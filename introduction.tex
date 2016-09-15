@@ -1,6 +1,6 @@
 
 \section{Introduction}
-\emph{Anomaly}, from grec $\alpha\nu\omega\mu\alpha\lambda\iota\alpha$, asperity, irregular, not the same (an-homalos), refers to a gap, a deviation with respect to some norm or basis, reflecting the expected behavior.
+\emph{Anomaly}, from Greek $\alpha\nu\omega\mu\alpha\lambda\iota\alpha$, asperity, irregular, not the same (an-homalos), refers to a gap, a deviation with respect to some norm or basis, reflecting the expected behavior.
 We call \emph{anomaly} the object inducing a gap, the observation which deviates from normality. 
 %
 In various fields, the following situation occurs: an expert aims at predicting a phenomenon based on previous observations. The most basic case is when one wants to predict some binary characteristic of some new observations/records, given previous ones. For instance one can think of a doctor aiming to predict if an incoming patient has a fixed pathology or not, using previous patients record (such as age, history, gender, blood pressure) associated with their true \textbf{label} (having the pathology or not). This case is an example of \emph{binary classification}, where the doctor aims to find a rule to \textbf{predict} the label of a new patient (the latter being characterized by its record). This rule is called a \emph{classifier} and it has to be built, or \emph{trained}, on previous records. % (namely records associated with their labels). 
@@ -18,14 +18,14 @@ This chapter is organized as follows.
 First in Section~\ref{resume:scoring_function}, the anomaly detection task is formally introduced as well as the concept of scoring function. 
 Two criteria for `being a good scoring function' are presented in Section \ref{resume:scoring}, allowing an M-estimation approach. 
 Section~\ref{resume:extreme} focuses on extreme value theory (EVT) to gain in accuracy on extreme regions. It introduces the \emph{stable tail dependence function} (STDF), to estimate the dependence structure of rare events (Section~\ref{resume:stdf}) and shows that multivariate EVT can be useful to produce scoring functions accurate on low probability regions (Section~\ref{resume:sec:JMVA}).
-Section~\ref{resume:sec:heuristic} gathers two contributions to be submitted addressing the evaluation of unsupervised anomaly detection from a practical point of view (Section~\ref{resume:evaluation}), and the extention of random forests to the one-class setting (Section~\ref{resume:ocrf}). Section~\ref{sec:impl} presents contributions relative to a widely used open-source machine learning library. Section~\ref{intro:concl} details the scientific output and concludes.
+Section~\ref{resume:sec:heuristic} gathers two contributions to be submitted addressing the evaluation of unsupervised anomaly detection from a practical point of view (Section~\ref{resume:evaluation}), and the extension of random forests to the one-class setting (Section~\ref{resume:ocrf}). Section~\ref{sec:impl} presents contributions relative to a widely used open-source machine learning library. Section~\ref{intro:concl} details the scientific output and concludes.
 
 
 
 %Each patient record $i$ being a set of measurements may be summarized into a $d$-dimensional vector $\mb X_i$, and its label into a binary value $y_i \in \{0, 1\}$ (healthy, sick). The set of all training labeled record $(\mb X_1, y_1),\ldots, (\mb X_d, y_d)$ from patients $1, \ldots, d$ form the so-called \textbf{training database}. 
 \paragraph{Notations}
 
-Throughout this document, $\mathbb{N}$ denotes the set of natural numbers while $\mathbb{R}$ and $\mathbb{R}_+$ respectively denote the sets of real numbers and nonnegative real numbers. Arbitrary sets are denoted by calligraphic letters such as $\mathcal{G}$, and $|\mathcal{G}|$ stands for the number of elements in $\mathcal{G}$. % A set of $m$ elements from $\mathcal{G}$ is denoted by $\mathcal{G}^m$.
+Throughout this document, $\mathbb{N}$ denotes the set of natural numbers while $\mathbb{R}$ and $\mathbb{R}_+$ respectively denote the sets of real numbers and non-negative real numbers. Arbitrary sets are denoted by calligraphic letters such as $\mathcal{G}$, and $|\mathcal{G}|$ stands for the number of elements in $\mathcal{G}$. % A set of $m$ elements from $\mathcal{G}$ is denoted by $\mathcal{G}^m$.
 %
 We denote vectors by bold lower case letters. For a vector $\mathbf{x}\in\mathbb{R}^d$ and $i\in \{1,\dots,d\}$, $x_i$ denotes the $i^{th}$ component of $\mathbf{x}$. The inner product between two vectors is denoted by $\innerp{\cdot,\cdot}$. $\|\cdot\|$ denotes an arbitrary (vector or matrix) norm and $\|\cdot\|_p$ the $L_p$ norm.
 %
@@ -115,7 +115,7 @@ It is common and convenient to replace $G$ in the problem above by the Lebesgue 
 \citep{Scholkopf2001, Scott2006, VertVert}.
 
 This comes back to assume that anomalies are uniformly distributed on the support of the normal distribution. %\citep{Steinwart2005, Blanchard2010}. 
-This assumption is thus implicitely made by a majority of works on novelty detection.
+This assumption is thus implicitly made by a majority of works on novelty detection.
  % This simplifying choice corresponds to making the assumption either that anomalies are uniformly distributed, or that no anomaly is observed during training. In other words, this modeling choice applies to novelty detection.
 We observe data in $\rset^d$ from the normal class only, with an underlying distribution $F$ and with a density $f: \rset^d \to \rset$. 
 %Abnormal data are assumed to be in the tail of $F$.
@@ -126,10 +126,10 @@ This \emph{one-class classification} problem is different than \emph{distinguish
 %This way of modeling appeals for \emph{density level set estimation} analysis.
 
 A natural idea for estimating density level sets is to compute an estimate of the density and to consider the associated plug-in density level sets \citep{Tsybakov1997, Cuevas1997, Baillo2001, Baillo2003, Cadre2006, Rigollet2009, Mason2009}.
-The density is generally estimated using non-parametric kernel estimator or maximum likelihood estimator from some parametric family of functions. But these methods does not scale well with the dimension. They try somehow to capture more information than needed for the level set estimation task, such as local properties of the density which are useless here. Indeed, it turns out that for any increasing transform $T$, the level sets of $T\circ f$ are exactly those of $f$. Thus, it suffices to estimate any representant of the class of all increasing transforms of $f$, to obtain density level sets estimates. Intuitively, it is enough to estimate the preorder (the \emph{scoring}) induced by $f$ on $\rset^d$. Let us define a \emph{scoring function} as any measurable function $s:~\rset^d \to \rset_+$ integrable \wrt~the Lebesgue measure $\leb(.)$, and $\S$ the space of all scoring functions.
-Any scoring function defines a preorder on $\rset^d$ and thus a ranking on a set of new observations. This ranking can be interpreted as a degree of abnormality, the lower $s(x)$, the more abnormal $x$. Note incidentally that most anomaly detection algorithms return more than a binary label, normal/abnormal. They return a scoring function, which can be converted to a binary prediction, typically by imposing some threshold based on its statistical distribution.
+The density is generally estimated using non-parametric kernel estimator or maximum likelihood estimator from some parametric family of functions. But these methods does not scale well with the dimension. They try somehow to capture more information than needed for the level set estimation task, such as local properties of the density which are useless here. Indeed, it turns out that for any increasing transform $T$, the level sets of $T\circ f$ are exactly those of $f$. Thus, it suffices to estimate any representative of the class of all increasing transforms of $f$, to obtain density level sets estimates. Intuitively, it is enough to estimate the pre-order (the \emph{scoring}) induced by $f$ on $\rset^d$. Let us define a \emph{scoring function} as any measurable function $s:~\rset^d \to \rset_+$ integrable \wrt~the Lebesgue measure $\leb(.)$, and $\S$ the space of all scoring functions.
+Any scoring function defines a pre-order on $\rset^d$ and thus a ranking on a set of new observations. This ranking can be interpreted as a degree of abnormality, the lower $s(x)$, the more abnormal $x$. Note incidentally that most anomaly detection algorithms return more than a binary label, normal/abnormal. They return a scoring function, which can be converted to a binary prediction, typically by imposing some threshold based on its statistical distribution.
 
-Suppose we are interested in learning a scoring function $s$ whose induced preorder is `close' to that of $f$, or equivalently whose induced level sets are close to those of $f$. The problem is to turn this notion of proximity into a criterion $\crit$, optimal scoring functions $s^*$ being then defined as those optimizing $\crit$. In the density estimation framework, the uniform difference $\|f - \hat f\|_\infty$ is a common criterion to assess the quality of the estimation. We would like a similar criterion but which is invariant by increasing transformation of the output $\hat f$. In other words, the criterion should be defined such that the collection of level sets of an optimal scoring function $s^*(x)$ coincides with that related to $f$, and any increasing transform of the density should be optimal regarding $\crit$.
+Suppose we are interested in learning a scoring function $s$ whose induced pre-order is `close' to that of $f$, or equivalently whose induced level sets are close to those of $f$. The problem is to turn this notion of proximity into a criterion $\crit$, optimal scoring functions $s^*$ being then defined as those optimizing $\crit$. In the density estimation framework, the uniform difference $\|f - \hat f\|_\infty$ is a common criterion to assess the quality of the estimation. We would like a similar criterion but which is invariant by increasing transformation of the output $\hat f$. In other words, the criterion should be defined such that the collection of level sets of an optimal scoring function $s^*(x)$ coincides with that related to $f$, and any increasing transform of the density should be optimal regarding $\crit$.
 More formally, we are going to consider $\crit^{\Phi}(s) = \| \Phi(s) - \Phi(f) \|$ (instead of $\|s - f\|$) % for the Mass-Volume criterion (resp. $ \|EM_s - EM_f\|$ for the Excess-Mass criterion),
 with $\Phi: \mathbb{R} \to \mathbb{R}_+$ verifying $\Phi(T \circ s) = \Phi(s)$ 
 % (resp. $EM_{T \circ s} = EM_s$)
@@ -145,14 +145,14 @@ The next section describes two criteria, which are functional due to the global 
 \begin{remark}{\bf Terminology: anomaly detection, anomaly ranking.\\}
 Strictly speaking, criteria we are looking for are anomaly \emph{ranking} criteria, in the same way the ROC curve is basically a criterion for bipartite \emph{ranking}.
 %
-In practice as mentionned above, all the algorithms dealing with anomalies are candidates for the anomaly ranking task. They all produce a ranking/scoring function, even the ones which originally deal with the `anomaly classification' framework, % a single one-class classification problem,
+In practice as mentioned above, all the algorithms dealing with anomalies are candidates for the anomaly ranking task. They all produce a ranking/scoring function, even the ones which originally deal with the `anomaly classification' framework, % a single one-class classification problem,
 \ie~seek to be optimal on a single level set or \wrt~a fixed false positive rate.
 % ON NE PEUT PAS DEFINIR UNE SOUS CATEGORIE d'algo PAR UN BUT INITIAL: IL FAUT LA DEFINIR SUIVANT CE QU'Elle PRODUIt
 % OU: LE BUT INITIAL ETANT RANKING, ON PEUT PRETENDRE QUE LE RANKING PRODUIT PAR CLASSIF A UN CERTAIN NIVEAU EST UN BON CANDIDAT.
 In the literature, the `anomaly detection' terminology is widely used, instead of the more precise `anomaly ranking' one. For instance, \cite{Liu2008} write `\emph{The task of anomaly detection is to provide a ranking that reflects the degree of anomaly}'.
 %
 % Strictly speaking, anomaly detection should includes both anomaly ranking and anomaly classification.
-In this work, we similarly make the convention that anomaly detection refers to anomaly ranking: if labels are available for the evaluation step, the goal is to maximise the area under the ROC curve. If no labeled data is available, the goal is to maximise the alternative criteria defined in the next section.
+In this work, we similarly make the convention that anomaly detection refers to anomaly ranking: if labels are available for the evaluation step, the goal is to maximize the area under the ROC curve. If no labeled data is available, the goal is to maximize the alternative criteria defined in the next section.
 
 %We also abusively use the term \emph{one-class classification} to denote what should be properly called \emph{one-class ranking}, namely the anomaly ranking framework when the training data are not polluted by outliers, also called \emph{novelty detection}.
 
@@ -188,7 +188,7 @@ The notion of minimum volume set (\cite{Polonik97, Einmahl1992}) has been introd
 where the minimum is taken over all measurable subsets $\Gamma$ of $\rset^d$.
 It can be shown that every density level set is a minimum volume set for a specific mass target, and that the reverse is true if the density has no flat part. % (in fact, if a slightly stronger assumption holds, namely that the density has $\gamma$-exponent, see~\cite{Vert06thesis} for instance).
 %
-In the remainding of this section we suppose that $F$ has a density $f(x)$ \wrt~the Lebesgue measure on $\rset^d$ satisfying the following assumptions:
+In the remaining of this section we suppose that $F$ has a density $f(x)$ \wrt~the Lebesgue measure on $\rset^d$ satisfying the following assumptions:
 
 \noindent $\mathbf{A_1}$ {\it The density $f$ is bounded.}%, \textit{i.e.} $\vert \vert f(\mb X)\vert\vert_{\infty}<+\infty~.$}
 
@@ -357,7 +357,7 @@ But the four main drawbacks of this mass-volume curve criterion are the followin
 
 
 
-In the following section, and as a contribution of this thesis, an alternative functional criterion is proposed, obtained by exchanging objective and constraint functions in \eqref{eq:MV}. The drawbacks of the mass-volume curve criterion are resolved excepting the first one, and it is shown that optimization of an empirical discretized version of this performance measure yields scoring rules with convergence rates of the order $\mathcal{O}_{\mathbb{P}}(1/\sqrt{n})$. In addition, the results can be extended to the situation where the support of the distribution $F$ is not compact. Also, when relaxing the assumption made in the mass-volume curve analysis that all level sets are included in our minimization class $\mathcal{A}$, a control of the model bias is established. Last but not least, we derive (non-statistical) theoretical properties verified by this criterion, which corroborate its adequacy as a metric on preorders/level sets summarized in scoring functions.
+In the following section, and as a contribution of this thesis, an alternative functional criterion is proposed, obtained by exchanging objective and constraint functions in \eqref{eq:MV}. The drawbacks of the mass-volume curve criterion are resolved excepting the first one, and it is shown that optimization of an empirical discretized version of this performance measure yields scoring rules with convergence rates of the order $\mathcal{O}_{\mathbb{P}}(1/\sqrt{n})$. In addition, the results can be extended to the situation where the support of the distribution $F$ is not compact. Also, when relaxing the assumption made in the mass-volume curve analysis that all level sets are included in our minimization class $\mathcal{A}$, a control of the model bias is established. Last but not least, we derive (non-statistical) theoretical properties verified by this criterion, which corroborate its adequacy as a metric on pre-orders/level sets summarized in scoring functions.
 
 
 \subsection{The Excess-Mass criterion}
@@ -434,7 +434,7 @@ for $\epsilon >0$,
 \sup_{t\in[\epsilon ,\|f\|_\infty]}|EM^*(t)-EM_s(t)| ~~\le~~  C \inf_{T  \in \mathcal{T}} \|f-T\circ s\|_\infty
 \end{align*}
 where the infimum is taken over the set $\mathcal{T}$ of all measurable increasing transforms $T : \mathbb{R}_+ \rightarrow \mathbb{R}_+$.
-The previous inequalities reveal that $\|EM^* - EM_s\|_\infty$ can be interpreted as a pseudo distance either between the level sets of $s$ and those of the true density $f$, or between the preorders induced by $s$ and $f$. % `in the space of the scoring function', \ie~in the space where the element corresponding to a function $s$ is the class of every increasing transform of $s$ (or equivalently the class of every function which have the same level sets than $s$).
+The previous inequalities reveal that $\|EM^* - EM_s\|_\infty$ can be interpreted as a pseudo distance either between the level sets of $s$ and those of the true density $f$, or between the pre-orders induced by $s$ and $f$. % `in the space of the scoring function', \ie~in the space where the element corresponding to a function $s$ is the class of every increasing transform of $s$ (or equivalently the class of every function which have the same level sets than $s$).
 
 
 %\subsubsection{M-estimation}
@@ -447,11 +447,11 @@ optimization is done over some representative class of scoring functions, hopefu
 s_N(x):= \sum_{k=1}^N a_k \mathds{1}_{x \in \hat{\Omega}_{t_k} }~, ~~~\text{with ~~~} \hat{\Omega}_{t_k}  \in \mathcal{G}
 \end{align*}
 where $\mathcal{G}$ is a VC-class of subset of $\rset^d$.
-We arbitrary take $a_k:= (t_k-t_{k+1})$ so that the $\hat{\Omega}_{t_k}$'s correspond exactly to $t_k$ level sets $\{s \ge t_k\}$. Then, maximizing the Excess-Mass functionnal criterion is done by sequentially resolving, for $k=1,\ldots,N$,
+We arbitrary take $a_k:= (t_k-t_{k+1})$ so that the $\hat{\Omega}_{t_k}$'s correspond exactly to $t_k$ level sets $\{s \ge t_k\}$. Then, maximizing the Excess-Mass functional criterion is done by sequentially resolving, for $k=1,\ldots,N$,
 \begin{align*}
 \hat \Omega_{t_k} \in \argmax_{\Omega \in \mathcal{G}} \frac{1}{n}\sum_{i=1}^n\mathds{1}_{X_i \in \Omega}~-~t_k \leb(\Omega).
 \end{align*}
-The $\hat \Omega_{t_k}$'s solution of these optimization problems can always be chosen in such a way that they are nested (unlike the analogous optimization problem for the mass-volume criterion). In other words, an inclusion constraint can be incorporated infto the previous optimization problem, without affecting the quality of the solution picked up. It allows to avoid forcing the solutions to be nested, yielding stronger convergence rates.
+The $\hat \Omega_{t_k}$'s solution of these optimization problems can always be chosen in such a way that they are nested (unlike the analogous optimization problem for the mass-volume criterion). In other words, an inclusion constraint can be incorporated into the previous optimization problem, without affecting the quality of the solution picked up. It allows to avoid forcing the solutions to be nested, yielding stronger convergence rates.
 In the mass-volume criterion M-estimation framework, assumptions are made stipulating that the support of the distribution is compact, and that the VC-class $\mathcal{G}$ contains the true density level sets. Here we relax these assumptions, the first one by choosing adaptive levels $t_k$, and the second one by deriving a bias study. This is detailed in Chapter~\ref{aistat:chap}.
 % In a nutshell, the levels are chosen as $t_{k+1} =\frac{t_1}{(1+\frac{1}{\sqrt n})^{k}} $ and
 % we assume that there exists a countable subcollection of $\mathcal{G}$, $F=\{F_i\}_{i \ge 1}$ say, forming a partition of $\mathcal{X}$ and such that $\sigma (F) \subset \mathcal{G}$. Then
@@ -487,7 +487,7 @@ However,  if $p$ is very small, the finite  sample $X_1,\ldots, X_n$  contains i
 %
 This problem transfers in the multivariate case to learning density level sets with very low level, or equivalently scoring functions inducing such level sets.
 %
-Extreme value theory specially adresses such issues, in the one-dimensional as well as in the multi-dimensional setup.
+Extreme value theory specially addresses such issues, in the one-dimensional as well as in the multi-dimensional setup.
 
 
 
@@ -550,7 +550,7 @@ where $l$ is the \stdf, and by definition $l(\mathbf{x})= \lim_{t \to 0} t^{-1} 
 
 In this section, we have introduced and studied, in a non-parametric setting, a particular functional characterizing the extreme dependence structure.
 %
-One other convenient (nonparametric) characterization of  extreme dependence in the framework of multivariate EVT is the \textit{angular measure}, which provides direct information about the probable `directions' of extremes, that is, the relative contribution of each feature/coordinate of the `largest' observations.
+One other convenient (non-parametric) characterization of  extreme dependence in the framework of multivariate EVT is the \textit{angular measure}, which provides direct information about the probable `directions' of extremes, that is, the relative contribution of each feature/coordinate of the `largest' observations.
 %
 In many applications, it is more convenient to work with the angular measure itself. The latter gives more direct information on the dependence structure and is able to reflect structural simplifying properties (\eg~sparsity as detailed below) which would not appear in extreme value copulas or in the STDF which are integrated version of the angular measure.
 However, non-parametric modeling of the angular measure faces major difficulties, stemming from its potentially complex structure, especially in a high dimensional setting.
@@ -579,7 +579,7 @@ as such, may be implemented to improve the accuracy of any usual anomaly detecti
 %\label{context}
 Parametric or semi-parametric estimation of the structure of multivariate extremes is relatively well documented in the statistical literature, see  \emph{e.g.} \cite{coles1991modeling,fougeres2009models,cooley2010pairwise,sabourinNaveau2012} and the references therein. However, restrictive structural assumptions have to be made, stipulating \emph{e.g.} that only some pre-definite subgroups of components may be concomittantly extremes, or, on the contrary, that all of them must be. In addition, their practical use is restricted to moderate dimensional problems (say, $d\le 10$), otherwise simplifying modeling choices are needed, as \emph{e.g.} in \cite{stephenson2009high}). Finally, uncertainty assessment concerning the output of these models is made under the hypothesis that the training set is `asymptotic', in the sense that one assumes that, above a fixed high threshold, the data are exactly distributed according to the limit distribution of extremes. In other words, the modeling error is ignored. 
 
-Non-parametric estimation of the angular measure has only been treated in the two dimensional case, in \cite{Einmahl2001, Einmahl2009}, in an asymptotic framework. Here we extend the nonasymptotic study on {\sc stdf} estimation (previous section) to the angular measure of extremes, restricted to a well-chosen class of sets, corresponding to lower-dimensional regions of the space. The objective is to learn a representation of the angular measure, rough enough to control the variance in high dimension and accurate enough to gain information about the `probable directions' of extremes, both at the same time. This yields a --first-- non-parametric estimate of the angular measure in any dimension, restricted to a class of subcones, %XXX Fig.
+Non-parametric estimation of the angular measure has only been treated in the two dimensional case, in \cite{Einmahl2001, Einmahl2009}, in an asymptotic framework. Here we extend the non-asymptotic study on {\sc stdf} estimation (previous section) to the angular measure of extremes, restricted to a well-chosen class of sets, corresponding to lower-dimensional regions of the space. The objective is to learn a representation of the angular measure, rough enough to control the variance in high dimension and accurate enough to gain information about the `probable directions' of extremes, both at the same time. This yields a --first-- non-parametric estimate of the angular measure in any dimension, restricted to a class of subcones, %XXX Fig.
 with a non asymptotic bound on the error. 
 Note incidentally that this method can also be used as a preprocessing stage, for dimensionality reduction purpose, before proceeding with a parametric or semi-parametric estimation which could benefit from the structural information issued in the first step. Such applications are beyond the scope of this thesis.
 
@@ -849,19 +849,19 @@ The bias term goes to zero as $n \to \infty$, for any fixed $\epsilon$.
 
 
 
-\section{Heuristic-based approaches}
+\section{Heuristic approaches}
 \label{resume:sec:heuristic}
 
 The two contributions in this section are of heuristic nature and not yet supported by statistically sound theoretical results. Although this ongoing work has not been published yet and will certainly be completed in the near future, we believe that it has its place in our manuscript, given the numerous convincing numerical experiments we carried out and the rationale behind the approaches promoted we gave.
 %
-These two contributions addresse two major challenges in anomaly detection:
+These two contributions address two major challenges in anomaly detection:
 
 \begin{itemize}
 \item How to evaluate unsupervised anomaly detection in practice?
 \item How to grow random forests with only one class available?
 \end{itemize}
 
-The first point has been partially adressed in Section~\ref{resume:scoring} with MV and EM curves.
+The first point has been partially addressed in Section~\ref{resume:scoring} with MV and EM curves.
 However, these two criteria have originally been introduced to build scoring functions \emph{via} Empirical Risk Minimization (ERM), and no study has been made on their use to evaluate scoring functions as ROC or PR criteria do.
 Besides, their use to measure the quality of a scoring function $s_n$ involves the computation of the Lebesgue measure  $\leb(s_n \ge u)$, which is very challenging in high dimensional frameworks. 
 
@@ -1011,7 +1011,7 @@ A solution is to chose adaptively (\wrt~the volume of each node) the number $\al
 
 The idea is to make $\alpha(t) \to 1$, $n(t) \to \infty$ when the volume of node $t$ goes to zero.
 %
-In other word, instead of considering one fixed general model One-Class-Model($n$, $\alpha$), we adapt it to each node $t$, considering One-Class-Model($n(t)$, $\alpha(t)$) \emph{before searching the best split}. We still consider the $N$ normal observations as a realization of this model. When growing the tree, using One-Class-Model($n(t)$, $\alpha(t)$) allows to maintain a non-negligeable expected proportion of outliers in the node to be split, even when its volume becomes close to zero.
+In other word, instead of considering one fixed general model One-Class-Model($n$, $\alpha$), we adapt it to each node $t$, considering One-Class-Model($n(t)$, $\alpha(t)$) \emph{before searching the best split}. We still consider the $N$ normal observations as a realization of this model. When growing the tree, using One-Class-Model($n(t)$, $\alpha(t)$) allows to maintain a non-negligible expected proportion of outliers in the node to be split, even when its volume becomes close to zero.
 Of course, constraints have to be made to ensure consistency between all these models.
 %
 For instance, recalling that the number $N$ of normal observations is a realization of $\mb N$ following a Binomial distribution with parameters $(n, 1-\alpha)$, a first natural constraint on $\big(n(t), \alpha(t)\big)$ is
@@ -1067,7 +1067,7 @@ Scikit-learn, see \cite{sklearn2011}, is an open-source library providing well-e
 It is a Python module, the latter language being very popular for scientific computing, thanks to its high-level interactive nature. % Python is enjoying this recent years a strong expansion both in academic and industrial settings. Scikit-learn takes advantage of this favourable backdrop and extends this general-purpose programming language with machine learning operation: 
 Scikit-learn provides a composition mechanism (through a \emph{Pipeline} object) to combine estimators, preprocessing tools and model selection methods in such a way the user can easily construct complex ad-hoc algorithms.
 %
-The development is done on \emph{Github}\footnote{https://github.com/scikit-learn}, a Git repository hosting service which facilitates collaboration, as coding is done in strong interaction with other developpers. Because of the large number of developers, emphasis is put on keeping the project maintainable, \eg~by avoiding duplicating code at the price of a reasonable loss of computational performance.%up to pay (reasonably) in computational performance. 
+The development is done on \emph{Github}\footnote{https://github.com/scikit-learn}, a Git repository hosting service which facilitates collaboration, as coding is done in strong interaction with other developers. Because of the large number of developers, emphasis is put on keeping the project maintainable, \eg~by avoiding duplicating code at the price of a reasonable loss of computational performance.%up to pay (reasonably) in computational performance. 
 
 
 This contribution was supervised by Alexandre Gramfort and was funded by the Paris Saclay Center for Data Science. It also includes work for the scikit-learn maintenance like resolving issues and reviewing other contributors' pull requests.
@@ -1082,7 +1082,7 @@ The contributions of this thesis can be summarized as follows.
 First, an adequate performance criterion called Excess-Mass curve is proposed (Section~\ref{resume:em-curve}), in order to compare possible candidate scoring function and to pick one eventually. 
 The corresponding publication is \cite{AISTAT15}:
 \begin{itemize}
-\item On Anomaly Ranking and Excess-Mass Curves. (AISTAT 2015).\\
+\item On Anomaly Ranking and Excess-Mass Curves. (AISTATS 2015).\\
 Authors: Goix, Sabourin, and Clémençon. 
 \end{itemize}
 
@@ -1103,7 +1103,7 @@ This contribution also includes a multivariate EVT-based algorithm which returns
 The corresponding publications are \cite{AISTAT16}, \cite{NIPSWORKSHOP15} and \cite{ARXIV16}:
 %
 \begin{itemize}
-\item Sparse Representation of Multivariate Extremes with Applications to Anomaly Ranking. (AISTAT 2016 and NIPS 2015 Workshop on Nonparametric Methods for Large Scale Representation Learning).\\
+\item Sparse Representation of Multivariate Extremes with Applications to Anomaly Ranking. (AISTATS 2016 and NIPS 2015 Workshop on Nonparametric Methods for Large Scale Representation Learning).\\
 Authors: Goix, Sabourin, and Clémençon.
 \item Sparse Representation of Multivariate Extremes with Applications to Anomaly Detection. (Under review for Journal of Multivariate Analysis).\\
 Authors: Goix, Sabourin, and Clémençon.
@@ -1139,8 +1139,8 @@ The pull requests of these two contributions are available here:
 \end{itemize}
 
 
-Eventually, we would like to notice that there still seems to be a significant gap to fill between theory and practice in anomaly detection. When trying to derive an algorithm supported by a theoretical analysis, this often affects the algorithm elaboration in such a way that it limits its efficiency in practice.
-On the opposite side, when trying to develop an algorithm which performs well in practice before thinking about any theoretical guaranties, it is often very hard to derive a statistical analysis. In this thesis, contributions have been made on both of these sides. Besides, the contribution on the sparse representation of multivariate extreme belongs to both theoretical and practical sides: it can be viewed as an efficient heuristic with a mathematical analysis from the extreme value theory, as well as an algorithm designed by this theory which can compete with state-of-the-art anomaly detection algorithms.
+% Eventually, we would like to notice that there still seems to be a significant gap to fill between theory and practice in anomaly detection. Trying to derive an algorithm supported by a theoretical analysis often affects the algorithm construction in such a way that it limits its efficiency in practice.
+% On the opposite side, when trying to develop an algorithm which performs well in practice before thinking about any theoretical guaranties, it is often difficult to derive a statistical analysis. In this thesis, contributions have been made on both of these sides. Besides, the contribution on the sparse representation of multivariate extreme belongs to both theoretical and practical sides: it can be viewed as an efficient heuristic supported by a mathematical analysis from the extreme value theory, as well as an algorithm designed by this theory which can compete with state-of-the-art anomaly detection algorithms.
 
 
 \paragraph{Context of this work.}

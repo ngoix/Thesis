@@ -47,7 +47,7 @@ As anomalies are very rare, their structure cannot be observed in the data, in p
 It is common and convenient \citep{Vert06thesis} to replace $G$ in the problem above by the Lebesgue measure, so that it boils down to estimating density level sets of $F$. 
 %This simplifying choice corresponds to making the assumption either that anomalies are uniformly distributed, or that no anomaly is observed during training. In other words, this modeling choice applies to semi-supervised anomaly detection.
 %
-This setup is typically the one of the One-Class Support Vector Machine (OCSVM) algorithm developped in \cite{Scholkopf2001}, which extends the SVM methodology \citep{Cortes1995, Shawe2004} to handle training using only positive information.
+This setup is typically the one of the One-Class Support Vector Machine (OCSVM) algorithm developed in \cite{Scholkopf2001}, which extends the SVM methodology \citep{Cortes1995, Shawe2004} to handle training using only positive information.
 The underlying assumption is that we observe data in $\rset^d$ from the normal class only, with underlying distribution $F$ and underlying density $f: \rset^d \to \rset$. The goal is to estimate density level sets $(\{\mb x, f( \mb x) > t\})_{t>0}$ with $t$ close to $0$.
 %
 In practice, such estimates are represented by a \emph{scoring function}: any measurable function $s: \rset^d \to \rset_+$ integrable \wrt~the Lebesgue measure $\leb(.)$, \emph{whose level sets are estimates of the true density level sets}. 
@@ -264,7 +264,7 @@ which come from the Lebesgue reference measure:
 \item  EM or MV performance criteria cannot be compared when produced from spaces of different dimensions, since reference measures of $\mathbb{R}^d$ and $\mathbb{R}^{d+1}$ cannot be compared.
 \end{itemize}
 
-\begin{remark}({\sc Feature Importances})
+\begin{remark}({\sc Feature Importance})
 With standard MV and EM curves, the benefit of using or not some feature $j$ in training \emph{cannot} be evaluated, as it involves spaces of different dimensions ($d$ and $d+1$). % (as noticed above, reference measures of $\mathbb{R}^d$ and $\mathbb{R}^{d+1}$ cannot be compared).
 %
 Solving the second drawback precisely allows to evaluate the importance of features.

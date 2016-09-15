@@ -37,7 +37,7 @@ V.~Barnett and T.~Lewis.
 \newblock Wiley New York, 1994.
 
 \bibitem[Barron et~al.(2003)Barron, Cardaliaguet, and Jensen]{Barron2003}
-Emmanuel~N Barron, Pierre Cardaliaguet, and R~Jensen.
+E.~N Barron, P.~Cardaliaguet, and R.~Jensen.
 \newblock Conditional essential suprema with applications.
 \newblock {\em Applied Mathematics and Optimization}, 48\penalty0 (3):\penalty0
   229--253, 2003.
@@ -47,6 +47,19 @@ S.~Bay and M.~Schwabacher.
 \newblock Mining distance-based outliers in near linear time with randomization
   and a simple pruning rule.
 \newblock In {\em KDD}, 2003.
+
+\bibitem[Beirlant et~al.(2015)Beirlant, Escobar-Bach, Goegebeur, and
+  Guillou]{Beirlant2015}
+J.~Beirlant, M.~Escobar-Bach, Y.~Goegebeur, and A.~Guillou.
+\newblock Bias-corrected estimation of stable tail dependence function.
+\newblock {\em https://hal.archives-ouvertes.fr/hal-01115538}, Feb 2015.
+
+\bibitem[Beirlant \& Goegebeur(2004)Beirlant and Goegebeur]{Beirlant2004}
+J.~Beirlant and Y.~Goegebeur.
+\newblock Local polynomial maximum likelihood estimation for pareto-type
+  distributions.
+\newblock {\em Journal of Multivariate Analysis}, 89\penalty0 (1):\penalty0
+  97--118, 2004.
 
 \bibitem[Beirlant et~al.(2004)Beirlant, Goegebeur, Teugels, and Segers]{BGTS04}
 J.~Beirlant, Y.~Goegebeur, J.~Teugels, and J.~Segers.
@@ -58,19 +71,6 @@ J.~Beirlant, P.~Vynckier, and J.~L. Teugels.
 \newblock Tail index estimation, pareto quantile plots regression diagnostics.
 \newblock {\em Journal of the American Statistical Association}, 91\penalty0
   (436):\penalty0 1659--1667, 1996.
-
-\bibitem[Beirlant et~al.(2015)Beirlant, Escobar-Bach, Goegebeur, and
-  Guillou]{Beirlant2015}
-Jan Beirlant, Mikael Escobar-Bach, Yuri Goegebeur, and Armelle Guillou.
-\newblock Bias-corrected estimation of stable tail dependence function.
-\newblock {\em https://hal.archives-ouvertes.fr/hal-01115538}, Feb 2015.
-
-\bibitem[Beirlant \& Goegebeur(2004)Beirlant and Goegebeur]{Beirlant2004}
-Jan Beirlant and Yuri Goegebeur.
-\newblock Local polynomial maximum likelihood estimation for pareto-type
-  distributions.
-\newblock {\em Journal of Multivariate Analysis}, 89\penalty0 (1):\penalty0
-  97--118, 2004.
 
 \bibitem[Biau et~al.(2008)Biau, Devroye, and Lugosi]{Biau2008}
 G.~Biau, L.~Devroye, and G.~Lugosi.
@@ -84,25 +84,25 @@ G.~Biau and E.~Scornet.
 \newblock {\em Test}, 25\penalty0 (2):\penalty0 197--227, 2016.
 
 \bibitem[Bishop(2006)]{Bishop2006}
-Christopher~M Bishop.
+C.~M Bishop.
 \newblock Pattern recognition.
 \newblock {\em Machine Learning}, 128, 2006.
 
 \bibitem[Blanchard et~al.(2010)Blanchard, Lee, and Scott]{Blanchard2010}
-Gilles Blanchard, Gyemin Lee, and Clayton Scott.
+G.~Blanchard, G.~Lee, and C.~Scott.
 \newblock Semi-supervised novelty detection.
 \newblock {\em Journal of Machine Learning Research}, 11\penalty0
   (Nov):\penalty0 2973--3009, 2010.
 
 \bibitem[Blanchard et~al.(2004)Blanchard, Sch{\"a}fer, and
   Rozenholc]{Blanchard2004}
-Gilles Blanchard, Christin Sch{\"a}fer, and Yves Rozenholc.
+G.~Blanchard, C.~Sch{\"a}fer, and Y.~Rozenholc.
 \newblock Oracle bounds and exact algorithm for dyadic classification trees.
 \newblock In {\em International Conference on Computational Learning Theory},
   pages 378--392. Springer, 2004.
 
 \bibitem[Bottou \& Lin(2007)Bottou and Lin]{Bottou2007}
-L{\'e}on Bottou and Chih-Jen Lin.
+L.~Bottou and C-J. Lin.
 \newblock Support vector machine solvers.
 \newblock {\em Large scale kernel machines}, pages 301--320, 2007.
 
@@ -118,14 +118,14 @@ S.~Boucheron, G.~Lugosi, and P.~Massart.
   Independence}.
 \newblock Oxford University Press, 2013.
 
-\bibitem[Boucheron et~al.(2012)Boucheron, Thomas, et~al.]{Boucheron2012}
-St{\'e}phane Boucheron, Maud Thomas, et~al.
+\bibitem[Boucheron \& Thomas(2012)Boucheron and Thomas]{Boucheron2012}
+S.~Boucheron and M.~Thomas.
 \newblock Concentration inequalities for order statistics.
 \newblock {\em Electronic Communications in Probability}, 17\penalty0
   (51):\penalty0 1--12, 2012.
 
-\bibitem[Boucheron et~al.(2015)Boucheron, Thomas, et~al.]{Boucheron2015}
-St{\'e}phane Boucheron, Maud Thomas, et~al.
+\bibitem[Boucheron \& Thomas(2015)Boucheron and Thomas]{Boucheron2015}
+S.~Boucheron and M.~Thomas.
 \newblock Tail index estimation, concentration and adaptivity.
 \newblock {\em Electronic Journal of Statistics}, 9\penalty0 (2):\penalty0
   2751--2792, 2015.
@@ -151,10 +151,9 @@ M.M. Breunig, H.P. Kriegel, R.T. Ng, and J.~Sander.
 \bibitem[Buitinck et~al.(2013)Buitinck, Louppe, Blondel, Pedregosa, Mueller,
   Grisel, Niculae, Prettenhofer, Gramfort, Grobler, Layton, VanderPlas, Joly,
   Holt, and Varoquaux]{sklearn_api2013}
-Lars Buitinck, Gilles Louppe, Mathieu Blondel, Fabian Pedregosa, Andreas
-  Mueller, Olivier Grisel, Vlad Niculae, Peter Prettenhofer, Alexandre
-  Gramfort, Jaques Grobler, Robert Layton, Jake VanderPlas, Arnaud Joly, Brian
-  Holt, and Ga{\"{e}}l Varoquaux.
+L.~Buitinck, G.~Louppe, M.~Blondel, F.~Pedregosa, A~Mueller, O~Grisel,
+  V.~Niculae, P.~Prettenhofer, A.~Gramfort, J.~Grobler, R.~Layton,
+  J.~VanderPlas, A.~Joly, B.~Holt, and G.~Varoquaux.
 \newblock {API} design for machine learning software: experiences from the
   scikit-learn project.
 \newblock In {\em ECML PKDD Workshop: Languages for Data Mining and Machine
@@ -171,6 +170,11 @@ B.~Cadre.
 V.~Chandola, A.~Banerjee, and V.~Kumar.
 \newblock Anomaly detection: A survey.
 \newblock {\em ACM Comput. Surv.}, 2009.
+
+\bibitem[Chernozhukov(2005)]{Chernozhukov2005}
+V.~Chernozhukov.
+\newblock Extremal quantile regression.
+\newblock {\em Annals of Statistics}, pages 806--839, 2005.
 
 \bibitem[Cl\'emen\c{c}on \& Jakubowicz(2013)Cl\'emen\c{c}on and
   Jakubowicz]{CLEM13}
@@ -191,17 +195,23 @@ S.~Cl{\'e}men{\c{c}}on and N.~Vayatis.
 
 \bibitem[Cl{\'e}men{\c{c}}on \& Vayatis(2009{\natexlab{b}})Cl{\'e}men{\c{c}}on
   and Vayatis]{Clemencon2009Tree}
-St{\'e}phan Cl{\'e}men{\c{c}}on and Nicolas Vayatis.
+S.~Cl{\'e}men{\c{c}}on and N.~Vayatis.
 \newblock Tree-based ranking methods.
 \newblock {\em IEEE Transactions on Information Theory}, 55\penalty0
   (9):\penalty0 4316--4336, 2009{\natexlab{b}}.
 
 \bibitem[Cl{\'e}men{\c{c}}on \& Vayatis(2010)Cl{\'e}men{\c{c}}on and
   Vayatis]{Clemencon2010}
-St{\'e}phan Cl{\'e}men{\c{c}}on and Nicolas Vayatis.
+S.~Cl{\'e}men{\c{c}}on and N.~Vayatis.
 \newblock Overlaying classifiers: a practical approach to optimal scoring.
 \newblock {\em Constructive Approximation}, 32\penalty0 (3):\penalty0 619--648,
   2010.
+
+\bibitem[Clifton et~al.(2011)Clifton, Hugueny, and Tarassenko]{Clifton2011}
+D.~A. Clifton, S.~Hugueny, and L.~Tarassenko.
+\newblock Novelty detection with multivariate extreme value statistics.
+\newblock {\em Journal of signal processing systems}, 65\penalty0 (3):\penalty0
+  371--389, 2011.
 
 \bibitem[Clifton et~al.(2008)Clifton, Tarassenko, McGrogan, King, King, and
   Anuzis]{Clifton2008}
@@ -209,12 +219,6 @@ D.A. Clifton, L.~Tarassenko, N.~McGrogan, D.~King, S.~King, and P.~Anuzis.
 \newblock Bayesian extreme value statistics for novelty detection in
   gas-turbine engines.
 \newblock In {\em Aerospace Conference, 2008 IEEE}, pages 1--11, 2008.
-
-\bibitem[Clifton et~al.(2011)Clifton, Hugueny, and Tarassenko]{Clifton2011}
-David~Andrew Clifton, Samuel Hugueny, and Lionel Tarassenko.
-\newblock Novelty detection with multivariate extreme value statistics.
-\newblock {\em Journal of signal processing systems}, 65\penalty0 (3):\penalty0
-  371--389, 2011.
 
 \bibitem[Coles(2001)]{Coles2001}
 S.~Coles.
@@ -243,13 +247,13 @@ A.~Cuevas and R.~Fraiman.
 \newblock A plug-in approach to support estimation.
 \newblock {\em The Annals of Statistics}, pages 2300--2312, 1997.
 
-\bibitem[Daouia et~al.(2013)Daouia, Gardes, Girard, et~al.]{Daouia2013}
-Abdelaati Daouia, Laurent Gardes, St{\'e}phane Girard, et~al.
+\bibitem[Daouia et~al.(2013)Daouia, Gardes, and Girard]{Daouia2013}
+A.~Daouia, L.~Gardes, and S.~Girard.
 \newblock On kernel smoothing for extremal quantile regression.
 \newblock {\em Bernoulli}, 19\penalty0 (5B):\penalty0 2557--2589, 2013.
 
 \bibitem[Daouia et~al.(2011)Daouia, Gardes, Girard, and Lekina]{Daouia2011}
-Abdelaati Daouia, Laurent Gardes, St{\'e}phane Girard, and Alexandre Lekina.
+A.~Daouia, L.~Gardes, S.~Girard, and A.~Lekina.
 \newblock Kernel estimators of extreme level curves.
 \newblock {\em Test}, 20\penalty0 (2):\penalty0 311--333, 2011.
 
@@ -283,7 +287,7 @@ A.~L.~M. Dekkers, J.~H.~J. Einmahl, and L.~de~Haan.
 \newblock {\em Ann. Statist.}, 17\penalty0 (4):\penalty0 1833--1855, 12 1989.
 
 \bibitem[Denis et~al.(2005)Denis, Gilleron, and Letouzey]{Denis2005}
-Fran{\c{c}}ois Denis, R{\'e}mi Gilleron, and Fabien Letouzey.
+F.~Denis, R.~Gilleron, and F.~Letouzey.
 \newblock Learning from positive and unlabeled examples.
 \newblock {\em Theoretical Computer Science}, 348\penalty0 (1):\penalty0
   70--83, 2005.
@@ -309,7 +313,7 @@ H.~Drees and X.~Huang.
   1998.
 
 \bibitem[du~Plessis et~al.(2015)du~Plessis, Niu, and Sugiyama]{duPlessis2015}
-Marthinus~Christoffel du~Plessis, Gang Niu, and Masashi Sugiyama.
+M.~C. du~Plessis, G.~Niu, and M.~Sugiyama.
 \newblock Class-prior estimation for learning from positive and unlabeled data.
 \newblock In {\em Proceedings of the Fourth Asian Conference on Machine
   Learning}, volume~45, 2015.
@@ -345,13 +349,13 @@ J.~H.~J. Einmahl and J.~Segers.
 \newblock {\em The Annals of Statistics}, pages 2953--2989, 2009.
 
 \bibitem[Einmahl et~al.(2001)Einmahl, de~Haan, and Piterbarg]{Einmahl2001}
-John~HJ Einmahl, Laurens de~Haan, and Vladimir~I Piterbarg.
+J.~HJ Einmahl, L.~de~Haan, and V.~I Piterbarg.
 \newblock Nonparametric estimation of the spectral measure of an extreme value
   distribution.
 \newblock {\em Annals of Statistics}, pages 1401--1423, 2001.
 
 \bibitem[Einmahl \& Mason(1992)Einmahl and Mason]{Einmahl1992}
-John~HJ Einmahl and David~M Mason.
+J.~HJ Einmahl and D.~M Mason.
 \newblock Generalized quantile processes.
 \newblock {\em The Annals of Statistics}, pages 1062--1078, 1992.
 
@@ -392,7 +396,7 @@ H.~Federer.
 
 \bibitem[Finkenstadt \& Rootz{\'e}n(2003)Finkenstadt and
   Rootz{\'e}n]{finkenstadt2003extreme}
-Barbel Finkenstadt and Holger Rootz{\'e}n.
+B.~Finkenstadt and H.~Rootz{\'e}n.
 \newblock {\em Extreme values in finance, telecommunications, and the
   environment}.
 \newblock CRC Press, 2003.
@@ -411,7 +415,7 @@ A.-L. Fougeres, L.~De~Haan, and C.~Mercadier.
 
 \bibitem[Foug{\`e}res et~al.(2009)Foug{\`e}res, Nolan, and
   Rootz{\'e}n]{fougeres2009models}
-Anne-Laure Foug{\`e}res, John~P Nolan, and Holger Rootz{\'e}n.
+A-L. Foug{\`e}res, J.~P Nolan, and H~Rootz{\'e}n.
 \newblock Models for dependent extremes using stable mixtures.
 \newblock {\em Scandinavian Journal of Statistics}, 36\penalty0 (1):\penalty0
   42--59, 2009.
@@ -422,19 +426,19 @@ Y.~Freund, R.E Schapire, et~al.
 \newblock In {\em ICML}, 1996.
 
 \bibitem[Friedman et~al.(2001)Friedman, Hastie, and Tibshirani]{Friedman2001}
-Jerome Friedman, Trevor Hastie, and Robert Tibshirani.
+J.~Friedman, T.~Hastie, and R.~Tibshirani.
 \newblock {\em The elements of statistical learning}, volume~1.
 \newblock Springer series in statistics Springer, Berlin, 2001.
 
 \bibitem[Gardes \& Girard(2008)Gardes and Girard]{Gardes2008}
-Laurent Gardes and St{\'e}phane Girard.
+L.~Gardes and S.~Girard.
 \newblock A moving window approach for nonparametric estimation of the
   conditional tail index.
 \newblock {\em Journal of Multivariate Analysis}, 99\penalty0 (10):\penalty0
   2368--2388, 2008.
 
 \bibitem[Gardes et~al.(2010)Gardes, Girard, and Lekina]{Gardes2010}
-Laurent Gardes, St{\'e}phane Girard, and Alexandre Lekina.
+L.~Gardes, S.~Girard, and A.~Lekina.
 \newblock Functional nonparametric estimation of conditional extreme quantiles.
 \newblock {\em Journal of Multivariate Analysis}, 101\penalty0 (2):\penalty0
   419--433, 2010.
@@ -460,24 +464,17 @@ C.~Gini.
 \newblock {\em Memorie di metodologia statistica}, 1912.
 
 \bibitem[Girard(2004)]{Girard2004}
-St{\'e}phane Girard.
+S.~Girard.
 \newblock A hill type estimator of the weibull tail-coefficient.
 \newblock {\em Communications in Statistics-Theory and Methods}, 33\penalty0
   (2):\penalty0 205--234, 2004.
 
 \bibitem[Girard \& Jacob(2008)Girard and Jacob]{Girard2008}
-St{\'e}phane Girard and Pierre Jacob.
+S.~Girard and P.~Jacob.
 \newblock Frontier estimation via kernel regression on high power-transformed
   data.
 \newblock {\em Journal of Multivariate Analysis}, 99\penalty0 (3):\penalty0
   403--420, 2008.
-
-\bibitem[Girard \& Menneteau(2005)Girard and Menneteau]{Girard2005}
-St{\'e}phane Girard and Ludovic Menneteau.
-\newblock Central limit theorems for smoothed extreme value estimates of
-  poisson point processes boundaries.
-\newblock {\em Journal of Statistical Planning and Inference}, 135\penalty0
-  (2):\penalty0 433--460, 2005.
 
 \bibitem[Goix(2016)]{ICMLworkshop16}
 N.~Goix.
@@ -500,6 +497,14 @@ N.~Goix, A.~Sabourin, and S.~Cl{\'e}men{\c c}on.
 \newblock NIPS 2015 Workshop on Nonparametric Methods for Large Scale
   Representation Learning, 2015{\natexlab{a}}.
 
+\bibitem[Goix et~al.(2016{\natexlab{b}})Goix, Sabourin, and Cl{\'e}men{\c
+  c}on]{ARXIV16}
+N.~Goix, A.~Sabourin, and S.~Cl{\'e}men{\c c}on.
+\newblock \href{arXiv:1603.09584}{{Sparse Representation of Multivariate
+  Extremes with Applications to Anomaly Detection}}.
+\newblock Submitted to Journal of Multivariate Analysis, July
+  2016{\natexlab{b}}.
+
 \bibitem[Goix et~al.(2015{\natexlab{b}})Goix, Sabourin, and
   Clémençon]{COLT15}
 N.~Goix, A.~Sabourin, and S.~Clémençon.
@@ -513,26 +518,18 @@ N.~Goix, A.~Sabourin, and S.~Clémençon.
 \newblock {On Anomaly Ranking and Excess-Mass Curves}.
 \newblock In {\em AISTATS}, 2015{\natexlab{c}}.
 
-\bibitem[Goix et~al.(2016{\natexlab{b}})Goix, Sabourin, and
+\bibitem[Goix et~al.(2016{\natexlab{c}})Goix, Sabourin, and
   Clémençon]{AISTAT16}
 N.~Goix, A.~Sabourin, and S.~Clémençon.
 \newblock {Sparse Representation of Multivariate Extremes with Applications to
   Anomaly Ranking}.
-\newblock In {\em AISTAT}, 2016{\natexlab{b}}.
+\newblock In {\em AISTAT}, 2016{\natexlab{c}}.
 
 \bibitem[Goix \& Thomas(2016)Goix and Thomas]{NIPS16evaluation}
 N.~Goix and A.~Thomas.
 \newblock {How to Evaluate the Quality of Unsupervised Anomaly Detection
   Algorithms?}
 \newblock In {\em To be submitted}, 2016.
-
-\bibitem[Goix et~al.(2016{\natexlab{c}})Goix, Sabourin, and Cl{\'e}men{\c
-  c}on]{ARXIV16}
-Nicolas Goix, Anne Sabourin, and St{\'e}phan Cl{\'e}men{\c c}on.
-\newblock \href{arXiv:1603.09584}{{Sparse Representation of Multivariate
-  Extremes with Applications to Anomaly Detection}}.
-\newblock Submitted to Journal of Multivariate Analysis, July
-  2016{\natexlab{c}}.
 
 \bibitem[Hartigan(1987)]{Hartigan1987}
 J.A. Hartigan.
@@ -561,12 +558,12 @@ X.~Huang.
 \newblock Statistics of bivariate extreme values, 1992.
 
 \bibitem[Janson(2002)]{Janson2002}
-Svante Janson.
+S.~Janson.
 \newblock On concentration of probability.
 \newblock {\em Contemporary combinatorics}, 2002.
 
 \bibitem[Jones et~al.(2015)Jones, Oliphant, Peterson, et~al.]{Jones2015scipy}
-Eric Jones, Travis Oliphant, Pearu Peterson, et~al.
+E.~Jones, T.~Oliphant, P.~Peterson, et~al.
 \newblock Scipy: Open source scientific tools for python, 2001--.
 \newblock {\em URL http://www. scipy. org}, 2015.
 
@@ -589,7 +586,7 @@ V.~Koltchinskii.
 
 \bibitem[Leadbetter et~al.(1983)Leadbetter, Lindgren, and
   Rootz{\'e}n]{Leadbetter1983}
-M~Ross Leadbetter, Georg Lindgren, and Holger Rootz{\'e}n.
+M~Ross Leadbetter, Georg Lindgren, and H.~Rootz{\'e}n.
 \newblock Extremes and related properties of random sequences and processes.
 \newblock {\em Springer Series in Statistics}, 1983.
 
@@ -614,7 +611,7 @@ R.~Lippmann, J.~W Haines, D.J. Fried, J.~Korba, and K.~Das.
   Springer, 2000.
 
 \bibitem[Liu et~al.(2002)Liu, Lee, Yu, and Li]{Liu2002}
-Bing Liu, Wee~Sun Lee, Philip~S Yu, and Xiaoli Li.
+B.~Liu, W.~S. Lee, P.~S Yu, and X.~Li.
 \newblock Partially supervised classification of text documents.
 \newblock In {\em ICML}, volume~2, pages 387--394. Citeseer, 2002.
 
@@ -645,14 +642,14 @@ D.~M. Mason and W.~Polonik.
   1108--1142, 2009.
 
 \bibitem[Massart(2000)]{Massart2000}
-Pascal Massart.
+P.~Massart.
 \newblock \href{http://eudml.org/doc/73516}{Some applications of concentration
   inequalities to statistics}.
 \newblock {\em Annales de la faculté des sciences de Toulouse}, 9\penalty0
   (2):\penalty0 245--303, 2000.
 
 \bibitem[Massart(2007)]{Massart2007}
-Pascal Massart.
+P.~Massart.
 \newblock {\em Concentration Inequalities and Model Selection: Ecole d'Et{\'e}
   de Probabilit{\'e}s de Saint-Flour XXXIV, volume 1896 of Lecture Notes in
   Mathematics.}
@@ -666,7 +663,7 @@ Colin McDiarmid.
   and Combinatorics. Springer, 1998.
 
 \bibitem[Mordelet \& Vert(2014)Mordelet and Vert]{Mordelet2014}
-Fantine Mordelet and J-P Vert.
+F.~Mordelet and J-P Vert.
 \newblock A bagging svm to learn from positive and unlabeled examples.
 \newblock {\em Pattern Recognition Letters}, 37:\penalty0 201--209, 2014.
 
@@ -768,7 +765,7 @@ S.J. Roberts.
   2000.
 
 \bibitem[Sabourin \& Naveau(2012)Sabourin and Naveau]{sabourinNaveau2012}
-Anne Sabourin and Philippe Naveau.
+A.~Sabourin and P.~Naveau.
 \newblock Bayesian dirichlet mixture model for multivariate extremes: A
   re-parametrization.
 \newblock {\em Computational Statistics \& Data Analysis}, 2012.
@@ -785,16 +782,16 @@ E.~Schubert, R.~Wojdanowski, A.~Zimek, and H.-P. Kriegel.
 \newblock {On Evaluation of Outlier Rankings and Outlier Scores.}
 \newblock In {\em SDM}, pages 1047--1058. SIAM, 2012.
 
+\bibitem[Scott \& Blanchard(2009)Scott and Blanchard]{Scott2009}
+C.~Scott and G.~Blanchard.
+\newblock Novelty detection: Unlabeled data definitely help.
+\newblock In {\em AISTATS}, pages 464--471, 2009.
+
 \bibitem[Scott \& Nowak(2006)Scott and Nowak]{Scott2006}
 C.D Scott and R.D Nowak.
 \newblock Learning minimum volume sets.
 \newblock {\em The Journal of Machine Learning Research}, 7:\penalty0 665--704,
   2006.
-
-\bibitem[Scott \& Blanchard(2009)Scott and Blanchard]{Scott2009}
-Clayton Scott and Gilles Blanchard.
-\newblock Novelty detection: Unlabeled data definitely help.
-\newblock In {\em AISTATS}, pages 464--471, 2009.
 
 \bibitem[Segers(2012{\natexlab{a}})]{Segers12Bernoulli}
 J.~Segers.
@@ -850,29 +847,29 @@ A.~J. Smola, L.~Song, and C.~H. Teo.
 \newblock In {\em AISTATS}, volume~12, pages 536--543, 2009.
 
 \bibitem[Steinwart et~al.(2005{\natexlab{a}})Steinwart, Hush, and
+  Scovel]{Steinwart2005}
+I.~Steinwart, D.~Hush, and C.~Scovel.
+\newblock A classification framework for anomaly detection.
+\newblock {\em Journal of Machine Learning Research}, 6\penalty0
+  (Feb):\penalty0 211--232, 2005{\natexlab{a}}.
+
+\bibitem[Steinwart et~al.(2005{\natexlab{b}})Steinwart, Hush, and
   Scovel]{SHS05}
 I.~Steinwart, D.~Hush, and C.~Scovel.
 \newblock A classification framework for anomaly detection.
 \newblock {\em Journal of Machine Learning Research}, 6:\penalty0 211--232,
-  2005{\natexlab{a}}.
+  2005{\natexlab{b}}.
 
-\bibitem[Steinwart et~al.(2005{\natexlab{b}})Steinwart, Hush, and
-  Scovel]{Steinwart2005}
-Ingo Steinwart, Don Hush, and Clint Scovel.
-\newblock A classification framework for anomaly detection.
-\newblock {\em Journal of Machine Learning Research}, 6\penalty0
-  (Feb):\penalty0 211--232, 2005{\natexlab{b}}.
+\bibitem[Stephenson(2003)]{Stephenson2003}
+A.~Stephenson.
+\newblock Simulating multivariate extreme value distributions of logistic type.
+\newblock {\em Extremes}, 6\penalty0 (1):\penalty0 49--59, 2003.
 
 \bibitem[Stephenson(2009)]{stephenson2009high}
 A.G. Stephenson.
 \newblock High-dimensional parametric modelling of multivariate extreme events.
 \newblock {\em Australian \& New Zealand Journal of Statistics}, 51\penalty0
   (1):\penalty0 77--88, 2009.
-
-\bibitem[Stephenson(2003)]{Stephenson2003}
-Alec Stephenson.
-\newblock Simulating multivariate extreme value distributions of logistic type.
-\newblock {\em Extremes}, 6\penalty0 (1):\penalty0 49--59, 2003.
 
 \bibitem[Sugiyama(2010)]{Sugiyama2010}
 M.~Sugiyama.
@@ -909,7 +906,7 @@ A.~Thomas, V.~Feuillard, and A.~Gramfort.
 \newblock In {\em DSAA}, 2015.
 
 \bibitem[Thomas(2015)]{ThomasMaud2015}
-Maud Thomas.
+M.~Thomas.
 \newblock {\em Concentration results on extreme value theory}.
 \newblock PhD thesis, Univerist{\'e} Paris Diderot Paris 7, 2015.
 
@@ -921,9 +918,14 @@ A.~B. Tsybakov.
 
 \bibitem[Van Der~Walt et~al.(2011)Van Der~Walt, Colbert, and
   Varoquaux]{Vanderwalt2011numpy}
-Stefan Van Der~Walt, S~Chris Colbert, and Gael Varoquaux.
+S.~Van Der~Walt, S~C Colbert, and G.~Varoquaux.
 \newblock The numpy array: a structure for efficient numerical computation.
 \newblock {\em Computing in Science \& Engineering}, 2011.
+
+\bibitem[Vapnik(2013)]{Vapnik2013}
+V.~Vapnik.
+\newblock {\em The nature of statistical learning theory}.
+\newblock Springer Science \& Business Media, 2013.
 
 \bibitem[Vapnik \& Chervonenkis(1974)Vapnik and Chervonenkis]{Vapnik74}
 V.~Vapnik and A.~Chervonenkis.
@@ -931,11 +933,6 @@ V.~Vapnik and A.~Chervonenkis.
 \newblock Nauka, 1974.
 \newblock (German Translation: W.~Wapnik \& A.~Tscherwonenkis, {\em Theorie der
   Zeichenerkennung}, Akademie--Verlag, Berlin, 1979).
-
-\bibitem[Vapnik(2013)]{Vapnik2013}
-Vladimir Vapnik.
-\newblock {\em The nature of statistical learning theory}.
-\newblock Springer Science \& Business Media, 2013.
 
 \bibitem[Vert \& Vert(2006)Vert and Vert]{VertVert}
 J.P. Vert and R.~Vert.

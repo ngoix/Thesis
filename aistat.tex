@@ -123,7 +123,7 @@ $\Gamma_\alpha^*$ of mass $\alpha$ exactly, referred to as \textit{minimum volum
 % and that in the case where $g$ is a nondecreasing transform of $f$, $MV_g=MV^*$.\\
 % Under assumptions $\mathbf{A}_1$-$\mathbf{A}_2$, $MV^*$ is continuous on $(0,1)$ and uniformly continuous on $[0,1-\epsilon]$ for all $\epsilon \in (0,1)$ (when the support of $F(dx)$ is compact, uniform continuity holds on the whole interval $[0,1]$).
 Since $F$ is unknown, a minimum volume set estimate $\widehat{\Gamma}^*_{\alpha}$ can be defined as the solution of \eqref{aistat:eq:MV} when $F$ is replaced by its empirical version
-$F_n=(1/n)\sum_{i=1}^n\delta_{X_i}$, minimization is restricted to a collection $\mathcal{G}$ of borelian subsets of $\rset^d$ supposed not too complex but rich enough to include all density level sets (or reasonable approximants of the latter) and $\alpha$ is replaced by $\alpha-\phi_n$, where the {\it tolerance parameter} $\phi_n$ is a probabilistic upper bound for the supremum $\sup_{\Gamma\in \mathcal{G}}\vert F_n(\Gamma)-F(\Gamma) \vert$. Refer to \cite{Scott2006} for further details. The set $\mathcal{G}$ should ideally offer statistical and computational advantages both at the same time. Allowing for fast search on the one hand and being sufficiently complex to capture the geometry of target density level sets on the other.
+$F_n=(1/n)\sum_{i=1}^n\delta_{X_i}$, minimization is restricted to a collection $\mathcal{G}$ of borelian subsets of $\rset^d$ supposed not too complex but rich enough to include all density level sets (or reasonable approximations of the latter) and $\alpha$ is replaced by $\alpha-\phi_n$, where the {\it tolerance parameter} $\phi_n$ is a probabilistic upper bound for the supremum $\sup_{\Gamma\in \mathcal{G}}\vert F_n(\Gamma)-F(\Gamma) \vert$. Refer to \cite{Scott2006} for further details. The set $\mathcal{G}$ should ideally offer statistical and computational advantages both at the same time. Allowing for fast search on the one hand and being sufficiently complex to capture the geometry of target density level sets on the other.
 %: $\inf_{\Omega \in \mathcal{G}} \leb(\Omega \Delta \Omega^*_\alpha )$ should be small for any $\alpha$, $\Delta$ denoting the symmetric difference.
 In \cite{CLEM13}, a method consisting in preliminarily estimating a collection of minimum volume sets related to target masses $0<\alpha_1<\ldots<\alpha_K<1$ forming a subdivision of $(0,1)$ based on training data so as to build a scoring function $$s=\sum_k \mathds{1}_{x\in \hat \Gamma_{\alpha_k}^*}$$ has been proposed and analyzed. Under adequate assumptions (related to $\mathcal{G}$, the perimeter of the $\Gamma^*_{\alpha_k}$'s and the subdivision step in particular) and for an appropriate choice of $K=K_n$ either under the very restrictive assumption that $F(dx)$ is compactly supported or else by restricting the convergence analysis to $[0,1-\epsilon]$ for $\epsilon>0$, excluding thus the tail behavior of the distribution $F$ from the scope of the analysis, rate bounds of the order $\mathcal{O}_{\mathbb{P}}(n^{-1/4})$ have been established to guarantee the generalization ability of the method.
 
@@ -380,7 +380,7 @@ $\lambda = \lambda_f$ where $\alpha_f$ and $\lambda_f$ are defined in \eqref{ais
 % \noindent
 %As for the variational properties of the EM-curve, 
 %The coarea formula for Lipschitz functions leads to the result stated below.
-\begin{proposition}{\sc (Derivative and convexity of $EM^*$)}  Suppose that assumptions $\mathbf{A_1}$ and $\mathbf{A_2}$ are fullfilled. Then, the mapping $EM^*$ is differentiable and we have for all $t>0$:
+\begin{proposition}{\sc (Derivative and convexity of $EM^*$)}  Suppose that assumptions $\mathbf{A_1}$ and $\mathbf{A_2}$ are fulfilled. Then, the mapping $EM^*$ is differentiable and we have for all $t>0$:
 \label{aistat:derive}
 \begin{eqnarray*}
  EM^{*'}(t)=-\lambda(t). 
@@ -624,7 +624,7 @@ It is the purpose of this section to show that the algorithm detailed below prod
 \caption{~~Learning a scoring function}
 \label{aistat:algo1} 
 Suppose that assumptions $\mathbf{A_1}$, $\mathbf{A_2}$, $\mathbf{A_3}$, $\mathbf{A_4}$ hold true.\\ Let $t_1$ such that $\max_{\Omega \in \mathcal{G}}H_{n,t_1}(\Omega)
-\ge  0$. 
+\ge  0$.
 %\noindent
 Fix  $N>0$. %  and define $t_1>t_{2}>...>t_{N}$, $\hat
 % \Omega_{t_1},...,\hat \Omega_{t_N}$, such that,

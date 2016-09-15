@@ -40,19 +40,19 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 \usepackage{vmargin}
-\setmarginsrb           { 0.7in}  % left margin
-                        { 0.5in}  % top margin
-                        { 0.7in}  % right margin
-                        { 0.5in}  % bottom margin
+\setmarginsrb           { 1.3in}  % left margin
+                        { 0.6in}  % top margin
+                        { 1.3in}  % right margin
+                        { 0.6in}  % bottom margin
                         {  20pt}  % head height
                         {0.25in}  % head sep
                         {   9pt}  % foot height
                         { 0.3in}  % foot sep
-% uncomment for book margins!:
+% %%uncomment for book margins!:
 % \setmarginsrb           { 1.5in}  % left margin
-%                         { 0.6in}  % top margin
-%                         { 1.0in}  % right margin
-%                         { 0.8in}  % bottom margin
+%                         { 0.5in}  % top margin
+%                         { 1.1in}  % right margin
+%                         { 0.7in}  % bottom margin
 %                         {  20pt}  % head height
 %                         {0.25in}  % head sep
 %                         {   9pt}  % foot height
@@ -178,7 +178,7 @@
     \textbf{Sp\'ecialit\'e~ ``Signal et Images''}\\[\baselineskip]
     \emph{pr{\'e}sent{\'e}e et soutenue publiquement par}\\[\baselineskip]
     {\Large\bfseries Nicolas\ \textsc{Goix}}\\[0.5\baselineskip]
-    le 1er Octobre 2016
+    le ... Octobre 2016
     \singlespacing
         LTCI, CNRS, T\'el\'ecom ParisTech, Universit\'e Paris-Saclay, 75013, Paris, France\\
         \par\vspace*{2\baselineskip}
@@ -186,13 +186,13 @@
 %\par\vspace*{0.3cm}
     \textbf{Jury~:} \\[0.5\baselineskip]
       \begin{tabular}{lll}
-        % G\'erard \textbf{Biau} & Professeur, Universit\'e Pierre et Marie Curie & Examinateur\\
-        St\'ephane \textbf{Boucheron} & Professeur, Universit\'e Paris Diderot & Rapporteur\\
+        G\'erard \textbf{Biau} & Professeur, Universit\'e Pierre et Marie Curie & Examinateur\\
+        St\'ephane \textbf{Boucheron} & Professeur, Universit\'e Paris Diderot \& ENS Ulm & Rapporteur\\
         St\'ephan \textbf{Cl\'emen\c{c}on} & Professeur, T\'el\'ecom ParisTech & Directeur\\
-        St\'ephane \textbf{Girard} & Professeur, Inria Grenoble Rhône-Alpes & Rapporteur\\
-        % Alexandre \textbf{Gramfort} & Maitre de Conf\'erence, T\'el\'ecom ParisTech  & Examinateur\\
+        St\'ephane \textbf{Girard} & Directeur de Recherche, Inria Grenoble Rh\^one-Alpes & Rapporteur\\
+        Alexandre \textbf{Gramfort} & Maitre de Conf\'erence, T\'el\'ecom ParisTech  & Examinateur\\
         Anne \textbf{Sabourin} & Maitre de Conf\'erence, T\'el\'ecom ParisTech & Co-directeur\\
-        % Johan \textbf{Segers} & Professeur, Universit\'e catholique de Louvain & Examinateur\\
+        Johan \textbf{Segers} & Professeur, Universit\'e catholique de Louvain & Examinateur\\
         % Jean-Philippe \textbf{Vert} & Professeur, Mines ParisTech & Examinateur\\
       \end{tabular}
 \par\vspace*{0.5cm}

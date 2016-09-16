@@ -178,7 +178,7 @@
     \textbf{Sp\'ecialit\'e~ ``Signal et Images''}\\[\baselineskip]
     \emph{pr{\'e}sent{\'e}e et soutenue publiquement par}\\[\baselineskip]
     {\Large\bfseries Nicolas\ \textsc{Goix}}\\[0.5\baselineskip]
-    le ... Octobre 2016
+    le 28 Novembre 2016
     \singlespacing
         LTCI, CNRS, T\'el\'ecom ParisTech, Universit\'e Paris-Saclay, 75013, Paris, France\\
         \par\vspace*{2\baselineskip}
@@ -187,12 +187,12 @@
     \textbf{Jury~:} \\[0.5\baselineskip]
       \begin{tabular}{lll}
         G\'erard \textbf{Biau} & Professeur, Universit\'e Pierre et Marie Curie & Examinateur\\
-        St\'ephane \textbf{Boucheron} & Professeur, Universit\'e Paris Diderot \& ENS Ulm & Rapporteur\\
+        St\'ephane \textbf{Boucheron} & Professeur, Universit\'e Paris Diderot  & Rapporteur\\
         St\'ephan \textbf{Cl\'emen\c{c}on} & Professeur, T\'el\'ecom ParisTech & Directeur\\
         St\'ephane \textbf{Girard} & Directeur de Recherche, Inria Grenoble Rh\^one-Alpes & Rapporteur\\
         Alexandre \textbf{Gramfort} & Maitre de Conf\'erence, T\'el\'ecom ParisTech  & Examinateur\\
         Anne \textbf{Sabourin} & Maitre de Conf\'erence, T\'el\'ecom ParisTech & Co-directeur\\
-        Johan \textbf{Segers} & Professeur, Universit\'e catholique de Louvain & Examinateur\\
+        Jean-Philippe \textbf{Vert} & Directeur de Recherche, Mines ParisTech & Examinateur\\
         % Jean-Philippe \textbf{Vert} & Professeur, Mines ParisTech & Examinateur\\
       \end{tabular}
 \par\vspace*{0.5cm}

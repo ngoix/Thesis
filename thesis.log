@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  7 OCT 2016 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  7 OCT 2016 17:06
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2199,4 +2199,889 @@ File: fig_source/representation2D_nk_rect.png Graphic file (type png)
 
 <use fig_source/representation2D_nk_rect.png>
 Package pdftex.def Info: fig_source/representation2D_nk_rect.png used on input 
-line 9
+line 950.
+(pdftex.def)             Requested size: 287.17067pt x 257.26833pt.
+ [100] [101 <./fig_source/representation2D_nk_rect.png>] [102]
+Overfull \hbox (11.21889pt too wide) in paragraph at lines 1080--1087
+\OT1/ptm/m/n/10.95 Notice that $[]\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x\OML
+/cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 z\OT1/cmr/m/n/10.95 )$ \OT1/ptm/m/n/10.95
+ is an ex-ten-sion of the non-asymptotic ap-prox-i-ma-tion $[]$ in ([][]7.22[][
+]). By ([][]7.27[][])
+ []
+
+[103]
+Overfull \hbox (2.25232pt too wide) in paragraph at lines 1145--1147
+\OT1/ptm/m/n/10.95 where the last equal-ity comes from the equiv-a-lence $[] \O
+MS/cmsy/m/n/10.95 ^^U []\OML/cmm/m/it/10.95 x[] \OMS/cmsy/m/n/10.95 , \OML/cmm/
+m/it/10.95 U[] \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 U[]$ \OT1/ptm/m/n/10
+.95 (Lemma [][]7.5[][])
+ []
+
+[104]
+Overfull \hbox (4.70694pt too wide) in paragraph at lines 1189--1193
+\OT1/ptm/m/n/10.95 where $[]$ is de-fined by $[][] \OT1/cmr/m/n/10.95 = \U/dsro
+m/m/n/10.95 1[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^O\U/dsrom/m/n/10.95 
+1[]$ \OT1/ptm/m/n/10.95 for all $\OML/cmm/m/it/10.95 j \OMS/cmsy/m/n/10.95 2 f\
+OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; [] ; d\OMS/cmsy/m/n/10.95 g$\OT1/ptm/m
+/n/10.95 . In-deed, we have: $\OML/cmm/m/it/10.95 R\OT1/cmr/m/n/10.95 ([]\OML/c
+mm/m/it/10.95 ; []; ; []\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 \
+ []
+
+[105] [106] [107] [108] [109]
+<fig_source/plot_damex_level_sets.png, id=2702, 1602.2259pt x 721.2546pt>
+File: fig_source/plot_damex_level_sets.png Graphic file (type png)
+
+<use fig_source/plot_damex_level_sets.png>
+Package pdftex.def Info: fig_source/plot_damex_level_sets.png used on input lin
+e 1620.
+(pdftex.def)             Requested size: 373.46715pt x 168.11917pt.
+ [110] [111 <./fig_source/plot_damex_level_sets.png>] [112]
+<fig_source/wave_dir2.png, id=2754, 1180.1691pt x 460.3599pt>
+File: fig_source/wave_dir2.png Graphic file (type png)
+
+<use fig_source/wave_dir2.png>
+Package pdftex.def Info: fig_source/wave_dir2.png used on input line 1860.
+(pdftex.def)             Requested size: 389.45702pt x 151.91924pt.
+ [113 <./fig_source/wave_dir2.png>] [114]
+<fig_source/shuttle-semi-supervised-average-rect-01.png, id=2797, 1681.0002pt x
+ 922.8879pt>
+File: fig_source/shuttle-semi-supervised-average-rect-01.png Graphic file (type
+ png)
+ <use fig_source/shuttle-semi-supervised-average-rect-01.png>
+Package pdftex.def Info: fig_source/shuttle-semi-supervised-average-rect-01.png
+ used on input line 2103.
+(pdftex.def)             Requested size: 410.24562pt x 225.22939pt.
+
+<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=2798, 1681.0002pt 
+x 922.8879pt>
+File: fig_source/SF-4d-lb-semi-supervised-average-rect-01.png Graphic file (typ
+e png)
+ <use fig_source/SF-4d-lb-semi-supervised-average-rect-01.png>
+Package pdftex.def Info: fig_source/SF-4d-lb-semi-supervised-average-rect-01.pn
+g used on input line 2109.
+(pdftex.def)             Requested size: 410.24562pt x 225.22939pt.
+
+<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=2799, 1681.0002pt x
+ 922.8879pt>
+File: fig_source/SF-4d-lb-semi-supervised-average-rect-1.png Graphic file (type
+ png)
+ <use fig_source/SF-4d-lb-semi-supervised-average-rect-1.png>
+Package pdftex.def Info: fig_source/SF-4d-lb-semi-supervised-average-rect-1.png
+ used on input line 2115.
+(pdftex.def)             Requested size: 410.24562pt x 225.22939pt.
+
+<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=2801, 1681.0002pt x 9
+22.8879pt>
+File: fig_source/SA-lb-semi-supervised-average-rect-01.png Graphic file (type p
+ng)
+ <use fig_source/SA-lb-semi-supervised-average-rect-01.png>
+Package pdftex.def Info: fig_source/SA-lb-semi-supervised-average-rect-01.png u
+sed on input line 2146.
+(pdftex.def)             Requested size: 410.24562pt x 225.22939pt.
+
+<fig_source/forestcover-semi-supervised-average-rect-01.png, id=2802, 1681.0002
+pt x 922.8879pt>
+File: fig_source/forestcover-semi-supervised-average-rect-01.png Graphic file (
+type png)
+
+<use fig_source/forestcover-semi-supervised-average-rect-01.png>
+Package pdftex.def Info: fig_source/forestcover-semi-supervised-average-rect-01
+.png used on input line 2153.
+(pdftex.def)             Requested size: 410.24562pt x 225.22939pt.
+
+<fig_source/http-3d-semi-supervised-average-rect-01.png, id=2803, 1681.0002pt x
+ 922.8879pt>
+File: fig_source/http-3d-semi-supervised-average-rect-01.png Graphic file (type
+ png)
+ <use fig_source/http-3d-semi-supervised-average-rect-01.png>
+Package pdftex.def Info: fig_source/http-3d-semi-supervised-average-rect-01.png
+ used on input line 2160.
+(pdftex.def)             Requested size: 410.24562pt x 225.22939pt.
+
+[115]
+Overfull \vbox (23.98424pt too high) has occurred while \output is active []
+
+
+[116 <./fig_source/shuttle-semi-supervised-average-rect-01.png> <./fig_source/S
+F-4d-lb-semi-supervised-average-rect-01.png>] [117 <./fig_source/SF-4d-lb-semi-
+supervised-average-rect-1.png> <./fig_source/SA-lb-semi-supervised-average-rect
+-01.png>] [118 <./fig_source/forestcover-semi-supervised-average-rect-01.png> <
+./fig_source/http-3d-semi-supervised-average-rect-01.png>] [119] [120] [121]
+Overfull \hbox (27.17181pt too wide) in paragraph at lines 2394--2395
+[]\OT1/ptm/m/n/10.95 Considering the def-i-ni-tion in ([][]7.45[][]) and ([][]7
+.31[][]), both sides are equal to $\OML/cmm/m/it/10.95 ^^V[]\OT1/cmr/m/n/10.95 
+(\OML/cmm/m/it/10.95 R\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 x[]\OML/cmm/m/it/
+10.95 ; \OT1/cmr/bx/n/10.95 z[]\OML/cmm/m/it/10.95 ; ; ^^L\OT1/cmr/m/n/10.95 )
+)$\OT1/ptm/m/n/10.95 .
+ []
+
+[122] [123] [124] [125]) [126] [127
+
+] [128] (./evaluation.tex
+Chapter 8.
+------------------------------------------------------------------------------
+ 8.\hskip 1em\relax How to Evaluate the Quality of Anomaly Detection Algorithms
+?
+------------------------------------------------------------------------------
+[129
+
+] [130]
+Overfull \hbox (12.74663pt too wide) in paragraph at lines 85--90
+\OT1/ptm/m/n/10.95 We place our-selves in a prob-a-bil-ity space $\OT1/cmr/m/n/
+10.95 (
+\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 F\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.
+95 P\OT1/cmr/m/n/10.95 )$\OT1/ptm/m/n/10.95 . We ob-serve $\OML/cmm/m/it/10.95 
+n$ $[]$  \OT1/ptm/m/n/10.95 re-al-iza-tions $\OT1/cmr/bx/n/10.95 X[]\OML/cmm/m/
+it/10.95 ; [] ; \OT1/cmr/bx/n/10.95 X[]$
+ []
+
+[131] [132] [133] [134] [135]
+Overfull \hbox (13.02136pt too wide) in paragraph at lines 383--387
+[]\OT1/ptm/m/n/10.95 Recall that stan-dard excess-mass and mass-volume per-for-
+mance cri-te-ria re-fer-ring on the Lebesgue
+ []
+
+
+<fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized_inkscape.png, i
+d=3112, 1469.07466pt x 859.7638pt>
+File: fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized_inkscape.p
+ng Graphic file (type png)
+
+<use fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized_inkscape.pn
+g>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_adult_supervised_09_fa
+ctorized_inkscape.png used on input line 435.
+(pdftex.def)             Requested size: 410.24562pt x 240.08939pt.
+
+Overfull \hbox (23.36235pt too wide) in paragraph at lines 443--443
+[] 
+ []
+
+[136] [137 <./fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized_in
+kscape.png>] [138] [139]
+<fig_source/evaluation_fig/bench_iforest_roc_pr_supervised_factorized.png, id=3
+137, 1806.75pt x 1228.59pt>
+File: fig_source/evaluation_fig/bench_iforest_roc_pr_supervised_factorized.png 
+Graphic file (type png)
+
+<use fig_source/evaluation_fig/bench_iforest_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/bench_iforest_roc_pr_supervi
+sed_factorized.png used on input line 506.
+(pdftex.def)             Requested size: 402.03894pt x 290.01912pt.
+
+<fig_source/evaluation_fig/bench_iforest_roc_pr_unsupervised_factorized.png, id
+=3139, 1806.75pt x 1228.59pt>
+File: fig_source/evaluation_fig/bench_iforest_roc_pr_unsupervised_factorized.pn
+g Graphic file (type png)
+
+<use fig_source/evaluation_fig/bench_iforest_roc_pr_unsupervised_factorized.png
+>
+Package pdftex.def Info: fig_source/evaluation_fig/bench_iforest_roc_pr_unsuper
+vised_factorized.png used on input line 513.
+(pdftex.def)             Requested size: 402.03894pt x 290.01912pt.
+
+<fig_source/evaluation_fig/bench_ocsvm_roc_pr_supervised_factorized.png, id=314
+1, 1806.75pt x 1228.59pt>
+File: fig_source/evaluation_fig/bench_ocsvm_roc_pr_supervised_factorized.png Gr
+aphic file (type png)
+
+<use fig_source/evaluation_fig/bench_ocsvm_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/bench_ocsvm_roc_pr_supervise
+d_factorized.png used on input line 520.
+(pdftex.def)             Requested size: 410.24562pt x 295.9467pt.
+
+<fig_source/evaluation_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png, id=3
+143, 1806.75pt x 1228.59pt>
+File: fig_source/evaluation_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png 
+Graphic file (type png)
+
+<use fig_source/evaluation_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/bench_ocsvm_roc_pr_unsupervi
+sed_factorized.png used on input line 527.
+(pdftex.def)             Requested size: 410.24562pt x 295.9467pt.
+
+<fig_source/evaluation_fig/bench_lof_roc_pr_supervised_factorized.png, id=3145,
+ 1806.75pt x 1228.59pt>
+File: fig_source/evaluation_fig/bench_lof_roc_pr_supervised_factorized.png Grap
+hic file (type png)
+
+<use fig_source/evaluation_fig/bench_lof_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/bench_lof_roc_pr_supervised_
+factorized.png used on input line 534.
+(pdftex.def)             Requested size: 410.24562pt x 295.9467pt.
+
+<fig_source/evaluation_fig/bench_lof_roc_pr_unsupervised_factorized.png, id=314
+7, 1806.75pt x 1228.59pt>
+File: fig_source/evaluation_fig/bench_lof_roc_pr_unsupervised_factorized.png Gr
+aphic file (type png)
+
+<use fig_source/evaluation_fig/bench_lof_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/bench_lof_roc_pr_unsupervise
+d_factorized.png used on input line 541.
+(pdftex.def)             Requested size: 410.24562pt x 295.9467pt.
+
+<fig_source/evaluation_fig/mv_em_http_supervised_09_factorized.png, id=3149, 18
+06.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_http_supervised_09_factorized.png Graphic
+ file (type png)
+
+<use fig_source/evaluation_fig/mv_em_http_supervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_http_supervised_09_fac
+torized.png used on input line 551.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+
+<fig_source/evaluation_fig/mv_em_http_unsupervised_09_factorized.png, id=3151, 
+1806.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_http_unsupervised_09_factorized.png Graph
+ic file (type png)
+
+<use fig_source/evaluation_fig/mv_em_http_unsupervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_http_unsupervised_09_f
+actorized.png used on input line 557.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+
+<fig_source/evaluation_fig/mv_em_pima_supervised_09_factorized.png, id=3153, 18
+06.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_pima_supervised_09_factorized.png Graphic
+ file (type png)
+
+<use fig_source/evaluation_fig/mv_em_pima_supervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_pima_supervised_09_fac
+torized.png used on input line 577.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+
+<fig_source/evaluation_fig/mv_em_pima_unsupervised_09_factorized.png, id=3155, 
+1806.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_pima_unsupervised_09_factorized.png Graph
+ic file (type png)
+
+<use fig_source/evaluation_fig/mv_em_pima_unsupervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_pima_unsupervised_09_f
+actorized.png used on input line 583.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+
+<fig_source/evaluation_fig/mv_em_smtp_supervised_09_factorized.png, id=3157, 18
+06.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_smtp_supervised_09_factorized.png Graphic
+ file (type png)
+
+<use fig_source/evaluation_fig/mv_em_smtp_supervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_smtp_supervised_09_fac
+torized.png used on input line 590.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+
+<fig_source/evaluation_fig/mv_em_smtp_unsupervised_09_factorized.png, id=3159, 
+1806.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_smtp_unsupervised_09_factorized.png Graph
+ic file (type png)
+
+<use fig_source/evaluation_fig/mv_em_smtp_unsupervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_smtp_unsupervised_09_f
+actorized.png used on input line 596.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+
+<fig_source/evaluation_fig/mv_em_wilt_supervised_09_factorized.png, id=3161, 18
+06.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_wilt_supervised_09_factorized.png Graphic
+ file (type png)
+
+<use fig_source/evaluation_fig/mv_em_wilt_supervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_wilt_supervised_09_fac
+torized.png used on input line 603.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+
+<fig_source/evaluation_fig/mv_em_wilt_unsupervised_09_factorized.png, id=3163, 
+1806.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_wilt_unsupervised_09_factorized.png Graph
+ic file (type png)
+
+<use fig_source/evaluation_fig/mv_em_wilt_unsupervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_wilt_unsupervised_09_f
+actorized.png used on input line 609.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+
+<fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized.png, id=3165, 1
+806.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized.png Graphi
+c file (type png)
+
+<use fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_adult_supervised_09_fa
+ctorized.png used on input line 617.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+
+<fig_source/evaluation_fig/mv_em_adult_unsupervised_09_factorized.png, id=3167,
+ 1806.75pt x 939.51pt>
+File: fig_source/evaluation_fig/mv_em_adult_unsupervised_09_factorized.png Grap
+hic file (type png)
+
+<use fig_source/evaluation_fig/mv_em_adult_unsupervised_09_factorized.png>
+Package pdftex.def Info: fig_source/evaluation_fig/mv_em_adult_unsupervised_09_
+factorized.png used on input line 624.
+(pdftex.def)             Requested size: 410.24562pt x 228.24944pt.
+)
+(./ocrf.tex [140
+
+ <./fig_source/evaluation_fig/bench_iforest_roc_pr_supervised_factorized.png> <
+./fig_source/evaluation_fig/bench_iforest_roc_pr_unsupervised_factorized.png>] 
+[141 <./fig_source/evaluation_fig/bench_ocsvm_roc_pr_supervised_factorized.png>
+ <./fig_source/evaluation_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png>] 
+[142 <./fig_source/evaluation_fig/bench_lof_roc_pr_supervised_factorized.png> <
+./fig_source/evaluation_fig/bench_lof_roc_pr_unsupervised_factorized.png>] [143
+ <./fig_source/evaluation_fig/mv_em_http_supervised_09_factorized.png> <./fig_s
+ource/evaluation_fig/mv_em_http_unsupervised_09_factorized.png>] [144 <./fig_so
+urce/evaluation_fig/mv_em_pima_supervised_09_factorized.png> <./fig_source/eval
+uation_fig/mv_em_pima_unsupervised_09_factorized.png>] [145 <./fig_source/evalu
+ation_fig/mv_em_smtp_supervised_09_factorized.png> <./fig_source/evaluation_fig
+/mv_em_smtp_unsupervised_09_factorized.png>] [146 <./fig_source/evaluation_fig/
+mv_em_wilt_supervised_09_factorized.png> <./fig_source/evaluation_fig/mv_em_wil
+t_unsupervised_09_factorized.png>] [147 <./fig_source/evaluation_fig/mv_em_adul
+t_supervised_09_factorized.png> <./fig_source/evaluation_fig/mv_em_adult_unsupe
+rvised_09_factorized.png>] [148
+
+]
+Chapter 9.
+------------------------------------------------------------------------------
+ 9.\hskip 1em\relax One Class Splitting Criteria for Random Forests
+------------------------------------------------------------------------------
+[149] [150] [151] [152] [153]
+<fig_source/ocrf_fig/outlier_density.png, id=3410, 589.69891pt x 521.68008pt>
+File: fig_source/ocrf_fig/outlier_density.png Graphic file (type png)
+
+<use fig_source/ocrf_fig/outlier_density.png>
+Package pdftex.def Info: fig_source/ocrf_fig/outlier_density.png used on input 
+line 290.
+(pdftex.def)             Requested size: 328.19774pt x 290.33984pt.
+ [154] [155 <./fig_source/ocrf_fig/outlier_density.png>]
+<fig_source/ocrf_fig/oneclassrf.png, id=3446, 586.8324pt x 442.2924pt>
+File: fig_source/ocrf_fig/oneclassrf.png Graphic file (type png)
+
+<use fig_source/ocrf_fig/oneclassrf.png>
+Package pdftex.def Info: fig_source/ocrf_fig/oneclassrf.png used on input line 
+501.
+(pdftex.def)             Requested size: 205.1228pt x 154.59544pt.
+ [156] [157 <./fig_source/ocrf_fig/oneclassrf.png>] [158]
+Overfull \hbox (79.27063pt too wide) in paragraph at lines 789--793
+[]\OT1/ptm/m/n/10.95 The \OT1/ptm/m/it/10.95 LOF \OT1/ptm/m/n/10.95 al-go-rithm
+ uses de-fault pa-ram-e-ters: []\OT1/pcr/m/n/10.95 n_neighbors=5\OT1/ptm/m/n/10
+.95 , []\OT1/pcr/m/n/10.95 leaf_size=30\OT1/ptm/m/n/10.95 , []\OT1/pcr/m/n/10.9
+5 metric='minkowski'\OT1/ptm/m/n/10.95 ,
+ []
+
+
+Overfull \hbox (109.82138pt too wide) in paragraph at lines 794--797
+[]\OT1/ptm/m/n/10.95 The \OT1/ptm/m/it/10.95 iFor-est \OT1/ptm/m/n/10.95 al-go-
+rithm uses de-fault pa-ram-e-ters: []\OT1/pcr/m/n/10.95 n_estimators=100\OT1/pt
+m/m/n/10.95 , []\OT1/pcr/m/n/10.95 max_samples=min(256, n_samples)\OT1/ptm/m/n/
+10.95 ,
+ []
+
+
+Overfull \hbox (5.62158pt too wide) in paragraph at lines 794--797
+[]\OT1/pcr/m/n/10.95 max_features=1\OT1/ptm/m/n/10.95 , []\OT1/pcr/m/n/10.95 bo
+otstrap=false\OT1/ptm/m/n/10.95 , where boot-strap states whether sam-ples are 
+drawn
+ []
+
+[159]
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 872.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 873.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 874.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 875.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 876.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 877.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 878.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 879.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 899.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 900.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 901.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 902.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 903.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 904.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 905.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_semisupervised.txt
+' has non-unique column name '&'. Only the first occurence can be accessed via 
+column names. on input line 906.
+
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
+
+Overfull \hbox (5.08337pt too wide) in paragraph at lines 946--991
+\OT1/ptm/m/n/10.95 The ex-per-i-ments are per-formed in the nov-elty de-tec-tio
+n frame-work, also named semi-supervised
+ []
+
+[160]
+Overfull \hbox (21.55606pt too wide) in paragraph at lines 1022--1022
+[] 
+ []
+
+[161]
+Overfull \hbox (61.39182pt too wide) in paragraph at lines 1022--1027
+\OT1/ptm/m/n/10.95 which is the pop-u-la-tion ver-sion of []. In-deed, when ob-
+serv-ing $\OML/cmm/m/it/10.95 n$ $[]$  \OT1/ptm/m/n/10.95 re-al-iza-tions $\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; y[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/1
+0.95 ; [] ; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; y[]\OT1/cmr/m/n/10.95 
+)$
+ []
+
+
+Overfull \hbox (0.44891pt too wide) in paragraph at lines 1057--1059
+\OT1/ptm/m/n/10.95 proxy of the Gini im-pu-rity de-crease [] is eas-ily re-cov-
+ered by re-plac-ing $\OML/cmm/m/it/10.95 nL[]$ \OT1/ptm/m/n/10.95 (resp. $\OML
+/cmm/m/it/10.95 nL[]$\OT1/ptm/m/n/10.95 )
+ []
+
+[162] [163]
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1340.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1341.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1342.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1343.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1344.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1345.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1346.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1347.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1373.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1374.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1375.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1376.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1377.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1378.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1379.
+
+PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
+
+Package pgfplots Warning: Table 'fig_source/ocrf_fig/results_unsupervised.txt' 
+has non-unique column name '&'. Only the first occurence can be accessed via co
+lumn names. on input line 1380.
+
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
+PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
+[164] [165]
+<fig_source/ocrf_fig/bench_oneclassrf_roc_pr_supervised_factorized.png, id=3588
+, 1806.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_oneclassrf_roc_pr_supervised_factorized.png Gra
+phic file (type png)
+
+<use fig_source/ocrf_fig/bench_oneclassrf_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_oneclassrf_roc_pr_supervised
+_factorized.png used on input line 1425.
+(pdftex.def)             Requested size: 406.96545pt x 286.55902pt.
+
+<fig_source/ocrf_fig/bench_oneclassrf_roc_pr_unsupervised_factorized.png, id=35
+90, 1806.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_oneclassrf_roc_pr_unsupervised_factorized.png G
+raphic file (type png)
+
+<use fig_source/ocrf_fig/bench_oneclassrf_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_oneclassrf_roc_pr_unsupervis
+ed_factorized.png used on input line 1431.
+(pdftex.def)             Requested size: 406.96545pt x 286.55902pt.
+
+<fig_source/ocrf_fig/bench_iforest_roc_pr_supervised_factorized.png, id=3592, 1
+806.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_iforest_roc_pr_supervised_factorized.png Graphi
+c file (type png)
+
+<use fig_source/ocrf_fig/bench_iforest_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_iforest_roc_pr_supervised_fa
+ctorized.png used on input line 1438.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_iforest_roc_pr_unsupervised_factorized.png, id=3594,
+ 1806.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_iforest_roc_pr_unsupervised_factorized.png Grap
+hic file (type png)
+
+<use fig_source/ocrf_fig/bench_iforest_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_iforest_roc_pr_unsupervised_
+factorized.png used on input line 1444.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_ocrf_roc_pr_supervised_factorized.png, id=3596, 1806
+.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_ocrf_roc_pr_supervised_factorized.png Graphic f
+ile (type png)
+
+<use fig_source/ocrf_fig/bench_ocrf_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_ocrf_roc_pr_supervised_facto
+rized.png used on input line 1451.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_ocrf_roc_pr_unsupervised_factorized.png, id=3598, 18
+06.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_ocrf_roc_pr_unsupervised_factorized.png Graphic
+ file (type png)
+
+<use fig_source/ocrf_fig/bench_ocrf_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_ocrf_roc_pr_unsupervised_fac
+torized.png used on input line 1457.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_ocsvm_roc_pr_supervised_factorized.png, id=3600, 180
+6.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_ocsvm_roc_pr_supervised_factorized.png Graphic 
+file (type png)
+
+<use fig_source/ocrf_fig/bench_ocsvm_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_ocsvm_roc_pr_supervised_fact
+orized.png used on input line 1464.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png, id=3602, 1
+806.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png Graphi
+c file (type png)
+
+<use fig_source/ocrf_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_ocsvm_roc_pr_unsupervised_fa
+ctorized.png used on input line 1470.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_lof_roc_pr_supervised_factorized.png, id=3604, 1806.
+75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_lof_roc_pr_supervised_factorized.png Graphic fi
+le (type png)
+
+<use fig_source/ocrf_fig/bench_lof_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_lof_roc_pr_supervised_factor
+ized.png used on input line 1477.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_lof_roc_pr_unsupervised_factorized.png, id=3606, 180
+6.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_lof_roc_pr_unsupervised_factorized.png Graphic 
+file (type png)
+
+<use fig_source/ocrf_fig/bench_lof_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_lof_roc_pr_unsupervised_fact
+orized.png used on input line 1483.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_orca_roc_pr_supervised_factorized.png, id=3608, 1806
+.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_orca_roc_pr_supervised_factorized.png Graphic f
+ile (type png)
+
+<use fig_source/ocrf_fig/bench_orca_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_orca_roc_pr_supervised_facto
+rized.png used on input line 1490.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_orca_roc_pr_unsupervised_factorized.png, id=3610, 18
+06.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_orca_roc_pr_unsupervised_factorized.png Graphic
+ file (type png)
+
+<use fig_source/ocrf_fig/bench_orca_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_orca_roc_pr_unsupervised_fac
+torized.png used on input line 1496.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_supervised_factorized.png, id=3612,
+ 1806.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_supervised_factorized.png Grap
+hic file (type png)
+
+<use fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_supervised_
+factorized.png used on input line 1503.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_unsupervised_factorized.png, id=361
+4, 1806.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_unsupervised_factorized.png Gr
+aphic file (type png)
+
+<use fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_unsupervise
+d_factorized.png used on input line 1509.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_rf_roc_pr_supervised_factorized.png, id=3616, 1806.7
+5pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_rf_roc_pr_supervised_factorized.png Graphic fil
+e (type png)
+
+<use fig_source/ocrf_fig/bench_rf_roc_pr_supervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_rf_roc_pr_supervised_factori
+zed.png used on input line 1516.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+
+<fig_source/ocrf_fig/bench_rf_roc_pr_unsupervised_factorized.png, id=3618, 1806
+.75pt x 1228.59pt>
+File: fig_source/ocrf_fig/bench_rf_roc_pr_unsupervised_factorized.png Graphic f
+ile (type png)
+
+<use fig_source/ocrf_fig/bench_rf_roc_pr_unsupervised_factorized.png>
+Package pdftex.def Info: fig_source/ocrf_fig/bench_rf_roc_pr_unsupervised_facto
+rized.png used on input line 1522.
+(pdftex.def)             Requested size: 410.24562pt x 288.87338pt.
+) [166
+
+ <./fig_source/ocrf_fig/bench_oneclassrf_roc_pr_supervised_factorized.png> <./f
+ig_source/ocrf_fig/bench_oneclassrf_roc_pr_unsupervised_factorized.png>] [167 <
+./fig_source/ocrf_fig/bench_iforest_roc_pr_supervised_factorized.png> <./fig_so
+urce/ocrf_fig/bench_iforest_roc_pr_unsupervised_factorized.png>] [168 <./fig_so
+urce/ocrf_fig/bench_ocrf_roc_pr_supervised_factorized.png> <./fig_source/ocrf_f
+ig/bench_ocrf_roc_pr_unsupervised_factorized.png>] [169 <./fig_source/ocrf_fig/
+bench_ocsvm_roc_pr_supervised_factorized.png> <./fig_source/ocrf_fig/bench_ocsv
+m_roc_pr_unsupervised_factorized.png>] [170 <./fig_source/ocrf_fig/bench_lof_ro
+c_pr_supervised_factorized.png> <./fig_source/ocrf_fig/bench_lof_roc_pr_unsuper
+vised_factorized.png>] [171 <./fig_source/ocrf_fig/bench_orca_roc_pr_supervised
+_factorized.png> <./fig_source/ocrf_fig/bench_orca_roc_pr_unsupervised_factoriz
+ed.png>] [172 <./fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_supervised_factoriz
+ed.png> <./fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_unsupervised_factorized.p
+ng>] [173 <./fig_source/ocrf_fig/bench_rf_roc_pr_supervised_factorized.png> <./
+fig_source/ocrf_fig/bench_rf_roc_pr_unsupervised_factorized.png>] [174
+
+]
+Chapter 10.
+------------------------------------------------------------------------------
+ 10.\hskip 1em\relax Conclusion, limitations \& perspectives
+------------------------------------------------------------------------------
+(./conclusion.tex [175]) [176]
+------------------------------------------------------------------------------
+ Bibliography
+------------------------------------------------------------------------------
+(./thesis.bbl [177
+
+
+] [178] [179]
+Underfull \hbox (badness 1975) in paragraph at lines 447--450
+[]\OT1/ptm/m/n/10 R. Genuer, J.-M. Poggi, and C. Tuleau.  Ran-dom forests: some
+ method-olog-i-cal in-sights.
+ []
+
+[180] [181] [182] [183]) [184]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
+ (./thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: E26E8C0C211674A36B9EE015333C9A44;29724.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
+ ) 
+Here is how much of TeX's memory you used:
+ 49904 strings out of 495020
+ 1048500 string characters out of 6181323
+ 1458804 words of memory out of 5000000
+ 51467 multiletter control sequences out of 15000+600000
+ 71770 words of font info for 158 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 64i,24n,100p,10455b,2265s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
+st, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+mextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/doublestroke/dsrom10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/doublestroke/dsrom8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/
+ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
+mr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (198 pages, 15900995 bytes).
+PDF statistics:
+ 4051 PDF objects out of 4296 (max. 8388607)
+ 3612 compressed objects within 37 object streams
+ 824 named destinations out of 1000 (max. 500000)
+ 1480 words of extra memory for PDF output out of 10000 (max. 10000000)
+

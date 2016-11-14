@@ -1,6 +1,10 @@
 \documentclass[10pt]{beamer}
 % \documentclass[reqno]{beamer}
 
+\usepackage{booktabs} % better tables
+
+\usepackage{subfigure}
+
 \usepackage{times}
 \usepackage[utf8]{inputenc}  % pour les accents
 \usepackage{euler}
@@ -31,10 +35,12 @@
 
 \newcommand\red{\color{red} }
 \newcommand\blue{\color{blue} }
+\newcommand\green{\color{green} }
 \newcommand{\crit}{\mathcal{C}}
 
 \definecolor{blue}{rgb}{0.1,0.1,0.65}
 \definecolor{red}{rgb}{0.7,0.1,0.1}
+\definecolor{green}{rgb}{0.07,0.5,0.07}
 
 \def\argmin{\operatornamewithlimits{arg\,min}}
 \def\argmax{\operatornamewithlimits{arg\,max}}
@@ -57,14 +63,14 @@
 
 
 % \useoutertheme{infolines}
-% \setbeamertemplate{navigation symbols}{} 
-% \setbeamertemplate{footline}{
-%   \hspace*{.5cm}\tiny{%\insertauthor
-%     \hspace*{50pt}
-%     \hfill\insertframenumber%/\inserttotalframenumber
-%     \hspace*{.5cm}}\vspace*{.1cm}} 
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{footline}{
+  \hspace*{.5cm}\tiny{%\insertauthor
+    \hspace*{50pt}
+    \hfill\insertframenumber%/\inserttotalframenumber
+    \hspace*{.5cm}}\vspace*{.1cm}} 
 
-%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber} 
+% \addtobeamertemplate{footline}{\insertframenumber}%/\inserttotalframenumber} 
 % \setbeamertemplate{footline}{\hspace*{.5cm}\scriptsize{%\insertauthor
 %     \hspace*{50pt} \hfill\insertframenumber\hspace*{.5cm}}\vspace*{.1cm}} 
 
@@ -76,12 +82,12 @@
 % %\setbeamercolor{block title alerted}{bg=green!10,fg=black}
 % \setbeamercolor{block body alerted}{bg=red!10,fg=black}
 
-% \setbeamercolor{block title example}{bg=green!10,fg=black}
-% \setbeamercolor{block body example}{bg=green!10,fg=black}
+ \setbeamercolor{block title example}{bg=green!10,fg=green}
+ \setbeamercolor{block body example}{bg=green!10,fg=black}
 
 
 \title{
-Machine Learning Methods for Anomaly Detection
+Machine Learning and Extremes  for Anomaly Detection
 }
 
 \author[Nicolas Goix]{ Nicolas Goix \\
@@ -91,7 +97,7 @@ Machine Learning Methods for Anomaly Detection
  }
 }
 %}
-\date{PhD Defence, Telecom Paristech, October 2016}
+\date{PhD Defense, Telecom Paristech, November 28th 2016}
 
 
 
@@ -157,7 +163,40 @@ Training set (unlabeled) = normal + abnormal data \\
 
 
 \begin{frame}
-\frametitle{Outlines}
+\frametitle{Some litterature in Anomaly Detection}
+%\begin{exampleblock}{Some litterature in Anomaly Detection:}
+\begin{itemize}
+\item \textbf{Statistical AD techniques}\\
+fit a statistical model for normal behavior (ex: gaussian, gaussian mixture) \\~\\
+%ex: {\blue EllipticEnvelope}
+%-apply a statistical inference test to determine if a new instance belongs or not to this model.\\~\\
+
+\item \textbf{K-nearest neighbors}\\
+- ex: Local Outlier Factor (LOF) {\small [Breunig \emph{et al.} 2000]} \\~\\%and variantes (COF ODIN LOCI)\\
+%- Drawback: Density estimation hard in high dimension\\
+
+%\item \textbf{clustering-based}\\
+%- ex: CLARANS, DBSCAN, BIRCH,...\\
+%- Drawback: Clustering not designed for AD\\
+
+\item \textbf{Support estimation}\\
+- One-Class-SVM {\small [Sch{\"o}lkopf \emph{et al.} 2000, Vert and Vert 2006]}\\
+- {\blue Minimum Volume set} estimate {\small[Einmahl and Mason 92, Polonik 97, Scott and Nowak 2006]}\\~\\
+
+\item \textbf{High-dimensional techniques}\\
+- Dimensionality reduction {\small [Aggarwal and Yu 2001, Shyu \emph{et al.} 2003]}\\
+- One-class Random Forests {\small [Shi and Horvath 2012, Désir \emph{et al.} 2012]}\\
+- Isolation Forest {\small [Liu \emph{et al.} 2008]}
+%- `Aggarwal and Yu' algorithm
+
+%\item \textbf{others}: spectral techniques (PCA), clustering-based, random forest,...% Aggarwal \& Yu algorithm ... 
+\end{itemize}
+%\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Outline}
 %In a machine learning context, AD can been seen as a classification task but where the usual assumption -dataset contains info regarding all classes- breaks down.
 An AD algorithm returns a {\blue scoring function $s: \mathbb{R}^d \to \mathbb{R}$}.\\
 It represents the {\blue `degree of abnormality'} of an observation $x \in \mathbb{R}^d$ \\~\\
@@ -238,7 +277,7 @@ We want a criterion $\mathcal{C}(s)$ which measures \emph{how well the level set
 \begin{block}{}
 \begin{itemize}
 \item \textbf{Fact:} For any strictly increasing transform $T$, level sets of $T \circ f$ are exactly those of $f$.\\
-$\Rightarrow$ Criterion $\mathcal{C}(s) = \|s-f\|$ is not relevant! ($s = 2f$ is perfect)\\~\\
+$\Rightarrow$ Criterion $\mathcal{C}(s) = \|s-f\|$ is not relevant! ($\mathcal{C}(2f) > 0$)\\~\\
 
 \item \textbf{We are looking for a criterion s.t:}\\
 - $\crit^{\Phi}(s) = \| \Phi(s) - \Phi(f) \|$ with $\Phi$ s.t. $\Phi(T \circ s) = \Phi(s)$. \\
@@ -247,30 +286,104 @@ $\Rightarrow$ Criterion $\mathcal{C}(s) = \|s-f\|$ is not relevant! ($s = 2f$ is
 
 \end{itemize}
 \end{block}
- $\Rightarrow \Phi(s) := MV_s$ or $EM_s$, the Mass-Volume and Excess-Mass curves of $s$.
+ % $\Rightarrow \Phi(s) := MV_s$ or $EM_s$, the Mass-Volume and Excess-Mass curves of $s$.
+Question: How to choose $\Phi(s)$ ?
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Criteria satisfying these requirements: MV and EM}
+\frametitle{Existing criterion: Mass-Volume curve}
+% For a random variable $\mb X$, \emph{normal region}: region of minimum volume among all regions with probability greater than $\alpha \in (0,1)$.\\~\\
 
-\begin{block}{Mass-volume and excess-mass curves}
+\begin{minipage}{0.55\textwidth}
+	\begin{center}
+	{\blue Minimum volume set} [Polonik, 1997]
+	\end{center}
+	\begin{equation*}
+	\Gamma^*_{\alpha} = \argmin_{\Gamma\text{ borelian} } \{\text{Leb}(\Gamma), \mathbb{P}(\mb X \in \Gamma) \geq \alpha \}
+	\end{equation*}
+\end{minipage}
+\begin{minipage}{0.35\textwidth}
+	\centering
+	\includegraphics[width=0.95\textwidth]{img/anomaly_detection_end_col.png}
+\end{minipage}
+
+Under regularity assumptions, minimum-volume sets are \textbf{density level sets}:
+$$\exists t_\alpha>0,~~~ \Gamma^*_{\alpha} = \{f > t_\alpha\} =: \Omega_{t_\alpha} $$
+%\max_{\Gamma\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Gamma)-t_\alpha\leb(\Gamma) \big\}.$$
+
+{\blue Mass Volume curve} of a scoring function $s$ [Clémençon and Jakubowicz, 2013]:
+% \footnotesize{
+\begin{align*}
+MV_s(\alpha) ~:&=~ \inf_{\Omega \text{ level-set of } s}~~~ \big\{\leb(\Omega) ~~~~s.t.~~~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\} \\
+MV^*(\alpha) ~:&=~ MV_f(\alpha)
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}\frametitle{Existing criterion: Mass-Volume curve}
+
+Properties:
+
+\begin{itemize}
+\item For any scoring function $s$, $MV^*(\alpha) \le MV_s(\alpha)$
+\item For any increasing transform $T$, $MV^*(\alpha)  = MV_{T \circ f}(\alpha)$
+\item $MV^*(\alpha) = \text{Leb}(\Gamma_\alpha^*) = \min_{\Omega~ \text{borelian}} ~\big\{\leb(\Omega) ~~~\st~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}$\\~\\
+($MV_s(\alpha) ~:=~ \inf_{\Omega \text{ level-set of } s}~~~ \big\{\leb(\Omega) ~~~~s.t.~~~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}
+$)
+\end{itemize}
+
+
+% \begin{equation*}
+% t \in \mathbb{R} \mapsto (\alpha_s(t), \lambda_s(t))
+% \end{equation*}
+% \begin{itemize}
+% \item $\alpha_s(t) = \mathbb{P}(s(X) \geq t)$ \textbf{mass}
+% \vspace{0.2cm}
+% \item $\lambda_s(t) = \lambda(\{x, s(x) \geq t\})$ \textbf{volume}
+% \end{itemize}
+
+\begin{figure}[htb]
+\centering
+\subfigure[Scoring functions]{%
+\includegraphics[width=0.45\columnwidth]{img/mv_curves_examples_1_comp_inkscape.pdf}}
+\subfigure[Mass Volume curves]{%
+\includegraphics[width=0.45\columnwidth]{img/mv_curves_examples_2_comp_inkscape.pdf}}
+\end{figure}
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Drawbacks and alternative criterion: Excess-Mass curve}
+
+Drawbacks of MV:
+\begin{itemize}
+\item When optimized \emph{w.r.t.} different levels $\alpha$, produces not necessarily nested empirical level sets.
+\item $\to$ low convergence rates -- of order $O(n^{-1/4})$.
+\item MV diverges in $1$ in case of unbounded support.
+\end{itemize}
+
+\begin{block}{Excess-Mass curve}
 \begin{itemize}
 % \footnotesize{
 \item \textbf{Definitions:}
 \begin{align*}
-& MV_s(\alpha) ~=~ \inf_{\Omega \text{ level-set of } s}~~~ \big\{\leb(\Omega) ~~~~s.t.~~~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\} \\
-& EM_s(t) ~~=~ \sup_{\Omega \text{ level-set of } s}~~~\big\{ \mathbb{P}(\mb X \in \Omega) ~-~ t \leb(\Omega) \big\}
+EM_s(t) ~~=~ \sup_{\Omega \text{ level-set of } s}~~~\big\{ \mathbb{P}(\mb X \in \Omega) ~-~ t \leb(\Omega) \big\}
+% & MV_s(\alpha) ~=~ \inf_{\Omega \text{ level-set of } s}~~~ \big\{\leb(\Omega) ~~~~s.t.~~~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\} 
 \end{align*}
 
 
 % \footnotesize{
 \item \textbf{Optimal curves:}
 \begin{align*}
-&MV^*(\alpha) ~=~ \min_{\Omega~ \text{borelian}} ~\big\{\leb(\Omega) ~~~\st~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}\\
-&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~= MV_f(\alpha) = MV_{T \circ f}(\alpha)\\~\\
-&EM^*(t) ~~=~ \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\}\\
+EM^*(t) ~:=~ EM_f(t) = EM_{T \circ f}(t) = \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\}\\
 &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~= EM_f(t) = EM_{T \circ f}(t)
+% &MV^*(\alpha) ~=~ \min_{\Omega~ \text{borelian}} ~\big\{\leb(\Omega) ~~~\st~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}\\
+% &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~= MV_f(\alpha) = MV_{T \circ f}(\alpha)
 \end{align*}
 
 \end{itemize}
@@ -281,7 +394,7 @@ $\Rightarrow$ Criterion $\mathcal{C}(s) = \|s-f\|$ is not relevant! ($s = 2f$ is
 \begin{frame}
 \frametitle{MV and EM criteria}
 \begin{itemize}
-\item \textbf{Interpretation:} $(EM_s - EM_f)(t) \simeq ~\inf_{u>0}~ \leb(\{ s >u\}~\Delta~\{f>t\})$ \\~\\~\\
+\item \textbf{Interpretation:} $(EM_f - EM_s)(t) \simeq ~\inf_{u>0}~ \leb(\{ s >u\}~\Delta~\{f>t\})$ \\~\\~\\
 % \begin{align*}
 % &\| EM_s - EM_f\|_{L^1(I)} : \text{ how well $t$-level sets of $f$ are approximated by}\\
 % &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\text{ level sets of $s$, $t \in I$}.\\
@@ -292,12 +405,16 @@ $\Rightarrow$ Criterion $\mathcal{C}(s) = \|s-f\|$ is not relevant! ($s = 2f$ is
 
 
 \item How well {\red $t$}-level sets of $f$ are approximated by level sets of $s$, ${\red t} \in I$ ? \\
-{\centering $\downarrow$\\~\\
-how {\blue small} is $EM_s - EM_f$ on $I$ ? ~~$\Leftrightarrow$~~ how {\blue large} is $EM_s$ on $I$ ?\\~\\~\\~\\}
+{\centering $\updownarrow$\\
+how {\blue small} is $EM_f - EM_s$ on $I$ ? \\$\updownarrow$\\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue large} is $EM_s$ on $I$ ?} ~~~~~~~~$\to$  {\red $\mathcal{C}^{EM} = \|EM_s\|_{1, I}$}  \\~\\~\\}
 
-\item How well {\red $\alpha$}-level sets of $f$ are approximated by level sets of $s$, ${\red \alpha} \in J$ ? \\
-{\centering $\downarrow$\\~\\
- how {\blue small} is $MV_s - MV_f$ on $J$ ? ~~$\Leftrightarrow$~~  how {\blue small} is $MV_s$ on $J$ ?\\}
+\item How well {\red $\alpha$} minimum-volume sets of $f$ are approximated by level sets of $s$, ${\red \alpha} \in J$ ? \\
+{\centering $\updownarrow$\\
+ how {\blue small} is $MV_s - MV_f$ on $J$ ? \\
+$\updownarrow$\\
+~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue small} is $MV_s$ on $J$ ?} ~~~~~~~$\to$  {\red $\mathcal{C}^{MV} = \|MV_s\|_{1, J}$}
+}
  
 \end{itemize}
 
@@ -317,15 +434,16 @@ how {\blue small} is $EM_s - EM_f$ on $I$ ? ~~$\Leftrightarrow$~~ how {\blue lar
 
 
 
-We are looking for nearly optimal scoring functions of the form {\blue $s = \sum_{j=1}^N a_j \mathds{1}_{x \in \Omega_j}$}, with $a_j \ge 0$,~ $\Omega_j \in \mathcal{G}$.\\~\\
+We are looking for nearly optimal scoring functions of the form {\blue $s = \sum_{j=1}^N a_j \mathds{1}_{x \in \Omega_j}$}, with $a_j \ge 0$,~ $\Omega_j \in \mathcal{G}$.\\
 
 
 \begin{block}{}
-{\blue Procedure}:  For $k=1, \ldots, N$,
+{\blue Procedure}:  Fixe $t_0 > 0$\\
+For $k=1, \ldots, N$,
 %
 \begin{align*}
-&\widehat \Omega_{t_{k+1}} =~~ \argmax_{\Omega \supset \widehat \Omega_{t_k}} ~~~~ \mathbb{P}_n(X \in \Omega) ~-~ t_{k+1} \leb(\Omega)\\
-&t_{k+1} ~~=~ \frac{t_k}{(1 + \frac{1}{\sqrt n})}
+&t_{k+1} ~~=~ \frac{t_k}{(1 + \frac{1}{\sqrt n})}\\
+&\widehat \Omega_{t_{k+1}} =~~ \argmax_{\Omega \supset \widehat \Omega_{t_k}} ~~~~ \mathbb{P}_n(X \in \Omega) ~-~ t_{k+1} \leb(\Omega)
 \end{align*}
 %
 %where $\mathbb{P}_n(X \in \Omega) = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{X_i \in \Omega}$, we obtain
@@ -341,9 +459,10 @@ $s_N(x) := \sum_{j=1}^N(t_j - t_{j+1}) \mathds{1}_{x \in \Omega_{t_j}}$
 \frametitle{Learning a scoring function with M-estimation}
 
 \begin{block}{}
-{\blue Rates}: (if density bounded and without flat parts, $\mathcal{G}$ VC-class)
+{\blue Rates}: (if density bounded and without flat parts, $\mathcal{G}$ VC-class)\\
+With probability at least $1-\delta$,
 \begin{align*}
-\sup_{t \in ]0,t_1]}|EM^*(t)-EM_{s_N}(t)| ~\le~ \left[A+\sqrt{2\log(1/\delta)}\right]\frac{1}{\sqrt n}+ bias(\mathcal{G}) + o_N(1)
+\sup_{t \in ]0,t_1]}|EM^*(t)-EM_{s_N}(t)| ~\le~ \left[A+\sqrt{2\log(1/\delta)}\right]\frac{1}{\sqrt n}+ bias(\mathcal{G}) + o_N(1).
 \end{align*}
 \end{block}
 ~\\~\\~\\~\\~\\~\\
@@ -359,6 +478,8 @@ $s_N(x) := \sum_{j=1}^N(t_j - t_{j+1}) \mathds{1}_{x \in \Omega_{t_j}}$
 
 \begin{frame}
 \frametitle{Evaluation of scoring functions}
+
+Inputs: scoring function $s$
 
 \begin{itemize}
 \item \textbf{Estimation:}
@@ -380,7 +501,7 @@ $s_N(x) := \sum_{j=1}^N(t_j - t_{j+1}) \mathds{1}_{x \in \Omega_{t_j}}$
 
 \item \textbf{Issue:}
 \small{
-The volume $\leb(s \ge u)$ has to be estimated (Monte-Carlo). Challenging in large dimensions.
+The volume $\leb(s \ge u)$ has to be estimated (Monte-Carlo). Challenging in high dimensions.
 }
 
 \end{itemize}
@@ -428,44 +549,50 @@ The volume $\leb(s \ge u)$ has to be estimated (Monte-Carlo). Challenging in lar
 \subsection{Multivariate EVT \& Representation of Extremes}
 
 \begin{frame}
-\begin{alertblock}{General idea of our work}
+\frametitle{Why dealing with extremes?}
+\begin{alertblock}{General ideas:}
 \begin{itemize}
 \item Extreme observations play a special role when dealing with outlying data.\\~\\
-\item But no algorithm has \textbf{specific treatment for such multivariate extreme observations}.\\~\\
-\item Our goal: Provide a method which can improve performance of standard AD algorithms by combining them with a \textbf{multivariate extreme analysis} of the \textbf{dependence structure}.\\~\\
+\item But no anomaly detection algorithm has \textbf{specific treatment for such multivariate extreme observations}. Univariate EVT: [Roberts 99, Lee and Roberts 2008, Clifton \emph{et al.} 2011]\\~\\
+\item Our goal:
+  \begin{itemize}
+  \item Define a notion of sparsity for extremes observations.
+  \item Provide a method which can improve performance of standard AD algorithms by combining them with a \textbf{multivariate extreme analysis} of the \textbf{dependence structure}, using this notion of sparsity.
+  \end{itemize}
 \end{itemize}
 \end{alertblock}
 \end{frame}
 
-\begin{frame}
-\begin{figure}
-\centering
-\includegraphics[height=3.5cm]{sourcefigs/extreme_AD.png}
-\end{figure}
-\end{frame}
+% \begin{frame}
+% \begin{figure}
+% \centering
+% \includegraphics[height=3.5cm]{sourcefigs/extreme_AD.png}
+% \end{figure}
+% \end{frame}
 
 
 \begin{frame}
-\centering
-{\LARGE Goal:}\\
+\frametitle{Purpose}
+\noindent
 \begin{align*}
 \mb X = (X_1,\ldots,X_d)
 \end{align*}
-{\Large Find the groups of features which can be large together}
+~\\
+{\large Goal: find the groups of features which can be large together}
 \begin{align*}
-\text{ex:~~~~}\{X_1, X_2\},~\{X_3, X_6, X_7\},~\{X_2,X_4,X_{10},X_{11}\}
+\text{ex:~~~~}\{X_1, X_2\},~\{X_1, X_3, X_4\},~\{X_5\}
 \end{align*}
 ~\\~\\
-$\Leftrightarrow$ \Large{Characterize the extreme dependence structure}\\~\\~\\
+{\large Namely: characterize the extreme dependence structure\\~\\~\\
 
-Anomalies~~=~~ points which violate this structure
-
+$\to$ Anomalies~~=~~ points which violate this structure
+}
 \end{frame}
 
 
 
 \begin{frame}
-\frametitle{Framework}
+\frametitle{Theoretical framework}
 \begin{itemize}
 \item \textbf{Context} 
 
@@ -497,12 +624,12 @@ Anomalies~~=~~ points which violate this structure
 
 
 \begin{frame}
-\frametitle{Problematic}
+\frametitle{Problematic of Extreme Value Theory}
 \vspace{0.2cm}
-Joint extremes: $\mb V$'s distribution above large thresholds? 
+Describe $\mb V$'s distribution, when $\mb V$ exceeds some large threshold.
 \vspace{0.2cm}
     $$
-    \mathbb{P}(\mb V\in A) \text{?} ~~~~ (A  \text{ `far from the origin'}).
+    \mathbb{P}(\mb V\in A) = \text{?} ~~~~~~~~~~~~ (A  \text{ `far from the origin'}).
     $$
   \begin{figure}
     \centering
@@ -515,10 +642,11 @@ Joint extremes: $\mb V$'s distribution above large thresholds?
 
   \begin{itemize}
 \item Standard assumption: let $A$ extreme region, $$\mathbb{P}[\mb V\in t~A] \simeq t^{-1}\mathbb{P}[\mb V\in A] \quad \text{(radial homogeneity)} $$ 
-\item Formally,
+\item Formally:
 \begin{exampleblock}{\textbf{regular variation} (after standardization):}
- $0 \notin \overline A$ $$ t \mathbb{P}[\mb V\in t~A]\xrightarrow[t\to\infty]{}
- \mu(A),\qquad\mu:\text{ exponent measure} $$
+  $$\text{If~~~} 0 \notin \overline A,~~~~~~~~ t \mathbb{P}[\mb V\in t~A]\xrightarrow[t\to\infty]{} \mu(A). ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$\mu$: exponent measure
+
 \end{exampleblock}
    Necessarily: $\mu(tA) = t^{-1} \mu(A)$ 
 
@@ -531,11 +659,14 @@ Joint extremes: $\mb V$'s distribution above large thresholds?
 \end{frame}
 
 \begin{frame}
-\frametitle{General model in multivariate EVT}
+\frametitle{General model of multivariate EVT}
+%
+% We have achieved our goal:~
+$\mathbb{P} [\mb V \in A]~~\simeq~~\mu(A)$, ~~if $A$ extreme region.\\~\\
+
 \begin{block}{ { Model} for excesses }
-Intuitively:  $\mathbb{P} [\mb V \in A]~~\simeq~~\mu(A)$
 %~~~~~For an extreme region  A: $$ \mathbb{P}[ \mb V \in A ]  ~~\simeq~~  \mu(A) \text{~~,~} t \to \infty$$
-For a large $r>0$ and a region $B$ on the unit sphere: $$ \mathbb{P}\left[\|\mb V\|> r  ,~~\mb{\frac{V}{\|V\|}} \in B \right]  ~~\sim~~  \frac{1}{r}\,\Phi(B)  = \mu(\{t B, t\ge r\})  \text{~~,~} {r \to \infty}$$
+For a large $r>0$ and a region $B$ on the unit sphere: $$ \mathbb{P}\left[\|\mb V\|> r  ,~~\mb{\frac{V}{\|V\|}} \in B \right]  ~~\underset{r \to \infty}{\sim}~~  \frac{1}{r}\,\Phi(B)  = \mu(\{t B, t\ge r\})$$
 \end{block}
 \vspace*{.5cm}
 $\Rightarrow$ $\Phi$ (or $\mu$) \textbf{rules the joint distribution of extremes} (if margins are known).
@@ -555,15 +686,12 @@ $\Phi$ rules  the joint distribution of extremes
       \includegraphics[scale=0.3]{sourcefigs/Example2D_depSquare.png}
       \includegraphics[scale=0.3]{sourcefigs/Example2D_indepSquare.png}
     \end{figure}
-    \begin{itemize}
-    \item Asymptotic dependence: $(V_1,V_2)$ may be large together.
 
-\bigskip
-vs
-\bigskip
+    \begin{tabular}{ll}
+      Asymptotic dependence:  & ~~~Asymptotic independence:\\
+$(V_1,V_2)$ may be large together. & ~~~Only $V_1$ \emph{or} $V_2$ may be large.
+    \end{tabular}
 
-\item Asymptotic independence: only $V_1$ \emph{or} $V_2$ may be large.
-    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -672,7 +800,7 @@ $\Rightarrow$ Cannot just do, for large $t$:
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.33]{sourcefigs/representation2D.png}
+  \includegraphics[scale=0.33]{sourcefigs/representation2Drect.png}
 \end{figure}
 
 \begin{align*}
@@ -685,7 +813,7 @@ New partition of $\mathbf{S}_{d-1}$, compatible with non asymptotic data.
 
 
 \begin{frame}
-
+\frametitle{Resulting estimation procedure}
 $\hat V_i^j = \frac{1}{1- \hat F_j(X_{i}^j)}$ with 
 $\hat F_j(X_{i}^j) =\frac{rank(X_i^j) -1}{n} $\\~\\
 
@@ -699,14 +827,58 @@ $\Rightarrow$ get an natural estimate of $\Phi(\Omega_\alpha)$
 \end{minipage}\hfill
 \begin{minipage}{0.5\linewidth}
 \centering
-\includegraphics[scale=0.35]{sourcefigs/representation2D_nk.png}
+\includegraphics[scale=0.35]{sourcefigs/representation2D_nk_rect.png}
 \end{minipage}
 ~\\
 $\Rightarrow$ we obtain
 $$\widehat{\mathcal{M}}:=\big\{~\widehat{\Phi}(\Omega_{\alpha}),~ \alpha~\big\}$$
 \end{frame}
 
+
+
+
+
+
+
 \begin{frame}
+\frametitle{Statistical guaranties: Main issue}
+Would like to use concentration inequality... % XXX citer boucheron?
+% XXX 2 dessins
+\begin{align*}
+&\text{In our case:~~~~~~} \sup_{A \in \mathcal{A}} {\red\frac{n}{k}}\left| \big(\mathcal{P}- \mathcal{P}_n\big)\left({\blue \frac{k}{n}}A\right)\right|\\
+&\text{But usually:~~~~~~~~~~~~} \sup_{A \in \mathcal{A}} \left| \big(\mathcal{P}-\mathcal{P}_n\big)(A) \right|
+\end{align*}
+\begin{itemize}
+\item scaling ${\red \frac{n}{k}}$%: to compense the decreasing proba of ${\blue \frac{k}{n}}A$.\\
+\item classical VC-inequality: ${\blue \frac{k}{n}}$ nice but not used ! \\$\rightarrow $ high proba bound in $${\red \frac{n}{k}} \times  \sqrt{ \frac{1}{ n}\log \frac{1}{\delta}} ~~~~~~\to~~ ~~\infty~~~~ !! $$ \\
+\end{itemize}
+
+$\Rightarrow$ Needs to take into account that the proba of  ${\blue \frac{k}{n}}A$ is small.\\
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Statistical guaranties: Solution}
+\textbf{Key:}
+VC-inequality adapted to rare regions $\rightarrow$ bound in $$\mathbf{\sqrt{p}}~ \frac{n}{k} \sqrt{ \frac{d}{ n}\log \frac{1}{\delta}}$$
+with $p$ the probability to be in the union class $\cup_{A \in \mathcal{A}}A$.
+$$\mb p \lesssim d \frac{k}{n}$$
+$\Rightarrow$ bound in $$ d \sqrt{ \frac{1}{ k}\log \frac{1}{\delta}} $$
+interpretation of $k$: 
+\begin{itemize}
+\item $k \propto$ number of data considered as extreme
+\item $k \simeq$ number of data used for estimation
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Statistical guaranties}
 \begin{theorem}
 There is an absolute constant $C > 0$ such that for any $n>0,~ k>0,~ 0<\epsilon<1,~ \delta>0$ such that $0<\delta<e^{-k}$, with probability at least $1 - \delta$,
 \begin{align*}
@@ -731,11 +903,11 @@ There is an absolute constant $C > 0$ such that for any $n>0,~ k>0,~ 0<\epsilon<
 \begin{itemize}
 
 
-\item $C$: depends on $M=\sup$(density on subfaces)
+\item $M=\sup$(density on sub-cones)
 
 
 \item  Existing litterature (for spectral measure) {\footnotesize \bf Einmahl
-    Segers 09, Einmahl \emph{et.al.} 01}
+    Segers 09, Einmahl \emph{et al.} 01}
 
   \begin{center}
 $d=2$.    
@@ -748,42 +920,43 @@ for biasing our estimator with $\epsilon$.
 
 
 \begin{frame}
-\textbf{Theorem's proof}
-\begin{enumerate}
-\item \textbf{Maximal deviation on VC-class:}
-\only<1>{ 
-%Bound on the maximal deviation of $\mu_n$ on simple VC-class:
-$$
-\sup_{x\succeq {\epsilon}} |\mu_n - \mu| ([x,\infty[)  \le
-{\color{blue} Cd\sqrt{\frac{2}{k}\log\frac{d}{\delta}} }  +
-  {\color{violet} \text{bias}(\epsilon, k, n)% \text{bias}_{ \,\tilde F \leftrightarrow l, x\le 1/\epsilon}
-  }
-$$
-\textbf{Tools}: Vapnik-Chervonenkis inequality adapted to small probability sets: bounds in ${\color{red}\sqrt{p}}\sqrt{\frac{1}{n}\log\frac{1}{\delta}}$\\~\\
+\frametitle{Theorem's proof}
+% \begin{enumerate}
+% \item \textbf{Maximal deviation on VC-class:}
+%  \only<1>{ 
+% %Bound on the maximal deviation of $\mu_n$ on simple VC-class:
+% $$
+% \sup_{x\succeq {\epsilon}} |\mu_n - \mu| ([x,\infty[)  \le
+% {\color{blue} Cd\sqrt{\frac{2}{k}\log\frac{d}{\delta}} }  +
+%   {\color{violet} \text{bias}(\epsilon, k, n)% \text{bias}_{ \,\tilde F \leftrightarrow l, x\le 1/\epsilon}
+%   }
+% $$
+% \textbf{Tools}: Vapnik-Chervonenkis inequality adapted to small probability sets: bounds in ${\color{red}\sqrt{p}}\sqrt{\frac{1}{n}\log\frac{1}{\delta}}$.\\~\\
 
-On the VC class $\{ [\frac{n}{k} x, \infty]$, $x \ge \epsilon \}$
+% On the VC class $\{ [\frac{n}{k} x, \infty]$, $x \ge \epsilon \}$.
 
-%   \begin{itemize}
-%   \item 
-%     \begin{itemize}
-%     \item 
-%    \item with nearly uniform
-%     data $\hat U_{i,j} = 1 - \hat F_j(Y_{i,j}) ~( = 1/\hat X_{i,j})$.
-%     \end{itemize}
-% % $\exists C, \text{ indep from } n, d$, s.t., with proba $1-\delta$,
-% \end{itemize}
-}
-\only<2>{\item \textbf{Decompose error:}
+% %   \begin{itemize}
+% %   \item 
+% %     \begin{itemize}
+% %     \item 
+% %    \item with nearly uniform
+% %     data $\hat U_{i,j} = 1 - \hat F_j(Y_{i,j}) ~( = 1/\hat X_{i,j})$.
+% %     \end{itemize}
+% % % $\exists C, \text{ indep from } n, d$, s.t., with proba $1-\delta$,
+% % \end{itemize}
+% }
+% \only<2>{~\\~\\ \item
+  \textbf{Decompose error:}
   \[|\mu_n(\mathcal{C}_\alpha^\epsilon) - \mu(\mathcal{C}_\alpha)| \le 
 \underbrace{|\mu_n- \mu|(\mathcal{C}_\alpha^\epsilon)}_A +
 \underbrace{ |\mu(\mathcal{C}_{\alpha}^\epsilon) - \mu(\mathcal{C}_\alpha) |}_B \]\\
 \begin{itemize}
 % \item 
  % Restriction to cube $[0,L]$, 
-\item $A : $ First step.
+\item term $A : $ Bounded with VC inequality adapted to small probability regions.\\~\\
 \item % $B  = O( M d^2 (\epsilon )^{d-\alpha}) $ $\to $ OK with boundedness
   % assumption.
-  $B  : $ density on $\mathcal{C}_\alpha^\epsilon \times Lebesgue$ : small \\~\\%% O( M (d^2 \epsilon + (1+\epsilon)^d -1)) $ % $\to $ OK with boundedness
+  term $B  :$ $\text{Leb}(\mathcal{C}_{\alpha}^\epsilon \setminus \mathcal{C}_{\alpha})$ is small when $\epsilon$ is small.\\~\\%% O( M (d^2 \epsilon + (1+\epsilon)^d -1)) $ % $\to $ OK with boundedness
    % assumption.
 
 % %% $A=O\Big(~ 2^\alpha  E  + M \alpha d (\epsilon L)  + Md^2
@@ -795,28 +968,36 @@ On the VC class $\{ [\frac{n}{k} x, \infty]$, $x \ge \epsilon \}$
 %explains the $k^{1/4}$ loss compared with low dimension.
 
 \end{itemize}
-}
-\end{enumerate}
+% }
+% \end{enumerate}
 \end{frame}
 
 
 \begin{frame}
+\frametitle{Corresponding Algorithm}
 \begin{center}
 
 % \begin{minipage}{0.95\linewidth}
+\begin{block}{DAMEX in $O(dn\log n)$}
 
 \begin{algorithmic} 
-DAMEX in $O(dn\log n)$
+\STATE {\bf Input:} parameters $\epsilon>0$,~~ $k = k(n)$\\~\\ %$\Phi_{\min}\geq 0$.
+  \FOR{$i=1,\ldots,n$}
+\STATE {\green $\#$ Standardize \emph{via} marginal rank-transformation:}
+\STATE $\hat V_i := \big (1/(1- \hat F_j (X_i^j))\big)_{j=1,\ldots,d}$~. 
 
-\STATE {\bf Input:} parameters $\epsilon>0$,~~ $k = k(n)$,~~ %$\Phi_{\min}\geq 0$.
-\STATE Standardize \emph{via} marginal rank-transformation: $\hat V_i := \big (1/(1- \hat F_j (X_i^j))\big)_{j=1,\ldots,d}$~. 
-\STATE Assign to each $\hat V_i$ the cone $\frac{n}{k}\mathcal{C}_\alpha^\epsilon$
-  it belongs to.  
-\STATE $\Phi_n^{\alpha,\epsilon} := \widehat{\Phi}(\Omega_\alpha) = \frac{n}{k}\mathbb{P}_n( \hat V \in \frac{n}{k}\mathcal{C}_\alpha^\epsilon)$
-the estimate of the $\alpha$-mass of $\Phi$.
-   
+\IF{$\hat V_i > \frac{n}{k}$}
+\STATE {\green $\#$ Assign to each $\hat V_i$ the cone  $\frac{n}{k}\mathcal{C}_\alpha^\epsilon$  it belongs to:}
+\STATE $\alpha = \alpha(V_i)$  \\
+\STATE $c_\alpha$ ++
+\ENDIF
+  \ENDFOR
+\STATE $\Phi_n^{\alpha,\epsilon} := \frac{n}{k} c_\alpha $ \\~\\
 \STATE {\bf Output:} (sparse) representation of the dependence
-  structure %$(\mu_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \mu_n^{\alpha,\epsilon}>\mu_{\min}}$.
+  structure:
+$\Phi_n^{\alpha,\epsilon} = \widehat{\Phi}(\Omega_\alpha) = \frac{n}{k}\mathbb{P}_n( \hat V \in \frac{n}{k}\mathcal{C}_\alpha^\epsilon)$, estimate of the $\alpha$-mass of $\Phi$ for every $\alpha$.
+
+ %$(\mu_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \mu_n^{\alpha,\epsilon}>\mu_{\min}}$.
 
 \begin{align*}
 \widehat{\mathcal{M}} := (\Phi_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \Phi_n^{\alpha,\epsilon}>\Phi_{\min}}
@@ -825,117 +1006,37 @@ the estimate of the $\alpha$-mass of $\Phi$.
 \end{algorithmic}
 % \end{minipage}
 
+\end{block}
 \end{center}
+
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Application to Anomaly Detection}
 
-After standardization of marginals: 
+Recall that after standardization of marginals: 
 $\mathbb{P}[R> r  ,\mb W \in B ]  \simeq \frac{1}{r}\,\Phi(B)$ \\~\\
  $\rightarrow$ scoring function = $\Phi_n^\epsilon$  $\times 1/r:$
-$$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsilon} \mathds{1}_{\hat T(\mb x) \in \mathcal{C}_\alpha^\epsilon}.$$~\\
- where $T: \mb X \mapsto \mb V$ ~~~~~~~~~($V_{j} = \frac{1}{1- F_j (X_{j})} $)
+$$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsilon} \mathds{1}_{\hat T(\mb x) \in \mathcal{C}_\alpha^\epsilon}.$$
+ where $\hat T: \mb X \mapsto \mb V$ ~~~~~~~~~($\hat V_{j} = \frac{1}{1- \hat F_j (X_{j})} $)
 
   \begin{figure}
     \centering
-    \includegraphics[scale=0.15, trim=2cm 0cm 2cm 1cm]{sourcefigs/DBAD}
+    \includegraphics[scale=0.206, trim=2cm 0cm 2cm 1cm]{sourcefigs/plot_damex_level_sets}
   \end{figure}
 
 \end{frame}
 
-
-\subsection{Experiments}
-
-
 \begin{frame}
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|cc|}
-  \hline
-  ~           & number of samples  & number of features \\
-  shuttle     & 85849              & 9                  \\
-  forestcover & 286048             & 54                 \\
-  SA          & 976158             & 41                 \\
-  SF          & 699691             & 4                  \\
-  http        & 619052             & 3                  \\
-  smtp        & 95373              & 3                  \\
-  \hline
-\end{tabular}
-\caption{Datasets characteristics}
-\label{table:data}
-\end{table}
+\frametitle{Experiments}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 1. \textwidth]{SA-lb-semi-supervised-average-0001.pdf}
+  \caption{ROC and PR curve on SA dataset}
+  \label{SA}
+\end{figure}
 \end{frame}
-
-
-% \begin{frame}
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width = 1. \textwidth]{sourcefigs/SF-4d-lb-semi-supervised-average}
-%   \caption{ROC and PR curve on SF dataset}
-%   \label{SF}
-% \end{figure}
-% \end{frame}
-
-
-
-% \begin{frame}
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width = 1. \textwidth]{sourcefigs/http-3d-semi-supervised-average}
-%   \caption{ROC and PR curve on http dataset}
-%   \label{http}
-% \end{figure}
-% \end{frame}
-
-
-% \begin{frame}
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width = 1. \textwidth]{sourcefigs/shuttle-semi-supervised-average}
-%   \caption{ROC and PR curve on shuttle dataset}
-%   \label{shuttle}
-% \end{figure}
-% \end{frame}
-
-% \begin{frame}
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width = 1. \textwidth]{sourcefigs/forestcover-semi-supervised-average}
-%   \caption{ROC and PR curve on forestcover dataset}
-%   \label{forestcover}
-% \end{figure}
-% \end{frame}
-
-
-% \begin{frame}
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width = 1. \textwidth]{sourcefigs/SA-lb-semi-supervised-average}
-%   \caption{ROC and PR curve on SA dataset}
-%   \label{SA}
-% \end{figure}
-% \end{frame}
-
-
-
-% \begin{frame}
-% \begin{figure}[ht]
-%   \centering
-%   \includegraphics[width = 1. \textwidth]{sourcefigs/smtp-3d-semi-supervised-average}
-%   \caption{ROC and PR curve on smtp dataset}
-%   \label{smtp}
-% \end{figure}
-% \end{frame}
-
-
-
-
-
-
-
-
 
 
 
@@ -946,10 +1047,186 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 \Large{Thank you!}
 \end{frame}
 
+\begin{frame}
+\frametitle{Some references:}
+\begin{itemize}
+\footnotesize{
+
+\item Aggarwal and Yu 2001, Outlier detection for high dimensional data.
+
+
+\item Chandola, Banerjee, and Kumar 2009, Anomaly detection: A survey.
+
+%\item A. L. M. Dekkers, J. H. J. Einmahl, and L. De Haan. A moment estimator for the index of an extreme-value distribution, 1989
+
+\item Clifton, Hugueny and Tarassenko 2011, Novelty detection with multivariate extreme value statistics.
+
+\item Désir, Bernard, Petitjean and Heutte 2012, A New Random Forest Method for One-Class Classification.
+
+\item Einmahl and Mason 1992, Generalized quantile processes.
+
+% \item Einmahl and Segers 2009 Maximum empirical likelihood estimation of the spectral measure of an extreme-value distribution
+
+\item Einmahl, Krajina and Segers 2012, An m-estimator for tail dependence in arbitrary dimensions.
+
+\item Goix, Sabourin and Clémençon 2015, Learning the dependence structure of rare events: a non-asymptotic study.
+
+\item Goix, Sabourin and Clémençon 2015, Sparse Representation of Multivariate Extremes with Applications to Anomaly Ranking.
+
+\item Goix, Sabourin and Clémençon 2015, On Anomaly Ranking and Excess-Mass Curves.
+
+\item Goix 2016, How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms?
+
+\item Goix, Brault, Drougard and Chiapino 2016, One Class Splitting Criteria for Random Forests with Application to Anomaly Detection.
+
+}
+\end{itemize}
+\end{frame}
+
 
 
 \begin{frame}
-\frametitle{Benchmarks}
+\frametitle{Some references:}
+\begin{itemize}
+\footnotesize{
+\item de Haan and Ferreira, Extreme value theory, 2006.
+
+\item Lee and Roberts 2008, On-line novelty detection using the Kalman filter and extreme value theory.
+
+\item Liu, Ting, Zhou 2008, Isolation forest.
+
+\item Polonik 1997, Minimum volume sets and generalized quantile processes.
+
+\item Qi 1997, Almost sure convergence of the stable tail empirical dependence function in multivariate extreme statistics.
+
+\item Resnick 1987, Extreme Values, Regular Variation, Point Processes.
+
+\item Roberts 1999, Novelty detection using extreme value statistics.
+
+\item Sch{\"o}lkopf, Platt, Shawe-Taylor, Smola, and Williamson 2001, Estimating the support of a high-dimensional distribution.
+
+\item Scott and Nowak 2006, Learning minimum volume sets.
+
+\item J. Segers 2012, Max-stable models for multivariate extremes.
+
+\item Shi and Horvath 2012, Unsupervised learning with random forest predictors.
+
+\item Shyu, Chen, Sarinnapakorn and Chang 2003, A novel anomaly detection scheme based on principal component classifier
+
+\item Vert and Vert 2006, Consistency and Convergence Rates of One-Class SVMs and Related Algorithms
+}
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Experiments}
+
+
+
+
+\begin{frame}
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+  \toprule
+  ~           & number of samples  & number of features \\
+  \midrule
+  shuttle     & 85849              & 9                  \\
+  forestcover & 286048             & 54                 \\
+  SA          & 976158             & 41                 \\
+  SF          & 699691             & 4                  \\
+  http        & 619052             & 3                  \\
+  % smtp        & 95373              & 3                  \\
+  \bottomrule
+\end{tabular}
+\caption{Datasets characteristics}
+\label{table:data}
+
+
+% \begin{tabular}{lcccc}
+%   \toprule
+% Dataset      &\multicolumn{2}{c}{iForest}& \multicolumn{2}{c}{DAMEX}\\
+% \midrule
+% ~            &AUC ROC       & AUC PR     &AUC ROC     &AUC PR       \\
+% shuttle      & 0.957        & 0.987      &$\mb{0.988}$&$\mb{0.996}$ \\
+% forestcover  & 0.667        & 0.201      &$\mb{0.976}$&$\mb{0.805}$ \\
+% http         & 0.561        & 0.321      &$\mb{0.981}$&$\mb{0.742}$ \\
+% %smtp         & $\mb{0.900}$ &$\mb{0.004}$&0.898       &0.003        \\
+% SF           & 0.134        & 0.189      &$\mb{0.988}$&$\mb{0.973}$ \\
+% SA           & 0.932        &0.625       &$\mb{0.945}$&$\mb{0.818}$ \\ 
+% \bottomrule
+% \end{tabular}
+% \caption{Results on extreme regions with standard parameters $(k,\epsilon) = (n^{1/2}, 0.01)$}
+\end{table}
+\end{frame}
+
+
+\begin{frame}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 1. \textwidth]{SF-4d-lb-semi-supervised-average-rect-01}
+  \caption{ROC and PR curve on SF dataset}
+  \label{SF}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 1. \textwidth]{http-3d-semi-supervised-average-rect-01}
+  \caption{ROC and PR curve on http dataset}
+  \label{http}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 1. \textwidth]{shuttle-semi-supervised-average-rect-01}
+  \caption{ROC and PR curve on shuttle dataset}
+  \label{shuttle}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 1. \textwidth]{forestcover-semi-supervised-average-rect-01}
+  \caption{ROC and PR curve on forestcover dataset}
+  \label{forestcover}
+\end{figure}
+\end{frame}
+
+
+% \begin{frame}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width = 1. \textwidth]{SA-lb-semi-supervised-average-rect-01}
+%   \caption{ROC and PR curve on SA dataset}
+%   \label{SA}
+% \end{figure}
+% \end{frame}
+
+
+
+% \begin{frame}
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width = 1. \textwidth]{smtp-3d-semi-supervised-average-rect-01}
+%   \caption{ROC and PR curve on smtp dataset}
+%   \label{smtp}
+% \end{figure}
+% \end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Benchmarks for EM/MV}
 \begin{block}{Does performance in term of EM/MV correspond to performance in term of ROC/PR?}
 
 \begin{itemize}

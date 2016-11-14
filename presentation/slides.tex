@@ -97,7 +97,8 @@ Machine Learning and Extremes  for Anomaly Detection
  }
 }
 %}
-\date{PhD Defense, Telecom Paristech, November 28th 2016}
+% \date{PhD Defense, Telecom Paristech, November 28th 2016}
+\date{GT valeurs extremes, Jussieu, November 15th 2016}
 
 
 
@@ -181,7 +182,7 @@ fit a statistical model for normal behavior (ex: gaussian, gaussian mixture) \\~
 
 \item \textbf{Support estimation}\\
 - One-Class-SVM {\small [Sch{\"o}lkopf \emph{et al.} 2000, Vert and Vert 2006]}\\
-- {\blue Minimum Volume set} estimate {\small[Einmahl and Mason 92, Polonik 97, Scott and Nowak 2006]}\\~\\
+- Minimum Volume set estimate {\small[Einmahl and Mason 92, Polonik 97, Scott and Nowak 2006]}\\~\\
 
 \item \textbf{High-dimensional techniques}\\
 - Dimensionality reduction {\small [Aggarwal and Yu 2001, Shyu \emph{et al.} 2003]}\\
@@ -263,7 +264,7 @@ i.i.d. observations in $\mathbb{R}^d$ from the normal behavior, density {\red $f
 - $s$ can be interpreted as a box which contains {\blue an infinite number of level sets estimates} (at different levels).\\~\\
 \end{itemize}
 
-\textbf{Remark.} Perfect scoring functions: $s=f$ or $s=2f+3$ or $s=T \circ f$ any increasing transform of $f$. \\
+\textbf{Remark.} Ideal scoring functions: $s=f$ or $s=2f+3$ or $s=T \circ f$ any increasing transform of $f$. \\
 %($f=2s$, $f=s^2$ if $s \ge 0$, ...).
 
 \end{block}
@@ -329,7 +330,7 @@ Properties:
 \begin{itemize}
 \item For any scoring function $s$, $MV^*(\alpha) \le MV_s(\alpha)$
 \item For any increasing transform $T$, $MV^*(\alpha)  = MV_{T \circ f}(\alpha)$
-\item $MV^*(\alpha) = \text{Leb}(\Gamma_\alpha^*) = \min_{\Omega~ \text{borelian}} ~\big\{\leb(\Omega) ~~~\st~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}$\\~\\
+\item $MV^*(\alpha) = \text{Leb}(\Gamma_\alpha^*) := \min_{\Omega~ \text{borelian}} ~\big\{\leb(\Omega) ~~~\st~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}$\\~\\
 ($MV_s(\alpha) ~:=~ \inf_{\Omega \text{ level-set of } s}~~~ \big\{\leb(\Omega) ~~~~s.t.~~~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}
 $)
 \end{itemize}
@@ -367,7 +368,7 @@ Drawbacks of MV:
 \item MV diverges in $1$ in case of unbounded support.
 \end{itemize}
 
-\begin{block}{Excess-Mass curve}
+\begin{block}{Solution: Excess-Mass curve}
 \begin{itemize}
 % \footnotesize{
 \item \textbf{Definitions:}
@@ -380,14 +381,17 @@ EM_s(t) ~~=~ \sup_{\Omega \text{ level-set of } s}~~~\big\{ \mathbb{P}(\mb X \in
 % \footnotesize{
 \item \textbf{Optimal curves:}
 \begin{align*}
-EM^*(t) ~:=~ EM_f(t) = EM_{T \circ f}(t) = \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\}\\
-&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~= EM_f(t) = EM_{T \circ f}(t)
+&EM^*(t) ~:=~ EM_f(t) = EM_{T \circ f}(t) = \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\}\\
+%&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~= EM_f(t) = EM_{T \circ f}(t)\\
+&EM^*(t) \ge EM_s(t)~~~~~~~~~~~~\text{for all scoring function}~~ s
 % &MV^*(\alpha) ~=~ \min_{\Omega~ \text{borelian}} ~\big\{\leb(\Omega) ~~~\st~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}\\
 % &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~= MV_f(\alpha) = MV_{T \circ f}(\alpha)
 \end{align*}
 
 \end{itemize}
+\textbf{Property: Previous drawbacks are fixed with EM.}
 \end{block}
+
 \end{frame}
 
 
@@ -407,13 +411,13 @@ EM^*(t) ~:=~ EM_f(t) = EM_{T \circ f}(t) = \max_{\Omega\text{ borelian} } ~\big\
 \item How well {\red $t$}-level sets of $f$ are approximated by level sets of $s$, ${\red t} \in I$ ? \\
 {\centering $\updownarrow$\\
 how {\blue small} is $EM_f - EM_s$ on $I$ ? \\$\updownarrow$\\
-~~~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue large} is $EM_s$ on $I$ ?} ~~~~~~~~$\to$  {\red $\mathcal{C}^{EM} = \|EM_s\|_{1, I}$}  \\~\\~\\}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue large} is $EM_s$ on $I$ ?} ~~~~$\to$  {\red $\mathcal{C}^{EM}(s) = \|EM_s\|_{1, I}$}  \\~\\~\\}
 
 \item How well {\red $\alpha$} minimum-volume sets of $f$ are approximated by level sets of $s$, ${\red \alpha} \in J$ ? \\
 {\centering $\updownarrow$\\
  how {\blue small} is $MV_s - MV_f$ on $J$ ? \\
 $\updownarrow$\\
-~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue small} is $MV_s$ on $J$ ?} ~~~~~~~$\to$  {\red $\mathcal{C}^{MV} = \|MV_s\|_{1, J}$}
+~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue small} is $MV_s$ on $J$ ?} ~~~$\to$  {\red $\mathcal{C}^{MV}(s) = \|MV_s\|_{1, J}$}
 }
  
 \end{itemize}
@@ -703,7 +707,7 @@ $(V_1,V_2)$ may be large together. & ~~~Only $V_1$ \emph{or} $V_2$ may be large.
     \includegraphics[width=0.4\linewidth]{sourcefigs/cone}
   \end{figure}
   \begin{itemize}
-\item Sub-cones:  $\mathcal{C}_\alpha = \big\{\|v\|\ge 1,~~ v_i> 0 ~ (i\in\alpha),~~~  v_j = 0~(j\notin\alpha)\big\}$
+\item Sub-cones:  $\mathcal{C}_\alpha = \big\{\|v\|\ge 1,~~ v_j> 0 ~ (j\in\alpha),~~~  v_j = 0~(j\notin\alpha)\big\}$
 
 \item   Corresponding sub-spheres: $\big\{\Omega_\alpha , \alpha\subset\{1,\dotsc,d\}\big\}$ ~~ ($\Omega_\alpha = \mathcal{C}_\alpha \cap \mathbf{S}_{d-1}$)
 \end{itemize}
@@ -744,7 +748,7 @@ $$
 \item Assumption:  % $\Phi_\alpha = 0$ for $|\alpha|$ large,  and 
 $\frac{\ud \mu_{|\mathcal{C}_\alpha}}{\ud v_\alpha} = O(1)$.\\~\\
  
-\item Remark: Representation $\mathcal{M}$ is linear (after non-linear transform of the data $\mb X \to \mb V$).
+%\item Remark: Representation $\mathcal{M}$ is linear (after non-linear transform of the data $\mb X \to \mb V$).
 \end{itemize}
 
 
@@ -804,11 +808,10 @@ $\Rightarrow$ Cannot just do, for large $t$:
 \end{figure}
 
 \begin{align*}
-\Omega_\alpha  \to  \Omega_\alpha^\epsilon &= \{v\in\mathbf{S}_{d-1}:
-v_i>\epsilon\, (j\in\alpha),\,v_j \le \epsilon \,(j\notin\alpha) \}.  \\
-\mathcal{C}_\alpha\to \mathcal{C}_\alpha^\epsilon&= \{t\,\Omega_\alpha^\epsilon,t\ge 1\}
+\mathcal{C}_\alpha\to \mathcal{C}_\alpha^\epsilon &= \{\|v\|\ge 1,~~ v_j>\epsilon\, (j\in\alpha),\,v_j \le \epsilon \,(j\notin\alpha) \}.  \\
+\Omega_\alpha  \to  \Omega_\alpha^\epsilon&= \mathcal{C}_\alpha^\epsilon \cap \mathbf{S}_{d-1}
 \end{align*}
-New partition of $\mathbf{S}_{d-1}$, compatible with non asymptotic data.
+New partition of $\mathbf{S}_{d-1}$%, compatible with non asymptotic data.
 \end{frame}
 
 
@@ -864,11 +867,12 @@ VC-inequality adapted to rare regions $\rightarrow$ bound in $$\mathbf{\sqrt{p}}
 with $p$ the probability to be in the union class $\cup_{A \in \mathcal{A}}A$.
 $$\mb p \lesssim d \frac{k}{n}$$
 $\Rightarrow$ bound in $$ d \sqrt{ \frac{1}{ k}\log \frac{1}{\delta}} $$
-interpretation of $k$: 
-\begin{itemize}
-\item $k \propto$ number of data considered as extreme
-\item $k \simeq$ number of data used for estimation
-\end{itemize}
+%interpretation of $k$: 
+%\begin{itemize}
+%\item 
+$k \propto$ number of data considered as extreme (data used for estimation)
+%\item $k \simeq$ number of data 
+%\end{itemize}
 
 \end{frame}
 

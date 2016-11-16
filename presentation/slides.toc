@@ -1,9 +1,9 @@
 \beamer@endinputifotherversion {3.33pt}
-\beamer@sectionintoc {1}{Part I: performance criterion}{6}{0}{1}
-\beamer@subsectionintoc {1}{1}{Definition}{6}{0}{1}
-\beamer@subsectionintoc {1}{2}{Learning a scoring function}{15}{0}{1}
-\beamer@subsectionintoc {1}{3}{Evaluating a scoring function}{18}{0}{1}
-\beamer@sectionintoc {2}{Part II: Learning accurate scoring functions on extreme regions}{21}{0}{2}
-\beamer@subsectionintoc {2}{1}{Multivariate EVT \& Representation of Extremes}{21}{0}{2}
-\beamer@subsectionintoc {2}{2}{Estimation}{32}{0}{2}
-\beamer@subsectionintoc {2}{3}{Experiments}{46}{0}{2}
+\beamer@sectionintoc {1}{Part I: performance criterion}{8}{0}{1}
+\beamer@subsectionintoc {1}{1}{Definition}{8}{0}{1}
+\beamer@subsectionintoc {1}{2}{Learning a scoring function}{16}{0}{1}
+\beamer@sectionintoc {2}{Part II: Learning accurate scoring functions on extreme regions}{19}{0}{2}
+\beamer@subsectionintoc {2}{1}{Multivariate EVT \& Representation of Extremes}{19}{0}{2}
+\beamer@subsectionintoc {2}{2}{Estimation}{30}{0}{2}
+\beamer@sectionintoc {3}{Perspectives}{41}{0}{3}
+\beamer@subsectionintoc {3}{1}{Evaluation of scoring functions, model selection}{41}{0}{3}

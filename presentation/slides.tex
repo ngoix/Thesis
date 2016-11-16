@@ -97,8 +97,7 @@ Machine Learning and Extremes  for Anomaly Detection
  }
 }
 %}
-% \date{PhD Defense, Telecom Paristech, November 28th 2016}
-\date{GT valeurs extremes, Jussieu, November 15th 2016}
+\date{PhD Defense, Telecom Paristech, November 28th 2016}
 
 
 
@@ -130,7 +129,6 @@ Machine Learning and Extremes  for Anomaly Detection
 %\section{Introduction}
 
 
-
 \begin{frame}
 \frametitle{Anomaly Detection (AD)}
 
@@ -146,7 +144,7 @@ Huge number of applications: Network intrusions, credit card fraud detection, in
 \begin{frame}
 \frametitle{Machine Learning context}
 %In a machine learning context, AD can been seen as a classification task but where the usual assumption -dataset contains info regarding all classes- breaks down.
-\begin{block}{Different kind of Anomaly Detection}
+\begin{block}{Different kinds of Anomaly Detection}
 \begin{itemize}
 \item \textbf{Supervised} AD {\red (not dealt with)}\\
 Labels available for both normal data and anomalies\\
@@ -168,12 +166,15 @@ Training set (unlabeled) = normal + abnormal data \\
 %\begin{exampleblock}{Some litterature in Anomaly Detection:}
 \begin{itemize}
 \item \textbf{Statistical AD techniques}\\
-fit a statistical model for normal behavior (ex: gaussian, gaussian mixture) \\~\\
-%ex: {\blue EllipticEnvelope}
-%-apply a statistical inference test to determine if a new instance belongs or not to this model.\\~\\
+{\small [Hawkins 1980, Liu and Weng 1991, Eskin 2000, Agarwal 2006]}\\~\\
+
+% fit a statistical model for normal behavior (ex: gaussian, gaussian mixture) \\~\\
 
 \item \textbf{K-nearest neighbors}\\
-- ex: Local Outlier Factor (LOF) {\small [Breunig \emph{et al.} 2000]} \\~\\%and variantes (COF ODIN LOCI)\\
+{\small [Breunig \emph{et al.} 2000, Tang \emph{et al.} 2002, Papadimitriou \emph{et al.} 2002, Hautamaki \emph{et al.} 2004]}\\~\\
+
+
+%- ex: Local Outlier Factor (LOF) {\small [Breunig \emph{et al.} 2000]} \\~\\%and variantes (COF ODIN LOCI)\\
 %- Drawback: Density estimation hard in high dimension\\
 
 %\item \textbf{clustering-based}\\
@@ -181,14 +182,18 @@ fit a statistical model for normal behavior (ex: gaussian, gaussian mixture) \\~
 %- Drawback: Clustering not designed for AD\\
 
 \item \textbf{Support estimation}\\
-- One-Class-SVM {\small [Sch{\"o}lkopf \emph{et al.} 2000, Vert and Vert 2006]}\\
-- Minimum Volume set estimate {\small[Einmahl and Mason 92, Polonik 97, Scott and Nowak 2006]}\\~\\
+{\small [Einmahl and Mason 92, Polonik 97, Sch{\"o}lkopf \emph{et al.} 2000, Vert and Vert 2006, Scott and Nowak 2006]}\\~\\
+
+% - One-Class-SVM {\small [Sch{\"o}lkopf \emph{et al.} 2000, Vert and Vert 2006]}\\
+% - Minimum Volume set estimate {\small[Einmahl and Mason 92, Polonik 97, Scott and Nowak 2006]}\\~\\
 
 \item \textbf{High-dimensional techniques}\\
-- Dimensionality reduction {\small [Aggarwal and Yu 2001, Shyu \emph{et al.} 2003]}\\
-- One-class Random Forests {\small [Shi and Horvath 2012, Désir \emph{et al.} 2012]}\\
-- Isolation Forest {\small [Liu \emph{et al.} 2008]}
-%- `Aggarwal and Yu' algorithm
+{\small [Aggarwal and Yu 2001, Shyu \emph{et al.} 2003, Shi and Horvath 2012, Liu \emph{et al.} 2008]}
+
+% - Dimensionality reduction {\small [Aggarwal and Yu 2001, Shyu \emph{et al.} 2003]}\\
+% - One-class Random Forests {\small [Shi and Horvath 2012, Désir \emph{et al.} 2012]}\\
+% - Isolation Forest {\small [Liu \emph{et al.} 2008]}
+% %- `Aggarwal and Yu' algorithm
 
 %\item \textbf{others}: spectral techniques (PCA), clustering-based, random forest,...% Aggarwal \& Yu algorithm ... 
 \end{itemize}
@@ -197,10 +202,58 @@ fit a statistical model for normal behavior (ex: gaussian, gaussian mixture) \\~
 
 
 \begin{frame}
+\frametitle{Background: scoring functions}
+%In a machine learning context, AD can been seen as a classification task but where the usual assumption -dataset contains info regarding all classes- breaks down.
+
+\begin{block}{AD algorithm returns a \textbf{scoring function {\green $s: \mathbb{R}^d \to \mathbb{R}$}}}
+
+%{\footnotesize
+%- AD algorithms return {\blue $s: \mathbb{R}^d \to \mathbb{R}$}.\\
+\begin{itemize}
+\item {\green $s$} defines a {\green pre-order} on $\mathbb{R}^d$ = `degree of normality'.\\
+\item {\green $s$} level sets are estimates of $f$ level sets.\\
+\item {\green $s$} can be interpreted as a {\green continuum of level sets estimates} (at different levels).
+\end{itemize}
+\end{block}
+{\small
+\textbf{Remark.} Ideal scoring functions: % $s=f$ or $s=2f+3$ or
+{\green $s=T \circ f$} any increasing transform of $f$.
+}
+%($f=2s$, $f=s^2$ if $s \ge 0$, ...).
+%
+\begin{figure}[htb]
+\centering
+\includegraphics[width=1.01\columnwidth]{sourcefigs/scoring.pdf}
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Contributions and Outline}
+
+\begin{block}{Contributions}
+
+\begin{itemize}
+\item Performance criterion for learning scoring functions: Excess-Mass Curve (Part I).
+
+\item Learning scoring functions on extreme regions (Part II).
+
+\item Evaluating scoring functions in non-small dimensions (Part I).
+
+\item One-class splitting criteria for Random Forests. (not in this presentation)
+\end{itemize}
+ 
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}
 \frametitle{Outline}
 %In a machine learning context, AD can been seen as a classification task but where the usual assumption -dataset contains info regarding all classes- breaks down.
-An AD algorithm returns a {\blue scoring function $s: \mathbb{R}^d \to \mathbb{R}$}.\\
-It represents the {\blue `degree of abnormality'} of an observation $x \in \mathbb{R}^d$ \\~\\
 
 \begin{block}{}
 \begin{itemize}
@@ -217,31 +270,6 @@ It represents the {\blue `degree of abnormality'} of an observation $x \in \math
 \section{Part I: performance criterion}
 \subsection{Definition}
 
-\begin{frame}
-\frametitle{(unsupervised) performance criterion}
-
-%\subsection{Goal of Anomaly Detection }
-%Anomaly: "an observation which deviates so much from other observations as to arouse suspicions that it was generated by a different mechanism (Hawkins 1980)"
-
-\begin{block}{Such a criterion allows:}
-\begin{itemize}
-\item{1-} To build good {\blue $s$} by optimizing this criterion.
-\item{2-} To evaluate any AD algorithm without using any labels.
-\end{itemize}
-\end{block}
-
-\begin{block}{Practical motivations:}
-Most of the time, data come without any label.\\
-{\footnotesize ~~~~~~ $\to$ no ROC or PR curves!}
-\end{block}
-
-\begin{block}{Idea:}
-\centering
-How good is an anomaly detection algorithm?
-$$\downarrow$$
-How good is it estimating the level sets?
-\end{block}
-\end{frame}
 
 
 
@@ -301,7 +329,7 @@ Question: How to choose $\Phi(s)$ ?
 	{\blue Minimum volume set} [Polonik, 1997]
 	\end{center}
 	\begin{equation*}
-	\Gamma^*_{\alpha} = \argmin_{\Gamma\text{ borelian} } \{\text{Leb}(\Gamma), \mathbb{P}(\mb X \in \Gamma) \geq \alpha \}
+	\Gamma^*_{\alpha} = \argmin_{\Gamma\text{ borelian} } \{\text{Leb}(\Gamma)~~~s.t.~~~ \mathbb{P}(\mb X \in \Gamma) \geq \alpha \}
 	\end{equation*}
 \end{minipage}
 \begin{minipage}{0.35\textwidth}
@@ -477,76 +505,7 @@ With probability at least $1-\delta$,
 \end{frame}
 
 
-\subsection{Evaluating a scoring function}
-
-
-\begin{frame}
-\frametitle{Evaluation of scoring functions}
-
-Inputs: scoring function $s$
-
-\begin{itemize}
-\item \textbf{Estimation:}
-\small{
-\begin{align*}
-&\widehat{MV}_s(\alpha) = \inf_{u \ge 0} ~~~\leb(s \ge u) ~~~~\st~~~~ \mathbb{P}_n(s \ge u) \ge \alpha\\
-&\widehat{EM}_s(t) = \sup_{u \ge 0} ~~~\mathbb{P}_n(s \ge u) ~-~ t \leb(s \ge u)
-\end{align*}
-}
-
-\item \textbf{Empirical criteria:}
-\small{
-\begin{align*}
-\widehat{\crit}^{EM}(s) &= \| \widehat{EM}_s \|_{L^1(I)}  &&I = [0,\widehat{EM}^{-1}(0.9)],\\
-\widehat{\crit}^{MV}(s) &= \| \widehat{MV}_s \|_{L^1(J)}  &&J = [0.9, 1],
-\end{align*}
-}
-
-
-\item \textbf{Issue:}
-\small{
-The volume $\leb(s \ge u)$ has to be estimated (Monte-Carlo). Challenging in high dimensions.
-}
-
-\end{itemize}
-\end{frame}
-
-
-
-
-\begin{frame}
-\frametitle{Evaluation: Heuristic solution}
-
-\begin{block}{Feature sub-sampling (random projection) and averaging}~\\
-
-\small{
-%\begin{algorithm}
-\begin{algorithmic}
-
-  \STATE \textbf{Inputs}: AD algorithm $\mathcal{A}$, data set $X$ size $n \times d $, feature sub-sampling size $d'$, number of draws $m$.\\~\\
-  \FOR{$k=1,\ldots,m$}
-    \STATE{-randomly select a sub-group $F_k$ of $d'$ features}
-    \STATE{-compute the associated scoring function $s_{k} = \mathcal{A}\big((x^j_i)_{1 \le i \le n,~j \in F_k}\big)$}
-    \STATE -compute $\widehat{\crit}_k^{EM} = \| \widehat{EM}_{s_k} \|_{L^1(I)}$  or $\widehat{\crit}_k^{MV} = \| \widehat{MV}_{s_k} \|_{L^1(J)}$
-  \ENDFOR \\~\\
-
-  \STATE \textbf{Return} performance criteria: $$\widehat{\crit}^{EM}_{high\_dim} (\mathcal{A})= \frac{1}{m} \sum_{k=1}^m\widehat \crit_k^{EM} \text{~~~~or~~~~} \widehat{\crit}^{MV}_{high\_dim}(\mathcal{A}) = \frac{1}{m} \sum_{k=1}^m\widehat \crit_k^{MV}~.$$
-
-\end{algorithmic}
-%\end{algorithm}
-}
-
-\end{block}
-\end{frame}
-
-
 \section{Part II: Learning accurate scoring functions on extreme regions}
-
-
-
-
-
-
 
 
 
@@ -844,7 +803,7 @@ $$\widehat{\mathcal{M}}:=\big\{~\widehat{\Phi}(\Omega_{\alpha}),~ \alpha~\big\}$
 
 
 \begin{frame}
-\frametitle{Statistical guaranties: Main issue}
+\frametitle{Statistical guarantees: Main issue}
 Would like to use concentration inequality... % XXX citer boucheron?
 % XXX 2 dessins
 \begin{align*}
@@ -1044,6 +1003,87 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 
 
 
+\section{Perspectives}
+
+\subsection{Evaluation of scoring functions, model selection}
+
+\begin{frame}
+\frametitle{EM and MV curves for model selection?}
+
+%\subsection{Goal of Anomaly Detection }
+%Anomaly: "an observation which deviates so much from other observations as to arouse suspicions that it was generated by a different mechanism (Hawkins 1980)"
+
+% MV and EM curves allow to build scoring functions.
+
+% \textbf{Question:} Can we use them for evaluating any scoring function?
+
+In moderate dimension: [Thomas et al. 2015, 2016]
+
+\begin{block}{Practical motivations:}
+Most of the time, data come without any label.\\
+{\footnotesize ~~~~~~ $\to$ no ROC or PR curves!}
+\end{block}
+
+\begin{block}{Implicit (natural) simplification of the problem:}
+How good is an anomaly detection algorithm?\\
+$\to$ How good is it estimating the level sets of the inliers distribution?
+\end{block}
+
+% Inputs: scoring function $s$
+
+\textbf{Estimation:}
+\small{
+\begin{align*}
+&\widehat{MV}_s(\alpha) = \inf_{u \ge 0} ~~~\leb(s \ge u) ~~~~\st~~~~ \mathbb{P}_n(s \ge u) \ge \alpha ~~~~~~~~\to \widehat{\crit}^{EM}(s)\\
+&\widehat{EM}_s(t) = \sup_{u \ge 0} ~~~\mathbb{P}_n(s \ge u) ~-~ t \leb(s \ge u) ~~~~~~~~~\to \widehat{\crit}^{MV}(s)
+\end{align*}
+}
+
+% \item \textbf{Empirical criteria:}
+% \small{
+% \begin{align*}
+% \widehat{\crit}^{EM}(s) &= \| \widehat{EM}_s \|_{L^1(I)}  &&I = [0,\widehat{EM}^{-1}(0.9)],\\
+% \widehat{\crit}^{MV}(s) &= \| \widehat{MV}_s \|_{L^1(J)}  &&J = [0.9, 1],
+% \end{align*}
+% }
+
+\textbf{Issue in large dimension:}
+\small{
+The volume $\leb(s \ge u)$ has to be estimated! % Challenging in high dimensions.
+}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Heuristic extension for large dimension}
+
+\begin{block}{Random projection and averaging ~~~~{\color{black} \small [G. 2016]}}~\\
+
+\small{
+%\begin{algorithm}
+\begin{algorithmic}
+
+  \STATE \textbf{Inputs}: AD algorithm $\mathcal{A}$, data set $X$ size $n \times d $, feature sub-sampling size $d'$, number of draws $m$.\\~\\
+  \FOR{$k=1,\ldots,m$}
+    \STATE{-randomly select a sub-group $F_k$ of $d'$ features}
+    \STATE{-compute the associated scoring function $s_{k} = \mathcal{A}\big((x^j_i)_{1 \le i \le n,~j \in F_k}\big)$}
+    \STATE -compute $\widehat{\crit}_k^{EM} = \| \widehat{EM}_{s_k} \|_{L^1(I)}$  or $\widehat{\crit}_k^{MV} = \| \widehat{MV}_{s_k} \|_{L^1(J)}$
+  \ENDFOR \\~\\
+
+  \STATE \textbf{Return} performance criteria: $$\widehat{\crit}^{EM}_{high\_dim} (\mathcal{A})= \frac{1}{m} \sum_{k=1}^m\widehat \crit_k^{EM} \text{~~~~or~~~~} \widehat{\crit}^{MV}_{high\_dim}(\mathcal{A}) = \frac{1}{m} \sum_{k=1}^m\widehat \crit_k^{MV}~.$$
+
+\end{algorithmic}
+%\end{algorithm}
+}
+
+\end{block}
+\end{frame}
+
+\subsection{One-class }
+
+
+
 
 
 \begin{frame}
@@ -1055,6 +1095,7 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 \frametitle{Some references:}
 \begin{itemize}
 \footnotesize{
+\item Agarwal 2006, Detecting anomalies in cross-classified streams: a bayesian approach.
 
 \item Aggarwal and Yu 2001, Outlier detection for high dimensional data.
 
@@ -1073,6 +1114,8 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 
 \item Einmahl, Krajina and Segers 2012, An m-estimator for tail dependence in arbitrary dimensions.
 
+\item Eskin 2000,  Anomaly detection over noisy data using learned probability distributions.
+
 \item Goix, Sabourin and Clémençon 2015, Learning the dependence structure of rare events: a non-asymptotic study.
 
 \item Goix, Sabourin and Clémençon 2015, Sparse Representation of Multivariate Extremes with Applications to Anomaly Ranking.
@@ -1082,6 +1125,8 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 \item Goix 2016, How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms?
 
 \item Goix, Brault, Drougard and Chiapino 2016, One Class Splitting Criteria for Random Forests with Application to Anomaly Detection.
+
+\item Hautamaki, Karkkainen and Franti 2004. Outlier detection using k-nearest neighbour graph.
 
 }
 \end{itemize}
@@ -1095,9 +1140,15 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 \footnotesize{
 \item de Haan and Ferreira, Extreme value theory, 2006.
 
+\item Hawkins 1980, Identification of outliers.
+
 \item Lee and Roberts 2008, On-line novelty detection using the Kalman filter and extreme value theory.
 
 \item Liu, Ting, Zhou 2008, Isolation forest.
+
+\item Liu and Weng 1991,  Detection of outlying data in bioavailability/bioequivalence studies. 
+
+\item Papadimitriou, Kitagawa, Gibbons and Faloutsos 2002, Loci: Fast outlier detection using the local correlation integral.
 
 \item Polonik 1997, Minimum volume sets and generalized quantile processes.
 
@@ -1117,14 +1168,16 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 
 \item Shyu, Chen, Sarinnapakorn and Chang 2003, A novel anomaly detection scheme based on principal component classifier
 
+\item Tang, Chen, Fu, and W.Cheung 2002. Enhancing effectiveness of outlier detections for low density patterns.
+
+\item Thomas, Feuillard and Gramford 2015, Calibration of One-Class SVM for MV set estimation.
+
+\item Thomas, Clémençon, Feuillard and Gramford 2016, Learning Hyperparameters for Unsupervised Anomaly Detection.
+
 \item Vert and Vert 2006, Consistency and Convergence Rates of One-Class SVMs and Related Algorithms
 }
 \end{itemize}
 \end{frame}
-
-
-
-\subsection{Experiments}
 
 
 

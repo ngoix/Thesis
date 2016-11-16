@@ -1,0 +1,17 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def f(x):
+    return -2 * x * np.exp(-x * x) * (x<0)
+
+def s(x):
+    return 2 * f(x) + 1
+
+
+abs = np.arange(-5, 10, 0.01)
+plt.plot(abs,f(abs), ':', label='f')
+plt.plot(abs,s(abs), '--', label='accurate s')
+
+plt.legend()
+plt.show()

@@ -772,10 +772,15 @@ New partition of $\mathbf{S}_{d-1}$.%, compatible with non asymptotic data.
 \begin{frame}
 \frametitle{Resulting estimation procedure}
 $\hat V_i^j = \frac{1}{1- \hat F_j(X_{i}^j)}$ with 
-$\hat F_j(X_{i}^j) =\frac{rank(X_i^j) -1}{n} $\\~\\
+$\hat F_j(X_{i}^j) =\frac{rank(X_i^j) -1}{n} $\\~\\~\\
 
 \begin{minipage}{0.5\linewidth}
-\centering
+%\centering
+Recall that:
+\begin{align*}
+\mu(A)=\lim_{t \to \infty} t \mathbb{P}[\mb V\in t~A]
+\end{align*}
+%
 $\Rightarrow$ get an natural estimate of $\Phi(\Omega_\alpha)$
 \begin{align*}
 &\widehat{\Phi}(\Omega_\alpha) := \frac{n}{k}\mathbb{P}_n( \hat V \in \frac{n}{k}\mathcal{C}_\alpha^\epsilon)\\
@@ -784,9 +789,9 @@ $\Rightarrow$ get an natural estimate of $\Phi(\Omega_\alpha)$
 \end{minipage}\hfill
 \begin{minipage}{0.5\linewidth}
 \centering
-\includegraphics[scale=0.35]{sourcefigs/representation2D_nk_rect.png}
+\includegraphics[scale=0.45]{sourcefigs/representation2D_nk_rect.png}
 \end{minipage}
-~\\
+~\\~\\~\\
 $\Rightarrow$ we obtain
 $$\widehat{\mathcal{M}}:=\big\{~\widehat{\Phi}(\Omega_{\alpha}),~ \alpha~\big\}$$
 \end{frame}
@@ -1010,7 +1015,6 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 
 % \textbf{Question:} Can we use them for evaluating any scoring function?
 
-In moderate dimension: [Thomas et al. 2015, 2016]
 
 \begin{block}{Practical motivations:}
 Most of the time, data come without any label.\\
@@ -1031,6 +1035,7 @@ $\to$ How good is it estimating the level sets of the inliers distribution?
 &\widehat{EM}_s(t) = \sup_{u \ge 0} ~~~\mathbb{P}_n(s \ge u) ~-~ t \leb(s \ge u) ~~~~~~~~~\to \widehat{\crit}^{MV}(s) = \|EM_s\|_{1, I}
 \end{align*}
 }
+[Thomas et al. 2015, 2016]
 
 % \item \textbf{Empirical criteria:}
 % \small{
@@ -1081,15 +1086,36 @@ Seems to work in pratice but no statistical guaranties.
 \frametitle{One Class Random Forests}
 
 Existing litterature:
-[Désir et al., 2013, Liu et al., 2008, Shi and Horvath, 2012].
+{\small [Désir et al., 2013, Liu et al., 2008, Shi and Horvath, 2012].}\\~\\
+%
+% {\blue Two-class impurity decrease} (proxy) for splitting node $t$, yielding children nodes $t_L$ and $t_R$ :
 
-\begin{block}{}{One-Class splitting criterion }%XXX~~~~{\color{black} \small [G., Brault, Drougard, Chiapino 2016]}}
-  
+\begin{minipage}{0.65\textwidth}
+{\blue Two-Class impurity decrease} 
+\begin{align*}
+I_G(t_L, t_R)= \frac{n_{t_L} n'_{t_L}}{n_{t_L} +  n'_{t_L}} + \frac{n_{t_R} n'_{t_R}}{n_{t_R} +  n'_{t_R}}.
+\end{align*}
+$n_t$ : nb of observations with label $0$ in node $t$.\\
+$n_t'$: nb of observations with label $1$ in node $t$.
+
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.95\textwidth]{sourcefigs/tree.pdf}
+\end{minipage}
+
+\begin{block}{One-Class splitting criterion }%XXX~~~~{\color{black} \small [G., Brault, Drougard, Chiapino 2016]:}}
+$n'_{t_L} \to n_{t} \frac{\leb(t_L)}{\leb(t)} ~~~~\text{and}~~~~
+n'_{t_R} \to n_{t} \frac{\leb(t_R)}{\leb(t)}
+$% \begin{align*}
+% I_G^{OC-ad}(t_L, t_R)= \frac{n_{t_L} \gamma n_t \lambda_L}{n_{t_L} + \gamma n_t \lambda_L} + \frac{n_{t_R} \gamma n_t \lambda_R}{n_{t_R} + \gamma n_t \lambda_R}.
+% \end{align*}
+
 \input{tikz.tex}
 \end{block}
-
-Does theorical guaranties on RFs apply ?
-[Biau et al. 2008, Biau and Scornet, 2016]
+%
+Does theorical guaranties apply ?
+{\small [Biau et al. 2008, Biau and Scornet, 2016]}
 
 \end{frame}
 

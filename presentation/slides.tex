@@ -1,4 +1,4 @@
-\documentclass[10pt]{beamer}
+\documentclass[9pt]{beamer}
 % \documentclass[reqno]{beamer}
 
 \usepackage{booktabs} % better tables
@@ -273,200 +273,189 @@ Training set (unlabeled) = normal + abnormal data \\
 \end{frame}
 
 
-\section{Part I: Performance Criterion for Scoring Functions}
+\section{Part I: Performance criterion for scoring functions}
 % \subsection{Definition}
 
 
 
 
-\begin{frame}
-\frametitle{Context}
-%In a machine learning context, AD can been seen as a classification task but where the usual assumption -dataset contains info regarding all classes- breaks down.
+% \begin{frame}
+% \frametitle{Context}
+% %In a machine learning context, AD can been seen as a classification task but where the usual assumption -dataset contains info regarding all classes- breaks down.
 
-\begin{block}{Novelty Detection { \footnotesize (`One-Class Classification', `semi-supervised AD')}}~\\~\\
+% \begin{block}{Novelty Detection { \footnotesize (`One-Class Classification', `semi-supervised AD')}}~\\~\\
 
-\begin{itemize}
-\item \textbf{Data: {\red inliers}}.\\
-i.i.d. observations in $\mathbb{R}^d$ from the normal behavior, density {\red $f$}.\\~\\
-%{\footnotesize Remark: In practice, data can be polluted by a small proportion of anomalies.}
+% \begin{itemize}
+% \item \textbf{Data: {\red inliers}}.\\
+% i.i.d. observations in $\mathbb{R}^d$ from the normal behavior, density {\red $f$}.\\~\\
+% %{\footnotesize Remark: In practice, data can be polluted by a small proportion of anomalies.}
 
-\item \textbf{Output to evaluate: {\blue scoring function $s: \mathbb{R}^d \to \mathbb{R}$}} \\
-%{\footnotesize
-%- AD algorithms return {\blue $s: \mathbb{R}^d \to \mathbb{R}$}.\\
-- $s$ defines a {\blue pre-order} on $\mathbb{R}^d$ = `degree of abnormality'.\\
-- $s$ level sets are estimates of $f$ level sets.\\
-- $s$ can be interpreted as a box which contains {\blue an infinite number of level sets estimates} (at different levels).\\~\\
-\end{itemize}
+% \item \textbf{Output to evaluate: {\blue scoring function $s: \mathbb{R}^d \to \mathbb{R}$}} \\
+% %{\footnotesize
+% %- AD algorithms return {\blue $s: \mathbb{R}^d \to \mathbb{R}$}.\\
+% - $s$ defines a {\blue pre-order} on $\mathbb{R}^d$ = `degree of abnormality'.\\
+% - $s$ level sets are estimates of $f$ level sets.\\
+% - $s$ can be interpreted as a box which contains {\blue an infinite number of level sets estimates} (at different levels).\\~\\
+% \end{itemize}
 
-\textbf{Remark.} Ideal scoring functions: $s=f$ or $s=2f+3$ or $s=T \circ f$ any increasing transform of $f$. \\
-%($f=2s$, $f=s^2$ if $s \ge 0$, ...).
+% \textbf{Remark.} Ideal scoring functions: $s=f$ or $s=2f+3$ or $s=T \circ f$ any increasing transform of $f$. \\
+% %($f=2s$, $f=s^2$ if $s \ge 0$, ...).
 
-\end{block}
-\end{frame}
+% \end{block}
+% \end{frame}
 
 
-\begin{frame}
-\frametitle{Problem reformulation}
-We want a criterion $\mathcal{C}(s)$ which measures \emph{how well the level sets of $f$ are approximated by those of $s$}.
-%$$\mathcal{C}(s) (t) \simeq ~\inf_{u>0}~ \leb(\{ s >u\}~\Delta~\{f>t\})$$
-\begin{block}{}
-\begin{itemize}
-\item \textbf{Fact:} For any strictly increasing transform $T$, level sets of $T \circ f$ are exactly those of $f$.\\
-$\Rightarrow$ Criterion $\mathcal{C}(s) = \|s-f\|$ is not relevant! ($\mathcal{C}(2f) > 0$)\\~\\
+% \begin{frame}
+% \frametitle{Problem reformulation}
+% We want a criterion $\mathcal{C}(s)$ which measures \emph{how well the level sets of $f$ are approximated by those of $s$}.
+% %$$\mathcal{C}(s) (t) \simeq ~\inf_{u>0}~ \leb(\{ s >u\}~\Delta~\{f>t\})$$
+% \begin{block}{}
+% \begin{itemize}
+% \item \textbf{Fact:} For any strictly increasing transform $T$, level sets of $T \circ f$ are exactly those of $f$.\\
+% $\Rightarrow$ Criterion $\mathcal{C}(s) = \|s-f\|$ is not relevant! ($\mathcal{C}(2f) > 0$)\\~\\
 
-\item \textbf{We are looking for a criterion s.t:}\\
-- $\crit^{\Phi}(s) = \| \Phi(s) - \Phi(f) \|$ with $\Phi$ s.t. $\Phi(T \circ s) = \Phi(s)$. \\
-- $ \{ \text{level sets of optimal }~ s^*\} = \{ \text{level sets of } ~f \}$. \\
-- $\crit^{\Phi}(s)$ = `distance' between level sets of $s$ and those of $f$.
+% \item \textbf{We are looking for a criterion s.t:}\\
+% - $\crit^{\Phi}(s) = \| \Phi(s) - \Phi(f) \|$ with $\Phi$ s.t. $\Phi(T \circ s) = \Phi(s)$. \\
+% - $ \{ \text{level sets of optimal }~ s^*\} = \{ \text{level sets of } ~f \}$. \\
+% - $\crit^{\Phi}(s)$ = `distance' between level sets of $s$ and those of $f$.
 
-\end{itemize}
-\end{block}
- % $\Rightarrow \Phi(s) := MV_s$ or $EM_s$, the Mass-Volume and Excess-Mass curves of $s$.
-Question: How to choose $\Phi(s)$ ?
-\end{frame}
+% \end{itemize}
+% \end{block}
+%  % $\Rightarrow \Phi(s) := MV_s$ or $EM_s$, the Mass-Volume and Excess-Mass curves of $s$.
+% Question: How to choose $\Phi(s)$ ?
+% \end{frame}
 
 
 \begin{frame}
 \frametitle{Existing criterion: Mass-Volume curve}
 % For a random variable $\mb X$, \emph{normal region}: region of minimum volume among all regions with probability greater than $\alpha \in (0,1)$.\\~\\
 
-\begin{minipage}{0.55\textwidth}
-	\begin{center}
-	{\blue Minimum volume set} [Polonik, 1997]
-	\end{center}
+\begin{minipage}{0.6\textwidth}
+	{\blue Minimum volume set} {\small [Einmahl and Mason 1992, Polonik 1997]}
 	\begin{equation*}
-	\Gamma^*_{\alpha} = \argmin_{\Gamma\text{ borelian} } \{\text{Leb}(\Gamma)~~~s.t.~~~ \mathbb{P}(\mb X \in \Gamma) \geq \alpha \}
+	\Gamma^*_{\alpha} = \argmin_{\Gamma\text{ borelian} } ~~~\text{Leb}(\Gamma)~~~s.t.~~~ \mathbb{P}(\mb X \in \Gamma) \geq \alpha
 	\end{equation*}
 \end{minipage}
-\begin{minipage}{0.35\textwidth}
+\begin{minipage}{0.3\textwidth}
 	\centering
 	\includegraphics[width=0.95\textwidth]{img/anomaly_detection_end_col.png}
 \end{minipage}
 
 % Under regularity assumptions, minimum-volume sets are \textbf{density level sets}:
 % $$\exists t_\alpha>0,~~~ \Gamma^*_{\alpha} = \{f > t_\alpha\} =: \Omega_{t_\alpha} $$
-\begin{figure}[htb]
-\centering
-\includegraphics[width=1.01\columnwidth]{sourcefigs/scoring.pdf}
-\end{figure}
 
-{\blue Mass Volume curve} of a scoring function $s$ [Clémençon and Jakubowicz, 2013]:
+{\blue Mass Volume curve} of a scoring function $s$ {\small [Clémençon and Jakubowicz, 2013]}:
 % \footnotesize{
 \begin{align*}
-MV_s(\alpha) ~:&=~ \inf_{\Omega \text{ level-set of } s}~~~ \big\{\leb(\Omega) ~~~~s.t.~~~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\} \\
-MV^*(\alpha) ~:&=~ MV_f(\alpha)
+MV_s(\alpha) ~:&=~ \inf_{\Gamma \text{ level-set of } s} \big\{~ \leb(\Gamma) ~~~s.t.~~ \mathbb{P}(\mb X \in \Gamma) \ge \alpha~\big\} \\
+MV^*(\alpha) ~:&=~ \min_{\Gamma~ \text{borelian}} \big\{~\leb(\Gamma) ~~~\st~~ \mathbb{P}(\mb X \in \Gamma) \ge \alpha ~\big\} \overset{prop}{=} MV_f(\alpha)
 \end{align*}
+%
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.87\columnwidth]{sourcefigs/scoring2.pdf}
+\end{figure}
 
 \end{frame}
 
 
-\begin{frame}\frametitle{Existing criterion: Mass-Volume curve}
+% \begin{frame}\frametitle{Existing criterion: Mass-Volume curve}
 
-Properties:
+% Properties:
 
-\begin{itemize}
-\item For any scoring function $s$, $MV^*(\alpha) \le MV_s(\alpha)$
-\item For any increasing transform $T$, $MV^*(\alpha)  = MV_{T \circ f}(\alpha)$
-\item $MV^*(\alpha) = \text{Leb}(\Gamma_\alpha^*) := \min_{\Omega~ \text{borelian}} ~\big\{\leb(\Omega) ~~~\st~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}$\\~\\
-($MV_s(\alpha) ~:=~ \inf_{\Omega \text{ level-set of } s}~~~ \big\{\leb(\Omega) ~~~~s.t.~~~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}
-$)
-\end{itemize}
-
-
-% \begin{equation*}
-% t \in \mathbb{R} \mapsto (\alpha_s(t), \lambda_s(t))
-% \end{equation*}
 % \begin{itemize}
-% \item $\alpha_s(t) = \mathbb{P}(s(X) \geq t)$ \textbf{mass}
-% \vspace{0.2cm}
-% \item $\lambda_s(t) = \lambda(\{x, s(x) \geq t\})$ \textbf{volume}
+% \item For any scoring function $s$, $MV^*(\alpha) \le MV_s(\alpha)$
+% \item For any increasing transform $T$, $MV^*(\alpha)  = MV_{T \circ f}(\alpha)$
+% \item $MV^*(\alpha) = \text{Leb}(\Gamma_\alpha^*) := \min_{\Omega~ \text{borelian}} ~\big\{\leb(\Omega) ~~~\st~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}$\\~\\
+% ($MV_s(\alpha) ~:=~ \inf_{\Omega \text{ level-set of } s}~~~ \big\{\leb(\Omega) ~~~~s.t.~~~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}
+% $)
 % \end{itemize}
 
-\begin{figure}[htb]
-\centering
-\subfigure[Scoring functions]{%
-\includegraphics[width=0.45\columnwidth]{img/mv_curves_examples_1_comp_inkscape.pdf}}
-\subfigure[Mass Volume curves]{%
-\includegraphics[width=0.45\columnwidth]{img/mv_curves_examples_2_comp_inkscape.pdf}}
-\end{figure}
+
+% \begin{figure}[htb]
+% \centering
+% \subfigure[Scoring functions]{%
+% \includegraphics[width=0.45\columnwidth]{img/mv_curves_examples_1_comp_inkscape.pdf}}
+% \subfigure[Mass Volume curves]{%
+% \includegraphics[width=0.45\columnwidth]{img/mv_curves_examples_2_comp_inkscape.pdf}}
+% \end{figure}
 
 
-\end{frame}
+% \end{frame}
 
-
-
-\begin{frame}
-\frametitle{Drawbacks and alternative criterion: Excess-Mass curve}
-
-Drawbacks of MV:
-\begin{itemize}
-\item When optimized \emph{w.r.t.} different levels $\alpha$, produces not necessarily nested empirical level sets.
-\item $\to$ low convergence rates -- of order $O(n^{-1/4})$.
-\item MV diverges in $1$ in case of unbounded support.
-\end{itemize}
-
-\begin{block}{Solution: Excess-Mass curve}
-\begin{itemize}
-% \footnotesize{
-\item \textbf{Definitions:}
-\begin{align*}
-EM_s(t) ~~=~ \sup_{\Omega \text{ level-set of } s}~~~\big\{ \mathbb{P}(\mb X \in \Omega) ~-~ t \leb(\Omega) \big\}
-% & MV_s(\alpha) ~=~ \inf_{\Omega \text{ level-set of } s}~~~ \big\{\leb(\Omega) ~~~~s.t.~~~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\} 
-\end{align*}
-
-
-% \footnotesize{
-\item \textbf{Optimal curves:}
-\begin{align*}
-&EM^*(t) ~:=~ EM_f(t) = EM_{T \circ f}(t) = \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\}\\
-%&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~= EM_f(t) = EM_{T \circ f}(t)\\
-&EM^*(t) \ge EM_s(t)~~~~~~~~~~~~\text{for all scoring function}~~ s
-% &MV^*(\alpha) ~=~ \min_{\Omega~ \text{borelian}} ~\big\{\leb(\Omega) ~~~\st~~ \mathbb{P}(\mb X \in \Omega) \ge \alpha\big\}\\
-% &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~= MV_f(\alpha) = MV_{T \circ f}(\alpha)
-\end{align*}
-
-\end{itemize}
-\textbf{Property: Previous drawbacks are fixed with EM.}
-\end{block}
-
-\end{frame}
 
 
 \begin{frame}
-\frametitle{MV and EM criteria}
-\begin{itemize}
-\item \textbf{Interpretation:} $(EM_f - EM_s)(t) \simeq ~\inf_{u>0}~ \leb(\{ s >u\}~\Delta~\{f>t\})$ \\~\\~\\
-% \begin{align*}
-% &\| EM_s - EM_f\|_{L^1(I)} : \text{ how well $t$-level sets of $f$ are approximated by}\\
-% &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\text{ level sets of $s$, $t \in I$}.\\
-% &\| MV_s - MV_f\|_{L^1(J)} : \text{ how well $\alpha$-level sets of $f$ are approximated by} \\
-% &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\text{ level sets of $s$, $\alpha \in J$}.\\
-% %&(EM_s - EM_f)(t) \simeq \inf_{u>0} Leb (\{ s >u\}\Delta\{f>t\})
-% \end{align*}
-
-
-\item How well {\red $t$}-level sets of $f$ are approximated by level sets of $s$, ${\red t} \in I$ ? \\
-{\centering $\updownarrow$\\
-how {\blue small} is $EM_f - EM_s$ on $I$ ? \\$\updownarrow$\\
-~~~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue large} is $EM_s$ on $I$ ?} ~~~~$\to$  {\red $\mathcal{C}^{EM}(s) = \|EM_s\|_{1, I}$}  \\~\\~\\}
-
-\item How well {\red $\alpha$} minimum-volume sets of $f$ are approximated by level sets of $s$, ${\red \alpha} \in J$ ? \\
-{\centering $\updownarrow$\\
- how {\blue small} is $MV_s - MV_f$ on $J$ ? \\
-$\updownarrow$\\
-~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue small} is $MV_s$ on $J$ ?} ~~~$\to$  {\red $\mathcal{C}^{MV}(s) = \|MV_s\|_{1, J}$}
-}
- 
-\end{itemize}
-
-
-\end{frame}
-
-\begin{frame}
+\frametitle{Existing criterion: Mass-Volume curve}
 \begin{figure}
-\includegraphics[width = 0.7\linewidth]{emmv.png}
+\includegraphics[width = 0.7\linewidth]{sourcefigs/mv.pdf}
 \end{figure}
+
+Main drawbacks of MV:
+\begin{itemize}
+\item When optimized \emph{w.r.t.} different levels $\alpha$ over a finite class, produces \textbf{not necessarily nested} empirical level sets.
+\item $\to$ \textbf{low convergence rates} -- of order $O(n^{-1/4})$.
+\item MV \textbf{diverges} in $1$ in case of unbounded support.
+\end{itemize}
+
 \end{frame}
+
+\begin{frame}
+\frametitle{Our solution: Excess-Mass curve}
+{\blue \large Excess-Mass curve {\small [G., Sabourin, Clémençon 2015]}}
+\begin{align*}
+EM_s(t) ~~:&=~ \sup_{\Omega \text{ level-set of } s}~~~\big\{ \mathbb{P}(\mb X \in \Omega) ~-~ t \leb(\Omega) \big\}\\
+EM^*(t) ~~:&=~ \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\} \overset{prop}{=} EM_f(t)
+%&EM^*(t) \ge EM_s(t)~~~~~~~~~~~~\text{for all scoring function}~~ s
+\end{align*}
+
+\begin{alertblock}{Property: Previous drawbacks are fixed with EM.}
+\begin{itemize}
+\item Produces \textbf{nested} empirical level sets.
+\item $\to$ \textbf{convergence rates} of order $O(n^{-1/2})$.
+\item EM curve \textbf{finite} even in case of unbounded support.
+\end{itemize}
+\end{alertblock}
+
+
+\begin{figure}
+\includegraphics[width = 0.6\linewidth]{sourcefigs/em.pdf}
+\end{figure}
+
+
+\end{frame}
+
+
+% \begin{frame}
+% \frametitle{MV and EM criteria}
+% \begin{itemize}
+% \item \textbf{Interpretation:} $(EM_f - EM_s)(t) \simeq ~\inf_{u>0}~ \leb(\{ s >u\}~\Delta~\{f>t\})$ \\~\\~\\
+% % \begin{align*}
+% % &\| EM_s - EM_f\|_{L^1(I)} : \text{ how well $t$-level sets of $f$ are approximated by}\\
+% % &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\text{ level sets of $s$, $t \in I$}.\\
+% % &\| MV_s - MV_f\|_{L^1(J)} : \text{ how well $\alpha$-level sets of $f$ are approximated by} \\
+% % &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\text{ level sets of $s$, $\alpha \in J$}.\\
+% % %&(EM_s - EM_f)(t) \simeq \inf_{u>0} Leb (\{ s >u\}\Delta\{f>t\})
+% % \end{align*}
+
+
+% \item How well {\red $t$}-level sets of $f$ are approximated by level sets of $s$, ${\red t} \in I$ ? \\
+% {\centering $\updownarrow$\\
+% how {\blue small} is $EM_f - EM_s$ on $I$ ? \\$\updownarrow$\\
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue large} is $EM_s$ on $I$ ?} ~~~~$\to$  {\red $\mathcal{C}^{EM}(s) = \|EM_s\|_{1, I}$}  \\~\\~\\}
+
+% \item How well {\red $\alpha$} minimum-volume sets of $f$ are approximated by level sets of $s$, ${\red \alpha} \in J$ ? \\
+% {\centering $\updownarrow$\\
+%  how {\blue small} is $MV_s - MV_f$ on $J$ ? \\
+% $\updownarrow$\\
+% ~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{how {\blue small} is $MV_s$ on $J$ ?} ~~~$\to$  {\red $\mathcal{C}^{MV}(s) = \|MV_s\|_{1, J}$}
+% }
+ 
+% \end{itemize}
+
+
+% \end{frame}
+
 
 % \subsection{Learning a scoring function}
 
@@ -475,22 +464,22 @@ $\updownarrow$\\
 
 
 
-We are looking for nearly optimal scoring functions of the form {\blue $s = \sum_{j=1}^N a_j \mathds{1}_{x \in \Omega_j}$}, with $a_j \ge 0$,~ $\Omega_j \in \mathcal{G}$.\\
+We are looking for nearly optimal scoring functions of the form {\blue $s(x) = \sum_{j=1}^N a_j \mathds{1}_{x \in \Omega_j}$}, with $a_j \ge 0$,~ $\Omega_j \in \mathcal{G}$ a VC-class.\\
 
 
 \begin{block}{}
-{\blue Procedure}:  Fixe $t_0 > 0$\\
+{\blue Procedure}:  Fix $t_0 > 0$\\
 For $k=1, \ldots, N$,
 %
 \begin{align*}
 &t_{k+1} ~~=~ \frac{t_k}{(1 + \frac{1}{\sqrt n})}\\
-&\widehat \Omega_{t_{k+1}} =~~ \argmax_{\Omega \supset \widehat \Omega_{t_k}} ~~~~ \mathbb{P}_n(X \in \Omega) ~-~ t_{k+1} \leb(\Omega)
+&\widehat \Omega_{t_{k+1}} =~~ \argmax_{\Omega \in \mathcal{G},~ \widehat \Omega_{t_k} \subset \Omega } ~~~~ \mathbb{P}_n(X \in \Omega) ~-~ t_{k+1} \leb(\Omega)
 \end{align*}
 %
 %where $\mathbb{P}_n(X \in \Omega) = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{X_i \in \Omega}$, we obtain
 $s_N(x) := \sum_{j=1}^N(t_j - t_{j+1}) \mathds{1}_{x \in \Omega_{t_j}}$
 \begin{figure}
-\includegraphics[width=\linewidth]{em_optim.png}
+\includegraphics[width=\linewidth]{sourcefigs/em_optim.pdf}
 \end{figure}
 \end{block}
 
@@ -499,16 +488,16 @@ $s_N(x) := \sum_{j=1}^N(t_j - t_{j+1}) \mathds{1}_{x \in \Omega_{t_j}}$
 \begin{frame}
 \frametitle{Learning a scoring function with M-estimation}
 
-\begin{block}{}
-{\blue Rates}: (if density bounded and without flat parts, $\mathcal{G}$ VC-class)\\
-With probability at least $1-\delta$,
+\begin{block}{Theorem {\small [G., Sabourin, Clémençon 2015]}}
+Assume the density $f$ bounded, with compact support and without flat parts and $\mathcal{G}$ VC-class.
+Then if $t_N = \mathcal{O}(n^{-1/2})$, with probability at least $1-\delta$, %(\eg~if $N \sim \sqrt n \log n$)
 \begin{align*}
-\sup_{t \in ]0,t_1]}|EM^*(t)-EM_{s_N}(t)| ~\le~ \left[A+\sqrt{2\log(1/\delta)}\right]\frac{1}{\sqrt n}+ bias(\mathcal{G}) + o_N(1).
+\sup_{t \in ]0,t_1]}|EM^*(t)-EM_{s_N}(t)| ~\le~ \left[A+\sqrt{2\log(1/\delta)}\right]\frac{1}{\sqrt n}+ bias(\mathcal{G}). %+ o_N(1).
 \end{align*}
 \end{block}
 ~\\~\\~\\~\\~\\~\\
 \begin{figure}
-\includegraphics[width=\linewidth]{em_optim.png}
+\includegraphics[width=\linewidth]{sourcefigs/em_optim.pdf}
 \end{figure}
 
 \end{frame}
@@ -649,9 +638,7 @@ $\Rightarrow$ $\Phi$ (or $\mu$) \textbf{rules the joint distribution of extremes
 
 \begin{frame}
   \frametitle{Angular distribution}
-  \begin{itemize}
-\item 
-$\Phi$ rules  the joint distribution of extremes
+$\Phi$ rules  the joint distribution of extremes:\\~\\
 % end{itemize}
      \begin{figure}[h]
       \centering
@@ -660,11 +647,10 @@ $\Phi$ rules  the joint distribution of extremes
     \end{figure}
 
     \begin{tabular}{ll}
-      Asymptotic dependence:  & ~~~Asymptotic independence:\\
-$(V_1,V_2)$ may be large together. & ~~~Only $V_1$ \emph{or} $V_2$ may be large.
+      Asymptotic dependence:  & ~~~~~~~~~~~~~~~~Asymptotic independence:\\
+$(V_1,V_2)$ may be large together. & ~~~~~~~~~~~~~~~~Only $V_1$ \emph{or} $V_2$ may be large.
     \end{tabular}
 
-  \end{itemize}
 \end{frame}
 
 
@@ -754,7 +740,7 @@ to a representative class of set $\{\mathcal{C}_\alpha,~\alpha\}$, but only the 
 
 \begin{minipage}{0.5\linewidth}
 \centering
-\includegraphics[scale=0.3]{sourcefigs/representation2D_problem}
+\includegraphics[scale=0.3]{sourcefigs/representation2D_problem.pdf}
 \end{minipage}\hfill
 \begin{minipage}{0.5\linewidth}
 $\Rightarrow$ Cannot just do, for large $t$:
@@ -772,14 +758,14 @@ $\Rightarrow$ Cannot just do, for large $t$:
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.33]{sourcefigs/representation2Drect.png}
+  \includegraphics[scale=0.4]{sourcefigs/representation2Drect.pdf}
 \end{figure}
 
 \begin{align*}
-\mathcal{C}_\alpha\to \mathcal{C}_\alpha^\epsilon &= \{\|v\|\ge 1,~~ v_j>\epsilon\, (j\in\alpha),\,v_j \le \epsilon \,(j\notin\alpha) \}.  \\
-\Omega_\alpha  \to  \Omega_\alpha^\epsilon&= \mathcal{C}_\alpha^\epsilon \cap \mathbf{S}_{d-1}
+\mathcal{C}_\alpha\to \mathcal{C}_\alpha^\epsilon &= \{\|v\|\ge 1,~~ v_j>\epsilon\, (j\in\alpha),\,v_j \le \epsilon \,(j\notin\alpha) \}. 
+%\Omega_\alpha  \to  \Omega_\alpha^\epsilon&= \mathcal{C}_\alpha^\epsilon \cap \mathbf{S}_{d-1}
 \end{align*}
-New partition of $\mathbf{S}_{d-1}$%, compatible with non asymptotic data.
+New partition of $\mathbf{S}_{d-1}$.%, compatible with non asymptotic data.
 \end{frame}
 
 
@@ -809,56 +795,17 @@ $$\widehat{\mathcal{M}}:=\big\{~\widehat{\Phi}(\Omega_{\alpha}),~ \alpha~\big\}$
 
 
 
-
-
-\begin{frame}
-\frametitle{Statistical guarantees: Main issue}
-Would like to use concentration inequality... % XXX citer boucheron?
-% XXX 2 dessins
-\begin{align*}
-&\text{In our case:~~~~~~} \sup_{A \in \mathcal{A}} {\red\frac{n}{k}}\left| \big(\mathcal{P}- \mathcal{P}_n\big)\left({\blue \frac{k}{n}}A\right)\right|\\
-&\text{But usually:~~~~~~~~~~~~} \sup_{A \in \mathcal{A}} \left| \big(\mathcal{P}-\mathcal{P}_n\big)(A) \right|
-\end{align*}
-\begin{itemize}
-\item scaling ${\red \frac{n}{k}}$%: to compense the decreasing proba of ${\blue \frac{k}{n}}A$.\\
-\item classical VC-inequality: ${\blue \frac{k}{n}}$ nice but not used ! \\$\rightarrow $ high proba bound in $${\red \frac{n}{k}} \times  \sqrt{ \frac{1}{ n}\log \frac{1}{\delta}} ~~~~~~\to~~ ~~\infty~~~~ !! $$ \\
-\end{itemize}
-
-$\Rightarrow$ Needs to take into account that the proba of  ${\blue \frac{k}{n}}A$ is small.\\
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Statistical guaranties: Solution}
-\textbf{Key:}
-VC-inequality adapted to rare regions $\rightarrow$ bound in $$\mathbf{\sqrt{p}}~ \frac{n}{k} \sqrt{ \frac{d}{ n}\log \frac{1}{\delta}}$$
-with $p$ the probability to be in the union class $\cup_{A \in \mathcal{A}}A$.
-$$\mb p \lesssim d \frac{k}{n}$$
-$\Rightarrow$ bound in $$ d \sqrt{ \frac{1}{ k}\log \frac{1}{\delta}} $$
-%interpretation of $k$: 
-%\begin{itemize}
-%\item 
-$k \propto$ number of data considered as extreme (data used for estimation)
-%\item $k \simeq$ number of data 
-%\end{itemize}
-
-\end{frame}
-
-
-
-
-
-
 \begin{frame}
 \frametitle{Statistical guaranties}
-\begin{theorem}
+
+\begin{block}{Theorem {\small [G., Sabourin, Clémençon 2016]}}
 There is an absolute constant $C > 0$ such that for any $n>0,~ k>0,~ 0<\epsilon<1,~ \delta>0$ such that $0<\delta<e^{-k}$, with probability at least $1 - \delta$,
 \begin{align*}
 \|\widehat{\mathcal{M}}- \mathcal{M}\|_\infty
-~\le~  C d \left( \sqrt{ \frac{1}{\epsilon k}\log\frac{d}{\delta}} + M d\epsilon \right) + \text{bias}(\epsilon, k, n),
+~\le~  C d \left( \sqrt{ \frac{1}{\epsilon k}\log\frac{d}{\delta}} + M d\epsilon \right) + \text{bias}(\epsilon, k, n)
 \end{align*}
-\end{theorem}
-
+\end{block}
+~\\
 \textbf{Comments:}
 % % \[
 % % \begin{aligned}
@@ -878,71 +825,108 @@ There is an absolute constant $C > 0$ such that for any $n>0,~ k>0,~ 0<\epsilon<
 \item $M=\sup$(density on sub-cones)
 
 
-\item  Existing litterature (for spectral measure) {\footnotesize \bf Einmahl
-    Segers 09, Einmahl \emph{et al.} 01}
+\item  Existing litterature (for spectral measure) {\small [Einmahl and Segers 09, Einmahl \emph{et al.} 01]}
 
   \begin{center}
-$d=2$.    
+$d=2$, asymptotic behaviour, rates  in $1/\sqrt k$.
   \end{center}
-asymptotic behaviour, rates  in $1/\sqrt k$.\\
-{\bf Here:} $1/\sqrt k\to  1/\sqrt{\epsilon k} + \epsilon$. Price to pay
+\item Here: $1/\sqrt k\to  1/\sqrt{\epsilon k} + \epsilon$. Price to pay
 for biasing our estimator with $\epsilon$.
 \end{itemize} 
 \end{frame}
 
 
+
+
 \begin{frame}
-\frametitle{Theorem's proof}
-% \begin{enumerate}
-% \item \textbf{Maximal deviation on VC-class:}
-%  \only<1>{ 
-% %Bound on the maximal deviation of $\mu_n$ on simple VC-class:
-% $$
-% \sup_{x\succeq {\epsilon}} |\mu_n - \mu| ([x,\infty[)  \le
-% {\color{blue} Cd\sqrt{\frac{2}{k}\log\frac{d}{\delta}} }  +
-%   {\color{violet} \text{bias}(\epsilon, k, n)% \text{bias}_{ \,\tilde F \leftrightarrow l, x\le 1/\epsilon}
-%   }
-% $$
-% \textbf{Tools}: Vapnik-Chervonenkis inequality adapted to small probability sets: bounds in ${\color{red}\sqrt{p}}\sqrt{\frac{1}{n}\log\frac{1}{\delta}}$.\\~\\
-
-% On the VC class $\{ [\frac{n}{k} x, \infty]$, $x \ge \epsilon \}$.
-
-% %   \begin{itemize}
-% %   \item 
-% %     \begin{itemize}
-% %     \item 
-% %    \item with nearly uniform
-% %     data $\hat U_{i,j} = 1 - \hat F_j(Y_{i,j}) ~( = 1/\hat X_{i,j})$.
-% %     \end{itemize}
-% % % $\exists C, \text{ indep from } n, d$, s.t., with proba $1-\delta$,
-% % \end{itemize}
-% }
-% \only<2>{~\\~\\ \item
-  \textbf{Decompose error:}
-  \[|\mu_n(\mathcal{C}_\alpha^\epsilon) - \mu(\mathcal{C}_\alpha)| \le 
-\underbrace{|\mu_n- \mu|(\mathcal{C}_\alpha^\epsilon)}_A +
-\underbrace{ |\mu(\mathcal{C}_{\alpha}^\epsilon) - \mu(\mathcal{C}_\alpha) |}_B \]\\
+\frametitle{Theorem's proof: key ingredient}
+% \frametitle{Statistical guarantees: Main issue}
+Would like to use concentration inequality... % XXX citer boucheron?
+% XXX 2 dessins
+\begin{align*}
+&\text{In our case:~~~~~~} \sup_{A \in \mathcal{A}} {\red\frac{n}{k}}\left| \big(\mathcal{P}- \mathcal{P}_n\big)\left({\blue \frac{k}{n}}A\right)\right|\\
+&\text{But usually:~~~~~~~~~~~~} \sup_{A \in \mathcal{A}} \left| \big(\mathcal{P}-\mathcal{P}_n\big)(A) \right|
+\end{align*}
 \begin{itemize}
-% \item 
- % Restriction to cube $[0,L]$, 
-\item term $A : $ Bounded with VC inequality adapted to small probability regions.\\~\\
-\item % $B  = O( M d^2 (\epsilon )^{d-\alpha}) $ $\to $ OK with boundedness
-  % assumption.
-  term $B  :$ $\text{Leb}(\mathcal{C}_{\alpha}^\epsilon \setminus \mathcal{C}_{\alpha})$ is small when $\epsilon$ is small.\\~\\%% O( M (d^2 \epsilon + (1+\epsilon)^d -1)) $ % $\to $ OK with boundedness
-   % assumption.
-
-% %% $A=O\Big(~ 2^\alpha  E  + M \alpha d (\epsilon L)  + Md^2
-%                                  (1+ \epsilon L )^{d}-1   
-% +
-%   \frac{1}{L}~\Big)$ \\
-
-%\item Optimize in $L, \epsilon \Rightarrow \epsilon=d/\sqrt k$  \\
-%explains the $k^{1/4}$ loss compared with low dimension.
-
+\item scaling ${\red \frac{n}{k}}$%: to compense the decreasing proba of ${\blue \frac{k}{n}}A$.\\
+\item classical VC-inequality: ${\blue \frac{k}{n}}$ nice but not used ! \\$\rightarrow $ high proba bound in $${\red \frac{n}{k}} \times  \sqrt{ \frac{1}{ n}\log \frac{1}{\delta}} ~~~~~~\to~~ ~~\infty~~~~ !! $$ \\
 \end{itemize}
-% }
-% \end{enumerate}
+
+$\Rightarrow$ Needs to take into account that the proba of  ${\blue \frac{k}{n}}A$ is small.\\
 \end{frame}
+
+
+\begin{frame}
+\frametitle{Theorem's proof: key ingredient}
+% \frametitle{Statistical guaranties: Solution}
+\textbf{Key:}
+VC-inequality adapted to rare regions $\rightarrow$ bound in $$\mathbf{\sqrt{p}}~ \frac{n}{k} \sqrt{ \frac{d}{ n}\log \frac{1}{\delta}}$$
+with $p$ the probability to be in the union class $\cup_{A \in \mathcal{A}}A$.
+$$\mb p \le d \frac{k}{n}$$
+$\Rightarrow$ bound in $$ d \sqrt{ \frac{1}{ k}\log \frac{1}{\delta}} $$
+%interpretation of $k$: 
+%\begin{itemize}
+%\item 
+~\\
+$k \propto$ number of data considered as extreme (data used for estimation)
+%\item $k \simeq$ number of data 
+%\end{itemize}
+
+\end{frame}
+
+
+% \begin{frame}
+% \frametitle{Theorem's proof}
+% % \begin{enumerate}
+% % \item \textbf{Maximal deviation on VC-class:}
+% %  \only<1>{ 
+% % %Bound on the maximal deviation of $\mu_n$ on simple VC-class:
+% % $$
+% % \sup_{x\succeq {\epsilon}} |\mu_n - \mu| ([x,\infty[)  \le
+% % {\color{blue} Cd\sqrt{\frac{2}{k}\log\frac{d}{\delta}} }  +
+% %   {\color{violet} \text{bias}(\epsilon, k, n)% \text{bias}_{ \,\tilde F \leftrightarrow l, x\le 1/\epsilon}
+% %   }
+% % $$
+% % \textbf{Tools}: Vapnik-Chervonenkis inequality adapted to small probability sets: bounds in ${\color{red}\sqrt{p}}\sqrt{\frac{1}{n}\log\frac{1}{\delta}}$.\\~\\
+
+% % On the VC class $\{ [\frac{n}{k} x, \infty]$, $x \ge \epsilon \}$.
+
+% % %   \begin{itemize}
+% % %   \item 
+% % %     \begin{itemize}
+% % %     \item 
+% % %    \item with nearly uniform
+% % %     data $\hat U_{i,j} = 1 - \hat F_j(Y_{i,j}) ~( = 1/\hat X_{i,j})$.
+% % %     \end{itemize}
+% % % % $\exists C, \text{ indep from } n, d$, s.t., with proba $1-\delta$,
+% % % \end{itemize}
+% % }
+% % \only<2>{~\\~\\ \item
+%   \textbf{Decompose error:}
+%   \[|\mu_n(\mathcal{C}_\alpha^\epsilon) - \mu(\mathcal{C}_\alpha)| \le 
+% \underbrace{|\mu_n- \mu|(\mathcal{C}_\alpha^\epsilon)}_A +
+% \underbrace{ |\mu(\mathcal{C}_{\alpha}^\epsilon) - \mu(\mathcal{C}_\alpha) |}_B \]\\
+% \begin{itemize}
+% % \item 
+%  % Restriction to cube $[0,L]$, 
+% \item term $A : $ Bounded with VC inequality adapted to small probability regions.\\~\\
+% \item % $B  = O( M d^2 (\epsilon )^{d-\alpha}) $ $\to $ OK with boundedness
+%   % assumption.
+%   term $B  :$ $\text{Leb}(\mathcal{C}_{\alpha}^\epsilon \setminus \mathcal{C}_{\alpha})$ is small when $\epsilon$ is small.\\~\\%% O( M (d^2 \epsilon + (1+\epsilon)^d -1)) $ % $\to $ OK with boundedness
+%    % assumption.
+
+% % %% $A=O\Big(~ 2^\alpha  E  + M \alpha d (\epsilon L)  + Md^2
+% %                                  (1+ \epsilon L )^{d}-1   
+% % +
+% %   \frac{1}{L}~\Big)$ \\
+
+% %\item Optimize in $L, \epsilon \Rightarrow \epsilon=d/\sqrt k$  \\
+% %explains the $k^{1/4}$ loss compared with low dimension.
+
+% \end{itemize}
+% % }
+% % \end{enumerate}
+% \end{frame}
 
 
 \begin{frame}
@@ -1012,7 +996,7 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 
 
 
-\section{Part III: Heuristic Contributions and Perspectives}
+\section{Part III: Heuristic contributions and perspectives}
 
 % \subsection{Evaluation of scoring functions, model selection}
 
@@ -1043,8 +1027,8 @@ $\to$ How good is it estimating the level sets of the inliers distribution?
 \textbf{Estimation:}
 \small{
 \begin{align*}
-&\widehat{MV}_s(\alpha) = \inf_{u \ge 0} ~~~\leb(s \ge u) ~~~~\st~~~~ \mathbb{P}_n(s \ge u) \ge \alpha ~~~~~~~~\to \widehat{\crit}^{EM}(s)\\
-&\widehat{EM}_s(t) = \sup_{u \ge 0} ~~~\mathbb{P}_n(s \ge u) ~-~ t \leb(s \ge u) ~~~~~~~~~\to \widehat{\crit}^{MV}(s)
+&\widehat{MV}_s(\alpha) = \inf_{u \ge 0} ~~~\leb(s \ge u) ~~~~\st~~~~ \mathbb{P}_n(s \ge u) \ge \alpha ~~~~~~~~\to \widehat{\crit}^{EM}(s) = \|MV_s\|_{1, J}\\
+&\widehat{EM}_s(t) = \sup_{u \ge 0} ~~~\mathbb{P}_n(s \ge u) ~-~ t \leb(s \ge u) ~~~~~~~~~\to \widehat{\crit}^{MV}(s) = \|EM_s\|_{1, I}
 \end{align*}
 }
 
@@ -1065,9 +1049,11 @@ The volume $\leb(s \ge u)$ has to be estimated! % Challenging in high dimensions
 
 
 \begin{frame}
-\frametitle{Heuristic extension for large dimension}
+\frametitle{EM and MV curves for model selection?}
 
-\begin{block}{Random projection and averaging} %~~~~{\color{black} \small [G. 2016]}}~\\
+\textbf{Heuristic extension for large dimension:}
+
+\begin{block}{Random projection and averaging} %XXX~~~~{\color{black} \small [G. 2016]}}~\\
 
 \small{
 %\begin{algorithm}
@@ -1097,7 +1083,7 @@ Seems to work in pratice but no statistical guaranties.
 Existing litterature:
 [Désir et al., 2013, Liu et al., 2008, Shi and Horvath, 2012].
 
-\begin{block}{}{One-Class splitting criterion }%~~~~{\color{black} \small [G., Brault, Drougard, Chiapino 2016]}}
+\begin{block}{}{One-Class splitting criterion }%XXX~~~~{\color{black} \small [G., Brault, Drougard, Chiapino 2016]}}
   
 \input{tikz.tex}
 \end{block}
@@ -1113,27 +1099,19 @@ Does theorical guaranties on RFs apply ?
 \begin{frame}
 \frametitle{AD and Extremes perspectives}
 
-A more accurate sparse representation
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.4\linewidth]{sourcefigs/cone}
+  \end{figure}
+
+
+A more accurate sparse representation?
 \end{frame}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-\begin{frame}
-\centering
-\Large{Thank you!}
-\end{frame}
 
 \begin{frame}
 \frametitle{Some references:}

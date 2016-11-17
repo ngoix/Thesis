@@ -11,7 +11,7 @@
 \headcommand {\beamer@framepages {5}{5}}
 \headcommand {\slideentry {0}{0}{6}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\sectionentry {1}{Part I: Performance Criterion for Scoring Functions}{7}{Part I: Performance Criterion for Scoring Functions}{0}}
+\headcommand {\sectionentry {1}{Part I: Performance criterion for scoring functions}{7}{Part I: Performance criterion for scoring functions}{0}}
 \headcommand {\beamer@sectionpages {1}{6}}
 \headcommand {\beamer@subsectionpages {1}{6}}
 \headcommand {\slideentry {1}{0}{7}{7/7}{}{0}}
@@ -26,17 +26,17 @@
 \headcommand {\beamer@framepages {11}{11}}
 \headcommand {\slideentry {1}{0}{12}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {1}{0}{13}{13/13}{}{0}}
+\headcommand {\sectionentry {2}{Part II: Learning accurate scoring functions on extreme regions}{13}{Part II: Learning accurate scoring functions on extreme regions}{0}}
+\headcommand {\beamer@sectionpages {7}{12}}
+\headcommand {\beamer@subsectionpages {7}{12}}
+\headcommand {\slideentry {2}{0}{13}{13/13}{}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {1}{0}{14}{14/14}{}{0}}
+\headcommand {\slideentry {2}{0}{14}{14/14}{}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {1}{0}{15}{15/15}{}{0}}
+\headcommand {\slideentry {2}{0}{15}{15/15}{}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {1}{0}{16}{16/16}{}{0}}
+\headcommand {\slideentry {2}{0}{16}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\sectionentry {2}{Part II: Learning accurate scoring functions on extreme regions}{17}{Part II: Learning accurate scoring functions on extreme regions}{0}}
-\headcommand {\beamer@sectionpages {7}{16}}
-\headcommand {\beamer@subsectionpages {7}{16}}
 \headcommand {\slideentry {2}{0}{17}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
 \headcommand {\slideentry {2}{0}{18}{18/18}{}{0}}
@@ -69,19 +69,19 @@
 \headcommand {\beamer@framepages {31}{31}}
 \headcommand {\slideentry {2}{0}{32}{32/32}{}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\slideentry {2}{0}{33}{33/33}{}{0}}
+\headcommand {\sectionentry {3}{Part III: Heuristic contributions and perspectives}{33}{Part III: Heuristic contributions and perspectives}{0}}
+\headcommand {\beamer@sectionpages {13}{32}}
+\headcommand {\beamer@subsectionpages {13}{32}}
+\headcommand {\slideentry {3}{0}{33}{33/33}{}{0}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {2}{0}{34}{34/34}{}{0}}
+\headcommand {\slideentry {3}{0}{34}{34/34}{}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {2}{0}{35}{35/35}{}{0}}
+\headcommand {\slideentry {3}{0}{35}{35/35}{}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\slideentry {2}{0}{36}{36/36}{}{0}}
+\headcommand {\slideentry {3}{0}{36}{36/36}{}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\slideentry {2}{0}{37}{37/37}{}{0}}
+\headcommand {\slideentry {3}{0}{37}{37/37}{}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\sectionentry {3}{Part III: Heuristic Contributions and Perspectives}{38}{Part III: Heuristic Contributions and Perspectives}{0}}
-\headcommand {\beamer@sectionpages {17}{37}}
-\headcommand {\beamer@subsectionpages {17}{37}}
 \headcommand {\slideentry {3}{0}{38}{38/38}{}{0}}
 \headcommand {\beamer@framepages {38}{38}}
 \headcommand {\slideentry {3}{0}{39}{39/39}{}{0}}
@@ -102,20 +102,8 @@
 \headcommand {\beamer@framepages {46}{46}}
 \headcommand {\slideentry {3}{0}{47}{47/47}{}{0}}
 \headcommand {\beamer@framepages {47}{47}}
-\headcommand {\slideentry {3}{0}{48}{48/48}{}{0}}
-\headcommand {\beamer@framepages {48}{48}}
-\headcommand {\slideentry {3}{0}{49}{49/49}{}{0}}
-\headcommand {\beamer@framepages {49}{49}}
-\headcommand {\slideentry {3}{0}{50}{50/50}{}{0}}
-\headcommand {\beamer@framepages {50}{50}}
-\headcommand {\slideentry {3}{0}{51}{51/51}{}{0}}
-\headcommand {\beamer@framepages {51}{51}}
-\headcommand {\slideentry {3}{0}{52}{52/52}{}{0}}
-\headcommand {\beamer@framepages {52}{52}}
-\headcommand {\slideentry {3}{0}{53}{53/53}{}{0}}
-\headcommand {\beamer@framepages {53}{53}}
-\headcommand {\beamer@partpages {1}{53}}
-\headcommand {\beamer@subsectionpages {38}{53}}
-\headcommand {\beamer@sectionpages {38}{53}}
-\headcommand {\beamer@documentpages {53}}
-\headcommand {\def \inserttotalframenumber {53}}
+\headcommand {\beamer@partpages {1}{47}}
+\headcommand {\beamer@subsectionpages {33}{47}}
+\headcommand {\beamer@sectionpages {33}{47}}
+\headcommand {\beamer@documentpages {47}}
+\headcommand {\def \inserttotalframenumber {47}}

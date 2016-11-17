@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  17 NOV 2016 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  17 NOV 2016 19:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -106,8 +106,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen126
 \Gm@dimlist=\toks15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/extsizes/size9.clo
+File: size9.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -1252,12 +1252,12 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
-* \topskip=10.0pt
+* \topskip=9.0pt
 * \footskip=14.22636pt
-* \marginparwidth=3.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=8.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1419,7 +1419,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 140.
 
 <AD_intro.png, id=32, 747.79375pt x 1056.94875pt>
@@ -1465,29 +1465,27 @@ LaTeX Font Info:    Try loading font information for U+euex on input line 161.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuex.fd
 File: ueuex.fd 2013/01/14 v3.01 Euler extra symbols
 )
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 161.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 161.
  [3
 
 ]
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 201.
  [4
 
 ]
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 229.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 229.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 229.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 229.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 229.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 229.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 229.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 229.
 
 <sourcefigs/scoring.pdf, id=53, 1094.89055pt x 334.24875pt>
@@ -1507,351 +1505,283 @@ Overfull \hbox (3.0712pt too wide) in paragraph at lines 229--229
 
 ] (./slides.toc) [7
 
-] [8
-
 ]
-[9
-
-]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 360.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 360.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 359.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 359.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 360.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 359.
 
-Overfull \hbox (8.88725pt too wide) detected at line 360
-\U/eur/m/n/10 ^^@[] \U/euf/m/n/10 = []\U/eus/m/n/10 f[]\U/euf/m/n/10 (\U/eur/m/
-n/10 ^^@\U/euf/m/n/10 ) [] [] []\OT1/phv/m/sl/10 s\U/eur/m/n/10 :\OT1/phv/m/sl/
-10 t\U/eur/m/n/10 : [] [] []\U/msb/m/n/10 P\U/euf/m/n/10 (\OT1/ptm/b/n/10 X \OM
-S/cmsy/m/n/10 2 \U/eur/m/n/10 ^^@\U/euf/m/n/10 ) \OMS/cmsy/m/n/10 ^^U \U/eur/m/
-n/10 \U/eus/m/n/10 g
- []
-
-<img/anomaly_detection_end_col.png, id=132, 488.52643pt x 376.36714pt>
+<img/anomaly_detection_end_col.png, id=117, 488.52643pt x 376.36714pt>
 File: img/anomaly_detection_end_col.png Graphic file (type png)
 
 <use img/anomaly_detection_end_col.png>
 Package pdftex.def Info: img/anomaly_detection_end_col.png used on input line 3
-60.
-(pdftex.def)             Requested size: 102.17532pt x 78.71208pt.
-File: sourcefigs/scoring.pdf Graphic file (type pdf)
- <use sourcefigs/scoring.pdf>
-Package pdftex.def Info: sourcefigs/scoring.pdf used on input line 360.
-(pdftex.def)             Requested size: 310.36107pt x 94.74675pt.
+59.
+(pdftex.def)             Requested size: 87.57822pt x 67.4675pt.
 
-Overfull \hbox (3.0712pt too wide) in paragraph at lines 360--360
- [] 
+<sourcefigs/scoring2.pdf, id=118, 885.84877pt x 369.58842pt>
+File: sourcefigs/scoring2.pdf Graphic file (type pdf)
+
+<use sourcefigs/scoring2.pdf>
+Package pdftex.def Info: sourcefigs/scoring2.pdf used on input line 359.
+(pdftex.def)             Requested size: 267.34068pt x 111.53719pt.
+
+Overfull \vbox (5.33461pt too high) detected at line 359
  []
 
+[8
 
-Overfull \vbox (21.56763pt too high) detected at line 360
- []
+ <./img/anomaly_detection_end_col.png> <./sourcefigs/scoring2.pdf>]
+<sourcefigs/mv.pdf, id=144, 810.27835pt x 467.37343pt>
+File: sourcefigs/mv.pdf Graphic file (type pdf)
+ <use sourcefigs/mv.pdf>
+Package pdftex.def Info: sourcefigs/mv.pdf used on input line 401.
+(pdftex.def)             Requested size: 215.10196pt x 124.0673pt.
+
+[9
+
+ <./sourcefigs/mv.pdf>]
+<sourcefigs/em.pdf, id=159, 811.21637pt x 441.67686pt>
+File: sourcefigs/em.pdf Graphic file (type pdf)
+ <use sourcefigs/em.pdf>
+Package pdftex.def Info: sourcefigs/em.pdf used on input line 426.
+(pdftex.def)             Requested size: 184.3758pt x 100.38391pt.
 
 [10
 
- <./img/anomaly_detection_end_col.png>]
-<img/mv_curves_examples_1_comp_inkscape.pdf, id=140, 537.46107pt x 391.36996pt>
-File: img/mv_curves_examples_1_comp_inkscape.pdf Graphic file (type pdf)
-<use img/mv_curves_examples_1_comp_inkscape.pdf>
-Package pdftex.def Info: img/mv_curves_examples_1_comp_inkscape.pdf used on inp
-ut line 394.
-(pdftex.def)             Requested size: 138.2795pt x 100.6908pt.
-
-<img/mv_curves_examples_2_comp_inkscape.pdf, id=141, 537.37794pt x 391.36996pt>
-File: img/mv_curves_examples_2_comp_inkscape.pdf Graphic file (type pdf)
-<use img/mv_curves_examples_2_comp_inkscape.pdf>
-Package pdftex.def Info: img/mv_curves_examples_2_comp_inkscape.pdf used on inp
-ut line 394.
-(pdftex.def)             Requested size: 138.2795pt x 100.70274pt.
- [11
-
- <./img/mv_curves_examples_1_comp_inkscape.pdf> <./img/mv_curves_examples_2_com
-p_inkscape.pdf
-
-pdfTeX warning: pdflatex (file ./img/mv_curves_examples_2_comp_inkscape.pdf): P
-DF inclusion: multiple pdfs with page group included in a single page
->]
-Overfull \vbox (8.43182pt too high) detected at line 432
- []
-
-[12
-
-] [13
-
-] <emmv.png, id=401, 814.40395pt x 964.40974pt>
-File: emmv.png Graphic file (type png)
- <use emmv.png>
-Package pdftex.def Info: emmv.png used on input line 469.
-(pdftex.def)             Requested size: 215.10196pt x 254.71385pt.
-
-Overfull \vbox (3.01758pt too high) detected at line 469
- []
-
-[14
-
- <./emmv.png>]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 497.
+ <./sourcefigs/em.pdf>]
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 486.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-<em_optim.png, id=408, 1041.53824pt x 227.7416pt>
-File: em_optim.png Graphic file (type png)
- <use em_optim.png>
-Package pdftex.def Info: em_optim.png used on input line 497.
-(pdftex.def)             Requested size: 307.28987pt x 67.19012pt.
+<sourcefigs/em_optim.pdf, id=173, 1041.72133pt x 227.51799pt>
+File: sourcefigs/em_optim.pdf Graphic file (type pdf)
 
-Overfull \vbox (20.37468pt too high) detected at line 497
- []
+<use sourcefigs/em_optim.pdf>
+Package pdftex.def Info: sourcefigs/em_optim.pdf used on input line 486.
+(pdftex.def)             Requested size: 307.28987pt x 67.11374pt.
+ [11
 
-[15
+ <./sourcefigs/em_optim.pdf>]
+File: sourcefigs/em_optim.pdf Graphic file (type pdf)
 
- <./em_optim.png>]
-Overfull \hbox (7.63794pt too wide) in paragraph at lines 514--514
-[]  
- []
+<use sourcefigs/em_optim.pdf>
+Package pdftex.def Info: sourcefigs/em_optim.pdf used on input line 503.
+(pdftex.def)             Requested size: 307.28987pt x 67.11374pt.
+ [12
 
-File: em_optim.png Graphic file (type png)
-<use em_optim.png>
-Package pdftex.def Info: em_optim.png used on input line 514.
-(pdftex.def)             Requested size: 307.28987pt x 67.19012pt.
+] (./slides.toc) [13
 
-Overfull \vbox (9.52806pt too high) detected at line 514
- []
-
-[16
-
-] (./slides.toc) [17
-
-] [18
+] [14
 
 ]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 562.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 551.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 551.
+ [15
+
+]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 562.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 562.
- [19
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 584.
+ [16
 
 ]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 595.
- [20
-
-]
-<sourcefigs/application4.png, id=449, 634.6359pt x 545.13596pt>
+<sourcefigs/application4.png, id=223, 634.6359pt x 545.13596pt>
 File: sourcefigs/application4.png Graphic file (type png)
 
 <use sourcefigs/application4.png>
-Package pdftex.def Info: sourcefigs/application4.png used on input line 610.
+Package pdftex.def Info: sourcefigs/application4.png used on input line 599.
 (pdftex.def)             Requested size: 190.39224pt x 163.54204pt.
- [21
+ [17
 
- <./sourcefigs/application4.png>] [22
+ <./sourcefigs/application4.png>] [18
 
 ]
-[23
+[19
 
-] <sourcefigs/Example2D_depSquare.png, id=467, 463.14746pt x 428.87083pt>
+] <sourcefigs/Example2D_depSquare.png, id=242, 463.14746pt x 428.87083pt>
 File: sourcefigs/Example2D_depSquare.png Graphic file (type png)
 
 <use sourcefigs/Example2D_depSquare.png>
 Package pdftex.def Info: sourcefigs/Example2D_depSquare.png used on input line 
-668.
+654.
 (pdftex.def)             Requested size: 138.9453pt x 128.66223pt.
 
-<sourcefigs/Example2D_indepSquare.png, id=468, 455.92046pt x 429.07732pt>
+<sourcefigs/Example2D_indepSquare.png, id=243, 455.92046pt x 429.07732pt>
 File: sourcefigs/Example2D_indepSquare.png Graphic file (type png)
 
 <use sourcefigs/Example2D_indepSquare.png>
 Package pdftex.def Info: sourcefigs/Example2D_indepSquare.png used on input lin
-e 668.
+e 654.
 (pdftex.def)             Requested size: 136.77719pt x 128.72418pt.
-
-Overfull \hbox (4.24036pt too wide) in paragraph at lines 668--668
-[][]  
- []
-
-[24
+ [20
 
  <./sourcefigs/Example2D_depSquare.png> <./sourcefigs/Example2D_indepSquare.png
->] <sourcefigs/cone.png, id=476, 689.18933pt x 675.05832pt>
+>]
+<sourcefigs/cone.png, id=251, 689.18933pt x 675.05832pt>
 File: sourcefigs/cone.png Graphic file (type png)
 
 <use sourcefigs/cone.png>
-Package pdftex.def Info: sourcefigs/cone.png used on input line 682.
+Package pdftex.def Info: sourcefigs/cone.png used on input line 668.
 (pdftex.def)             Requested size: 122.91406pt x 120.39279pt.
- [25
+ [21
 
- <./sourcefigs/cone.png>] [26
+ <./sourcefigs/cone.png>] [22
 
 ]
-<sourcefigs/3D_anyH.png, id=493, 699.413pt x 688.171pt>
+<sourcefigs/3D_anyH.png, id=267, 699.413pt x 688.171pt>
 File: sourcefigs/3D_anyH.png Graphic file (type png)
 
 <use sourcefigs/3D_anyH.png>
-Package pdftex.def Info: sourcefigs/3D_anyH.png used on input line 737.
+Package pdftex.def Info: sourcefigs/3D_anyH.png used on input line 723.
 (pdftex.def)             Requested size: 122.91406pt x 120.93576pt.
 
-<sourcefigs/3D_sparseH.png, id=494, 611.083pt x 393.47pt>
+<sourcefigs/3D_sparseH.png, id=268, 611.083pt x 393.47pt>
 File: sourcefigs/3D_sparseH.png Graphic file (type png)
 
 <use sourcefigs/3D_sparseH.png>
-Package pdftex.def Info: sourcefigs/3D_sparseH.png used on input line 737.
+Package pdftex.def Info: sourcefigs/3D_sparseH.png used on input line 723.
 (pdftex.def)             Requested size: 122.91406pt x 79.14288pt.
- [27
+ [23
 
  <./sourcefigs/3D_anyH.png> <./sourcefigs/3D_sparseH.png>]
-<sourcefigs/representation2D_problem.png, id=502, 432.61626pt x 404.51125pt>
-File: sourcefigs/representation2D_problem.png Graphic file (type png)
+<sourcefigs/representation2D_problem.pdf, id=276, 334.00537pt x 276.20573pt>
+File: sourcefigs/representation2D_problem.pdf Graphic file (type pdf)
 
-<use sourcefigs/representation2D_problem.png>
-Package pdftex.def Info: sourcefigs/representation2D_problem.png used on input 
-line 766.
-(pdftex.def)             Requested size: 129.78587pt x 121.35431pt.
- [28
+<use sourcefigs/representation2D_problem.pdf>
+Package pdftex.def Info: sourcefigs/representation2D_problem.pdf used on input 
+line 752.
+(pdftex.def)             Requested size: 100.20238pt x 82.86235pt.
+ [24
 
- <./sourcefigs/representation2D_problem.png>]
-<sourcefigs/representation2Drect.png, id=508, 299.10284pt x 303.05923pt>
-File: sourcefigs/representation2Drect.png Graphic file (type png)
+ <./sourcefigs/representation2D_problem.pdf>]
+<sourcefigs/representation2Drect.pdf, id=284, 295.51817pt x 305.40099pt>
+File: sourcefigs/representation2Drect.pdf Graphic file (type pdf)
 
-<use sourcefigs/representation2Drect.png>
-Package pdftex.def Info: sourcefigs/representation2Drect.png used on input line
- 783.
-(pdftex.def)             Requested size: 98.70424pt x 100.00984pt.
- [29
+<use sourcefigs/representation2Drect.pdf>
+Package pdftex.def Info: sourcefigs/representation2Drect.pdf used on input line
+ 769.
+(pdftex.def)             Requested size: 118.20517pt x 122.15822pt.
+ [25
 
- <./sourcefigs/representation2Drect.png>]
-<sourcefigs/representation2D_nk_rect.png, id=516, 335.3328pt x 300.4023pt>
+ <./sourcefigs/representation2Drect.pdf>]
+<sourcefigs/representation2D_nk_rect.png, id=469, 335.3328pt x 300.4023pt>
 File: sourcefigs/representation2D_nk_rect.png Graphic file (type png)
 
 <use sourcefigs/representation2D_nk_rect.png>
 Package pdftex.def Info: sourcefigs/representation2D_nk_rect.png used on input 
-line 806.
+line 792.
 (pdftex.def)             Requested size: 117.36823pt x 105.14236pt.
- [30
+ [26
 
- <./sourcefigs/representation2D_nk_rect.png>] [31
+ <./sourcefigs/representation2D_nk_rect.png>] [27
 
-] [32
+] [28
 
-]
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 891.
-LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 891.
-LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 891.
- [33
-
-] [34
+] [29
 
 ]
-Overfull \vbox (52.72209pt too high) detected at line 984
+Overfull \vbox (7.7318pt too high) detected at line 968
  []
 
-[35
+[30
 
-] <sourcefigs/plot_damex_level_sets.png, id=552, 1602.2259pt x 721.2546pt>
+] <sourcefigs/plot_damex_level_sets.png, id=497, 1602.2259pt x 721.2546pt>
 File: sourcefigs/plot_damex_level_sets.png Graphic file (type png)
 
 <use sourcefigs/plot_damex_level_sets.png>
 Package pdftex.def Info: sourcefigs/plot_damex_level_sets.png used on input lin
-e 1001.
+e 985.
 (pdftex.def)             Requested size: 306.60327pt x 142.71243pt.
-
-Overfull \vbox (20.72452pt too high) detected at line 1001
- []
-
-[36
+ [31
 
  <./sourcefigs/plot_damex_level_sets.png>]
-<SA-lb-semi-supervised-average-0001.pdf, id=559, 983.47589pt x 581.14485pt>
+<SA-lb-semi-supervised-average-0001.pdf, id=505, 983.47589pt x 581.14485pt>
 File: SA-lb-semi-supervised-average-0001.pdf Graphic file (type pdf)
 
 <use SA-lb-semi-supervised-average-0001.pdf>
 Package pdftex.def Info: SA-lb-semi-supervised-average-0001.pdf used on input l
-ine 1011.
+ine 995.
 (pdftex.def)             Requested size: 307.28987pt x 181.58072pt.
+ [32
+
+ <./SA-lb-semi-supervised-average-0001.pdf>] (./slides.toc) [33
+
+] [34
+
+] [35
+
+] (./tikz.tex
+Overfull \hbox (3.08554pt too wide) in paragraph at lines 3--135
+ [] 
+ []
+
+) [36
+
+]
+File: sourcefigs/cone.png Graphic file (type png)
+ <use sourcefigs/cone.png>
+Package pdftex.def Info: sourcefigs/cone.png used on input line 1109.
+(pdftex.def)             Requested size: 122.91406pt x 120.39279pt.
  [37
 
- <./SA-lb-semi-supervised-average-0001.pdf>] (./slides.toc) [38
+] [38
 
 ] [39
 
 ] [40
 
-] (./tikz.tex
-Overfull \hbox (3.0851pt too wide) in paragraph at lines 3--135
- [] 
- []
-
-) [41
-
-] [42
-
-] [43
-
 ]
-Overfull \vbox (7.49326pt too high) detected at line 1177
- []
-
-[44
-
-]
-Overfull \vbox (45.49326pt too high) detected at line 1224
- []
-
-[45
-
-] [46
-
-]
-<SF-4d-lb-semi-supervised-average-rect-01.png, id=627, 1681.0002pt x 922.8879pt
+<SF-4d-lb-semi-supervised-average-rect-01.png, id=566, 1681.0002pt x 922.8879pt
 >
 File: SF-4d-lb-semi-supervised-average-rect-01.png Graphic file (type png)
  <use SF-4d-lb-semi-supervised-average-rect-01.png>
 Package pdftex.def Info: SF-4d-lb-semi-supervised-average-rect-01.png used on i
-nput line 1273.
+nput line 1251.
 (pdftex.def)             Requested size: 307.28987pt x 168.70377pt.
- [47
+ [41
 
  <./SF-4d-lb-semi-supervised-average-rect-01.png>]
-<http-3d-semi-supervised-average-rect-01.png, id=635, 1681.0002pt x 922.8879pt>
+<http-3d-semi-supervised-average-rect-01.png, id=574, 1681.0002pt x 922.8879pt>
 File: http-3d-semi-supervised-average-rect-01.png Graphic file (type png)
 <use http-3d-semi-supervised-average-rect-01.png>
 Package pdftex.def Info: http-3d-semi-supervised-average-rect-01.png used on in
-put line 1284.
+put line 1262.
 (pdftex.def)             Requested size: 307.28987pt x 168.70377pt.
- [48
+ [42
 
  <./http-3d-semi-supervised-average-rect-01.png>]
-<shuttle-semi-supervised-average-rect-01.png, id=643, 1681.0002pt x 922.8879pt>
+<shuttle-semi-supervised-average-rect-01.png, id=582, 1681.0002pt x 922.8879pt>
 File: shuttle-semi-supervised-average-rect-01.png Graphic file (type png)
 <use shuttle-semi-supervised-average-rect-01.png>
 Package pdftex.def Info: shuttle-semi-supervised-average-rect-01.png used on in
-put line 1294.
+put line 1272.
 (pdftex.def)             Requested size: 307.28987pt x 168.70377pt.
- [49
+ [43
 
  <./shuttle-semi-supervised-average-rect-01.png>]
-<forestcover-semi-supervised-average-rect-01.png, id=652, 1681.0002pt x 922.887
+<forestcover-semi-supervised-average-rect-01.png, id=591, 1681.0002pt x 922.887
 9pt>
 File: forestcover-semi-supervised-average-rect-01.png Graphic file (type png)
  <use forestcover-semi-supervised-average-rect-01.png>
 Package pdftex.def Info: forestcover-semi-supervised-average-rect-01.png used o
-n input line 1303.
+n input line 1281.
 (pdftex.def)             Requested size: 307.28987pt x 168.70377pt.
- [50
+ [44
 
- <./forestcover-semi-supervised-average-rect-01.png>] [51
+ <./forestcover-semi-supervised-average-rect-01.png>] [45
 
-] [52
+] [46
 
-] [53
+]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <7> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1397.
+ [47
 
 ]
 \tf@nav=\write6
@@ -1863,63 +1793,56 @@ n input line 1303.
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1421.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1421.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1399.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1399.
  (./slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1421.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1421.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1399.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1399.
 
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 4B567E73E2B31B0E9D2B376D31A650A6;269.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1421.
+(rerunfilecheck)             Checksum: F8801E0F11D1AD5E398BC782F62FC85E;269.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1399.
  ) 
 Here is how much of TeX's memory you used:
- 28033 strings out of 495020
- 553752 string characters out of 6181323
- 716154 words of memory out of 5000000
- 30517 multiletter control sequences out of 15000+600000
- 66427 words of font info for 138 fonts, out of 8000000 for 9000
+ 27984 strings out of 495020
+ 553112 string characters out of 6181323
+ 716372 words of memory out of 5000000
+ 30485 multiletter control sequences out of 15000+600000
+ 58056 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,16n,65p,386b,1184s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke
-/dsrom10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/e
-uex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/euex
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/euex8.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/euex9.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm5.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm5.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/euler/eusm5.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msam5.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvet
-ic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on slides.pdf (53 pages, 2997279 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/do
+ublestroke/dsrom8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/euler/euex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/e
+uler/euex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler
+/euex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eue
+x9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm5.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm5.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/euler/eusm5.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msam5.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
+/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on slides.pdf (47 pages, 2881936 bytes).
 PDF statistics:
- 806 PDF objects out of 1000 (max. 8388607)
- 558 compressed objects within 6 object streams
- 117 named destinations out of 1000 (max. 500000)
+ 732 PDF objects out of 1000 (max. 8388607)
+ 492 compressed objects within 5 object streams
+ 105 named destinations out of 1000 (max. 500000)
  177 words of extra memory for PDF output out of 10000 (max. 10000000)
 

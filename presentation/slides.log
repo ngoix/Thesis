@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  16 NOV 2016 18:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  17 NOV 2016 13:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1422,7 +1422,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 140.
 
-<AD_intro.png, id=52, 747.79375pt x 1056.94875pt>
+<AD_intro.png, id=32, 747.79375pt x 1056.94875pt>
 File: AD_intro.png Graphic file (type png)
  <use AD_intro.png>
 Package pdftex.def Info: AD_intro.png used on input line 140.
@@ -1490,7 +1490,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 229.
 
-<sourcefigs/scoring.pdf, id=73, 1094.89055pt x 334.24875pt>
+<sourcefigs/scoring.pdf, id=53, 1094.89055pt x 334.24875pt>
 File: sourcefigs/scoring.pdf Graphic file (type pdf)
 
 <use sourcefigs/scoring.pdf>
@@ -1503,25 +1503,24 @@ Overfull \hbox (3.0712pt too wide) in paragraph at lines 229--229
 
 [5
 
- <./sourcefigs/scoring.pdf>] [6
+ <./sourcefigs/scoring.pdf>] (./slides.toc) [6
 
-] [7
+] (./slides.toc) [7
 
-] (./slides.toc) [8
+] [8
 
-] [9
-
-] [10
+]
+[9
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 351.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 360.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 351.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 360.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 351.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 360.
 
-Overfull \hbox (8.88725pt too wide) detected at line 351
+Overfull \hbox (8.88725pt too wide) detected at line 360
 \U/eur/m/n/10 ^^@[] \U/euf/m/n/10 = []\U/eus/m/n/10 f[]\U/euf/m/n/10 (\U/eur/m/
 n/10 ^^@\U/euf/m/n/10 ) [] [] []\OT1/phv/m/sl/10 s\U/eur/m/n/10 :\OT1/phv/m/sl/
 10 t\U/eur/m/n/10 : [] [] []\U/msb/m/n/10 P\U/euf/m/n/10 (\OT1/ptm/b/n/10 X \OM
@@ -1529,30 +1528,43 @@ S/cmsy/m/n/10 2 \U/eur/m/n/10 ^^@\U/euf/m/n/10 ) \OMS/cmsy/m/n/10 ^^U \U/eur/m/
 n/10 \U/eus/m/n/10 g
  []
 
-<img/anomaly_detection_end_col.png, id=161, 488.52643pt x 376.36714pt>
+<img/anomaly_detection_end_col.png, id=132, 488.52643pt x 376.36714pt>
 File: img/anomaly_detection_end_col.png Graphic file (type png)
 
 <use img/anomaly_detection_end_col.png>
 Package pdftex.def Info: img/anomaly_detection_end_col.png used on input line 3
-51.
+60.
 (pdftex.def)             Requested size: 102.17532pt x 78.71208pt.
- [11
+File: sourcefigs/scoring.pdf Graphic file (type pdf)
+ <use sourcefigs/scoring.pdf>
+Package pdftex.def Info: sourcefigs/scoring.pdf used on input line 360.
+(pdftex.def)             Requested size: 310.36107pt x 94.74675pt.
+
+Overfull \hbox (3.0712pt too wide) in paragraph at lines 360--360
+ [] 
+ []
+
+
+Overfull \vbox (21.56763pt too high) detected at line 360
+ []
+
+[10
 
  <./img/anomaly_detection_end_col.png>]
-<img/mv_curves_examples_1_comp_inkscape.pdf, id=170, 537.46107pt x 391.36996pt>
+<img/mv_curves_examples_1_comp_inkscape.pdf, id=140, 537.46107pt x 391.36996pt>
 File: img/mv_curves_examples_1_comp_inkscape.pdf Graphic file (type pdf)
 <use img/mv_curves_examples_1_comp_inkscape.pdf>
 Package pdftex.def Info: img/mv_curves_examples_1_comp_inkscape.pdf used on inp
-ut line 385.
+ut line 394.
 (pdftex.def)             Requested size: 138.2795pt x 100.6908pt.
 
-<img/mv_curves_examples_2_comp_inkscape.pdf, id=171, 537.37794pt x 391.36996pt>
+<img/mv_curves_examples_2_comp_inkscape.pdf, id=141, 537.37794pt x 391.36996pt>
 File: img/mv_curves_examples_2_comp_inkscape.pdf Graphic file (type pdf)
 <use img/mv_curves_examples_2_comp_inkscape.pdf>
 Package pdftex.def Info: img/mv_curves_examples_2_comp_inkscape.pdf used on inp
-ut line 385.
+ut line 394.
 (pdftex.def)             Requested size: 138.2795pt x 100.70274pt.
- [12
+ [11
 
  <./img/mv_curves_examples_1_comp_inkscape.pdf> <./img/mv_curves_examples_2_com
 p_inkscape.pdf
@@ -1560,287 +1572,286 @@ p_inkscape.pdf
 pdfTeX warning: pdflatex (file ./img/mv_curves_examples_2_comp_inkscape.pdf): P
 DF inclusion: multiple pdfs with page group included in a single page
 >]
-Overfull \vbox (8.43182pt too high) detected at line 423
+Overfull \vbox (8.43182pt too high) detected at line 432
  []
 
-[13
+[12
 
-] [14
+] [13
 
-] <emmv.png, id=431, 814.40395pt x 964.40974pt>
+] <emmv.png, id=401, 814.40395pt x 964.40974pt>
 File: emmv.png Graphic file (type png)
  <use emmv.png>
-Package pdftex.def Info: emmv.png used on input line 460.
+Package pdftex.def Info: emmv.png used on input line 469.
 (pdftex.def)             Requested size: 215.10196pt x 254.71385pt.
 
-Overfull \vbox (3.01758pt too high) detected at line 460
+Overfull \vbox (3.01758pt too high) detected at line 469
  []
 
-[15
+[14
 
- <./emmv.png>] (./slides.toc) [16
-
-]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 488.
+ <./emmv.png>]
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 497.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-<em_optim.png, id=450, 1041.53824pt x 227.7416pt>
+<em_optim.png, id=408, 1041.53824pt x 227.7416pt>
 File: em_optim.png Graphic file (type png)
  <use em_optim.png>
-Package pdftex.def Info: em_optim.png used on input line 488.
+Package pdftex.def Info: em_optim.png used on input line 497.
 (pdftex.def)             Requested size: 307.28987pt x 67.19012pt.
 
-Overfull \vbox (20.37468pt too high) detected at line 488
+Overfull \vbox (20.37468pt too high) detected at line 497
  []
 
-[17
+[15
 
  <./em_optim.png>]
-Overfull \hbox (7.63794pt too wide) in paragraph at lines 505--505
+Overfull \hbox (7.63794pt too wide) in paragraph at lines 514--514
 []  
  []
 
 File: em_optim.png Graphic file (type png)
 <use em_optim.png>
-Package pdftex.def Info: em_optim.png used on input line 505.
+Package pdftex.def Info: em_optim.png used on input line 514.
 (pdftex.def)             Requested size: 307.28987pt x 67.19012pt.
 
-Overfull \vbox (9.52806pt too high) detected at line 505
+Overfull \vbox (9.52806pt too high) detected at line 514
  []
 
-[18
+[16
 
-] (./slides.toc) [19
+] (./slides.toc) [17
 
-] [20
+] [18
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 553.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 562.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 553.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 562.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 553.
- [21
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 562.
+ [19
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 586.
- [22
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 595.
+ [20
 
 ]
-<sourcefigs/application4.png, id=497, 634.6359pt x 545.13596pt>
+<sourcefigs/application4.png, id=449, 634.6359pt x 545.13596pt>
 File: sourcefigs/application4.png Graphic file (type png)
 
 <use sourcefigs/application4.png>
-Package pdftex.def Info: sourcefigs/application4.png used on input line 601.
+Package pdftex.def Info: sourcefigs/application4.png used on input line 610.
 (pdftex.def)             Requested size: 190.39224pt x 163.54204pt.
- [23
+ [21
 
- <./sourcefigs/application4.png>] [24
+ <./sourcefigs/application4.png>] [22
 
 ]
-[25
+[23
 
-] <sourcefigs/Example2D_depSquare.png, id=516, 463.14746pt x 428.87083pt>
+] <sourcefigs/Example2D_depSquare.png, id=467, 463.14746pt x 428.87083pt>
 File: sourcefigs/Example2D_depSquare.png Graphic file (type png)
 
 <use sourcefigs/Example2D_depSquare.png>
 Package pdftex.def Info: sourcefigs/Example2D_depSquare.png used on input line 
-659.
+668.
 (pdftex.def)             Requested size: 138.9453pt x 128.66223pt.
 
-<sourcefigs/Example2D_indepSquare.png, id=517, 455.92046pt x 429.07732pt>
+<sourcefigs/Example2D_indepSquare.png, id=468, 455.92046pt x 429.07732pt>
 File: sourcefigs/Example2D_indepSquare.png Graphic file (type png)
 
 <use sourcefigs/Example2D_indepSquare.png>
 Package pdftex.def Info: sourcefigs/Example2D_indepSquare.png used on input lin
-e 659.
+e 668.
 (pdftex.def)             Requested size: 136.77719pt x 128.72418pt.
 
-Overfull \hbox (4.24036pt too wide) in paragraph at lines 659--659
+Overfull \hbox (4.24036pt too wide) in paragraph at lines 668--668
 [][]  
  []
 
-[26
+[24
 
  <./sourcefigs/Example2D_depSquare.png> <./sourcefigs/Example2D_indepSquare.png
->] <sourcefigs/cone.png, id=525, 689.18933pt x 675.05832pt>
+>] <sourcefigs/cone.png, id=476, 689.18933pt x 675.05832pt>
 File: sourcefigs/cone.png Graphic file (type png)
 
 <use sourcefigs/cone.png>
-Package pdftex.def Info: sourcefigs/cone.png used on input line 673.
+Package pdftex.def Info: sourcefigs/cone.png used on input line 682.
 (pdftex.def)             Requested size: 122.91406pt x 120.39279pt.
- [27
+ [25
 
- <./sourcefigs/cone.png>] [28
+ <./sourcefigs/cone.png>] [26
 
 ]
-<sourcefigs/3D_anyH.png, id=540, 699.413pt x 688.171pt>
+<sourcefigs/3D_anyH.png, id=493, 699.413pt x 688.171pt>
 File: sourcefigs/3D_anyH.png Graphic file (type png)
 
 <use sourcefigs/3D_anyH.png>
-Package pdftex.def Info: sourcefigs/3D_anyH.png used on input line 728.
+Package pdftex.def Info: sourcefigs/3D_anyH.png used on input line 737.
 (pdftex.def)             Requested size: 122.91406pt x 120.93576pt.
 
-<sourcefigs/3D_sparseH.png, id=541, 611.083pt x 393.47pt>
+<sourcefigs/3D_sparseH.png, id=494, 611.083pt x 393.47pt>
 File: sourcefigs/3D_sparseH.png Graphic file (type png)
 
 <use sourcefigs/3D_sparseH.png>
-Package pdftex.def Info: sourcefigs/3D_sparseH.png used on input line 728.
+Package pdftex.def Info: sourcefigs/3D_sparseH.png used on input line 737.
 (pdftex.def)             Requested size: 122.91406pt x 79.14288pt.
- [29
+ [27
 
- <./sourcefigs/3D_anyH.png> <./sourcefigs/3D_sparseH.png>] (./slides.toc) [30
-
-]
-<sourcefigs/representation2D_problem.png, id=561, 432.61626pt x 404.51125pt>
+ <./sourcefigs/3D_anyH.png> <./sourcefigs/3D_sparseH.png>]
+<sourcefigs/representation2D_problem.png, id=502, 432.61626pt x 404.51125pt>
 File: sourcefigs/representation2D_problem.png Graphic file (type png)
 
 <use sourcefigs/representation2D_problem.png>
 Package pdftex.def Info: sourcefigs/representation2D_problem.png used on input 
-line 757.
+line 766.
 (pdftex.def)             Requested size: 129.78587pt x 121.35431pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 757.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 757.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 757.
- [31
+ [28
 
  <./sourcefigs/representation2D_problem.png>]
-<sourcefigs/representation2Drect.png, id=568, 299.10284pt x 303.05923pt>
+<sourcefigs/representation2Drect.png, id=508, 299.10284pt x 303.05923pt>
 File: sourcefigs/representation2Drect.png Graphic file (type png)
 
 <use sourcefigs/representation2Drect.png>
 Package pdftex.def Info: sourcefigs/representation2Drect.png used on input line
- 774.
+ 783.
 (pdftex.def)             Requested size: 98.70424pt x 100.00984pt.
- [32
+ [29
 
  <./sourcefigs/representation2Drect.png>]
-<sourcefigs/representation2D_nk_rect.png, id=575, 335.3328pt x 300.4023pt>
+<sourcefigs/representation2D_nk_rect.png, id=516, 335.3328pt x 300.4023pt>
 File: sourcefigs/representation2D_nk_rect.png Graphic file (type png)
 
 <use sourcefigs/representation2D_nk_rect.png>
 Package pdftex.def Info: sourcefigs/representation2D_nk_rect.png used on input 
-line 797.
+line 806.
 (pdftex.def)             Requested size: 117.36823pt x 105.14236pt.
- [33
+ [30
 
- <./sourcefigs/representation2D_nk_rect.png>] [34
+ <./sourcefigs/representation2D_nk_rect.png>] [31
 
-] [35
+] [32
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 882.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 891.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 882.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 891.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 882.
- [36
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 891.
+ [33
 
-] [37
+] [34
 
 ]
-Overfull \vbox (52.72209pt too high) detected at line 975
+Overfull \vbox (52.72209pt too high) detected at line 984
  []
 
-[38
+[35
 
-] <sourcefigs/plot_damex_level_sets.png, id=611, 1602.2259pt x 721.2546pt>
+] <sourcefigs/plot_damex_level_sets.png, id=552, 1602.2259pt x 721.2546pt>
 File: sourcefigs/plot_damex_level_sets.png Graphic file (type png)
 
 <use sourcefigs/plot_damex_level_sets.png>
 Package pdftex.def Info: sourcefigs/plot_damex_level_sets.png used on input lin
-e 992.
+e 1001.
 (pdftex.def)             Requested size: 306.60327pt x 142.71243pt.
 
-Overfull \vbox (20.72452pt too high) detected at line 992
+Overfull \vbox (20.72452pt too high) detected at line 1001
  []
 
-[39
+[36
 
  <./sourcefigs/plot_damex_level_sets.png>]
-<SA-lb-semi-supervised-average-0001.pdf, id=618, 983.47589pt x 581.14485pt>
+<SA-lb-semi-supervised-average-0001.pdf, id=559, 983.47589pt x 581.14485pt>
 File: SA-lb-semi-supervised-average-0001.pdf Graphic file (type pdf)
 
 <use SA-lb-semi-supervised-average-0001.pdf>
 Package pdftex.def Info: SA-lb-semi-supervised-average-0001.pdf used on input l
-ine 1002.
+ine 1011.
 (pdftex.def)             Requested size: 307.28987pt x 181.58072pt.
- [40
+ [37
 
- <./SA-lb-semi-supervised-average-0001.pdf>] (./slides.toc) [41
+ <./SA-lb-semi-supervised-average-0001.pdf>] (./slides.toc) [38
+
+] [39
+
+] [40
+
+] (./tikz.tex
+Overfull \hbox (3.0851pt too wide) in paragraph at lines 3--135
+ [] 
+ []
+
+) [41
 
 ] [42
 
 ] [43
 
-] [44
+]
+Overfull \vbox (7.49326pt too high) detected at line 1177
+ []
+
+[44
 
 ]
-Overfull \vbox (7.49326pt too high) detected at line 1132
+Overfull \vbox (45.49326pt too high) detected at line 1224
  []
 
 [45
 
-]
-Overfull \vbox (26.49326pt too high) detected at line 1177
- []
-
-[46
-
-] [47
+] [46
 
 ]
-<SF-4d-lb-semi-supervised-average-rect-01.png, id=680, 1681.0002pt x 922.8879pt
+<SF-4d-lb-semi-supervised-average-rect-01.png, id=627, 1681.0002pt x 922.8879pt
 >
 File: SF-4d-lb-semi-supervised-average-rect-01.png Graphic file (type png)
  <use SF-4d-lb-semi-supervised-average-rect-01.png>
 Package pdftex.def Info: SF-4d-lb-semi-supervised-average-rect-01.png used on i
-nput line 1226.
+nput line 1273.
 (pdftex.def)             Requested size: 307.28987pt x 168.70377pt.
- [48
+ [47
 
  <./SF-4d-lb-semi-supervised-average-rect-01.png>]
-<http-3d-semi-supervised-average-rect-01.png, id=688, 1681.0002pt x 922.8879pt>
+<http-3d-semi-supervised-average-rect-01.png, id=635, 1681.0002pt x 922.8879pt>
 File: http-3d-semi-supervised-average-rect-01.png Graphic file (type png)
 <use http-3d-semi-supervised-average-rect-01.png>
 Package pdftex.def Info: http-3d-semi-supervised-average-rect-01.png used on in
-put line 1237.
+put line 1284.
 (pdftex.def)             Requested size: 307.28987pt x 168.70377pt.
- [49
+ [48
 
  <./http-3d-semi-supervised-average-rect-01.png>]
-<shuttle-semi-supervised-average-rect-01.png, id=697, 1681.0002pt x 922.8879pt>
+<shuttle-semi-supervised-average-rect-01.png, id=643, 1681.0002pt x 922.8879pt>
 File: shuttle-semi-supervised-average-rect-01.png Graphic file (type png)
 <use shuttle-semi-supervised-average-rect-01.png>
 Package pdftex.def Info: shuttle-semi-supervised-average-rect-01.png used on in
-put line 1247.
+put line 1294.
 (pdftex.def)             Requested size: 307.28987pt x 168.70377pt.
- [50
+ [49
 
  <./shuttle-semi-supervised-average-rect-01.png>]
-<forestcover-semi-supervised-average-rect-01.png, id=705, 1681.0002pt x 922.887
+<forestcover-semi-supervised-average-rect-01.png, id=652, 1681.0002pt x 922.887
 9pt>
 File: forestcover-semi-supervised-average-rect-01.png Graphic file (type png)
  <use forestcover-semi-supervised-average-rect-01.png>
 Package pdftex.def Info: forestcover-semi-supervised-average-rect-01.png used o
-n input line 1256.
+n input line 1303.
 (pdftex.def)             Requested size: 307.28987pt x 168.70377pt.
- [51
+ [50
 
- <./forestcover-semi-supervised-average-rect-01.png>] [52
+ <./forestcover-semi-supervised-average-rect-01.png>] [51
+
+] [52
 
 ] [53
-
-] [54
 
 ]
 \tf@nav=\write6
@@ -1852,24 +1863,28 @@ n input line 1256.
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1374.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1374.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1421.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1421.
  (./slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1374.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1374.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1421.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1421.
 
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: E05520B4032CEC9227871AED0C9092AB;601.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1374.
+(rerunfilecheck)             Checksum: 4B567E73E2B31B0E9D2B376D31A650A6;269.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1421.
  ) 
 Here is how much of TeX's memory you used:
- 22684 strings out of 495020
- 439912 string characters out of 6181323
- 512907 words of memory out of 5000000
- 25161 multiletter control sequences out of 15000+600000
- 71995 words of font info for 153 fonts, out of 8000000 for 9000
+ 28033 strings out of 495020
+ 553752 string characters out of 6181323
+ 716154 words of memory out of 5000000
+ 30517 multiletter control sequences out of 15000+600000
+ 66427 words of font info for 138 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,16n,65p,386b,723s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,16n,65p,386b,1184s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-
@@ -1901,10 +1916,10 @@ ic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on slides.pdf (54 pages, 2979807 bytes).
+Output written on slides.pdf (53 pages, 2997279 bytes).
 PDF statistics:
- 860 PDF objects out of 1000 (max. 8388607)
- 610 compressed objects within 7 object streams
- 123 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 806 PDF objects out of 1000 (max. 8388607)
+ 558 compressed objects within 6 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -101,11 +101,11 @@ Machine Learning and Extremes  for Anomaly Detection
 
 
 
-\AtBeginSubsection[]
+\AtBeginSection[]
 {
  \begin{frame}<beamer>
  \frametitle{}
- \tableofcontents[currentsection,currentsubsection]
+ \tableofcontents[currentsection]
  \end{frame}
 }
 
@@ -231,44 +231,50 @@ Training set (unlabeled) = normal + abnormal data \\
 
 
 
-\begin{frame}
-\frametitle{Contributions and Outline}
+% \begin{frame}
+% \frametitle{Contributions and Outline}
 
-\begin{block}{Contributions}
+% \begin{block}{Contributions}
 
-\begin{itemize}
-\item Performance criterion for learning scoring functions: Excess-Mass Curve (Part I).
+% \begin{itemize}
+% \item Performance criterion for learning scoring functions: Excess-Mass Curve (Part I).
 
-\item Learning scoring functions on extreme regions (Part II).
+% \item Learning scoring functions on extreme regions (Part II).
 
-\item Evaluating scoring functions in non-small dimensions (Part I).
+% \item Evaluating scoring functions in non-small dimensions (Part I).
 
-\item One-class splitting criteria for Random Forests. (not in this presentation)
-\end{itemize}
+% \item One-class splitting criteria for Random Forests. (not in this presentation)
+% \end{itemize}
  
-\end{block}
+% \end{block}
 
-\end{frame}
+% \end{frame}
 
+
+% \begin{frame}
+% \frametitle{Outline}
+% %In a machine learning context, AD can been seen as a classification task but where the usual assumption -dataset contains info regarding all classes- breaks down.
+
+% \begin{block}{}
+% \begin{itemize}
+% \item Part I: Performance criterion on {\blue $s$}.\\
+% {\footnotesize ~~(model selection)} \\~\\~\\
+% %{\small ~~~~~~~~~~~~ $\to$ Evaluation criterion for AD algorithms.}\\~\\~\\~\\
+% \item Part II: Building good {\blue $s$} on extreme regions. \\
+% {\footnotesize ~~ (model design)}
+% %{\small ~~~~~~~~~~~~ $\to$ Gaining in accuracy on extreme regions.}
+% \end{itemize}
+% \end{block}
+% \end{frame}
 
 \begin{frame}
 \frametitle{Outline}
-%In a machine learning context, AD can been seen as a classification task but where the usual assumption -dataset contains info regarding all classes- breaks down.
-
-\begin{block}{}
-\begin{itemize}
-\item Part I: Performance criterion on {\blue $s$}.\\
-{\footnotesize ~~(model selection)} \\~\\~\\
-%{\small ~~~~~~~~~~~~ $\to$ Evaluation criterion for AD algorithms.}\\~\\~\\~\\
-\item Part II: Building good {\blue $s$} on extreme regions. \\
-{\footnotesize ~~ (model design)}
-%{\small ~~~~~~~~~~~~ $\to$ Gaining in accuracy on extreme regions.}
-\end{itemize}
-\end{block}
+\tableofcontents
 \end{frame}
 
-\section{Part I: performance criterion}
-\subsection{Definition}
+
+\section{Part I: Performance Criterion for Scoring Functions}
+% \subsection{Definition}
 
 
 
@@ -337,9 +343,12 @@ Question: How to choose $\Phi(s)$ ?
 	\includegraphics[width=0.95\textwidth]{img/anomaly_detection_end_col.png}
 \end{minipage}
 
-Under regularity assumptions, minimum-volume sets are \textbf{density level sets}:
-$$\exists t_\alpha>0,~~~ \Gamma^*_{\alpha} = \{f > t_\alpha\} =: \Omega_{t_\alpha} $$
-%\max_{\Gamma\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Gamma)-t_\alpha\leb(\Gamma) \big\}.$$
+% Under regularity assumptions, minimum-volume sets are \textbf{density level sets}:
+% $$\exists t_\alpha>0,~~~ \Gamma^*_{\alpha} = \{f > t_\alpha\} =: \Omega_{t_\alpha} $$
+\begin{figure}[htb]
+\centering
+\includegraphics[width=1.01\columnwidth]{sourcefigs/scoring.pdf}
+\end{figure}
 
 {\blue Mass Volume curve} of a scoring function $s$ [Clémençon and Jakubowicz, 2013]:
 % \footnotesize{
@@ -459,7 +468,7 @@ $\updownarrow$\\
 \end{figure}
 \end{frame}
 
-\subsection{Learning a scoring function}
+% \subsection{Learning a scoring function}
 
 \begin{frame}
 \frametitle{Learning a scoring function with M-estimation}
@@ -509,7 +518,7 @@ With probability at least $1-\delta$,
 
 
 
-\subsection{Multivariate EVT \& Representation of Extremes}
+% \subsection{Multivariate EVT \& Representation of Extremes}
 
 \begin{frame}
 \frametitle{Why dealing with extremes?}
@@ -728,11 +737,11 @@ $\frac{\ud \mu_{|\mathcal{C}_\alpha}}{\ud v_\alpha} = O(1)$.\\~\\
 \end{frame}
 
 
-\subsection{Estimation}
+% \subsection{Estimation}
 
 \begin{frame}
-\frametitle{Problem: $\mathcal{M}$ is an \textbf{asymptotic} representation}
-
+\frametitle{Estimation}
+\textbf{Estimation Problem}: $\mathcal{M}$ is an \textbf{asymptotic} representation
 \begin{align*}
 \mathcal{M} ~~=~~ \big\{~\Phi(\Omega_{\alpha}),~ \alpha~\big\} ~=~ \big\{~\mu(\mathcal{C}_{\alpha}),~ \alpha~\big\}
 \end{align*}
@@ -1003,9 +1012,9 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 
 
 
-\section{Perspectives}
+\section{Part III: Heuristic Contributions and Perspectives}
 
-\subsection{Evaluation of scoring functions, model selection}
+% \subsection{Evaluation of scoring functions, model selection}
 
 \begin{frame}
 \frametitle{EM and MV curves for model selection?}
@@ -1058,7 +1067,7 @@ The volume $\leb(s \ge u)$ has to be estimated! % Challenging in high dimensions
 \begin{frame}
 \frametitle{Heuristic extension for large dimension}
 
-\begin{block}{Random projection and averaging ~~~~{\color{black} \small [G. 2016]}}~\\
+\begin{block}{Random projection and averaging} %~~~~{\color{black} \small [G. 2016]}}~\\
 
 \small{
 %\begin{algorithm}
@@ -1076,11 +1085,46 @@ The volume $\leb(s \ge u)$ has to be estimated! % Challenging in high dimensions
 \end{algorithmic}
 %\end{algorithm}
 }
-
 \end{block}
+Seems to work in pratice but no statistical guaranties.
 \end{frame}
 
-\subsection{One-class }
+% \subsection{One-class splitting criterion for random forests}
+
+\begin{frame}
+\frametitle{One Class Random Forests}
+
+Existing litterature:
+[Désir et al., 2013, Liu et al., 2008, Shi and Horvath, 2012].
+
+\begin{block}{}{One-Class splitting criterion }%~~~~{\color{black} \small [G., Brault, Drougard, Chiapino 2016]}}
+  
+\input{tikz.tex}
+\end{block}
+
+Does theorical guaranties on RFs apply ?
+[Biau et al. 2008, Biau and Scornet, 2016]
+
+\end{frame}
+
+
+% \subsection{AD and Extremes perspectives}
+
+\begin{frame}
+\frametitle{AD and Extremes perspectives}
+
+A more accurate sparse representation
+\end{frame}
+
+
+
+
+
+
+
+
+
+
 
 
 

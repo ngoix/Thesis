@@ -535,16 +535,15 @@ The main idea is as follows. The empirical estimator of the {\sc stdf} is based 
 \begin{theorem}
 \label{thm:l}
 %Let $k(n)$ a sequence of  
-Let $T$ be a positive number such that $T \ge \frac{7}{2}(\frac{\log d}{k} + 1)$, and $\delta$ such that $\delta \ge e^{-k}$. Then there is an absolute constant $C$ such that for each $n >0$, with probability at least $1-\delta$:
+Let $T$ be a positive number such that $T \ge \frac{7}{2}(\frac{\log d}{k} + 1)$, $\delta$ such that $\delta \ge e^{-k}$ and let $k=k(n)$ be a sequence of positive integers such that $k \to \infty$ and $k=o(n)$ as $n \to \infty$. Then there is an absolute constant $C$ such that for each $n >0$, with probability at least $1-\delta$:
 \begin{align*}
-\sup_{0 \le \mathbf{x} \le T} \left| l_n(\mathbf{x}) - l(\mathbf{x})
-\right| ~\le~ Cd\sqrt{\frac{T}{k}\log\frac{d+3}{\delta}} ~+~ \sup_{0
-  \le \mathbf{x} \le 2T}\left|\frac{n}{k} \tilde
-  F(\frac{k}{n}\mathbf{x})- % {\red \frac{n}{k}l ( \frac{k}{n}
-  % \mathbf{x}) =
-l(\mb x)\right|
+\sup_{0 \le \mathbf{x} \le T} \left| l_n(\mathbf{x}) - l(\mathbf{x}) \right| ~\le~ Cd\sqrt{\frac{T}{k}\log\frac{d+3}{\delta}} ~+~
+\text{bias}(k, n, T),
+%  \sup_{0  \le \mathbf{x} \le 2T}\left|\frac{n}{k} \tilde   F(\frac{k}{n}\mathbf{x})- % {\red \frac{n}{k}l ( \frac{k}{n}
+%   % \mathbf{x}) =
+% l(\mb x)\right|
 \end{align*}
-where $l$ is the \stdf, and by definition $l(\mathbf{x})= \lim_{t \to 0} t^{-1} \tilde F (t\mathbf{x}) $ such that the second term in the bound is a bias term.
+where $l$ is the \stdf and $l_n$ its standard empirical version. The second term in the bound is a bias stemming from the asymptotic nature of $l$.
 \end{theorem}
 
 
@@ -894,7 +893,7 @@ Recall that the MV and EM curves of a scoring function $s$ can be written as
 \end{align}
 for any $\alpha\in (0,1)$ and $t >0$.
 %
-The optimal curves are $MV^* = MV_f = MV_{T \circ f}$ and $EM^* = EM_f = EM_{T \circ f}$ for any increasing transform $T: \text{Im(f)} \to \mathbb{R}$
+The optimal curves are $MV^* = MV_f = MV_{T \circ f}$ and $EM^* = EM_f = EM_{T \circ f}$ for any increasing transform $T: \text{Im(f)} \to \mathbb{R}$.
 %
 As curves cannot be trivially compared, consider the $L^1$-norm $\|.\|_{L^1(I)}$ with $I\subset \rset$ an interval. As $MV^*=MV_f$ is below $MV_s$ pointwise, $\argmin_s \| MV_s - MV^* \|_{L^1(I)} = \argmin \| MV_s \|_{L^1(I)} $. We thus define
 $\crit^{MV}(s) = \| MV_s \|_{L^1(I^{MV})},$ which is equivalent to consider $\| MV_s - MV^* \|_{L^1(I^{MV})}$ as mentioned in the introduction. As we are interested in evaluating accuracy on large density level-sets, one natural interval $I^{MV}$ would be for instance $[0.9, 1]$. However, MV diverges in $1$ when the support is infinite, so that we arbitrarily take $I^{MV} = [0.9, 0.999].$
@@ -974,7 +973,7 @@ classifiers on different random sub-samples of the dataset.
 Each tree is built recursively, according to a splitting criterion based on
 some impurity measure of a node. The prediction is done by an average over each tree prediction. In classification the averaging is based on a majority vote.
 Few attempts to transfer the idea of RFs to one-class
-classification have already been made \citep{Desir12, Liu2008, Shi2012}
+classification have already been made \citep{Desir12, Liu2008, Shi2012}.
 %, Clemencon2014}. On ne cite pas clemencon2014 car leur algorythm treeRank n'est pas des RFs (base estimator = non-symetric ranking trees) (en fait unsupervisedTreeRank c'est juste une modif triviale de TreeRank en considerant des volumes)
 %
 No algorithm structurally extends (without second class sampling and without alternative base estimators) RFs to one-class classification.
@@ -1011,7 +1010,7 @@ A solution is to chose adaptively (\wrt~the volume of each node) the number $\al
 
 The idea is to make $\alpha(t) \to 1$, $n(t) \to \infty$ when the volume of node $t$ goes to zero.
 %
-In other word, instead of considering one fixed general model One-Class-Model($n$, $\alpha$), we adapt it to each node $t$, considering One-Class-Model($n(t)$, $\alpha(t)$) \emph{before searching the best split}. We still consider the $N$ normal observations as a realization of this model. When growing the tree, using One-Class-Model($n(t)$, $\alpha(t)$) allows to maintain a non-negligible expected proportion of outliers in the node to be split, even when its volume becomes close to zero.
+In other words, instead of considering one fixed general model One-Class-Model($n$, $\alpha$), we adapt it to each node $t$, considering One-Class-Model($n(t)$, $\alpha(t)$) \emph{before searching the best split}. We still consider the $N$ normal observations as a realization of this model. When growing the tree, using One-Class-Model($n(t)$, $\alpha(t)$) allows to maintain a non-negligible expected proportion of outliers in the node to be split, even when its volume becomes close to zero.
 Of course, constraints have to be made to ensure consistency between all these models.
 %
 For instance, recalling that the number $N$ of normal observations is a realization of $\mb N$ following a Binomial distribution with parameters $(n, 1-\alpha)$, a first natural constraint on $\big(n(t), \alpha(t)\big)$ is

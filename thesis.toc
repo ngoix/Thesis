@@ -55,9 +55,7 @@
 \contentsline {subsection}{\numberline {5.5.1}Distributions with non compact support}{66}{subsection.5.5.1}
 \contentsline {subsection}{\numberline {5.5.2}Bias analysis}{68}{subsection.5.5.2}
 \contentsline {section}{\numberline {5.6}Simulation examples}{69}{section.5.6}
-\contentsline {section}{\numberline {5.7}Conclusion}{69}{section.5.7}
-\contentsline {section}{\numberline {5.8}Illustrations}{71}{section.5.8}
-\contentsline {section}{\numberline {5.9}Detailed Proofs}{71}{section.5.9}
+\contentsline {section}{\numberline {5.7}Detailed Proofs}{71}{section.5.7}
 \contentsline {part}{III\hspace {1em}Accuracy on Extreme Regions}{77}{part.3}
 \contentsline {chapter}{\numberline {6}Learning the dependence structure of rare events: a non-asymptotic study}{79}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introduction}{79}{section.6.1}
@@ -87,9 +85,9 @@
 \contentsline {subsection}{\numberline {7.5.1}Recovering the support of the dependence structure of generated data}{112}{subsection.7.5.1}
 \contentsline {subsection}{\numberline {7.5.2}Sparse structure of extremes (wave data)}{113}{subsection.7.5.2}
 \contentsline {subsection}{\numberline {7.5.3}Application to Anomaly Detection on real-world data sets}{114}{subsection.7.5.3}
-\contentsline {section}{\numberline {7.6}Conclusion}{116}{section.7.6}
-\contentsline {section}{\numberline {7.7}Technical proofs}{118}{section.7.7}
-\contentsline {subsection}{\numberline {7.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{118}{subsection.7.7.1}
+\contentsline {section}{\numberline {7.6}Conclusion}{117}{section.7.6}
+\contentsline {section}{\numberline {7.7}Technical proofs}{119}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{119}{subsection.7.7.1}
 \contentsline {subsection}{\numberline {7.7.2}Proof of Lemma \ref {jmva:lem:g-alpha}}{119}{subsection.7.7.2}
 \contentsline {subsection}{\numberline {7.7.3}Proof of Proposition \ref {jmva:prop:g}}{120}{subsection.7.7.3}
 \contentsline {subsection}{\numberline {7.7.4}Proof of Lemma \ref {jmva:lemma_simplex}}{124}{subsection.7.7.4}

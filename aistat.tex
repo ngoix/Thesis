@@ -15,7 +15,7 @@ Note: The material of this chapter is based on previous work published in \cite{
 
 \section{Introduction}
 
-In a great variety of applications  (\textit{e.g.} fraud detection, distributed fleet monitoring, system management in data centers), it is of crucial importance to address anomaly/novelty issues from a ranking point of view. In contrast to novelty/anomaly detection (\textit{e.g.} \cite{Kolt97, VertVert, Scholkopf2001, SHS05}), novelty/anomaly ranking is very poorly documented in the statistical learning literature (see \cite{VCTWMS} for instance). However, when confronted with
+In a great variety of applications  (\textit{e.g.} fraud detection, distributed fleet monitoring, system management in data centers), it is of crucial importance to address anomaly/novelty issues from a ranking point of view. In contrast to novelty/anomaly detection (\textit{e.g.} \cite{Kolt97, VertVert, Scholkopf2001, Steinwart2005}), novelty/anomaly ranking is very poorly documented in the statistical learning literature (see \cite{VCTWMS} for instance). However, when confronted with
 massive data, being enable to rank observations according to their supposed
 degree of abnormality may significantly improve operational processes and allow for a prioritization of actions to be taken, especially in situations where human expertise required to check each observation is time-consuming.
 % \par
@@ -460,7 +460,7 @@ with $a(t)>0$ (observe that $s(x)=f(x)$ for $a \equiv 1$).
 \item[(i)] The mapping $EM_s$ is non increasing on $(0,+\infty)$, takes its values in $[0,1]$ and satisfies,
 %   $ \forall t\ge 0$, 
 $EM_s(t) \le EM^*(t)$ for all $t\geq 0$. 
-\item[(ii)]  For $t \ge 0$, we have: 
+\item[(ii)]  For $t \ge 0$, we have for any $\epsilon > 0$, 
 $$\inf_{u>0} \epsilon \leb (\{ s >u\}\Delta_\epsilon \{f>t\}) \le EM^*(t)-EM_s(t) \le \|f\|_\infty \inf_{u>0} \leb (\{ s >u\}\Delta\{f>t\}),$$
 %
 where ~$\{ s >u\}\Delta_\epsilon \{f>t\} ~:=~~ \{f>t+\epsilon\} \setminus \{ s >u\} ~~~\bigsqcup~~~ \{ s >u\} \setminus \{f>t-\epsilon\}$ should be interpreted as a symmetric difference with `an $\epsilon$ tolerance'.
@@ -504,7 +504,7 @@ Assumption $\mathbf{A_4}$ is very general and is fulfilled in particular when $\
 % start with, and will be relaxed in
 % section~\ref{aistat:biais}. % $= \max_{\Omega \in \mathcal{G}}H_t(\Omega)$, which is convenient in a first time.\\
 
-Let $\delta\in (0,1)$ and consider the complexity penalty $\Phi_n(\delta)=2 \mathcal{R}_n + \sqrt{\frac{log(1/\delta)}{2n}}$. We have for all $n \ge 1$:
+Let $\delta\in (0,1)$ and consider the complexity penalty $\Phi_n(\delta)=2 \mathcal{R}_n + \sqrt{\frac{\log(1/\delta)}{2n}}$. We have for all $n \ge 1$:
 \begin{equation}
 \label{aistat:penality}
 \mathbb{P}\left( \left\{ \sup_{G\in \mathcal{G}}\left( |P(G)- P_n(G)|-\Phi_n(\delta) \right) >0 \right\}\right) \leq \delta,
@@ -566,7 +566,7 @@ The following theorem provides rate bounds describing the performance of the sco
 \begin{theorem}{\sc (Compact support case)}
 \label{aistat:compact_support_case}
 Assume that conditions $\mathbf{A_1}$, $\mathbf{A_2}$, $\mathbf{A_3}$ and $\mathbf{A_4}$ hold true, and that $f$ has a compact support. Let $\delta \in ]0,1[$, let
- $(t_k)_{k\in\{1,\;\ldots,\; K\}}$ be such that  $\sup_{1\leq k< K}(t_{k}-t_{k+1}) = \mathcal{O}(1/\sqrt{n})$.
+ $(t_k)_{k\in\{1,\;\ldots,\; K\}}$ be such that  $\sup_{1\leq k \le K}(t_{k}-t_{k+1}) = \mathcal{O}(1/\sqrt{n})$, setting $t_{K+1}=0$.
 Then, there exists a constant $A$ independent from the $t_k$'s, $n$ and
 $\delta$ such that, with probability at least  $1-\delta$, we have:
 \begin{align*}
@@ -591,7 +591,7 @@ The proof results from the following lemma, which does not use the compact suppo
 \label{aistat:theofini} Suppose that assumptions $\mathbf{A_1}$, $\mathbf{A_2}$, $\mathbf{A_3}$ and
   $\mathbf{A_4}$ are fulfilled. Then, for $1 \le k \le K-1$, there exists a constant $A$ independent from $n$ and  $\delta$, such that, with probability at least $1-\delta$, for $t$ in $]t_{k+1},t_{k}]$, 
 \begin{align*}
-|EM^*(t)-EM_{s_K}(t)| ~~\le~~\left(A+\sqrt{2log(1/\delta)}\right)\frac{1}{\sqrt n} ~+~ \lambda(t_{k+1})(t_{k}-t_{k+1}).
+|EM^*(t)-EM_{s_K}(t)| ~~\le~~\left(A+\sqrt{2\log(1/\delta)}\right)\frac{1}{\sqrt n} ~+~ \lambda(t_{k+1})(t_{k}-t_{k+1}).
 \end{align*}
 \end{lemma}
 The detailed proof of this lemma is in the Detailed Proofs Section~\ref{aistat:sec:detailed_proofs}, and is a combination on the two following results, the second one being a straightforward consequence of the derivative property of $EM^*$ (Proposition~\ref{aistat:derive}):
@@ -736,6 +736,9 @@ On the other hand from $t \leb(\{f>t\}) \le \int_{f>t} f \le 1$, we have $\lambd
 t_{k}=\frac{t_1}{(1+\frac{1}{\sqrt n})^{k-1}}~.
 \end{align}
 
+\begin{remark}
+Theorem~\ref{aistat:compact_support_case} holds true with the $t_k$'s defined as in \eqref{aistat:tk} -- even if the condition $\sup_{1\leq k \le K}(t_{k}-t_{k+1}) = \mathcal{O}(1/\sqrt{n})$ is not respected -- as soon as $t_K = \mathcal{O}(1/\sqrt{n})$.
+\end{remark}
 
 \begin{theorem}({\sc Unbounded support case})
 \label{aistat:thmprinc}
@@ -743,7 +746,7 @@ Suppose that assumptions $\mathbf{A_1}$, $\mathbf{A_2}$, $\mathbf{A_3}$, $\mathb
 \begin{align*}
 \sup_{t \in ]0,t_1]}|EM^*(t)-EM_{s_N}(t)| ~~\le~~ \left[A+\sqrt{2\log(1/\delta)}\right]\frac{1}{\sqrt n} + o_N(1),
 \end{align*}
-where $o_N(1)=1-EM^*(t_N)$. In addition, $s_N(x)$ converges to $s_\infty(x):=\sum_{k=1}^{\infty} (t_{k+1}-t_k)\mathds{1}_{\hat \Omega_{t_{k+1}}}$ as $N \rightarrow \infty$ and $s_\infty$ is such that, for all $\delta \in (0,1)$, we have with probability at least $1-\delta$:
+where $o_N(1)=1-EM^*(t_N)$ represents `how much $f$ is heavy tailed'. In addition, $s_N(x)$ converges to $s_\infty(x):=\sum_{k=1}^{\infty} (t_{k+1}-t_k)\mathds{1}_{\hat \Omega_{t_{k+1}}}$ as $N \rightarrow \infty$ and $s_\infty$ is such that, for all $\delta \in (0,1)$, we have with probability at least $1-\delta$:
 \begin{align*}
 \sup_{t \in ]0,t_1]}|EM^*(t)-EM_{s_\infty}(t)| \le \left[A+\sqrt{2\log(1/\delta)}\right]\frac{1}{\sqrt n}
 \end{align*}
@@ -853,14 +856,14 @@ This empirical analysis demonstrates that introducing a notion of adaptivity for
 \end{figure}
 
 
-\section{Conclusion}
+\section*{Conclusion}
 Prolongating the contribution of \cite{CLEM13}, this chapter provides an alternative view (respectively, an other parametrization) of the anomaly scoring problem, leading to another adaptive method to build scoring functions, which offers theoretical and computational advantages both at the same time. This novel formulation yields a procedure producing a nested sequence of empirical density level sets, and exhibits a good performance, even in the non compact support case. 
 Thus, the main drawbacks of the mass-volume curve criterion listed in the introduction section are resolved excepting drawback \textbf{1)}. In addition, the model bias has been incorporated in the rate bound analysis.
 %
 However, the use of the Excess-Mass criterion to measure the quality of a scoring function $s_n$ involves the computation of the Lebesgue measure  $\leb(s_n \ge u)$, just as with the Mass-Volume criterion (drawback \textbf{1)}). This is a major drawback for its use in high dimensional framework, if no prior knowledge on the form of these level sets is available.
 
 
-\section{Illustrations}
+\section*{Illustrations}
 
 Note that the scoring function we built in Algorithm~\ref{aistat:algo1} is incidentally an estimator of the density $f$ (usually called the silhouette), since $f(x)=\int_{0}^\infty \mathds{1}_{f \ge t}dt=\int_{0}^\infty \mathds{1}_{\Omega^*_t}dt$ and $s(x):= \sum_{k=1}^K (t_k-t_{k-1}) \mathds{1}_{x \in \hat{\Omega}_{t_k} }$ which is a discretization of $\int_{0}^\infty \mathds{1}_{\hat \Omega_t}dt$. This fact is illustrated in Figure~\ref{aistat:scoring3D}. Note that the silhouette does not focus on local properties of the density, but only on its induced pre-order (level sets).
 \begin{figure}[!h!]
@@ -923,6 +926,13 @@ EM^*(t)-EM_s(t)  &\le~ \max(t,\|f\|_\infty-t) ~~\leb\Big(\{s>u\} \Delta \{f>t\}\
 &\le~ \|f\|_\infty .\leb\Big(\{s>u\} \Delta \{f>t\}\Big) .
 \end{align*}
 
+The other inequality comes from the fact that 
+\begin{align*}
+&\int_{\{f>t\}\setminus\{s>u\}}(f(x)-t)dx + \int_{\{s>u\}\setminus\{f>t\}}(t-f(x))dx\\
+&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ge \int_{\{f > t + \epsilon\} \setminus \{s > u\} }(f(x) -t)dx +  \int_{\{s > u\} \setminus \{f > t + \epsilon\} }(f(x) -t)dx \\
+&~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ge \epsilon \leb(\{f > t + \epsilon\} \setminus \{s > u\}) + \epsilon \leb(\{s > u\} \setminus \{f > t + \epsilon\})
+\end{align*}
+
 \noindent To prove the third point, note that:
 
 \begin{align*}
@@ -979,7 +989,7 @@ Proceeding by induction we have, for every $m$ such that $k+m \le K$:
 H_{n,t_{i+m}}(\hat \Omega_{t_i} \cup \hat \Omega_{t_{i+1}} \cup ... \cup \hat \Omega_{t_{i+m}}) &~~=~~ H_{n,t_{i+m}}(\hat \Omega_{t_{i+m}})~,\\
 H_{n,t_i}(\hat \Omega_{t_i} \cap \hat \Omega_{t_{i+1}} \cap ... \cap \hat \Omega_{t_{i+m}}) &~~=~~ H_{n,t_i}(\hat \Omega_{t_i})~.
 \end{align*}
-Taking (i=1, m=k-1) for the first equation and  (i=k, m=K-k) for the second completes the proof.\\
+Taking $(i=1, m=k-1)$ for the first equation and $(i=k, m=K-k)$ for the second completes the proof.\\
 
 
 
@@ -1007,19 +1017,19 @@ Hence, with probability at least $1-\delta$, for all $\Omega \in \mathcal{G}$ :
 \begin{align*}
 H_{n,t_k}(\Omega)-\Phi_n(\delta) ~~\le~~ H_{t_k}(\Omega) ~~\le~~ H_{n,t_k}(\Omega) + \Phi_n(\delta)
 \end{align*}
-\noindent so that, with probability at least $(1-\delta)$, for $k \in \{1..,K\}$,
+\noindent so that, with probability at least $(1-\delta)$, for $k \in \{1,\ldots,K\}$,
 \begin{align*}
 H_{n,t_k}(\hat \Omega_{t_k})-\Phi_n(\delta) ~~\le~~ H_{t_k}(\hat \Omega_{t_k}) 
  ~~\le~~ EM^*(t_k) 
 ~~\le~~ H_{n,t_k}(\hat \Omega_{t_k}) + \Phi_n(\delta) ~,
 \end{align*}
-\noindent whereby, with probability at least $(1-\delta)$, for $k \in \{1,..,K\}$,
+\noindent whereby, with probability at least $(1-\delta)$, for $k \in \{1,\ldots,K\}$,
 \begin{align*}
 0 ~~\le~~ EM^*(t_k) - H_{t_k}(\hat \Omega_{t_k}) ~~\le~~ 2 \Phi_n(\delta)~.
 \end{align*}
 
 
-The following Lemma is a consequence of the derivative property of $EM^*$ (Proposition~\ref{aistat:derive}) 
+The following Lemma is a consequence of the derivative property of $EM^*$ (Proposition~\ref{aistat:derive}) .
 % : the fact that $EM^{*'}=- \lambda$ (proposition~\ref{aistat:derive}) and that $\lambda$ is a decreasing function.
 \begin{lemma}
 \label{aistat:lemmederive}
@@ -1044,10 +1054,10 @@ which gives Lemma~\ref{aistat:theofini} stated in the sketch of proof. Notice th
 %|EM^*(t)-EM_{s_K}(t)| \leq  \left(A+\sqrt{2log(1/\delta)}\right)\frac{1}{\sqrt n} + \lambda(t_{K})\sup_{1\leq k< K}(t_{k}-t_{k+1}).
 %\end{equation*}
 
-The compactness support assumption allows an extension of Lemma~\ref{aistat:lemmederive} to $k=K$, namely the inequality holds true for $t$ in $]t_{K+1},t_K]=]0,t_K]$ as soon as we let $\lambda(t_{K+1}):=\leb(supp f)$. Indeed the compactness of $supp f$ implies that $\lambda(t) \rightarrow \leb(supp f)$ as $t \rightarrow 0$. Observing that Lemma~\ref{aistat:lemmeMs} already contains the case $k=K$, this leads to, for $k$ in $\{0,...,K\}$ and $t \in~ ]t_{k+1},t_{k}],~ |EM^*(t)-EM_{s_K}(t)| \le 2 \Phi_n(\delta)+\lambda(t_{k+1})(t_{k}-t_{k+1})$. Therefore, $\lambda$ being a decreasing function bounded by $\lambda(\leb(supp f))$, we obtain the following: with probability at least $1-\delta$, we have for all $t$ in $]0,t_{1}]$,
+The compactness support assumption allows an extension of Lemma~\ref{aistat:lemmederive} to $k=K$, namely the inequality holds true for $t$ in $]t_{K+1},t_K]=]0,t_K]$ as soon as we let $\lambda(t_{K+1}):=\leb(supp f)$. Indeed the compactness of $supp f$ implies that $\lambda(t) \rightarrow \leb(supp f)$ as $t \rightarrow 0$. Observing that Lemma~\ref{aistat:lemmeMs} already contains the case $k=K$, this leads to, for $k$ in $\{0,...,K\}$ and $t \in~ ]t_{k+1},t_{k}],~ |EM^*(t)-EM_{s_K}(t)| \le 2 \Phi_n(\delta)+\lambda(t_{k+1})(t_{k}-t_{k+1})$. Therefore, $\lambda$ being a decreasing function bounded by $\leb(supp f)$, we obtain the following: with probability at least $1-\delta$, we have for all $t$ in $]0,t_{1}]$,
 \begin{align*}
 |EM^*(t)-EM_{s_K}(t)| 
-~~\le~~  \left(A+\sqrt{2log(1/\delta)}\right)\frac{1}{\sqrt n}~+~ \lambda(\leb(supp f))\sup_{1\leq k \le K}(t_{k}-t_{k+1}).
+~~\le~~  \left(A+\sqrt{2\log(1/\delta)}\right)\frac{1}{\sqrt n}~+~ \leb(supp f)\sup_{1\leq k \le K}(t_{k}-t_{k+1}).
 \end{align*}
 
 %Observe that $\lambda$ is a decreasing function majored by $\leb(\supp f)$. 

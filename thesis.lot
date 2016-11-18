@@ -12,7 +12,7 @@
 \contentsline {table}{\numberline {7.2}{\ignorespaces Total number of sub-cones of wave data\relax }}{114}{table.caption.25}
 \contentsline {table}{\numberline {7.3}{\ignorespaces Datasets characteristics\relax }}{115}{table.caption.26}
 \contentsline {table}{\numberline {7.4}{\ignorespaces Results on extreme regions with standard parameters $(k,\epsilon ) = (n^{1/2}, 0.01)$\relax }}{115}{table.caption.27}
-\contentsline {table}{\numberline {7.5}{\ignorespaces Results on extreme regions with lower $\epsilon =0.1$\relax }}{116}{table.caption.28}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Results on extreme regions with lower $\epsilon =0.1$\relax }}{115}{table.caption.28}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {8.1}{\ignorespaces Original Datasets characteristics\relax }}{135}{table.caption.36}
 \contentsline {table}{\numberline {8.2}{\ignorespaces Results for the novelty detection setting. ROC, PR, EM, MV often do agree on which algorithm is the best (in bold), which algorithm is the worse (underlined) on some fixed datasets. When they do not agree, it is often because ROC and PR themselves do not, meaning that the ranking is not clear.\relax }}{136}{table.caption.37}

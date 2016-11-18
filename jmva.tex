@@ -26,7 +26,7 @@ framework for our method, we propose  as a direct application a --first--
 Anomaly Detection algorithm based on \textit{multivariate} EVT.  This algorithm builds a sparse `normal profile' of extreme behaviors, to be confronted with new (possibly abnormal) extreme observations. Illustrative experimental results provide strong empirical evidence of the relevance of our approach.
 \end{chapabstract}
 
-Note: The material of this chapter is based on previous work under review available in \cite{ARXIV16}. Part of this work have been published in \cite{AISTAT15} and \cite{NIPSWORKSHOP15}.
+Note: The material of this chapter is based on previous work under review available in \cite{ARXIV16}. Part of this work have been published in \cite{AISTAT16} and \cite{NIPSWORKSHOP15}.
 
 
 
@@ -347,7 +347,7 @@ An application to anomaly detection is proposed in Section~\ref{jmva:sec:appliAD
 % %incidentally
 % relies
 % on estimating classical quantities in multivariate EVT.
-Experiments on both simulated and real data are performed in Section~\ref{jmva:sec:experiments}. Technical details are deferred at the end of this chapter, Section \ref{jmva:appendix_proof}.
+Experiments on both simulated and real data are performed in Section~\ref{jmva:sec:experiments}. Technical details are deferred at the end of this chapter, Section~\ref{jmva:appendix_proof}.
 
 \section{Multivariate EVT Framework and Problem Statement}
 \label{jmva:sec:framework}
@@ -422,7 +422,7 @@ $\Phi$, both of them can be used to characterize the asymptotic tail
 dependence of the distribution $\mb F$ (as
 soon as the  margins $F_j$ are known), since   % after each marginal had been standardized in $\mathbf{U}$ or $\mathbf{V}$.
 \begin{align}\label{jmva:eq:integratePhiLambda}
-  \mu \big( [\mb 0,\mathbf{x}^{-1}]^c \big) =  \int_{\boldsymbol{\theta} \in S_{\infty}^{d-1}}   \max_j{\boldsymbol{\theta}_j x_j} \;\ud \Phi(\boldsymbol{\theta}).
+  \mu \big( [\mb 0,\mathbf{x}^{-1}]^c \big) =  \int_{\boldsymbol{\theta} \in S_{\infty}^{d-1}}   \max_j{\theta_j x_j} \;\ud \Phi(\boldsymbol{\theta}).
 \end{align}
 Recall that here and beyond, operators on vectors are understood component-wise, so that $\mb x^{-1}=(x_1^{-1},\ldots,x_d^{_1})$.
 The angular measure can be seen as the asymptotic conditional distribution of the
@@ -957,7 +957,7 @@ The coefficients $(\hatmass(\alpha))_{\alpha\subset\{1,\ldots,d\}}$ related to t
 % \begin{align}
 % R_n(x) = \sum_{\alpha }\hatmass(\alpha) \mathds{1}_{\hat T(x) \in \mathcal{C}_\alpha^\epsilon},
 % \end{align}
-This representation is sparse as soon as the $\mu_n^{\alpha,  \epsilon}$ are positive only for a few groups of features $\alpha$ (compared to the total number of groups or sub-cones, $2^d$ namely). It is  is low-dimensional as soon as each of these groups $\alpha$ is of small cardinality, or equivalently the corresponding sub-cones are low-dimensional compared with $d$.
+This representation is sparse as soon as the $\mu_n(R_\alpha^\epsilon)$ are positive only for a few groups of features $\alpha$ (compared to the total number of groups or sub-cones, $2^d$ namely). It is  is low-dimensional as soon as each of these groups $\alpha$ is of small cardinality, or equivalently the corresponding sub-cones are low-dimensional compared with $d$.
 
 In fact, $\hatmass(\alpha)$ is (up to a normalizing constant) an empirical version of the  conditional probability that $T(\mb X)$ belongs to the rectangle $ r R_\alpha^\epsilon$, given that $\|T(\mb X)\|$ exceeds  a large threshold $r$. Indeed, as explained in Remark~\ref{jmva:rk_approx_mu_n},  
 \begin{align}\label{jmva:eq:interprete_mun_Pcondit}
@@ -1015,7 +1015,7 @@ X_i^j \ge X_{(n-\lfloor  kx_j^{-1} \rfloor +1)}^j ~\Leftrightarrow~
 U_i^j \le U_{(\lfloor kx_j^{-1}\rfloor)}^j~.
 $$
 \end{lemma}
-The proof of Lemma~\ref{jmva:lem:equivalence} is standard and is provided in~\ref{jmva:appendix_proof} for completeness.
+The proof of Lemma~\ref{jmva:lem:equivalence} is standard and is provided in Section~\ref{jmva:appendix_proof} for completeness.
 By Lemma~\ref{jmva:lem:equivalence}, the following alternative expression of $l_n(\mb x)$ holds true:
 \begin{align}\label{jmva:empir-Stdf2}
 l_n(\mb x)=\frac{1}{k} ~\sum_{i=1}^{n} \mathds{1}_{ \{U_i^1 ~\le~ U^1_{([kx_1])} \text{~~or~~} \ldots \text{~~or~~}  U_i^d ~\le~ U^d_{([kx_d])} \}}= \mu_n \left( [\mb 0, \mb x^{-1}]^c \right).
@@ -1102,7 +1102,7 @@ g_{\alpha, \beta}(\mb x, \mb z) = \mu([ R(\mb x^{-1}, \mb z^{-1}, \alpha,~\beta)
 %Similarly to the way the standard tail dependence function $l$ is defined in (\ref{jmva:stdf}), namely $l(\mb x) =\lim_{t \to 0} t^{-1} \tilde F (tx) = \mu([0, \mb x^{-1}]^c)$, we define for $x \in [0, \infty)^{d}$, $z \in [0, \infty]^d$, $\alpha \subset \{1,\ldots,d\} \setminus \emptyset$ and $\beta \subset \{1,\ldots,d\}$ the functionnal 
 %
 The following lemma makes the relation between  $g_{\alpha,\beta}$ and  the angular measure
-$\Phi$ explicit. Its proof is given in~\ref{jmva:appendix_proof}.
+$\Phi$ explicit. Its proof is given in Section~\ref{jmva:appendix_proof}.
 \begin{lemma}
 \label{jmva:lem:g-alpha}
 The function $g_{\alpha, \beta}$ can be represented as follows:
@@ -1171,7 +1171,7 @@ Then there is a universal constant $C$, such that for each $n>0$, with probabili
 \end{align}
 The second term on the right hand side of the inequality is an asymptotic bias term which goes to $0$ as $n \to \infty$ (see Remark~\ref{jmva:rk:bias}).
 \end{proposition}
-The proof follows the same lines as that of Theorem 6 in \cite{COLT15} and is detailed in \ref{jmva:appendix_proof}. Here is the main argument.
+The proof follows the same lines as that of Theorem 6 in \cite{COLT15} and is detailed in Section~\ref{jmva:appendix_proof}. Here is the main argument.
 
 The empirical estimator is based on the empirical measure of `extreme' regions, which are hit only with  low probability. It is thus enough to bound maximal deviations on such low probability regions. The key consists in choosing an adaptive VC class which only covers the latter regions (after standardization to uniform margins), namely a VC class composed of sets of the kind $\frac{k}{n} R(\mb x^{-1}, \mb z^{-1}, \alpha, \beta)^{-1}$. In \cite{COLT15}, VC-type inequalities have been established that incorporate $p$, the probability of hitting the class at all. Applying these inequalities to the particular class of rectangles gives the result.
 
@@ -1294,7 +1294,7 @@ It is then possible to approximate rectangles $R_\alpha^\epsilon$ by the cones $
 % \begin{align*}
 % \Phi(\Omega_\alpha^{\epsilon, 0}) \le \mu(R_\alpha^\epsilon) \le \Phi(\Omega_\alpha^{0, \epsilon}).
 % \end{align*}
-The next result (proved in \ref{jmva:appendix_proof}) is a preliminary step toward a bound on $|\mu(R_\alpha^\epsilon)-\mu(\cone_\alpha)|$. It is easier to use the absolute continuity of $\Phi$ instead of that of $\mu$, since the rectangles $R_\alpha^\epsilon$ are not bounded contrary to the sub-spheres $\Omega_\alpha^{\epsilon, \epsilon'}$. 
+The next result (proved in Section~\ref{jmva:appendix_proof}) is a preliminary step toward a bound on $|\mu(R_\alpha^\epsilon)-\mu(\cone_\alpha)|$. It is easier to use the absolute continuity of $\Phi$ instead of that of $\mu$, since the rectangles $R_\alpha^\epsilon$ are not bounded contrary to the sub-spheres $\Omega_\alpha^{\epsilon, \epsilon'}$. 
 \begin{lemma}
 \label{jmva:lemma_simplex}
 For every $\emptyset \neq \alpha \subset \dd$ and $0 < \epsilon, \epsilon' < 1/2$, we have 
@@ -1409,7 +1409,7 @@ where $\widehat{R_n}(m) = \sum_{i=1}^n \|Z_{n,i} - m\|_{2,\alpha}^2 \mathds{1}_{
 %The remainder of this remark aims at giving an heuristical consistency of considering $\widehat{\mathcal{M}}$ using the alternative definition~\eqref{jmva:eq:optim_pb}.
 \noindent
 Define the non-asymptotic theoretical risk $R_n(m)$ for $m \in \mathbb{R}^{2^d-1}$ by $$R_n(m) = \mathbb{E}\left[ \|Z_n - m\|_{2,\alpha}^2  \Big| \|\frac{k}{n} \mb V_1\|_\infty \ge 1\right]$$
-with $Z_n:=Z_{n,1}$. Then one can show (see~\ref{jmva:appendix_proof}) that $Z_n$, conditionally to the event $\{\|\frac{k}{n} \mb V_1\| \ge 1\}$, converges in distribution to a variable $Z_\infty$ which is a multinomial distribution on $\mathbb{R}^{2^d-1}$ with parameters $(n=1, p_\alpha = \frac{\mu(R_\alpha^\epsilon)}{\mu([\mb 0, \mb 1]^c)}, \alpha \in \{1,\ldots,n\}, \alpha \neq \emptyset)$. In other words, 
+with $Z_n:=Z_{n,1}$. Then one can show (see Section~\ref{jmva:appendix_proof}) that $Z_n$, conditionally to the event $\{\|\frac{k}{n} \mb V_1\| \ge 1\}$, converges in distribution to a variable $Z_\infty$ which is a multinomial distribution on $\mathbb{R}^{2^d-1}$ with parameters $(n=1, p_\alpha = \frac{\mu(R_\alpha^\epsilon)}{\mu([\mb 0, \mb 1]^c)}, \alpha \in \{1,\ldots,n\}, \alpha \neq \emptyset)$. In other words, 
 $$\mathbb{P}(Z_\infty(\alpha) = 1) = \frac{\mu(R_\alpha^\epsilon)}{\mu([\mb 0, \mb 1]^c)}$$ for all $\alpha \in \{1,\ldots,n\}, \alpha \neq \emptyset $, and $\sum_\alpha Z_\infty(\alpha) = 1$.
 Thus $R_n(m)\to R_\infty(m):=\mathbb{E}[\|Z_\infty - m \|_{2,\alpha}^2]$, which is the asymptotic risk. Moreover, the optimization problem
 \begin{align*}
@@ -1505,8 +1505,7 @@ distribution $\mb F$ (\emph{resp.} $F_j$, $j =1,\ldots,d$)  and $\mb
 X_1,.\ldots, \mb X_n \sim \mb F$ is an \iid  sample.
 The first natural step to study the dependence between the margins $X^j$ is to
 standardize them, and the choice of standard Pareto margins (with
-\emph{c.d.f.} 
-$x \mapsto 1/x$) is convenient: Consider thus the $\mb V_i$'s and $\mathbf{\widehat V}_i$'s as defined in Section~\ref{jmva:sec:framework}.
+survival function $x \mapsto 1/x$) is convenient: Consider thus the $\mb V_i$'s and $\mathbf{\widehat V}_i$'s as defined in Section~\ref{jmva:sec:framework}.
 % Since the marginal distributions $F_j$ are unknown, let us use their
 % empirical counterpart $\hat F_j (x) = (1/n) \sum_{i=1}^n \mathds{1}_{X_i^j\le x}$. Denote $\hat V_i = (\hat V_i^1, \ldots,\hat
 % V_i^d)$, $1\le i\le n$ the standardized  variables obtained from a
@@ -1837,7 +1836,7 @@ $D_i^j$'s close to $90$ correspond to  extreme $X_i^j$'s.
 % extreme. % extremes the $90$ degree observations
 Results in
 % Figure~\ref{jmva:fig:wavedata-dim}~and
-Table~\ref{jmva:fig:wavedata-nb-faces}% ($\mu_{total}$ denotes the total probability mass of $\mu$)
+Table~\ref{jmva:fig:wavedata-nb-faces} % ($\mu_{total}$ denotes the total probability mass of $\mu$)
 show that 
 the %dimensions 
 number of  sub-cones $\mathcal{C}_\alpha$ identified by Algorithm~\ref{jmva:DAMEX-algo}
@@ -2042,7 +2041,8 @@ to assign a high abnormality score to these sub-cones (under-estimation of the a
 % too large $\epsilon$. The use of a smaller $\epsilon$ precisely allows
 % to assign a high abnormality score to these subcones, which yields
 % better performances.
-The averaged ROC curves and PR curves for the other datasets are represented in Figures
+
+%The averaged ROC curves and PR curves for the other datasets are represented in Figures
 \begin{table}[!ht]
 \caption{Datasets characteristics}
 \label{jmva:table:data}
@@ -2564,7 +2564,7 @@ Thus,
 &~=~ \sum_{\beta \supsetneq \alpha} \sum_{i_0 \in \beta} ~\int_{\Omega_\alpha^{\epsilon, \epsilon'} \cap \Omega_{\beta,i_0}}  ~\frac{\ud \Phi_{\beta,i_0}}{\ud x_{ \beta \setminus i_0}}(x) ~\ud x_{\beta \setminus i_0}\\
 &~~~~~~~~~~~~~~~~~~~~~-~\sum_{i_0 \in \alpha} ~\int_{\Omega_{\alpha,i_0} \setminus (\Omega_\alpha^{\epsilon, \epsilon'} \cap \Omega_{\alpha,i_0})}  ~\frac{\ud \Phi_{\alpha,i_0}}{\ud x_{ \alpha \setminus i_0}}(x) ~\ud x_{\alpha \setminus i_0},
 \end{align*}
-so that by eq\ref{jmva:eq:supDensity}, 
+so that by \eqref{jmva:eq:supDensity}, 
 \begin{align}
 \label{jmva:pr:decompPhi}
 |\Phi(\Omega_\alpha^{\epsilon, \epsilon'}) - \Phi(\Omega_\alpha)| &~\le~ \sum_{\beta \supsetneq \alpha} M_\beta \sum_{i_0 \in \beta} ~\int_{\Omega_\alpha^{\epsilon, \epsilon'} \cap \Omega_{\beta,i_0}} ~\ud x_{\beta \setminus i_0}\\

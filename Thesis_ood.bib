@@ -1,7 +1,7 @@
-@unpublished{NIPS16evaluation,
+@inproceedings{NIPS16evaluation,
   title={{How to Evaluate the Quality of Unsupervised Anomaly Detection Algorithms?}},
   author={Goix, N. and Thomas,A.},
-  note={To be submitted},
+  booktitle={To be submitted},
   year={2016},
 }
 
@@ -13,18 +13,17 @@
 }
 
 
-@unpublished{OCRF16,
+@inproceedings{OCRF16,
   title={{One Class Splitting Criteria for Random Forests with Application to Anomaly Detection}},
   author={Goix, N. and Brault, R. and Drougard, N. and Chiapino, M.},
-  note={Submitted to AISTATS},
+  booktitle={To be submitted},
   year={2016},
 }
 
 @inproceedings{AISTAT16,
   title={{Sparse Representation of Multivariate Extremes with Applications to Anomaly Ranking}},
   author={Goix, N. and Sabourin, A. and Clémençon, S.},
-  page={75–83},
-  booktitle={Proc. AISTATS},
+  booktitle={AISTAT},
   year={2016},
 }
 
@@ -32,6 +31,7 @@
   TITLE = {{Sparse Representation of Multivariate Extremes}},
   note={NIPS 2015 Workshop on Nonparametric Methods for Large Scale Representation Learning},
   AUTHOR = {Goix, N. and Sabourin, A. and Cl{\'e}men{\c c}on, S.},
+  URL = {http://www.cs.cmu.edu/~andrewgw/accepted.html},
   YEAR = {2015},
   KEYWORDS = {Multivariate Extremes ; Anomaly Detection ; Dimensionality Reduction ; VC theory},
   PDF = {http://www.cs.cmu.edu/~andrewgw/rep/GoiSabCle.pdf},
@@ -40,7 +40,8 @@
 @unpublished{ARXIV16,
   TITLE = {{Sparse Representation of Multivariate Extremes with Applications to Anomaly Detection}},
   AUTHOR = {Goix, N. and Sabourin, A. and Cl{\'e}men{\c c}on, S.},
-  note={In the reviewing process of JMVA},
+  note={Submitted to Journal of Multivariate Analysis},
+  URL = {arXiv:1603.09584},
   YEAR = {2016},
   MONTH = Jul,
 }
@@ -48,23 +49,20 @@
 @inproceedings{COLT15,
   title={{Learning the dependence structure of rare events: a non-asymptotic study}},
   author={Goix, N. and Sabourin, A. and Clémençon, S.},
-  booktitle={Proc. COLT},
-  page={843–860},
+  booktitle={COLT},
   year={2015},
 }
 
 @inproceedings{AISTAT15,
   title={{On Anomaly Ranking and Excess-Mass Curves}},
   author={Goix, N. and Sabourin, A. and Clémençon, S.},
-  booktitle={Proc. AISTATS},
-  page={287–295},
+  booktitle={AISTATS},
   year={2015},
 }
 
 @inproceedings{Thomas2015,
   title={{Calibration of One-Class SVM for MV set estimation}},
   author={Thomas, A. and Feuillard, V. and Gramfort, A.},
-  pages={1--9},
   booktitle={DSAA},
   year={2015},
 }
@@ -73,8 +71,6 @@
   title={{Scikit-learn: Machine learning in Python}},
   author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V. and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P. and Weiss, R. and Dubourg, V. and others},
   journal={JMLR},
-  volume={12},
-  pages={2825--2830},
   year={2011},
 }
 
@@ -94,10 +90,8 @@
 @article{Vanderwalt2011numpy,
   title={The NumPy array: a structure for efficient numerical computation},
   author={Van Der Walt, S. and Colbert, S C and Varoquaux, G.},
-  journal={Comput Sci Eng},
+  journal={Computing in Science \& Engineering},
   year={2011},
-   volume={13},
-  pages={22--30},
 }
 
 @article{Jones2015scipy,
@@ -107,27 +101,16 @@
   year={2015}
 }
 
-@inproceedings{CLEM13,
-author={S. Cl\'emen\c{c}on and J. Jakubowicz},
-year={2013},
-volume={13},
-pages={659--667},
-title={Scoring anomalies: a M-estimation formulation.},
-booktitle={Proc. AISTATS}
-}
+@inproceedings{CLEM13,author={S. Cl\'emen\c{c}on and J. Jakubowicz},year={2013},title={{Scoring anomalies: a M-estimation approach}},booktitle={AISTATS}}
 
-@inproceedings{CLEM14,
-author={S. Cl\'emen\c{c}on and S. Robbiano},
-year={2014},
-title={{Anomaly Ranking as Supervised Bipartite Ranking}},
-page={343-351},
-booktitle={Proc. ICML}}
+@inproceedings{CLEM14,author={S. Cl\'emen\c{c}on and S. Robbiano},year={2014},title={{Anomaly Ranking as Supervised Bipartite Ranking}},booktitle={ICML}}
 
 @article{Clemencon2009Tree,
   title={Tree-based ranking methods},
   author={Cl{\'e}men{\c{c}}on, S. and Vayatis, N.},
-  journal={IEEE Trans Inf Theory},
+  journal={IEEE Transactions on Information Theory},
   volume={55},
+  number={9},
   pages={4316--4336},
   year={2009},
   publisher={IEEE}
@@ -136,8 +119,9 @@ booktitle={Proc. ICML}}
 @article{Clemencon2010,
   title={Overlaying classifiers: a practical approach to optimal scoring},
   author={Cl{\'e}men{\c{c}}on, S. and Vayatis, N.},
-  journal={Constr Approx},
+  journal={Constructive Approximation},
   volume={32},
+  number={3},
   pages={619--648},
   year={2010},
   publisher={Springer}
@@ -158,8 +142,7 @@ author={McDiarmid, Colin},
   author={Janson, S.},
   journal={Contemporary combinatorics},
   year={2002},
-volume = {11},
-publisher={Springer Science \& Business Media}
+  publisher={Springer Science \& Business Media}
 }
 @book{Vapnik74,
   author = {Vapnik, V. and Chervonenkis, A.},
@@ -185,12 +168,14 @@ publisher={Springer Science \& Business Media}
 
 @article{Massart2000,
 author = {Massart, P.},
-journal = {Ann. Fac. Sci. Toulouse},
+journal = {Annales de la faculté des sciences de Toulouse},
 keywords = {chi-square statistics; penalty functions; contrast functions; bounded regression; Poisson inequality; Han's inequality; entropy; histogram},
 language = {eng},
+number = {2},
 pages = {245-303},
 publisher = {Université Paul Sabatier},
 title = {Some applications of concentration inequalities to statistics},
+url = {http://eudml.org/doc/73516},
 volume = {9},
 year = {2000},
 }
@@ -203,9 +188,10 @@ year = {2000},
 }
 
 @article{Anthony93,
-title = {{A result of Vapnik with applications}},
-journal = "Discrete Appl Math ",
+title = "A result of Vapnik with applications ",
+journal = "Discrete Applied Mathematics ",
 volume = "47",
+number = "3",
 pages = "207 - 217",
 year = "1993",
 author = "Anthony, M. and Shawe-Taylor, J.",
@@ -227,8 +213,8 @@ language={English}
 @ARTICLE{BBL05,
 	author={Boucheron, S. and Bousquet, O. and Lugosi, G.},
 	year={2005},
-	title={Theory of Classification: A Survey of Some Recent Advances},
-	journal={ESAIM-PROBAB STAT},
+	title={{{T}heory of {C}lassification: {A} {S}urvey of {S}ome {R}ecent {A}dvances}},
+	journal={ESAIM: Probability and Statistics},
 	volume={9},
 	pages={323--375}
 }
@@ -245,8 +231,9 @@ language={English}
 
 @article{Wellner78,
 year={1978},
-journal={Z WAHRSCHEINLICHKEIT},
+journal={Zeitschrift für Wahrscheinlichkeitstheorie und Verwandte Gebiete},
 volume={45},
+number={1},
 title={Limit theorems for the ratio of the empirical distribution function to the true distribution function},
 publisher={Springer-Verlag},
 author={Wellner, JA.},
@@ -259,6 +246,7 @@ language={English}
   author={Biau, G. and Scornet, E.},
   journal={Test},
   volume={25},
+  number={2},
   pages={197--227},
   year={2016},
   publisher={Springer}
@@ -267,8 +255,9 @@ language={English}
 @article{Biau2008,
   title={Consistency of random forests and other averaging classifiers},
   author={Biau, G. and Devroye, L. and Lugosi, G.},
-  journal={JMLR},
+  journal={Journal of Machine Learning Research},
   volume={9},
+  number={Sep},
   pages={2015--2033},
   year={2008}
 }
@@ -276,7 +265,7 @@ language={English}
 @inproceedings{Blanchard2004,
   title={Oracle bounds and exact algorithm for dyadic classification trees},
   author={Blanchard, G. and Sch{\"a}fer, C. and Rozenholc, Y.},
-  booktitle={Proc. COLT},
+  booktitle={International Conference on Computational Learning Theory},
   pages={378--392},
   year={2004},
   organization={Springer}
@@ -290,19 +279,18 @@ language={English}
   publisher={U.S. Government Printing Office}
 }
 
-
-
-@book{Bishop2006,
- author = {Bishop, C. M},
- title = {Pattern Recognition and Machine Learning},
- year = {2006},
- publisher = {Springer-Verlag New York, Inc.},
-} 
-
+@article{Bishop2006,
+  title={Pattern recognition},
+  author={Bishop, C. M},
+  journal={Machine Learning},
+  volume={128},
+  year={2006}
+}
 
 @book{Friedman2001,
   title={The elements of statistical learning},
   author={Friedman, J. and Hastie, T. and Tibshirani, R.},
+  volume={1},
   year={2001},
   publisher={Springer series in statistics Springer, Berlin}
 }
@@ -311,19 +299,20 @@ language={English}
 author={V. Koltchinskii},
 year={2006},
 title={Local {R}ademacher complexities and oracle inequalities in risk minimization (with discussion)},
-journal={Ann. Stat.},
+journal={The Annals of Statistics},
 volume={34},
 pages={2593--2706}
 }
 
-@article{Kolt97,author={V. Koltchinskii},year={1997},title={M-estimation, convexity and quantiles},journal={Ann. Stat.},volume={25}, pages={435--477}}
+@article{Kolt97,author={V. Koltchinskii},year={1997},title={M-estimation, convexity and quantiles},journal={The Annals of Statistics},volume={25}, pages={435--477}}
 
 
 @article{Scholkopf2001,
   title={Estimating the support of a high-dimensional distribution},
   author={Sch{\"o}lkopf, B. and Platt, J.C and Shawe-Taylor, J. and Smola, A.J and Williamson, R.C},
-  journal={Neural Comput.},
+  journal={Neural computation},
   volume={13},
+  number={7},
   pages={1443--1471},
   year={2001},
   publisher={MIT Press}
@@ -334,46 +323,28 @@ pages={2593--2706}
   author={Tax, D.MJ and Duin, R.PW},
   journal={JMLR},
   year={2002},
-  volume={2},
-  pages={155--173},
 }
 
 @article{Scott2006,
   title={Learning minimum volume sets},
   author={Scott, C.D and Nowak, R.D},
-  journal={JMLR},
+  journal={The Journal of Machine Learning Research},
   volume={7},
   pages={665--704},
   year={2006},
   publisher={JMLR. org}
 }
-@article{Polonik97,
-author={W. Polonik},
-year={1997},
-title={{Minimum volume sets and generalized quantile processes}},
-journal={Stochastic Processes and their Applications},
-  volume={69},
-  pages={1--24}
-}
-
-@article{Polonik95,
-author={W. Polonik},
-year={1995},
-title={{Measuring Mass Concentrations and Estimating Density Contour Cluster-An excess Mass Approach}},
-journal={Ann. Stat.},
-pages = {855-881},
-volume = {23}
-}
+@article{Polonik97,author={W. Polonik},year={1997},title={{Minimum volume sets and generalized quantile processes}},journal={Stochastic Processes and their Applications}}
+@article{Polonik95,author={W. Polonik},year={1995},title={{Measuring Mass Concentrations and Estimating Density Contour Cluster-An excess Mass Approach}},journal={The Annals of Statistics}}
 
 @article{Polonik1998,
 author = "Polonik, W.",
-journal = "Ann. Stat.",
+journal = "The Annals of Statistics",
 publisher = "The Institute of Mathematical Statistics",
 title = "The silhouette, concentration functions and ML-density estimation
 		 under order restrictions",
-year = "1998",
- pages = {1857-1877},
- volume = {26},
+volume = "26",
+year = "1998"
 }
 
 
@@ -387,30 +358,23 @@ year = "1998",
 @article{Steinwart2005,
   title={A classification framework for anomaly detection},
   author={Steinwart, I. and Hush, D. and Scovel, C.},
-  journal={JMLR},
+  journal={Journal of Machine Learning Research},
   volume={6},
+  number={Feb},
   pages={211--232},
   year={2005}
 }
 
-@Comment SHS05 -> Steinwart2005 !!!
+@article{VertVert,author={J.P. Vert and R. Vert},year={2006},title={Consistency and Convergence Rates of One-Class SVMs and Related Algorithms},journal={JMLR},volume={6},pages={828--835}}
 
-@article{VertVert,author={J.-P. Vert and R. Vert},year={2006},title={Consistency and Convergence Rates of One-Class SVMs and Related Algorithms},journal={JMLR},volume={6},pages={828--835}}
-
-
-@inproceedings{VCTWMS,
-author={K. Viswanathan and L. Choudur and V. Talwar and C. Wang and G. Macdonald and W. Satterfield},
-booktitle={2012 IEEE Network Operations and Management Symposium}, 
-title={Ranking anomalies in data centers}, 
-year={2012}, 
-pages={79-87}, 
-}
+@inproceedings{VCTWMS, author={K. Viswanathan and L. Choudur and V. Talwar and C. Wang and G. Macdonald and W. Satterfield}, title={Ranking Anomalies in Data Centers}, year={2012}, pages={79--87},publisher={IEEE},editor={R.D.James},booktitle={Network Operations and System Management}}
 
 @article{Hartigan1987,
   title={Estimation of a convex density contour in two dimensions},
   author={Hartigan, J.A.},
-  journal={JASA},
+  journal={Journal of the American Statistical Association},
   volume={82},
+  number={397},
   pages={267--270},
   year={1987},
   publisher={Taylor \& Francis}
@@ -419,8 +383,9 @@ pages={79-87},
 @article{Muller1991,
   title={Excess mass estimates and tests for multimodality},
   author={M{\"u}ller, D.W. and Sawitzki, G.},
-  journal={JASA},
+  journal={Journal of the American Statistical Association},
   volume={86},
+  number={415},
   pages={738--746},
   year={1991},
   publisher={Taylor \& Francis}
@@ -432,12 +397,13 @@ publisher = {Springer},
 year = {1969}
 }
 
+@article{SHS05,author={I. Steinwart and D. Hush and C. Scovel},year={2005},title={A classification framework for anomaly detection},journal={Journal of Machine Learning Research},volume={6},pages={211--232}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% plug-in level set estimation  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @article{Cuevas1997,
   title={A plug-in approach to support estimation},
   author={Cuevas, A. and Fraiman, R.},
-  journal={Ann. Stat.},
+  journal={The Annals of Statistics},
   pages={2300--2312},
   year={1997},
   publisher={JSTOR}
@@ -448,6 +414,7 @@ year = {1969}
   author={Baillo, A.},
   journal={Statistics \& probability letters},
   volume={65},
+  number={4},
   pages={411--417},
   year={2003},
   publisher={Elsevier}
@@ -458,6 +425,7 @@ year = {1969}
   author={Baillo, A. and Cuesta-Albertos, J. A and Cuevas, A.},
   journal={Statistics \& probability letters},
   volume={53},
+  number={1},
   pages={27--35},
   year={2001},
   publisher={Elsevier}
@@ -466,8 +434,9 @@ year = {1969}
 @article{Tsybakov1997,
   title={On nonparametric estimation of density level sets},
   author={Tsybakov, A. B.},
-  journal={Ann. Stat.},
+  journal={The Annals of Statistics},
   volume={25},
+  number={3},
   pages={948--969},
   year={1997},
   publisher={Institute of Mathematical Statistics}
@@ -476,8 +445,9 @@ year = {1969}
 @article{Cadre2006,
   title={Kernel estimation of density level sets},
   author={Cadre, B.},
-  journal={JMVA},
+  journal={Journal of multivariate analysis},
   volume={97},
+  number={4},
   pages={999--1023},
   year={2006},
   publisher={Elsevier}
@@ -488,7 +458,6 @@ year = {1969}
   author={Rigollet, P. and Vert, R.},
   journal={Bernoulli},
   pages={1154--1178},
-  volume={15},
   year={2009},
   publisher={JSTOR}
 }
@@ -498,27 +467,27 @@ year = {1969}
   author={Mason, D. M. and Polonik, W.},
   journal={The Annals of Applied Probability},
   volume={19},
+  number={3},
   pages={1108--1142},
   year={2009},
   publisher={Institute of Mathematical Statistics}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Random Forest %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 @article{Breiman2001,
-  title={Random forests},
-  author={Breiman, L.},
-  journal={Machine learning},
-  volume={45},
-  pages={5--32},
-  year={2001},
-  publisher={Springer}
+year={2001},
+issn={0885-6125},
+journal={Machine Learning},
+title={Random Forests},
+publisher={Kluwer Academic Publishers},
+author={Breiman, L.},
+language={English}
 }
 
 @incollection{Louppe2013,
 title = {Understanding variable importances in forests of randomized trees},
 author = {Louppe, G. and Wehenkel, L. and Sutera, A. and Geurts, P.},
-booktitle = {Adv NIPS},
+booktitle = {Advances in Neural Information Processing Systems 26},
 editor = {C.J.C. Burges and L. Bottou and M. Welling and Z. Ghahramani and K.Q. Weinberger},
 year = {2013},
 publisher = {Curran Associates, Inc.},
@@ -529,8 +498,6 @@ publisher = {Curran Associates, Inc.},
   author={Shannon, C. E.},
   journal={ACM SIGMOBILE MC2R},
   year={2001},
-    volume={5},
-  pages={3--55},
 }
 
 @article{Gini1912,
@@ -545,8 +512,6 @@ publisher = {Curran Associates, Inc.},
   title={Extremely randomized trees},
   author={Geurts, P. and Ernst, D. and Wehenkel, L.},
   journal={Machine learning},
-  volume={63},
-  pages={3--42},
   year={2006},
   publisher={Springer}
 }
@@ -564,44 +529,34 @@ author={Désir, C. and Bernard, S. and Petitjean, C. and Heutte, L.},
   author={Shi, T. and Horvath, S.},
   journal={J. Comp. Graph. Stat.},
   year={2012},
-  volume={15},
-  page={118-138},
 }
 
 @inproceedings{Flach2003,
-  title={{The geometry of ROC space: understanding ML metrics through ROC isometrics}},
+  title={The geometry of ROC space: understanding ml metrics through ROC isometrics},
   author={Flach, P.A.},
-  booktitle={Proc. ICML},
+  booktitle={ICML},
   year={2003}
 }
-
 
 @article{Ho1998,
   title={The random subspace method for constructing decision forests},
   author={Ho, T.K.},
-  journal={IEEE transactions on pattern analysis and machine intelligence},
-  volume={20},
-  pages={832--844},
+  journal={TPAMI},
   year={1998},
+  publisher={IEEE}
 }
-
 
 @article{Amit1997,
   title={Shape quantization and recognition with randomized trees},
   author={Amit, Y. and Geman, D.},
-  journal={Neural Comput.},
-  volume={9},
-  pages={1545--1588},
+  journal={Neural comp.},
   year={1997},
-  publisher={MIT Press}
 }
 
 @book{Panov2007,
   title={Combining bagging and random subspaces to create better ensembles},
-  booktitle={International Symposium on Intelligent Data Analysis},
   author={Panov, P. and D{\v{z}}eroski, S.},
   year={2007},
-  pages={118--129},
   publisher={Springer}
 }
 
@@ -610,8 +565,6 @@ author={Désir, C. and Bernard, S. and Petitjean, C. and Heutte, L.},
   author={Svetnik, V. and Liaw, A. and Tong, C. and Culberson, J C. and Sheridan, R.P and Feuston, B.P},
   journal={J. Chem. Inf. Model.},
   year={2003},
-    volume={43},
-  pages={1947--1958},
 }
 
 @article{Diaz2006,
@@ -626,8 +579,6 @@ author={Désir, C. and Bernard, S. and Petitjean, C. and Heutte, L.},
   title={Variable selection using random forests},
   author={Genuer, R. and Poggi, J.-M. and Tuleau-Malot, C.},
   journal={Pattern Recog. Letters},
-  volume={31},
-  pages={2225--2236},
   year={2010},
   publisher={Elsevier}
 }
@@ -641,8 +592,7 @@ author={Désir, C. and Bernard, S. and Petitjean, C. and Heutte, L.},
 
 @article{Louppe2014,
   title={Understanding random forests: From theory to practice},
-note={PhD Thesis},
-booktitle={PhD thesis},
+  booktitle={PhD thesis},
   author={Louppe, G.},
   journal={arXiv:1407.7502},
   year={2014}
@@ -652,8 +602,9 @@ booktitle={PhD thesis},
 @article{Fougeres2015,
   title={Bias correction in multivariate extremes},
   author={Fougeres, A.-L. and De Haan, L. and Mercadier, C.},
-  journal={Ann. Stat.},
+  journal={The Annals of Statistics},
   volume={43},
+  number={2},
   pages={903--934},
   year={2015},
   publisher={Institute of Mathematical Statistics}
@@ -663,25 +614,20 @@ booktitle={PhD thesis},
 @Comment   title={Bias-corrected estimation of stable tail dependence function},
 @Comment   author={Beirlant, J. and Escobar-Bach, M. and Goegebeur, Y. and Guillou, A.}
 @Comment }
-
 @article{Beirlant2015,
-  title={Bias-corrected estimation of stable tail dependence function},
-  author={Beirlant, J. and Escobar-Bach, M. and Goegebeur, Y. and Guillou, A.},
-  journal={JMVA},
-  volume={143},
-  pages={453--466},
-  year={2016},
-  publisher={Elsevier}
+  title = {Bias-corrected estimation of stable tail dependence function},
+  author = {Beirlant, J. and Escobar-Bach, M. and Goegebeur, Y. and Guillou, A.},
+  journal = {https://hal.archives-ouvertes.fr/hal-01115538},
+  year = {2015},
+  month ={Feb}
 }
-
-
-@article{Embrechts2000,
-  title={Modelling multivariate extremes},
-  author={Embrechts, P. and de Haan, L. and Huang, X.},
-  journal={Extremes and integrated risk management},
-  pages={59--67},
-  year={2000},
-  publisher={Risk Waters Group}
+@ARTICLE {Embrechts2000,
+    author  = "Embrechts, P. and de Haan, L. and Huang, X.",
+    title   = "Modelling Multivariate Extremes",
+    journal = "Extremes and Integrated Risk Management (Ed. P. Embrechts)",
+    year    = "2000",
+    volume  = "RISK Books",
+    number  = "59-67",
 }
 
 @article{Stephenson2003,
@@ -689,6 +635,7 @@ booktitle={PhD thesis},
   author={Stephenson, A.},
   journal={Extremes},
   volume={6},
+  number={1},
   pages={49--59},
   year={2003},
   publisher={Springer}
@@ -700,6 +647,7 @@ booktitle={PhD thesis},
   author={Stephenson, A.G.},
   journal={Australian \& New Zealand Journal of Statistics},
   volume={51},
+  number={1},
   pages={77--88},
   year={2009},
   publisher={Wiley-Blackwell}
@@ -711,6 +659,7 @@ booktitle={PhD thesis},
   author={Tawn, JA},
   journal={Biometrika},
   volume={77},
+  number={2},
   pages={245--253},
   year={1990},
   publisher={Biometrika Trust}
@@ -720,26 +669,30 @@ booktitle={PhD thesis},
 @article{Drees98,
  author = {Drees, H. and Huang, X.},
  title = {Best Attainable Rates of Convergence for Estimators of the Stable Tail Dependence Function},
- journal = {JMVA},
+ journal = {J. Multivar. Anal.},
+ issue_date = {Jan., 1998},
  volume = {64},
+ number = {1},
+ month = jan,
  year = {1998},
  pages = {25--47},
+ publisher = {Academic Press, Inc.},
+ address = {Orlando, FL, USA},
 } 
 
 @article{Einmahl1992,
   title={Generalized quantile processes},
   author={Einmahl, J. HJ and Mason, D. M},
-  journal={Ann. Stat.},
+  journal={The Annals of Statistics},
   pages={1062--1078},
   year={1992},
-  volume = "20",
   publisher={JSTOR}
 }
 
 @article{Einmahl2012,
 author = "Einmahl, J. H. J. and Krajina, A. and Segers, J.",
-fjournal = "Ann. Stat.",
-journal = "Ann. Stat.",
+fjournal = "The Annals of Statistics",
+journal = "Ann. Statist.",
 pages = "1764--1793",
 publisher = "The Institute of Mathematical Statistics",
 title = "An M-estimator for tail dependence in arbitrary dimensions",
@@ -750,8 +703,9 @@ year = "2012"
 @article{ELL2009,
 author = {Einmahl, J. H. J. and Li, J. and Liu, R. Y.},
 title = {Thresholding Events of Extreme in Simultaneous Monitoring of Multiple Risks},
-journal = {JASA},
+journal = {Journal of the American Statistical Association},
 volume = {104},
+number = {487},
 pages = {982-992},
 year = {2009},
 }
@@ -759,7 +713,10 @@ year = {2009},
 
 @article{Hill1975,
 author = "Hill, B. M.",
-journal = "Ann. Stat.",
+fjournal = "The Annals of Statistics",
+journal = "Ann. Statist.",
+month = "09",
+number = "5",
 pages = "1163--1174",
 publisher = "The Institute of Mathematical Statistics",
 title = "A Simple General Approach to Inference About the Tail of a Distribution",
@@ -769,8 +726,10 @@ year = "1975"
 
 @article{Smith1987,
 author = "Smith, R. L.",
-journal = "Ann. Stat.",
+fjournal = "The Annals of Statistics",
+journal = "Ann. Statist.",
 month = "09",
+number = "3",
 pages = "1174--1207",
 publisher = "The Institute of Mathematical Statistics",
 title = "Estimating Tails of Probability Distributions",
@@ -782,8 +741,9 @@ year = "1987"
 @article{BVT1996,
 author = {Beirlant, J. and Vynckier, P. and Teugels, J. L.},
 title = {Tail Index Estimation, Pareto Quantile Plots Regression Diagnostics},
-journal = {JASA},
+journal = {Journal of the American Statistical Association},
 volume = {91},
+number = {436},
 pages = {1659-1667},
 year = {1996},
 }
@@ -793,6 +753,7 @@ year = {1996},
   author={Girard, S.},
   journal={Communications in Statistics-Theory and Methods},
   volume={33},
+  number={2},
   pages={205--234},
   year={2004},
   publisher={Taylor \& Francis}
@@ -801,8 +762,9 @@ year = {1996},
 @article{Boucheron2015,
   title={Tail index estimation, concentration and adaptivity},
   author={Boucheron, S. and Thomas, M.},
-  journal={EJS},
+  journal={Electronic Journal of Statistics},
   volume={9},
+  number={2},
   pages={2751--2792},
   year={2015},
   publisher={The Institute of Mathematical Statistics and the Bernoulli Society}
@@ -811,8 +773,9 @@ year = {1996},
 @article{Boucheron2012,
   title={Concentration inequalities for order statistics},
   author={Boucheron, S. and Thomas, M.},
-  journal={Electron. Commun. Probab.},
+  journal={Electronic Communications in Probability},
   volume={17},
+  number={51},
   pages={1--12},
   year={2012},
   publisher={The Institute of Mathematical Statistics and the Bernoulli Society}
@@ -822,13 +785,15 @@ year = {1996},
   title={Concentration results on extreme value theory},
   author={Thomas, M.},
   year={2015},
-  school={Universit{\'e} Paris Diderot Paris 7}
+  school={Univerist{\'e} Paris Diderot Paris 7}
 }
 
 @article{DEd1989,
 author = "Dekkers, A. L. M. and Einmahl, J. H. J. and de Haan, L. ",
-journal = "Ann. Stat.",
+fjournal = "The Annals of Statistics",
+journal = "Ann. Statist.",
 month = "12",
+number = "4",
 pages = "1833--1855",
 publisher = "The Institute of Mathematical Statistics",
 title = "A Moment Estimator for the Index of an Extreme-Value Distribution",
@@ -839,8 +804,9 @@ year = "1989"
 
 @article{dR1977,
 year={1977},
-journal={Z WAHRSCHEINLICHKEIT},
+journal={Zeitschrift für Wahrscheinlichkeitstheorie und Verwandte Gebiete},
 volume={40},
+number={4},
 title={Limit theory for multivariate sample extremes},
 publisher={Springer-Verlag},
 author={de Haan, L. and Resnick, S.I.},
@@ -855,10 +821,9 @@ language={English}
 	Year = {1987}
 }
 
-
 @book{Resnick2007,
   title={Heavy-tail phenomena: probabilistic and statistical modeling},
-  author={Resnick, S.},
+  author={Resnick, Sidney},
   year={2007},
   publisher={Springer Science \& Business Media}
 }
@@ -866,7 +831,10 @@ language={English}
 
 @article{Einmahl2006,
 author = "Einmahl, J. H. J. and de Haan, L. and Li, D.",
-journal = "Ann. Stat.",
+fjournal = "The Annals of Statistics",
+journal = "Ann. Statist.",
+month = "08",
+number = "4",
 pages = "1987--2014",
 publisher = "The Institute of Mathematical Statistics",
 title = "Weighted approximations of tail copula processes with application to testing the bivariate extreme value condition",
@@ -878,7 +846,7 @@ year = "2006"
 @article{deHaan1996,
   title={Second-order regular variation and rates of convergence in extreme-value theory},
   author={de Haan, L. and Resnick, S.},
-  journal={Ann. Prob},
+  journal={The Annals of Probability},
   pages={97--124},
   year={1996},
   publisher={JSTOR}
@@ -886,39 +854,43 @@ year = "2006"
 
 
 @book{dHF06,
-  title={Extreme value theory: an introduction},
-  author={De Haan, L. and Ferreira, A.},
-  year={2007},
-  publisher={Springer Science \& Business Media}
-}
-
-
+ author               = {de Haan, L. and Ferreira, A.},
+ note                 = {An introduction},
+ publisher            = {Springer},
+ series               = {Springer Series in Operations Research and Financial Engineering},
+ title                = {Extreme value theory},
+ year                 = {2006},
+ }
+ 
+ 
 @book{BGTS04,
-  title={Statistics of extremes: theory and applications},
-  author={Beirlant, J. and Goegebeur, Y. and Segers, J. and Teugels, J.},
-  year={2006},
-  publisher={John Wiley \& Sons}
+ author               = {Beirlant, J. and Goegebeur, Y. and Teugels, J. and Segers, J.},
+ publisher            = {Wiley},
+ series               = {Wiley Series in Probability and Statistics},
+ title                = {Statistics of Extremes: Theory and Applications},
+ year                 = {2004},
 }
  
 
 @book{Coles2001,
-  title={An introduction to statistical modeling of extreme values},
-  author={Coles, S. and Bawa, J. and Trenner, L. and Dorazio, P.},
-  volume={208},
-  year={2001},
-  publisher={Springer}
+  address = {London},
+  author = {Coles, S.},
+  publisher = {Springer-Verlag},
+  series = {Springer Series in Statistics},
+  title = {An introduction to statistical modeling of extreme values},
+  year = 2001
 }
 
 @article{Leadbetter1983,
   title={Extremes and related properties of random sequences and processes},
-  author={Leadbetter, M R. and Lindgren, G. and Rootz{\'e}n, H.},
+  author={Leadbetter, M Ross and Lindgren, Georg and Rootz{\'e}n, H.},
   journal={Springer Series in Statistics},
   year={1983},
   publisher={Springer}
 }
 
 @article{coles1991modeling,
-	Author = {Coles, S. and Tawn, J.A},
+	Author = {Coles, SG and Tawn, JA},
 	Journal = {JR Statist. Soc. B},
 	Pages = {377--392},
 	Title = {Modeling extreme multivariate events},
@@ -930,8 +902,9 @@ year = "2006"
 @article{cooley2010pairwise,
   title={The pairwise beta distribution: A flexible parametric multivariate model for extremes},
   author={Cooley, D. and Davis, R.A. and Naveau, P.},
-  journal={JMVA},
+  journal={Journal of Multivariate Analysis},
   volume={101},
+  number={9},
   pages={2103--2117},
   year={2010},
   publisher={Elsevier}
@@ -942,6 +915,7 @@ year = "2006"
 year={1997},
 journal={Acta Mathematicae Applicatae Sinica},
 volume={13},
+number={2},
 title={Almost sure convergence of the stable tail empirical dependence function in multivariate extreme statistics},
 publisher={Springer-Verlag},
 keywords={Multivariate extreme value; stable tail empirical dependence function; almost sure convergence},
@@ -949,9 +923,9 @@ author={Qi, Y.},
 pages={167-175},
 }
 
-@article{Huangphd,
+@misc{Huangphd,
    title = "Statistics of Bivariate Extreme Values",
-   journal={PhD thesis},
+   booktitle={PhD thesis},
    author = "Huang, X.",
    publisher = "Erasmus University",
    address = "Rotterdam",
@@ -960,12 +934,9 @@ pages={167-175},
 
 @article{sabourinNaveau2012,
 title = "Bayesian Dirichlet mixture model for multivariate extremes: A re-parametrization ",
-journal = "Comput. Stat. Data Anal.",
+journal = "Computational Statistics \& Data Analysis ",
 author = "A. Sabourin and P. Naveau",
-volume={71},
-pages={542--567},
-year={2014},
-publisher={Elsevier}
+year = "2012"
 }
 
 
@@ -974,6 +945,7 @@ publisher={Elsevier}
   author={Foug{\`e}res, A-L. and Nolan, J. P and Rootz{\'e}n, H},
   journal={Scandinavian Journal of Statistics},
   volume={36},
+  number={1},
   pages={42--59},
   year={2009},
   publisher={Wiley Online Library}
@@ -990,6 +962,7 @@ publisher={Elsevier}
   author = {Segers, J.},
   journal = {REVSTAT - Statistical Journal},
   keywords = {Extremes Extremes:multivariate maxstable},
+  number = 1,
   pages = {61--82},
   title = {Max-stable models for multivariate extremes},
   volume = 10,
@@ -999,6 +972,7 @@ publisher={Elsevier}
 author = "Segers, J.",
 journal = "Bernoulli",
 month = "08",
+number = "3",
 pages = "764--782",
 publisher = "Bernoulli Society for Mathematical Statistics and Probability",
 title = "Asymptotics of empirical copula processes under non-restrictive smoothness assumptions",
@@ -1006,14 +980,11 @@ volume = "18",
 year = "2012"
 }
 
-
 @article{smith2003statistics,
-  title={Statistics of extremes, with applications in environment, insurance and finance},
-  author={Smith, R.L},
-  journal={Extreme values in finance, telecommunications and the environment},
-  pages={1--78},
-  year={2003},
-  publisher={Chapman and Hall/CRC Press: London}
+  title={Statistics of extremes, with applications in environment, insurance and finance, chap 1},
+  author={Smith, RL},
+  journal={Statistical analysis of extreme values: with applications to insurance, finance, hydrology, and other fields. Birkh{\"a}user, Basel},
+  year={2003}
 }
 
 @book{Falk94,
@@ -1028,8 +999,7 @@ year = "2012"
 @article{Einmahl2009,
   title={Maximum empirical likelihood estimation of the spectral measure of an extreme-value distribution},
   author={Einmahl, J. H. J. and Segers, J.},
-  journal={Ann. Stat.},
-  volume = "37",
+  journal={The Annals of Statistics},
   pages={2953--2989},
   year={2009},
   publisher={JSTOR}
@@ -1038,9 +1008,8 @@ year = "2012"
 @article{Einmahl2001,
   title={Nonparametric estimation of the spectral measure of an extreme value distribution},
   author={Einmahl, J. HJ and de Haan, L. and Piterbarg, V. I},
-  journal={Ann. Stat.},
+  journal={Annals of Statistics},
   pages={1401--1423},
-  volume = "29",
   year={2001},
   publisher={JSTOR}
 }
@@ -1053,7 +1022,7 @@ year = "2012"
 @article{Chernozhukov2005,
   title={Extremal quantile regression},
   author={Chernozhukov, V.},
-  journal={Ann. Stat.},
+  journal={Annals of Statistics},
   pages={806--839},
   year={2005},
   publisher={JSTOR}
@@ -1062,8 +1031,9 @@ year = "2012"
 @article{Beirlant2004,
   title={Local polynomial maximum likelihood estimation for Pareto-type distributions},
   author={Beirlant, J. and Goegebeur, Y.},
-  journal={JMVA},
+  journal={Journal of Multivariate Analysis},
   volume={89},
+  number={1},
   pages={97--118},
   year={2004},
   publisher={Elsevier}
@@ -1072,8 +1042,9 @@ year = "2012"
 @article{Gardes2008,
   title={A moving window approach for nonparametric estimation of the conditional tail index},
   author={Gardes, L. and Girard, S.},
-  journal={JMVA},
+  journal={Journal of Multivariate Analysis},
   volume={99},
+  number={10},
   pages={2368--2388},
   year={2008},
   publisher={Elsevier}
@@ -1082,8 +1053,9 @@ year = "2012"
 @article{Gardes2010,
   title={Functional nonparametric estimation of conditional extreme quantiles},
   author={Gardes, L. and Girard, S. and Lekina, A.},
-  journal={JMVA},
+  journal={Journal of Multivariate Analysis},
   volume={101},
+  number={2},
   pages={419--433},
   year={2010},
   publisher={Elsevier}
@@ -1094,6 +1066,7 @@ year = "2012"
   author={Girard, S. and Menneteau, L.},
   journal={Journal of Statistical Planning and Inference},
   volume={135},
+  number={2},
   pages={433--460},
   year={2005},
   publisher={Elsevier}
@@ -1102,8 +1075,9 @@ year = "2012"
 @article{Girard2008,
   title={Frontier estimation via kernel regression on high power-transformed data},
   author={Girard, S. and Jacob, P.},
-  journal={JMVA},
+  journal={Journal of Multivariate Analysis},
   volume={99},
+  number={3},
   pages={403--420},
   year={2008},
   publisher={Elsevier}
@@ -1115,6 +1089,7 @@ year = "2012"
   author={Daouia, A. and Gardes, L. and Girard, S. and Lekina, A.},
   journal={Test},
   volume={20},
+  number={2},
   pages={311--333},
   year={2011},
   publisher={Springer}
@@ -1125,6 +1100,7 @@ year = "2012"
   author={Daouia, A. and Gardes, L. and Girard, S.},
   journal={Bernoulli},
   volume={19},
+  number={5B},
   pages={2557--2589},
   year={2013},
   publisher={Bernoulli Society for Mathematical Statistics and Probability}
@@ -1136,30 +1112,40 @@ year = "2012"
 
 @ARTICLE{Roberts99,
 author={Roberts, S.J.},
-journal={IEE P-VIS IMAGE SIGN},
+journal={Vision, Image and Signal Processing, IEE Proceedings -},
 title={Novelty detection using extreme value statistics},
 year={1999},
 month={Jun},
 volume={146},
+number={3},
 pages={124-129},
 }
 
+@INPROCEEDINGS{Roberts2000,
+author={Roberts, S.J.},
+booktitle={Advances in Medical Signal and Information Processing, 2000. First International Conference on (IEE Conf. Publ. No. 476)},
+title={Extreme value statistics for novelty detection in biomedical signal processing},
+year={2000},
+month={},
+pages={166-172},
 
-@article{Roberts2000,
-  title={Extreme value statistics for novelty detection in biomedical data processing},
-  author={Roberts, S.J},
-  journal={IEE P-SCI MEAS TECH},
-  volume={147},
-  pages={363--367},
-  year={2000},
-  publisher={IET}
 }
 
+@article{Clifton2011,
+  title={Novelty detection with multivariate extreme value statistics},
+  author={Clifton, D. A. and Hugueny, S. and Tarassenko, L.},
+  journal={Journal of signal processing systems},
+  volume={65},
+  number={3},
+  pages={371--389},
+  year={2011},
+  publisher={Springer}
+}
 
 @inproceedings{Lee2008,
   title={On-line novelty detection using the Kalman filter and extreme value theory},
   author={Lee, H.J. and Roberts, S.J.},
-  booktitle={ICPR},
+  booktitle={Pattern Recognition, 2008. ICPR 2008. 19th International Conference on},
   pages={1--4},
   year={2008},
 }
@@ -1167,18 +1153,9 @@ pages={124-129},
 @inproceedings{Clifton2008,
   title={Bayesian extreme value statistics for novelty detection in gas-turbine engines},
   author={Clifton, D.A. and Tarassenko, L. and McGrogan, N. and King, D. and King, S. and Anuzis, P.},
-  booktitle={AEROSP CONF PROC},
+  booktitle={Aerospace Conference, 2008 IEEE},
   pages={1--11},
   year={2008},
-}
-@article{Clifton2011,
-  title={Novelty detection with multivariate extreme value statistics},
-  author={Clifton, D. A. and Hugueny, S. and Tarassenko, L.},
-  journal={J Signal Process Syst.},
-  volume={65},
-  pages={371--389},
-  year={2011},
-  publisher={Springer}
 }
 
 @article{Broadwater2010,
@@ -1186,6 +1163,7 @@ pages={124-129},
   author={Broadwater, J.B. and Chellappa, R.},
   journal={Signal Processing, IEEE Transactions on},
   volume={58},
+  number={2},
   pages={490--500},
   year={2010},
   publisher={IEEE}
@@ -1194,14 +1172,11 @@ pages={124-129},
 
 
 %surveys:
-
-@Article{Hodge2004survey,
+@article{Hodge2004survey,
   title={A survey of outlier detection methodologies},
   author={Hodge, V.J. and Austin, J.},
-  journal={Artif. Intell. Review},
+  journal={Artif. Intel. Review},
   year={2004},
-volume="22",
-pages="85--126",
   publisher={Springer}
 }
 
@@ -1224,20 +1199,17 @@ pages="85--126",
 @article{Patcha2007survey,
   title={An overview of anomaly detection techniques: Existing solutions and latest technological trends},
   author={Patcha, A. and Park, J.M.},
-  journal={COMPUT NETW},
+  journal={Computer Networks},
   year={2007},
-  volume={51},
-  pages={3448--3470},
   publisher={Elsevier}
 }
 
 %statistical approaches:
 
-
-
 @book{Barnett94,
   title={Outliers in statistical data},
   author={Barnett, V. and Lewis, T.},
+  volume={3},
   year={1994},
   publisher={Wiley New York}
 }
@@ -1248,30 +1220,29 @@ pages="85--126",
   year={1980},
   publisher={Springer}
 }
-
 @inproceedings{Eskin2000,
   title={Anomaly Detection over Noisy Data using Learned Probability Distributions},
   author={Eskin, E.},
-  booktitle={Proc. ICML},
-  pages = {255--262},
+  booktitle={ICML},
   year={2000},
 }
 
-
-@inproceedings{Desforges1998,
-    author = {Desforges, M. J. and Jacob, P. J. and Cooper, J. E.},
-    booktitle = {Proc. Inst. Mech. Eng.},
-    pages = {687--703},
-    title = {{Applications of probability density estimation to the detection of abnormal conditions in engineering}},
-    volume = {212},
-    year = {1998}
+@article{Desforges1998,
+  title={Applications of probability density estimation to the detection of abnormal conditions in engineering},
+  author={Desforges, M.J. and Jacob, P.J. and Cooper, J.E.},
+  journal={Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering Science},
+  volume={212},
+  number={8},
+  pages={687--703},
+  year={1998},
+  publisher={SAGE Publications}
 }
 
 % distance-based algo (part of kNN approaches)
 @inproceedings{Knorr98,
   title={Algorithms for mining distance-based outliers in large datasets},
   author={Knorr, E.M. and Ng, R.T.},
-  booktitle={Proc. VLDB Endowment},
+  booktitle={Proceedings of the International Conference on Very Large Data Bases},
   pages={392--403},
   year={1998},
 }
@@ -1286,30 +1257,31 @@ pages="85--126",
 
 
 % local-density-based: (part of kNN approaches)
-
 @inproceedings{Breunig2000LOF,
   title={{LOF: identifying density-based local outliers}},
   author={Breunig, M.M. and Kriegel, H.P. and Ng, R.T. and Sander, J.},
-  booktitle={SIGMOD REC},
-  volume={29},
-  pages={93--104},
+  booktitle={ACM sigmod record},
   year={2000},
 }
-
 @inproceedings{Bay2003,
   title={Mining distance-based outliers in near linear time with randomization and a simple pruning rule},
   author={Bay, S. and Schwabacher, M.},
-  booktitle={Proc. of KDD},
-  pages={29--38},
+  booktitle={KDD},
   year={2003},
 }
 
-@Comment Breunig99LOF -> Breunig2000LOF !!!
+@incollection{Breunig99LOF,
+  title={{Optics-of: Identifying local outliers}},
+  author={Breunig, M.M. and Kriegel, H.P. and Ng, R.T. and Sander, J.},
+  booktitle={Principles of data mining and knowledge discovery},
+  year={1999},
+  publisher={Springer}
+}
 
 @incollection{Tang2002enhancing,
   title={{Enhancing effectiveness of outlier detections for low density patterns}},
   author={Tang, J. and Chen, Z. and Fu, A.W.C. and Cheung, D.W.},
-  booktitle={Adv. Data Min. Knowl. Discov.},
+  booktitle={Advances in Knowledge Discovery and Data Mining},
   year={2002},
   publisher={Springer}
 }
@@ -1328,14 +1300,15 @@ pages="85--126",
 }
 
 % 3 algo inside : cluster-based- kNN(distance based) - SVM:
-@Inbook{Eskin2002geometric,
+@incollection{Eskin2002geometric,
+  title={{A geometric framework for unsupervised anomaly detection}},
   author={Eskin, E. and Arnold, A. and Prerau, M. and Portnoy, L. and Stolfo, S.},
-title="A Geometric Framework for Unsupervised Anomaly Detection",
-bookTitle="Applications of Data Mining in Computer Security",
-year="2002",
-publisher="Springer US",
-pages="77--101",
+  booktitle={Applications of data mining in computer security},
+  pages={77--101},
+  year={2002},
+  publisher={Springer}
 }
+
 
 
 %others:
@@ -1349,15 +1322,11 @@ pages="77--101",
 }
 %%Aggarwal&Yu:
 @inproceedings{Aggarwal2001,
-  title={{Outlier Detection for High Dimensional Data}},
-  author={Aggarwal, C.C and Yu, P. S},
-  booktitle={SIGMOD REC},
-  volume={30},
-  pages={37--46},
+  title={{Outlier detection for high dimensional data}},
+  author={Aggarwal, C.C. and Yu, P.S.},
+  booktitle={ACM Sigmod Record},
   year={2001},
 }
-
-
 %%angle-based:
 @inproceedings{Kriegel2008,
   title={{Angle-based outlier detection in high-dimensional data}},
@@ -1370,7 +1339,6 @@ pages="77--101",
   title={{Isolation Forest}},
   author={Liu, F.T. and Ting, K.M. and Zhou, Z.H.},
   booktitle={ICDM},
-  pages={413--422},
   year={2008},
 }
 
@@ -1378,8 +1346,7 @@ pages="77--101",
  author = {Liu, F.T. and Ting, K.M. and Zhou, Z-H.},
  title = {Isolation-Based Anomaly Detection},
  journal = {ACM Trans. Knowl. Discov. Data},
- volume={6},
- pages={3},
+ publisher = {ACM},
  address = {New York, NY, USA},
  year=2012,
 }
@@ -1393,15 +1360,13 @@ pages="77--101",
   institution={DTIC Document}
 }
 
-
-@inproceedings{Wang2004,
-  title={A novel intrusion detection method based on principle component analysis in computer security},
+@incollection{Wang2004, 
+  title={{A novel intrusion detection method based on principle component analysis in computer security}},
   author={Wang, W. and Guan, X. and Zhang, X.},
-  booktitle={Advances in Neural Networks - ISNN},
-  pages={657--662},
+  booktitle={Advances in Neural Networks-ISNN 2004},
   year={2004},
-  organization={Springer}
-}
+  publisher={Springer}
+}%citation 50
 
 @inproceedings{Wang2006, 
   title={{Identifying intrusions in computer networks with principal component analysis}},
@@ -1433,9 +1398,7 @@ pages="77--101",
   author={Quinn, J.A and Sugiyama, M.},
   journal={Pattern Recognition Letters},
   year={2014},
-  publisher={Elsevier},
-    volume={40},
-  pages={36--40}
+  publisher={Elsevier}
 }
 
 @article{Sugiyama2010,
@@ -1443,9 +1406,7 @@ pages="77--101",
   author={Sugiyama, M.},
   journal={IEICE Transactions on Information and Systems},
   year={2010},
-  publisher={The Institute of Electronics, Information and Communication Engineers},
-  volume={93},
-  pages={2690--2701},
+  publisher={The Institute of Electronics, Information and Communication Engineers}
 }
 
 
@@ -1456,6 +1417,7 @@ pages="77--101",
   author={Denis, F. and Gilleron, R. and Letouzey, F.},
   journal={Theoretical Computer Science},
   volume={348},
+  number={1},
   pages={70--83},
   year={2005},
   publisher={Elsevier}
@@ -1474,7 +1436,7 @@ pages="77--101",
 @inproceedings{duPlessis2015,
   title={Class-prior estimation for learning from positive and unlabeled data},
   author={du Plessis, M. C. and Niu, G. and Sugiyama, M.},
-  booktitle={Proc. ACML},
+  booktitle={Proceedings of the Fourth Asian Conference on Machine Learning},
   volume={45},
   year={2015}
 }
@@ -1482,18 +1444,20 @@ pages="77--101",
 @inproceedings{Liu2002,
   title={Partially supervised classification of text documents},
   author={Liu, B. and Lee, W. S. and Yu, P. S and Li, X.},
-  booktitle={Proc. ICML},
+  booktitle={ICML},
   volume={2},
   pages={387--394},
   year={2002},
+  organization={Citeseer}
 }
 
 
 @article{Blanchard2010,
   title={Semi-supervised novelty detection},
   author={Blanchard, G. and Lee, G. and Scott, C.},
-  journal={JMLR},
+  journal={Journal of Machine Learning Research},
   volume={11},
+  number={Nov},
   pages={2973--3009},
   year={2010}
 }
@@ -1501,7 +1465,7 @@ pages="77--101",
 @inproceedings{Scott2009,
   title={Novelty detection: Unlabeled data definitely help.},
   author={Scott, C. and Blanchard, G.},
-  booktitle={Proc. AISTATS},
+  booktitle={AISTATS},
   pages={464--471},
   year={2009}
 }
@@ -1509,7 +1473,7 @@ pages="77--101",
 @inproceedings{Smola2009,
   title={Relative Novelty Detection.},
   author={Smola, A. J. and Song, L. and Teo, C. H.},
-  booktitle={Proc. AISTATS},
+  booktitle={AISTATS},
   volume={12},
   pages={536--543},
   year={2009}
@@ -1519,7 +1483,7 @@ pages="77--101",
 @inproceedings{Lippmann2000,
   title={Analysis and results of the 1999 DARPA off-line intrusion detection evaluation},
   author={Lippmann, R. and Haines, J. W and Fried, D.J. and Korba, J. and Das, K.},
-  booktitle={RAID},
+  booktitle={Recent Advances in Intrusion Detection},
   pages={162--182},
   year={2000},
   organization={Springer}
@@ -1548,9 +1512,7 @@ institution = "University of California, Irvine, School of Information and Compu
   title={A detailed analysis of the KDD CUP 99 data set},
   author={Tavallaee, M. and Bagheri, E. and Lu, W. and Ghorbani, A.A.},
   booktitle={IEEE CISDA},
-  year={2009},
-  pages = {53--58},
-  volume={5}
+  year={2009}
 }
 
 @article{KDD99, 
@@ -1564,8 +1526,6 @@ institution = "University of California, Irvine, School of Information and Compu
   author={Yamanishi, K. and Takeuchi, J.I. and Williams, G. and Milne, P.},
   booktitle={KDD},
   year={2000},
-  volume={8},
-  pages={275--300},
 }
 
 %%%%%%%%%%%%%%%%%%  SVM  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1576,15 +1536,11 @@ institution = "University of California, Irvine, School of Information and Compu
   publisher={Cambridge university press}
 }
 
-
 @article{Cortes1995,
  author = {Cortes, C. and Vapnik, V.},
  title = {Support-Vector Networks},
  journal = {Machine Learning},
- volume={20},
- pages={273--297},
  year = {1995},
- publisher={Springer}
 }
 
 
@@ -1592,10 +1548,8 @@ institution = "University of California, Irvine, School of Information and Compu
 
 @inproceedings{Freund1996,
   title={Experiments with a new boosting algorithm},
-  author={Freund, Y. and Schapire, R.E},
-  booktitle={Proc. ICML},
-  volume={96},
-  pages={148--156},
+  author={Freund, Y. and Schapire, R.E and others},
+  booktitle={ICML},
   year={1996}
 }
 
@@ -1608,6 +1562,7 @@ institution = "University of California, Irvine, School of Information and Compu
   author={Fawcett, T.},
   journal={Pattern recognition letters},
   volume={27},
+  number={8},
   pages={861--874},
   year={2006},
   publisher={Elsevier}
@@ -1625,9 +1580,7 @@ institution = "University of California, Irvine, School of Information and Compu
 @inproceedings{Provost1998,
   title={The case against accuracy estimation for comparing induction algorithms.},
   author={Provost, FJ and Fawcett, T. and Kohavi, R.},
-  booktitle={Proc. ICML},
-    volume={98},
-  pages={445--453},
+  booktitle={ICML},
   year={1998}
 }
 
@@ -1636,17 +1589,15 @@ institution = "University of California, Irvine, School of Information and Compu
 @inproceedings{Davis2006,
   title={The relationship between Precision-Recall and ROC curves},
   author={Davis, J. and Goadrich, M.},
-  booktitle={Proc. ICML},
+  booktitle={ICML},
   year={2006}
 }
-
 
 @inproceedings{Clemencon2009,
   title={Nonparametric estimation of the precision-recall curve},
   author={Cl{\'e}men{\c{c}}on, S. and Vayatis, N.},
-  booktitle={Proc. ICML},
-  pages={185--192},
-  year={2009},
+  booktitle={ICML},
+  year={2009}
 }
 
 
@@ -1658,6 +1609,7 @@ institution = "University of California, Irvine, School of Information and Compu
   author={Barron, E. N and Cardaliaguet, P. and Jensen, R.},
   journal={Applied Mathematics and Optimization},
   volume={48},
+  number={3},
   pages={229--253},
   year={2003},
   publisher={Springer}

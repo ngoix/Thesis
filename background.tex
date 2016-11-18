@@ -546,7 +546,7 @@ Proposition~\ref{TVCsharp}, see Theorem~\ref{colt:thm-princ}.
 
 \begin{corollary}
 \label{back:cor_tvcsharp}
-Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ \iid~realizations of a \rv~$\mathbf{X}$, a VC-class $\mathcal{A}$ with VC dimension $V_{\mathcal{A}}$ and shattering coefficient (or growth function) $S_{\mathcal{A}}(n)$.
+Let $\mathbf{X}_1,\ldots,\mathbf{X}_n$ \iid~realizations of a \rv~$\mathbf{X}$ and a VC-class $\mathcal{A}$ with VC dimension $V_{\mathcal{A}}$.% and shattering coefficient (or growth function) $S_{\mathcal{A}}(n)$.
 Consider the class union $\mathbb{A} = \cup_{A \in \mathcal{A}} A$,
  and let  
 $p = \mathbb{P}(\mathbf{X} \in \mathbb{A})$. Then there is an absolute constant $C$ such that for all $0<\delta<1$, with probability at least $1-\delta$,
@@ -645,14 +645,14 @@ Then, the cornerstone result of univariate EVT is the following.
 
 \begin{theorem}
 \label{thm:univariate-evt}
-Assume that there exists sequences
+Assume that there exist sequences
 $\{a_n, n \ge 1\}$ and $\{b_n, n \ge 1\}$, the $a_n$'s being positive, such that $\frac{M_n-b_n}{a_n} $ converges in distribution to a non-degenerate distribution, namely
 \begin{align}
 \label{eq:hyp-GEV}
 \mathbb{P}\left[ \frac{M_n-b_n}{a_n} \le x \right] = F^n(a_n x + b_n) \to G(x)
 \end{align}
 for all continuity point of $G$, where $G$ is a non-degenerate distribution function (\ie~without dirac mass).
-Then $G$ belongs to one of the three following extreme value distribution (up to a re-scaling $x' = \frac{x-b}{a}$ which can be removed by changing $a_n$ and $b_n$):
+Then $G$ belongs to one of the three following extreme value distributions (up to a re-scaling $x' = \frac{x-b}{a}$ which can be removed by changing $a_n$ and $b_n$):
 \begin{align*}
 &\text{Gumbel:}~~~  G(x) = \exp \left( -e^{-x} \right)~~~\text{for}~~ x \in (-\infty, +\infty),\\
 &\text{Fréchet:}~~~ G(x) = \exp \left(-x^{-\alpha}\right) ~~~\text{~~~if~~} x > 0 \text{~and~~} G(x)=0 \text{~~otherwise},\\
@@ -692,9 +692,9 @@ A special case of extreme quantile estimation is when some covariate information
 \begin{example}
 \begin{itemize}
 \item Assume the $X_i$'s to be standard exponential variables (their cdf is $F(x) = 1 - e^{-x}$). In that case, letting $a_n=1$ and $b_n = \log(n)$, we have
-$\mathbb{P}[(M_n-b_n)/a_n \le z] = \mathbb{P}[X_1 \le z + \log n ]^n = [1 - e^{-z}/n]^n \to \exp(-e^{-z}) $, for $z \in \rset$. The limit distribution is of Gumbel type ($\xi = 0$).
-\item If the $X_i$'s are standard Fréchet ($F(x) = \exp{-1/z}$), letting $an = n$ and $b_n = 0$, one has immediately $\mathbb{P}[(M_n-b_n)/a_n \le z] = F^n(nz) = \exp(-1/z)$, for $z >0$. The limit distribution remains the Fréchet one ($\xi = 1$).
-\item If the $X_i$'s are uniform on $[0,1]$, letting $a_n = 1/n$ and $b_n = 1$, one has $\mathbb{P}[(M_n-b_n)/a_n \le z] = F^n(n^{-1}z + 1) \to \exp(z)$, for $z <0$. The limit distribution is the Weibull one ($\xi = -1$).
+$\mathbb{P}[(M_n-b_n)/a_n \le z] = \mathbb{P}[X_1 \le z + \log n ]^n = [1 - e^{-z}/n]^n \to \exp(-e^{-z}) $, for $z \in \rset$. The limit distribution is of Gumbel type ($\gamma = 0$).
+\item If the $X_i$'s are standard Fréchet ($F(x) = \exp{(-1/z)}$), letting $an = n$ and $b_n = 0$, one has immediately $\mathbb{P}[(M_n-b_n)/a_n \le z] = F^n(nz) = \exp(-1/z)$, for $z >0$. The limit distribution remains the Fréchet one ($\gamma = 1$).
+\item If the $X_i$'s are uniform on $[0,1]$, letting $a_n = 1/n$ and $b_n = 1$, one has $\mathbb{P}[(M_n-b_n)/a_n \le z] = F^n(n^{-1}z + 1) \to \exp(z)$, for $z <0$. The limit distribution is the Weibull one ($\gamma = -1$).
 
 \end{itemize}
 \end{example}
@@ -709,7 +709,7 @@ One can establish an equivalent formulation of Assumption~\eqref{eq:hyp-GEV} whi
 \lim_{n \to \infty} n ~\mathbb{P}\left( \frac{X - b_n}{a_n} ~\ge~ x \right) = -\log G(x)
 \end{align}
 for all continuity points $x \in \mathbb{R}$ of $G$.
-The intuition behind this equivalence is that $$- \log(F^n(a_n x + b_n)) \sim n (1 - F(a_n X + b_n)) = n ~\mathbb{P}\left( \frac{X - b_n}{a_n}~\ge~ x \right)$$ when $n \to \infty$ as $F(a_n X + b_n) \sim 1$.
+The intuition behind this equivalence is that $$- \log(F^n(a_n x + b_n)) \sim n (1 - F(a_n x + b_n)) = n ~\mathbb{P}\left( \frac{X - b_n}{a_n}~\ge~ x \right)$$ when $n \to \infty$ as $F(a_n x + b_n) \sim 1$.
  The tail behavior of $F$
 is then essentially characterized by $G$, which is proved to be -- up
 to  re-scaling -- of the type~\eqref{eq:GEV}. 
@@ -1341,21 +1341,21 @@ fraction. Anomalies are uniformly drawn according to an uniform distribution.
 \begin{figure}[H]
   \centering
   \includegraphics[width=.9\linewidth]{fig_source/ADcomparison1}
-  \caption{gaussian normal data with one single mode}
+  \caption{Gaussian normal data with one single mode}
   \label{fig:ADcomparison1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.9\linewidth]{fig_source/ADcomparison2}
-  \caption{gaussian normal data with two modes}
+  \caption{Gaussian normal data with two modes}
   \label{fig:ADcomparison2}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.9\linewidth]{fig_source/ADcomparison3}
-  \caption{gaussian normal data with two strongly separate modes}
+  \caption{Gaussian normal data with two strongly separate modes}
   \label{fig:ADcomparison3}
 \end{figure}
 

@@ -6,43 +6,43 @@ Database file #1: Thesis.bib
 Warning--empty journal in KDD99
 You've used 161 entries,
             2638 wiz_defined-function locations,
-            1541 strings with 26978 characters,
-and the built_in function-call counts, 75754 in all, are:
-= -- 7293
+            1543 strings with 26987 characters,
+and the built_in function-call counts, 75944 in all, are:
+= -- 7318
 > -- 3679
-< -- 137
+< -- 139
 + -- 1366
 - -- 1171
-* -- 5508
-:= -- 12359
+* -- 5522
+:= -- 12376
 add.period$ -- 492
 call.type$ -- 161
 change.case$ -- 1010
 chr.to.int$ -- 155
 cite$ -- 162
-duplicate$ -- 3511
-empty$ -- 5991
+duplicate$ -- 3520
+empty$ -- 6004
 format.name$ -- 1430
-if$ -- 15718
+if$ -- 15767
 int.to.chr$ -- 7
 int.to.str$ -- 1
 missing$ -- 171
 newline$ -- 812
 num.names$ -- 648
-pop$ -- 1593
+pop$ -- 1591
 preamble$ -- 1
 purify$ -- 868
 quote$ -- 0
-skip$ -- 2681
+skip$ -- 2695
 stack$ -- 0
-substring$ -- 3861
-swap$ -- 445
-text.length$ -- 41
+substring$ -- 3893
+swap$ -- 455
+text.length$ -- 43
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 1681
 warning$ -- 1
-while$ -- 724
+while$ -- 727
 width$ -- 0
-write$ -- 2076
+write$ -- 2078
 (There was 1 warning)

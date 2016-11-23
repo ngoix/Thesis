@@ -134,9 +134,9 @@ Machine Learning and Extremes  for Anomaly Detection
 
 \textbf{`Finding patterns in the data that do not conform to expected behavior'}
 \begin{figure}
-\includegraphics[height=5cm]{AD_intro.png}
+\includegraphics[height=4cm]{sourcefigs/AD_intro.pdf}
 \end{figure}
-Huge number of applications: Network intrusions, credit card fraud detection, insurance, finance, military surveillance,... \\~\\
+\textbf{Applications}: Network intrusions, credit card fraud detection, insurance, finance, military surveillance, predictive maintenance... \\~\\
 \end{frame}
 
 
@@ -158,6 +158,9 @@ Training set (unlabeled) = normal + abnormal data \\
 (assumption: anomalies are very rare)
 \end{itemize}
 \end{block}
+\begin{figure}
+\includegraphics[height=3cm]{sourcefigs/AD_intro.pdf}
+\end{figure}
 \end{frame}
 
 
@@ -205,13 +208,14 @@ Training set (unlabeled) = normal + abnormal data \\
 \frametitle{Background: scoring functions}
 %In a machine learning context, AD can been seen as a classification task but where the usual assumption -dataset contains info regarding all classes- breaks down.
 
+Notation: Normal behavior $\to$ density {\blue f}.
 \begin{block}{AD algorithm returns a \textbf{scoring function {\green $s: \mathbb{R}^d \to \mathbb{R}$}}}
 
 %{\footnotesize
 %- AD algorithms return {\blue $s: \mathbb{R}^d \to \mathbb{R}$}.\\
 \begin{itemize}
 \item {\green $s$} defines a {\green pre-order} on $\mathbb{R}^d$ = `degree of normality'.\\
-\item {\green $s$} level sets are estimates of $f$ level sets.\\
+\item {\green $s$} level sets are estimates of {\blue $f$} level sets.\\
 \item {\green $s$} can be interpreted as a {\green continuum of level sets estimates} (at different levels).
 \end{itemize}
 \end{block}
@@ -402,6 +406,8 @@ Main drawbacks of MV:
 
 \begin{frame}
 \frametitle{Our solution: Excess-Mass curve}
+
+Excess-Mass {\small [Polonik 1995]}\\
 {\blue \large Excess-Mass curve {\small [G., Sabourin, Clémençon 2015]}}
 \begin{align*}
 EM_s(t) ~~:&=~ \sup_{\Omega \text{ level-set of } s}~~~\big\{ \mathbb{P}(\mb X \in \Omega) ~-~ t \leb(\Omega) \big\}\\
@@ -1077,7 +1083,7 @@ The volume $\leb(s \ge u)$ has to be estimated! % Challenging in high dimensions
 %\end{algorithm}
 }
 \end{block}
-Seems to work in pratice but no statistical guaranties.
+Seems to work in practice but no statistical guaranties.
 \end{frame}
 
 % \subsection{One-class splitting criterion for random forests}
@@ -1131,7 +1137,7 @@ Does theorical guaranties apply ?
   \end{figure}
 
 
-A more accurate sparse representation?
+An alternative definition of sparsity?
 \end{frame}
 
 
@@ -1197,6 +1203,8 @@ A more accurate sparse representation?
 \item Liu and Weng 1991,  Detection of outlying data in bioavailability/bioequivalence studies. 
 
 \item Papadimitriou, Kitagawa, Gibbons and Faloutsos 2002, Loci: Fast outlier detection using the local correlation integral.
+
+\item Polonik 1995, Measuring mass concentrations and estimating density contour cluster-an excess mass approach.
 
 \item Polonik 1997, Minimum volume sets and generalized quantile processes.
 

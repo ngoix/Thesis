@@ -530,11 +530,11 @@ See Chapter~\ref{chap:back_concentration}, Corollary~\ref{back:cor_tvcsharp}.
 
 
 \begin{remark} (\textsc{Comparison with Existing Bounds})
-The following re-normalized VC-inequality due to Vapnik and Chervonenkis (see \cite{Vapnik74}, \cite{Anthony93} or \cite{Bousquet04}, Thm 7),
+The following re-normalized VC-inequality is due to Vapnik and Chervonenkis (see \cite{Vapnik74}, \cite{Anthony93} or \cite{Bousquet04}, Thm 7),
 \begin{align} \label{colt:normalize-vc}
-\sup_{A \in \mathcal{A}} \left| \frac{ \mathbb{P} (\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A}  }{\sqrt{\mathbb{P}(\mathbf{X} \in A)}} \right| ~~\le~~ 2 \sqrt{\frac{\log{S_{\mathcal{A}}(2n)}+\log{\frac{4}{\delta}}}{n}}~,
+\sup_{A \in \mathcal{A}} \left| \frac{ \mathbb{P} (\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A}  }{\sqrt{\mathbb{P}(\mathbf{X} \in A)}} \right| ~~\le~~ 2 \sqrt{\frac{\log{S_{\mathcal{A}}(2n)}+\log{\frac{4}{\delta}}}{n}}~.
 \end{align}
-which holds under the same conditions as Theorem~\ref{colt:thm-princ}, allows to derive a bound similar to (\ref{colt:thm-princ-ineq}), but with an additional $\log n$ factor.
+$S_{\mathcal{A}}(n)$ is the shattering coefficient (or growth function) associated with class $\mathcal{A}$. \eqref{colt:normalize-vc} holds under the same conditions as Theorem~\ref{colt:thm-princ}, and allows to derive a bound similar to (\ref{colt:thm-princ-ineq}), but with an additional $\log n$ factor.
 Indeed, it is known as Sauer's Lemma (see \cite{Bousquet04}-lemma 1 for instance) that for $n \ge V_{\mathcal{A}}$, $S_{\mathcal{A}}(n) \le (\frac{en}{V_{\mathcal{A}}})^{V_{\mathcal{A}}}$. It is then easy to see from (\ref{colt:normalize-vc}) that:
 \begin{align*}
 \sup_{A \in \mathcal{A}} \left | \mathbb{P} (\mathbf{X} \in A) - \frac{1}{n} \sum_{i=1}^n \mathds{1}_{\mathbf{X}_i \in A}  \right| ~~\le~~ 2 \sqrt{\sup_{A \in \mathcal{A}}\mathbb{P}(\mathbf{X} \in A)}  \sqrt{\frac{V_{\mathcal{A}}\log{\frac{2en}{V_{\mathcal{A}}}}+\log{\frac{4}{\delta}}}{n}}~.

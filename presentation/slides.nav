@@ -65,13 +65,13 @@
 \headcommand {\beamer@framepages {29}{29}}
 \headcommand {\slideentry {2}{0}{30}{30/30}{}{0}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\slideentry {2}{0}{31}{31/31}{}{0}}
+\headcommand {\sectionentry {3}{Part III: Heuristic contributions and perspectives}{31}{Part III: Heuristic contributions and perspectives}{0}}
+\headcommand {\beamer@sectionpages {13}{30}}
+\headcommand {\beamer@subsectionpages {13}{30}}
+\headcommand {\slideentry {3}{0}{31}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {2}{0}{32}{32/32}{}{0}}
+\headcommand {\slideentry {3}{0}{32}{32/32}{}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\sectionentry {3}{Part III: Heuristic contributions and perspectives}{33}{Part III: Heuristic contributions and perspectives}{0}}
-\headcommand {\beamer@sectionpages {13}{32}}
-\headcommand {\beamer@subsectionpages {13}{32}}
 \headcommand {\slideentry {3}{0}{33}{33/33}{}{0}}
 \headcommand {\beamer@framepages {33}{33}}
 \headcommand {\slideentry {3}{0}{34}{34/34}{}{0}}
@@ -103,7 +103,7 @@
 \headcommand {\slideentry {3}{0}{47}{47/47}{}{0}}
 \headcommand {\beamer@framepages {47}{47}}
 \headcommand {\beamer@partpages {1}{47}}
-\headcommand {\beamer@subsectionpages {33}{47}}
-\headcommand {\beamer@sectionpages {33}{47}}
+\headcommand {\beamer@subsectionpages {31}{47}}
+\headcommand {\beamer@sectionpages {31}{47}}
 \headcommand {\beamer@documentpages {47}}
 \headcommand {\def \inserttotalframenumber {47}}

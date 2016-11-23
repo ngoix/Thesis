@@ -75,7 +75,7 @@
 \contentsline {subsection}{\numberline {7.3.1}A natural empirical version of the exponent measure mu}{100}{subsection.7.3.1}
 \contentsline {subsection}{\numberline {7.3.2}Accounting for the non asymptotic nature of data: epsilon-thickening.}{100}{subsection.7.3.2}
 \contentsline {subsection}{\numberline {7.3.3}Preliminaries: uniform approximation over a VC-class of rectangles}{101}{subsection.7.3.3}
-\contentsline {subsection}{\numberline {7.3.4}Bounding empirical deviations over thickened rectangles}{105}{subsection.7.3.4}
+\contentsline {subsection}{\numberline {7.3.4}Bounding empirical deviations over thickened rectangles}{104}{subsection.7.3.4}
 \contentsline {subsection}{\numberline {7.3.5}Bounding the bias induced by thickened rectangles}{105}{subsection.7.3.5}
 \contentsline {subsection}{\numberline {7.3.6}Main result}{106}{subsection.7.3.6}
 \contentsline {section}{\numberline {7.4}Application to Anomaly Detection }{108}{section.7.4}
@@ -84,10 +84,10 @@
 \contentsline {section}{\numberline {7.5}Experimental results}{112}{section.7.5}
 \contentsline {subsection}{\numberline {7.5.1}Recovering the support of the dependence structure of generated data}{112}{subsection.7.5.1}
 \contentsline {subsection}{\numberline {7.5.2}Sparse structure of extremes (wave data)}{113}{subsection.7.5.2}
-\contentsline {subsection}{\numberline {7.5.3}Application to Anomaly Detection on real-world data sets}{114}{subsection.7.5.3}
-\contentsline {section}{\numberline {7.6}Conclusion}{117}{section.7.6}
-\contentsline {section}{\numberline {7.7}Technical proofs}{119}{section.7.7}
-\contentsline {subsection}{\numberline {7.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{119}{subsection.7.7.1}
+\contentsline {subsection}{\numberline {7.5.3}Application to Anomaly Detection on real-world data sets}{113}{subsection.7.5.3}
+\contentsline {section}{\numberline {7.6}Conclusion}{116}{section.7.6}
+\contentsline {section}{\numberline {7.7}Technical proofs}{118}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{118}{subsection.7.7.1}
 \contentsline {subsection}{\numberline {7.7.2}Proof of Lemma \ref {jmva:lem:g-alpha}}{119}{subsection.7.7.2}
 \contentsline {subsection}{\numberline {7.7.3}Proof of Proposition \ref {jmva:prop:g}}{120}{subsection.7.7.3}
 \contentsline {subsection}{\numberline {7.7.4}Proof of Lemma \ref {jmva:lemma_simplex}}{124}{subsection.7.7.4}
@@ -109,21 +109,21 @@
 \contentsline {chapter}{\numberline {9}One Class Splitting Criteria for Random Forests}{149}{chapter.9}
 \contentsline {section}{\numberline {9.1}Introduction}{149}{section.9.1}
 \contentsline {section}{\numberline {9.2}Background on decision trees}{151}{section.9.2}
-\contentsline {section}{\numberline {9.3}Adaptation to the one-class setting}{153}{section.9.3}
+\contentsline {section}{\numberline {9.3}Adaptation to the one-class setting}{152}{section.9.3}
 \contentsline {subsection}{\numberline {9.3.1}One-class splitting criterion}{153}{subsection.9.3.1}
 \contentsline {paragraph}{Naive approach.}{153}{subsection.9.3.1}
 \contentsline {paragraph}{Adaptive approach.}{153}{theorem.9.3.1}
-\contentsline {subsection}{\numberline {9.3.2}Prediction: a majority vote with one single candidate?}{154}{subsection.9.3.2}
+\contentsline {subsection}{\numberline {9.3.2}Prediction: a majority vote with one single candidate?}{155}{subsection.9.3.2}
 \contentsline {subsection}{\numberline {9.3.3}OneClassRF: a Generic One-Class Random Forest algorithm}{156}{subsection.9.3.3}
-\contentsline {section}{\numberline {9.4}Benchmarks}{158}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}Default parameters of OneClassRF.}{159}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}Hyper-Parameters of tested algorithms}{159}{subsection.9.4.2}
-\contentsline {subsection}{\numberline {9.4.3}Description of the datasets}{160}{subsection.9.4.3}
+\contentsline {section}{\numberline {9.4}Benchmarks}{157}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}Default parameters of OneClassRF.}{157}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}Hyper-Parameters of tested algorithms}{158}{subsection.9.4.2}
+\contentsline {subsection}{\numberline {9.4.3}Description of the datasets}{159}{subsection.9.4.3}
 \contentsline {subsection}{\numberline {9.4.4}Results}{160}{subsection.9.4.4}
 \contentsline {section}{\numberline {9.5}Theoretical justification for the one-class splitting criterion}{161}{section.9.5}
 \contentsline {subsection}{\numberline {9.5.1}Underlying model}{161}{subsection.9.5.1}
-\contentsline {subsection}{\numberline {9.5.2}Adaptive approach}{163}{subsection.9.5.2}
-\contentsline {section}{\numberline {9.6}Conclusion}{164}{section.9.6}
+\contentsline {subsection}{\numberline {9.5.2}Adaptive approach}{162}{subsection.9.5.2}
+\contentsline {section}{\numberline {9.6}Conclusion}{163}{section.9.6}
 \contentsline {section}{\numberline {9.7}Further details on benchmarks and unsupervised results}{164}{section.9.7}
-\contentsline {chapter}{\numberline {10}Conclusion, limitations \& perspectives}{175}{chapter.10}
-\contentsline {chapter}{Bibliography}{177}{dummy.4}
+\contentsline {chapter}{\numberline {10}Conclusion, limitations \& perspectives}{173}{chapter.10}
+\contentsline {chapter}{Bibliography}{175}{dummy.4}

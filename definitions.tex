@@ -16,6 +16,10 @@
 
 
 \newcommand{\vide}[1]{}  % tikz drougui
+\newcommand{\pointSampled}[1]{
+    \coordinate (A) at (#1);
+    \draw[fill=black] (A) circle (0.03cm);
+}
 \usepackage{pgfplots}  % ocrf nico gridplot
 
 
@@ -37,6 +41,7 @@
 \usepackage{natbib}
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing}
+
 \usepackage{graphicx}
 %\usepackage{arydshln}  % for dashed lines in table
 \usepackage{algorithm}

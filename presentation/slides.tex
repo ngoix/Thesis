@@ -151,6 +151,7 @@ Labels available for both normal data and anomalies\\
 (similar to rare class mining)\\~\\
 
 \item \textbf{Novelty Detection} {\red (our theoretical framework)}\\
+Synonym: one-class classification.
 The algorithm learns on normal data only\\~\\
 
 \item \textbf{Outlier Detection} {\red (extended application framework)}\\
@@ -352,7 +353,7 @@ Notation: Normal behavior $\to$ density {\blue f}.
 % \footnotesize{
 \begin{align*}
 MV_s(\alpha) ~:&=~ \inf_{\Gamma \text{ level-set of } s} \big\{~ \leb(\Gamma) ~~~s.t.~~ \mathbb{P}(\mb X \in \Gamma) \ge \alpha~\big\} \\
-MV^*(\alpha) ~:&=~ \min_{\Gamma~ \text{borelian}} \big\{~\leb(\Gamma) ~~~\st~~ \mathbb{P}(\mb X \in \Gamma) \ge \alpha ~\big\} \overset{prop}{=} MV_f(\alpha)
+MV^*(\alpha) ~:&=~ MV_f(\alpha) \overset{prop}{=}  \min_{\Gamma~ \text{borelian}} \big\{~\leb(\Gamma) ~~~\st~~ \mathbb{P}(\mb X \in \Gamma) \ge \alpha ~\big\} 
 \end{align*}
 %
 \begin{figure}[htb]
@@ -411,7 +412,7 @@ Excess-Mass {\small [Polonik 1995]}\\
 {\blue \large Excess-Mass curve {\small [G., Sabourin, Clémençon 2015]}}
 \begin{align*}
 EM_s(t) ~~:&=~ \sup_{\Omega \text{ level-set of } s}~~~\big\{ \mathbb{P}(\mb X \in \Omega) ~-~ t \leb(\Omega) \big\}\\
-EM^*(t) ~~:&=~ \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\} \overset{prop}{=} EM_f(t)
+EM^*(t) ~~:&=~  EM_f(t) \overset{prop}{=}  \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\} 
 %&EM^*(t) \ge EM_s(t)~~~~~~~~~~~~\text{for all scoring function}~~ s
 \end{align*}
 
@@ -940,43 +941,6 @@ $k \propto$ number of data considered as extreme (data used for estimation)
 % \end{frame}
 
 
-\begin{frame}
-\frametitle{Corresponding Algorithm}
-\begin{center}
-
-% \begin{minipage}{0.95\linewidth}
-\begin{block}{DAMEX in $O(dn\log n)$}
-
-\begin{algorithmic} 
-\STATE {\bf Input:} parameters $\epsilon>0$,~~ $k = k(n)$\\~\\ %$\Phi_{\min}\geq 0$.
-  \FOR{$i=1,\ldots,n$}
-\STATE {\green $\#$ Standardize \emph{via} marginal rank-transformation:}
-\STATE $\hat V_i := \big (1/(1- \hat F_j (X_i^j))\big)_{j=1,\ldots,d}$~. 
-
-\IF{$\hat V_i > \frac{n}{k}$}
-\STATE {\green $\#$ Assign to each $\hat V_i$ the cone  $\frac{n}{k}\mathcal{C}_\alpha^\epsilon$  it belongs to:}
-\STATE $\alpha = \alpha(V_i)$  \\
-\STATE $c_\alpha$ ++
-\ENDIF
-  \ENDFOR
-\STATE $\Phi_n^{\alpha,\epsilon} := \frac{n}{k} c_\alpha $ \\~\\
-\STATE {\bf Output:} (sparse) representation of the dependence
-  structure:
-$\Phi_n^{\alpha,\epsilon} = \widehat{\Phi}(\Omega_\alpha) = \frac{n}{k}\mathbb{P}_n( \hat V \in \frac{n}{k}\mathcal{C}_\alpha^\epsilon)$, estimate of the $\alpha$-mass of $\Phi$ for every $\alpha$.
-
- %$(\mu_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \mu_n^{\alpha,\epsilon}>\mu_{\min}}$.
-
-\begin{align*}
-\widehat{\mathcal{M}} := (\Phi_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \Phi_n^{\alpha,\epsilon}>\Phi_{\min}}
-\end{align*}
-
-\end{algorithmic}
-% \end{minipage}
-
-\end{block}
-\end{center}
-
-\end{frame}
 
 
 \begin{frame}
@@ -994,17 +958,6 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
   \end{figure}
 
 \end{frame}
-
-\begin{frame}
-\frametitle{Experiments}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = 1. \textwidth]{SA-lb-semi-supervised-average-0001.pdf}
-  \caption{ROC and PR curve on SA dataset}
-  \label{SA}
-\end{figure}
-\end{frame}
-
 
 
 \section{Part III: Heuristic contributions and perspectives}
@@ -1091,11 +1044,9 @@ Seems to work in practice but no statistical guaranties.
 \begin{frame}
 \frametitle{One Class Random Forests}
 
-Existing litterature:
-{\small [Désir et al., 2013, Liu et al., 2008, Shi and Horvath, 2012].}\\~\\
-%
 % {\blue Two-class impurity decrease} (proxy) for splitting node $t$, yielding children nodes $t_L$ and $t_R$ :
 
+\begin{block}{Two-class Random Forests [Breiman, 2001]}
 \begin{minipage}{0.65\textwidth}
 {\blue Two-Class impurity decrease} 
 \begin{align*}
@@ -1109,8 +1060,12 @@ $n_t'$: nb of observations with label $1$ in node $t$.
 	\centering
 	\includegraphics[width=0.95\textwidth]{sourcefigs/tree.pdf}
 \end{minipage}
+\end{block}
 
-\begin{block}{One-Class splitting criterion }%XXX~~~~{\color{black} \small [G., Brault, Drougard, Chiapino 2016]:}}
+Existing litterature:
+{\small [Désir et al., 2013, Liu et al., 2008, Shi and Horvath, 2012].}\\~\\
+
+\begin{alertblock}{One-Class splitting criterion }%XXX~~~~{\color{black} \small [G., Brault, Drougard, Chiapino 2016]:}}
 $n'_{t_L} \to n_{t} \frac{\leb(t_L)}{\leb(t)} ~~~~\text{and}~~~~
 n'_{t_R} \to n_{t} \frac{\leb(t_R)}{\leb(t)}
 $% \begin{align*}
@@ -1118,7 +1073,7 @@ $% \begin{align*}
 % \end{align*}
 
 \input{tikz.tex}
-\end{block}
+\end{alertblock}
 %
 Does theorical guaranties apply ?
 {\small [Biau et al. 2008, Biau and Scornet, 2016]}
@@ -1129,7 +1084,7 @@ Does theorical guaranties apply ?
 % \subsection{AD and Extremes perspectives}
 
 \begin{frame}
-\frametitle{AD and Extremes perspectives}
+\frametitle{Perspectives on AD with Extremes}
 
   \begin{figure}
     \centering
@@ -1137,7 +1092,10 @@ Does theorical guaranties apply ?
   \end{figure}
 
 
-An alternative definition of sparsity?
+  \begin{itemize}
+\item Add details to the representation?
+\item An alternative definition of sparsity?
+  \end{itemize}
 \end{frame}
 
 
@@ -1233,6 +1191,57 @@ An alternative definition of sparsity?
 \item Vert and Vert 2006, Consistency and Convergence Rates of One-Class SVMs and Related Algorithms
 }
 \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Corresponding Algorithm}
+\begin{center}
+
+% \begin{minipage}{0.95\linewidth}
+\begin{block}{DAMEX in $O(dn\log n)$}
+
+\begin{algorithmic} 
+\STATE {\bf Input:} parameters $\epsilon>0$,~~ $k = k(n)$\\~\\ %$\Phi_{\min}\geq 0$.
+  \FOR{$i=1,\ldots,n$}
+\STATE {\green $\#$ Standardize \emph{via} marginal rank-transformation:}
+\STATE $\hat V_i := \big (1/(1- \hat F_j (X_i^j))\big)_{j=1,\ldots,d}$~. 
+
+\IF{$\hat V_i > \frac{n}{k}$}
+\STATE {\green $\#$ Assign to each $\hat V_i$ the cone  $\frac{n}{k}\mathcal{C}_\alpha^\epsilon$  it belongs to:}
+\STATE $\alpha = \alpha(V_i)$  \\
+\STATE $c_\alpha$ ++
+\ENDIF
+  \ENDFOR
+\STATE $\Phi_n^{\alpha,\epsilon} := \frac{n}{k} c_\alpha $ \\~\\
+\STATE {\bf Output:} (sparse) representation of the dependence
+  structure:
+$\Phi_n^{\alpha,\epsilon} = \widehat{\Phi}(\Omega_\alpha) = \frac{n}{k}\mathbb{P}_n( \hat V \in \frac{n}{k}\mathcal{C}_\alpha^\epsilon)$, estimate of the $\alpha$-mass of $\Phi$ for every $\alpha$.
+
+ %$(\mu_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \mu_n^{\alpha,\epsilon}>\mu_{\min}}$.
+
+\begin{align*}
+\widehat{\mathcal{M}} := (\Phi_n^{\alpha,\epsilon})_{\alpha\subset\{1,\ldots, d\}, \Phi_n^{\alpha,\epsilon}>\Phi_{\min}}
+\end{align*}
+
+\end{algorithmic}
+% \end{minipage}
+
+\end{block}
+\end{center}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Experiments}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 1. \textwidth]{SA-lb-semi-supervised-average-0001.pdf}
+  \caption{ROC and PR curve on SA dataset}
+  \label{SA}
+\end{figure}
 \end{frame}
 
 

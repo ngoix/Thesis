@@ -1,4 +1,4 @@
 \beamer@endinputifotherversion {3.33pt}
 \beamer@sectionintoc {1}{Part I: Performance criterion for scoring functions}{7}{0}{1}
 \beamer@sectionintoc {2}{Part II: Learning accurate scoring functions on extreme regions}{13}{0}{2}
-\beamer@sectionintoc {3}{Part III: Heuristic contributions and perspectives}{33}{0}{3}
+\beamer@sectionintoc {3}{Part III: Heuristic contributions and perspectives}{31}{0}{3}

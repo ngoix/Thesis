@@ -38,9 +38,9 @@
 \newcommand\green{\color{green} }
 \newcommand{\crit}{\mathcal{C}}
 
-\definecolor{blue}{rgb}{0.1,0.1,0.65}
+\definecolor{blue}{rgb}{0.05,0.05,0.8}
 \definecolor{red}{rgb}{0.7,0.1,0.1}
-\definecolor{green}{rgb}{0.07,0.5,0.07}
+\definecolor{green}{rgb}{0.1,0.4,0.1}
 
 \def\argmin{\operatornamewithlimits{arg\,min}}
 \def\argmax{\operatornamewithlimits{arg\,max}}
@@ -76,8 +76,8 @@
 
 %\setbeamertemplate{theorems}[numbered]
 
- \setbeamercolor{block title}{bg=blue!3,fg=blue}
- \setbeamercolor{block body}{bg=blue!3,fg=black}
+ \setbeamercolor{block title}{bg=blue!10,fg=blue}
+ \setbeamercolor{block body}{bg=blue!10,fg=black}
 
 % %\setbeamercolor{block title alerted}{bg=green!10,fg=black}
 % \setbeamercolor{block body alerted}{bg=red!10,fg=black}
@@ -160,13 +160,13 @@ Training set (unlabeled) = normal + abnormal data \\
 \end{itemize}
 \end{block}
 \begin{figure}
-\includegraphics[height=3cm]{sourcefigs/AD_intro.pdf}
+\includegraphics[height=2.7cm]{sourcefigs/AD_intro.pdf}
 \end{figure}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Some litterature in Anomaly Detection}
+\frametitle{Some literature in Anomaly Detection}
 %\begin{exampleblock}{Some litterature in Anomaly Detection:}
 \begin{itemize}
 \item \textbf{Statistical AD techniques}\\
@@ -406,10 +406,10 @@ Main drawbacks of MV:
 \end{frame}
 
 \begin{frame}
-\frametitle{Our solution: Excess-Mass curve}
+\frametitle{Our contribution: Excess-Mass curve  {\small [Goix, Sabourin, Clémençon 2015]}}
 
 Excess-Mass {\small [Polonik 1995]}\\
-{\blue \large Excess-Mass curve {\small [G., Sabourin, Clémençon 2015]}}
+{\blue \large Excess-Mass curve }
 \begin{align*}
 EM_s(t) ~~:&=~ \sup_{\Omega \text{ level-set of } s}~~~\big\{ \mathbb{P}(\mb X \in \Omega) ~-~ t \leb(\Omega) \big\}\\
 EM^*(t) ~~:&=~  EM_f(t) \overset{prop}{=}  \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\} 
@@ -471,8 +471,9 @@ EM^*(t) ~~:&=~  EM_f(t) \overset{prop}{=}  \max_{\Omega\text{ borelian} } ~\big\
 
 
 
-We are looking for nearly optimal scoring functions of the form {\blue $s(x) = \sum_{j=1}^N a_j \mathds{1}_{x \in \Omega_j}$}, with $a_j \ge 0$,~ $\Omega_j \in \mathcal{G}$ a VC-class.\\
+% We are looking for nearly optimal scoring functions of the form {\blue $s(x) = \sum_{j=1}^N a_j \mathds{1}_{x \in \Omega_j}$}, with $a_j \ge 0$,~ $\Omega_j \in \mathcal{G}$ a VC-class.\\
 
+$\mathcal{G}$: VC-class of sets.
 
 \begin{block}{}
 {\blue Procedure}:  Fix $t_0 > 0$\\
@@ -486,7 +487,7 @@ For $k=1, \ldots, N$,
 %where $\mathbb{P}_n(X \in \Omega) = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{X_i \in \Omega}$, we obtain
 $s_N(x) := \sum_{j=1}^N(t_j - t_{j+1}) \mathds{1}_{x \in \Omega_{t_j}}$
 \begin{figure}
-\includegraphics[width=\linewidth]{sourcefigs/em_optim.pdf}
+\includegraphics[width=0.5\linewidth]{sourcefigs/em_optim.pdf}
 \end{figure}
 \end{block}
 
@@ -495,7 +496,7 @@ $s_N(x) := \sum_{j=1}^N(t_j - t_{j+1}) \mathds{1}_{x \in \Omega_{t_j}}$
 \begin{frame}
 \frametitle{Learning a scoring function with M-estimation}
 
-\begin{block}{Theorem {\small [G., Sabourin, Clémençon 2015]}}
+\begin{block}{Theorem}
 Assume the density $f$ bounded, with compact support and without flat parts and $\mathcal{G}$ VC-class.
 Then if $t_N = \mathcal{O}(n^{-1/2})$, with probability at least $1-\delta$, %(\eg~if $N \sim \sqrt n \log n$)
 \begin{align*}
@@ -504,7 +505,7 @@ Then if $t_N = \mathcal{O}(n^{-1/2})$, with probability at least $1-\delta$, %(\
 \end{block}
 ~\\~\\~\\~\\~\\~\\
 \begin{figure}
-\includegraphics[width=\linewidth]{sourcefigs/em_optim.pdf}
+\includegraphics[width=0.5\linewidth]{sourcefigs/em_optim.pdf}
 \end{figure}
 
 \end{frame}
@@ -543,7 +544,7 @@ Then if $t_N = \mathcal{O}(n^{-1/2})$, with probability at least $1-\delta$, %(\
 \frametitle{Purpose}
 \noindent
 \begin{align*}
-\mb X = (X_1,\ldots,X_d)
+\mb X = (X_1,\ldots,X_5)
 \end{align*}
 ~\\
 {\large Goal: find the groups of features which can be large together}
@@ -638,6 +639,10 @@ For a large $r>0$ and a region $B$ on the unit sphere: $$ \mathbb{P}\left[\|\mb 
 \end{block}
 \vspace*{.5cm}
 $\Rightarrow$ $\Phi$ (or $\mu$) \textbf{rules the joint distribution of extremes} (if margins are known).
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{sourcefigs/phi.pdf}
+\end{figure}
 \end{frame}
 
 
@@ -772,7 +777,7 @@ $\Rightarrow$ Cannot just do, for large $t$:
 \mathcal{C}_\alpha\to \mathcal{C}_\alpha^\epsilon &= \{\|v\|\ge 1,~~ v_j>\epsilon\, (j\in\alpha),\,v_j \le \epsilon \,(j\notin\alpha) \}. 
 %\Omega_\alpha  \to  \Omega_\alpha^\epsilon&= \mathcal{C}_\alpha^\epsilon \cap \mathbf{S}_{d-1}
 \end{align*}
-New partition of $\mathbf{S}_{d-1}$.%, compatible with non asymptotic data.
+New partition. %of $\mathbf{S}_{d-1}$.%, compatible with non asymptotic data.
 \end{frame}
 
 
@@ -810,7 +815,7 @@ $$\widehat{\mathcal{M}}:=\big\{~\widehat{\Phi}(\Omega_{\alpha}),~ \alpha~\big\}$
 \begin{frame}
 \frametitle{Statistical guaranties}
 
-\begin{block}{Theorem {\small [G., Sabourin, Clémençon 2016]}}
+\begin{block}{Theorem {\small [Goix, Sabourin, Clémençon 2016]}}
 There is an absolute constant $C > 0$ such that for any $n>0,~ k>0,~ 0<\epsilon<1,~ \delta>0$ such that $0<\delta<e^{-k}$, with probability at least $1 - \delta$,
 \begin{align*}
 \|\widehat{\mathcal{M}}- \mathcal{M}\|_\infty
@@ -834,13 +839,13 @@ There is an absolute constant $C > 0$ such that for any $n>0,~ k>0,~ 0<\epsilon<
 \begin{itemize}
 
 
-\item $M=\sup$(density on sub-cones)
+\item $M \simeq \sum_\alpha \sup$(density on cones $\alpha$)
 
 
-\item  Existing litterature (for spectral measure) {\small [Einmahl and Segers 09, Einmahl \emph{et al.} 01]}
+\item  Existing literature (for spectral measure) {\small [Einmahl and Segers 09, Einmahl \emph{et al.} 01]}
 
   \begin{center}
-$d=2$, asymptotic behaviour, rates  in $1/\sqrt k$.
+$d=2$, asymptotic behavior, rates  in $1/\sqrt k$.
   \end{center}
 \item Here: $1/\sqrt k\to  1/\sqrt{\epsilon k} + \epsilon$. Price to pay
 for biasing our estimator with $\epsilon$.
@@ -856,15 +861,15 @@ for biasing our estimator with $\epsilon$.
 Would like to use concentration inequality... % XXX citer boucheron?
 % XXX 2 dessins
 \begin{align*}
-&\text{In our case:~~~~~~} \sup_{A \in \mathcal{A}} {\red\frac{n}{k}}\left| \big(\mathcal{P}- \mathcal{P}_n\big)\left({\blue \frac{k}{n}}A\right)\right|\\
+&\text{In our case:~~~~~~} \sup_{A \in \mathcal{A}} {\red\frac{n}{k}}\left| \big(\mathcal{P}- \mathcal{P}_n\big)\left({\blue \frac{n}{k}}A\right)\right|\\
 &\text{But usually:~~~~~~~~~~~~} \sup_{A \in \mathcal{A}} \left| \big(\mathcal{P}-\mathcal{P}_n\big)(A) \right|
 \end{align*}
 \begin{itemize}
 \item scaling ${\red \frac{n}{k}}$%: to compense the decreasing proba of ${\blue \frac{k}{n}}A$.\\
-\item classical VC-inequality: ${\blue \frac{k}{n}}$ nice but not used ! \\$\rightarrow $ high proba bound in $${\red \frac{n}{k}} \times  \sqrt{ \frac{1}{ n}\log \frac{1}{\delta}} ~~~~~~\to~~ ~~\infty~~~~ !! $$ \\
+\item classical VC-inequality: ${\blue \frac{n}{k}}$ nice but not used ! \\$\rightarrow $ high proba bound in $${\red \frac{n}{k}} \times  \sqrt{ \frac{1}{ n}\log \frac{1}{\delta}} ~~~~~~\to~~ ~~\infty~~~~ !! $$ \\
 \end{itemize}
 
-$\Rightarrow$ Needs to take into account that the proba of  ${\blue \frac{k}{n}}A$ is small.\\
+$\Rightarrow$ Needs to take into account that the proba of  ${\blue \frac{n}{k}}A$ is small.\\
 \end{frame}
 
 
@@ -979,22 +984,22 @@ $$s_n(\mb x):= (1/\|\hat T(\mb x)\|_\infty) \sum_{\alpha }\Phi_n^{\alpha, \epsil
 Most of the time, data come without any label.\\
 {\footnotesize ~~~~~~ $\to$ no ROC or PR curves!}
 \end{block}
-
-\begin{block}{Implicit (natural) simplification of the problem:}
-How good is an anomaly detection algorithm?\\
-$\to$ How good is it estimating the level sets of the inliers distribution?
-\end{block}
+~\\~\\
+% \begin{block}{Implicit (natural) simplification of the problem:}
+% How good is an anomaly detection algorithm?\\
+% $\to$ How good is it estimating the level sets of the inliers distribution?
+% \end{block}
 
 % Inputs: scoring function $s$
-
 \textbf{Estimation:}
-\small{
+{\small
 \begin{align*}
-&\widehat{MV}_s(\alpha) = \inf_{u \ge 0} ~~~\leb(s \ge u) ~~~~\st~~~~ \mathbb{P}_n(s \ge u) \ge \alpha ~~~~~~~~\to \widehat{\crit}^{EM}(s) = \|\widehat{MV}_s\|_{1, J}\\
-&\widehat{EM}_s(t) = \sup_{u \ge 0} ~~~\mathbb{P}_n(s \ge u) ~-~ t \leb(s \ge u) ~~~~~~~~~~~~~~~~~~~~~\to \widehat{\crit}^{MV}(s) = \|\widehat{EM}_s\|_{1, I}
+&\widehat{MV}_s(\alpha) = \inf_{u \ge 0} ~~~\leb(s \ge u) ~~~~\st~~~~ \mathbb{P}_n(s \ge u) \ge \alpha\\% ~~~~~~~~\to \widehat{\crit}^{EM}(s) = \|\widehat{MV}_s\|_{1, J}\\
+&\widehat{EM}_s(t) = \sup_{u \ge 0} ~~~\mathbb{P}_n(s \ge u) ~-~ t \leb(s \ge u)% ~~~~~~~~~~~~~~~~~~~~~\to \widehat{\crit}^{MV}(s) = \|\widehat{EM}_s\|_{1, I}
 \end{align*}
 }
-[Thomas et al. 2015, 2016]
+~\\~\\
+{\small [Thomas et al. 2015]}\\
 
 % \item \textbf{Empirical criteria:}
 % \small{
@@ -1003,11 +1008,9 @@ $\to$ How good is it estimating the level sets of the inliers distribution?
 % \widehat{\crit}^{MV}(s) &= \| \widehat{MV}_s \|_{L^1(J)}  &&J = [0.9, 1],
 % \end{align*}
 % }
-
-\textbf{Issue in large dimension:}
-\small{
+~\\
+\textbf{Issue in large dimensions:}\\
 The volume $\leb(s \ge u)$ has to be estimated! % Challenging in high dimensions.
-}
 
 \end{frame}
 
@@ -1017,7 +1020,7 @@ The volume $\leb(s \ge u)$ has to be estimated! % Challenging in high dimensions
 
 \textbf{Heuristic extension for large dimension:}
 
-\begin{block}{Random projection and averaging} %XXX~~~~{\color{black} \small [G. 2016]}}~\\
+\begin{block}{Random projection and averaging ~~~~{\color{black} \small [Goix 2016]}}~\\
 
 \small{
 %\begin{algorithm}
@@ -1042,15 +1045,15 @@ Seems to work in practice but no statistical guaranties.
 % \subsection{One-class splitting criterion for random forests}
 
 \begin{frame}
-\frametitle{One Class Random Forests}
+\frametitle{Random Forests for one-class classification}
 
 % {\blue Two-class impurity decrease} (proxy) for splitting node $t$, yielding children nodes $t_L$ and $t_R$ :
 
 \begin{block}{Two-class Random Forests [Breiman, 2001]}
 \begin{minipage}{0.65\textwidth}
-{\blue Two-Class impurity decrease} 
+\textbf {Two-Class impurity decrease} 
 \begin{align*}
-I_G(t_L, t_R)= \frac{n_{t_L} n'_{t_L}}{n_{t_L} +  n'_{t_L}} + \frac{n_{t_R} n'_{t_R}}{n_{t_R} +  n'_{t_R}}.
+I_G(t_L, t_R)= \frac{{\blue n_{t_L}} {\red n'_{t_L}}}{{\blue n_{t_L}} +  {\red n'_{t_L}}} + \frac{{\blue n_{t_R}} {\red n'_{t_R}}}{{\blue n_{t_R}} +  {\red n'_{t_R}}}.
 \end{align*}
 $n_t$ : nb of observations with label $0$ in node $t$.\\
 $n_t'$: nb of observations with label $1$ in node $t$.
@@ -1061,24 +1064,67 @@ $n_t'$: nb of observations with label $1$ in node $t$.
 	\includegraphics[width=0.95\textwidth]{sourcefigs/tree.pdf}
 \end{minipage}
 \end{block}
+~\\~\\
 
-Existing litterature:
-{\small [Désir et al., 2013, Liu et al., 2008, Shi and Horvath, 2012].}\\~\\
+\begin{exampleblock}{Random Forests for one-class classification}
+\begin{minipage}{0.65\textwidth}
+\begin{align*}
+&\text{Two-Class:}~~~
+I_G(t_L, t_R)= \frac{{\blue n_{t_L}} {\red n'_{t_L}}}{{\blue n_{t_L}} +  {\red n'_{t_L}}} + \frac{{\blue n_{t_R}} {\red n'_{t_R}}}{{\blue n_{t_R}} +  {\red n'_{t_R}}}.\\
+&\text{One-Class:}~~~ {\red n'_{t_L}},~ {\red n'_{t_R}} = \text{?}
+\end{align*}
 
-\begin{alertblock}{One-Class splitting criterion }%XXX~~~~{\color{black} \small [G., Brault, Drougard, Chiapino 2016]:}}
-$n'_{t_L} \to n_{t} \frac{\leb(t_L)}{\leb(t)} ~~~~\text{and}~~~~
-n'_{t_R} \to n_{t} \frac{\leb(t_R)}{\leb(t)}
-$% \begin{align*}
-% I_G^{OC-ad}(t_L, t_R)= \frac{n_{t_L} \gamma n_t \lambda_L}{n_{t_L} + \gamma n_t \lambda_L} + \frac{n_{t_R} \gamma n_t \lambda_R}{n_{t_R} + \gamma n_t \lambda_R}.
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.95\textwidth]{sourcefigs/tree_oc.pdf}
+\end{minipage}
+
+Existing literature:
+{\small [Désir et al., 2013, Liu et al., 2008, Shi and Horvath, 2012].}\\
+Based on \textbf{second-class sampling}.
+\end{exampleblock}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Random Forests for one-class classification}
+
+% {\blue Two-class impurity decrease} (proxy) for splitting node $t$, yielding children nodes $t_L$ and $t_R$ :
+
+\begin{minipage}{0.65\textwidth}
+\begin{align*}
+&\text{Two-Class:}~~~
+I_G(t_L, t_R)= \frac{{\blue n_{t_L}} {\red n'_{t_L}}}{{\blue n_{t_L}} +  {\red n'_{t_L}}} + \frac{{\blue n_{t_R}} {\red n'_{t_R}}}{{\blue n_{t_R}} +  {\red n'_{t_R}}}.\\
+&\text{One-Class:}~~~ {\red n'_{t_L}},~ {\red n'_{t_R}} = \text{?}
+\end{align*}
+
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.95\textwidth]{sourcefigs/tree_oc.pdf}
+\end{minipage}
+\
+\begin{exampleblock}{One-Class splitting criterion ~~~~{\color{black} \small [Goix, Brault, Drougard, Chiapino 2016]:}}
+\textbf{Naive approach:} ~~~~~~~~~${\red n'_{t_L}} \to {\mb n} \frac{\leb(t_L)}{\leb(\mb{t_{0}})} ~~~~\text{and}~~~~ {\red n'_{t_R}} \to \mb n \frac{\leb(t_R)}{\leb(\mb{t_{0}})}$~~~~~~~($\mb{t_0}$ root node)
+
+\textbf{Adaptive approach:}~~~
+${\red n'_{t_L}} \to \mb{n_{t}} \frac{\leb(t_L)}{\leb(\mb t)} ~~~~\text{and}~~~~
+{\red n'_{t_R}} \to \mb{n_{t}} \frac{\leb(t_R)}{\leb(\mb t)}
+$
+% \begin{align*}
+% I_G^{OC-ad}(t_L, t_R)= \frac{{\blue n_{t_L}} \gamma n_t \lambda_L}{{\blue n_{t_L}} + \gamma n_t \lambda_L} + \frac{{\blue n_{t_R}} \gamma n_t \lambda_R}{{\blue n_{t_R}} + \gamma n_t \lambda_R}.
 % \end{align*}
 
 \input{tikz.tex}
-\end{alertblock}
+\end{exampleblock}
 %
-Does theorical guaranties apply ?
+Theoretical guaranties ?
 {\small [Biau et al. 2008, Biau and Scornet, 2016]}
 
 \end{frame}
+
 
 
 % \subsection{AD and Extremes perspectives}
@@ -1093,8 +1139,9 @@ Does theorical guaranties apply ?
 
 
   \begin{itemize}
-\item Add details to the representation?
-\item An alternative definition of sparsity?
+\item How to choose $\epsilon$ in practice?
+\item Refine our representation?
+\item An alternative notion of sparsity?
   \end{itemize}
 \end{frame}
 
@@ -1140,6 +1187,12 @@ Does theorical guaranties apply ?
 
 \item Hautamaki, Karkkainen and Franti 2004. Outlier detection using k-nearest neighbour graph.
 
+\item de Haan and Ferreira, Extreme value theory, 2006.
+
+\item Hawkins 1980, Identification of outliers.
+
+\item Lee and Roberts 2008, On-line novelty detection using the Kalman filter and extreme value theory.
+
 }
 \end{itemize}
 \end{frame}
@@ -1150,11 +1203,6 @@ Does theorical guaranties apply ?
 \frametitle{Some references:}
 \begin{itemize}
 \footnotesize{
-\item de Haan and Ferreira, Extreme value theory, 2006.
-
-\item Hawkins 1980, Identification of outliers.
-
-\item Lee and Roberts 2008, On-line novelty detection using the Kalman filter and extreme value theory.
 
 \item Liu, Ting, Zhou 2008, Isolation forest.
 
@@ -1195,7 +1243,7 @@ Does theorical guaranties apply ?
 
 
 \begin{frame}
-\frametitle{Corresponding Algorithm}
+\frametitle{Damex algorithm}
 \begin{center}
 
 % \begin{minipage}{0.95\linewidth}
@@ -1234,100 +1282,11 @@ $\Phi_n^{\alpha,\epsilon} = \widehat{\Phi}(\Omega_\alpha) = \frac{n}{k}\mathbb{P
 
 
 
-\begin{frame}
-\frametitle{Experiments}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = 1. \textwidth]{SA-lb-semi-supervised-average-0001.pdf}
-  \caption{ROC and PR curve on SA dataset}
-  \label{SA}
-\end{figure}
-\end{frame}
-
-
-
-
-\begin{frame}
-\begin{table}[h]
-\centering
-\begin{tabular}{lcc}
-  \toprule
-  ~           & number of samples  & number of features \\
-  \midrule
-  shuttle     & 85849              & 9                  \\
-  forestcover & 286048             & 54                 \\
-  SA          & 976158             & 41                 \\
-  SF          & 699691             & 4                  \\
-  http        & 619052             & 3                  \\
-  % smtp        & 95373              & 3                  \\
-  \bottomrule
-\end{tabular}
-\caption{Datasets characteristics}
-\label{table:data}
-
-
-% \begin{tabular}{lcccc}
-%   \toprule
-% Dataset      &\multicolumn{2}{c}{iForest}& \multicolumn{2}{c}{DAMEX}\\
-% \midrule
-% ~            &AUC ROC       & AUC PR     &AUC ROC     &AUC PR       \\
-% shuttle      & 0.957        & 0.987      &$\mb{0.988}$&$\mb{0.996}$ \\
-% forestcover  & 0.667        & 0.201      &$\mb{0.976}$&$\mb{0.805}$ \\
-% http         & 0.561        & 0.321      &$\mb{0.981}$&$\mb{0.742}$ \\
-% %smtp         & $\mb{0.900}$ &$\mb{0.004}$&0.898       &0.003        \\
-% SF           & 0.134        & 0.189      &$\mb{0.988}$&$\mb{0.973}$ \\
-% SA           & 0.932        &0.625       &$\mb{0.945}$&$\mb{0.818}$ \\ 
-% \bottomrule
-% \end{tabular}
-% \caption{Results on extreme regions with standard parameters $(k,\epsilon) = (n^{1/2}, 0.01)$}
-\end{table}
-\end{frame}
-
-
-\begin{frame}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = 1. \textwidth]{SF-4d-lb-semi-supervised-average-rect-01}
-  \caption{ROC and PR curve on SF dataset}
-  \label{SF}
-\end{figure}
-\end{frame}
-
-
-
-\begin{frame}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = 1. \textwidth]{http-3d-semi-supervised-average-rect-01}
-  \caption{ROC and PR curve on http dataset}
-  \label{http}
-\end{figure}
-\end{frame}
-
-
-\begin{frame}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = 1. \textwidth]{shuttle-semi-supervised-average-rect-01}
-  \caption{ROC and PR curve on shuttle dataset}
-  \label{shuttle}
-\end{figure}
-\end{frame}
-
-\begin{frame}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = 1. \textwidth]{forestcover-semi-supervised-average-rect-01}
-  \caption{ROC and PR curve on forestcover dataset}
-  \label{forestcover}
-\end{figure}
-\end{frame}
-
-
 % \begin{frame}
+% \frametitle{Damex benchmark}
 % \begin{figure}[H]
 %   \centering
-%   \includegraphics[width = 1. \textwidth]{SA-lb-semi-supervised-average-rect-01}
+%   \includegraphics[width = 1. \textwidth]{SA-lb-semi-supervised-average-0001.pdf}
 %   \caption{ROC and PR curve on SA dataset}
 %   \label{SA}
 % \end{figure}
@@ -1335,20 +1294,94 @@ $\Phi_n^{\alpha,\epsilon} = \widehat{\Phi}(\Omega_\alpha) = \frac{n}{k}\mathbb{P
 
 
 
+
 % \begin{frame}
-% \begin{figure}[ht]
+% \frametitle{Damex benchmark}
+% \begin{table}[h]
+% \centering
+% \begin{tabular}{lcc}
+%   \toprule
+%   ~           & number of samples  & number of features \\
+%   \midrule
+%   shuttle     & 85849              & 9                  \\
+%   forestcover & 286048             & 54                 \\
+%   SA          & 976158             & 41                 \\
+%   SF          & 699691             & 4                  \\
+%   http        & 619052             & 3                  \\
+%   % smtp        & 95373              & 3                  \\
+%   \bottomrule
+% \end{tabular}
+% \caption{Datasets characteristics}
+% \label{table:data}
+
+
+% % \begin{tabular}{lcccc}
+% %   \toprule
+% % Dataset      &\multicolumn{2}{c}{iForest}& \multicolumn{2}{c}{DAMEX}\\
+% % \midrule
+% % ~            &AUC ROC       & AUC PR     &AUC ROC     &AUC PR       \\
+% % shuttle      & 0.957        & 0.987      &$\mb{0.988}$&$\mb{0.996}$ \\
+% % forestcover  & 0.667        & 0.201      &$\mb{0.976}$&$\mb{0.805}$ \\
+% % http         & 0.561        & 0.321      &$\mb{0.981}$&$\mb{0.742}$ \\
+% % %smtp         & $\mb{0.900}$ &$\mb{0.004}$&0.898       &0.003        \\
+% % SF           & 0.134        & 0.189      &$\mb{0.988}$&$\mb{0.973}$ \\
+% % SA           & 0.932        &0.625       &$\mb{0.945}$&$\mb{0.818}$ \\ 
+% % \bottomrule
+% % \end{tabular}
+% % \caption{Results on extreme regions with standard parameters $(k,\epsilon) = (n^{1/2}, 0.01)$}
+% \end{table}
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Damex benchmark}
+% \begin{figure}[H]
 %   \centering
-%   \includegraphics[width = 1. \textwidth]{smtp-3d-semi-supervised-average-rect-01}
-%   \caption{ROC and PR curve on smtp dataset}
-%   \label{smtp}
+%   \includegraphics[width = 1. \textwidth]{SF-4d-lb-semi-supervised-average-rect-01}
+%   \caption{ROC and PR curve on SF dataset}
+%   \label{SF}
+% \end{figure}
+% \end{frame}
+
+
+
+% \begin{frame}
+% \frametitle{Damex benchmark}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width = 1. \textwidth]{http-3d-semi-supervised-average-rect-01}
+%   \caption{ROC and PR curve on http dataset}
+%   \label{http}
+% \end{figure}
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Damex benchmark}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width = 1. \textwidth]{shuttle-semi-supervised-average-rect-01}
+%   \caption{ROC and PR curve on shuttle dataset}
+%   \label{shuttle}
+% \end{figure}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Damex benchmark}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width = 1. \textwidth]{forestcover-semi-supervised-average-rect-01}
+%   \caption{ROC and PR curve on forestcover dataset}
+%   \label{forestcover}
 % \end{figure}
 % \end{frame}
 
 
 
 
+
 \begin{frame}
-\frametitle{Benchmarks for EM/MV}
+\frametitle{EM/MV random projection benchmark}
 \begin{block}{Does performance in term of EM/MV correspond to performance in term of ROC/PR?}
 
 \begin{itemize}
@@ -1374,36 +1407,9 @@ If we only consider the pairs \st~\emph{ROC and PR agree on which algorithm is t
 \end{frame}
 
 
-\begin{frame}
-\begin{table}[!ht]
-\caption{Original Datasets characteristics}
-\centering
-%\tabcolsep=0.2cm
-\resizebox{\linewidth}{!} {
-\begin{tabular}{l cc ll }
-  \toprule
-  ~           & nb of samples      & nb of features     & ~~~~~~~~~~~~~~~~~~~~~~~~~anomaly class      & ~                  \\ \cmidrule{1-5}
-  adult       & 48842              & 6                  &    class '$>50K$'                           &      (23.9\%)      \\
-  http        & 567498             & 3                  &      attack                                 &    (0.39\%)        \\
-  pima        & 768                & 8                  &    pos (class 1)                            &        (34.9\%)    \\
-  smtp        & 95156              & 3                  &      attack                                 &    (0.03\%)        \\
-  wilt        & 4839               & 5                  &    class 'w' (diseased trees)               &    (5.39\%)        \\
-  annthyroid  & 7200               & 6                  &    classes $\neq$ 3                         &        (7.42\%)    \\
-  arrhythmia  & 452                & 164                &    classes $\neq$ 1 (features 10-14 removed)&  (45.8\%)          \\
-  forestcover & 286048             & 10                 &    class 4  (vs. class 2 )                  &           (0.96\%) \\
-  ionosphere  & 351                & 32                 &    bad                                      &       (35.9\%)     \\
-  pendigits   & 10992              & 16                 &    class 4                                  &        (10.4\%)    \\
-  shuttle     & 85849              & 9                  &      classes $\neq$ 1 (class 4 removed)     &  (7.17\%)          \\
-  spambase    & 4601               & 57                 &    spam                                     &           (39.4\%) \\
-  \bottomrule
-\end{tabular}
-}
-\end{table}
-
-\end{frame}
 
 
-\begin{frame}
+\begin{frame}{EM/MV random projection benchmark}
 \begin{table}[!ht]
 \centering
 \footnotesize
@@ -1436,6 +1442,84 @@ spambase     &\bf 0.824 &\bf 0.371 &\bf 9.5e-04&\bf 4.5e01&  &\underline{0.729} 
 \end{tabular}
 }
 \end{table}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{OCRF Benchmark}
+\begin{table}[ht]
+\caption{ Results for the novelty detection setting (novelty detection framework).
+%We compare various methods from the state-of-the-art (top line) to OneClassRF over different classical datasets (leftmost column).
+}
+\label{ocrf:table:results-semisupervised}
+\centering
+%\scriptsize
+\tabcolsep=0.1cm
+\resizebox{1.\linewidth}{!} {
+\begin{tabular}{ l  c@{\extracolsep{0.1cm}}c c@{\extracolsep{0.1cm}}c c@{\extracolsep{0.1cm}}c c@{\extracolsep{0.1cm}}c c@{\extracolsep{0.1cm}}c c@{\extracolsep{0.1cm}}c c@{\extracolsep{0.1cm}}c c@{\extracolsep{0.1cm}}c }
+\toprule
+%
+Datasets & \multicolumn{2}{c }{OneClassRF} & \multicolumn{2}{c }{iForest} & \multicolumn{2}{c }{OCRF\small{sampl.}} & \multicolumn{2}{c }{OCSVM}& \multicolumn{2}{c }{LOF}& \multicolumn{2}{c }{Orca}& \multicolumn{2}{c }{LSAD}& \multicolumn{2}{c }{RFC}  \\%& parameters $(\epsilon, k)$\\
+  \cmidrule{1-17}
+~     & ROC &  PR & ROC &  PR & ROC & PR  & ROC & PR  & ROC & PR  &ROC  & PR  & ROC &  PR & ROC & PR  \\
+adult        &        \textbf{0.665} & \textbf{0.278} & 0.661 & 0.227 & NA & NA & 0.638 & 0.201 & 0.615 & 0.188 & 0.606 & 0.218 &  0.647    & 0.258     & NA & NA \\
+annthyroid   &        \textbf{0.936} & 0.468 & 0.913 & 0.456 & 0.918 & \textbf{0.532} & 0.706 & 0.242 & 0.832 & 0.446 & 0.587 & 0.181 &  0.810    & 0.327     & NA & NA \\
+arrhythmia   &        0.684 & 0.510 & 0.763 & 0.492 & 0.639 & 0.249 & \textbf{0.922} & \textbf{0.639} & 0.761 & 0.473 & 0.720 & 0.466 &  0.778    & 0.514     & 0.716 & 0.299 \\
+forestcover  &        0.968 & 0.457 & 0.863 & 0.046 & NA & NA & NA & NA & \textbf{0.990} & \textbf{0.795} & 0.946 & 0.558 &  0.952    & 0.166     & NA & NA \\
+http         &        \textbf{0.999} & \textbf{0.838} & 0.994 & 0.197 & NA & NA & NA & NA & NA & NA & \textbf{0.999} & 0.812 &  0.981    & 0.537     & NA & NA \\
+ionosphere   &        0.909 & 0.643 & 0.902 & 0.535 & 0.859 & 0.609 & 0.973 & 0.849 & 0.959 & 0.807 & 0.928 & \textbf{0.910} &  \textbf{0.978}    & 0.893     & 0.950 & 0.754 \\
+pendigits    &        0.960 & 0.559 & 0.810 & 0.197 & 0.968 & 0.694 & 0.603 & 0.110 & 0.983 & 0.827 & \textbf{0.993} & \textbf{0.925} &  0.983    & 0.752     & NA & NA \\
+pima         &        0.719 & 0.247 & 0.726 & 0.183 & \textbf{0.759} & \textbf{0.266} & 0.716 & 0.237 & 0.700 & 0.152 & 0.588 & 0.175 &  0.713    & 0.216     & 0.506 & 0.090 \\
+shuttle      &        \textbf{0.999} & \textbf{0.998} & 0.996 & 0.973 & NA & NA & 0.992 & 0.924 & \textbf{0.999} & 0.995 & 0.890 & 0.782 &  0.996    & 0.956     & NA & NA \\
+smtp         &        0.922 & 0.499 & 0.907 & 0.005 & NA & NA & 0.881 & \textbf{0.656} & \textbf{0.924} & 0.149 & 0.782 & 0.142 &  0.877    & 0.381     & NA & NA \\
+spambase     &        \textbf{0.850} & 0.373 & 0.824 & 0.372 & 0.797 & \textbf{0.485} & 0.737 & 0.208 & 0.746 & 0.160 & 0.631 & 0.252 &  0.806    & 0.330     & 0.723 & 0.151 \\
+wilt         &        0.593 & 0.070 & 0.491 & 0.045 & 0.442 & 0.038 & 0.323 & 0.036 & 0.697 & 0.092 & 0.441 & 0.030 &  0.677    & 0.074     & \textbf{0.896} & \textbf{0.631} \\
+%internet_ads &     &       & & & & & & & &\\
+\cmidrule{1-17}
+average:    & \textbf{0.850} & \textbf{0.495} & 0.821 & 0.311 & 0.769 & 0.410 & 0.749 & 0.410 & 0.837 & 0.462 & 0.759 & 0.454 & \textbf{0.850}  & 0.450 &  0.758  & 0.385 \\
+cum. train time: & \multicolumn{2}{c }{\textbf{61s}} & \multicolumn{2}{c }{68s} & \multicolumn{2}{c }{NA} & \multicolumn{2}{c }{NA}& \multicolumn{2}{c }{NA}& \multicolumn{2}{c }{2232s}& \multicolumn{2}{c }{73s}& \multicolumn{2}{c }{NA}  \\
+
+  \bottomrule
+\end{tabular}
+}
+\end{table}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Datasets}
+
+\begin{table}[ht]
+% \caption{Original datasets characteristics}
+% \label{ocrf:table:data}
+\centering
+\footnotesize
+%\tabcolsep=0.08cm
+\resizebox{.8\linewidth}{!} {
+\begin{tabular}{lccll}
+  \toprule
+  Datasets        & nb of samples      & nb of features     & ~~~~~~~~~~~~~~~~~~~~~~~~~anomaly class      & ~                  \\ \midrule
+  adult       & 48842              & 6                  &    class '$>50K$'                           &      (23.9\%)      \\
+  annthyroid  & 7200               & 6                  &    classes $\neq$ 3                         &        (7.42\%)    \\
+  arrhythmia  & 452                & 164                &    classes $\neq$ 1 (features 10-14 removed)&  (45.8\%)          \\
+  forestcover & 286048             & 10                 &    class 4  (vs. class 2 )                  &           (0.96\%) \\
+  http        & 567498             & 3                  &      attack                                 &    (0.39\%)        \\
+  ionosphere  & 351                & 32                 &    bad                                      &       (35.9\%)     \\
+  pendigits   & 10992              & 16                 &    class 4                                  &        (10.4\%)    \\
+  pima        & 768                & 8                  &    pos (class 1)                            &        (34.9\%)    \\
+  shuttle     & 85849              & 9                  &      classes $\neq$ 1 (class 4 removed)     &  (7.17\%)          \\
+  smtp        & 95156              & 3                  &      attack                                 &    (0.03\%)        \\
+  spambase    & 4601               & 57                 &    spam                                     &           (39.4\%) \\
+  wilt        & 4839               & 5                  &    class 'w' (diseased trees)               &    (5.39\%)        \\
+  \bottomrule
+\end{tabular}
+}
+\end{table}
+
 
 \end{frame}
 

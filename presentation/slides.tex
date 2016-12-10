@@ -93,7 +93,7 @@ Machine Learning and Extremes  for Anomaly Detection
 \author[Nicolas Goix]{ Nicolas Goix \\
 % \\
 % \vspace{1em}
- {\tiny LTCI, CNRS, Telecom ParisTech, Université Paris-Saclay, France 
+ {\footnotesize LTCI, CNRS, Telecom ParisTech, Université Paris-Saclay, France 
  }
 }
 %}
@@ -353,7 +353,7 @@ Notation: Normal behavior $\to$ density {\blue f}.
 % \footnotesize{
 \begin{align*}
 MV_s(\alpha) ~:&=~ \inf_{\Gamma \text{ level-set of } s} \big\{~ \leb(\Gamma) ~~~s.t.~~ \mathbb{P}(\mb X \in \Gamma) \ge \alpha~\big\} \\
-MV^*(\alpha) ~:&=~ MV_f(\alpha) \overset{prop}{=}  \min_{\Gamma~ \text{borelian}} \big\{~\leb(\Gamma) ~~~\st~~ \mathbb{P}(\mb X \in \Gamma) \ge \alpha ~\big\} 
+MV^*(\alpha) ~:&=~ MV_f(\alpha) %\overset{prop}{=}  \min_{\Gamma~ \text{borelian}} \big\{~\leb(\Gamma) ~~~\st~~ \mathbb{P}(\mb X \in \Gamma) \ge \alpha ~\big\} 
 \end{align*}
 %
 \begin{figure}[htb]
@@ -408,11 +408,11 @@ Main drawbacks of MV:
 \begin{frame}
 \frametitle{Our contribution: Excess-Mass curve  {\small [Goix, Sabourin, Clémençon 2015]}}
 
-Excess-Mass {\small [Polonik 1995]}\\
+Excess-Mass {\small [Hartigan 1987, Polonik 1995]}\\
 {\blue \large Excess-Mass curve }
 \begin{align*}
 EM_s(t) ~~:&=~ \sup_{\Omega \text{ level-set of } s}~~~\big\{ \mathbb{P}(\mb X \in \Omega) ~-~ t \leb(\Omega) \big\}\\
-EM^*(t) ~~:&=~  EM_f(t) \overset{prop}{=}  \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\} 
+EM^*(t) ~~:&=~  EM_f(t) %\overset{prop}{=}  \max_{\Omega\text{ borelian} } ~\big\{{\mathbb{P}} (\mb X\in \Omega)-t\leb(\Omega) \big\} 
 %&EM^*(t) \ge EM_s(t)~~~~~~~~~~~~\text{for all scoring function}~~ s
 \end{align*}
 
@@ -485,7 +485,7 @@ For $k=1, \ldots, N$,
 \end{align*}
 %
 %where $\mathbb{P}_n(X \in \Omega) = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{X_i \in \Omega}$, we obtain
-$s_N(x) := \sum_{j=1}^N(t_j - t_{j+1}) \mathds{1}_{x \in \Omega_{t_j}}$
+$s_N(x) := \sum_{j=1}^N(t_j - t_{j+1}) \mathds{1}_{x \in \widehat \Omega_{t_j}}$
 \begin{figure}
 \includegraphics[width=0.5\linewidth]{sourcefigs/em_optim.pdf}
 \end{figure}
@@ -877,9 +877,9 @@ $\Rightarrow$ Needs to take into account that the proba of  ${\blue \frac{n}{k}}
 \frametitle{Theorem's proof: key ingredient}
 % \frametitle{Statistical guaranties: Solution}
 \textbf{Key:}
-VC-inequality adapted to rare regions $\rightarrow$ bound in $$\mathbf{\sqrt{p}}~ \frac{n}{k} \sqrt{ \frac{d}{ n}\log \frac{1}{\delta}}$$
+VC-inequality adapted to rare regions $\rightarrow$ bound in $$\mathbf{{\blue \sqrt{p}}}~ {\red \frac{n}{k}} \sqrt{ \frac{d}{ n}\log \frac{1}{\delta}}$$
 with $p$ the probability to be in the union class $\cup_{A \in \mathcal{A}}A$.
-$$\mb p \le d \frac{k}{n}$$
+$$\mb {\blue p} \le d \frac{k}{n}$$
 $\Rightarrow$ bound in $$ d \sqrt{ \frac{1}{ k}\log \frac{1}{\delta}} $$
 %interpretation of $k$: 
 %\begin{itemize}
@@ -1081,7 +1081,7 @@ I_G(t_L, t_R)= \frac{{\blue n_{t_L}} {\red n'_{t_L}}}{{\blue n_{t_L}} +  {\red n
 \end{minipage}
 
 Existing literature:
-{\small [Désir et al., 2013, Liu et al., 2008, Shi and Horvath, 2012].}\\
+{\small [Liu et al., 2008, Désir et al., 2013, Shi and Horvath, 2012].}\\
 Based on \textbf{second-class sampling}.
 \end{exampleblock}
 \end{frame}
@@ -1450,7 +1450,7 @@ spambase     &\bf 0.824 &\bf 0.371 &\bf 9.5e-04&\bf 4.5e01&  &\underline{0.729} 
 \begin{frame}
 \frametitle{OCRF Benchmark}
 \begin{table}[ht]
-\caption{ Results for the novelty detection setting (novelty detection framework).
+\caption{ Results for the novelty detection setting %(novelty detection framework).
 %We compare various methods from the state-of-the-art (top line) to OneClassRF over different classical datasets (leftmost column).
 }
 \label{ocrf:table:results-semisupervised}
@@ -1499,7 +1499,7 @@ cum. train time: & \multicolumn{2}{c }{\textbf{61s}} & \multicolumn{2}{c }{68s} 
 \centering
 \footnotesize
 %\tabcolsep=0.08cm
-\resizebox{.8\linewidth}{!} {
+\resizebox{\linewidth}{!} {
 \begin{tabular}{lccll}
   \toprule
   Datasets        & nb of samples      & nb of features     & ~~~~~~~~~~~~~~~~~~~~~~~~~anomaly class      & ~                  \\ \midrule

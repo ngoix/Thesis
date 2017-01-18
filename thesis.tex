@@ -2,8 +2,8 @@
 %% Thesis.tex
 %% ---------------------------------------------------------------- 
 
-%\documentclass[draft]{ecsthesis}      % Use the Thesis Style
-\documentclass{ecsthesis}      % Use the Thesis Style
+\documentclass[draft]{ecsthesis}      % Use the Thesis Style
+%\documentclass{ecsthesis}      % Use the Thesis Style
 
 %\graphicspath{{../Figures/}}   % Location of your graphics files
 \usepackage{natbib}            % Use Natbib style for the refs.
@@ -43,6 +43,7 @@
 \tableofcontents
 \listoffigures
 \listoftables
+
 %\lstlistoflistings
 %\listofsymbols{ll}{}
 %\dedicatory{To \dots}
@@ -51,6 +52,8 @@
 %
 % \null\vfill
 % ``There is nothing more practical than a good theory.''
+\emph{Dans ce prodigieux, cet inépuisable catalogue-raisonné-des-données-expérimentales, qui, mené à bien, devait aboutir à la certitude des certitudes, toutes les bizarreries, toutes les anomalies avaient leur place marquée, puisqu'elles étaient révélatrices à l'égal des phénomènes " normaux ".}
+BÉGUIN, L'Âme romantique et le rêve, 1939, p. 4.
 %
 % \begin{flushright}
 % --- James C. Maxwell
@@ -78,6 +81,9 @@
 \input{introduction.tex}
 %%\numberwithin{section}{chapter}
 
+\chapter{Résumé des contributions en Français}\label{chap:resume_fr}
+\input{resume_fr}
+
 \part{Preliminaries}\label{part:background}
 \input{background.tex}
 
@@ -100,6 +106,7 @@
 % \counterwithout{section}{chapter}
 \input{conclusion}
 % \numberwithin{section}{chapter}
+
 
 %%\input{ListPublis}
 \appendix

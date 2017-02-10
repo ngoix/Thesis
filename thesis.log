@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  18 JAN 2017 15:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.18)  29 JAN 2017 20:59
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1720,18 +1720,53 @@ Overfull \hbox (6.5612pt too wide) in paragraph at lines 36--92
  [] |
  []
 
-[22] [23] [24] [25] [26] [27]
-Overfull \hbox (4.51656pt too wide) in paragraph at lines 415--415
+[22] [23]
+Underfull \hbox (badness 1360) in paragraph at lines 132--135
+\T1/ptm/m/n/10.95 À pro-pre-ment par-ler, les critères que nous recher-chons so
+nt des critères de \T1/ptm/m/it/10.95 rank-ing
+ []
+
+[24]
+
+LaTeX Warning: Reference `aistat: chap' on page 25 undefined on input line 147.
+
+
+[25]
+Underfull \hbox (badness 1810) in paragraph at lines 218--220
+[]\T1/ptm/m/n/10.95 L'objectif est alors de con-stru-ire une fonc-tion de score
+ $[]$ en fonc-tion des don-nées
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26]
+
+LaTeX Warning: Reference `resume_fr:eq: MV' on page 27 undefined on input line 
+283.
+
+[27]
+
+LaTeX Warning: Reference `resume_fr:solomeg ' on page 28 undefined on input lin
+e 289.
+
+
+Overfull \hbox (4.51656pt too wide) in paragraph at lines 350--350
 [] |
  []
 
-[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39]) [40]
+[28]
+
+LaTeX Warning: Reference `aistat: chap' on page 29 undefined on input line 373.
+
+
+[29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]) [41] [42
+
+]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 87.
- [41
-
-] [42]
-(./background.tex
+ [43]
+[44] (./background.tex
 Chapter 3.
 ------------------------------------------------------------------------------
  3.\hskip 1em\relax Concentration Inequalities from the Method of bounded diffe
@@ -1741,14 +1776,14 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 37.
-[43
+[45
 
-] [44] [45] [46] [47] [48] [49]
+] [46] [47] [48] [49] [50] [51]
 Overfull \hbox (3.54814pt too wide) in paragraph at lines 415--415
 [] |
  []
 
-[50] [51]
+[52] [53]
 Overfull \hbox (3.74083pt too wide) in paragraph at lines 457--457
 [] |
  []
@@ -1758,38 +1793,38 @@ Overfull \hbox (7.11525pt too wide) in paragraph at lines 477--477
 [] |
  []
 
-[52] [53] [54] [55] [56
+[54] [55] [56] [57] [58
 
 ]
 Chapter 4.
 ------------------------------------------------------------------------------
  4.\hskip 1em\relax Extreme Value Theory
 ------------------------------------------------------------------------------
-[57] <fig_source/GEV.png, id=282, 586.8324pt x 442.2924pt> [58]
+[59] <fig_source/GEV.png, id=288, 586.8324pt x 442.2924pt> [60]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 694.
- [59]
+ [61]
 Underfull \hbox (badness 2142) in paragraph at lines 737--757
 \T1/ptm/m/n/10.95 for all con-ti-nu-ity points $\OT1/cmr/bx/n/10.95 x \OMS/cmsy
 /m/n/10.95 2 \U/msb/m/n/10.95 R[]$ \T1/ptm/m/n/10.95 of $\OT1/cmr/bx/n/10.95 G$
 \T1/ptm/m/n/10.95 . This clearly im-plies that the mar-gins
  []
 
-[60] [61]
+[62] [63]
 Overfull \hbox (8.5852pt too wide) in paragraph at lines 888--888
 [] |
  []
 
-[62]
+[64]
 Chapter 5.
 ------------------------------------------------------------------------------
  5.\hskip 1em\relax Background on classical Anomaly Detection algorithms
 ------------------------------------------------------------------------------
-[63
+[65
 
-] <fig_source/OCSVM_hard.png, id=304, 481.67186pt x 176.44644pt> [64]
-<fig_source/OCSVM_soft.png, id=308, 482.8251pt x 178.36852pt> [65] [66]
-[67]
+] <fig_source/OCSVM_hard.png, id=310, 481.67186pt x 176.44644pt> [66]
+<fig_source/OCSVM_soft.png, id=314, 482.8251pt x 178.36852pt> [67] [68]
+[69]
 \openout5 = `thesis.pyg'.
 
 runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
@@ -1811,7 +1846,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1150--1151
 
  []
 
-[68]
+[70]
 \openout5 = `thesis.pyg'.
 
 runsystem(pygmentize -l python -f latex -F tokenmerge             -P "verboptio
@@ -1828,7 +1863,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1162--1163
 
  []
 
-<fig_source/lof.png, id=324, 586.8324pt x 442.2924pt>
+<fig_source/lof.png, id=330, 586.8324pt x 442.2924pt>
 Package mdframed Info: mdframed works in twoside mode on input line 1176.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1850,17 +1885,17 @@ runsystem(rm thesis.out.pyg)...executed.
 runsystem(rm thesis.pyg)...executed.
 
 
-[69] <fig_source/ideeIF.png, id=328, 231.05751pt x 137.72597pt>
+[71] <fig_source/ideeIF.png, id=334, 231.05751pt x 137.72597pt>
 Overfull \hbox (6.1739pt too wide) in paragraph at lines 1239--1240
  [][] |
  []
 
-<fig_source/convergenceIF.png, id=329, 137.72597pt x 137.72597pt>
+<fig_source/convergenceIF.png, id=335, 137.72597pt x 137.72597pt>
 Overfull \hbox (16.41331pt too wide) in paragraph at lines 1237--1249
 []$[]$ $[]$ |
  []
 
-<fig_source/iforest.png, id=330, 586.8324pt x 442.2924pt>
+<fig_source/iforest.png, id=336, 586.8324pt x 442.2924pt>
 Underfull \hbox (badness 10000) in paragraph at lines 1257--1259
 
  []
@@ -1880,10 +1915,10 @@ runsystem(rm thesis.out.pyg)...executed.
 
 runsystem(rm thesis.pyg)...executed.
 
- [70] [71]
-<fig_source/ADcomparison1.png, id=337, 731.3724pt x 370.0224pt>
-<fig_source/ADcomparison2.png, id=338, 731.3724pt x 370.0224pt> [72]
-<fig_source/ADcomparison3.png, id=342, 731.3724pt x 370.0224pt>
+ [72] [73]
+<fig_source/ADcomparison1.png, id=344, 731.3724pt x 370.0224pt>
+<fig_source/ADcomparison2.png, id=345, 731.3724pt x 370.0224pt> [74]
+<fig_source/ADcomparison3.png, id=349, 731.3724pt x 370.0224pt>
 Package mdframed Info: mdframed works in twoside mode on input line 1363.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1900,23 +1935,23 @@ runsystem(rm thesis.out.pyg)...executed.
 
 runsystem(rm thesis.pyg)...executed.
 
- [73]) [74] [75
+ [75]) [76] [77
 
-] [76] (./aistat.tex
+] [78] (./aistat.tex
 Chapter 6.
 ------------------------------------------------------------------------------
  6.\hskip 1em\relax On Anomaly Ranking and Excess-Mass Curves
 ------------------------------------------------------------------------------
-[77
+[79
 
-] [78]
+] [80]
 Underfull \hbox (badness 10000) in paragraph at lines 117--120
 
  []
 
-[79] [80]
+[81] [82]
 Missing character: There is no ; in font nullfont!
- [81]
+ [83]
 Overfull \hbox (17.91214pt too wide) detected at line 464
 [] \OML/cmm/m/it/10.95 ^^O[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 f\OML/cmm/m
 /it/10.95 s > u\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 ^^A[]\OMS/cmsy/m/n/10.95
@@ -1930,11 +1965,11 @@ OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 f > t\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/
 10.95 )\OML/cmm/m/it/10.95 ;|
  []
 
-[82] [83] [84] [85]
+[84] [85] [86] [87]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[86] [87]
+[88] [89]
 Underfull \hbox (badness 10000) in paragraph at lines 801--802
 []\T1/ptm/m/n/10.95 The re-sult di-rectly fol-lows from the fol-low-
  []
@@ -1950,13 +1985,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 801--802
 
  []
 
-[88]
+[90]
 Overfull \hbox (5.18303pt too wide) in paragraph at lines 812--812
 [] |
  []
 
-<fig_source/EM-EMS.png, id=398, 578.16pt x 433.62pt>
-<fig_source/EM-EMSzoom.png, id=399, 578.16pt x 433.62pt>
+<fig_source/EM-EMS.png, id=404, 578.16pt x 433.62pt>
+<fig_source/EM-EMSzoom.png, id=405, 578.16pt x 433.62pt>
 Underfull \hbox (badness 10000) in paragraph at lines 845--845
 []\T1/ptm/m/sc/10 Figure 6.5: |\T1/ptm/m/n/10 Zoom near 0
  []
@@ -1966,18 +2001,18 @@ Overfull \hbox (2.08049pt too wide) in paragraph at lines 834--849
 []$[]$  $[]$ |
  []
 
-<fig_source/EMG-EM.png, id=400, 578.16pt x 433.62pt> [89] [90]
-<fig_source/scoring3D.png, id=407, 1675.2186pt x 897.5934pt> [91]
+<fig_source/EMG-EM.png, id=406, 578.16pt x 433.62pt> [91] [92]
+<fig_source/scoring3D.png, id=414, 1675.2186pt x 897.5934pt> [93]
 Underfull \hbox (badness 10000) in paragraph at lines 891--894
 
  []
 
-[92]
+[94]
 Overfull \hbox (2.81657pt too wide) in paragraph at lines 922--922
 [] |
  []
 
-[93]
+[95]
 Underfull \hbox (badness 10000) in paragraph at lines 949--950
 
  []
@@ -1992,145 +2027,145 @@ Underfull \hbox (badness 10000) in paragraph at lines 991--993
 
  []
 
-[94]
+[96]
 Overfull \hbox (6.64136pt too wide) in paragraph at lines 1048--1048
 [] |
  []
 
-[95]) [96] [97
+[97]) [98] [99
 
-] [98] (./colt.tex
+] [100] (./colt.tex
 Chapter 7.
 ------------------------------------------------------------------------------
  7.\hskip 1em\relax Learning the dependence structure of rare events: a non-asy
 mptotic study
 ------------------------------------------------------------------------------
-[99
+[101
 
-] [100] [101] [102]
+] [102] [103] [104]
 Overfull \hbox (5.76132pt too wide) in paragraph at lines 641--641
 [] |
  []
 
-[103] [104] [105]
+[105] [106] [107]
 Underfull \hbox (badness 10000) in paragraph at lines 833--834
 
  []
 
-[106]
+[108]
 Overfull \hbox (22.20183pt too wide) in paragraph at lines 938--938
 [] |
  []
 
-[107] [108]) (./jmva.tex [109] [110
+[109] [110]) (./jmva.tex [111] [112
 
 ]
 Chapter 8.
 ------------------------------------------------------------------------------
  8.\hskip 1em\relax Sparse Representation of Multivariate Extremes
 ------------------------------------------------------------------------------
-[111] [112] [113] [114] [115] [116] [117] [118] [119]
-<fig_source/representation2D_nk_rect.png, id=501, 335.3328pt x 300.4023pt>
-[120] [121] [122] [123] [124] [125] [126] [127] [128] [129]
-<fig_source/plot_damex_level_sets.png, id=534, 1602.2259pt x 721.2546pt>
-[130] [131] [132] <fig_source/wave_dir2.png, id=544, 1180.1691pt x 460.3599pt>
-[133] [134]
-<fig_source/shuttle-semi-supervised-average-rect-01.png, id=553, 1681.0002pt x 
+[113] [114] [115] [116] [117] [118] [119] [120] [121]
+<fig_source/representation2D_nk_rect.png, id=508, 335.3328pt x 300.4023pt>
+[122] [123] [124] [125] [126] [127] [128] [129] [130] [131]
+<fig_source/plot_damex_level_sets.png, id=540, 1602.2259pt x 721.2546pt>
+[132] [133] [134] <fig_source/wave_dir2.png, id=552, 1180.1691pt x 460.3599pt>
+[135] [136]
+<fig_source/shuttle-semi-supervised-average-rect-01.png, id=559, 1681.0002pt x 
 922.8879pt>
-<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=554, 1681.0002pt x
+<fig_source/SF-4d-lb-semi-supervised-average-rect-01.png, id=560, 1681.0002pt x
  922.8879pt>
-<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=555, 1681.0002pt x 
+<fig_source/SF-4d-lb-semi-supervised-average-rect-1.png, id=561, 1681.0002pt x 
 922.8879pt>
-<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=556, 1681.0002pt x 92
-2.8879pt> [135]
-<fig_source/forestcover-semi-supervised-average-rect-01.png, id=560, 1681.0002p
+<fig_source/SA-lb-semi-supervised-average-rect-01.png, id=562, 1681.0002pt x 92
+2.8879pt> [137]
+<fig_source/forestcover-semi-supervised-average-rect-01.png, id=566, 1681.0002p
 t x 922.8879pt>
-<fig_source/http-3d-semi-supervised-average-rect-01.png, id=561, 1681.0002pt x 
-922.8879pt> [136] [137] [138] [139] [140] [141]
+<fig_source/http-3d-semi-supervised-average-rect-01.png, id=567, 1681.0002pt x 
+922.8879pt> [138] [139] [140] [141] [142] [143]
 Underfull \hbox (badness 5817) in paragraph at lines 2394--2395
 []\T1/ptm/m/n/10.95 Considering the def-i-ni-tion in (8.45) and (8.31), both si
 des are equal to
  []
 
-[142] [143] [144] [145]) [146] [147
+[144] [145] [146] [147]) [148] [149
 
-] [148] (./evaluation.tex
+] [150] (./evaluation.tex
 Chapter 9.
 ------------------------------------------------------------------------------
  9.\hskip 1em\relax How to Evaluate the Quality of Anomaly Detection Algorithms
 ?
 ------------------------------------------------------------------------------
-[149
+[151
 
-] [150] [151] [152] [153] [154] [155]
+] [152] [153] [154] [155] [156] [157]
 <fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized_inkscape.png, i
-d=625, 1469.07466pt x 859.7638pt>
+d=632, 1469.07466pt x 859.7638pt>
 Overfull \hbox (23.36235pt too wide) in paragraph at lines 443--443
 [] |
  []
 
-[156] [157] [158] [159]
+[158] [159] [160] [161]
 <fig_source/evaluation_fig/bench_iforest_roc_pr_supervised_factorized.png, id=6
-39, 1806.75pt x 1228.59pt>
+45, 1806.75pt x 1228.59pt>
 <fig_source/evaluation_fig/bench_iforest_roc_pr_unsupervised_factorized.png, id
-=640, 1806.75pt x 1228.59pt>
-<fig_source/evaluation_fig/bench_ocsvm_roc_pr_supervised_factorized.png, id=641
+=646, 1806.75pt x 1228.59pt>
+<fig_source/evaluation_fig/bench_ocsvm_roc_pr_supervised_factorized.png, id=647
 , 1806.75pt x 1228.59pt>
 <fig_source/evaluation_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png, id=6
-42, 1806.75pt x 1228.59pt>
-<fig_source/evaluation_fig/bench_lof_roc_pr_supervised_factorized.png, id=643, 
+48, 1806.75pt x 1228.59pt>
+<fig_source/evaluation_fig/bench_lof_roc_pr_supervised_factorized.png, id=649, 
 1806.75pt x 1228.59pt>
-<fig_source/evaluation_fig/bench_lof_roc_pr_unsupervised_factorized.png, id=644
+<fig_source/evaluation_fig/bench_lof_roc_pr_unsupervised_factorized.png, id=650
 , 1806.75pt x 1228.59pt>
-<fig_source/evaluation_fig/mv_em_http_supervised_09_factorized.png, id=645, 180
+<fig_source/evaluation_fig/mv_em_http_supervised_09_factorized.png, id=651, 180
 6.75pt x 939.51pt>
-<fig_source/evaluation_fig/mv_em_http_unsupervised_09_factorized.png, id=646, 1
+<fig_source/evaluation_fig/mv_em_http_unsupervised_09_factorized.png, id=652, 1
 806.75pt x 939.51pt>
-<fig_source/evaluation_fig/mv_em_pima_supervised_09_factorized.png, id=647, 180
+<fig_source/evaluation_fig/mv_em_pima_supervised_09_factorized.png, id=653, 180
 6.75pt x 939.51pt>
-<fig_source/evaluation_fig/mv_em_pima_unsupervised_09_factorized.png, id=648, 1
+<fig_source/evaluation_fig/mv_em_pima_unsupervised_09_factorized.png, id=654, 1
 806.75pt x 939.51pt>
-<fig_source/evaluation_fig/mv_em_smtp_supervised_09_factorized.png, id=649, 180
+<fig_source/evaluation_fig/mv_em_smtp_supervised_09_factorized.png, id=655, 180
 6.75pt x 939.51pt>
-<fig_source/evaluation_fig/mv_em_smtp_unsupervised_09_factorized.png, id=650, 1
+<fig_source/evaluation_fig/mv_em_smtp_unsupervised_09_factorized.png, id=656, 1
 806.75pt x 939.51pt>
-<fig_source/evaluation_fig/mv_em_wilt_supervised_09_factorized.png, id=651, 180
+<fig_source/evaluation_fig/mv_em_wilt_supervised_09_factorized.png, id=657, 180
 6.75pt x 939.51pt>
-<fig_source/evaluation_fig/mv_em_wilt_unsupervised_09_factorized.png, id=652, 1
+<fig_source/evaluation_fig/mv_em_wilt_unsupervised_09_factorized.png, id=658, 1
 806.75pt x 939.51pt>
-<fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized.png, id=653, 18
+<fig_source/evaluation_fig/mv_em_adult_supervised_09_factorized.png, id=659, 18
 06.75pt x 939.51pt>
-<fig_source/evaluation_fig/mv_em_adult_unsupervised_09_factorized.png, id=654, 
-1806.75pt x 939.51pt>) (./ocrf.tex [160
+<fig_source/evaluation_fig/mv_em_adult_unsupervised_09_factorized.png, id=660, 
+1806.75pt x 939.51pt>) (./ocrf.tex [162
 
-] [161] [162] [163] [164] [165] [166]
-[167] [168
+] [163] [164] [165] [166] [167] [168]
+[169] [170
 
 ]
 Chapter 10.
 ------------------------------------------------------------------------------
  10.\hskip 1em\relax One Class Splitting Criteria for Random Forests
 ------------------------------------------------------------------------------
-[169] [170] [171] [172] [173] [174] [175]
-<fig_source/ocrf_fig/oneclassrf.png, id=706, 586.8324pt x 442.2924pt> [176]
+[171] [172] [173] [174] [175] [176] [177]
+<fig_source/ocrf_fig/oneclassrf.png, id=712, 586.8324pt x 442.2924pt> [178]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[177]
+[179]
 Underfull \hbox (badness 2529) in paragraph at lines 925--929
 []\T1/ptm/m/n/10.95 The \T1/ptm/m/it/10.95 LOF \T1/ptm/m/n/10.95 al-go-rithm us
 es de-fault pa-ram-e-ters: []\T1/pcr/m/n/10.95 n_neighbors=5\T1/ptm/m/n/10.95 ,
  []\T1/pcr/m/n/10.95 leaf_size=30\T1/ptm/m/n/10.95 ,
  []
 
-[178]
+[180]
 Underfull \hbox (badness 10000) in paragraph at lines 930--933
 []\T1/ptm/m/n/10.95 The \T1/ptm/m/it/10.95 iFor-est \T1/ptm/m/n/10.95 al-go-rit
 hm uses de-fault pa-ram-e-ters: []\T1/pcr/m/n/10.95 n_estimators=100\T1/ptm/m/n
 /10.95 ,
  []
 
-[179]
+[181]
 PGFPlots: reading {fig_source/ocrf_fig/results_semisupervised.txt}
 
 
@@ -2236,12 +2271,12 @@ PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
 PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
 PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
 PGFPlots: reading {fig_source/ocrf_fig/computationTime_semisupervised.txt}
-[180]
+[182]
 Overfull \hbox (21.55606pt too wide) in paragraph at lines 1158--1158
 [] |
  []
 
-[181] [182] [183]
+[183] [184] [185]
 PGFPlots: reading {fig_source/ocrf_fig/results_unsupervised.txt}
 
 
@@ -2347,61 +2382,61 @@ PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
 PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
 PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
 PGFPlots: reading {fig_source/ocrf_fig/computationTime_unsupervised.txt}
-[184]
-<fig_source/ocrf_fig/bench_oneclassrf_roc_pr_supervised_factorized.png, id=738,
+[186]
+<fig_source/ocrf_fig/bench_oneclassrf_roc_pr_supervised_factorized.png, id=744,
  1806.75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_oneclassrf_roc_pr_unsupervised_factorized.png, id=73
-9, 1806.75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_iforest_roc_pr_supervised_factorized.png, id=740, 18
+<fig_source/ocrf_fig/bench_oneclassrf_roc_pr_unsupervised_factorized.png, id=74
+5, 1806.75pt x 1228.59pt>
+<fig_source/ocrf_fig/bench_iforest_roc_pr_supervised_factorized.png, id=746, 18
 06.75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_iforest_roc_pr_unsupervised_factorized.png, id=741, 
+<fig_source/ocrf_fig/bench_iforest_roc_pr_unsupervised_factorized.png, id=747, 
 1806.75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_ocrf_roc_pr_supervised_factorized.png, id=742, 1806.
+<fig_source/ocrf_fig/bench_ocrf_roc_pr_supervised_factorized.png, id=748, 1806.
 75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_ocrf_roc_pr_unsupervised_factorized.png, id=743, 180
+<fig_source/ocrf_fig/bench_ocrf_roc_pr_unsupervised_factorized.png, id=749, 180
 6.75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_ocsvm_roc_pr_supervised_factorized.png, id=744, 1806
+<fig_source/ocrf_fig/bench_ocsvm_roc_pr_supervised_factorized.png, id=750, 1806
 .75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png, id=745, 18
+<fig_source/ocrf_fig/bench_ocsvm_roc_pr_unsupervised_factorized.png, id=751, 18
 06.75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_lof_roc_pr_supervised_factorized.png, id=746, 1806.7
+<fig_source/ocrf_fig/bench_lof_roc_pr_supervised_factorized.png, id=752, 1806.7
 5pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_lof_roc_pr_unsupervised_factorized.png, id=747, 1806
+<fig_source/ocrf_fig/bench_lof_roc_pr_unsupervised_factorized.png, id=753, 1806
 .75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_orca_roc_pr_supervised_factorized.png, id=748, 1806.
+<fig_source/ocrf_fig/bench_orca_roc_pr_supervised_factorized.png, id=754, 1806.
 75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_orca_roc_pr_unsupervised_factorized.png, id=749, 180
+<fig_source/ocrf_fig/bench_orca_roc_pr_unsupervised_factorized.png, id=755, 180
 6.75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_supervised_factorized.png, id=750, 
+<fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_supervised_factorized.png, id=756, 
 1806.75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_unsupervised_factorized.png, id=751
+<fig_source/ocrf_fig/bench_LSAnomaly_roc_pr_unsupervised_factorized.png, id=757
 , 1806.75pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_rf_roc_pr_supervised_factorized.png, id=752, 1806.75
+<fig_source/ocrf_fig/bench_rf_roc_pr_supervised_factorized.png, id=758, 1806.75
 pt x 1228.59pt>
-<fig_source/ocrf_fig/bench_rf_roc_pr_unsupervised_factorized.png, id=753, 1806.
-75pt x 1228.59pt>) [185
+<fig_source/ocrf_fig/bench_rf_roc_pr_unsupervised_factorized.png, id=759, 1806.
+75pt x 1228.59pt>) [187
 
-] [186] [187] [188] [189] [190] [191] [192]
+] [188] [189] [190] [191] [192] [193] [194]
 Chapter 11.
 ------------------------------------------------------------------------------
  11.\hskip 1em\relax Conclusion, limitations \& perspectives
 ------------------------------------------------------------------------------
-(./conclusion.tex [193
+(./conclusion.tex [195
 
-]) [194]
+]) [196]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./thesis.bbl [195
+(./thesis.bbl [197
 
 
-] [196] [197]
+] [198] [199]
 Underfull \hbox (badness 1975) in paragraph at lines 419--422
 []\T1/ptm/m/n/10 R. Genuer, J.-M. Poggi, and C. Tuleau.  Ran-dom forests: some 
 method-olog-i-cal in-sights.
  []
 
-[198] [199] [200] [201]) [202]
+[200] [201] [202] [203]) [204]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
  (./thesis.aux)
@@ -2409,15 +2444,18 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 123.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
  ) 
 Here is how much of TeX's memory you used:
- 54018 strings out of 495020
- 1140189 string characters out of 6181323
- 1608488 words of memory out of 5000000
- 56398 multiletter control sequences out of 15000+600000
+ 54021 strings out of 495020
+ 1140241 string characters out of 6181323
+ 1608649 words of memory out of 5000000
+ 56401 multiletter control sequences out of 15000+600000
  126458 words of font info for 159 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  64i,24n,100p,10455b,2257s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2460,10 +2498,10 @@ f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (220 pages, 1327024 bytes).
+Output written on thesis.pdf (222 pages, 1329301 bytes).
 PDF statistics:
- 952 PDF objects out of 1000 (max. 8388607)
- 618 compressed objects within 7 object streams
+ 958 PDF objects out of 1000 (max. 8388607)
+ 622 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  323 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -25,125 +25,125 @@
 \contentsline {section}{\numberline {2.1}Introduction}{21}{section.2.1}
 \contentsline {paragraph}{Notations}{22}{section.2.1}
 \contentsline {section}{\numberline {2.2}D\IeC {\'e}tection d'anomalies, ranking d'anomalies et fonctions de scores}{22}{section.2.2}
-\contentsline {section}{\numberline {2.3}M-estimation and criteria for scoring functions}{25}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Minimum Volume sets}{25}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Mass-Volume curve}{26}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}The Excess-Mass criterion}{27}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}Accuracy on extreme regions}{29}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Extreme Values Analysis through STDF estimation}{29}{subsection.2.4.1}
-\contentsline {paragraph}{Preliminaries.}{29}{subsection.2.4.1}
-\contentsline {paragraph}{Learning the dependence structure of rare events.}{30}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Sparse Representation of Multivariate Extremes}{31}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Heuristic approaches}{33}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Evaluation of anomaly detection algorithms}{34}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}One-Class Random Forests}{36}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Scikit-learn contributions}{38}{section.2.6}
-\contentsline {section}{\numberline {2.7}Conclusion and Scientific Output}{38}{section.2.7}
-\contentsline {paragraph}{Context of this work.}{40}{section.2.7}
-\contentsline {paragraph}{Outline of the thesis.}{40}{section.2.7}
-\contentsline {part}{I\hspace {1em}Preliminaries}{41}{part.1}
-\contentsline {chapter}{\numberline {3}Concentration Inequalities from the Method of bounded differences}{43}{chapter.3}
-\contentsline {section}{\numberline {3.1}Two fundamental results}{43}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Preliminary definitions}{43}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Inequality for Bounded Random Variables}{44}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Bernstein-type Inequality (with variance term)}{46}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Popular Inequalities}{47}{section.3.2}
-\contentsline {section}{\numberline {3.3}Connections with Statistical Learning and VC theory}{49}{section.3.3}
-\contentsline {section}{\numberline {3.4}Sharper VC-bounds through a Bernstein-type inequality}{51}{section.3.4}
-\contentsline {chapter}{\numberline {4}Extreme Value Theory}{57}{chapter.4}
-\contentsline {paragraph}{Notation reminder}{57}{chapter.4}
-\contentsline {section}{\numberline {4.1}Univariate Extreme Value Theory}{57}{section.4.1}
-\contentsline {section}{\numberline {4.2}Extension to the Multivariate framework}{60}{section.4.2}
-\contentsline {chapter}{\numberline {5}Background on classical Anomaly Detection algorithms}{63}{chapter.5}
-\contentsline {section}{\numberline {5.1}What is Anomaly Detection?}{63}{section.5.1}
-\contentsline {section}{\numberline {5.2}Three efficient Anomaly Detection Algorithms}{64}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}One-class SVM}{64}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Local Outlier Factor algorithm}{67}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Isolation Forest}{67}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Examples through scikit-learn}{67}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}What is scikit-learn?}{68}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}LOF examples}{69}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Isolation Forest examples}{70}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Comparison examples}{72}{subsection.5.3.4}
-\contentsline {part}{II\hspace {1em}An Excess-Mass based Performance Criterion}{75}{part.2}
-\contentsline {chapter}{\numberline {6}On Anomaly Ranking and Excess-Mass Curves}{77}{chapter.6}
-\contentsline {section}{\numberline {6.1}Introduction}{77}{section.6.1}
-\contentsline {section}{\numberline {6.2}Background and related work}{79}{section.6.2}
-\contentsline {section}{\numberline {6.3}The Excess-Mass curve}{80}{section.6.3}
-\contentsline {section}{\numberline {6.4}A general approach to learn a scoring function}{83}{section.6.4}
-\contentsline {section}{\numberline {6.5}Extensions - Further results}{86}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Distributions with non compact support}{86}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Bias analysis}{88}{subsection.6.5.2}
-\contentsline {section}{\numberline {6.6}Simulation examples}{89}{section.6.6}
-\contentsline {section}{\numberline {6.7}Detailed Proofs}{91}{section.6.7}
-\contentsline {part}{III\hspace {1em}Accuracy on Extreme Regions}{97}{part.3}
-\contentsline {chapter}{\numberline {7}Learning the dependence structure of rare events: a non-asymptotic study}{99}{chapter.7}
-\contentsline {section}{\numberline {7.1}Introduction}{99}{section.7.1}
-\contentsline {section}{\numberline {7.2}Background on the stable tail dependence function}{100}{section.7.2}
-\contentsline {section}{\numberline {7.3}A VC-type inequality adapted to the study of low probability regions}{101}{section.7.3}
-\contentsline {paragraph}{Classification of Extremes}{102}{theorem.7.3.4}
-\contentsline {section}{\numberline {7.4}A bound on the STDF}{104}{section.7.4}
-\contentsline {section}{\numberline {7.5}Discussion}{108}{section.7.5}
-\contentsline {chapter}{\numberline {8}Sparse Representation of Multivariate Extremes}{111}{chapter.8}
-\contentsline {section}{\numberline {8.1}Introduction}{111}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Context: multivariate extreme values in large dimension}{111}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Application to Anomaly Detection}{113}{subsection.8.1.2}
-\contentsline {section}{\numberline {8.2}Multivariate EVT Framework and Problem Statement}{114}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Statement of the Statistical Problem}{115}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Regularity Assumptions}{118}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}A non-parametric estimator of the subcones' mass : definition and preliminary results}{119}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}A natural empirical version of the exponent measure mu}{120}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}Accounting for the non asymptotic nature of data: epsilon-thickening.}{120}{subsection.8.3.2}
-\contentsline {subsection}{\numberline {8.3.3}Preliminaries: uniform approximation over a VC-class of rectangles}{121}{subsection.8.3.3}
-\contentsline {subsection}{\numberline {8.3.4}Bounding empirical deviations over thickened rectangles}{124}{subsection.8.3.4}
-\contentsline {subsection}{\numberline {8.3.5}Bounding the bias induced by thickened rectangles}{125}{subsection.8.3.5}
-\contentsline {subsection}{\numberline {8.3.6}Main result}{126}{subsection.8.3.6}
-\contentsline {section}{\numberline {8.4}Application to Anomaly Detection }{128}{section.8.4}
-\contentsline {subsection}{\numberline {8.4.1}Extremes and Anomaly Detection.}{128}{subsection.8.4.1}
-\contentsline {subsection}{\numberline {8.4.2}DAMEX Algorithm: Detecting Anomalies among Multivariate Extremes}{129}{subsection.8.4.2}
-\contentsline {section}{\numberline {8.5}Experimental results}{132}{section.8.5}
-\contentsline {subsection}{\numberline {8.5.1}Recovering the support of the dependence structure of generated data}{132}{subsection.8.5.1}
-\contentsline {subsection}{\numberline {8.5.2}Sparse structure of extremes (wave data)}{133}{subsection.8.5.2}
-\contentsline {subsection}{\numberline {8.5.3}Application to Anomaly Detection on real-world data sets}{133}{subsection.8.5.3}
-\contentsline {section}{\numberline {8.6}Conclusion}{136}{section.8.6}
-\contentsline {section}{\numberline {8.7}Technical proofs}{138}{section.8.7}
-\contentsline {subsection}{\numberline {8.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{138}{subsection.8.7.1}
-\contentsline {subsection}{\numberline {8.7.2}Proof of Lemma \ref {jmva:lem:g-alpha}}{139}{subsection.8.7.2}
-\contentsline {subsection}{\numberline {8.7.3}Proof of Proposition \ref {jmva:prop:g}}{140}{subsection.8.7.3}
-\contentsline {subsection}{\numberline {8.7.4}Proof of Lemma \ref {jmva:lemma_simplex}}{144}{subsection.8.7.4}
-\contentsline {subsection}{\numberline {8.7.5}Proof of Remark\nobreakspace {}\ref {jmva:rk:optim}}{146}{subsection.8.7.5}
-\contentsline {part}{IV\hspace {1em}Efficient heuristic approaches}{147}{part.4}
-\contentsline {chapter}{\numberline {9}How to Evaluate the Quality of Anomaly Detection Algorithms?}{149}{chapter.9}
-\contentsline {section}{\numberline {9.1}Introduction}{149}{section.9.1}
-\contentsline {paragraph}{What is a scoring function?}{150}{section.9.1}
-\contentsline {paragraph}{How to know if a scoring function is good?}{150}{section.9.1}
-\contentsline {section}{\numberline {9.2}Mass-Volume and Excess-Mass based criteria}{151}{section.9.2}
-\contentsline {subsection}{\numberline {9.2.1}Preliminaries}{151}{subsection.9.2.1}
-\contentsline {subsection}{\numberline {9.2.2}Numerical unsupervised criteria}{152}{subsection.9.2.2}
-\contentsline {section}{\numberline {9.3}Scaling with dimension}{153}{section.9.3}
-\contentsline {section}{\numberline {9.4}Benchmarks}{154}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}Datasets description}{155}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}Results}{156}{subsection.9.4.2}
-\contentsline {section}{\numberline {9.5}Conclusion}{159}{section.9.5}
-\contentsline {section}{\numberline {9.6}Further material on the experiments}{160}{section.9.6}
-\contentsline {chapter}{\numberline {10}One Class Splitting Criteria for Random Forests}{169}{chapter.10}
-\contentsline {section}{\numberline {10.1}Introduction}{169}{section.10.1}
-\contentsline {section}{\numberline {10.2}Background on decision trees}{171}{section.10.2}
-\contentsline {section}{\numberline {10.3}Adaptation to the one-class setting}{172}{section.10.3}
-\contentsline {subsection}{\numberline {10.3.1}One-class splitting criterion}{173}{subsection.10.3.1}
-\contentsline {paragraph}{Naive approach.}{173}{subsection.10.3.1}
-\contentsline {paragraph}{Adaptive approach.}{173}{theorem.10.3.1}
-\contentsline {subsection}{\numberline {10.3.2}Prediction: a majority vote with one single candidate?}{175}{subsection.10.3.2}
-\contentsline {subsection}{\numberline {10.3.3}OneClassRF: a Generic One-Class Random Forest algorithm}{176}{subsection.10.3.3}
-\contentsline {section}{\numberline {10.4}Benchmarks}{177}{section.10.4}
-\contentsline {subsection}{\numberline {10.4.1}Default parameters of OneClassRF.}{177}{subsection.10.4.1}
-\contentsline {subsection}{\numberline {10.4.2}Hyper-Parameters of tested algorithms}{178}{subsection.10.4.2}
-\contentsline {subsection}{\numberline {10.4.3}Description of the datasets}{179}{subsection.10.4.3}
-\contentsline {subsection}{\numberline {10.4.4}Results}{180}{subsection.10.4.4}
-\contentsline {section}{\numberline {10.5}Theoretical justification for the one-class splitting criterion}{181}{section.10.5}
-\contentsline {subsection}{\numberline {10.5.1}Underlying model}{181}{subsection.10.5.1}
-\contentsline {subsection}{\numberline {10.5.2}Adaptive approach}{182}{subsection.10.5.2}
-\contentsline {section}{\numberline {10.6}Conclusion}{183}{section.10.6}
-\contentsline {section}{\numberline {10.7}Further details on benchmarks and unsupervised results}{184}{section.10.7}
-\contentsline {chapter}{\numberline {11}Conclusion, limitations \& perspectives}{193}{chapter.11}
-\contentsline {chapter}{Bibliography}{195}{dummy.4}
+\contentsline {section}{\numberline {2.3}M-estimation et crit\IeC {\`e}res de performance pour les fonctions de scores}{25}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Ensembles \IeC {\`a} volume minimal}{25}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}La courbe Masse-Volume}{26}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Le crit\IeC {\`e}re d'exc\IeC {\`e}s de masse}{27}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}Pr\IeC {\'e}cision sur les r\IeC {\'e}gions extr\IeC {\^e}mes}{30}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Analyse du point de vue de la th\IeC {\'e}orie des valeurs extr\IeC {\^e}mes par l'estimation de la STDF}{30}{subsection.2.4.1}
+\contentsline {paragraph}{Preliminaries.}{30}{subsection.2.4.1}
+\contentsline {paragraph}{Apprentissage de la structure de d\IeC {\'e}pendance des \IeC {\'e}v\IeC {\'e}nements rares.}{31}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Sparse Representation of Multivariate Extremes}{32}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Heuristic approaches}{34}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Evaluation of anomaly detection algorithms}{35}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}One-Class Random Forests}{37}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Scikit-learn contributions}{39}{section.2.6}
+\contentsline {section}{\numberline {2.7}Conclusion and Scientific Output}{39}{section.2.7}
+\contentsline {paragraph}{Context of this work.}{41}{section.2.7}
+\contentsline {paragraph}{Outline of the thesis.}{41}{section.2.7}
+\contentsline {part}{I\hspace {1em}Preliminaries}{43}{part.1}
+\contentsline {chapter}{\numberline {3}Concentration Inequalities from the Method of bounded differences}{45}{chapter.3}
+\contentsline {section}{\numberline {3.1}Two fundamental results}{45}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Preliminary definitions}{45}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Inequality for Bounded Random Variables}{46}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Bernstein-type Inequality (with variance term)}{48}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Popular Inequalities}{49}{section.3.2}
+\contentsline {section}{\numberline {3.3}Connections with Statistical Learning and VC theory}{51}{section.3.3}
+\contentsline {section}{\numberline {3.4}Sharper VC-bounds through a Bernstein-type inequality}{53}{section.3.4}
+\contentsline {chapter}{\numberline {4}Extreme Value Theory}{59}{chapter.4}
+\contentsline {paragraph}{Notation reminder}{59}{chapter.4}
+\contentsline {section}{\numberline {4.1}Univariate Extreme Value Theory}{59}{section.4.1}
+\contentsline {section}{\numberline {4.2}Extension to the Multivariate framework}{62}{section.4.2}
+\contentsline {chapter}{\numberline {5}Background on classical Anomaly Detection algorithms}{65}{chapter.5}
+\contentsline {section}{\numberline {5.1}What is Anomaly Detection?}{65}{section.5.1}
+\contentsline {section}{\numberline {5.2}Three efficient Anomaly Detection Algorithms}{66}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}One-class SVM}{66}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Local Outlier Factor algorithm}{69}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Isolation Forest}{69}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Examples through scikit-learn}{69}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}What is scikit-learn?}{70}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}LOF examples}{71}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Isolation Forest examples}{72}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Comparison examples}{74}{subsection.5.3.4}
+\contentsline {part}{II\hspace {1em}An Excess-Mass based Performance Criterion}{77}{part.2}
+\contentsline {chapter}{\numberline {6}On Anomaly Ranking and Excess-Mass Curves}{79}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{79}{section.6.1}
+\contentsline {section}{\numberline {6.2}Background and related work}{81}{section.6.2}
+\contentsline {section}{\numberline {6.3}The Excess-Mass curve}{82}{section.6.3}
+\contentsline {section}{\numberline {6.4}A general approach to learn a scoring function}{85}{section.6.4}
+\contentsline {section}{\numberline {6.5}Extensions - Further results}{88}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Distributions with non compact support}{88}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Bias analysis}{90}{subsection.6.5.2}
+\contentsline {section}{\numberline {6.6}Simulation examples}{91}{section.6.6}
+\contentsline {section}{\numberline {6.7}Detailed Proofs}{93}{section.6.7}
+\contentsline {part}{III\hspace {1em}Accuracy on Extreme Regions}{99}{part.3}
+\contentsline {chapter}{\numberline {7}Learning the dependence structure of rare events: a non-asymptotic study}{101}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{101}{section.7.1}
+\contentsline {section}{\numberline {7.2}Background on the stable tail dependence function}{102}{section.7.2}
+\contentsline {section}{\numberline {7.3}A VC-type inequality adapted to the study of low probability regions}{103}{section.7.3}
+\contentsline {paragraph}{Classification of Extremes}{104}{theorem.7.3.4}
+\contentsline {section}{\numberline {7.4}A bound on the STDF}{106}{section.7.4}
+\contentsline {section}{\numberline {7.5}Discussion}{110}{section.7.5}
+\contentsline {chapter}{\numberline {8}Sparse Representation of Multivariate Extremes}{113}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{113}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Context: multivariate extreme values in large dimension}{113}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Application to Anomaly Detection}{115}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.2}Multivariate EVT Framework and Problem Statement}{116}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Statement of the Statistical Problem}{117}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Regularity Assumptions}{120}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}A non-parametric estimator of the subcones' mass : definition and preliminary results}{121}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}A natural empirical version of the exponent measure mu}{122}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Accounting for the non asymptotic nature of data: epsilon-thickening.}{122}{subsection.8.3.2}
+\contentsline {subsection}{\numberline {8.3.3}Preliminaries: uniform approximation over a VC-class of rectangles}{123}{subsection.8.3.3}
+\contentsline {subsection}{\numberline {8.3.4}Bounding empirical deviations over thickened rectangles}{126}{subsection.8.3.4}
+\contentsline {subsection}{\numberline {8.3.5}Bounding the bias induced by thickened rectangles}{127}{subsection.8.3.5}
+\contentsline {subsection}{\numberline {8.3.6}Main result}{128}{subsection.8.3.6}
+\contentsline {section}{\numberline {8.4}Application to Anomaly Detection }{130}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Extremes and Anomaly Detection.}{130}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}DAMEX Algorithm: Detecting Anomalies among Multivariate Extremes}{131}{subsection.8.4.2}
+\contentsline {section}{\numberline {8.5}Experimental results}{134}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}Recovering the support of the dependence structure of generated data}{134}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.2}Sparse structure of extremes (wave data)}{135}{subsection.8.5.2}
+\contentsline {subsection}{\numberline {8.5.3}Application to Anomaly Detection on real-world data sets}{135}{subsection.8.5.3}
+\contentsline {section}{\numberline {8.6}Conclusion}{138}{section.8.6}
+\contentsline {section}{\numberline {8.7}Technical proofs}{140}{section.8.7}
+\contentsline {subsection}{\numberline {8.7.1}Proof of Lemma \ref {jmva:lem:equivalence}}{140}{subsection.8.7.1}
+\contentsline {subsection}{\numberline {8.7.2}Proof of Lemma \ref {jmva:lem:g-alpha}}{141}{subsection.8.7.2}
+\contentsline {subsection}{\numberline {8.7.3}Proof of Proposition \ref {jmva:prop:g}}{142}{subsection.8.7.3}
+\contentsline {subsection}{\numberline {8.7.4}Proof of Lemma \ref {jmva:lemma_simplex}}{146}{subsection.8.7.4}
+\contentsline {subsection}{\numberline {8.7.5}Proof of Remark\nobreakspace {}\ref {jmva:rk:optim}}{148}{subsection.8.7.5}
+\contentsline {part}{IV\hspace {1em}Efficient heuristic approaches}{149}{part.4}
+\contentsline {chapter}{\numberline {9}How to Evaluate the Quality of Anomaly Detection Algorithms?}{151}{chapter.9}
+\contentsline {section}{\numberline {9.1}Introduction}{151}{section.9.1}
+\contentsline {paragraph}{What is a scoring function?}{152}{section.9.1}
+\contentsline {paragraph}{How to know if a scoring function is good?}{152}{section.9.1}
+\contentsline {section}{\numberline {9.2}Mass-Volume and Excess-Mass based criteria}{153}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}Preliminaries}{153}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2.2}Numerical unsupervised criteria}{154}{subsection.9.2.2}
+\contentsline {section}{\numberline {9.3}Scaling with dimension}{155}{section.9.3}
+\contentsline {section}{\numberline {9.4}Benchmarks}{156}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}Datasets description}{157}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}Results}{158}{subsection.9.4.2}
+\contentsline {section}{\numberline {9.5}Conclusion}{161}{section.9.5}
+\contentsline {section}{\numberline {9.6}Further material on the experiments}{162}{section.9.6}
+\contentsline {chapter}{\numberline {10}One Class Splitting Criteria for Random Forests}{171}{chapter.10}
+\contentsline {section}{\numberline {10.1}Introduction}{171}{section.10.1}
+\contentsline {section}{\numberline {10.2}Background on decision trees}{173}{section.10.2}
+\contentsline {section}{\numberline {10.3}Adaptation to the one-class setting}{174}{section.10.3}
+\contentsline {subsection}{\numberline {10.3.1}One-class splitting criterion}{175}{subsection.10.3.1}
+\contentsline {paragraph}{Naive approach.}{175}{subsection.10.3.1}
+\contentsline {paragraph}{Adaptive approach.}{175}{theorem.10.3.1}
+\contentsline {subsection}{\numberline {10.3.2}Prediction: a majority vote with one single candidate?}{177}{subsection.10.3.2}
+\contentsline {subsection}{\numberline {10.3.3}OneClassRF: a Generic One-Class Random Forest algorithm}{178}{subsection.10.3.3}
+\contentsline {section}{\numberline {10.4}Benchmarks}{179}{section.10.4}
+\contentsline {subsection}{\numberline {10.4.1}Default parameters of OneClassRF.}{179}{subsection.10.4.1}
+\contentsline {subsection}{\numberline {10.4.2}Hyper-Parameters of tested algorithms}{180}{subsection.10.4.2}
+\contentsline {subsection}{\numberline {10.4.3}Description of the datasets}{181}{subsection.10.4.3}
+\contentsline {subsection}{\numberline {10.4.4}Results}{182}{subsection.10.4.4}
+\contentsline {section}{\numberline {10.5}Theoretical justification for the one-class splitting criterion}{183}{section.10.5}
+\contentsline {subsection}{\numberline {10.5.1}Underlying model}{183}{subsection.10.5.1}
+\contentsline {subsection}{\numberline {10.5.2}Adaptive approach}{184}{subsection.10.5.2}
+\contentsline {section}{\numberline {10.6}Conclusion}{185}{section.10.6}
+\contentsline {section}{\numberline {10.7}Further details on benchmarks and unsupervised results}{186}{section.10.7}
+\contentsline {chapter}{\numberline {11}Conclusion, limitations \& perspectives}{195}{chapter.11}
+\contentsline {chapter}{Bibliography}{197}{dummy.4}

@@ -1,5 +1,5 @@
 \section{Introduction}
-Une \emph{anomalie}, du grec $\ alpha \ nu \ omega \ mu \ alpha \ lambda \ iota \ alpha $, aspérité, irrégularité, non semblable (an-homalos), désigne un écart par rapport à une certaine norme, reflétant le comportement attendu.
+Une \emph{anomalie}, du grec $\alpha \nu \omega \mu \alpha \lambda \iota \alpha $, aspérité, irrégularité, non semblable (an-homalos), désigne un écart par rapport à une certaine norme, reflétant le comportement attendu.
 On appelle \emph {anomalie} l'objet qui induit cet espace, l'observation qui s'écarte de la normalité.
 %
 Dans beaucoup de domaines, la situation suivante se présente: un expert cherche à prédire un phénomène sur la base d'observations antérieures. Le cas le plus fondamental est lorsque l'on veut prédire certaines caractéristiques binaires d'observations nouvelles, compte tenu des précédentes. Par exemple, on peut penser à un médecin voulant prédire si un nouveau patient présente ou non une certaine pathologie, en utilisant les données des patients précédents (comme l'âge, l'histoire, le sexe, la pression artérielle) associée à leur véritable \textbf{étiquette/label}: avoir ou non la pathologie en question). Ce cas est un exemple de \emph {classification binaire}, où le médecin cherche à trouver une règle pour \textbf {prédire} l'étiquette d'un nouveau patient (ce dernier étant caractérisé par son dossier médical, contenant toutes les mesures qui lui ont été faites). Cette règle est appelée un \emph{classifieur} et doit être construite, \emph{apprise}, sur des dossiers médicaux précédents. % (À savoir les enregistrements associés à leurs étiquettes).
@@ -104,7 +104,7 @@ Comme les anomalies sont très rares, leur structure ne peut être observée dan
 Il est courant et commode de remplacer $ G $ dans le problème ci-dessus par la mesure de Lebesgue, de sorte qu'il se résume à l'estimation du niveau de densité de $ F $.
 \citep{Scholkopf2001, Scott2006, VertVert}.
 
-Cela revient à supposer que les anomalies sont uniformément réparties sur le support de la distribution normale. % \ Citep {Steinwart2005, Blanchard2010}.
+Cela revient à supposer que les anomalies sont uniformément réparties sur le support de la distribution normale. % \Citep {Steinwart2005, Blanchard2010}.
 Cette hypothèse est donc implicitement faite par une majorité d'ouvrages sur la détection de nouveauté.
 %
 Nous observons les données dans $ \rset ^ d $ à partir de la classe normale seulement, avec une distribution sous-jacente $ F $ et avec une densité $ f: \rset ^ d \to \rset $.
@@ -436,12 +436,12 @@ La clé consiste à choisir une classe VC adaptative, qui ne couvre que ces rég
 \begin{theorem}
 \label{resume_fr:thm:l}
 Soit $T$ un nombre positif tel que $T \ge \frac{7}{2}(\frac{\log d}{k} + 1)$, $\delta$ tel que $\delta \ge e^{-k}$ et soit $k=k(n)$ une suite d'entiers strictement positifs telle que $k \to \infty$ et $k=o(n)$ quand $n \to \infty$. 
-Alors il existe une constante absolue $ C $ telle que pour chaque $ n> 0 $, avec probabilité au moins $ 1- \ delta $:
+Alors il existe une constante absolue $ C $ telle que pour chaque $ n> 0 $, avec probabilité au moins $ 1- \delta $:
 \begin{align*}
 \sup_{0 \le \mathbf{x} \le T} \left| l_n(\mathbf{x}) - l(\mathbf{x}) \right| ~\le~ Cd\sqrt{\frac{T}{k}\log\frac{d+3}{\delta}} ~+~
 \text{bias}(k, n, T),
 \end{align*}
-où $ l $ est la \ stdf et $ l_n $ sa version empirique standard. Le second terme dans la borne est un biais issu de la nature asymptotique de $ l $.
+où $ l $ est la \stdf et $ l_n $ sa version empirique standard. Le second terme dans la borne est un biais issu de la nature asymptotique de $ l $.
 \end{theorem}
 
 
@@ -454,7 +454,7 @@ Cependant, la modélisation non paramétrique de la mesure angulaire est confron
 D'autre part, d'un point de vue théorique, l'estimation non paramétrique de la mesure angulaire n'a été étudiée que dans le cas bidimensionnel et dans un cadre asymptotique \cite{Einmahl2001, Einmahl2009}. La section ci-dessous résume une nouvelle méthodologie visant à représenter parcimonieusement dans la structure de dépendance des extrêmes.
 
 
-\subsection{Sparse Representation of Multivariate Extremes}
+\subsection{Représentation parcimonieuse des extrêmes multivariés}
 \label{resume_fr:sec:JMVA}
 Cette section est un résumé du chapitre ~ \ref {jmva}, qui est lui-même basé sur les travaux précédents publiés en \cite {AISTAT16}, ainsi que sur sa version longue \cite {ARXIV16} en cours de révision.
 
@@ -465,7 +465,7 @@ La EVT a été intensivement utilisé en détection d'anomalies dans le cas unid
 %\label{context}
 L'estimation paramétrique ou semi-paramétrique de la structure des extrêmes multivariés est relativement bien documentée dans la littérature, voir par exemple
 \cite{coles1991modeling,fougeres2009models,cooley2010pairwise,sabourinNaveau2012} 
-et leurs références. Cependant, des hypothèses structurelles restrictives doivent être faites, stipulant par exemple que seuls quelques sous-groupes pré-définis de composantes peuvent être extrêmes ensemble, ou au contraire, que toutes doivent l'être. En outre, leur utilisation pratique est limitée à des problèmes en dimension modérée (par exemple, $ d \ le 10 $), sinon des choix de modélisation simplifiés sont nécessaires, comme dans \cite {stephenson2009high}). Enfin, l'évaluation de l'incertitude concernant la production de ces modèles est faite sous l'hypothèse que les données d'entraînement sont "asymptotiques", au sens où l'on suppose que, quand elles excèdent un grand seuil fixé, les données sont exactement réparties selon la distribution limite des extrêmes . En d'autres termes, l'erreur de modélisation est ignorée.
+et leurs références. Cependant, des hypothèses structurelles restrictives doivent être faites, stipulant par exemple que seuls quelques sous-groupes pré-définis de composantes peuvent être extrêmes ensemble, ou au contraire, que toutes doivent l'être. En outre, leur utilisation pratique est limitée à des problèmes en dimension modérée (par exemple, $ d \le 10 $), sinon des choix de modélisation simplifiés sont nécessaires, comme dans \cite {stephenson2009high}). Enfin, l'évaluation de l'incertitude concernant la production de ces modèles est faite sous l'hypothèse que les données d'entraînement sont "asymptotiques", au sens où l'on suppose que, quand elles excèdent un grand seuil fixé, les données sont exactement réparties selon la distribution limite des extrêmes . En d'autres termes, l'erreur de modélisation est ignorée.
 
 
 L'estimation non-paramétrique de la mesure angulaire n'a été traitée que dans le cas bidimensionnel, dans \cite{Einmahl2001, Einmahl2009}, et dans un cadre asymptotique. Nous allons étendre l'étude non-asymptotique sur l'estimation de la {\sc stdf} (section précédente) à la mesure angulaire des extrêmes, restreinte à une classe bien choisie d'ensembles. L'objectif est d'apprendre une représentation de la mesure angulaire, assez simple pour contrôler la variance en grande dimension et suffisamment précise pour obtenir des informations sur les "directions probables" des extrêmes. Ceci donne une première estimation non paramétrique de la mesure angulaire en dimension quelconque, limitée à une classe de sous-cones, avec une borne non asymptotique sur l'erreur.
@@ -477,29 +477,30 @@ Ceci produit une fonction de score définie sur les régions extrêmes, qui peut
 En raison de sa complexité modérée - d'ordre $ dn \log n $ - cet algorithme convient au traitement de problèmes d'apprentissage à grande échelle, et les résultats expérimentaux révèlent une performance significativement accrue sur les régions extrêmes par rapport aux approches de détection d'anomalies standard.
 
 
+Dans un large éventail de situations, on peut s'attendre à l'apparition de deux phénomènes:
 
+\textbf{1-} Il y a seulement un "petit" nombre de groupes de coordonnées pouvant être extrêmes ensemble, de sorte que seul un "petit" nombre d'hyper-cubes (ceux correspondant à ces sous-ensembles d'indexes) ont une masse non nulle ("petite" est relatif au nombre total de groupes, $2^d$).
 
-In a wide range of situations, one may expect the occurrence of two phenomena:
+\textbf{2-} Chacun de ces groupes contient un nombre limité de coordonnées (par rapport à la dimension initiale), de sorte que les hyper-cubes correspondants (de masse non nulle) ont une petite dimension par rapport à $ d $.
 
-\textbf{1-} Only a `small' number of groups of components may be concomitantly extreme, so that only a `small' number of hyper-cubes (those corresponding to these subsets of indexes precisely) have non zero mass (`small' is relative to the total number of groups $2^d$).
+Le but principal de ce travail est d'introduire une méthodologie pilotée par les données pour identifier ces faces, afin de réduire la
+dimension du problème et ainsi apprendre une représentation parcimonieurse des comportements extrêmes.
 
-\textbf{2-} Each of these groups contains a limited number of coordinates (compared to the original dimensionality), so that the corresponding hyper-cubes with non zero mass have small dimension compared to $d$.
+Dans le cas où l'hypothèse \textbf{2-} n'est pas vérifiée, une telle représentation peut tout de même être apprise, mais perd la propriété que les hyper-cubes la supportant soit de faible dimension.
 
-The main purpose of this work is to introduce a data-driven methodology for identifying such faces, so as to reduce the
-dimensionality of the problem and thus to learn a sparse representation  of extreme behaviors. 
-In case hypothesis \textbf{2-} is not fulfilled, such a sparse  `profile' can still be learned, but loses the low dimensional property of its supporting hyper-cubes.
-One major issue is that real data generally do not concentrate on sub-spaces of zero Lebesgue measure. This is circumvented by setting to zero any coordinate less than a threshold $\epsilon>0$, so that the corresponding `angle' is assigned to a lower-dimensional face. 
+Un problème majeur est que les données réelles ne se concentrent généralement pas sur les sous-espaces de mesure Lebesgue nulle. Ceci peut être résolu en mettant à zéro n'importe quelle coordonnée inférieure à un seuil $ \epsilon> 0 $, de sorte que l' "angle" correspondant soit affecté à une face de dimension inférieure.
 
-More formally, Figures \ref{resume_fr:fig:3Dcones} and \ref{resume_fr:2Dcones} represent the transformed input space, resulting from classical standardization of the margins. After this non-linear transform, the representation of extreme data is linear and learned by estimating the mass on the sub-cones
+Plus formellement, les figures \ref{resume_fr:fig:3Dcones} et \ref{resume_fr:2Dcones} représentent l'espace initial des données transformé, résultant de la standardisation classique des marginales. Après cette transformation non linéaire, la représentation des données extrêmes est pour sa part linéaire et apprise en estimant la masse portée par les sous-cônes
+
 \begin{align*}
  \mathcal{C}_\alpha = \{\mb v \ge 0,~\|\mb v\|_\infty \ge 1,~ v_j > 0 ~\text{ for } j \in \alpha,~ v_j = 0 ~\text{ for } j \notin \alpha \},
 \end{align*}
-or more precisely, the mass of the angular measure $\Phi$ on the corresponding sub-spheres
+ou plus précisément, la masse de la mesure angulaire $\Phi$ sur les sous-sphères correspondantes
 \begin{align*}
 \Omega_{\alpha}  = \{\mb x \in S_{\infty}^{d-1} :  x_i > 0 \text{ for } i\in\alpha~,~  x_i = 0 \text{ for } i\notin \alpha   \} 
  = S_{\infty}^{d-1}\cap {\mathcal{C}}_\alpha,
 \end{align*}
-represented in Figure~\ref{resume_fr:fig:3Dcones}.
+représentées Figure~\ref{resume_fr:fig:3Dcones}.
 
 \noindent
 \begin{minipage}{0.5\linewidth}
@@ -515,16 +516,13 @@ represented in Figure~\ref{resume_fr:fig:3Dcones}.
 \label{resume_fr:2Dcones}
 \end{minipage}
 
-
-This is done using $\epsilon$-thickened sub-cones $\cone_\alpha^\epsilon$, corresponding to $\epsilon$-thickened sub-spheres $\Omega_\alpha^\epsilon$, as shown in Figure~\ref{resume_fr:2Dcones} in the two-dimensional case.
-We thus obtain an estimate $\widehat{\mathcal{M}}$ of the representation
+Cette estimation est faite en utilisant les sous-cones $\epsilon$-épaissi $\cone_\alpha^\epsilon$, correspondant aux sous-sphères $\epsilon$-épaissie $\Omega_\alpha^\epsilon$, comme le montre la Figure~\ref{resume_fr:2Dcones} dans le cas de la dimension deux.
+Nous obtenons ainsi un estimateur $\widehat{\mathcal{M}}$ de la représentation
 $$\mathcal{M} = \{ \Phi(\Omega_{\alpha}):\; \emptyset \neq \alpha\subset\{1,\; \ldots,\; d \}\}.$$
-Theoretically, recovering the $(2^{d}-1)$-dimensional unknown
-vector $\mathcal{M}$ amounts to roughly approximating the support of $\Phi$ using the partition
-$\{\Omega_\alpha, \alpha\subset\{1,\ldots,d\}, \alpha\neq \emptyset\}$, that is, determine which $\Omega_\alpha$'s have
-nonzero mass (and evaluating the mass $\Phi(\Omega_\alpha)$), or equivalently, which $\Phi_\alpha$'s are nonzero. This support estimation is potentially
-sparse (if a small number of $\Omega_\alpha$ have non-zero mass, \ie~Phenomenon~\textbf{1-}) and
-potentially low-dimensional (if the dimensions of the sub-spheres $\Omega_\alpha$ with non-zero mass are low, \ie~Phenomenon~\textbf{2-}).
+Théoriquement, retrouver le vecteur inconnu $\mathcal{M}$ de dimension $(2^{d}-1)$ revient à peu près à approximer le support de $\Phi$ en utilisant la partition
+$\{\Omega_\alpha, \alpha\subset\{1,\ldots,d\}, \alpha\neq \emptyset\}$, c'est-à-dire, déterminer quels sont les $\Omega_\alpha$ qui ont
+une masse non nulle (et évaluer cette masse $\Phi(\Omega_\alpha)$), ou de manière équivalente, déterminer quels sont les $\Phi_\alpha$ non nuls. Cette estimation de support est potentiellement parcimonieuse (si seul un petit nombre d'$\Omega_\alpha$ ont une masse non nulle, \ie~Phénomène~\textbf{1-}) et
+potentiellement de faible dimension (si les dimensions des sous-sphère $\Omega_\alpha$ ayant une masse non nulle sont faibles comparées à $d$, \ie~Phénomène~\textbf{2-}).
 
 % Second, investigate how the angular measure $\Phi$ spreads its mass on the
 % $\Omega_{\alpha}$'s, the theorical quantity $\Phi(\Omega_{\alpha})$ indicating to which extent extreme observations may occur in the `direction' $\alpha$ for $\emptyset \neq \alpha \subset \{1,\; \ldots,\; d \}$. 

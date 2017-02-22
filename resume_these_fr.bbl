@@ -1,0 +1,352 @@
+\begin{thebibliography}{61}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+
+\bibitem[Amit \& Geman(1997)Amit and Geman]{Amit1997}
+Y.~Amit and D.~Geman.
+\newblock Shape quantization and recognition with randomized trees.
+\newblock {\em Neural Comput.}, 9:\penalty0 1545--1588, 1997.
+
+\bibitem[Baillo(2003)]{Baillo2003}
+A.~Baillo.
+\newblock Total error in a plug-in estimator of level sets.
+\newblock {\em Statistics \& probability letters}, 65:\penalty0 411--417, 2003.
+
+\bibitem[Baillo et~al.(2001)Baillo, Cuesta-Albertos, and Cuevas]{Baillo2001}
+A.~Baillo, J.~A Cuesta-Albertos, and A.~Cuevas.
+\newblock Convergence rates in nonparametric estimation of level sets.
+\newblock {\em Statistics \& probability letters}, 53:\penalty0 27--35, 2001.
+
+\bibitem[Biau et~al.(2008)Biau, Devroye, and Lugosi]{Biau2008}
+G.~Biau, L.~Devroye, and G.~Lugosi.
+\newblock Consistency of random forests and other averaging classifiers.
+\newblock {\em JMLR}, 9:\penalty0 2015--2033, 2008.
+
+\bibitem[Biau \& Scornet(2016)Biau and Scornet]{Biau2016}
+G.~Biau and E.~Scornet.
+\newblock A random forest guided tour.
+\newblock {\em Test}, 25:\penalty0 197--227, 2016.
+
+\bibitem[Breiman(2001)]{Breiman2001}
+L.~Breiman.
+\newblock Random forests.
+\newblock {\em Machine learning}, 45:\penalty0 5--32, 2001.
+
+\bibitem[Cadre(2006)]{Cadre2006}
+B.~Cadre.
+\newblock Kernel estimation of density level sets.
+\newblock {\em JMVA}, 97:\penalty0 999--1023, 2006.
+
+\bibitem[Cl\'emen\c{c}on \& Jakubowicz(2013)Cl\'emen\c{c}on and
+  Jakubowicz]{CLEM13}
+S.~Cl\'emen\c{c}on and J.~Jakubowicz.
+\newblock Scoring anomalies: a m-estimation formulation.
+\newblock In {\em Proc. AISTATS}, volume~13, pages 659--667, 2013.
+
+\bibitem[Cl\'emen\c{c}on \& Robbiano(2014)Cl\'emen\c{c}on and Robbiano]{CLEM14}
+S.~Cl\'emen\c{c}on and S.~Robbiano.
+\newblock {Anomaly Ranking as Supervised Bipartite Ranking}.
+\newblock In {\em Proc. ICML}, 2014.
+
+\bibitem[Cl{\'e}men{\c{c}}on \& Vayatis(2009)Cl{\'e}men{\c{c}}on and
+  Vayatis]{Clemencon2009}
+S.~Cl{\'e}men{\c{c}}on and N.~Vayatis.
+\newblock Nonparametric estimation of the precision-recall curve.
+\newblock In {\em Proc. ICML}, pages 185--192, 2009.
+
+\bibitem[Cl{\'e}men{\c{c}}on \& Vayatis(2010)Cl{\'e}men{\c{c}}on and
+  Vayatis]{Clemencon2010}
+S.~Cl{\'e}men{\c{c}}on and N.~Vayatis.
+\newblock Overlaying classifiers: a practical approach to optimal scoring.
+\newblock {\em Constr Approx}, 32:\penalty0 619--648, 2010.
+
+\bibitem[Clifton et~al.(2011)Clifton, Hugueny, and Tarassenko]{Clifton2011}
+D.~A. Clifton, S.~Hugueny, and L.~Tarassenko.
+\newblock Novelty detection with multivariate extreme value statistics.
+\newblock {\em J Signal Process Syst.}, 65:\penalty0 371--389, 2011.
+
+\bibitem[Clifton et~al.(2008)Clifton, Tarassenko, McGrogan, King, King, and
+  Anuzis]{Clifton2008}
+D.A. Clifton, L.~Tarassenko, N.~McGrogan, D.~King, S.~King, and P.~Anuzis.
+\newblock Bayesian extreme value statistics for novelty detection in
+  gas-turbine engines.
+\newblock In {\em AEROSP CONF PROC}, pages 1--11, 2008.
+
+\bibitem[Coles \& Tawn(1991)Coles and Tawn]{coles1991modeling}
+S.~Coles and J.A Tawn.
+\newblock Modeling extreme multivariate events.
+\newblock {\em JR Statist. Soc. B}, 53:\penalty0 377--392, 1991.
+
+\bibitem[Cooley et~al.(2010)Cooley, Davis, and Naveau]{cooley2010pairwise}
+D.~Cooley, R.A. Davis, and P.~Naveau.
+\newblock The pairwise beta distribution: A flexible parametric multivariate
+  model for extremes.
+\newblock {\em JMVA}, 101:\penalty0 2103--2117, 2010.
+
+\bibitem[Cuevas \& Fraiman(1997)Cuevas and Fraiman]{Cuevas1997}
+A.~Cuevas and R.~Fraiman.
+\newblock A plug-in approach to support estimation.
+\newblock {\em Ann. Stat.}, pages 2300--2312, 1997.
+
+\bibitem[Davis \& Goadrich(2006)Davis and Goadrich]{Davis2006}
+J.~Davis and M.~Goadrich.
+\newblock The relationship between precision-recall and roc curves.
+\newblock In {\em Proc. ICML}, 2006.
+
+\bibitem[De~Haan \& Ferreira(2007)De~Haan and Ferreira]{dHF06}
+L.~De~Haan and A.~Ferreira.
+\newblock {\em Extreme value theory: an introduction}.
+\newblock Springer Science \& Business Media, 2007.
+
+\bibitem[Drees \& Huang(1998)Drees and Huang]{Drees98}
+H.~Drees and X.~Huang.
+\newblock Best attainable rates of convergence for estimators of the stable
+  tail dependence function.
+\newblock {\em JMVA}, 64:\penalty0 25--47, 1998.
+
+\bibitem[Désir et~al.(2012)Désir, Bernard, Petitjean, and Heutte]{Desir12}
+C.~Désir, S.~Bernard, C.~Petitjean, and L.~Heutte.
+\newblock A new random forest method for one-class classification.
+\newblock In {\em Structural, Syntactic, and Statistical Pattern Recognition}.
+  Springer, 2012.
+
+\bibitem[Einmahl et~al.(2012)Einmahl, Krajina, and Segers]{Einmahl2012}
+J.~H.~J. Einmahl, A.~Krajina, and J.~Segers.
+\newblock An m-estimator for tail dependence in arbitrary dimensions.
+\newblock {\em Ann. Stat.}, 40:\penalty0 1764--1793, 2012.
+
+\bibitem[Einmahl \& Segers(2009)Einmahl and Segers]{Einmahl2009}
+J.~H.~J. Einmahl and J.~Segers.
+\newblock Maximum empirical likelihood estimation of the spectral measure of an
+  extreme-value distribution.
+\newblock {\em Ann. Stat.}, 37:\penalty0 2953--2989, 2009.
+
+\bibitem[Einmahl et~al.(2001)Einmahl, de~Haan, and Piterbarg]{Einmahl2001}
+J.~HJ Einmahl, L.~de~Haan, and V.~I Piterbarg.
+\newblock Nonparametric estimation of the spectral measure of an extreme value
+  distribution.
+\newblock {\em Ann. Stat.}, 29:\penalty0 1401--1423, 2001.
+
+\bibitem[Einmahl \& Mason(1992)Einmahl and Mason]{Einmahl1992}
+J.~HJ Einmahl and D.~M Mason.
+\newblock Generalized quantile processes.
+\newblock {\em Ann. Stat.}, 20:\penalty0 1062--1078, 1992.
+
+\bibitem[Embrechts et~al.(2000)Embrechts, de~Haan, and Huang]{Embrechts2000}
+P.~Embrechts, L.~de~Haan, and X.~Huang.
+\newblock Modelling multivariate extremes.
+\newblock {\em Extremes and integrated risk management}, pages 59--67, 2000.
+
+\bibitem[Fawcett(2006)]{Fawcett2006}
+T.~Fawcett.
+\newblock An introduction to roc analysis.
+\newblock {\em Pattern recognition letters}, 27:\penalty0 861--874, 2006.
+
+\bibitem[Foug{\`e}res et~al.(2009)Foug{\`e}res, Nolan, and
+  Rootz{\'e}n]{fougeres2009models}
+A-L. Foug{\`e}res, J.~P Nolan, and H~Rootz{\'e}n.
+\newblock Models for dependent extremes using stable mixtures.
+\newblock {\em Scandinavian Journal of Statistics}, 36:\penalty0 42--59, 2009.
+
+\bibitem[Genuer et~al.(2008)Genuer, Poggi, and Tuleau]{Genuer2008}
+R.~Genuer, J.-M. Poggi, and C.~Tuleau.
+\newblock Random forests: some methodological insights.
+\newblock {\em arXiv:0811.3619}, 2008.
+
+\bibitem[Gini(1912)]{Gini1912}
+C.~Gini.
+\newblock Variabilita e mutabilita.
+\newblock {\em Memorie di metodologia statistica}, 1912.
+
+\bibitem[Goix(2016)]{ICMLworkshop16}
+N.~Goix.
+\newblock {How to Evaluate the Quality of Unsupervised Anomaly Detection
+  Algorithms?}
+\newblock In {\em ICML Workshop on Anomaly Detection}, 2016.
+
+\bibitem[Goix et~al.(2016{\natexlab{a}})Goix, Brault, Drougard, and
+  Chiapino]{OCRF16}
+N.~Goix, R.~Brault, N.~Drougard, and M.~Chiapino.
+\newblock {One Class Splitting Criteria for Random Forests with Application to
+  Anomaly Detection}.
+\newblock Submitted to AISTATS, 2016{\natexlab{a}}.
+
+\bibitem[Goix et~al.(2015{\natexlab{a}})Goix, Sabourin, and Cl{\'e}men{\c
+  c}on]{NIPSWORKSHOP15}
+N.~Goix, A.~Sabourin, and S.~Cl{\'e}men{\c c}on.
+\newblock {Sparse Representation of Multivariate Extremes}.
+\newblock NIPS 2015 Workshop on Nonparametric Methods for Large Scale
+  Representation Learning, 2015{\natexlab{a}}.
+
+\bibitem[Goix et~al.(2016{\natexlab{b}})Goix, Sabourin, and Cl{\'e}men{\c
+  c}on]{ARXIV16}
+N.~Goix, A.~Sabourin, and S.~Cl{\'e}men{\c c}on.
+\newblock {Sparse Representation of Multivariate Extremes with Applications to
+  Anomaly Detection}.
+\newblock In the reviewing process of JMVA, July 2016{\natexlab{b}}.
+
+\bibitem[Goix et~al.(2015{\natexlab{b}})Goix, Sabourin, and
+  Clémençon]{COLT15}
+N.~Goix, A.~Sabourin, and S.~Clémençon.
+\newblock {Learning the dependence structure of rare events: a non-asymptotic
+  study}.
+\newblock In {\em Proc. COLT}, 2015{\natexlab{b}}.
+
+\bibitem[Goix et~al.(2015{\natexlab{c}})Goix, Sabourin, and
+  Clémençon]{AISTAT15}
+N.~Goix, A.~Sabourin, and S.~Clémençon.
+\newblock {On Anomaly Ranking and Excess-Mass Curves}.
+\newblock In {\em Proc. AISTATS}, 2015{\natexlab{c}}.
+
+\bibitem[Goix et~al.(2016{\natexlab{c}})Goix, Sabourin, and
+  Clémençon]{AISTAT16}
+N.~Goix, A.~Sabourin, and S.~Clémençon.
+\newblock {Sparse Representation of Multivariate Extremes with Applications to
+  Anomaly Ranking}.
+\newblock In {\em Proc. AISTATS}, 2016{\natexlab{c}}.
+
+\bibitem[Goix \& Thomas(2016)Goix and Thomas]{NIPS16evaluation}
+N.~Goix and A.~Thomas.
+\newblock {How to Evaluate the Quality of Unsupervised Anomaly Detection
+  Algorithms?}
+\newblock To be submitted, 2016.
+
+\bibitem[Ho(1998)]{Ho1998}
+T.K. Ho.
+\newblock The random subspace method for constructing decision forests.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  20:\penalty0 832--844, 1998.
+
+\bibitem[Huang(1992)]{Huangphd}
+X.~Huang.
+\newblock Statistics of bivariate extreme values.
+\newblock {\em PhD thesis}, 1992.
+
+\bibitem[Lee \& Roberts(2008)Lee and Roberts]{Lee2008}
+H.J. Lee and S.J. Roberts.
+\newblock On-line novelty detection using the kalman filter and extreme value
+  theory.
+\newblock In {\em ICPR}, pages 1--4, 2008.
+
+\bibitem[Liu et~al.(2008)Liu, Ting, and Zhou]{Liu2008}
+F.T. Liu, K.M. Ting, and Z.H. Zhou.
+\newblock {Isolation Forest}.
+\newblock In {\em ICDM}, pages 413--422, 2008.
+
+\bibitem[Mason \& Polonik(2009)Mason and Polonik]{Mason2009}
+D.~M. Mason and W.~Polonik.
+\newblock Asymptotic normality of plug-in level set estimates.
+\newblock {\em The Annals of Applied Probability}, 19:\penalty0 1108--1142,
+  2009.
+
+\bibitem[Panov \& D{\v{z}}eroski(2007)Panov and D{\v{z}}eroski]{Panov2007}
+P.~Panov and S.~D{\v{z}}eroski.
+\newblock {\em Combining bagging and random subspaces to create better
+  ensembles}.
+\newblock Springer, 2007.
+
+\bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
+  Grisel, Blondel, Prettenhofer, Weiss, Dubourg, et~al.]{sklearn2011}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, et~al.
+\newblock {Scikit-learn: Machine learning in Python}.
+\newblock {\em JMLR}, 12:\penalty0 2825--2830, 2011.
+
+\bibitem[Polonik(1995)]{Polonik95}
+W.~Polonik.
+\newblock {Measuring Mass Concentrations and Estimating Density Contour
+  Cluster-An excess Mass Approach}.
+\newblock {\em Ann. Stat.}, 23:\penalty0 855--881, 1995.
+
+\bibitem[Polonik(1997)]{Polonik97}
+W.~Polonik.
+\newblock {Minimum volume sets and generalized quantile processes}.
+\newblock {\em Stochastic Processes and their Applications}, 69:\penalty0
+  1--24, 1997.
+
+\bibitem[Provost et~al.(1997)Provost, Fawcett, et~al.]{Provost1997}
+FJ~Provost, T.~Fawcett, et~al.
+\newblock Analysis and visualization of classifier performance: comparison
+  under imprecise class and cost distributions.
+\newblock In {\em KDD}, volume~97, pages 43--48, 1997.
+
+\bibitem[Provost et~al.(1998)Provost, Fawcett, and Kohavi]{Provost1998}
+FJ~Provost, T.~Fawcett, and R.~Kohavi.
+\newblock The case against accuracy estimation for comparing induction
+  algorithms.
+\newblock In {\em Proc. ICML}, volume~98, pages 445--453, 1998.
+
+\bibitem[Qi(1997)]{Qi97}
+Y.~Qi.
+\newblock Almost sure convergence of the stable tail empirical dependence
+  function in multivariate extreme statistics.
+\newblock {\em Acta Mathematicae Applicatae Sinica}, 13:\penalty0 167--175,
+  1997.
+
+\bibitem[Rigollet \& Vert(2009)Rigollet and Vert]{Rigollet2009}
+P.~Rigollet and R.~Vert.
+\newblock Optimal rates for plug-in estimators of density level sets.
+\newblock {\em Bernoulli}, 15:\penalty0 1154--1178, 2009.
+
+\bibitem[Roberts(1999)]{Roberts99}
+S.J. Roberts.
+\newblock Novelty detection using extreme value statistics.
+\newblock {\em IEE P-VIS IMAGE SIGN}, 146:\penalty0 124--129, Jun 1999.
+
+\bibitem[Roberts(2000)]{Roberts2000}
+S.J Roberts.
+\newblock Extreme value statistics for novelty detection in biomedical data
+  processing.
+\newblock {\em IEE P-SCI MEAS TECH}, 147:\penalty0 363--367, 2000.
+
+\bibitem[Sabourin \& Naveau(2014)Sabourin and Naveau]{sabourinNaveau2012}
+A.~Sabourin and P.~Naveau.
+\newblock Bayesian dirichlet mixture model for multivariate extremes: A
+  re-parametrization.
+\newblock {\em Comput. Stat. Data Anal.}, 71:\penalty0 542--567, 2014.
+
+\bibitem[Sch{\"o}lkopf et~al.(2001)Sch{\"o}lkopf, Platt, Shawe-Taylor, Smola,
+  and Williamson]{Scholkopf2001}
+B.~Sch{\"o}lkopf, J.C Platt, J.~Shawe-Taylor, A.J Smola, and R.C Williamson.
+\newblock Estimating the support of a high-dimensional distribution.
+\newblock {\em Neural Comput.}, 13:\penalty0 1443--1471, 2001.
+
+\bibitem[Scott \& Nowak(2006)Scott and Nowak]{Scott2006}
+C.D Scott and R.D Nowak.
+\newblock Learning minimum volume sets.
+\newblock {\em JMLR}, 7:\penalty0 665--704, 2006.
+
+\bibitem[Shi \& Horvath(2012)Shi and Horvath]{Shi2012}
+T.~Shi and S.~Horvath.
+\newblock Unsupervised learning with random forest predictors.
+\newblock {\em J. Comp. Graph. Stat.}, 15, 2012.
+
+\bibitem[Steinwart et~al.(2005)Steinwart, Hush, and Scovel]{Steinwart2005}
+I.~Steinwart, D.~Hush, and C.~Scovel.
+\newblock A classification framework for anomaly detection.
+\newblock {\em JMLR}, 6:\penalty0 211--232, 2005.
+
+\bibitem[Stephenson(2009)]{stephenson2009high}
+A.G. Stephenson.
+\newblock High-dimensional parametric modelling of multivariate extreme events.
+\newblock {\em Australian \& New Zealand Journal of Statistics}, 51:\penalty0
+  77--88, 2009.
+
+\bibitem[Thomas et~al.(2015)Thomas, Feuillard, and Gramfort]{Thomas2015}
+A.~Thomas, V.~Feuillard, and A.~Gramfort.
+\newblock {Calibration of One-Class SVM for MV set estimation}.
+\newblock In {\em DSAA}, pages 1--9, 2015.
+
+\bibitem[Tsybakov(1997)]{Tsybakov1997}
+A.~B. Tsybakov.
+\newblock On nonparametric estimation of density level sets.
+\newblock {\em Ann. Stat.}, 25:\penalty0 948--969, 1997.
+
+\bibitem[Vert \& Vert(2006)Vert and Vert]{VertVert}
+J.-P. Vert and R.~Vert.
+\newblock Consistency and convergence rates of one-class svms and related
+  algorithms.
+\newblock {\em JMLR}, 6:\penalty0 828--835, 2006.
+
+\end{thebibliography}

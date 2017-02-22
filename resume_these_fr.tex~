@@ -1,3 +1,31 @@
+\documentclass[a4paper, 12pt]{article}
+
+% \linespread{0.97}
+
+% \oddsidemargin -.4in    %   Note \oddsidemargin = \evensidemargin
+% \evensidemargin -.4in
+% \marginparwidth 0.07 true in
+% \topmargin -1.4in
+% \addtolength{\headsep}{0.25in}
+% \textheight 11.2 true in       % Height of text (including footnotes & figures)
+% \textwidth 7.0 true in        % Width of text line.
+% \widowpenalty=10000
+% \clubpenalty=10000
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+
+\sloppy 
+
+\begin{document}
+
+\begin{center}
+{\large \textbf{Apprentissage Automatique et Extrêmes pour la \\ Détection d'Anomalies \\~\\-- RESUME --\\}}
+\vspace{1em}
+
+\textbf{Nicolas Goix}
+\end{center}
+
+
 \section{Introduction}
 Une \emph{anomalie}, du grec $\alpha \nu \omega \mu \alpha \lambda \iota \alpha $, aspérité, irrégularité, non semblable (an-homalos), désigne un écart par rapport à une certaine norme, reflétant le comportement attendu.
 On appelle \emph {anomalie} l'objet qui induit cet espace, l'observation qui s'écarte de la normalité.
@@ -880,3 +908,6 @@ Chapter~\ref{chap:ocrf} presents the details % on one class splitting criteria
 
 
 \end{itemize}
+
+
+\end{document}

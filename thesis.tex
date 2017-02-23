@@ -2,8 +2,8 @@
 %% Thesis.tex
 %% ---------------------------------------------------------------- 
 
-\documentclass[draft]{ecsthesis}      % Use the Thesis Style
-%\documentclass{ecsthesis}      % Use the Thesis Style
+%\documentclass[draft]{ecsthesis}      % Use the Thesis Style
+\documentclass{ecsthesis}      % Use the Thesis Style
 
 %\graphicspath{{../Figures/}}   % Location of your graphics files
 \usepackage{natbib}            % Use Natbib style for the refs.
@@ -39,7 +39,7 @@
 \keywords   {Anomaly Detection, Dimensionality Reduction, Multivariate Extremes, Concentration}
 \maketitle
 \input{publilisting}
-\input{ack}
+%\input{ack}
 \tableofcontents
 \listoffigures
 \listoftables
@@ -47,31 +47,38 @@
 %\lstlistoflistings
 %\listofsymbols{ll}{}
 %\dedicatory{To \dots}
-% %% ----------------------------------------------------------------
-% \thispagestyle{plain}
-%
-% \null\vfill
-% ``There is nothing more practical than a good theory.''
-\emph{Dans ce prodigieux, cet inépuisable catalogue-raisonné-des-données-expérimentales, qui, mené à bien, devait aboutir à la certitude des certitudes, toutes les bizarreries, toutes les anomalies avaient leur place marquée, puisqu'elles étaient révélatrices à l'égal des phénomènes " normaux ".}
-BÉGUIN, L'Âme romantique et le rêve, 1939, p. 4.
-%
-% \begin{flushright}
-% --- James C. Maxwell
-% \end{flushright}
-%
-% \vspace*{1cm}
-%
+%% ----------------------------------------------------------------
+\thispagestyle{plain}
+
+\null\vfill
+%``There is nothing more practical than a good theory.''
+
+``La clef de toutes les sciences est sans contredit le point d'interrogation, nous devons la plupart des grandes découvertes au : Comment ? et la sagesse dans la vie consiste peut-être à se demander à tout propos : Pourquoi ?''
+
+\begin{flushright}
+Honoré de Balzac, \emph{La Peau de chagrin}. 
+\end{flushright}
+
+\vspace*{1cm}
+
+``Dans ce prodigieux, cet inépuisable catalogue-raisonné-des-données-expérimentales, qui, mené à bien, devait aboutir à la certitude des certitudes, toutes les bizarreries, toutes les anomalies avaient leur place marquée, puisqu'elles étaient révélatrices à l'égal des phénomènes "normaux".''
+
+\begin{flushright}
+Albert Béguin, \emph{L'Âme romantique et le rêve}.
+\end{flushright}
+
+
 % ``There is a theory which states that if ever anyone discovers exactly what the Universe is for and why it is here, it will instantly disappear and be replaced by something even more bizarre and inexplicable.
-%
+
 % There is another theory which states that this has already happened.''
-%
+
 % \begin{flushright}
 % --- Douglas Adams
 % \end{flushright}
-%
-% \vfill\vfill\vfill\vfill\vfill\vfill\null
-% \clearpage
-% %% ----------------------------------------------------------------
+
+\vfill\vfill\vfill\vfill\vfill\vfill\null
+\clearpage
+%% ----------------------------------------------------------------
 
 \mainmatter
 %% ----------------------------------------------------------------
@@ -80,9 +87,6 @@ BÉGUIN, L'Âme romantique et le rêve, 1939, p. 4.
 %%\counterwithout{section}{chapter}
 \input{introduction.tex}
 %%\numberwithin{section}{chapter}
-
-\chapter{Résumé des contributions en Français}\label{chap:resume_fr}
-\input{resume_fr}
 
 \part{Preliminaries}\label{part:background}
 \input{background.tex}
@@ -107,6 +111,8 @@ BÉGUIN, L'Âme romantique et le rêve, 1939, p. 4.
 \input{conclusion}
 % \numberwithin{section}{chapter}
 
+\chapter{Résumé des contributions en Français}\label{chap:resume_fr}
+\input{resume_fr}
 
 %%\input{ListPublis}
 \appendix

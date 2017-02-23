@@ -40,23 +40,23 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 \usepackage{vmargin}
-\setmarginsrb           { 1.3in}  % left margin
-                        { 0.6in}  % top margin
-                        { 1.3in}  % right margin
-                        { 0.6in}  % bottom margin
-                        {  20pt}  % head height
-                        {0.25in}  % head sep
-                        {   9pt}  % foot height
-                        { 0.3in}  % foot sep
-%%uncomment for book margins!:
-% \setmarginsrb           { 1.5in}  % left margin
-%                         { 0.5in}  % top margin
-%                         { 1.1in}  % right margin
-%                         { 0.7in}  % bottom margin
+% \setmarginsrb           { 1.3in}  % left margin
+%                         { 0.6in}  % top margin
+%                         { 1.3in}  % right margin
+%                         { 0.6in}  % bottom margin
 %                         {  20pt}  % head height
 %                         {0.25in}  % head sep
 %                         {   9pt}  % foot height
 %                         { 0.3in}  % foot sep
+% uncomment for book margins!:
+\setmarginsrb           { 1.5in}  % left margin
+                        { 0.5in}  % top margin
+                        { 1.1in}  % right margin
+                        { 0.7in}  % bottom margin
+                        {  20pt}  % head height
+                        {0.25in}  % head sep
+                        {   9pt}  % foot height
+                        { 0.3in}  % foot sep
 \raggedbottom
 \setlength{\topskip}{1\topskip \@plus 5\p@}
 \doublehyphendemerits=10000       % No consecutive line hyphens.
@@ -154,7 +154,7 @@
   \begin{titlepage}
   \begin{center}
 \vfil\null
-{\'E}cole Doctorale ED130 ``Informatique, t\'el\'ecommunications et \'electronique de Paris''
+{\'E}cole Doctorale ED130 ``Informatique, t\'el\'ecommunications et \'electronique de Paris'' \\ 2016-ENST-0072 \\
  \begin{tabular}{ccc}
    ~\\
    ~\\

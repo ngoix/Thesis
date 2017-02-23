@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.2.23)  23 FEB 2017 18:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.2.23)  23 FEB 2017 20:38
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1700,12 +1700,13 @@ Overfull \hbox (4.51656pt too wide) in paragraph at lines 428--428
 [] 
  []
 
-[8] [9] [10] [11] <fig_source/cone.png, id=1227, 689.18933pt x 675.05832pt>
-File: fig_source/cone.png Graphic file (type png)
+[8] [9] [10] [11]
+<fig_source/cone-resized.png, id=1227, 206.71643pt x 202.47713pt>
+File: fig_source/cone-resized.png Graphic file (type png)
 
-<use fig_source/cone.png>
-Package pdftex.def Info: fig_source/cone.png used on input line 616.
-(pdftex.def)             Requested size: 137.83542pt x 135.00926pt.
+<use fig_source/cone-resized.png>
+Package pdftex.def Info: fig_source/cone-resized.png used on input line 616.
+(pdftex.def)             Requested size: 131.27846pt x 128.59317pt.
 
 <fig_source/representation2D.png, id=1228, 299.10284pt x 303.05923pt>
 File: fig_source/representation2D.png Graphic file (type png)
@@ -1714,7 +1715,7 @@ File: fig_source/representation2D.png Graphic file (type png)
 Package pdftex.def Info: fig_source/representation2D.png used on input line 622
 .
 (pdftex.def)             Requested size: 131.27846pt x 133.01814pt.
- [12 <./fig_source/cone.png> <./fig_source/representation2D.png>]
+ [12 <./fig_source/cone-resized.png> <./fig_source/representation2D.png>]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 859.
  [13] [14]
@@ -1723,10 +1724,10 @@ put line 933.
  [15] [16] [17] [18] [19]) [20]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 91.
- [21
 
-] [22]
-(./background.tex
+[21
+
+] [22] (./background.tex
 Chapter 2.
 ------------------------------------------------------------------------------
  2.\hskip 1em\relax Concentration Inequalities from the Method of bounded diffe
@@ -2113,10 +2114,10 @@ Chapter 7.
  7.\hskip 1em\relax Sparse Representation of Multivariate Extremes
 ------------------------------------------------------------------------------
 [91] [92] [93] [94] [95]
-File: fig_source/cone.png Graphic file (type png)
- <use fig_source/cone.png>
-Package pdftex.def Info: fig_source/cone.png used on input line 527.
-(pdftex.def)             Requested size: 137.83542pt x 135.00926pt.
+File: fig_source/cone-resized.png Graphic file (type png)
+ <use fig_source/cone-resized.png>
+Package pdftex.def Info: fig_source/cone-resized.png used on input line 527.
+(pdftex.def)             Requested size: 41.34254pt x 40.4947pt.
 File: fig_source/representation2D.png Graphic file (type png)
 
 <use fig_source/representation2D.png>
@@ -2883,9 +2884,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 460--461
 
  []
 
-[185] [186]
+[185] [186] <fig_source/cone.png, id=3950, 689.18933pt x 675.05832pt>
 File: fig_source/cone.png Graphic file (type png)
- <use fig_source/cone.png>
+
+<use fig_source/cone.png>
 Package pdftex.def Info: fig_source/cone.png used on input line 507.
 (pdftex.def)             Requested size: 137.83542pt x 135.00926pt.
 File: fig_source/representation2D.png Graphic file (type png)
@@ -2893,8 +2895,7 @@ File: fig_source/representation2D.png Graphic file (type png)
 Package pdftex.def Info: fig_source/representation2D.png used on input line 513
 .
 (pdftex.def)             Requested size: 131.27846pt x 133.01814pt.
-
-[187] [188]
+ [187 <./fig_source/cone.png>] [188]
 Underfull \hbox (badness 1019) in paragraph at lines 642--642
 []\T1/ptm/b/n/10.95 Algorithm 5   \T1/ptm/m/n/10.95 EM/MV en grande di-men-sion
 : éval-u-a-tion d'algorithmes de dé-tec-tion
@@ -2931,10 +2932,10 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 129.
  ) 
 Here is how much of TeX's memory you used:
- 55107 strings out of 494991
- 1156679 string characters out of 6180055
- 1628036 words of memory out of 5000000
- 56607 multiletter control sequences out of 15000+600000
+ 55112 strings out of 494991
+ 1156822 string characters out of 6180055
+ 1618038 words of memory out of 5000000
+ 56611 multiletter control sequences out of 15000+600000
  126458 words of font info for 159 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  64i,24n,100p,10455b,2257s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2980,10 +2981,10 @@ dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (220 pages, 16052613 bytes).
+Output written on thesis.pdf (220 pages, 16198969 bytes).
 PDF statistics:
- 4452 PDF objects out of 5155 (max. 8388607)
+ 4454 PDF objects out of 5155 (max. 8388607)
  3990 compressed objects within 40 object streams
  888 named destinations out of 1000 (max. 500000)
- 1579 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1584 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,76 @@
+% Couverture Thèse TPT Latex v2
+% - Henri Ma�tre 06/03/2013
+
+\documentclass[11pt,a4paper]{book}
+\usepackage[left=1.3cm,top=0cm,right=1.3cm,bottom=1.2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{array}
+\usepackage[french]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{helvet}	% or \usepackage{lmodern}
+\renewcommand\textnumero{n$^{\textsf{{\tiny O}}}$}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{ifpdf}
+\newcommand\BackgroundPic{
+\ifpdf
+	\includegraphics[height=\paperheight,width=\paperwidth]{cover_4_bg.pdf}
+\else
+	\includegraphics[height=\paperheight,width=\paperwidth]{cover_4_bg.pdf}
+\fi
+}
+
+\pagestyle{empty}
+
+\begin{document}
+\AddToShipoutPicture*{\BackgroundPic}
+~
+
+
+
+
+%
+\vspace{.5cm}
+%
+
+%
+\vspace{1.0cm}
+%
+%
+%
+\begin{center}{\LARGE {\bf TITRE}}\\
+\vspace{.4cm}
+{\large {\bf Prénom NOM}}\\
+\end{center}
+
+\vspace{.9cm}
+
+{\bf RESUME : } r{\'e}sum{\'e} en fran{\,c}ais - r{\'e}sum{\'e} en fran{\,c}ais - r{\'e}sum{\'e} en fran{\,c}ais 
+- r{\'e}sum{\'e} en fran{\,c}ais - r{\'e}sum{\'e} en fran{\,c}ais - r{\'e}sum{\'e} en fran{\,c}ais -r{\'e}sum{\'e} en fran{\,c}ais 
+- r{\'e}sum{\'e} en fran{\,c}ais - r{\'e}sum{\'e} en fran{\,c}ais -r{\'e}sum{\'e} en fran{\,c}ais - r{\'e}sum{\'e} en fran{\,c}ais - r{\'e}sum{\'e} en fran{\,c}ais -
+
+\vspace{.6cm}
+
+{\bf MOTS-CLEFS:}  bla bla bla 
+
+\vspace{1.0cm}
+
+{\bf ABSTRACT: } English abstract - English abstract - English abstract - English abstract - 
+English abstract - English abstract - English abstract - English abstract -English abstract - 
+English abstract - English abstract - English abstract -
+%
+
+\vspace{.6cm}
+{\bf KEY-WORDS: } bla bla bla
+%
+%
+%
+%
+
+
+%
+%
+\end{document}
